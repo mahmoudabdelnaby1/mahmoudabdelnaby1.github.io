@@ -1,19 +1,15 @@
-# Portfolio & Assistant Library
+# Mahmoud Abdelnaby — Portfolio & Assistant Library
 
-This repository contains the source bundle for the GitHub Pages site and its deployment workflow.
+A bilingual professional portfolio and searchable library of 140 practical AI assistant prompts spanning marketing, growth, analytics, content, design, and productivity.
 
-- Live site: https://mahmoudabdelnaby1.github.io
-- Profile README: https://github.com/mahmoudabdelnaby1/mahmoudabdelnaby1
-- LinkedIn: https://eg.linkedin.com/in/mahmoudabdelnaby4
+- **Live portfolio:** https://mahmoudabdelnaby1.github.io
+- **GitHub profile:** https://github.com/mahmoudabdelnaby1
+- **LinkedIn:** https://eg.linkedin.com/in/mahmoudabdelnaby4
 
-## What is included
+## Portfolio and library
 
-The site presents a bilingual English/Arabic professional portfolio and a searchable public library of 140 practical assistant prompts. Each assistant has its own crawlable page, prompt, intro, welcome message, category, and individual icon. The original prompt text remains in English. This is a static catalog; it does not host or run AI models.
+The portfolio presents experience across paid media, lead generation, e-commerce, analytics, web development, automation, and generative AI. The assistant library gives each assistant its own page with its prompt, intro, welcome message, category, and individual icon. Assistant prompts are available in English. The website is a static catalog and does not host or run AI models.
 
-The release excludes only Anime Aura Prompter, Anime Verse Prompto, Eco Sage, and Grow With Grace, as requested. Profile metrics are owner-provided and are not independently audited.
+## Site deployment
 
-## Source package and deployment
-
-`portfolio-site.zip` contains the complete static website at its document root. GitHub Actions extracts it and deploys it to GitHub Pages whenever `main` changes. The site source bundle can be unpacked locally to inspect or edit individual files.
-
-No reuse license is granted by this repository. Prompt authorship and third-party rights remain with their respective owners.
+GitHub Actions publishes the static website to GitHub Pages from the source package in this repository.
