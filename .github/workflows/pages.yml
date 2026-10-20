@@ -22,6 +22,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Extract static website
         run: unzip -q portfolio-site.zip -d _site
+      - name: Remove source-only README from published site
+        run: rm -f _site/README.md
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
