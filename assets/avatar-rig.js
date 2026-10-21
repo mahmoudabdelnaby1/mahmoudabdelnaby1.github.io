@@ -396,7 +396,8 @@ void main(){
   }
 
   // ---------- Motion policy: reduced-motion + the site's motion button ----------
-  let wantMotion = !reduceQuery.matches && !document.body.classList.contains('motion-off');
+  // Match the site's default-on motion toggle; the user's explicit pause control overrides it.
+  let wantMotion = !document.body.classList.contains('motion-off');
   let amp = wantMotion ? 1 : 0, raf = 0, last = 0, visible = true, frozen = null;
   function loop(now) {
     raf = 0;
@@ -426,7 +427,7 @@ void main(){
   if ('IntersectionObserver' in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible) kick(); }).observe(portrait);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(); });
   document.addEventListener('portfolio-motion-change', e => { wantMotion = !!(e.detail && e.detail.enabled); kick(); });
-  reduceQuery.addEventListener?.('change', ev => { wantMotion = !ev.matches && !document.body.classList.contains('motion-off'); kick(); });
+
 
   // Review hook (local QA only): freeze a pose, e.g. __avatarRig.pose({blink:1}); __avatarRig.pose(null) resumes.
   window.__avatarRig = {
@@ -439,3 +440,4 @@ void main(){
     get state() { return { wantMotion, amp, t, P: JSON.parse(JSON.stringify(P)) }; }
   };
 })();
+
