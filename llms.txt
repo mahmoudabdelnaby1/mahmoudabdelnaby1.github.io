@@ -1,0 +1,15 @@
+# Mahmoud Abdelnaby
+
+> Bilingual professional portfolio and growing public library of reusable assistant prompts across marketing, research, writing, creative work, technology, and business. The site publishes prompt text and guidance; it does not host or run AI models.
+
+## Portfolio
+- [English portfolio](https://mahmoudabdelnaby1.github.io/)
+- [الملف المهني بالعربية](https://mahmoudabdelnaby1.github.io/ar/)
+
+## Assistant library
+- [Browse the English assistant library](https://mahmoudabdelnaby1.github.io/#assistant-library)
+- [تصفح مكتبة المساعدين بالعربية](https://mahmoudabdelnaby1.github.io/ar/#assistant-library)
+- [Complete crawlable page index](https://mahmoudabdelnaby1.github.io/sitemap.xml)
+
+## Page format
+Each assistant page explains its purpose, expected inputs and outputs, how to use the prompt with a general chat model, a task example, the full reusable prompt, and related assistants. Original prompt text is in English; explanatory pages are available in English and Arabic.

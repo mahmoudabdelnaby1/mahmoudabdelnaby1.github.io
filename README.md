@@ -1,11 +1,11 @@
-# Mahmoud Abdelnaby — Growth & Marketing Portfolio
+# Mahmoud Abdelnaby — Portfolio & Assistant Library
 
-Bilingual portfolio and searchable library of 140 practical AI assistant prompts. The site brings together paid media, lead generation, content, analytics, e-commerce, web development, and generative AI.
+Bilingual English/Arabic professional portfolio and a growing public library of reusable AI assistant prompts.
 
-**Live portfolio:** https://mahmoudabdelnaby1.github.io/
+- Website: https://mahmoudabdelnaby1.github.io
+- LinkedIn: https://eg.linkedin.com/in/mahmoudabdelnaby4
+- English and Arabic portfolio interface; original assistant prompts are preserved in English.
+- This static site does not host or run AI models.
 
-The assistants are presented as prompt resources. This static site does not host or run AI models.
 
-## Deployment
 
-`portfolio-site.zip` contains the static website. GitHub Actions extracts it and publishes it to GitHub Pages when changes reach `main`.
