@@ -920,7 +920,7 @@ html[dir="rtl"] .playbook-item:hover .playbook-arrow{transform:translate(-3px,-3
 .playbooks-detail-workflow li+li{border-inline-start:1px solid var(--site-line);padding-inline-start:16px}
 .playbooks-detail-workflow li>span{color:var(--site-coral);font:700 11px/1.6 "Space Grotesk",sans-serif}
 .playbooks-detail-workflow li p{font-size:13px}
-.playbooks-detail-boundary{border-inline-start:2px solid var(--site-coral)}
+
 .playbooks-source-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;color:var(--site-muted);font-size:11px;text-decoration:underline;text-decoration-color:#7df0c54d;text-underline-offset:4px}
 .playbooks-source-link:hover{color:var(--site-sage)}
 html[dir="rtl"] .playbooks-module:before{left:auto;right:0}
