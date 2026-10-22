@@ -386,4 +386,16 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/playbooks/permission-email-deliverability-review/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/playbooks/permission-email-deliverability-review/" />
   </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/playbooks/bilingual-client-reporting-workflow/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/playbooks/bilingual-client-reporting-workflow/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/playbooks/bilingual-client-reporting-workflow/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/" />
+  </url>
 </urlset>
