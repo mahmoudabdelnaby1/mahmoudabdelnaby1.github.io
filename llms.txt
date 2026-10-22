@@ -54,3 +54,5 @@
 ## Page guidance
 
 Assistant detail pages explain the purpose, expected inputs and outputs, how to use a prompt with a general chat model, a task example, the reusable prompt, and related assistants. Original prompt text is in English; explanatory pages are available in English and Arabic.
+
+- [WhatsApp Business Platform Cost Model](https://mahmoudabdelnaby1.github.io/playbooks/whatsapp-business-platform-cost-model/) | [نموذج تقدير تكلفة منصة WhatsApp للأعمال](https://mahmoudabdelnaby1.github.io/ar/playbooks/whatsapp-business-platform-cost-model/) — Estimate message charges from current official rates, delivered volumes, and documented provider fees; no prices are embedded. / قدّر رسوم الرسائل من الأسعار الرسمية الحالية والأحجام المسلّمة ورسوم المزوّد الموثقة، دون أسعار ثابتة داخل الأداة. [Source](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks/tree/main/whatsapp-business-platform-cost-model/)
