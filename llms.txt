@@ -18,3 +18,17 @@
 
 ## Page format
 Each assistant page explains its purpose, expected inputs and outputs, how to use the prompt with a general chat model, a task example, the full reusable prompt, and related assistants. Original prompt text is in English; explanatory pages are available in English and Arabic.
+
+## Individual playbook pages
+- [Saudi and Gulf Arabic Copy Localizer](https://mahmoudabdelnaby1.github.io/playbooks/arabic-market-copy-localizer/)
+- [توطين النصوص العربية للسعودية والخليج](https://mahmoudabdelnaby1.github.io/ar/playbooks/arabic-market-copy-localizer/)
+- [E-commerce Unit Economics](https://mahmoudabdelnaby1.github.io/playbooks/ecommerce-unit-economics/)
+- [اقتصاديات الطلب في التجارة الإلكترونية](https://mahmoudabdelnaby1.github.io/ar/playbooks/ecommerce-unit-economics/)
+- [E-commerce Event Tracking Implementation and QA](https://mahmoudabdelnaby1.github.io/playbooks/commerce-measurement-planning/)
+- [تنفيذ قياس أحداث المتجر ومراجعته](https://mahmoudabdelnaby1.github.io/ar/playbooks/commerce-measurement-planning/)
+- [Snapchat Campaign Planning](https://mahmoudabdelnaby1.github.io/playbooks/snapchat-campaign-planning/)
+- [تخطيط حملات Snapchat](https://mahmoudabdelnaby1.github.io/ar/playbooks/snapchat-campaign-planning/)
+- [WhatsApp Commerce Conversations](https://mahmoudabdelnaby1.github.io/playbooks/whatsapp-order-follow-up/)
+- [محادثات التجارة عبر WhatsApp](https://mahmoudabdelnaby1.github.io/ar/playbooks/whatsapp-order-follow-up/)
+- [MENA Advertising Pre-Flight Review](https://mahmoudabdelnaby1.github.io/playbooks/mena-ad-compliance-precheck/)
+- [مراجعة الإعلان قبل إطلاقه في أسواق المنطقة](https://mahmoudabdelnaby1.github.io/ar/playbooks/mena-ad-compliance-precheck/)
