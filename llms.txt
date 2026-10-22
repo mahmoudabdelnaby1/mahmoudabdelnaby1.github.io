@@ -6,6 +6,11 @@
 - [English portfolio](https://mahmoudabdelnaby1.github.io/)
 - [الملف المهني بالعربية](https://mahmoudabdelnaby1.github.io/ar/)
 
+## Marketing systems playbooks
+- [English playbooks guide](https://mahmoudabdelnaby1.github.io/playbooks/): descriptions, inputs, workflow boundaries, and usage guidance for six practical toolkits.
+- [دليل الأدلة العملية بالعربية](https://mahmoudabdelnaby1.github.io/ar/playbooks/): شرح الاستخدام والمدخلات وما تتضمنه الأدلة الستة وحدود كل منها.
+- [Open playbook source files on GitHub](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks)
+
 ## Assistant library
 - [Browse the English assistant library](https://mahmoudabdelnaby1.github.io/#assistant-library)
 - [تصفح مكتبة المساعدين بالعربية](https://mahmoudabdelnaby1.github.io/ar/#assistant-library)
