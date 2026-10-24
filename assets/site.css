@@ -936,3 +936,14 @@ html[dir="rtl"] .playbooks-faq article:nth-child(2n){padding-inline-start:0;padd
 @media(prefers-reduced-motion:reduce){.playbooks-module-link span{transition:none}}
 
 .library-source-link{display:inline-flex;align-items:center;gap:8px;margin-top:13px;color:#7df0c5;font-size:14px;font-weight:750;border-bottom:1px solid #7df0c566;padding-bottom:3px}.library-source-link:hover{color:#1fd0ff;border-color:#1fd0ff}
+
+/* Companion resources extend existing playbooks without duplicating catalogue entries. */
+.playbooks-related-resource{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(20px,4vw,48px);align-items:start;margin-top:clamp(30px,5vw,56px);padding-top:22px;border-top:1px solid var(--site-line)}
+.playbooks-related-resource .eyebrow{color:var(--site-sage);font:700 10px/1.4 "Space Grotesk",sans-serif;letter-spacing:.12em}
+.playbooks-related-resource h2{margin:12px 0 0;font-size:clamp(20px,2.4vw,29px);line-height:1.24;letter-spacing:-.035em}
+.playbooks-related-resource-copy p{margin:0;color:#c2ccca;font-size:14px;line-height:1.85;overflow-wrap:anywhere}
+.playbooks-related-resource-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:14px}
+.playbooks-related-resource-links a{color:var(--site-sage);font-size:13px;font-weight:700;text-decoration:underline;text-decoration-color:#7df0c54d;text-underline-offset:4px}
+.playbooks-related-resource-links a:hover{color:#2ad4f9}
+.playbooks-related-resource-links a:focus-visible{outline:2px solid var(--site-sage);outline-offset:4px;border-radius:2px}
+@media(max-width:700px){.playbooks-related-resource{grid-template-columns:1fr;gap:12px}.playbooks-related-resource-copy p{font-size:13px}.playbooks-related-resource-links{flex-direction:column;align-items:flex-start}}
