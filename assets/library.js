@@ -8,6 +8,22 @@ const totalMark=document.querySelector('[data-assistant-total]');
 const ar=document.documentElement.lang==='ar';
 const fmt=new Intl.NumberFormat(ar?'ar-EG':'en');
 const number=n=>fmt.format(n);
+const lib=document.querySelector('.library');
+const more=document.querySelector('#show-all');
+function syncTaskFilters(value=cat?.value||''){
+  for(const filter of filters){
+    const active=(filter.dataset.categoryFilter||'')===value;
+    filter.classList.toggle('is-active',active);
+    filter.setAttribute('aria-pressed',String(active));
+  }
+}
+function expandForSelection(value){
+  if(value&&lib&&!lib.classList.contains('expanded')){
+    lib.classList.add('expanded');
+    more?.setAttribute('aria-expanded','true');
+    if(more?.firstChild)more.firstChild.textContent=more.dataset.close;
+  }
+}
 function updateCounts(){
   if(totalMark) totalMark.textContent=number(cards.length);
   for(const filter of filters){
@@ -32,10 +48,16 @@ function update(){
     count.textContent=label+' '+count.dataset.after;
   }
 }
-updateCounts();update();
+updateCounts();update();syncTaskFilters();
 q?.addEventListener('input',()=>{if(q.value.trim())document.querySelector('.library')?.classList.add('expanded');update()});
-cat?.addEventListener('change',update);
-const more=document.querySelector('#show-all'),lib=document.querySelector('.library');
+cat?.addEventListener('change',()=>{syncTaskFilters();expandForSelection(cat.value);update()});
+filters.forEach(filter=>filter.addEventListener('click',()=>{
+  const value=filter.dataset.categoryFilter||'';
+  if(cat)cat.value=value;
+  syncTaskFilters(value);
+  expandForSelection(value);
+  update();
+}));
 more?.addEventListener('click',()=>{const expanded=lib.classList.toggle('expanded');more.setAttribute('aria-expanded',String(expanded));more.firstChild.textContent=expanded?more.dataset.close:more.dataset.open});
 document.querySelectorAll('[data-copy-target]').forEach(b=>b.addEventListener('click',async()=>{const e=document.querySelector(b.dataset.copyTarget);if(!e)return;try{await navigator.clipboard.writeText(e.textContent);const old=b.textContent;b.textContent=b.dataset.done||'Copied';setTimeout(()=>b.textContent=old,1600)}catch{b.textContent='Select and copy manually'}}));
 const els=[...document.querySelectorAll('.hero,.detail-head,.bot')];
