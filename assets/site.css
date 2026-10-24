@@ -947,3 +947,29 @@ html[dir="rtl"] .playbooks-faq article:nth-child(2n){padding-inline-start:0;padd
 .playbooks-related-resource-links a:hover{color:#2ad4f9}
 .playbooks-related-resource-links a:focus-visible{outline:2px solid var(--site-sage);outline-offset:4px;border-radius:2px}
 @media(max-width:700px){.playbooks-related-resource{grid-template-columns:1fr;gap:12px}.playbooks-related-resource-copy p{font-size:13px}.playbooks-related-resource-links{flex-direction:column;align-items:flex-start}}
+
+/* Unified, image-free assistant identity: typographic index marks replace per-assistant artwork. */
+.library .bot[hidden]{display:none!important}
+.library .bot-card-link{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;grid-template-rows:auto 1fr;align-items:start;gap:12px 16px;min-height:156px!important;height:100%!important;padding:18px!important;border:1px solid #ffffff20;border-radius:4px 20px 4px 4px;background:linear-gradient(140deg,#102137 0%,#0b1724 74%);color:#eef5fb;text-decoration:none;transition:border-color .24s ease,background .24s ease,transform .24s ease}
+.library .bot-card-link:focus-visible{outline:2px solid #7df0c5;outline-offset:3px;box-shadow:none}
+.library .bot-card-link:hover{border-color:#7df0c577;background:linear-gradient(140deg,#142a40 0%,#0b1724 76%);color:#eef5fb}
+.library .bot-card-link .bot-icon-wrap{display:none!important}
+.library .bot-card-link .assistant-mark{grid-column:2;grid-row:1;align-self:start}
+.library .bot-card-link .bot-body{grid-column:1;grid-row:1 / span 2;min-width:0;justify-content:flex-start;padding:0!important;text-align:start}
+.library .bot-card-link .bot-body small{display:block;max-width:100%;margin:1px 0 10px;color:#7df0c5;font-size:9px;line-height:1.35;letter-spacing:.08em;text-transform:uppercase}
+.library .bot-card-link .bot-body h3{margin:0 0 9px;color:#f2f5f7;font-size:clamp(15px,1.2vw,18px);line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+.library .bot-card-link .bot-body p{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:3!important;max-height:none!important;margin:0;color:#aebdca;font-size:12px;line-height:1.55;overflow:hidden}
+.assistant-mark{position:relative;display:grid;flex:none;place-items:center;width:44px;height:44px;overflow:visible;border:1px solid #7df0c568;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1fd0ff20,transparent 68%),#0b1a28;color:#7df0c5;font:700 12px/1 "Space Grotesk",ui-monospace,monospace;letter-spacing:.02em}
+.assistant-mark:before{position:absolute;inset:5px;border:1px solid #1fd0ff4f;border-radius:50%;content:"";transform:rotate(-24deg) scaleX(.72)}
+.assistant-mark:after{position:absolute;inset:-4px;border:1px solid #ffcf663d;border-radius:50%;content:"";transform:rotate(28deg) scaleX(.82)}
+.assistant-mark>span{position:relative;z-index:1}
+.library .bot-card-link:hover .assistant-mark{border-color:#7df0c5;box-shadow:0 0 22px #1fd0ff20}
+@media(max-width:760px){
+ .library .bot-card-link{grid-template-columns:minmax(0,1fr) 38px!important;min-height:132px!important;padding:15px!important;gap:10px 12px}
+ .library .bot-card-link .assistant-mark{width:38px;height:38px}
+ .library .bot-card-link .bot-body small{font-size:8px;margin-bottom:8px}
+ .library .bot-card-link .bot-body h3{font-size:15px}
+ .library .bot-card-link .bot-body p{font-size:11px;-webkit-line-clamp:3!important}
+}
+@media(max-width:420px){.library .bot-card-link{grid-template-columns:minmax(0,1fr) 34px!important;padding:13px!important}.library .bot-card-link .assistant-mark{width:34px;height:34px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.library .bot-card-link,.library .bot-card-link .assistant-mark{transition:none!important}}
