@@ -1,65 +1,150 @@
-(()=>{
-const q=document.querySelector('#search');
-const cat=document.querySelector('#category');
-const cards=[...document.querySelectorAll('.bot')];
-const count=document.querySelector('#result-count');
-const filters=[...document.querySelectorAll('.task-filter')];
-const totalMark=document.querySelector('[data-assistant-total]');
-const ar=document.documentElement.lang==='ar';
-const fmt=new Intl.NumberFormat(ar?'ar-EG':'en');
-const number=n=>fmt.format(n);
-const lib=document.querySelector('.library');
-const more=document.querySelector('#show-all');
-function syncTaskFilters(value=cat?.value||''){
-  for(const filter of filters){
-    const active=(filter.dataset.categoryFilter||'')===value;
-    filter.classList.toggle('is-active',active);
-    filter.setAttribute('aria-pressed',String(active));
+(() => {
+  const input = document.querySelector('#search');
+  const category = document.querySelector('#category');
+  const cards = [...document.querySelectorAll('.bot')];
+  const cardGrid = cards[0]?.parentElement;
+  const count = document.querySelector('#result-count');
+  const filters = [...document.querySelectorAll('.task-filter')];
+  const totalMark = document.querySelector('[data-assistant-total]');
+  const emptyState = document.querySelector('[data-library-empty]');
+  const emptyLink = emptyState?.querySelector('[data-full-directory-link]');
+  const search = window.AssistantSearch;
+  const isArabic = document.documentElement.lang === 'ar';
+  const format = new Intl.NumberFormat(isArabic ? 'ar-EG' : 'en');
+  const library = document.querySelector('.library');
+  const more = document.querySelector('#show-all');
+  let selectedCategory = '';
+
+  function syncTaskFilters(value = category?.value || '') {
+    for (const filter of filters) {
+      const active = (filter.dataset.categoryFilter || '') === value;
+      filter.classList.toggle('is-active', active);
+      filter.setAttribute('aria-pressed', String(active));
+    }
   }
-}
-function expandForSelection(value){
-  if(value&&lib&&!lib.classList.contains('expanded')){
-    lib.classList.add('expanded');
-    more?.setAttribute('aria-expanded','true');
-    if(more?.firstChild)more.firstChild.textContent=more.dataset.close;
+
+  function expandForSelection(value) {
+    if (value && library && !library.classList.contains('expanded')) {
+      library.classList.add('expanded');
+      more?.setAttribute('aria-expanded', 'true');
+      if (more?.firstChild) more.firstChild.textContent = more.dataset.close;
+    }
   }
-}
-function updateCounts(){
-  if(totalMark) totalMark.textContent=number(cards.length);
-  for(const filter of filters){
-    const category=filter.dataset.categoryFilter||'';
-    const total=cards.reduce((n,card)=>n+(!category||card.dataset.category===category?1:0),0);
-    let badge=filter.querySelector('small');
-    if(!badge){badge=document.createElement('small');badge.setAttribute('aria-hidden','true');filter.append(badge);}
-    badge.textContent=number(total);
+
+  function updateCounts() {
+    if (totalMark) totalMark.textContent = format.format(cards.length);
+    for (const filter of filters) {
+      const selected = filter.dataset.categoryFilter || '';
+      const total = cards.reduce((sum, card) => sum + (!selected || card.dataset.category === selected ? 1 : 0), 0);
+      let badge = filter.querySelector('small');
+      if (!badge) {
+        badge = document.createElement('small');
+        badge.setAttribute('aria-hidden', 'true');
+        filter.append(badge);
+      }
+      badge.textContent = format.format(total);
+    }
   }
-}
-function update(){
-  const s=(q?.value||'').toLowerCase().trim();
-  const c=cat?.value||'';
-  let n=0;
-  for(const card of cards){
-    const hit=(!s||card.dataset.search.includes(s))&&(!c||card.dataset.category===c);
-    card.hidden=!hit;
-    if(hit)n++;
+
+  function update() {
+    const rawQuery = input?.value.trim() || '';
+    const query = search?.normalize(rawQuery) || rawQuery.toLocaleLowerCase();
+    const selected = category?.value || selectedCategory;
+    const ranked = [];
+
+    cards.forEach((card, index) => {
+      const relevance = query
+        ? (search?.score(query, card.dataset.search || '') || 0)
+        : 0;
+      const matches = (!selected || card.dataset.category === selected) && (!query || relevance > 0);
+      card.hidden = !matches;
+      if (matches) ranked.push({ card, index, relevance });
+    });
+
+    if (query) ranked.sort((a, b) => b.relevance - a.relevance || a.index - b.index);
+    // These cards use CSS Grid, where `order` does not change visual order.
+    // Reinsert them in relevance order so the best matches actually appear first.
+    if (cardGrid) {
+      const ordered = query
+        ? [...ranked.map(item => item.card), ...cards.filter(card => !ranked.some(item => item.card === card))]
+        : cards;
+      const fragment = document.createDocumentFragment();
+      ordered.forEach(card => fragment.append(card));
+      cardGrid.append(fragment);
+    }
+
+    const visible = ranked.length;
+    if (count) {
+      const label = isArabic
+        ? (visible === 0 ? 'لا يوجد مساعدون' : visible === 1 ? 'مساعد واحد' : visible === 2 ? 'مساعدان' : visible <= 10 ? `${format.format(visible)} مساعدين` : `${format.format(visible)} مساعدًا`)
+        : `${format.format(visible)} ${count.dataset.label || 'assistants'}`;
+      count.textContent = `${label} ${count.dataset.after || ''}`.trim();
+    }
+
+    const showEmpty = Boolean(query && visible === 0);
+    if (emptyState) emptyState.hidden = !showEmpty;
+    if (emptyLink) {
+      const directory = isArabic ? '/ar/assistants/library/' : '/assistants/library/';
+      emptyLink.href = `${directory}?q=${encodeURIComponent(rawQuery)}`;
+    }
   }
-  if(count){
-    const label=ar?(n===0?'لا يوجد مساعدون':n===1?'مساعد واحد':n===2?'مساعدان':n<=10?`${number(n)} مساعدين`:`${number(n)} مساعدًا`):`${number(n)} ${count.dataset.label}`;
-    count.textContent=label+' '+count.dataset.after;
-  }
-}
-updateCounts();update();syncTaskFilters();
-q?.addEventListener('input',()=>{if(q.value.trim())document.querySelector('.library')?.classList.add('expanded');update()});
-cat?.addEventListener('change',()=>{syncTaskFilters();expandForSelection(cat.value);update()});
-filters.forEach(filter=>filter.addEventListener('click',()=>{
-  const value=filter.dataset.categoryFilter||'';
-  if(cat)cat.value=value;
-  syncTaskFilters(value);
-  expandForSelection(value);
+
+  updateCounts();
   update();
-}));
-more?.addEventListener('click',()=>{const expanded=lib.classList.toggle('expanded');more.setAttribute('aria-expanded',String(expanded));more.firstChild.textContent=expanded?more.dataset.close:more.dataset.open});
-document.querySelectorAll('[data-copy-target]').forEach(b=>b.addEventListener('click',async()=>{const e=document.querySelector(b.dataset.copyTarget);if(!e)return;try{await navigator.clipboard.writeText(e.textContent);const old=b.textContent;b.textContent=b.dataset.done||'Copied';setTimeout(()=>b.textContent=old,1600)}catch{b.textContent='Select and copy manually'}}));
-const els=[...document.querySelectorAll('.hero,.detail-head,.bot')];
-if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.08});els.forEach((e,i)=>{e.classList.add('reveal');if(e.classList.contains('bot'))e.style.setProperty('--reveal-index',String(i%9));io.observe(e)})}else els.forEach(e=>e.classList.add('is-visible'));
+  syncTaskFilters();
+  input?.addEventListener('input', () => {
+    if (input.value.trim()) library?.classList.add('expanded');
+    update();
+  });
+  category?.addEventListener('change', () => {
+    selectedCategory = category.value;
+    syncTaskFilters(selectedCategory);
+    expandForSelection(selectedCategory);
+    update();
+  });
+  filters.forEach(filter => filter.addEventListener('click', () => {
+    selectedCategory = filter.dataset.categoryFilter || '';
+    if (category) category.value = selectedCategory;
+    syncTaskFilters(selectedCategory);
+    expandForSelection(selectedCategory);
+    update();
+  }));
+  document.querySelectorAll('[data-search-example]').forEach(button => button.addEventListener('click', () => {
+    if (!input) return;
+    input.value = button.dataset.searchExample || '';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.focus();
+  }));
+  more?.addEventListener('click', () => {
+    const expanded = library.classList.toggle('expanded');
+    more.setAttribute('aria-expanded', String(expanded));
+    if (more.firstChild) more.firstChild.textContent = expanded ? more.dataset.close : more.dataset.open;
+  });
+
+  document.querySelectorAll('[data-copy-target]').forEach(button => button.addEventListener('click', async () => {
+    const target = document.querySelector(button.dataset.copyTarget);
+    if (!target) return;
+    try {
+      await navigator.clipboard.writeText(target.textContent);
+      const oldText = button.textContent;
+      button.textContent = button.dataset.done || 'Copied';
+      setTimeout(() => { button.textContent = oldText; }, 1600);
+    } catch {
+      button.textContent = isArabic ? 'انسخ النص يدويًا' : 'Select and copy manually';
+    }
+  }));
+
+  const revealElements = [...document.querySelectorAll('.hero,.detail-head,.bot')];
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(items => items.forEach(item => {
+      if (!item.isIntersecting) return;
+      item.target.classList.add('is-visible');
+      observer.unobserve(item.target);
+    }), { threshold: .08 });
+    revealElements.forEach((element, index) => {
+      element.classList.add('reveal');
+      if (element.classList.contains('bot')) element.style.setProperty('--reveal-index', String(index % 9));
+      observer.observe(element);
+    });
+  } else revealElements.forEach(element => element.classList.add('is-visible'));
 })();
