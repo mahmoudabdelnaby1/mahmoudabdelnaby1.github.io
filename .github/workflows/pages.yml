@@ -23,7 +23,7 @@ jobs:
       - name: Assemble current website files
         run: |
           mkdir -p _site
-          cp -R index.html ar assets assistants playbooks llms.txt robots.txt sitemap.xml .nojekyll _site/
+          cp -R index.html ar assets assistants playbooks skill-areas skills llms.txt robots.txt sitemap.xml .nojekyll _site/
           rm -f _site/README.md
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
