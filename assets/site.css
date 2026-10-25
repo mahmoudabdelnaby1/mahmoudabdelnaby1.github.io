@@ -975,3 +975,25 @@ html[dir="rtl"] .playbooks-faq article:nth-child(2n){padding-inline-start:0;padd
 @media(prefers-reduced-motion:reduce){.library .bot-card-link,.library .bot-card-link .assistant-mark{transition:none!important}}
 
 .assistant-mark--long{font-size:clamp(9px,1vw,11px);letter-spacing:-.06em}.assistant-mark--hero{display:grid;place-items:center;width:min(100%,190px);aspect-ratio:1;border:1px solid #79efc866;border-radius:50%;background:radial-gradient(circle,#2ad4f922,transparent 68%);color:#79efc8;font:800 38px/1 "Space Grotesk",sans-serif;box-shadow:inset 0 0 0 10px #2ad4f90a,0 0 45px #2ad4f91a}.assistant-mark--related{display:grid;place-items:center;width:42px;height:42px;flex:none;border:1px solid #79efc866;border-radius:50%;color:#79efc8;font-size:12px;font-weight:800}.bot-card-link .assistant-mark--tile{flex:none}
+
+/* Canonical digital-marketing skill library */
+.skills-library-section{position:relative;scroll-margin-top:90px;padding:clamp(66px,8.5vw,112px) 0;border-block:1px solid var(--site-line);background:radial-gradient(ellipse at 88% 0%,#1fd0ff08,transparent 38%)}
+.skills-library-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(26px,6vw,88px);margin-bottom:clamp(34px,5vw,58px)}
+.skills-library-copy{max-width:900px}.skills-library-copy .eyebrow{color:var(--site-sage)}
+.skills-library-copy h2{max-width:17ch;margin:12px 0 18px;color:var(--site-ink);font-size:clamp(38px,5.6vw,72px);line-height:1.03;letter-spacing:-.055em;text-wrap:balance}
+.skills-library-copy>p{max-width:68ch;margin:0;color:var(--site-muted);font-size:clamp(14px,1.2vw,16px);line-height:1.8}
+.skills-library-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px;margin-top:25px}
+.skills-library-primary,.skills-library-secondary{display:inline-flex;min-height:46px;align-items:center;gap:9px;color:var(--site-ink);font-size:13px;font-weight:700;text-decoration:none}
+.skills-library-primary{padding:0 17px;border:1px solid var(--site-sage);border-radius:3px 16px 3px 3px;background:var(--site-sage);color:#07131d;transition:transform .2s ease,background-color .2s ease}
+.skills-library-primary:hover{transform:translateY(-2px);background:#a7f6d8}.skills-library-primary:focus-visible,.skills-library-secondary:focus-visible,.skills-domain:focus-visible{outline:2px solid var(--site-sage);outline-offset:4px}
+.skills-library-secondary{color:var(--site-muted);text-decoration:underline;text-decoration-color:#7df0c555;text-underline-offset:5px}
+.skills-library-count{display:flex;align-items:center;gap:14px;padding-inline-start:22px;border-inline-start:1px solid var(--site-line);color:var(--site-muted)}
+.skills-library-count strong{color:var(--site-sage);font:700 clamp(38px,5vw,60px)/1 "Space Grotesk",sans-serif;letter-spacing:-.06em}.skills-library-count span{font-size:11px;line-height:1.6}
+.skills-domain-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,4vw,56px);border-top:1px solid var(--site-line)}
+.skills-domain{display:grid;grid-template-columns:34px minmax(0,1fr) auto 16px;align-items:center;gap:12px;min-width:0;min-height:60px;padding:10px 2px;border-bottom:1px solid var(--site-line);color:inherit;text-decoration:none;transition:padding .2s ease,background-color .2s ease}
+.skills-domain:hover{padding-inline:9px;background:linear-gradient(90deg,transparent,#7df0c508 70%,transparent)}
+.skills-domain-index{color:var(--site-coral);font:700 10px/1.2 "Space Grotesk",sans-serif;letter-spacing:.08em}.skills-domain-name{min-width:0;color:var(--site-ink);font-size:13px;font-weight:650;line-height:1.4}.skills-domain-count{color:var(--site-muted);font-size:10px;white-space:nowrap}.skills-domain-arrow{color:var(--site-sage);font-size:14px;transition:transform .2s ease}.skills-domain:hover .skills-domain-arrow{transform:translate(2px,-2px)}
+html[dir="rtl"] .skills-library-head{direction:rtl;text-align:right}html[dir="rtl"] .skills-library-actions{direction:rtl}html[dir="rtl"] .skills-domain-list{direction:rtl}html[dir="rtl"] .skills-domain{direction:rtl}html[dir="rtl"] .skills-library-count{direction:rtl}
+@media(max-width:760px){.skills-library-head{grid-template-columns:minmax(0,1fr) auto;gap:20px}.skills-library-copy h2{font-size:clamp(36px,8vw,52px)}.skills-domain-list{grid-template-columns:1fr;column-gap:0}.skills-domain{min-height:58px}}
+@media(max-width:520px){.skills-library-head{grid-template-columns:1fr;gap:18px}.skills-library-count{justify-self:start;padding-inline-start:0;border-inline-start:0}.skills-library-actions{align-items:stretch;flex-direction:column;gap:5px}.skills-library-primary{justify-content:center}.skills-domain{grid-template-columns:27px minmax(0,1fr) auto 14px;gap:8px}.skills-domain-name{font-size:12px}.skills-domain-count{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.skills-library-primary,.skills-domain,.skills-domain-arrow{transition:none}}
