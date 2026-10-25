@@ -11,7 +11,7 @@ let selected='';
 // Task language is deliberately separate from the catalogue copy so new assistants
 // can be matched by the job they do, even when a visitor describes it differently.
 const intents=[
- {keys:['hook','hooks','headline','opening line','ad copy','هوك','الهوك','افتتاحية','افتتاحيه','بداية الاعلان','خطاف'],terms:['hook','headline','opening','copywriting','ad copy','creative','caption','هوك','افتتاح','اعلان','إعلان','كتابة']},
+ {keys:['hook','hooks','headline','opening line','ad copy','هوك','الهوك','افتتاحية','افتتاحيه','بداية الاعلان','خطاف'],terms:['hook','headline','opening','ad copy','caption','هوك','افتتاح','خطاف']},
  {keys:['conversion','conversions','checkout','sales are low','low sales','تحويل','التحويلات','مبيعات','البيع','السلة','الدفع'],terms:['conversion','checkout','cro','funnel','cart','sales','purchase','تحويل','السلة','الدفع','مبيعات','شراء']},
  {keys:['social media','content calendar','post ideas','social posts','السوشيال','السوشيال ميديا','تقويم محتوى','أفكار محتوى','افكار محتوى','منشورات'],terms:['social media','content calendar','social content','post','caption','platform','سوشيال','محتوى','منشور','تقويم']},
  {keys:['seo','google ranking','search visibility','ai search','ظهور في جوجل','محركات البحث','تحسين محركات البحث','السيو'],terms:['seo','search visibility','search engine','keyword','serp','aeo','geo','محركات البحث','السيو','كلمات مفتاحية']},
@@ -34,6 +34,13 @@ const stop=new Set(['i','me','my','we','you','a','an','the','to','for','of','on'
 const normalize=value=>(value||'').toLocaleLowerCase().normalize('NFKC').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[’‘`]/g,"'").replace(/[^\p{L}\p{N}+#.\s'-]/gu,' ').replace(/\s+/g,' ').trim();
 const haystacks=entries.map(entry=>normalize(entry.dataset.search||''));
 const normalizedIntents=intents.map(item=>({keys:item.keys.map(normalize),terms:item.terms.map(normalize)}));
+function hasTerm(text,term){
+ if(!term)return false;
+ if(term.includes(' '))return text.includes(term);
+ if(/[\u0600-\u06ff]/.test(term))return text.includes(term);
+ const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+ return new RegExp(`(^|[^\\p{L}\\p{N}])${escaped}(?:s|es|ed|ing)?(?=$|[^\\p{L}\\p{N}])`,'u').test(text);
+}
 
 function rank(query,index){
  const text=haystacks[index];
@@ -41,10 +48,10 @@ function rank(query,index){
  let score=0;
  if(text.includes(query))score+=100;
  const tokens=query.split(' ').filter(token=>token.length>1&&!stop.has(token));
- for(const token of tokens){if(text.includes(token))score+=12;}
+ for(const token of tokens){if(hasTerm(text,token))score+=12;}
  const matched=normalizedIntents.filter(intent=>intent.keys.some(key=>key&&query.includes(key)));
  for(const intent of matched){
-  const hits=intent.terms.filter(term=>term&&text.includes(term));
+  const hits=intent.terms.filter(term=>hasTerm(text,term));
   if(hits.length)score+=Math.min(54,22+hits.length*6);
  }
  return score;
