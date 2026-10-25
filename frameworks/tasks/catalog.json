@@ -1,0 +1,830 @@
+[
+  {
+    "framework_id": "FW-001",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "MENA Native Search Root & Dialect Keyword Matrix Prompt",
+    "title_ar": "قالب هندسة الكلمات المفتاحية العربية حسب الجذر اللغوي واللهجة المحلية (مصر والخليج)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/01-seo/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-002",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Arabic Orthographic Normalization Checklist (Hamza, Taa Marbuta, Alef Maqsura & Indic Digits)",
+    "title_ar": "قائمة فحص تطبيع الحروف والأرقام العربية في البحث الداخلي والـ SEO (الهمزات، التاء المربوطة، الألف المقصورة، والأرقام الهندية)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/01-seo/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-003",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Salla & MENA E-Commerce Sitemap Hygiene & Dead-AI-URL Purge Checklist",
+    "title_ar": "قائمة فحص وتطهير خرائط المواقع (`sitemap.xml`) في متاجر سلة والتجارة الإلكترونية من الروابط المعطوبة والمحذوفة",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/01-seo/FW-003-AMP-003-salla-mena-e-commerce-sitemap-hygiene-dead-ai-url-purge",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-004",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Bilingual Storefront Canonical & Hreflang Conflict Resolution Checklist (Salla, Zid & Custom MENA Stores)",
+    "title_ar": "قائمة فحص وإصلاح تضارب `canonical` و`hreflang` في المتاجر ثنائية اللغة (العربية والإنجليزية)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/01-seo/FW-004-AMP-004-bilingual-storefront-canonical-hreflang-conflict-resolut",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-005",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Bilingual Storefront `/en/` Title & Meta Tag Localization Workflow (Salla & Zid)",
+    "title_ar": "مسار عمل تعريب وترجمة وسوم العناوين (`<title>`) والميتا للصفحات الإنجليزية في متاجر سلة وزد",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/01-seo/FW-005-AMP-005-bilingual-storefront-en-title-meta-tag-localization-work",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-006",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Zid & MENA Storefront `robots.txt` Sitemap Directive & AI-Crawler Governance Checklist",
+    "title_ar": "قائمة فحص ملف `robots.txt` وإعلان `Sitemap:` وضبط زواحف الذكاء الاصطناعي في متاجر زد والمنطقة",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/01-seo/FW-006-AMP-006-zid-mena-storefront-robots-txt-sitemap-directive-ai-craw",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-007",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Salla & MENA E-Commerce Product JSON-LD `brand` & Merchant Schema Injection Checklist",
+    "title_ar": "قائمة فحص وحقن خاصية العلامة التجارية (`brand`) والبيانات المهيكلة `Product JSON-LD` في متاجر سلة والمنطقة",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/01-seo/FW-007-AMP-007-salla-mena-e-commerce-product-json-ld-brand-merchant-sch",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-008",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Arabic URL Slug Architecture & Percent-Encoding Length Decision Aid",
+    "title_ar": "أداة القرار المعماري لروابط صفحات الويب العربية (`URL Slugs`) ومنع انفجار الترميز المئوي (`%D8%`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/01-seo/FW-008-AMP-008-arabic-url-slug-architecture-percent-encoding-length-dec",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-009",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Amazon.sa & Amazon.eg 250-Byte UTF-8 Arabic Generic Keyword Compressor Prompt & Script",
+    "title_ar": "قالب وأداة ضغط الكلمات المفتاحية الخفية (`Generic Keywords`) لمتاجر `Amazon.sa` و`Amazon.eg` تحت حد 250 بايت (`UTF-8`)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/01-seo/FW-009-AMP-009-amazon-sa-amazon-eg-250-byte-utf-8-arabic-generic-keywor",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-010",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Amazon.sa & Amazon.ae 75-Character Product Title Compression Prompt & Policy Template",
+    "title_ar": "قالب صياغة وضغط عناوين منتجات `Amazon.sa` و`Amazon.ae` ضمن السقف الرسمي (75 حرفاً) لمنع إعادة الكتابة الآلية",
+    "artifact_type": "CONTENT_TEMPLATE",
+    "folder_path": "frameworks/01-seo/FW-010-AMP-010-amazon-sa-amazon-ae-75-character-product-title-compressi",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-011",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "Noon KSA, UAE & Egypt Bilingual NIS Catalog & Attribute Completeness Playbook",
+    "title_ar": "دليل التشغيل الثنائي اللغة لكتالوجات نون (`Noon KSA / UAE / Egypt`) لضمان الظهور في الواجهة العربية",
+    "artifact_type": "PLAYBOOK",
+    "folder_path": "frameworks/01-seo/FW-011-AMP-011-noon-ksa-uae-egypt-bilingual-nis-catalog-attribute-compl",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-012",
+    "channel": "Search Engine Optimization (SEO)",
+    "title_en": "MENA Programmatic City/Service Page Governance Framework (Anti-Scaled Content Abuse)",
+    "title_ar": "الإطار التشغيلي لحوكمة صفحات المدن والخدمات المولدة برمجياً (تجنب عقوبة `Scaled Content Abuse` في جوجل)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/01-seo/FW-012-AMP-012-mena-programmatic-city-service-page-governance-framework",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-013",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "MENA Cross-Market Budget Isolation Decision Aid (Preventing the 4–5x Egypt vs. GCC CPM Arbitrage Trap)",
+    "title_ar": "أداة قرار فصل الميزانيات الإعلانية بين مصر والخليج (منع فخ التهام الميزانية بسبب فارق الـ CPM البالغ 4–5 أضعاف)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/02-ppc-advertising/FW-013-AMP-061-mena-cross-market-budget-isolation-decision-aid-preventi",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-014",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "COD Net-Delivered Revenue Bidding & Offline Conversion Feedback Workflow (Egypt & KSA)",
+    "title_ar": "مسار عمل تدريب خوارزميات الإعلانات على «طلبات الدفع عند الاستلام المسلّمة فعلياً» بدلاً من الطلبات الوهمية (مصر والسعودية)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/02-ppc-advertising/FW-014-AMP-062-cod-net-delivered-revenue-bidding-offline-conversion-fee",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-015",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Google Merchant Center White Friday Price-Update Cadence & Sale-Price Schema Checklist",
+    "title_ar": "قائمة فحص وتوقيت تحديث الأسعار في Google Merchant Center خلال الجمعة البيضاء والمواسم لمنع رفض المنتجات",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/02-ppc-advertising/FW-015-AMP-063-google-merchant-center-white-friday-price-update-cadence",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-016",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Saudi, UAE & Egyptian False-Discount & Promotional Compliance Checklist",
+    "title_ar": "قائمة فحص الامتثال لقوانين التخفيضات والعروض الترويجية في السعودية والإمارات ومصر (منع غرامات التخفيضات الوهمية)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/02-ppc-advertising/FW-016-AMP-064-saudi-uae-egyptian-false-discount-promotional-compliance",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-017",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Meta Advantage+ Creative Auto-Enhancement Guardrail Checklist for Arab & Ramadan Campaigns",
+    "title_ar": "قائمة فحص وضبط التحسينات التلقائية (`Meta Advantage+ Creative`) لحماية الهوية البصرية والنصوص العربية وحملات رمضان",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/02-ppc-advertising/FW-017-AMP-065-meta-advantage-creative-auto-enhancement-guardrail-check",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-018",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Google Ads AI Max & PMax Arabic Morphological Negative Keyword Generator Prompt",
+    "title_ar": "قالب توليد قوائم الكلمات السلبية الصرفية واللهجية لحملات Google Ads AI Max وPerformance Max بالعربية",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/02-ppc-advertising/FW-018-AMP-066-google-ads-ai-max-pmax-arabic-morphological-negative-key",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-019",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Meta CAPI Browser/Server Deduplication & `fbp`/`fbc` Match-Key Checklist for MENA Checkouts",
+    "title_ar": "قائمة فحص منع ازدواجية التحويلات (`Deduplication`) وتمرير مفاتيح `fbp`/`fbc` في `Meta CAPI` لمتاجر المنطقة",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/02-ppc-advertising/FW-019-AMP-067-meta-capi-browser-server-deduplication-fbp-fbc-match-key",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-020",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Snapchat Dynamic Product Ads (DPA) Gulf & Egypt Catalog Feed Validator Checklist",
+    "title_ar": "قائمة فحص وتدقيق كتالوجات إعلانات المنتجات الديناميكية في سناب شات (`Snapchat DPA`) لأسواق الخليج ومصر",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/02-ppc-advertising/FW-020-AMP-068-snapchat-dynamic-product-ads-dpa-gulf-egypt-catalog-feed",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-021",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "Google Ads Search Campaign Channel Allocation & Lead Quality Review",
+    "title_ar": "مراجعة توزيع القنوات وجودة العملاء المحتملين في حملات البحث على Google Ads",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/02-ppc-advertising/FW-021-AMP-069-google-ads-search-to-display-spend-isolation-lead-qualit",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-022",
+    "channel": "Pay-Per-Click (PPC) Advertising",
+    "title_en": "MENA Healthcare & Pharmaceutical Paid Search Eligibility & Regulatory Routing Aid",
+    "title_ar": "أداة القرار الإعلاني للقطاع الصحي والدوائي في الأسواق العربية (قيود `Google AI Mode` وتصاريح `SFDA / MOH / EDA`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/02-ppc-advertising/FW-022-AMP-070-mena-healthcare-pharmaceutical-paid-search-eligibility-r",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-023",
+    "channel": "Social Media Marketing",
+    "title_en": "MENA Social Channel Mix Validation Aid",
+    "title_ar": "أداة التحقق من مزيج قنوات التواصل الاجتماعي في أسواق المنطقة",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/03-social-media-marketing/FW-023-AMP-121-mena-country-by-country-social-platform-reach-channel-mi",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-024",
+    "channel": "Social Media Marketing",
+    "title_en": "Platform-Native Arabic Social Copy Matrix Prompt (X, LinkedIn, Instagram, TikTok & Snapchat)",
+    "title_ar": "قالب هندسة المحتوى العربي المخصص لكل منصة تواصل اجتماعي (إكس، لينكدإن، إنستغرام، تيك توك، وسناب شات)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/03-social-media-marketing/FW-024-AMP-122-platform-native-arabic-social-copy-matrix-prompt-x-linke",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-025",
+    "channel": "Social Media Marketing",
+    "title_en": "Arabic Customer-Service Chatbot Dialect Guardrail & 'False-Friends' Lexicon Checklist",
+    "title_ar": "قائمة فحص وضبط لهجات بوتات خدمة العملاء بالعربية (منع «الأصدقاء الكاذبين» بين اللهجات والردود الفظة)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/03-social-media-marketing/FW-025-AMP-123-arabic-customer-service-chatbot-dialect-guardrail-false",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-026",
+    "channel": "Social Media Marketing",
+    "title_en": "TikTok, Meta & Snapchat AIGC Disclosure & C2PA Metadata Compliance Checklist",
+    "title_ar": "قائمة فحص الإفصاح الإلزامي عن المحتوى المولد بالذكاء الاصطناعي (`AIGC`) وبصمة `C2PA` على تيك توك وميتا وسناب شات",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/03-social-media-marketing/FW-026-AMP-124-tiktok-meta-snapchat-aigc-disclosure-c2pa-metadata-compl",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-027",
+    "channel": "Social Media Marketing",
+    "title_en": "MENA Dual Hijri-Gregorian & National-Occasion AI Content Calendar Workflow",
+    "title_ar": "مسار عمل بناء خطط المحتوى بالذكاء الاصطناعي بالتقويمين الهجري والميلادي (رصد تداخل رمضان مع الأعياد الوطنية والمواسم)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/03-social-media-marketing/FW-027-AMP-125-mena-dual-hijri-gregorian-national-occasion-ai-content-c",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-028",
+    "channel": "Social Media Marketing",
+    "title_en": "Social-to-WhatsApp Click-to-Chat Attribution & Pre-Qualification Triage Workflow",
+    "title_ar": "مسار عمل تتبع إحالات روابط «انقر للدردشة في واتساب» (`Click-to-WhatsApp`) وفرز العملاء قبل التحويل للمبيعات",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/03-social-media-marketing/FW-028-AMP-126-social-to-whatsapp-click-to-chat-attribution-pre-qualifi",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-029",
+    "channel": "Social Media Marketing",
+    "title_en": "Saudi Marketing Team Planning & Nitaqat Verification Decision Aid",
+    "title_ar": "أداة تخطيط فريق التسويق والتحقق من متطلبات نطاقات في السعودية",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/03-social-media-marketing/FW-029-AMP-127-saudi-marketing-team-operating-plan-60-saudization-nitaq",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-030",
+    "channel": "Social Media Marketing",
+    "title_en": "MENA Social Crisis-Response & Anti-Hallucination Escalation Playbook (X, Facebook & TikTok)",
+    "title_ar": "دليل التشغيل للرد على الأزمات والشكاوى العلنية على إكس وفيسبوك وتيك توك (منع اعتراف الذكاء الاصطناعي بالمسؤولية أو اختلاق التعويضات)",
+    "artifact_type": "PLAYBOOK",
+    "folder_path": "frameworks/03-social-media-marketing/FW-030-AMP-128-mena-social-crisis-response-anti-hallucination-escalatio",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-031",
+    "channel": "Social Media Marketing",
+    "title_en": "Social Comment Moderation Whitelist & Dialectal Price-Inquiry Routing Checklist (`بكام` / `بكم`)",
+    "title_ar": "قائمة فحص وضبط الفلترة الآلية للتعليقات لحماية استفسارات الشراء باللهجات (`بكام` / `بكم` / `تفاصيل`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/03-social-media-marketing/FW-031-AMP-129-social-comment-moderation-whitelist-dialectal-price-inqu",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-032",
+    "channel": "Social Media Marketing",
+    "title_en": "MENA Paid Social Reach De-Duplication & Qualified Conversion Evaluation Aid (TikTok/Snap KSA & UAE)",
+    "title_ar": "أداة تقييم الوصول الفعلي والتحويلات المؤهلة في إعلانات التواصل الاجتماعي (معالجة تضخم أرقام الوصول في تيك توك وسناب شات بالخليج)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/03-social-media-marketing/FW-032-AMP-130-mena-paid-social-reach-de-duplication-qualified-conversi",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-033",
+    "channel": "Content Marketing",
+    "title_en": "Beauty, Supplement & Wellness Claims Review Checklist",
+    "title_ar": "قائمة مراجعة ادعاءات منتجات الجمال والمكملات والعافية",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/04-content-marketing/FW-033-AMP-176-sfda-egyptian-eda-cosmetic-supplement-wellness-copy-comp",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-034",
+    "channel": "Content Marketing",
+    "title_en": "Arabic Dialect Isolation & Anti-Hybrid-Collision Prompt Template (Egyptian Ammiya vs. Saudi/Gulf Khaleeji vs. White MSA)",
+    "title_ar": "قالب عزل اللهجات العربية ومنع الخلط اللهجي الهجين (العامية المصرية مقابل الخليجية السعودية مقابل الفصحى البيضاء)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/04-content-marketing/FW-034-AMP-177-arabic-dialect-isolation-anti-hybrid-collision-prompt-te",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-035",
+    "channel": "Content Marketing",
+    "title_en": "English-to-Arabic Idiom, Metaphor & Polysemy Transcreation Checklist",
+    "title_ar": "قائمة فحص التعريب الإبداعي (`Transcreation`) ومنع الترجمة الحرفية للتعبيرات الاصطلاحية والمشتركات اللفظية",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/04-content-marketing/FW-035-AMP-178-english-to-arabic-idiom-metaphor-polysemy-transcreation",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-036",
+    "channel": "Content Marketing",
+    "title_en": "Vision 2030, GASTAT, CAPMAS & Central Bank Citation Grounding Workflow (Anti-Hallucination)",
+    "title_ar": "مسار عمل توثيق إحصاءات رؤية 2030 والهيئة العامة للإحصاء (`GASTAT`) والجهاز المركزي (`CAPMAS`) ومنع هلوسة الأرقام",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/04-content-marketing/FW-036-AMP-179-vision-2030-gastat-capmas-central-bank-citation-groundin",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-037",
+    "channel": "Content Marketing",
+    "title_en": "Arabic AEO / GEO Entity & Answer-First Structuring Decision Aid (Beyond the `llms.txt` Myth)",
+    "title_ar": "أداة القرار لهيكلة المحتوى العربي لمحركات إجابات الذكاء الاصطناعي (`AEO / GEO` — بدلاً من وهم ملف `llms.txt`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/04-content-marketing/FW-037-AMP-180-arabic-aeo-geo-entity-answer-first-structuring-decision",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-038",
+    "channel": "Content Marketing",
+    "title_en": "XML-Indexed Brand Voice & Context-Window Hygiene Workflow for Long Arabic Drafts",
+    "title_ar": "مسار عمل فهرسة أدلة الهوية اللغوية بهيكلة `XML` لمنع انحراف التعليمات (`Instruction Drift`) في النصوص العربية الطويلة",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/04-content-marketing/FW-038-AMP-181-xml-indexed-brand-voice-context-window-hygiene-workflow",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-039",
+    "channel": "Content Marketing",
+    "title_en": "Arabic Grammatical Gender-Targeting & Dual/Plural Morphology Prompt Template",
+    "title_ar": "قالب ضبط المخاطب النحوي والتأنيث والتذكير في النصوص التسويقية العربية (تجاوز حيادية الضمير الإنجليزي `You`)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/04-content-marketing/FW-039-AMP-182-arabic-grammatical-gender-targeting-dual-plural-morpholo",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-040",
+    "channel": "Content Marketing",
+    "title_en": "Saudi Intra-Kingdom Regional Persona & Sector Differentiation Aid (Riyadh vs. Jeddah vs. Eastern Province)",
+    "title_ar": "أداة تفصيل الخطاب التسويقي وشخصية المشتري داخل المملكة (الرياض مقابل جدة مقابل المنطقة الشرقية)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/04-content-marketing/FW-040-AMP-183-saudi-intra-kingdom-regional-persona-sector-differentiat",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-041",
+    "channel": "Content Marketing",
+    "title_en": "Arabic AI Rhetorical Cliché Scrubber & Native Hook Replacement Checklist",
+    "title_ar": "قائمة فحص وتطهير المحتوى العربي من الكليشيهات المترجمة للذكاء الاصطناعي (`في عالم يتسارع فيه...` / `هل تبحث عن...`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/04-content-marketing/FW-041-AMP-184-arabic-ai-rhetorical-clich-scrubber-native-hook-replacem",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-042",
+    "channel": "Content Marketing",
+    "title_en": "Arabic BPE Tokenization Cost, Latency & `max_output_tokens` Budgeting Decision Aid",
+    "title_ar": "أداة حساب وموازنة تضخم التوكنات (`Tokenization Inflation`) وحدود `max_output_tokens` في أنابيب المحتوى العربي",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/04-content-marketing/FW-042-AMP-185-arabic-bpe-tokenization-cost-latency-max-output-tokens-b",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-043",
+    "channel": "Email Marketing",
+    "title_en": "Arabic HTML Email `dir='rtl'` & Unicode `<bdi>` Isolation Rendering Checklist (Gmail, Outlook & Apple Mail)",
+    "title_ar": "قائمة فحص وقالب برمجة رسائل البريد العربية (`dir='rtl'` وعزل `<bdi>`) لمنع تشوه المحاذاة وانعكاس الأرقام في Gmail وOutlook",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/05-email-marketing/FW-043-AMP-231-arabic-html-email-dir-rtl-unicode-bdi-isolation-renderin",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-044",
+    "channel": "Email Marketing",
+    "title_en": "Market-Specific Marketing Permission Review",
+    "title_ar": "مراجعة الموافقة التسويقية حسب السوق والقناة",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/05-email-marketing/FW-044-AMP-232-saudi-pdpl-uae-decree-law-45-2021-qatar-egypt-law-151-20",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-045",
+    "channel": "Email Marketing",
+    "title_en": "Cross-Channel Preference & Suppression Workflow",
+    "title_ar": "سير عمل مزامنة تفضيلات العملاء وإيقاف الرسائل عبر القنوات",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/05-email-marketing/FW-045-AMP-233-cross-channel-unsubscribe-synchronization-framework-emai",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-046",
+    "channel": "Email Marketing",
+    "title_en": "Arabic Email Subject-Line Byte-Length & Anti-Spam Filter Prompt Template",
+    "title_ar": "قالب صياغة عناوين رسائل البريد الإلكتروني العربية (ضبط طول البايتات `UTF-8` وتجنب فلاتر السبام والوعود المضللة)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/05-email-marketing/FW-046-AMP-234-arabic-email-subject-line-byte-length-anti-spam-filter-p",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-047",
+    "channel": "Email Marketing",
+    "title_en": "MENA Payment-Rail Specific Abandoned Checkout Recovery Workflow (COD vs. Tabby/Tamara BNPL vs. Fawry/InstaPay)",
+    "title_ar": "مسار عمل استرداد السلات المتروكة المخصص حسب وسيلة الدفع في مصر والخليج (`COD` مقابل `Tabby/Tamara` مقابل كود `فوري/إنستاباي`)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/05-email-marketing/FW-047-AMP-235-mena-payment-rail-specific-abandoned-checkout-recovery-w",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-048",
+    "channel": "Email Marketing",
+    "title_en": "GCC & Egypt B2B Executive Email Deliverability (SPF/DKIM/DMARC) & Bilingual Conciseness Checklist",
+    "title_ar": "قائمة فحص موثوقية نطاق البريد (`SPF/DKIM/DMARC`) وهيكلة رسائل الشركات (`B2B`) ثنائية اللغة في الخليج ومصر",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/05-email-marketing/FW-048-AMP-236-gcc-egypt-b2b-executive-email-deliverability-spf-dkim-dm",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-049",
+    "channel": "Email Marketing",
+    "title_en": "Transactional vs. Promotional Email Template Separation Checklist (Saudi & UAE PDPL Compliance)",
+    "title_ar": "قائمة فحص الفصل بين رسائل المعاملات (`الفواتير وتأكيد الطلب`) والرسائل الترويجية (الامتثال لنظام `PDPL` السعودي والإماراتي)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/05-email-marketing/FW-049-AMP-237-transactional-vs-promotional-email-template-separation-c",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-050",
+    "channel": "Email Marketing",
+    "title_en": "Arabic Email Typography, Web-Safe Font Stack & Line-Height Checklist (Preventing Tiny Times New Roman Fallback in Outlook)",
+    "title_ar": "قائمة فحص خطوط البريد الإلكتروني العربية (`Font Stack`) وتباعد الأسطر لمنع الارتداد لخط `Times New Roman` غير المقروء في Outlook",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/05-email-marketing/FW-050-AMP-238-arabic-email-typography-web-safe-font-stack-line-height",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-051",
+    "channel": "Email Marketing",
+    "title_en": "Cross-Border GCC & Egypt Automated Lifecycle Email Currency, VAT & BNPL Localization Checklist",
+    "title_ar": "قائمة فحص توطين العملات وضريبة القيمة المضافة (`15% KSA / 5% UAE / 0% Qatar / 14% Egypt`) وخيارات الدفع في الرسائل الآلية",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/05-email-marketing/FW-051-AMP-239-cross-border-gcc-egypt-automated-lifecycle-email-currenc",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-052",
+    "channel": "Email Marketing",
+    "title_en": "COD Serial-Returner Exclusion & Prepaid-Upgrade Win-Back Decision Aid (Egypt & KSA)",
+    "title_ar": "أداة قرار استبعاد «كثيري رفض استلام طلبات COD» وتحويلهم للدفع المسبق في حملات استعادة العملاء (`Win-Back`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/05-email-marketing/FW-052-AMP-240-cod-serial-returner-exclusion-prepaid-upgrade-win-back-d",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-053",
+    "channel": "Influencer Marketing",
+    "title_en": "Saudi GAMR 'Mawthooq' (موثوق) Influencer License Verification & Contracting Checklist",
+    "title_ar": "قائمة فحص التحقق الإلزامي من رخصة «موثوق» (`Mawthooq` - الهيئة العامة لتنظيم الإعلام `GAMR`) قبل التعاقد مع المؤثرين في السعودية",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-053-AMP-281-saudi-gamr-mawthooq-influencer-license-verification-cont",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-054",
+    "channel": "Influencer Marketing",
+    "title_en": "Cross-Border MENA Creator Permit Decision Matrix (UAE Media Council Permit vs. KSA GAMR Mawthooq vs. Egypt Tax/SCM)",
+    "title_ar": "أداة القرار لتراخيص المؤثرين العابرة للحدود بين الإمارات (مجلس الإمارات للإعلام) والسعودية (`موثوق`) ومصر",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/06-influencer-marketing/FW-054-AMP-282-cross-border-mena-creator-permit-decision-matrix-uae-med",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-055",
+    "channel": "Influencer Marketing",
+    "title_en": "Natural Dialect Creator Brief & 'Guardrails-Not-Monologues' Prompt Template (Anti-Corporate Press Release)",
+    "title_ar": "قالب موجز المؤثرين (`Creator Brief`) بنظام «النقاط الموجهة لا النص الفصيح المحفوظ» للحفاظ على عفوية الـ UGC",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/06-influencer-marketing/FW-055-AMP-283-natural-dialect-creator-brief-guardrails-not-monologues",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-056",
+    "channel": "Influencer Marketing",
+    "title_en": "Clean Master Creator Video Sourcing & Cross-Platform Watermark Stripping Prevention Checklist",
+    "title_ar": "قائمة فحص استلام النسخ الخام (`Clean Master`) لفيديوهات المؤثرين ومنع إعادة نشر العلامات المائية في إعلانات سناب شات وتيك توك",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-056-AMP-284-clean-master-creator-video-sourcing-cross-platform-water",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-057",
+    "channel": "Influencer Marketing",
+    "title_en": "MENA Influencer Geo-Audience & Engagement-Pod Forensic Vetting Checklist",
+    "title_ar": "قائمة الفحص الجنائي لجمهور المؤثرين في المنطقة (كشف المتابعين الوهميين، مجموعات التفاعل `Pods`، والجمهور خارج نطاق الشحن)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-057-AMP-285-mena-influencer-geo-audience-engagement-pod-forensic-vet",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-058",
+    "channel": "Influencer Marketing",
+    "title_en": "Creator Health, Beauty & Supplement Script Review Checklist",
+    "title_ar": "قائمة مراجعة نصوص المؤثرين في الصحة والتجميل والمكملات",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-058-AMP-286-creator-health-beauty-supplement-script-pre-clearance-ch",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-059",
+    "channel": "Influencer Marketing",
+    "title_en": "MENA Creator Commercial Disclosure (`#إعلان` / `#Ad`) & Native Paid-Partnership Tagging Checklist",
+    "title_ar": "قائمة فحص الإفصاح الإعلاني الإلزامي للمؤثرين (`#إعلان` / `#Ad` ووسم الشراكة المدفوعة) في قصص وفيديوهات التواصل الاجتماعي",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-059-AMP-287-mena-creator-commercial-disclosure-ad-native-paid-partne",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-060",
+    "channel": "Influencer Marketing",
+    "title_en": "Anti-Coupon-Leak Influencer Attribution & Unique Landing-Page / Cart-Link Workflow",
+    "title_ar": "مسار عمل قياس عائد المؤثرين ومنع تسرب أكواد الخصم الثابتة (`Promo Code Cannibalization`) لزيارات الدفع العضوية",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/06-influencer-marketing/FW-060-AMP-288-anti-coupon-leak-influencer-attribution-unique-landing-p",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-061",
+    "channel": "Influencer Marketing",
+    "title_en": "Synthetic AI Virtual Influencer & Avatar Commercial Governance Checklist",
+    "title_ar": "قائمة فحص حوكمة «المؤثرين الافتراضيين» والأفاتار المولد بالذكاء الاصطناعي (`Virtual Influencers` والإفصاح المزدوج)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/06-influencer-marketing/FW-061-AMP-289-synthetic-ai-virtual-influencer-avatar-commercial-govern",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-062",
+    "channel": "Influencer Marketing",
+    "title_en": "MENA Creator Tier & Platform Matching Decision Aid (High-Trust B2B / FinTech / Real Estate vs. Impulse B2C)",
+    "title_ar": "أداة القرار لاختيار فئة المؤثر والمنصة المناسبة (القطاعات عالية الثقة `B2B / التقنية المالية / العقار` مقابل الشراء الاندفاعي `B2C`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/06-influencer-marketing/FW-062-AMP-290-mena-creator-tier-platform-matching-decision-aid-high-tr",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-063",
+    "channel": "Video Advertising",
+    "title_en": "Diffusion Clean-Plate Generation & Post-Production RTL Arabic Typography Workflow (Extending `video-prompt-architect`)",
+    "title_ar": "مسار عمل توليد المشاهد النظيفة (`Clean-Plate`) وإضافة النصوص العربية المتجهية في المونتاج (امتداد لمهارة `video-prompt-architect`)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/07-video-advertising/FW-063-AMP-331-diffusion-clean-plate-generation-post-production-rtl-ara",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-064",
+    "channel": "Video Advertising",
+    "title_en": "Arabic TTS Full Vocalization (Tashkeel) & Homograph Disambiguation Prompt (ElevenLabs / HeyGen / Veo Audio — Extending `video-prompt-architect`)",
+    "title_ar": "قالب التشكيل الصوتي الكامل وفك التباس المتشابهات الخطية لتوليد التعليق الصوتي العربي (`ElevenLabs / HeyGen / Veo` — امتداد `video-prompt-architect`)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/07-video-advertising/FW-064-AMP-332-arabic-tts-full-vocalization-tashkeel-homograph-disambig",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-065",
+    "channel": "Video Advertising",
+    "title_en": "Short-Form Gulf Snapchat Creative Hypothesis & Storyboard Template",
+    "title_ar": "قالب فرضية إبداعية ولوحة مشاهد قصيرة لإعلانات سناب شات في الخليج",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/07-video-advertising/FW-065-AMP-333-snapchat-5-6-second-gulf-commercial-prompt-storyboard-te",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-066",
+    "channel": "Video Advertising",
+    "title_en": "English-to-Arabic Video Dubbing Syllable Compression & Lip-Sync Alignment Workflow",
+    "title_ar": "مسار عمل ضغط المقاطع الصوتية ومزامنة حركة الشفاه (`Lip-Sync`) عند دبلجة الإعلانات الإنجليزية إلى العربية (معالجة تمدد النص بنسبة 25%+)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/07-video-advertising/FW-066-AMP-334-english-to-arabic-video-dubbing-syllable-compression-lip",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-067",
+    "channel": "Video Advertising",
+    "title_en": "Sound-Off Vertical Video Burned-In Arabic Captioning & RTL Subtitle Styling Checklist",
+    "title_ar": "قائمة فحص الكابشن العربي المدمج (`Burned-In Arabic Captions`) لإعلانات الفيديو العمودية في وضع الصامت (`Sound-Off`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/07-video-advertising/FW-067-AMP-335-sound-off-vertical-video-burned-in-arabic-captioning-rtl",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-068",
+    "channel": "Video Advertising",
+    "title_en": "MENA Cultural Visual Guardrail & Authentic Gulf/Egyptian Wardrobe, Architecture & Etiquette Prompt Pack (Extending `video-prompt-architect`)",
+    "title_ar": "حزمة الضوابط البصرية والثقافية لمشاهد الفيديو بالذكاء الاصطناعي (ضبط الزي السعودي والخليجي، العمارة، وآداب الضيافة — امتداد `video-prompt-architect`)",
+    "artifact_type": "PROMPT_TEMPLATE",
+    "folder_path": "frameworks/07-video-advertising/FW-068-AMP-336-mena-cultural-visual-guardrail-authentic-gulf-egyptian-w",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-069",
+    "channel": "Video Advertising",
+    "title_en": "ElevenLabs Arabic Voice Stability, `Style Exaggeration = 0` & Breath-Artifact Prevention Checklist",
+    "title_ar": "قائمة فحص إعدادات `ElevenLabs` للصوت العربي (تصفير `Style Exaggeration` ومنع تذبذب السرعة وأصوات التنفس الزائدة)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/07-video-advertising/FW-069-AMP-337-elevenlabs-arabic-voice-stability-style-exaggeration-0-b",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-070",
+    "channel": "Video Advertising",
+    "title_en": "9:16 Vertical Video UI Safe-Zone & RTL Price/CTA Placement Checklist (TikTok, Reels & Snapchat)",
+    "title_ar": "قائمة فحص «المناطق الآمنة» (`9:16 Safe Zones`) لمواضع النصوص والأسعار والشعارات في إعلانات تيك توك وريلز وسناب شات",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/07-video-advertising/FW-070-AMP-338-9-16-vertical-video-ui-safe-zone-rtl-price-cta-placement",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-071",
+    "channel": "Video Advertising",
+    "title_en": "Egypt & MENA YouTube TrueView vs. Short-Form Vertical Video Budget Allocation Decision Aid",
+    "title_ar": "أداة قرار موازنة فيديو العلامة التجارية بين `YouTube TrueView` والفيديو القصير في السوق المصري والإقليمي",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/07-video-advertising/FW-071-AMP-339-egypt-mena-youtube-trueview-vs-short-form-vertical-video",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-072",
+    "channel": "Video Advertising",
+    "title_en": "Arabic Creator Voice-Cloning Legal Consent & Acoustic Training Audio (`-23 to -18 dB RMS`) Operating Framework",
+    "title_ar": "الإطار التشغيلي القانوني والصوتي لاستنساخ أصوات المؤثرين والمعلقين بالعربية (عقد حقوق الذكاء الاصطناعي ومعيار `-23 إلى -18 dB RMS`)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/07-video-advertising/FW-072-AMP-340-arabic-creator-voice-cloning-legal-consent-acoustic-trai",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-073",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "Egypt Payment-Method & Checkout UX Decision Aid",
+    "title_ar": "أداة قرار لترتيب وسائل الدفع وتجربة إتمام الطلب في المتجر المصري",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/08-cro/FW-073-AMP-386-egypt-payment-method-hierarchy-checkout-ux-decision-aid",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-074",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "KSA & UAE Above-the-Fold Tabby & Tamara BNPL Price-Split Widget Checklist",
+    "title_ar": "قائمة فحص وضع شارات تقسيط «تابي» و«تمارا» (`Tabby & Tamara`) بجوار السعر مباشرة أعلى طية صفحة المنتج في السعودية والإمارات",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/08-cro/FW-074-AMP-387-ksa-uae-above-the-fold-tabby-tamara-bnpl-price-split-wid",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-075",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "Checkout Phone, OTP & Quantity Arabic-Indic Numeral (`٠١٢٣٤٥٦٧٨٩`) Auto-Conversion Checklist",
+    "title_ar": "قائمة فحص وكود التحويل التلقائي للأرقام العربية-الهندية (`٠١٢٣٤٥٦٧٨٩`) في حقول الهاتف ورموز التحقق (`OTP`) بصفحة الدفع",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/08-cro/FW-075-AMP-388-checkout-phone-otp-quantity-arabic-indic-numeral-auto-co",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-076",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "Bilingual Landing Page RTL CSS Mirroring, Directional Icon & Sticky-CTA Collision Checklist",
+    "title_ar": "قائمة فحص الانعكاس الكامل لواجهات اليمين لليسار (`RTL CSS Mirroring`) واتجاه الأسهم ومنع تصادم الأزرار العائمة في الجوال",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/08-cro/FW-076-AMP-389-bilingual-landing-page-rtl-css-mirroring-directional-ico",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-077",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "Egypt & KSA Localized Checkout Address Form Workflow",
+    "title_ar": "مسار تخصيص حقول العنوان في صفحة الدفع لمصر والسعودية",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/08-cro/FW-077-AMP-390-egypt-ksa-localized-checkout-address-form-workflow-gover",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-078",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "MENA A/B Testing Calendar & Payday / Fri-Sat Weekend / Ramadan Cycle Decision Aid",
+    "title_ar": "أداة قرار ضبط مدة اختبارات `A/B Testing` في مصر والخليج (مراعاة دورة الرواتب `25–30 الشهر`، عطلة الجمعة والسبت، ومواسم رمضان)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/08-cro/FW-078-AMP-391-mena-a-b-testing-calendar-payday-fri-sat-weekend-ramadan",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-079",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "Authentic Verified-Buyer Review & Social Proof Governance Checklist (Eliminating Fake AI Review Widgets)",
+    "title_ar": "قائمة فحص حوكمة التقييمات وإثباتات الثقة الاجتماعية (`Social Proof` — منع ودجات التقييمات الوهمية المولدة بالذكاء الاصطناعي)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/08-cro/FW-079-AMP-392-authentic-verified-buyer-review-social-proof-governance",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-080",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "MENA Mobile 4G Page-Speed & Uncompressed AI Hero Visual Optimization Checklist (`LCP < 2.5s`)",
+    "title_ar": "قائمة فحص سرعة تحميل صفحات الجوال على شبكات `4G` وضغط الصور والفيديوهات المولدة بالذكاء الاصطناعي (`LCP < 2.5s`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/08-cro/FW-080-AMP-393-mena-mobile-4g-page-speed-uncompressed-ai-hero-visual-op",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-081",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "WhatsApp Floating-Button Placement & Prepaid-Checkout Protection Decision Aid",
+    "title_ar": "أداة قرار ضبط ظهور زر «واتساب العائم» لمنع خطف متسوقي الدفع الإلكتروني الجاهزين للشراء (`Prepaid Checkout Hijack`)",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/08-cro/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-082",
+    "channel": "CRO - Conversion Rate Optimization",
+    "title_en": "InstaPay Checkout & Payment Reconciliation Review",
+    "title_ar": "مراجعة تجربة الدفع عبر InstaPay وتسوية المدفوعات",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/08-cro/FW-082-AMP-395-egypt-direct-instapay-checkout-ux-automated-reference-ve",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-083",
+    "channel": "Marketing Automation",
+    "title_en": "WhatsApp Business API Template Pre-Approval & Category Classification Checklist (`MARKETING` vs. `UTILITY`)",
+    "title_ar": "قائمة فحص اعتماد قوالب `WhatsApp Business API` ومنع الرفض الآلي (تصنيف `Marketing` مقابل `Utility` وأمثلة المتغيرات `{{1}}`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/09-marketing-automation/FW-083-AMP-441-whatsapp-business-api-template-pre-approval-category-cla",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-084",
+    "channel": "Marketing Automation",
+    "title_en": "UAE TDRA Marketing SMS Curfew (`9:00 PM – 7:00 AM` Block), `AD-` Sender Prefix & Opt-Out Compliance Checklist",
+    "title_ar": "قائمة فحص الامتثال للوائح هيئة تنظيم الاتصالات الإماراتية (`TDRA` — حظر الرسائل الترويجية من `9 مساءً حتى 7 صباحاً` وبادئة `AD-`)",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/09-marketing-automation/FW-084-AMP-442-uae-tdra-marketing-sms-curfew-9-00-pm-7-00-am-block-ad-s",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-085",
+    "channel": "Marketing Automation",
+    "title_en": "GA4 AI Search & Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude & HUMAIN Chat)",
+    "title_ar": "مسار عمل تتبع إحالات محركات الذكاء الاصطناعي في `GA4` (رصد الـ `96.9%` المسجلة داخل البحث العضوي + فصل `Perplexity` و`Claude` و`HUMAIN Chat` من الإحالات)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-086",
+    "channel": "Marketing Automation",
+    "title_en": "GA4 MENA Marketplace & E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`)",
+    "title_ar": "قائمة فحص إعادة تصنيف المتاجر والأسواق العربية (`amazon.sa`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) في `GA4` بدلاً من ضياعها في `Referral`",
+    "artifact_type": "CHECKLIST",
+    "folder_path": "frameworks/09-marketing-automation/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-087",
+    "channel": "Marketing Automation",
+    "title_en": "Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook & Catalog Automations (`strict: true` / `responseSchema`)",
+    "title_ar": "مسار عمل فرض مخرجات `JSON Schema` الصارمة (`strict: true`) في أتمتة الـ CRM والويب هوك والكتالوجات العربية",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-088",
+    "channel": "Marketing Automation",
+    "title_en": "MENA B2B CRM Data Hygiene, ICP Alignment & Offline Lead-Scoring Feedback Framework",
+    "title_ar": "الإطار التشغيلي لتنظيف بيانات `CRM` ومواءمة معايير العميل المثالي (`ICP`) بين التسويق والمبيعات في قطاع الأعمال (`B2B`)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-088-AMP-446-mena-b2b-crm-data-hygiene-icp-alignment-offline-lead-sco",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-089",
+    "channel": "Marketing Automation",
+    "title_en": "WhatsApp Broadcast Quality & Consent Review",
+    "title_ar": "مراجعة جودة الرسائل التسويقية والموافقة عبر WhatsApp",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-089-AMP-447-whatsapp-broadcast-pacing-quality-rating-protection-1-to",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-090",
+    "channel": "Marketing Automation",
+    "title_en": "Automated WhatsApp COD Order Confirmation, Address-Pin & Prepaid-Switch Workflow (Egypt & KSA)",
+    "title_ar": "مسار عمل التأكيد الآلي لطلبات الدفع عند الاستلام (`COD`) والتحقق من موقع التوصيل عبر واتساب قبل تسليم الشحنة للمندوب (مصر والسعودية)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-090-AMP-448-automated-whatsapp-cod-order-confirmation-address-pin-pr",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-091",
+    "channel": "Marketing Automation",
+    "title_en": "LLM Model Selection & Routing Decision Aid",
+    "title_ar": "أداة قرار لاختيار نماذج اللغة وتوجيه المهام بينها",
+    "artifact_type": "DECISION_AID",
+    "folder_path": "frameworks/09-marketing-automation/FW-091-AMP-449-tiered-llm-model-orchestration-decision-aid-fast-flash-m",
+    "status": "READY_FOR_REVIEW"
+  },
+  {
+    "framework_id": "FW-092",
+    "channel": "Marketing Automation",
+    "title_en": "Autonomous AI Marketing Agent Human-Approval Gate & Spend-Circuit-Breaker Governance Framework",
+    "title_ar": "الإطار التشغيلي لبوابات الاعتماد البشري (`Human-in-the-Loop`) وقواطع الأمان المالية لوكلاء التسويق المستقلين (`Autonomous AI Agents`)",
+    "artifact_type": "OPERATING_FRAMEWORK",
+    "folder_path": "frameworks/09-marketing-automation/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend",
+    "status": "READY_FOR_REVIEW"
+  }
+]
