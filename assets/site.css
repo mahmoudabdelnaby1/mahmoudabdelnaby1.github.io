@@ -838,7 +838,7 @@ body.motion-off .impact-kinetic-stream .stream-sep {
 .playbook-intro .eyebrow{color:var(--site-sage)}
 .playbook-intro h2{max-width:12ch;margin:12px 0 18px;color:var(--site-ink);font-size:clamp(36px,5vw,66px);line-height:1.02;letter-spacing:-.055em;text-wrap:balance}
 .playbook-intro p{max-width:42ch;margin:0;color:var(--site-muted);font-size:clamp(14px,1.15vw,16px);line-height:1.8}
-.playbook-list{border-top:1px solid var(--site-line)}
+.playbook-list{border-top:1px solid var(--site-line)}.framework-discipline-heading{padding:17px 4px 5px}
 .playbook-item{display:grid;grid-template-columns:42px minmax(0,1fr) 28px;gap:15px;align-items:start;padding:20px 4px;border-bottom:1px solid var(--site-line);color:inherit;text-decoration:none;transition:padding .24s ease,background-color .24s ease}
 .playbook-item:hover{padding-inline:12px;background:linear-gradient(90deg,transparent,#1fd0ff0b 22%,#7df0c508 80%,transparent)}
 .playbook-item:focus-visible,.playbook-cta:focus-visible{outline:2px solid var(--site-sage);outline-offset:4px;border-radius:3px}
