@@ -9,3 +9,5 @@
 .library-search-empty a{display:inline-block;margin-inline-start:7px;color:#7df0c5;font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .directory-search-empty-link{color:inherit}
 @media(max-width:700px){.library-search-help{font-size:12px}.library-search-examples{gap:6px}.library-search-examples button{max-width:100%;font-size:11px;padding:7px 9px}}
+
+.library-links{display:flex;flex-wrap:wrap;align-items:center;column-gap:22px;row-gap:10px;margin-top:15px}.library-links .library-source-link,.library-links .library-directory-link{display:inline-flex;align-items:center;gap:8px;margin:0}.library-links .library-directory-link{color:#9fb2c7;font-size:14px;font-weight:650;text-decoration:none;transition:color .2s ease}.library-links .library-directory-link:hover{color:#7df0c5}
