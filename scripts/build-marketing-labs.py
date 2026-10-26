@@ -38,6 +38,11 @@ COPY = {
         "search_placeholder": "Search by concept or marketing area…", "filter_label": "Filter by area",
         "all": "All areas", "results": "Showing", "of": "of", "concepts": "concepts",
         "candidate": "Research-stage candidate", "source": "View the catalogue source on GitHub",
+        "open_concept": "Open concept details", "dialog_close": "Close",
+        "dialog_status": "Research-stage concept · not a released product",
+        "dialog_summary": "This register contains the candidate idea and its related marketing areas only. It does not include a working tool, implementation, or verified outcomes for this concept.",
+        "dialog_next_title": "What needs validation before development",
+        "dialog_next": "Define the target user and specific problem, review existing alternatives and constraints, check technical feasibility and data access, then decide whether a small prototype is justified.",
         "back": "Back to the portfolio", "lang": "العربية", "empty": "No concepts match this search. Try another phrase or area.",
         "list_label": "Research-stage marketing tool concepts",
         "schema_name": "Marketing Systems Lab: Digital Marketing Tool Concepts",
@@ -56,6 +61,11 @@ COPY = {
         "search_placeholder": "ابحث باسم التصور أو التخصص…", "filter_label": "تصفية حسب التخصص",
         "all": "كل التخصصات", "results": "المعروض", "of": "من", "concepts": "تصورًا",
         "candidate": "تصور في مرحلة البحث", "source": "افتح مصدر الفهرس على GitHub",
+        "open_concept": "افتح تفاصيل التصور", "dialog_close": "إغلاق",
+        "dialog_status": "تصور في مرحلة البحث · ليس منتجًا مطروحًا",
+        "dialog_summary": "يعرض هذا السجل اسم الفكرة المرشحة والمجالات التسويقية المرتبطة بها فقط. لا تتوفر لهذا التصور أداة عاملة أو تنفيذ أو نتائج متحقق منها.",
+        "dialog_next_title": "ما الذي يحتاج إلى تحقق قبل التطوير؟",
+        "dialog_next": "تحديد المستخدم والمشكلة المحددة، ومراجعة البدائل والقيود، وفحص الجدوى التقنية وإمكانية الوصول إلى البيانات، ثم تقرير ما إذا كان نموذج أولي محدود يستحق التنفيذ.",
         "back": "العودة إلى المعرض", "lang": "English", "empty": "لا توجد تصورات تطابق البحث. جرّب عبارة أو تخصصًا آخر.",
         "list_label": "تصورات أدوات التسويق في مرحلة البحث",
         "schema_name": "مختبر أنظمة التسويق: تصورات لأدوات التسويق الرقمي",
@@ -84,8 +94,10 @@ def render(lang: str, records: list[dict]) -> str:
         searchable = " ".join([record["title"], *[AREAS[key][0] for key in record["channels"]], *[AREAS[key][1] for key in record["channels"]]])
         rows.append(
             f'<li class="lab-row" id="{slug}" data-channels="{esc(channels)}" data-search="{esc(searchable.lower())}">'
+            f'<a class="lab-open" href="#{slug}" aria-haspopup="dialog" aria-controls="lab-detail-dialog" aria-label="{esc(c["open_concept"])}: {title}">'
             f'<span class="lab-number" aria-hidden="true">{number:02d}</span>'
-            f'<div class="lab-row-main"><h3 lang="en" dir="ltr">{title}</h3><div class="lab-tags">{tags}</div></div>'
+            f'<span class="lab-row-main"><h3 class="lab-title" lang="en" dir="ltr">{title}</h3><span class="lab-tags">{tags}</span></span>'
+            f'<span class="lab-open-icon" aria-hidden="true">↗</span></a>'
             f'</li>'
         )
     filters = [f'<button type="button" class="lab-filter is-active" data-filter="all" aria-pressed="true">{esc(c["all"])} <span>{len(records)}</span></button>']
@@ -107,7 +119,7 @@ def render(lang: str, records: list[dict]) -> str:
 <link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en_url}"><link rel="alternate" hreflang="ar" href="{ar_url}"><link rel="alternate" hreflang="x-default" href="{en_url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(c['schema_name'])}"><meta property="og:description" content="{esc(c['schema_description'])}"><meta property="og:url" content="{canonical}"><meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=20261026-labs-v1"><link rel="stylesheet" href="/assets/marketing-labs.css?v=20261026-labs-v1">
+<link rel="stylesheet" href="/assets/site.css?v=20261026-labs-v1"><link rel="stylesheet" href="/assets/marketing-labs.css?v=20261026-labs-interactive-v2">
 <script type="application/ld+json">{schema}</script>
 </head><body><div class="wrap labs-wrap">
 <header class="topbar labs-topbar"><a class="brand" href="{('/ar/' if lang == 'ar' else '/')}">{('محمود <em>عبدالنبي</em>' if lang == 'ar' else 'MAHMOUD <em>ABDELNABY</em>')}</a><nav class="labs-nav" aria-label="{('التنقل الرئيسي' if lang == 'ar' else 'Main navigation')}"><a href="{('/ar/' if lang == 'ar' else '/')}">{esc(c['home'])}</a><a href="{('/ar/playbooks/' if lang == 'ar' else '/playbooks/')}">{esc(c['playbooks'])}</a><a href="{('/ar/frameworks/tasks/' if lang == 'ar' else '/frameworks/tasks/')}">{esc(c['frameworks'])}</a><a href="{('/ar/skills/' if lang == 'ar' else '/skills/')}">{esc(c['skills'])}</a><a class="lang" href="{('/labs/' if lang == 'ar' else '/ar/labs/')}">{esc(c['lang'])}</a></nav></header>
@@ -118,10 +130,17 @@ def render(lang: str, records: list[dict]) -> str:
 <label class="labs-search-label" for="labs-search">{esc(c['search_label'])}</label><input id="labs-search" class="labs-search" type="search" placeholder="{esc(c['search_placeholder'])}" autocomplete="off">
 <div class="labs-filters" role="group" aria-label="{esc(c['filter_label'])}"{controls_dir}>{''.join(filters)}</div>
 <ol class="labs-list" aria-label="{esc(c['list_label'])}">{''.join(rows)}</ol><p class="labs-empty" hidden>{esc(c['empty'])}</p>
+<dialog class="lab-dialog" id="lab-detail-dialog" aria-labelledby="lab-dialog-title" aria-describedby="lab-dialog-summary">
+<div class="lab-dialog-panel"><button class="lab-dialog-close" type="button" aria-label="{esc(c['dialog_close'])}">×</button>
+<p class="lab-dialog-kicker">{esc(c['candidate'])}</p><h2 id="lab-dialog-title" dir="ltr" lang="en"></h2>
+<div class="lab-tags lab-dialog-tags" id="lab-dialog-tags"></div>
+<p class="lab-dialog-status">{esc(c['dialog_status'])}</p><p class="lab-dialog-summary" id="lab-dialog-summary">{esc(c['dialog_summary'])}</p>
+<div class="lab-dialog-next"><h3>{esc(c['dialog_next_title'])}</h3><p>{esc(c['dialog_next'])}</p></div>
+</div></dialog>
 </section>
 <section class="labs-source"><div><span class="eyebrow">{esc(c['source'])}</span><p>{esc(c['status'])}</p></div><a class="labs-source-link" href="{REPOSITORY}" target="_blank" rel="noopener noreferrer">{esc(c['source'])}<span aria-hidden="true">↗</span></a></section>
 </main><footer class="footer"><div class="footer-grid"><span>© Mahmoud Abdelnaby · {esc(c['eyebrow'])}</span><span><a href="https://eg.linkedin.com/in/mahmoudabdelnaby4">LinkedIn</a> · <a href="https://github.com/mahmoudabdelnaby1">GitHub</a></span></div></footer>
-</div><script defer src="/assets/marketing-labs.js?v=20261026-labs-v1"></script></body></html>'''
+</div><script defer src="/assets/marketing-labs.js?v=20261026-labs-interactive-v2"></script></body></html>'''
 
 
 def main() -> None:
