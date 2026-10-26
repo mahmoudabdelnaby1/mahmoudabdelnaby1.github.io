@@ -7,6 +7,18 @@
     <loc>https://mahmoudabdelnaby1.github.io/ar/</loc>
   </url>
   <url>
+    <loc>https://mahmoudabdelnaby1.github.io/skills/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/skills/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/skills/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/skills/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/skills/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/skills/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/skills/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/skills/" />
+  </url>
+  <url>
     <loc>https://mahmoudabdelnaby1.github.io/playbooks/</loc>
     <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/playbooks/" />
     <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/playbooks/" />
