@@ -9368,4 +9368,16 @@
     <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/" />
     <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/" />
   </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/labs/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/labs/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/labs/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/labs/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/labs/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/labs/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/labs/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/labs/" />
+  </url>
 </urlset>

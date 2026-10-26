@@ -7,21 +7,13 @@
 - [English portfolio](https://mahmoudabdelnaby1.github.io/)
 - [الملف المهني بالعربية](https://mahmoudabdelnaby1.github.io/ar/)
 
-## AI marketing operating frameworks
+## Digital marketing task frameworks
 
-> Six bilingual, human-reviewed operating frameworks for applying AI to marketing work. These pages explain workflows and boundaries; they do not host or execute models, provide legal advice, or guarantee search visibility. Recheck current platform and market rules before use.
+> A bilingual collection of 92 independent, task-specific frameworks across nine digital marketing disciplines. Each page defines a task and provides steps and reviewable outputs.
 
-- [English framework collection](https://mahmoudabdelnaby1.github.io/frameworks/)
-- [مجموعة الأطر بالعربية](https://mahmoudabdelnaby1.github.io/ar/frameworks/)
-- [Framework source repository](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks)
-
-### Individual frameworks
-- [Evidence-led AI marketing content](https://mahmoudabdelnaby1.github.io/frameworks/evidence-led-ai-marketing-content/) | [محتوى تسويقي مدعوم بالأدلة](https://mahmoudabdelnaby1.github.io/ar/frameworks/evidence-led-ai-marketing-content/) — Turn an AI-assisted draft into a useful, reviewable asset by tracing factual claims to evidence, separating fact from interpretation, and assigning a human approval owner. / حوّل المسودة المدعومة بالذكاء الاصطناعي إلى مادة نافعة قابلة للمراجعة: اربط الادعاءات الواقعية بأدلتها، وافصل الحقائق عن التفسير، وحدد المسؤول عن الاعتماد البشري. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/evidence-led-ai-marketing-content.en.md)
-- [Arabic AI creative localization & QA](https://mahmoudabdelnaby1.github.io/frameworks/arabic-ai-creative-localization-qa/) | [توطين الإبداع العربي المدعوم بالذكاء الاصطناعي ومراجعته](https://mahmoudabdelnaby1.github.io/ar/frameworks/arabic-ai-creative-localization-qa/) — Coordinate Arabic copy, dialect, visual generation, and asset review without treating the region as one audience or trusting generated Arabic text inside artwork. / نسّق بين النص العربي واللهجة والتوليد البصري ومراجعة المواد دون اعتبار المنطقة جمهورًا واحدًا أو الوثوق بالنص العربي الذي ترسمه أداة الصور. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/arabic-ai-creative-localization-qa.en.md)
-- [Creator, UGC & synthetic media rights](https://mahmoudabdelnaby1.github.io/frameworks/synthetic-media-and-creator-rights/) | [حقوق محتوى المؤثرين وUGC والوسائط الاصطناعية](https://mahmoudabdelnaby1.github.io/ar/frameworks/synthetic-media-and-creator-rights/) — Keep creator and AI-assisted assets traceable: document permissions, disclose material relationships where required, preserve edits, and review the final placement. / اجعل مواد المؤثرين والمحتوى المدعوم بالذكاء الاصطناعي قابلة للتتبع: وثّق الأذونات، وأفصح عن العلاقات المؤثرة عند اللزوم، واحفظ التعديلات، وراجع موضع النشر النهائي. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/synthetic-media-and-creator-rights.en.md)
-- [Guardrailed customer conversation AI](https://mahmoudabdelnaby1.github.io/frameworks/guardrailed-customer-conversation-ai/) | [حوكمة الذكاء الاصطناعي في محادثات العملاء](https://mahmoudabdelnaby1.github.io/ar/frameworks/guardrailed-customer-conversation-ai/) — Design customer-facing assistants around approved knowledge, limited actions, safe failure, privacy, and a visible route to a human. / صمّم مساعدات خدمة العملاء حول معرفة معتمدة وصلاحيات محدودة وفشل آمن وخصوصية ومسار واضح للوصول إلى موظف بشري. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/guardrailed-customer-conversation-ai.en.md)
-- [Privacy-aware marketing AI & customer data](https://mahmoudabdelnaby1.github.io/frameworks/privacy-aware-marketing-ai-data/) | [الذكاء الاصطناعي التسويقي وبيانات العملاء مع مراعاة الخصوصية](https://mahmoudabdelnaby1.github.io/ar/frameworks/privacy-aware-marketing-ai-data/) — Reduce exposure before using customer or CRM data with AI: classify, minimize, control access, document purpose, and verify vendor handling. / قلل تعرض بيانات العملاء أو CRM قبل استخدامها مع الذكاء الاصطناعي: صنف البيانات وقللها واضبط الوصول ووثق الغرض وتحقق من معالجة المورّد. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/privacy-aware-marketing-ai-data.en.md)
-- [AI-assisted marketing decisions & measurement](https://mahmoudabdelnaby1.github.io/frameworks/ai-marketing-decision-and-measurement-governance/) | [القرارات التسويقية المدعومة بالذكاء الاصطناعي وقياسها](https://mahmoudabdelnaby1.github.io/ar/frameworks/ai-marketing-decision-and-measurement-governance/) — Keep campaign automation accountable by separating platform-reported signals from business outcomes, documenting decisions, and setting human review and rollback rules. / اجعل أتمتة الحملات خاضعة للمساءلة: افصل إشارات المنصة عن نتائج الأعمال، ووثق القرارات، وحدد قواعد المراجعة البشرية والتراجع. [Source](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/blob/main/frameworks/ai-marketing-decision-and-measurement-governance.en.md)
+- [English framework library](https://mahmoudabdelnaby1.github.io/frameworks/tasks/)
+- [مكتبة الأطر بالعربية](https://mahmoudabdelnaby1.github.io/ar/frameworks/tasks/)
+- [Framework source repository](https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks/tree/main/task-frameworks)
 
 ## Marketing systems playbooks
 
@@ -58,6 +50,14 @@
 
 - [Bilingual Client Reporting Workflow](https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/) | [سير عمل إعداد التقارير التسويقية للعميل](https://mahmoudabdelnaby1.github.io/ar/playbooks/bilingual-client-reporting-workflow/) — Turn approved aggregate marketing data into a source-linked report with clear definitions, reviewed interpretation, and next actions. / حوّل بيانات تسويقية مجمعة ومعتمدة إلى تقرير موثق المصادر بتعريفات واضحة وتفسير مراجع وخطوات تالية. [Source](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks/tree/main/bilingual-client-reporting-workflow/)
 - [Salla & Zid Storefront SEO Review](https://mahmoudabdelnaby1.github.io/playbooks/salla-zid-storefront-seo-qa/) | [مراجعة SEO لمتاجر سلة وزد](https://mahmoudabdelnaby1.github.io/ar/playbooks/salla-zid-storefront-seo-qa/) — Review native store metadata against verified page facts, official platform guidance, and controlled QA. / راجع حقول المتجر وفق حقائق موثقة وإرشادات المنصات ومراجعة قبل النشر. [Source](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks/tree/main/salla-zid-storefront-seo-qa/)
+
+## Marketing Systems Lab
+
+> An editorial register of 89 distinct research-stage digital marketing tool concepts. Three overlapping pairs were merged. The entries are concepts under review, not claims of released or verified software.
+
+- [English concepts register](https://mahmoudabdelnaby1.github.io/labs/)
+- [سجل التصورات بالعربية](https://mahmoudabdelnaby1.github.io/ar/labs/)
+- [Source catalogue and page generator](https://github.com/mahmoudabdelnaby1/mahmoudabdelnaby1.github.io/tree/main/labs)
 
 ## Assistant library
 

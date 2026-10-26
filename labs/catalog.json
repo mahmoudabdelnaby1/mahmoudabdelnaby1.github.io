@@ -1,0 +1,707 @@
+[
+  {
+    "slug": "ad-budget-monte-carlo",
+    "title": "Monte Carlo Ad Budget Allocation & Risk Simulator",
+    "channels": [
+      "PPC",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "ad-copy-git-diff",
+    "title": "Git-Style Ad Copy Variant Diff Engine & AST Changelog",
+    "channels": [
+      "PPC",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "ad-lead-webhook-sanitizer",
+    "title": "Lead Webhook Payload Sanitizer & Multi-CRM Transformer",
+    "channels": [
+      "AUTOMATION",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "ai-content-claim-verifier",
+    "title": "AI Content Hallucination & Citation Verification Sentinel",
+    "channels": [
+      "CONTENT",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "auto-foley-video-sync",
+    "title": "Foley Sound Effects & Punctuation Audio Sync Marker",
+    "channels": [
+      "VIDEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "bilingual-tone-guardian",
+    "title": "Bilingual Brand Tone-of-Voice Linter (Arabic & English)",
+    "channels": [
+      "CONTENT",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "carousel-density-linter",
+    "title": "LinkedIn & Instagram Carousel Slide Density Linter",
+    "channels": [
+      "SMM",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "checkout-microjank-auditor",
+    "title": "Checkout DOM Micro-Jank & Layout Shift Memory Auditor",
+    "channels": [
+      "CRO",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "community-fsm-triage",
+    "title": "Finite-State Machine Brand Community Triage Dispatcher",
+    "channels": [
+      "SMM",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "content-brief-factory",
+    "title": "Programmatic Editorial Brief & Entity Cluster Factory",
+    "channels": [
+      "CONTENT",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "copy-rhythm-meter",
+    "title": "Music Rhythm & Syllable Cadence Copywriting Visualizer",
+    "channels": [
+      "CONTENT",
+      "EMAIL"
+    ]
+  },
+  {
+    "slug": "creator-contract-tracker",
+    "title": "Creator Contract Whitelisting & Deliverable Tracker",
+    "channels": [
+      "INFLUENCER",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "creator-coupon-attribution",
+    "title": "Creator Coupon Code Attribution & Cannibalization Ledger",
+    "channels": [
+      "INFLUENCER",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "creator-roi-actuary",
+    "title": "Actuarial Creator ROI Valuation & Risk Engine",
+    "channels": [
+      "INFLUENCER",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "crm-sync-circuit-breaker",
+    "title": "Circuit Breaker CRM & ESP Synchronization Bridge",
+    "channels": [
+      "AUTOMATION",
+      "EMAIL"
+    ]
+  },
+  {
+    "slug": "dom-render-parity-inspector",
+    "title": "DOM Hydration Delta & JS Render Parity Inspector",
+    "channels": [
+      "SEO",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "edge-cdn-seo-debugger",
+    "title": "Edge CDN Header & Bot Crawler Cache Debugger",
+    "channels": [
+      "SEO",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "email-darkmode-inliner",
+    "title": "HTML Email Dark Mode Pre-Mailer & Outlook Fixer",
+    "channels": [
+      "EMAIL",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "email-deliverability-sentinel",
+    "title": "Email Deliverability DNS Sentinel (BIMI, SPF, DKIM, DMARC)",
+    "channels": [
+      "EMAIL",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "email-spam-radar",
+    "title": "Bayesian Spam Trigger Radar & MIME Header Linter",
+    "channels": [
+      "EMAIL",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "form-field-friction-tracker",
+    "title": "Zero-Cookie Form Field Hesitation & Dropoff Tracker",
+    "channels": [
+      "CRO",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "google-pmax-search-unmasker",
+    "title": "Google PMax Hidden Search Term & Waste Extractor",
+    "channels": [
+      "PPC",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "gsc-cannibalization-radar",
+    "title": "Search Console Intent Cannibalization Matrix",
+    "channels": [
+      "SEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "influencer-video-qa",
+    "title": "Vlog Product Mention & Facial Sentiment Timestamp Annotator",
+    "channels": [
+      "INFLUENCER",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "internal-link-pagerank-grapher",
+    "title": "PageRank Internal Link Topology Grapher & Orphan Hunter",
+    "channels": [
+      "SEO",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "karaoke-subtitle-generator",
+    "title": "Direct-Response Animated Subtitle (.ASS) Karaoke Generator",
+    "channels": [
+      "VIDEO",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "landing-page-saliency-heat",
+    "title": "Visual Saliency Attention Heatmap Simulator for Landing Pages",
+    "channels": [
+      "CRO",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "lifecycle-journey-simulator",
+    "title": "Discrete-Event Customer Lifecycle Journey Simulator",
+    "channels": [
+      "EMAIL",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "linkedin-poll-predictor",
+    "title": "LinkedIn Poll Engagement Predictor & Copy Symmetry Linter",
+    "channels": [
+      "SMM",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "markdown-hook-extractor",
+    "title": "Markdown AST Direct-Response Hook Extractor",
+    "channels": [
+      "CONTENT",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "meta-ad-fatigue-radar",
+    "title": "Meta Ad Creative Fatigue Radar & Frequency Decay Predictor",
+    "channels": [
+      "PPC",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "meta-capi-debugger",
+    "title": "Meta CAPI Server Event Simulator & Deduplication Validator",
+    "channels": [
+      "PPC",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "opengraph-card-previewer",
+    "title": "Local Social Share Card & OpenGraph Meta Live Debugger",
+    "channels": [
+      "SMM",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "phonetic-copy-sonar",
+    "title": "Phoneme Stress & Cognitive Friction Copy Readability Sonar",
+    "channels": [
+      "CONTENT",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "pricing-psychology-optimizer",
+    "title": "Pricing Table Psychology & Decoy Elasticity Matrix",
+    "channels": [
+      "CRO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "privacy-social-proof-toast",
+    "title": "Privacy-Compliant Deterministic Social Proof Toast Engine",
+    "channels": [
+      "CRO",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "rfc8058-unsubscribe-validator",
+    "title": "RFC 8058 One-Click List-Unsubscribe Header Validator",
+    "channels": [
+      "EMAIL",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "schema-jsonld-linter",
+    "title": "Strict Schema.org JSON-LD Validator & Rich Snippet Linter",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "sgtm-cost-pruner",
+    "title": "GTM Server-Side Cloud Run Cost Estimator & Event Pruner",
+    "channels": [
+      "AUTOMATION",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "shapley-attribution-pipeline",
+    "title": "DAG Multi-Touch Attribution & Game-Theoretic Shapley Pipeline",
+    "channels": [
+      "AUTOMATION",
+      "PPC",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "subject-line-markov-generator",
+    "title": "Markov Chain Subject-Line Permutator & Curiosity Scorer",
+    "channels": [
+      "EMAIL",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "ugc-script-timer",
+    "title": "UGC Video Script Teleprompter Pacing & Breath Timer",
+    "channels": [
+      "VIDEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "utm-governance-hub",
+    "title": "Organization-Wide UTM Parameter Taxonomy & Governance Hub",
+    "channels": [
+      "AUTOMATION",
+      "PPC",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "video-motion-energy-heat",
+    "title": "H.264 Motion Vector Visual Energy & Attention Decay Heatmap",
+    "channels": [
+      "VIDEO",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "video-thumbstop-analyzer",
+    "title": "Vertical Video Ad 3-Second Thumbstop Ratio Analyzer",
+    "channels": [
+      "VIDEO",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "viral-audio-cut-sync",
+    "title": "Acoustic Spectrogram Viral Sound Pacing Matcher",
+    "channels": [
+      "SMM",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "viral-trend-automata",
+    "title": "Cellular Automata Viral Trend Velocity & Diffusion Simulator",
+    "channels": [
+      "SMM",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "ad-caption-studio",
+    "title": "Batch Caption & Ad-Format Rendering Studio",
+    "channels": [
+      "VIDEO",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "ad-dubbing-studio",
+    "title": "Multilingual Video-Ad Voiceover & Dubbing Studio",
+    "channels": [
+      "VIDEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "ads-budget-guardian",
+    "title": "Cross-Channel Ads Anomaly & Budget Guardian",
+    "channels": [
+      "PPC",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "agency-report-engine",
+    "title": "White-Label Agency Reporting Engine (Multi-Platform Client Reports)",
+    "channels": [
+      "AUTOMATION",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "ai-ugc-studio",
+    "title": "Self-Hostable AI UGC Ad Studio",
+    "channels": [
+      "VIDEO",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "arabic-listening-room",
+    "title": "Arabic-Dialect Social Listening Room",
+    "channels": [
+      "SMM",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "arabic-seo-workbench",
+    "title": "Arabic-First SEO Workbench (RTL Keyword & Content Studio)",
+    "channels": [
+      "SEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "brand-kit-extractor",
+    "title": "Competitor Brand-Kit Extractor for Ad Teams",
+    "channels": [
+      "SMM",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "bulksheet-studio",
+    "title": "PPC Bulk-Sheet Builder & QA Studio",
+    "channels": [
+      "PPC",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "campaign-visual-qa",
+    "title": "Ad Creative & Landing Visual-QA Monitor",
+    "channels": [
+      "PPC",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "catalog-creative-studio",
+    "title": "Product-Image Ad Creative Batch Studio",
+    "channels": [
+      "SMM",
+      "VIDEO",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "citation-readiness-auditor",
+    "title": "AI-Search Citation Readiness & llms.txt Auditor",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "content-repurposing-engine",
+    "title": "Podcast & Webinar Content-Repurposing Engine",
+    "channels": [
+      "CONTENT",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "cro-evidence-kit",
+    "title": "CRO Evidence-Base Audit Framework (Research-Backed Page Auditor)",
+    "channels": [
+      "CRO"
+    ]
+  },
+  {
+    "slug": "curation-newsletter-engine",
+    "title": "AI Content-Curation Newsletter Engine",
+    "channels": [
+      "EMAIL",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "deliverability-observatory",
+    "title": "Email Deliverability & Warm-Up Observability Kit",
+    "channels": [
+      "EMAIL",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "email-render-qa",
+    "title": "Email Template Render-QA CLI (Inbox & Dark-Mode Inspector)",
+    "channels": [
+      "EMAIL"
+    ]
+  },
+  {
+    "slug": "evidence-brief-engine",
+    "title": "Evidence-Led Content Brief Engine (Anti-Slop E-E-A-T Factory)",
+    "channels": [
+      "CONTENT",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "featherpost",
+    "title": "Local-First Lightweight Social Scheduler",
+    "channels": [
+      "SMM",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "ga4-gtm-governor",
+    "title": "GA4/GTM Governance & Audit Toolkit",
+    "channels": [
+      "AUTOMATION",
+      "SEO"
+    ]
+  },
+  {
+    "slug": "geo-aeo-sentinel",
+    "title": "Brand AI-Visibility Radar (GEO/AEO Sentinel)",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "gsc-opportunity-miner",
+    "title": "GSC Striking-Distance Workbench (Search Console Opportunity Miner)",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "influencer-vetting-workbench",
+    "title": "Influencer Vetting & Fraud-Signal Workbench",
+    "channels": [
+      "INFLUENCER"
+    ]
+  },
+  {
+    "slug": "journey-core-lite",
+    "title": "Lightweight Journey Builder (Post-Parcelvoy Automation Core)",
+    "channels": [
+      "AUTOMATION",
+      "EMAIL"
+    ]
+  },
+  {
+    "slug": "local-lead-workbench",
+    "title": "Local Lead-Prospecting Workbench (Maps to CRM)",
+    "channels": [
+      "AUTOMATION",
+      "EMAIL"
+    ]
+  },
+  {
+    "slug": "local-page-factory",
+    "title": "Programmatic Local Landing-Page Factory",
+    "channels": [
+      "SEO",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "marketing-localization-pipeline",
+    "title": "Dialect-Aware Marketing Localization Pipeline",
+    "channels": [
+      "CONTENT",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "marketplace-seo-radar",
+    "title": "E-Commerce Keyword & Review Monitor (Marketplace SEO Radar)",
+    "channels": [
+      "SEO",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "offer-change-monitor",
+    "title": "Competitor Landing-Page & Offer Change Monitor",
+    "channels": [
+      "PPC",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "pdf-intel-extractor",
+    "title": "Lead-Magnet & Competitor PDF Intelligence Extractor",
+    "channels": [
+      "CONTENT",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "pricing-promo-radar",
+    "title": "Competitor Pricing & Promo Radar for E-Commerce",
+    "channels": [
+      "PPC",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "qr-campaign-platform",
+    "title": "O2O QR Campaign Analytics Platform",
+    "channels": [
+      "AUTOMATION",
+      "SMM"
+    ]
+  },
+  {
+    "slug": "referral-loyalty-toolkit",
+    "title": "Marketer-Owned Referral & Loyalty Toolkit",
+    "channels": [
+      "AUTOMATION",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "review-insight-engine",
+    "title": "Review-Driven Product Marketing Insight Engine",
+    "channels": [
+      "SMM",
+      "CRO"
+    ]
+  },
+  {
+    "slug": "schema-deploy-kit",
+    "title": "Schema Deployment & CI Validation Kit",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "seo-deploy-guard",
+    "title": "SEO Deploy Guardrail CLI (Breakage Prevention in CI/CD)",
+    "channels": [
+      "SEO",
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "sgtm-marketer-kit",
+    "title": "SMB Server-Side Tagging Kit (Privacy-First Pixel Router)",
+    "channels": [
+      "AUTOMATION",
+      "PPC"
+    ]
+  },
+  {
+    "slug": "smb-marketing-agent",
+    "title": "Budget-Capped Autonomous SMB Marketing Agent",
+    "channels": [
+      "AUTOMATION"
+    ]
+  },
+  {
+    "slug": "style-dna-extractor",
+    "title": "Ad Creative Style-DNA Extractor",
+    "channels": [
+      "SMM",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "topical-map-studio",
+    "title": "Topical Map & Keyword Clustering Studio",
+    "channels": [
+      "SEO"
+    ]
+  },
+  {
+    "slug": "trend-velocity-radar",
+    "title": "Social Trend Discovery Engine (Cross-Platform Signal Radar)",
+    "channels": [
+      "SMM",
+      "CONTENT"
+    ]
+  },
+  {
+    "slug": "utm-governance-layer",
+    "title": "Cookieless Attribution & UTM Governance Layer",
+    "channels": [
+      "AUTOMATION",
+      "CRO"
+    ]
+  }
+]
