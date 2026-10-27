@@ -33,7 +33,7 @@ jobs:
           from pathlib import Path
           import re
           root = Path('_site')
-          script = '<script defer src="/assets/privacy-consent.js?v=20261027-dedicated-v1"></script>'
+          script = '<script defer src="/assets/privacy-consent.js?v=20261027-dedicated-v2"></script>'
           for page in root.rglob('*.html'):
               html = page.read_text(encoding='utf-8')
               if 'privacy-consent.js' in html or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', html, re.I):
