@@ -9698,4 +9698,15 @@
     <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/meta-marketing-api-change-review/" />
     <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/meta-marketing-api-change-review/" />
   </url>
-</urlset>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/</loc>
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/" />
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
+  </url></urlset>

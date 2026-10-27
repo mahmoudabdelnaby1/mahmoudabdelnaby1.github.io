@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>منشئ روابط الحملات وفاحص UTM | محمود عبدالنبي</title>
+  <meta name="description" content="أنشئ روابط حملاتك أو افحص ملف CSV لاكتشاف قيم UTM الناقصة والتكرار واختلافات التسمية. تتم المعالجة داخل المتصفح.">
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="منشئ روابط الحملات وفاحص UTM">
+  <meta property="og:description" content="أنشئ روابط الحملات وافحص اتساق وسوم UTM بأداة تعمل داخل المتصفح.">
+  <meta property="og:url" content="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/">
+  <meta name="theme-color" content="#09121c">
+  <link rel="stylesheet" href="/assets/site.css?v=20261027-utm-product-v1">
+  <link rel="stylesheet" href="/assets/utm-tool.css?v=20261027-utm-product-v1">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"منشئ روابط الحملات وفاحص UTM","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"inLanguage":"ar","description":"أداة داخل المتصفح لإنشاء روابط الحملات وفحص قيم UTM في ملفات CSV.","url":"https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/","author":{"@type":"Person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"}}
+  </script>
+</head>
+<body class="utm-page">
+  <div class="utm-shell">
+    <header class="utm-topbar">
+      <a class="utm-brand" href="/ar/" aria-label="الملف المهني لمحمود عبدالنبي">محمود <span>عبدالنبي</span></a>
+      <nav class="utm-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar/marketing-systems/">أنظمة التسويق</a>
+        <a class="utm-language" href="/marketing-systems/utm-campaign-builder/" lang="en" hreflang="en">English</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="utm-hero" aria-labelledby="utm-title">
+        <div class="utm-hero-copy">
+          <p class="utm-eyebrow"><span class="utm-eyebrow-mark" aria-hidden="true"></span> أداة مجانية للحملات</p>
+          <h1 id="utm-title">خلّي روابط حملاتك <span>متسقة.</span></h1>
+          <p class="utm-lede">أنشئ رابطًا موسومًا أو افحص ملف حملات كاملًا دفعة واحدة. اكتشف ما يحتاج إلى مراجعة قبل استخدام الروابط في الإعلانات أو البريد أو تقارير صناع المحتوى.</p>
+          <div class="utm-privacy-note"><span class="utm-privacy-dot" aria-hidden="true"></span><span>تتم معالجة الروابط وملف CSV داخل متصفحك، ولا تُرفع إلى خادم الأداة.</span></div>
+        </div>
+        <div class="utm-hero-aside" aria-label="خطوات استخدام الأداة">
+          <div class="utm-aside-line"><span>١</span><b>أنشئ</b><i aria-hidden="true"></i><span>٢</span><b>افحص</b><i aria-hidden="true"></i><span>٣</span><b>صدّر</b></div>
+          <p>نمط تسمية واحد، تطبّقه قبل إطلاق الحملة.</p>
+          <span class="utm-aside-caption">دون ربط حسابات · ودون ادعاءات عن القياس</span>
+        </div>
+      </section>
+
+      <section class="utm-workspace" aria-label="مساحة إعداد روابط الحملات">
+        <div class="utm-workspace-head">
+          <div><p class="utm-eyebrow">مساحة الحملات</p><h2>جهّز روابطك</h2></div>
+          <div class="utm-mode-switch" role="tablist" aria-label="اختر طريقة العمل">
+            <button class="utm-mode is-active" id="tab-single" type="button" role="tab" aria-selected="true" aria-controls="panel-single" data-mode="single">رابط واحد</button>
+            <button class="utm-mode" id="tab-batch" type="button" role="tab" aria-selected="false" aria-controls="panel-batch" data-mode="batch">فحص ملف CSV</button>
+          </div>
+        </div>
+
+        <section class="utm-panel" id="panel-single" role="tabpanel" aria-labelledby="tab-single" data-panel="single">
+          <div class="utm-panel-intro">
+            <div><span class="utm-step">١ / إنشاء رابط</span><h3>ابدأ برابط الوجهة.</h3></div>
+            <p>المصدر والوسيط والحملة مطلوبة. نحافظ على معاملات الرابط الأخرى وعلى الجزء الذي يأتي بعد علامة #.</p>
+          </div>
+          <form id="single-form" novalidate>
+            <div class="utm-field utm-field-wide">
+              <label for="single-url">رابط الوجهة <span class="utm-required">مطلوب</span></label>
+              <input id="single-url" name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com/landing-page" required>
+              <small>أدخل عنوانًا كاملًا يبدأ بـ http:// أو https://.</small>
+            </div>
+            <div class="utm-form-grid">
+              <div class="utm-field"><label for="single-source">utm_source <span class="utm-required">مطلوب</span></label><input id="single-source" name="utm_source" type="text" autocomplete="off" placeholder="newsletter" required></div>
+              <div class="utm-field"><label for="single-medium">utm_medium <span class="utm-required">مطلوب</span></label><input id="single-medium" name="utm_medium" type="text" autocomplete="off" placeholder="email" required></div>
+              <div class="utm-field"><label for="single-campaign">utm_campaign <span class="utm-required">مطلوب</span></label><input id="single-campaign" name="utm_campaign" type="text" autocomplete="off" placeholder="spring_launch" required></div>
+              <div class="utm-field"><label for="single-content">utm_content <span class="utm-optional">اختياري</span></label><input id="single-content" name="utm_content" type="text" autocomplete="off" placeholder="hero_cta"></div>
+              <div class="utm-field"><label for="single-term">utm_term <span class="utm-optional">اختياري</span></label><input id="single-term" name="utm_term" type="text" autocomplete="off" placeholder="running_shoes"></div>
+            </div>
+            <div class="utm-form-actions">
+              <button class="utm-button utm-button-primary" type="submit">أنشئ الرابط وافحصه <span aria-hidden="true">↗</span></button>
+              <button class="utm-button utm-button-quiet" id="single-clear" type="reset">مسح الحقول</button>
+            </div>
+          </form>
+          <div class="utm-result" id="single-result" aria-live="polite" hidden>
+            <div class="utm-result-heading"><div><span class="utm-step">مراجعة الرابط</span><h3 id="single-result-title">جاهز للنسخ</h3></div><span class="utm-result-status" id="single-status"></span></div>
+            <div class="utm-issue-list" id="single-issues"></div>
+            <div class="utm-output-row"><code id="single-output"></code><button class="utm-button utm-button-secondary" id="single-copy" type="button">نسخ الرابط</button></div>
+          </div>
+        </section>
+
+        <section class="utm-panel" id="panel-batch" role="tabpanel" aria-labelledby="tab-batch" data-panel="batch" hidden>
+          <div class="utm-panel-intro">
+            <div><span class="utm-step">٢ / فحص ملف</span><h3>راجع مجموعة حملات دفعة واحدة.</h3></div>
+            <p>الصق صفوف CSV أو اختر ملفًا. تتم القراءة محليًا، وتظهر نتيجة كل صف مع الرابط والملاحظات.</p>
+          </div>
+          <div class="utm-batch-actions">
+            <label class="utm-button utm-button-secondary utm-file-label" for="csv-file">اختر ملف CSV</label>
+            <input class="utm-visually-hidden" id="csv-file" type="file" accept=".csv,text/csv">
+            <button class="utm-text-button" id="load-sample" type="button">حمّل صفوفًا تجريبية</button>
+            <span class="utm-file-name" id="file-name" aria-live="polite">لم يتم اختيار ملف</span>
+          </div>
+          <div class="utm-field">
+            <label for="csv-input">بيانات CSV <span class="utm-required">مطلوبة</span></label>
+            <textarea id="csv-input" rows="8" spellcheck="false" autocapitalize="off" placeholder="landing_url,utm_source,utm_medium,utm_campaign,utm_content,utm_term"></textarea>
+            <small>العمود المطلوب: landing_url. يمكن ترك أعمدة UTM فارغة إذا كان الرابط يحتوي على قيمها. نقبل الفاصلة أو الفاصلة المنقوطة أو الجدولة للفصل بين الأعمدة.</small>
+          </div>
+          <div class="utm-form-actions">
+            <button class="utm-button utm-button-primary" id="run-batch" type="button">افحص الصفوف <span aria-hidden="true">←</span></button>
+            <button class="utm-button utm-button-quiet" id="clear-batch" type="button">مسح الملف</button>
+          </div>
+          <div class="utm-batch-result" id="batch-result" aria-live="polite" hidden>
+            <div class="utm-result-heading"><div><span class="utm-step">مراجعة الدفعة</span><h3 id="batch-title">اكتمل الفحص</h3></div><button class="utm-button utm-button-secondary" id="download-csv" type="button">تنزيل CSV بعد المراجعة</button></div><small class="utm-export-note">تُحمى القيم التي قد تُفسر كصيغ جدولية عند التصدير.</small>
+            <div class="utm-counts" id="batch-counts"></div>
+            <div class="utm-table-wrap"><table class="utm-table"><thead><tr><th scope="col">الصف</th><th scope="col">الحملة</th><th scope="col">المراجعة</th><th scope="col">الرابط المفحوص</th><th scope="col">ملاحظات</th></tr></thead><tbody id="batch-rows"></tbody></table></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="utm-guidance" aria-label="إرشادات وحدود الأداة">
+        <div class="utm-guidance-heading"><p class="utm-eyebrow">تسليم واضح للفريق</p><h2>الوسوم المتسقة تسهّل قراءة التقارير.</h2></div>
+        <div class="utm-guidance-items">
+          <div><span>١</span><p><b>اختر نمط تسمية ثابتًا.</b> مثل استخدام نفس قيم المصدر والوسيط عبر الفريق.</p></div>
+          <div><span>٢</span><p><b>اجعل القيم مفيدة.</b> أضف التفاصيل للحملة أو المحتوى، وتجنب أسماء الأشخاص أو بيانات التواصل.</p></div>
+          <div><span>٣</span><p><b>تحقق من القياس بشكل منفصل.</b> وجود وسوم على الرابط لا يؤكد جمع التحليلات أو الإسناد أو الموافقة أو التحويلات.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="utm-footer"><span>محمود عبدالنبي · التسويق التقني ومنظومات النمو</span><a href="/ar/marketing-systems/">المزيد من أنظمة التسويق</a></footer>
+  </div>
+  <script src="/assets/utm-tool.js?v=20261027-utm-product-v1" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UTM Campaign Builder & QA | Mahmoud Abdelnaby</title>
+  <meta name="description" content="Build campaign URLs or check a CSV for missing UTM values, duplicate tags, and naming inconsistencies. Processing happens in your browser.">
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="UTM Campaign Builder & QA">
+  <meta property="og:description" content="Create campaign URLs and check UTM consistency in a browser-based utility.">
+  <meta property="og:url" content="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/">
+  <meta name="theme-color" content="#09121c">
+  <link rel="stylesheet" href="/assets/site.css?v=20261027-utm-product-v1">
+  <link rel="stylesheet" href="/assets/utm-tool.css?v=20261027-utm-product-v1">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"UTM Campaign Builder & QA","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"inLanguage":"en","description":"A browser-based utility for creating campaign URLs and checking UTM values in CSV files.","url":"https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/","author":{"@type":"Person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"}}
+  </script>
+</head>
+<body class="utm-page">
+  <div class="utm-shell">
+    <header class="utm-topbar">
+      <a class="utm-brand" href="/" aria-label="Mahmoud Abdelnaby portfolio">MAHMOUD <span>ABDELNABY</span></a>
+      <nav class="utm-nav" aria-label="Primary navigation">
+        <a href="/marketing-systems/">Marketing systems</a>
+        <a class="utm-language" href="/ar/marketing-systems/utm-campaign-builder/" lang="ar" hreflang="ar">العربية</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="utm-hero" aria-labelledby="utm-title">
+        <div class="utm-hero-copy">
+          <p class="utm-eyebrow"><span class="utm-eyebrow-mark" aria-hidden="true"></span> FREE CAMPAIGN UTILITY</p>
+          <h1 id="utm-title">Make every campaign link <span>consistent.</span></h1>
+          <p class="utm-lede">Build tagged URLs one at a time or check a campaign sheet in bulk. See what needs attention before links reach your ads, emails, creators, or reports.</p>
+          <div class="utm-privacy-note"><span class="utm-privacy-dot" aria-hidden="true"></span><span>Your URLs and CSV are processed in this browser. Nothing is uploaded to a tool server.</span></div>
+        </div>
+        <div class="utm-hero-aside" aria-label="Tool workflow">
+          <div class="utm-aside-line"><span>01</span><b>Build</b><i aria-hidden="true"></i><span>02</span><b>Check</b><i aria-hidden="true"></i><span>03</span><b>Export</b></div>
+          <p>One set of naming rules, applied before the campaign goes live.</p>
+          <span class="utm-aside-caption">NO ACCOUNT CONNECTION · NO TRACKING CLAIMS</span>
+        </div>
+      </section>
+
+      <section class="utm-workspace" aria-label="Campaign URL workspace">
+        <div class="utm-workspace-head">
+          <div>
+            <p class="utm-eyebrow">CAMPAIGN WORKSPACE</p>
+            <h2>Prepare your links</h2>
+          </div>
+          <div class="utm-mode-switch" role="tablist" aria-label="Choose a workflow">
+            <button class="utm-mode is-active" id="tab-single" type="button" role="tab" aria-selected="true" aria-controls="panel-single" data-mode="single">Single URL</button>
+            <button class="utm-mode" id="tab-batch" type="button" role="tab" aria-selected="false" aria-controls="panel-batch" data-mode="batch">CSV batch check</button>
+          </div>
+        </div>
+
+        <section class="utm-panel" id="panel-single" role="tabpanel" aria-labelledby="tab-single" data-panel="single">
+          <div class="utm-panel-intro">
+            <div><span class="utm-step">01 / BUILD A LINK</span><h3>Start with the destination.</h3></div>
+            <p>Required values are source, medium, and campaign. Existing non-UTM query values and the URL fragment are kept.</p>
+          </div>
+          <form id="single-form" novalidate>
+            <div class="utm-field utm-field-wide">
+              <label for="single-url">Destination URL <span class="utm-required">Required</span></label>
+              <input id="single-url" name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com/landing-page" required>
+              <small>Use a full http:// or https:// address.</small>
+            </div>
+            <div class="utm-form-grid">
+              <div class="utm-field"><label for="single-source">utm_source <span class="utm-required">Required</span></label><input id="single-source" name="utm_source" type="text" autocomplete="off" placeholder="newsletter" required></div>
+              <div class="utm-field"><label for="single-medium">utm_medium <span class="utm-required">Required</span></label><input id="single-medium" name="utm_medium" type="text" autocomplete="off" placeholder="email" required></div>
+              <div class="utm-field"><label for="single-campaign">utm_campaign <span class="utm-required">Required</span></label><input id="single-campaign" name="utm_campaign" type="text" autocomplete="off" placeholder="spring_launch" required></div>
+              <div class="utm-field"><label for="single-content">utm_content <span class="utm-optional">Optional</span></label><input id="single-content" name="utm_content" type="text" autocomplete="off" placeholder="hero_cta"></div>
+              <div class="utm-field"><label for="single-term">utm_term <span class="utm-optional">Optional</span></label><input id="single-term" name="utm_term" type="text" autocomplete="off" placeholder="running_shoes"></div>
+            </div>
+            <div class="utm-form-actions">
+              <button class="utm-button utm-button-primary" type="submit">Build and check <span aria-hidden="true">↗</span></button>
+              <button class="utm-button utm-button-quiet" id="single-clear" type="reset">Clear fields</button>
+            </div>
+          </form>
+          <div class="utm-result" id="single-result" aria-live="polite" hidden>
+            <div class="utm-result-heading"><div><span class="utm-step">LINK REVIEW</span><h3 id="single-result-title">Ready to copy</h3></div><span class="utm-result-status" id="single-status"></span></div>
+            <div class="utm-issue-list" id="single-issues"></div>
+            <div class="utm-output-row"><code id="single-output"></code><button class="utm-button utm-button-secondary" id="single-copy" type="button">Copy URL</button></div>
+          </div>
+        </section>
+
+        <section class="utm-panel" id="panel-batch" role="tabpanel" aria-labelledby="tab-batch" data-panel="batch" hidden>
+          <div class="utm-panel-intro">
+            <div><span class="utm-step">02 / CHECK A SHEET</span><h3>Review a whole campaign batch.</h3></div>
+            <p>Paste CSV rows or choose a file. The tool reads the file locally and returns each original row with a checked URL and notes.</p>
+          </div>
+          <div class="utm-batch-actions">
+            <label class="utm-button utm-button-secondary utm-file-label" for="csv-file">Choose CSV file</label>
+            <input class="utm-visually-hidden" id="csv-file" type="file" accept=".csv,text/csv">
+            <button class="utm-text-button" id="load-sample" type="button">Load sample rows</button>
+            <span class="utm-file-name" id="file-name" aria-live="polite">No file selected</span>
+          </div>
+          <div class="utm-field">
+            <label for="csv-input">CSV data <span class="utm-required">Required</span></label>
+            <textarea id="csv-input" rows="8" spellcheck="false" autocapitalize="off" placeholder="landing_url,utm_source,utm_medium,utm_campaign,utm_content,utm_term"></textarea>
+            <small>Required column: landing_url. UTM columns may be blank if the destination URL already contains those values. Comma, semicolon, and tab-separated files are supported.</small>
+          </div>
+          <div class="utm-form-actions">
+            <button class="utm-button utm-button-primary" id="run-batch" type="button">Check these rows <span aria-hidden="true">→</span></button>
+            <button class="utm-button utm-button-quiet" id="clear-batch" type="button">Clear batch</button>
+          </div>
+          <div class="utm-batch-result" id="batch-result" aria-live="polite" hidden>
+            <div class="utm-result-heading"><div><span class="utm-step">BATCH REVIEW</span><h3 id="batch-title">Review complete</h3></div><button class="utm-button utm-button-secondary" id="download-csv" type="button">Download reviewed CSV</button></div><small class="utm-export-note">Spreadsheet formula-like values are prefixed safely when exported.</small>
+            <div class="utm-counts" id="batch-counts"></div>
+            <div class="utm-table-wrap"><table class="utm-table"><thead><tr><th scope="col">Row</th><th scope="col">Campaign</th><th scope="col">Review</th><th scope="col">Checked URL</th><th scope="col">Notes</th></tr></thead><tbody id="batch-rows"></tbody></table></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="utm-guidance" aria-label="Naming guidance and limits">
+        <div class="utm-guidance-heading"><p class="utm-eyebrow">A CLEAN HANDOFF</p><h2>Consistent tags make reports easier to read.</h2></div>
+        <div class="utm-guidance-items">
+          <div><span>01</span><p><b>Choose one naming pattern.</b> For example, keep source and medium labels stable across your team.</p></div>
+          <div><span>02</span><p><b>Keep values useful.</b> Put the detail you need into campaign or content, not into a person’s name or contact data.</p></div>
+          <div><span>03</span><p><b>Verify measurement separately.</b> A tagged URL does not confirm analytics collection, attribution, consent, or conversions.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="utm-footer"><span>Mahmoud Abdelnaby · Technical Marketing &amp; Growth Systems</span><a href="/marketing-systems/">More marketing systems</a></footer>
+  </div>
+  <script src="/assets/utm-tool.js?v=20261027-utm-product-v1" defer></script>
+</body>
+</html>
