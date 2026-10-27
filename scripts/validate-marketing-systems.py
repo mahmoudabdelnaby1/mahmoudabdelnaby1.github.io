@@ -68,6 +68,12 @@ for path in pages:
             local = local / "index.html"
         if not local.is_file():
             errors.append(f"{path.relative_to(ROOT)}: missing local link {href}")
+    if path.parent.name != "marketing-systems":
+        lang = "ar" if "ar" in path.parts else "en"
+        guide_links = [href for href in parser.links if "/marketing-systems/guides/" in href]
+        expected_prefix = f"https://github.com/mahmoudabdelnaby1/mahmoudabdelnaby1.github.io/blob/main/marketing-systems/guides/{lang}/"
+        if len(guide_links) != 1 or not guide_links[0].startswith(expected_prefix):
+            errors.append(f"{path.relative_to(ROOT)}: formatted guide link must open its rendered GitHub source")
 
 tree = ET.parse(ROOT / "sitemap.xml")
 urls = {element.findtext("s:loc", namespaces=NS) for element in tree.getroot().findall("s:url", NS)}
