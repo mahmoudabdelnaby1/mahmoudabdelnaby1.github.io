@@ -26,8 +26,16 @@
   const style = document.createElement('style');
   style.textContent = '#privacy-consent{position:fixed;z-index:2147483000;inset:auto 1rem 1rem;max-width:42rem;margin-inline:auto;padding:1rem 1.1rem;background:#101827;color:#fff;border:1px solid #52647d;border-radius:1rem;box-shadow:0 12px 40px #0005;font:inherit;line-height:1.55}#privacy-consent[hidden]{display:none}#privacy-consent h2{font-size:1.1rem;margin:0 0 .4rem}#privacy-consent p{margin:.3rem 0 .8rem}#privacy-consent .pc-actions{display:flex;flex-wrap:wrap;gap:.55rem}#privacy-consent button,#privacy-settings{font:inherit;cursor:pointer;border-radius:.55rem;padding:.55rem .8rem;border:1px solid #9aacc5;background:#fff;color:#101827}#privacy-consent button[data-choice="accept"]{background:#93f0cf;border-color:#93f0cf}#privacy-consent a{color:#b8d7ff}#privacy-settings{position:fixed;z-index:2147482999;inset:auto 1rem 1rem auto;font-size:.85rem}html[dir="rtl"] #privacy-settings{inset:auto auto 1rem 1rem}@media(max-width:600px){#privacy-consent{inset:auto .5rem .5rem}#privacy-settings{inset:auto .5rem .5rem}html[dir="rtl"] #privacy-settings{inset:auto auto .5rem .5rem}}';
   document.head.append(style);
-  let choice = null;
-  try { choice = localStorage.getItem(STORE); } catch (_) {}
+  function readChoice() {
+    try {
+      const stored = window.localStorage.getItem(STORE);
+      if (stored === 'accepted' || stored === 'rejected') return stored;
+    } catch (_) {}
+    const cookie = document.cookie.split('; ').find((item) => item.startsWith(encodeURIComponent(STORE) + '='));
+    const value = cookie ? decodeURIComponent(cookie.slice(cookie.indexOf('=') + 1)) : null;
+    return value === 'accepted' || value === 'rejected' ? value : null;
+  }
+  let choice = readChoice();
   let loaded = false;
 
   function sendGAConsent(value) {
@@ -56,7 +64,8 @@
   }
   function save(value) {
     choice = value ? 'accepted' : 'rejected';
-    try { localStorage.setItem(STORE, choice); } catch (_) {}
+    try { window.localStorage.setItem(STORE, choice); } catch (_) {}
+    try { document.cookie = `${encodeURIComponent(STORE)}=${choice}; Max-Age=15552000; Path=/; SameSite=Lax; Secure`; } catch (_) {}
     if (value) startAnalytics(); else revoke();
     show(false);
     announce(copy.saved);
@@ -83,3 +92,4 @@
     },{capture:true});
   }
 })();
+
