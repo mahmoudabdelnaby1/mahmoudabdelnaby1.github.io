@@ -1,3 +1,4 @@
+warning: in the working copy of 'assets/privacy-consent.js', LF will be replaced by CRLF the next time Git touches it
 (() => {
   'use strict';
   const GA_ID = 'G-5RX5EFWJ8T';
@@ -53,7 +54,8 @@
     window.gtag('consent', 'default', {analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
     window.gtag('consent', 'update', {analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
     window.gtag('js', new Date());
-    window.gtag('config', GA_ID, {allow_google_signals:false,allow_ad_personalization_signals:false});
+    window.gtag('config', GA_ID, {allow_google_signals:false,allow_ad_personalization_signals:false,send_page_view:false});
+    window.gtag('event', 'page_view', {page_title:document.title,page_location:location.origin+location.pathname,page_path:location.pathname});
     const ga = document.createElement('script'); ga.async = true; ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.append(ga);
     window.clarity = window.clarity || function(){ (window.clarity.q=window.clarity.q||[]).push(arguments); };
     window.clarity('consentv2', {analytics_Storage:'granted', ad_Storage:'denied'});
