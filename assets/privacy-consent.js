@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const GA_ID = 'G-QE8TT88LVY';
+  const GA_ID = 'G-NYEC86S78P';
   const CLARITY_ID = 'z49qpk5pxr';
   const STORE = 'portfolio-optional-analytics-v1';
   const ar = document.documentElement.lang.toLowerCase().startsWith('ar');
