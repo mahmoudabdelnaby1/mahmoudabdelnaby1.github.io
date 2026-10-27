@@ -64,10 +64,9 @@
     if (query) ranked.sort((a, b) => b.relevance - a.relevance || a.index - b.index);
     // These cards use CSS Grid, where `order` does not change visual order.
     // Reinsert them in relevance order so the best matches actually appear first.
-    if (cardGrid) {
-      const ordered = query
-        ? [...ranked.map(item => item.card), ...cards.filter(card => !ranked.some(item => item.card === card))]
-        : cards;
+    if (cardGrid && query) {
+      const matchingCards = new Set(ranked.map(item => item.card));
+      const ordered = [...ranked.map(item => item.card), ...cards.filter(card => !matchingCards.has(card))];
       const fragment = document.createDocumentFragment();
       ordered.forEach(card => fragment.append(card));
       cardGrid.append(fragment);
