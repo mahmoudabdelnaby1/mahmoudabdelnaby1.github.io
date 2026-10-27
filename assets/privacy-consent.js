@@ -1,4 +1,3 @@
-warning: in the working copy of 'assets/privacy-consent.js', LF will be replaced by CRLF the next time Git touches it
 (() => {
   'use strict';
   const GA_ID = 'G-5RX5EFWJ8T';
