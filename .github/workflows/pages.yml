@@ -20,11 +20,27 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Assemble current website files
         run: |
           mkdir -p _site
-          cp -R index.html ar assets assistants frameworks labs marketing-systems playbooks skill-areas skills llms.txt robots.txt sitemap.xml .nojekyll _site/
+          cp -R index.html ar assets assistants frameworks labs marketing-systems playbooks skill-areas skills privacy llms.txt robots.txt sitemap.xml .nojekyll _site/
           rm -f _site/README.md
+      - name: Add privacy choices to public pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          root = Path('_site')
+          script = '<script defer src="/assets/privacy-consent.js"></script>'
+          for page in root.rglob('*.html'):
+              html = page.read_text(encoding='utf-8')
+              if 'privacy-consent.js' in html or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', html, re.I):
+                  continue
+              if re.search(r'</body\s*>', html, re.I):
+                  page.write_text(re.sub(r'</body\s*>', script + '</body>', html, count=1, flags=re.I), encoding='utf-8')
+          PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -35,5 +51,50 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Check out repository for changed-page detection
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow about changed indexable pages
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          if [ -z "$INDEXNOW_KEY" ]; then
+            echo "INDEXNOW_KEY is not configured; skipping IndexNow notification."
+            exit 0
+          fi
+          python - <<'PY'
+          import json, os, re, subprocess, urllib.request
+          from pathlib import Path
+          from urllib.parse import quote
+          import xml.etree.ElementTree as ET
+          base = 'https://mahmoudabdelnaby1.github.io/'
+          key = os.environ['INDEXNOW_KEY']
+          changed = subprocess.check_output(['git','diff','--name-only','HEAD^','HEAD'], text=True).splitlines()
+          urls = []
+          for name in changed:
+              if not name.endswith('.html') or name.startswith(('drafts/','_site/')):
+                  continue
+              path = Path(name)
+              if not path.is_file():
+                  continue
+              html = path.read_text(encoding='utf-8', errors='ignore')
+              if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', html, re.I):
+                  continue
+              canonical = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', html, re.I)
+              if not canonical:
+                  canonical = re.search(r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical', html, re.I)
+              if canonical and canonical.group(1).startswith(base):
+                  urls.append(canonical.group(1))
+          urls = sorted(set(urls))
+          if urls:
+              payload = json.dumps({'host':'mahmoudabdelnaby1.github.io','key':key,'keyLocation':base+quote(key+'.txt'),'urlList':urls}).encode()
+              request = urllib.request.Request('https://api.indexnow.org/indexnow', data=payload, headers={'Content-Type':'application/json; charset=utf-8'}, method='POST')
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  print(f'IndexNow accepted HTTP {response.status} for {len(urls)} changed canonical pages.')
+          else:
+              print('No changed canonical HTML pages to submit.')
+          PY
+
