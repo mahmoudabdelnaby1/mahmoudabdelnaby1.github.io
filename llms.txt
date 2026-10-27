@@ -51,13 +51,12 @@
 - [Bilingual Client Reporting Workflow](https://mahmoudabdelnaby1.github.io/playbooks/bilingual-client-reporting-workflow/) | [سير عمل إعداد التقارير التسويقية للعميل](https://mahmoudabdelnaby1.github.io/ar/playbooks/bilingual-client-reporting-workflow/) — Turn approved aggregate marketing data into a source-linked report with clear definitions, reviewed interpretation, and next actions. / حوّل بيانات تسويقية مجمعة ومعتمدة إلى تقرير موثق المصادر بتعريفات واضحة وتفسير مراجع وخطوات تالية. [Source](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks/tree/main/bilingual-client-reporting-workflow/)
 - [Salla & Zid Storefront SEO Review](https://mahmoudabdelnaby1.github.io/playbooks/salla-zid-storefront-seo-qa/) | [مراجعة SEO لمتاجر سلة وزد](https://mahmoudabdelnaby1.github.io/ar/playbooks/salla-zid-storefront-seo-qa/) — Review native store metadata against verified page facts, official platform guidance, and controlled QA. / راجع حقول المتجر وفق حقائق موثقة وإرشادات المنصات ومراجعة قبل النشر. [Source](https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks/tree/main/salla-zid-storefront-seo-qa/)
 
-## Marketing Systems Lab
+## Marketing guides and workflows
 
-> An editorial register of 89 distinct research-stage digital marketing tool concepts. Three overlapping pairs were merged. The entries are concepts under review, not claims of released or verified software.
+> A bilingual collection of 18 curated entries: nine new task guides and nine links to existing playbooks or frameworks, without duplicating those resources. New guides describe intended use, inputs, steps, outputs, and limits; they are not live integrations or guaranteed outcomes.
 
-- [English concepts register](https://mahmoudabdelnaby1.github.io/labs/)
-- [سجل التصورات بالعربية](https://mahmoudabdelnaby1.github.io/ar/labs/)
-- [Source catalogue and page generator](https://github.com/mahmoudabdelnaby1/mahmoudabdelnaby1.github.io/tree/main/labs)
+- [English collection](https://mahmoudabdelnaby1.github.io/marketing-systems/)
+- [المجموعة العربية](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/)
 
 ## Assistant library
 
