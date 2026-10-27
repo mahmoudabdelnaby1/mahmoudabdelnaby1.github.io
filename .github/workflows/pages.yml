@@ -68,7 +68,7 @@ jobs:
           python - <<'PY'
           import json, os, re, subprocess, urllib.request
           from pathlib import Path
-          from urllib.parse import quote
+          from urllib.parse import quote, urldefrag
           import xml.etree.ElementTree as ET
           base = 'https://mahmoudabdelnaby1.github.io/'
           key = os.environ['INDEXNOW_KEY']
@@ -87,7 +87,7 @@ jobs:
               if not canonical:
                   canonical = re.search(r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical', html, re.I)
               if canonical and canonical.group(1).startswith(base):
-                  urls.append(canonical.group(1))
+                  urls.append(urldefrag(canonical.group(1))[0])
           urls = sorted(set(urls))
           if urls:
               payload = json.dumps({'host':'mahmoudabdelnaby1.github.io','key':key,'keyLocation':base+quote(key+'.txt'),'urlList':urls}).encode()
