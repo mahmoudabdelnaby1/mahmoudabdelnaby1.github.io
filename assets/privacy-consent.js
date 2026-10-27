@@ -1,7 +1,7 @@
 (() => {
   'use strict';
-  const GA_ID = 'G-5RX5EFWJ8T';
-  const CLARITY_ID = 'z48olb9rbi';
+  const GA_ID = 'G-QE8TT88LVY';
+  const CLARITY_ID = 'z49qpk5pxr';
   const STORE = 'portfolio-optional-analytics-v1';
   const ar = document.documentElement.lang.toLowerCase().startsWith('ar');
   const copy = ar ? {
