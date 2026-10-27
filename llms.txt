@@ -53,10 +53,12 @@
 
 ## Marketing guides and workflows
 
-> A bilingual collection of 18 curated entries: nine new task guides and nine links to existing playbooks or frameworks, without duplicating those resources. New guides describe intended use, inputs, steps, outputs, and limits; they are not live integrations or guaranteed outcomes.
+> A bilingual collection of 19 curated entries: ten new task guides and nine links to existing playbooks or frameworks, without duplicating those resources. New guides describe intended use, inputs, steps, outputs, and limits; they are not live integrations or guaranteed outcomes.
 
 - [English collection](https://mahmoudabdelnaby1.github.io/marketing-systems/)
 - [المجموعة العربية](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/)
+- [Education Lead Quality Review](https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/) | [مراجعة جودة استفسارات التعليم](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/education-lead-quality-review/) — A planning guide for classifying education enquiries, documenting qualification criteria, routing follow-up, and reviewing outcomes without assuming a CRM integration. / دليل لتصنيف استفسارات التعليم وتوثيق معايير التأهيل وتوجيه المتابعة ومراجعة النتائج دون افتراض وجود تكامل مع نظام CRM.
+- [Paid Media Creative Test Matrix](https://mahmoudabdelnaby1.github.io/marketing-systems/paid-media-creative-test-matrix/) | [مصفوفة اختبار إبداعات الإعلانات](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/paid-media-creative-test-matrix/) — Structure a controlled creative test with hypotheses, comparable variants, delivery checks, and a recorded decision. / نظّم اختبارًا للإبداع الإعلاني بفرضيات ونسخ قابلة للمقارنة وفحوص للتسليم وقرار موثق.
 
 ## Assistant library
 

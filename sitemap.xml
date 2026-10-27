@@ -9709,4 +9709,27 @@
     <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/utm-campaign-builder/" />
     <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
     <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/utm-campaign-builder/" />
-  </url></urlset>
+  </url>  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/creator-fee-planner/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/marketing-systems/creator-fee-planner/</loc>
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/creator-fee-planner/" />
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/" />
+  </url>  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/</loc>
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/" />
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/education-lead-quality-review/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/" />
+  </url>
+  <url>
+    <loc>https://mahmoudabdelnaby1.github.io/ar/marketing-systems/education-lead-quality-review/</loc>
+    <html:link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/education-lead-quality-review/" />
+    <html:link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/" />
+  </url>
+</urlset>

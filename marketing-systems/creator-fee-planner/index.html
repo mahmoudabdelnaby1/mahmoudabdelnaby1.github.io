@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creator Campaign Fee Planner | Mahmoud Abdelnaby</title>
+  <meta name="description" content="Compare creator campaign fee scenarios using your own fixed fees, view assumptions, production costs, and capped performance bonus. No default rates or outcome promises.">
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/marketing-systems/creator-fee-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Creator Campaign Fee Planner">
+  <meta property="og:description" content="Model fixed and capped variable creator fees using your own assumptions.">
+  <meta property="og:url" content="https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/">
+  <meta name="theme-color" content="#09121c">
+  <link rel="stylesheet" href="/assets/site.css?v=20261027-creator-planner-v1">
+  <link rel="stylesheet" href="/assets/creator-fee-planner.css?v=20261027-creator-planner-v1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Creator Campaign Fee Planner","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"inLanguage":"en","description":"A browser-based scenario planner for estimating creator campaign fees from user-entered assumptions. It does not provide market-rate benchmarks, legal review, or performance predictions.","url":"https://mahmoudabdelnaby1.github.io/marketing-systems/creator-fee-planner/","author":{"@type":"Person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"}}</script>
+</head>
+<body class="creator-planner-page">
+  <div class="cp-shell">
+    <header class="cp-topbar"><a class="cp-brand" href="/">MAHMOUD <span>ABDELNABY</span></a><nav aria-label="Primary navigation"><a href="/marketing-systems/">Marketing systems</a><a lang="ar" hreflang="ar" href="/ar/marketing-systems/creator-fee-planner/">العربية</a></nav></header>
+    <main>
+      <section class="cp-hero"><p class="cp-eyebrow">CREATOR CAMPAIGN PLANNING · FREE BROWSER TOOL</p><h1>Know the fee range before you brief the creators.</h1><p class="cp-lede">Compare a fixed-fee plan with an optional capped view bonus. Use figures from your own negotiations and label view counts as estimates until verified.</p><p class="cp-privacy"><span aria-hidden="true"></span>Your inputs stay in this browser. Nothing is uploaded or saved.</p></section>
+      <section class="cp-workspace" aria-labelledby="cp-input-title">
+        <div class="cp-workspace-head"><div><p class="cp-step">01 / BUILD A SCENARIO</p><h2 id="cp-input-title">Enter your assumptions</h2></div><label class="cp-currency-label" for="cp-currency">Currency<select id="cp-currency"><option value="SAR">SAR · Saudi riyal</option><option value="AED">AED · UAE dirham</option><option value="EGP">EGP · Egyptian pound</option><option value="USD">USD · US dollar</option></select></label></div>
+        <form id="cp-form" novalidate>
+          <div class="cp-field-grid">
+            <div class="cp-field"><label for="cp-count">Creators in this campaign</label><input id="cp-count" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 8" required><small>Number of creators with the same fee structure.</small></div>
+            <div class="cp-field"><label for="cp-fixed">Fixed fee per creator</label><input id="cp-fixed" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Enter negotiated amount" required><small>Production or publishing fee guaranteed per creator.</small></div>
+            <div class="cp-field"><label for="cp-extra">Other campaign costs per creator</label><input id="cp-extra" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Optional: usage, delivery, etc."><small>Optional costs you want included in the estimate.</small></div>
+            <div class="cp-field"><label for="cp-rate">Bonus per 1,000 eligible views</label><input id="cp-rate" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Optional; leave blank for no bonus"><small>Use only if your agreement defines the eligible view source.</small></div>
+            <div class="cp-field"><label for="cp-floor">Views before bonus starts</label><input id="cp-floor" type="number" min="0" step="1" inputmode="numeric" placeholder="Optional threshold"><small>Views below this level do not earn a bonus.</small></div>
+            <div class="cp-field"><label for="cp-cap">Maximum bonus per creator</label><input id="cp-cap" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Optional cap"><small>A cap keeps the variable fee bounded.</small></div>
+          </div>
+          <fieldset class="cp-scenarios"><legend>Estimated views per creator</legend><p>Enter low, planning, and high scenarios. These are assumptions, not forecasts.</p><div class="cp-scenario-grid"><div class="cp-field"><label for="cp-low">Low scenario</label><input id="cp-low" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter estimate" required></div><div class="cp-field"><label for="cp-mid">Planning scenario</label><input id="cp-mid" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter estimate" required></div><div class="cp-field"><label for="cp-high">High scenario</label><input id="cp-high" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter estimate" required></div></div></fieldset>
+          <div class="cp-actions"><button class="cp-primary" type="submit">Calculate fee scenarios <span aria-hidden="true">↗</span></button><button class="cp-secondary" type="reset">Clear inputs</button></div>
+          <p class="cp-error" id="cp-error" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="cp-results" id="cp-results" aria-labelledby="cp-result-title" hidden>
+        <div class="cp-results-head"><div><p class="cp-step">02 / REVIEW THE RANGE</p><h2 id="cp-result-title">Estimated campaign cost</h2></div><p>Totals use the assumptions above. Taxes, agency fees, paid usage, and other unentered costs are excluded.</p></div>
+        <div class="cp-result-grid" id="cp-result-grid"></div>
+        <div class="cp-summary"><h3>What this estimate means</h3><p id="cp-result-note"></p><button class="cp-secondary" id="cp-copy" type="button">Copy scenario summary</button><span id="cp-copy-status" role="status" aria-live="polite"></span></div>
+      </section>
+      <section class="cp-method"><h2>How the estimate is calculated</h2><p><strong>Creator payout</strong> = fixed fee + other entered costs + capped bonus. The bonus equals eligible views above the threshold ÷ 1,000 × the entered rate, up to the entered cap. Campaign total is the per-creator payout multiplied by creator count.</p><p>This is a planning calculator, not a rate benchmark, contract, legal or regulatory check, view verification, or guarantee of reach, engagement, or sales. Confirm deliverables, usage rights, disclosure, payment terms, and any local requirements with the relevant parties before contracting.</p></section>
+    </main>
+    <footer class="cp-footer"><a href="/marketing-systems/">Back to Marketing Systems ↗</a><span>Scenario math only · No account connection</span></footer>
+  </div>
+  <script src="/assets/creator-fee-planner.js?v=20261027-creator-planner-v1" defer></script>
+</body>
+</html>
