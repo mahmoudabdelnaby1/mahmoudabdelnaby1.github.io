@@ -93,7 +93,7 @@ def clean(s):
 def body_only(md, strip_all_assets=False):
     heads = list(re.finditer(r"(?m)^##\s+[^\n]+$", md))
     if strip_all_assets:
-        markers=("Short-video script:","Educational carousel:","Field experiment thread:","Tool-neutral prompt pack:","Stop-doing swipe file:","Hook–Value–Template:","سكريبت فيديو قصير:","كاروسيل تعليمي:","سلسلة تجربة ميدانية:","حزمة مطالبات محايدة للأدوات:","ملف أمثلة: أوقف هذا:","الخطاف والقيمة والقالب:")
+        markers=("Short-video script:","Educational carousel:","Field experiment thread:","Tool-neutral prompt pack:","Stop-doing swipe file:","Hook–Value–Template:","Additional applied format:","سكريبت فيديو قصير:","كاروسيل تعليمي:","سلسلة تجربة ميدانية:","حزمة مطالبات محايدة للأدوات:","ملف أمثلة: أوقف هذا:","الخطاف والقيمة والقالب:","تنسيق تطبيقي إضافي:")
         assets=[h for h in heads if any(h.group(0).startswith("## "+marker) for marker in markers)]
         if assets: return md[:assets[0].start()].rstrip()
     return md[:heads[-1].start()].rstrip() if heads else md.rstrip()
@@ -207,6 +207,242 @@ def make_asset(post, lang, family, md):
 
 ALL_SIX = ["video", "carousel", "experiment", "prompt", "swipe", "hvt"]
 
+# One advanced, intent-matched treatment is added to each topic. The six requested
+# core treatments remain on every page; this pool adds editorial variety without
+# repeating every optional appendix on every article.
+EXTRA_FORMATS = {
+    "01": ["decision_map", "scenario", "pre_mortem", "evidence_scorecard"],
+    "02": ["debug_runbook", "evidence_scorecard", "scenario", "launch_gate"],
+    "03": ["decision_map", "debug_runbook", "evidence_scorecard", "faq"],
+    "04": ["decision_map", "scenario", "evidence_scorecard", "launch_gate"],
+    "05": ["scenario", "annotated_teardown", "faq", "implementation_sprint"],
+    "06": ["annotated_teardown", "implementation_sprint", "faq", "launch_gate"],
+    "07": ["scenario", "debug_runbook", "faq", "decision_map"],
+    "08": ["evidence_scorecard", "decision_map", "scenario", "launch_gate"],
+    "09": ["annotated_teardown", "launch_gate", "scenario", "implementation_sprint"],
+    "10": ["evidence_scorecard", "decision_map", "scenario", "debug_runbook"],
+    "11": ["pre_mortem", "debug_runbook", "launch_gate", "scenario"],
+}
+
+EXTRA_NAMES = {
+    "en": {
+        "decision_map":"Decision map", "debug_runbook":"Troubleshooting runbook",
+        "scenario":"Worked scenario", "evidence_scorecard":"Evidence scorecard",
+        "annotated_teardown":"Annotated teardown", "launch_gate":"Pre-launch gate",
+        "implementation_sprint":"Implementation playbook", "faq":"Reader questions and direct answers",
+        "pre_mortem":"Failure-mode pre-mortem",
+    },
+    "ar": {
+        "decision_map":"خريطة قرار", "debug_runbook":"دليل تشخيص الأعطال",
+        "scenario":"سيناريو تطبيقي", "evidence_scorecard":"بطاقة تحقق بالأدلة",
+        "annotated_teardown":"تفكيك مشروح للمثال", "launch_gate":"بوابة ما قبل الإطلاق",
+        "implementation_sprint":"خطة تنفيذ عملية", "faq":"أسئلة القارئ وإجابات مباشرة",
+        "pre_mortem":"استباق أسباب التعثر",
+    },
+}
+
+def choose_extra_style(post, seen):
+    group=post.get("theme","01").split("-",1)[0]
+    choices=EXTRA_FORMATS.get(group,EXTRA_FORMATS["01"])
+    family=choices[seen[group] % len(choices)]
+    seen[group]+=1
+    return family
+
+def make_advanced_asset(post, lang, family, md):
+    title=clean(post[lang]["title"])
+    opening, principle, example, steps=material(md)
+    example_line=(sentences(example) or [example])[0]
+    points=[]
+    for heading, sentence in steps:
+        if sentence and sentence not in points and sentence not in {opening,principle}:
+            points.append(sentence)
+    points=(points or [principle])[:5]
+    ar=lang=="ar"
+    name=EXTRA_NAMES[lang][family]
+    if family=="decision_map":
+        if ar: body=f"""ابدأ من سؤال هذا المقال: **{opening}**
+
+**إذا لم تستطع إثبات الحالة الحالية:** اجمع السجل أو المعلومة الناقصة أولًا، وسجّل ما بقي مجهولًا.
+
+**إذا أكد الدليل أن المشكلة ضمن نطاق المقال:** نفّذ خطوة واحدة: {principle} احتفظ بالمصدر والتاريخ والمسؤول.
+
+**إذا لم يؤكد الدليل ذلك:** لا تطبق الحل لمجرد تشابه الحالة؛ افحص البديل الأقرب في المادة: {points[-1]}
+
+**قبل القرار النهائي:** قارن خط الأساس والنتيجة من المصدر نفسه، وسجّل الاستثناء أو حاجز الجودة. إذا تعذر القياس، أوقف الاستنتاج وحدد من سيجمع الدليل."""
+        else: body=f"""Start with the decision in this article: **{opening}**
+
+**If the current state cannot be verified:** collect the missing record or fact first, and log what remains unknown.
+
+**If the evidence confirms the problem is in scope:** take one action: {principle} Keep its source, date, and owner.
+
+**If the evidence does not confirm it:** do not apply the fix because the case merely looks similar; check the nearest alternative in the source material: {points[-1]}
+
+**Before deciding:** compare baseline and outcome using the same source, and log exceptions or a quality guardrail. If measurement is unavailable, pause the conclusion and assign evidence collection."""
+    elif family=="debug_runbook":
+        rows="\n".join(f"| {i} | {clean(s)} | [السجل/الحقل الذي يثبتها] | [الإجراء أو المالك] |" for i,s in enumerate(points[:4],1)) if ar else "\n".join(f"| {i} | {clean(s)} | [record/field that proves it] | [action or owner] |" for i,s in enumerate(points[:4],1))
+        if ar: body=f"""**الإشارة التي نبدأ منها:** {opening}
+
+| الفحص المرتبط بالمقال | الدليل الذي تبحث عنه | الإجراء عند عدم التطابق |
+|---|---|---|
+{rows}
+
+**أغلق البلاغ عندما:** يطابق السجل الحالة المقصودة، ويوجد مسؤول للخطوة التالية، ويمكن إعادة الفحص من المصدر نفسه. إذا فشل القياس، لا تفسر السبب من لوحة واحدة؛ وثّق نقطة التعطل وأعد اختبار المسار بسجل تجريبي."""
+        else: body=f"""**Signal to investigate:** {opening}
+
+| Article-specific check | Evidence to inspect | Action when it fails |
+|---|---|---|
+{rows}
+
+**Close the incident when:** the record matches the intended state, an owner has the next action, and the check can be repeated from the same source. If tracking fails, do not infer the cause from one dashboard; log the break and replay the path with a test record."""
+    elif family=="scenario":
+        rows="\n".join(f"{i}. **{clean(s)}**" for i,s in enumerate(points[:4],1))
+        if ar: body=f"""**سيناريو افتراضي للتدريب، وليس حالة عميل:** يواجه فريق المشكلة التالية: {opening}
+
+بدل القفز إلى نتيجة، يمشي الفريق عبر المادة بهذا الترتيب:
+
+{rows}
+
+**ما الذي يمكن استنتاجه؟** فقط ما يثبته السجل الذي جُمِع. استخدم المثال التالي لتحديد ما يجب توثيقه، لا كدليل على نجاح: {clean(example_line)}
+
+قبل وصف أي أثر، سجّل الفترة والمصدر والعوامل التي تغيرت. إذا لم توجد سجلات كافية، اكتب «غير معروف» واترك النتيجة مفتوحة."""
+        else: body=f"""**Hypothetical training scenario, not a client case:** a team faces this problem: {opening}
+
+Instead of jumping to an outcome, the team walks through the source material in this order:
+
+{rows}
+
+**What can be concluded?** Only what the collected record supports. Use this example to identify what to document, not as proof of success: {clean(example_line)}
+
+Before describing impact, record the period, source, and changes made. If records are insufficient, write “unknown” and leave the outcome open."""
+    elif family=="evidence_scorecard":
+        if ar:
+            rows="\n".join(f"| {i} | {clean(s)} | نعم / لا / غير معروف | [الرابط أو الحقل والتاريخ] |" for i,s in enumerate(points[:5],1))
+            body=f"""قيّم التطبيق الحالي للمقال، لا جودة النية. أي إجابة بلا سجل تعتبر **غير معروف**.
+
+| # | معيار مرتبط بموضوع المقال | الحكم | الدليل الذي تحفظه |
+|---:|---|---|---|
+{rows}
+
+**قرار المراجعة:** عالج «لا» في شرط حرج قبل التوسع، واجعل لكل «غير معروف» مالكًا وموعد تحقق. وثّق النسخة والمصدر؛ لا تحوّل الدرجة إلى ادعاء أداء أو نتيجة عميل."""
+        else:
+            rows="\n".join(f"| {i} | {clean(s)} | Yes / No / Unknown | [link or field and date] |" for i,s in enumerate(points[:5],1))
+            body=f"""Score the current implementation, not the team’s intention. Any answer without a record is **Unknown**.
+
+| # | Article-specific criterion | Judgment | Evidence to retain |
+|---:|---|---|---|
+{rows}
+
+**Review decision:** fix a critical “No” before scaling, and assign an owner and verification date to each “Unknown.” Record the version and source; do not turn the score into a performance or client-result claim."""
+    elif family=="annotated_teardown":
+        if ar: body=f"""**مقتطف من منهج المقال:** «{clean(example_line)}»
+
+- **ما الذي يقدمه؟** يوضح جانبًا عمليًا من موضوع «{title}».
+- **ما الذي يحتاجه القارئ قبل التنفيذ؟** تطبيق الخطوة الأساسية: {principle}
+- **ما الذي لا يثبته المقتطف وحده؟** لا يثبت أثرًا أو معدل نجاح من دون مصدر ومدة ومقارنة.
+
+**إعادة صياغة تحريرية قابلة للاستخدام:** «في [الحالة]، افحص [الدليل المرتبط بهذه الخطوة]. إذا تحقق [الشرط]، نفّذ [الإجراء] وسجّل [المؤشر] من [المصدر] خلال [الفترة]. اذكر الاستثناء والنتيجة الفعلية بعد التحقق».
+
+الصياغة المقترحة نموذج توضيحي؛ املأه بدليل حقيقي ولا تنسبه لعميل."""
+        else: body=f"""**Excerpt from the article’s method:** “{clean(example_line)}”
+
+- **What does it provide?** A practical element of “{title}.”
+- **What does the reader need before acting?** Apply the core step: {principle}
+- **What does the excerpt not prove by itself?** It cannot establish impact or a success rate without a source, period, and comparison.
+
+**Editorial rewrite for use:** “For [case], inspect [evidence tied to this step]. If [condition] holds, take [action] and record [measure] from [source] over [period]. State exceptions and the observed result after verification.”
+
+The rewrite is an illustration; fill it with real evidence and do not attribute it to a client."""
+    elif family=="launch_gate":
+        if ar:
+            checklist="\n".join(f"- ☐ {clean(s)} — احتفظ بنتيجة التحقق وتاريخها" for s in points)
+            body=f"""قبل تطبيق توصية المقال في مسار حي، مر على هذه البوابة:
+
+{checklist}
+- ☐ توجد طريقة آمنة للتراجع أو مسار يدوي عند التعطل.
+- ☐ لا تعرض لقطة أو مثالًا بيانات شخصية أو نتيجة غير موثقة.
+
+**أوقف الإطلاق إذا:** غاب دليل حرج أو لم يُعرف المسؤول. سجّل الاستثناء والقرار وتاريخ إعادة الفحص."""
+        else:
+            checklist="\n".join(f"- ☐ {clean(s)} — retain the verification result and date" for s in points)
+            body=f"""Before applying the article’s recommendation to a live workflow, pass this gate:
+
+{checklist}
+- ☐ A safe rollback or manual fallback exists.
+- ☐ No example exposes personal data or implies an unverified outcome.
+
+**Stop the launch if:** critical evidence or an accountable owner is missing. Log the exception, decision, and next review date."""
+    elif family=="implementation_sprint":
+        if ar:
+            body=f"""نفّذها كسير عمل قصير على حالة واحدة أولًا؛ لا يوجد موعد نجاح مفترض.
+
+**المدخل:** {opening}
+
+1. اجمع [المادة أو السجل] واربطه بالحالة.
+2. طبّق خطوة المقال: {principle}
+3. سجّل [المسؤول والمصدر والفترة] قبل مقارنة النتيجة.
+4. راجع هذه التفاصيل من المقال: {clean(points[0])}
+5. وثّق ما نجح وما لم ينجح وما بقي مجهولًا، ثم قرر هل يستحق التوسع.
+
+**المخرج المطلوب:** سجل واحد قابل للمراجعة، لا منشور يعلن نجاحًا مسبقًا."""
+        else:
+            body=f"""Run this as a short workflow on one case first; no success date is assumed.
+
+**Input:** {opening}
+
+1. Gather [the source record or material] and tie it to the case.
+2. Apply the article’s step: {principle}
+3. Record [owner, source, and period] before comparing outcomes.
+4. Review this article-specific detail: {clean(points[0])}
+5. Document what worked, what did not, and what remains unknown; then decide whether to scale.
+
+**Required output:** one reviewable record, not a post announcing success in advance."""
+    elif family=="faq":
+        if ar: body=f"""### ما المشكلة التي يعالجها «{title}»؟
+{opening}
+
+### ما أول خطوة عملية في «{title}»؟
+{principle}
+
+### ما الدليل الذي ينبغي الاحتفاظ به عند تطبيق «{title}»؟
+{clean(example_line)} اربطه بمصدر وتاريخ وحالة محددة.
+
+### هل يضمن تطبيق «{title}» نتيجة أو ظهورًا؟
+لا. هي طريقة عمل قابلة للفحص؛ النتيجة تعتمد على الحالة والقياس والمصادر، ولا تثبتها الصياغة وحدها."""
+        else: body=f"""### What problem does “{title}” address?
+{opening}
+
+### What should you check first for “{title}”?
+{principle}
+
+### What evidence should you retain when applying “{title}”?
+{clean(example_line)} Tie it to a source, date, and defined case.
+
+### Does “{title}” guarantee an outcome or visibility?
+No. They form a checkable working method; outcomes depend on the case, measurement, and evidence. Wording alone proves nothing."""
+    elif family=="pre_mortem":
+        if ar:
+            risks="\n".join(f"| {i} | تم تجاوز خطوة «{clean(s)}» | راجع السجل الذي يثبتها قبل التوسع |" for i,s in enumerate(points[:4],1))
+            body=f"""افترض أن تطبيق «{title}» تعثر؛ هذه مخاطر يجب فحصها، وليست ادعاءً بأنها حدثت:
+
+| الخطر المحتمل | إشارة الإنذار | الاستجابة |
+|---|---|---|
+{risks}
+
+حدّد مالكًا لكل إشارة، واحتفظ بمسار يدوي. راجع قائمة الأدلة قبل استنتاج السبب أو نسبة نتيجة إلى خطوة واحدة."""
+        else:
+            risks="\n".join(f"| {i} | Step skipped: {clean(s)} | Check the supporting record before scaling |" for i,s in enumerate(points[:4],1))
+            body=f"""Assume implementation of “{title}” stalled. These are risks to check, not claims that they occurred:
+
+| Possible failure mode | Warning signal | Response |
+|---|---|---|
+{risks}
+
+Assign an owner to each signal and keep a manual fallback. Review the evidence trail before inferring a cause or attributing an outcome to one step."""
+    else:
+        raise ValueError(f"Unknown advanced format: {family}")
+    heading=(f"## Additional applied format: {name}: {title}" if not ar else f"## تنسيق تطبيقي إضافي: {name}: {title}")
+    return heading+"\n\n"+body
+
 def make_hvt(post, lang, md):
     title=clean(post[lang]["title"])
     opening, principle, example, steps=material(md)
@@ -246,7 +482,7 @@ def dedupe_exact_paragraphs(md):
     return "\n\n".join(result)
 
 def main():
-    counts=Counter()
+    counts=Counter(); seen=Counter()
     for post in DATA["posts"]:
         en=dedupe_exact_paragraphs(add_market_note(body_only(post["en"]["markdown"],"content_asset_styles" in post),post["slug"],"en"))
         ar=dedupe_exact_paragraphs(add_market_note(body_only(post["ar"]["markdown"],"content_asset_styles" in post),post["slug"],"ar"))
@@ -254,7 +490,11 @@ def main():
         assets_ar=[make_asset(post,"ar",family,ar) for family in ALL_SIX if family!="hvt"]
         assets_en.append(make_hvt(post,"en",en))
         assets_ar.append(make_hvt(post,"ar",ar))
+        extra=choose_extra_style(post,seen)
+        assets_en.append(make_advanced_asset(post,"en",extra,en))
+        assets_ar.append(make_advanced_asset(post,"ar",extra,ar))
         post["content_asset_styles"]=ALL_SIX
+        post["content_asset_extra_style"]=extra
         post.pop("content_asset_style",None)
         disclosure_en="> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
         disclosure_ar="> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
@@ -262,10 +502,10 @@ def main():
         post["ar"]["markdown"]=ar+"\n\n"+"\n\n".join(assets_ar)+"\n\n"+disclosure_ar
         post["en"]["approx_words"]=word_count(post["en"]["markdown"])
         post["ar"]["approx_words"]=word_count(post["ar"]["markdown"])
-        counts.update(ALL_SIX)
+        counts.update(ALL_SIX); counts["advanced:"+extra]+=1
     DATA["updated"]="2026-10-28"
     DATA_PATH.write_text(json.dumps(DATA,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Applied all six styles to {len(DATA['posts'])} topics ({len(DATA['posts'])*2} language pages).")
+    print(f"Applied all six core styles plus one intent-matched advanced format to {len(DATA['posts'])} topics ({len(DATA['posts'])*2} language pages).")
     print("Per-language-page style sections:",dict(sorted(counts.items())))
 
 if __name__=="__main__": main()

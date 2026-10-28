@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Evaluate AI Marketing Outputs With a Small Test Set</h1><p class="blog-article-deck">Check a model against known examples and failure cases before using outputs in a live workflow.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>7 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>8 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
 <article class="blog-prose"><p>A model that writes fluent copy can still fail the marketing task. Evaluate the output against examples with known answers, realistic edge cases, and the language people will actually use.</p>
 <h2 id="build-a-small-test-set-before-launch">Build a small test set before launch</h2>
 <p>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled.</p>
@@ -102,6 +102,40 @@ Ask viewers to apply the check to one case and record the source before deciding
 <p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
 <p><strong>Illustrative example from this topic:</strong> Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling.</p>
 <p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
+<h2 id="additional-applied-format-troubleshooting-runbook-evaluate-ai-marketing-outputs-with-a-small-test-set">Additional applied format: Troubleshooting runbook: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p><strong>Signal to investigate:</strong> A model that writes fluent copy can still fail the marketing task.</p>
+<table>
+<thead>
+<tr>
+<th>Article-specific check</th>
+<th>Evidence to inspect</th>
+<th>Action when it fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>For each case, write the expected route and why.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Keep personal data out of the test set unless it is necessary and safely handled.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Score each output separately for: - correct task classification; - required fields extracted without invention; - unsupported claim or fabricated detail; - correct escalation when uncertain; - Arabic meaning and tone; - valid structure if another system consumes the result.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Do not hide failures in an average score.</td>
+<td>[record/field that proves it]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Close the incident when:</strong> the record matches the intended state, an owner has the next action, and the check can be repeated from the same source. If tracking fails, do not infer the cause from one dashboard; log the break and replay the path with a test record.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
