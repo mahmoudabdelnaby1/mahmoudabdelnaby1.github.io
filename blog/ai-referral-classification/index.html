@@ -98,6 +98,40 @@ Ask viewers to apply the check to one case and record the source before deciding
 <p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
 <p><strong>Illustrative example from this topic:</strong> Review source/medium and landing pages, test channel rules on known examples, and keep a change log when adding patterns.</p>
 <p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
+<h2 id="additional-applied-format-failure-mode-pre-mortem-classify-ai-referrals-carefully-in-analytics">Additional applied format: Failure-mode pre-mortem: Classify AI Referrals Carefully in Analytics</h2>
+<p>Assume implementation of “Classify AI Referrals Carefully in Analytics” stalled. These are risks to check, not claims that they occurred:</p>
+<table>
+<thead>
+<tr>
+<th>Possible failure mode</th>
+<th>Warning signal</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Step skipped: Identified referrer: the analytics system records a known assistant domain or app referral.</td>
+<td>Check the supporting record before scaling</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Step skipped: Preserve the raw source and landing page.</td>
+<td>Check the supporting record before scaling</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Step skipped: 2.</td>
+<td>Check the supporting record before scaling</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Step skipped: Tagged campaign: a tracked link carries campaign parameters.</td>
+<td>Check the supporting record before scaling</td>
+</tr>
+</tbody>
+</table>
+<p>Assign an owner to each signal and keep a manual fallback. Review the evidence trail before inferring a cause or attributing an outcome to one step.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>Set UTM Naming Rules Your Whole Team Can Follow</h1><p class="blog-article-deck">Create consistent campaign tags that remain readable across teams and reports.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/utm-governance/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>7 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/utm-governance/">العربية</a></div></header>
 <article class="blog-prose"><p>UTM tags are shared data. A naming rule is successful when two people tag the same campaign consistently and a report can group it without guesswork.</p>
 <h2 id="define-the-fields-and-allowed-values">Define the fields and allowed values</h2>
 <p>Use the smallest schema the team will maintain: source, medium, campaign, and optional content or term when they answer a reporting question. Decide case, separators, date or market codes, and a controlled vocabulary. Keep campaign names readable; do not encode private customer information.</p>
@@ -95,6 +95,17 @@ Ask viewers to apply the check to one case and record the source before deciding
 <p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
 <p><strong>Illustrative example from this topic:</strong> Test one link from each channel and verify the final landing URL and analytics source/medium.</p>
 <p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
+<h2 id="additional-applied-format-pre-launch-gate-set-utm-naming-rules-your-whole-team-can-follow">Additional applied format: Pre-launch gate: Set UTM Naming Rules Your Whole Team Can Follow</h2>
+<p>Before applying the article’s recommendation to a live workflow, pass this gate:</p>
+<ul>
+<li>☐ Decide case, separators, date or market codes, and a controlled vocabulary. — retain the verification result and date</li>
+<li>☐ Keep campaign names readable; do not encode private customer information. — retain the verification result and date</li>
+<li>☐ Example convention: utmsource=instagram, utmmedium=paidsocial, utmcampaign=egsummerservice2026, utmcontent=videoproblemhook. — retain the verification result and date</li>
+<li>☐ This is an illustrative pattern; choose values that match the organization’s reporting model. — retain the verification result and date</li>
+<li>☐ A safe rollback or manual fallback exists.</li>
+<li>☐ No example exposes personal data or implies an unverified outcome.</li>
+</ul>
+<p><strong>Stop the launch if:</strong> critical evidence or an accountable owner is missing. Log the exception, decision, and next review date.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

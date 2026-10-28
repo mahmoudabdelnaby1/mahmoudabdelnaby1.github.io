@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Protect Marketing AI Workflows From Untrusted Instructions</h1><p class="blog-article-deck">Keep customer content and retrieved pages from overriding approved workflow rules.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-untrusted-input-safety/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>7 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-untrusted-input-safety/">العربية</a></div></header>
 <article class="blog-prose"><p>A page, form, or customer message can contain text that looks like an instruction to an AI system. The workflow must treat that material as input data, not authority to reveal information or take a separate action.</p>
 <h2 id="separate-the-instruction-from-the-content">Separate the instruction from the content</h2>
 <p>Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields. Tell the model what it may do with the supplied material—for example, summarize or classify it—and what it may never do, such as export contacts, send messages, change a campaign, or reveal hidden instructions.</p>
@@ -100,6 +100,40 @@ Ask viewers to apply the check to one case and record the source before deciding
 <p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
 <p><strong>Illustrative example from this topic:</strong> A successful small test does not prove the workflow is immune to prompt injection.</p>
 <p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
+<h2 id="additional-applied-format-troubleshooting-runbook-protect-marketing-ai-workflows-from-untrusted-instructions">Additional applied format: Troubleshooting runbook: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p><strong>Signal to investigate:</strong> A page, form, or customer message can contain text that looks like an instruction to an AI system.</p>
+<table>
+<thead>
+<tr>
+<th>Article-specific check</th>
+<th>Evidence to inspect</th>
+<th>Action when it fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tell the model what it may do with the supplied material—for example, summarize or classify it—and what it may never do, such as export contacts, send messages, change a campaign, or reveal hidden instructions.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Test with adversarial examples: - a webpage asks the model to ignore its assigned task; - a form includes a demand to expose another customer’s details; - a retrieved document contains contradictory instructions; - an Arabic/English mixed message hides an action request in the other language.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The expected result is to process the content for the authorized task, flag the hostile instruction where relevant, and avoid the unauthorized action.</td>
+<td>[record/field that proves it]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Do not put credentials or broad account access in a workflow that only needs to summarize text.</td>
+<td>[record/field that proves it]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Close the incident when:</strong> the record matches the intended state, an owner has the next action, and the check can be repeated from the same source. If tracking fails, do not infer the cause from one dashboard; log the break and replay the path with a test record.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

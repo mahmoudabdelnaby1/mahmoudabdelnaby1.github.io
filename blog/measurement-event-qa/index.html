@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>QA a Marketing Conversion Event Before Reporting It</h1><p class="blog-article-deck">Verify that an analytics event fires once, with the intended meaning and safe parameters.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/measurement-event-qa/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>7 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/measurement-event-qa/">العربية</a></div></header>
 <article class="blog-prose"><p>An analytics event is ready for reporting only after its meaning, trigger, and duplicate behavior are verified. Seeing an event name in a dashboard does not prove it fires once at the right moment.</p>
 <h2 id="write-an-event-contract">Write an event contract</h2>
 <p>For one conversion action, record:</p>
@@ -101,6 +101,17 @@ Ask viewers to apply the check to one case and record the source before deciding
 <p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
 <p><strong>Illustrative example from this topic:</strong> Keep a change log with event name, version, date, owner, and test evidence.</p>
 <p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
+<h2 id="additional-applied-format-worked-scenario-qa-a-marketing-conversion-event-before-reporting-it">Additional applied format: Worked scenario: QA a Marketing Conversion Event Before Reporting It</h2>
+<p><strong>Hypothetical training scenario, not a client case:</strong> a team faces this problem: An analytics event is ready for reporting only after its meaning, trigger, and duplicate behavior are verified.</p>
+<p>Instead of jumping to an outcome, the team walks through the source material in this order:</p>
+<ol>
+<li><strong>- Trigger: the user action or confirmed system state that sends the event.</strong></li>
+<li><strong>- Required parameters: only fields needed to distinguish market, service, or campaign; no unnecessary personal details.</strong></li>
+<li><strong>- Deduplication rule: how retries, refreshes, or multiple listeners avoid double-counting.</strong></li>
+<li><strong>- Consent behavior: what happens before and after the applicable choice.</strong></li>
+</ol>
+<p><strong>What can be concluded?</strong> Only what the collected record supports. Use this example to identify what to document, not as proof of success: Keep a change log with event name, version, date, owner, and test evidence.</p>
+<p>Before describing impact, record the period, source, and changes made. If records are insufficient, write “unknown” and leave the outcome open.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
