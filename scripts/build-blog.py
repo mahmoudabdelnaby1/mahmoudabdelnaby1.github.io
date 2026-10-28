@@ -16,7 +16,7 @@ UI = {
  "en": {
   "brand":"MAHMOUD <em>ABDELNABY</em>","home":"Portfolio","guides":"Marketing systems","language":"العربية",
   "search_label":"Search the library","search_placeholder":"Try “WhatsApp”, “SEO”, or “video testing”","all":"All topics",
-  "count":"22 practical articles · 11 themes · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
+  "count":"100 practical articles · 50 topics · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
   "title":"Useful work for the decisions behind growth.",
   "intro":"Bilingual, task-led guides for marketers working across MENA. Each article turns an operating question into a method, checks, and related tools.",
   "featured":"START HERE","featured_label":"Growth diagnosis","read":"min read","back":"All articles",
@@ -28,7 +28,7 @@ UI = {
  "ar": {
   "brand":"محمود <em>عبدالنبي</em>","home":"معرض الأعمال","guides":"الأنظمة التسويقية","language":"English",
   "search_label":"ابحث في المكتبة","search_placeholder":"جرّب «واتساب» أو «SEO» أو «اختبار الفيديو»","all":"كل الموضوعات",
-  "count":"٢٢ مقالًا عمليًا · ١١ موضوعًا · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
+  "count":"١٠٠ مقال عملي · ٥٠ موضوعًا · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
   "title":"عمل عملي يدعم القرارات وراء النمو.",
   "intro":"أدلة عربية وإنجليزية تبدأ من مهمة تسويقية حقيقية في أسواق MENA، ثم تحوّلها إلى منهج وخطوات وأدوات مرتبطة.",
   "featured":"ابدأ من هنا","featured_label":"تشخيص النمو","read":"دقائق للقراءة","back":"كل المقالات",
@@ -95,7 +95,7 @@ def card(post,lang,featured=False):
  label=post["category_ar" if lang=="ar" else "category_en"]
  cls="blog-feature-card" if featured else "blog-card"
  eyebrow=ui["featured_label"] if featured else label
- return f'''<a class="{cls}" href="{url}" data-theme="{esc(post["theme"])}" data-search="{esc((data["title"]+" "+data["description"]+" "+label).lower())}">
+ return f'''<a class="{cls}" href="{url}" data-theme="{esc(post.get("category_key",post["theme"][:2]))}" data-search="{esc((data["title"]+" "+data["description"]+" "+label).lower())}">
 <span class="blog-card-kicker">{esc(eyebrow)} <span aria-hidden="true">↗</span></span><h2>{esc(data["title"])}</h2><p>{esc(data["description"])}</p><span class="blog-card-meta">{minutes(post,lang)} {esc(ui["read"])}</span></a>'''
 
 def index_page(lang):
@@ -107,15 +107,19 @@ def index_page(lang):
   {"@type":"ListItem","position":i+1,"url":BASE+f'/{("ar/" if lang=="ar" else "")}blog/{p["slug"]}/',"name":p[lang]["title"]} for i,p in enumerate(POSTS)]}}
  pagehead=head(("مدونة التسويق والنمو | محمود عبدالنبي" if lang=="ar" else "Marketing & Growth Blog | Mahmoud Abdelnaby"),ui["intro"],canonical,en_url,ar_url,lang,schema,"website")
  filters=[f'<button class="blog-filter" type="button" data-filter="all" aria-pressed="true">{esc(ui["all"])}</button>']
+ seen=set()
  for p in POSTS:
+  category_key=p.get("category_key",p["theme"][:2])
+  if category_key in seen: continue
+  seen.add(category_key)
   label=p["category_ar" if lang=="ar" else "category_en"]
-  filters.append(f'<button class="blog-filter" type="button" data-filter="{esc(p["theme"])}" aria-pressed="false">{esc(label)}</button>')
+  filters.append(f'<button class="blog-filter" type="button" data-filter="{esc(category_key)}" aria-pressed="false">{esc(label)}</button>')
  cards="\n".join(card(p,lang) for p in POSTS[1:])
  language_href="/blog/" if lang=="ar" else "/ar/blog/"
  return f'''{pagehead}
 <body class="blog-page blog-index-page"><div class="wrap blog-wrap">{nav(lang,language_href)}
 <main id="main-content" class="blog-main">
-<section class="blog-index-hero"><div class="blog-index-copy"><p class="blog-kicker">{esc(ui["kicker"])}</p><h1>{esc(ui["title"])}</h1><p class="blog-intro">{esc(ui["intro"])}</p><p class="blog-count">{esc(ui["count"])}</p></div><div class="blog-hero-mark" aria-hidden="true"><span>FIELD<br>NOTES</span><b>11</b><i>01 — 11</i></div></section>
+<section class="blog-index-hero"><div class="blog-index-copy"><p class="blog-kicker">{esc(ui["kicker"])}</p><h1>{esc(ui["title"])}</h1><p class="blog-intro">{esc(ui["intro"])}</p><p class="blog-count">{esc(ui["count"])}</p></div><div class="blog-hero-mark" aria-hidden="true"><span>FIELD<br>NOTES</span><b>{len(POSTS)}</b><i>01 — {len(POSTS):02d}</i></div></section>
 <section class="blog-featured"><div class="blog-featured-aside"><span>{esc(ui["featured"])}</span><p>{esc(ui["language_note"])}</p></div>{card(POSTS[0],lang,True)}</section>
 <section class="blog-library" aria-labelledby="blog-library-title"><div class="blog-library-heading"><div><p class="blog-kicker">{esc(ui["topics"])}</p><h2 id="blog-library-title">{esc(ui["explore"])}</h2></div><label class="blog-search"><span>{esc(ui["search_label"])}</span><input type="search" data-blog-search placeholder="{esc(ui["search_placeholder"])}" autocomplete="off"></label></div>
 <div class="blog-filter-list" aria-label="{esc(ui["topics"])}">{"".join(filters)}</div><p class="blog-results-status" data-blog-status data-default="{esc(ui["count"])}" data-one="{esc(ui["shown_one"])}" data-many="{esc(ui["shown"])}" aria-live="polite">{esc(ui["count"])}</p>
@@ -161,8 +165,8 @@ def add_links():
 
 def add_hub_promo():
  for path,anchor,promo in [
-  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 22 ARTICLES</span><h2>Read the marketing blog.</h2><p>Eleven bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
-  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ٢٢ مقالًا</span><h2>اقرأ مدونة التسويق.</h2><p>أحد عشر دليلًا عربيًا وإنجليزيًا يربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
+  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 100 ARTICLES</span><h2>Read the marketing blog.</h2><p>Fifty bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
+  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ١٠٠ مقال</span><h2>اقرأ مدونة التسويق.</h2><p>خمسون موضوعًا بالعربية والإنجليزية يربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
   text=path.read_text(encoding="utf-8")
   if promo not in text:
    if anchor not in text: raise SystemExit("Missing marketing library insertion point: "+str(path))
@@ -185,7 +189,7 @@ def update_sitemap(routes):
  return len(missing)
 
 def main():
- if len(POSTS)!=11 or len({p["slug"] for p in POSTS})!=11: raise SystemExit("Expected 11 bilingual themes")
+ if len(POSTS)!=50 or len({p["slug"] for p in POSTS})!=50: raise SystemExit("Expected 50 bilingual topics")
  for p in POSTS:
   for lang in ("en","ar"):
    if not p[lang]["markdown"]: raise SystemExit("Missing body: "+p["slug"])
