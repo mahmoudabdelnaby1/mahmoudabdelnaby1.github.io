@@ -1,0 +1,384 @@
+{
+  "updated": "2026-10-28",
+  "posts": [
+    {
+      "theme": "01-growth-system",
+      "slug": "growth-system-broken-handoff",
+      "category_en": "Growth strategy",
+      "category_ar": "استراتيجية النمو",
+      "framework_ids": [
+        "FW-028",
+        "FW-085"
+      ],
+      "en": {
+        "title": "Before Adding a Marketing Channel, Find the Broken Handoff",
+        "description": "Diagnose whether growth is constrained by discovery, offer clarity, conversion, follow-up, or measurement.",
+        "tags": [
+          "marketing",
+          "strategy",
+          "analytics",
+          "business"
+        ],
+        "approx_words": 410,
+        "markdown": "When growth slows, the default response is often to add a channel, raise spend, or publish more. Those actions increase activity; they do not tell us where the customer journey is failing.\n\nStart with one verifiable business outcome: a completed purchase, a qualified inquiry, a confirmed booking, or a retained customer. Define the evidence and the team responsible for recording it. Then map the handoffs that lead to it.\n\n| Stage | Diagnostic question | Useful evidence |\n|---|---|---|\n| Discovery | Are the intended people finding us? | Search queries, reach by market, referral source |\n| Understanding | Can visitors explain the offer and next step? | Page behavior, sales questions, usability feedback |\n| Action | Can they complete the action without friction? | Form completion, checkout steps, contact intent |\n| Follow-up | Does the request reach an owner promptly? | Delivery status, response time, CRM stage |\n| Outcome | Did the business result actually happen? | Order, booking, attendance, renewal, close record |\n\nChoose the narrowest failed transition, not the most fashionable channel. If relevant visitors arrive but leave before understanding the offer, test the page explanation before buying more reach. If inquiries arrive but are never answered, fix ownership and response workflow before increasing lead volume.\n\nFor each proposed change, write a falsifiable hypothesis: “If we clarify X for audience Y, measure Z should change because…” Add a success threshold, observation window, and guardrail such as lead quality or cancellations. This keeps teams from calling more clicks “growth.”\n\n## A MENA diagnostic: include the handoff after the click\n\nIn markets where a conversation may move from a social post to WhatsApp and then to a human sales team, add those handoffs to the map. Preserve campaign context with a suitable reference or tagged destination, define which locations are serviceable, and assign a real owner for replies. A click, an opened chat, and an in-coverage appointment request are different events. Do not combine them into one “lead” number.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "قبل إضافة قناة تسويق جديدة، اكتشف أين تتعطل الرحلة",
+        "description": "طريقة عملية لتحديد ما إذا كان تعطل النمو في الاكتشاف أو وضوح العرض أو التحويل أو المتابعة أو القياس.",
+        "tags": [
+          "marketing",
+          "arabic",
+          "strategy",
+          "analytics"
+        ],
+        "approx_words": 373,
+        "markdown": "عندما يتباطأ النمو، يكون رد الفعل المعتاد إضافة قناة أو زيادة الإنفاق أو نشر محتوى أكثر. هذه الخطوات ترفع النشاط، لكنها لا تحدد الحلقة التي يتعطل عندها مسار العميل.\n\nابدأ بنتيجة تجارية يمكن التحقق منها: شراء مكتمل أو استفسار مؤهل أو حجز مؤكد أو عميل مستمر. اكتب الدليل الذي يثبت النتيجة ومن المسؤول عن تسجيلها، ثم ارسم الانتقالات التي تقود إليها.\n\n| المرحلة | سؤال التشخيص | دليل مفيد |\n|---|---|---|\n| الاكتشاف | هل يجدنا الأشخاص المقصودون؟ | استعلامات البحث والوصول حسب السوق ومصدر الإحالة |\n| الفهم | هل يفهم الزائر العرض والخطوة التالية؟ | سلوك الصفحة وأسئلة المبيعات وملاحظات الاستخدام |\n| الإجراء | هل يستطيع إتمام الخطوة دون عائق؟ | إرسال النموذج وخطوات الدفع ونية التواصل |\n| المتابعة | هل يصل الطلب إلى مسؤول بسرعة؟ | نجاح التسليم وزمن الرد ومرحلة CRM |\n| النتيجة | هل حدثت النتيجة التجارية فعلًا؟ | سجل شراء أو حجز أو حضور أو تجديد أو إغلاق |\n\nاختر الانتقال المتعطل بدقة، لا القناة الأكثر رواجًا. إذا وصل الزوار المناسبون ولم يفهموا العرض، اختبر وضوح الصفحة قبل شراء مزيد من الوصول. وإذا وصلت الاستفسارات ولم يرد عليها أحد، أصلح الملكية ومسار المتابعة قبل زيادة عددها.\n\nلكل تغيير محتمل، اكتب فرضية قابلة للتفنيد: «إذا وضحنا X للجمهور Y، فستتغير إشارة القياس Z لأن…». أضف حدًا للنجاح وفترة ملاحظة ومؤشر حماية مثل جودة الاستفسارات أو الإلغاءات. هكذا لا نخلط بين زيادة النقرات والنمو.\n\n## تشخيص مناسب لأسواق المنطقة: أضف ما يحدث بعد النقرة\n\nفي الأسواق التي ينتقل فيها الشخص من منشور اجتماعي إلى واتساب ثم إلى فريق مبيعات، أضف هذه الانتقالات إلى الخريطة. احتفظ بسياق الحملة عبر مرجع مناسب أو رابط موسوم، وحدد نطاقات الخدمة، وعيّن مسؤولًا حقيقيًا للرد. النقرة وفتح المحادثة وطلب موعد داخل نطاق الخدمة أحداث مختلفة؛ لا تدمجها في رقم واحد باسم «عميل محتمل».\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "02-whatsapp-measurement",
+      "slug": "whatsapp-click-is-not-a-lead",
+      "category_en": "Measurement",
+      "category_ar": "القياس",
+      "framework_ids": [
+        "FW-028",
+        "FW-081",
+        "FW-085"
+      ],
+      "en": {
+        "title": "A WhatsApp Click Is Intent, Not a Lead",
+        "description": "Separate contact clicks from messages, qualified inquiries, follow-up, and verified outcomes.",
+        "tags": [
+          "analytics",
+          "marketing",
+          "conversion",
+          "business"
+        ],
+        "approx_words": 395,
+        "markdown": "A WhatsApp button click tells us that someone chose to open a contact route. It does not prove that a message was sent, received, relevant, answered, or converted.\n\nReports often compress several distinct events into one label: “lead.” Then a team cannot tell whether the problem is page intent, message completion, response speed, qualification, or sales follow-through.\n\n| Stage | Meaning | Evidence |\n|---|---|---|\n| Contact intent | Visitor clicked the WhatsApp link | Analytics event with page and placement |\n| Message received | Message arrived in the business inbox | Inbox record or messaging-platform event |\n| Qualified inquiry | Request meets documented fit criteria | Human-reviewed CRM or secure-log status |\n| Follow-up | Owner responded and advanced the conversation | Timestamp and stage history |\n| Business outcome | Booking, sale, or agreed result occurred | Operational record reconciled to inquiry |\n\nUse precise event names such as contact_intent or whatsapp_click. Do not send message text, phone numbers, or other sensitive details to general analytics. If systems must connect the journey, use an appropriate internal identifier with limited access and retention.\n\nBefore optimizing campaigns, agree which stage is the actual objective and what evidence confirms it. Clicks can be a useful diagnostic signal; they should not silently stand in for a qualified inquiry or sale. A small reconciliation sample between web events and inbox or CRM records can reveal tracking gaps before bids or budgets change.\n\n## When the next step is WhatsApp\n\nA practical triage can ask only what changes routing—for example, the person’s city or service area and when they want help. Show useful information early instead of requiring a long questionnaire before revealing basic details. Where the messaging channel supports campaign identifiers, preserve them through the conversation and mark the transition to a human owner. Define an out-of-coverage response that is clear and respectful. Keep message contents and phone numbers out of general analytics.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "نقرة واتساب تعني نية تواصل، لا عميلًا محتملًا",
+        "description": "افصل نقرات التواصل عن الرسائل والاستفسارات المؤهلة والمتابعة والنتائج التجارية بخريطة قياس عملية.",
+        "tags": [
+          "analytics",
+          "arabic",
+          "marketing",
+          "conversion"
+        ],
+        "approx_words": 368,
+        "markdown": "نقرة زر واتساب تثبت أن الزائر اختار فتح قناة التواصل. لكنها لا تثبت أن رسالة أُرسلت أو وصلت أو كانت مناسبة أو تلقّت ردًا أو تحولت إلى بيع.\n\nأحيانًا تضع التقارير أحداثًا مختلفة تحت اسم واحد: «عميل محتمل». عندها لا يعرف الفريق هل المشكلة في نية الزائر أم إرسال الرسالة أم سرعة الرد أم التأهيل أم متابعة المبيعات.\n\n| المرحلة | معناها | دليل مناسب |\n|---|---|---|\n| نية التواصل | ضغط الزائر رابط واتساب | حدث تحليلي مع الصفحة وموضع الزر |\n| وصول الرسالة | وصلت رسالة إلى صندوق النشاط | سجل الصندوق أو حدث المنصة |\n| استفسار مؤهل | يطابق الطلب معايير موثقة | حالة راجعها شخص في CRM أو سجل آمن |\n| المتابعة | رد مسؤول وتقدمت المحادثة | الطابع الزمني وسجل المراحل |\n| النتيجة التجارية | حدث حجز أو بيع أو نتيجة متفق عليها | سجل تشغيلي مربوط بالاستفسار |\n\nاستخدم أسماء أحداث دقيقة مثل contact_intent أو whatsapp_click. لا ترسل نص الرسالة أو رقم الهاتف أو تفاصيل حساسة إلى أداة تحليلات عامة. وإذا احتاجت الأنظمة ربط الرحلة، استخدم معرّفًا داخليًا مناسبًا مع تقييد الوصول ومدة الاحتفاظ.\n\nقبل تحسين الحملات، اتفق على المرحلة التي تمثل الهدف الفعلي والدليل الذي يؤكدها. النقرات إشارة تشخيصية، لكنها لا ينبغي أن تحل محل الاستفسار المؤهل أو البيع. ويمكن لعينة مطابقة بين أحداث الموقع وسجلات الصندوق أو CRM أن تكشف فجوات القياس قبل تغيير المزايدات أو الميزانيات.\n\n## عندما تكون الخطوة التالية هي واتساب\n\nيمكن أن يقتصر الفرز العملي على ما يغيّر التوجيه، مثل المدينة أو نطاق الخدمة وموعد الحاجة للمساعدة. اعرض المعلومات المفيدة مبكرًا بدل فرض استبيان طويل قبل توضيح الأساسيات. إذا كانت قناة المراسلة تدعم معرّفات للحملة، فاحتفظ بها خلال المحادثة وسجّل انتقالها إلى مسؤول بشري. جهّز ردًا واضحًا ومحترمًا لمن هم خارج نطاق الخدمة، وأبقِ محتوى الرسائل وأرقام الهواتف خارج التحليلات العامة.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "03-seo-bilingual-mena",
+      "slug": "bilingual-seo-mena-search-intent",
+      "category_en": "SEO, AEO & GEO",
+      "category_ar": "SEO وAEO وGEO",
+      "framework_ids": [
+        "FW-001",
+        "FW-002",
+        "FW-012",
+        "FW-037"
+      ],
+      "en": {
+        "title": "Bilingual SEO in MENA: Map Intent Before Translating Pages",
+        "description": "A practical approach to Arabic and English search intent, localized pages, and language signals.",
+        "tags": [
+          "seo",
+          "arabic",
+          "webdev",
+          "marketing"
+        ],
+        "approx_words": 406,
+        "markdown": "A bilingual site is not two copies of the same keyword list. People describe the same need differently across Arabic, English, dialect, and country contexts. Literal translation can preserve words while losing intent.\n\nBuild the map page by page. Record the audience and market, language, task the visitor wants to complete, one primary query hypothesis, supporting questions, and evidence behind the hypothesis. Label demand “unknown” until Search Console, Bing Webmaster Tools, or another reliable source validates it. Suggestions and current headings are research inputs, not search-volume proof.\n\nMake the language experience coherent:\n1. Give each genuinely localized version a stable, crawlable URL.\n2. Write for the reader’s vocabulary and context; do not mechanically swap words.\n3. Link corresponding language versions clearly.\n4. Use reciprocal hreflang only for genuine language or regional alternatives, with consistent canonical signals.\n5. Check rendered titles, headings, links, and indexability in both versions.\n\nFor Arabic, validate Modern Standard Arabic and relevant regional wording against real audience language. Avoid stuffing dialect variants into a page. A useful FAQ answers a real question naturally; it is not a synonym list.\n\nMeasure each market and language separately: impressions and clicks by page, query, and country; qualified visits where available; and business outcomes that can be verified. Do not assume a page is indexed, a translation will rank, or an AI answer will cite it. These are outcomes to observe, not promises made by markup.\n\n## Add a useful answer layer without promising AI citations\n\nFor each important question, put a direct answer near the top, then explain the conditions, examples, and limitations. Make the entity, market, currency, and date explicit when they affect the answer. In Arabic, group genuine spelling variants and local expressions during research, but do not force every spelling into visible copy. Do not mass-produce near-identical city pages; each local page needs information that genuinely helps a person in that place. Clear structure can improve understanding and extraction, but it cannot guarantee ranking or citation.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "السيو العربي والإنجليزي في MENA: افهم نية البحث قبل ترجمة الصفحات",
+        "description": "منهج عملي لنية البحث بالعربية والإنجليزية والصفحات المحلية وإشارات اللغة دون اعتبار الترجمة استراتيجية بحد ذاتها.",
+        "tags": [
+          "seo",
+          "arabic",
+          "arabic",
+          "webdev"
+        ],
+        "approx_words": 361,
+        "markdown": "الموقع الثنائي اللغة ليس نسختين من قائمة الكلمات نفسها. قد يصف الناس الحاجة ذاتها بطرق مختلفة حسب العربية والإنجليزية واللهجة والسوق. الترجمة الحرفية قد تحافظ على الكلمات وتفقد نية البحث.\n\nأنشئ خريطة لكل صفحة. سجّل الجمهور والسوق واللغة ومهمة الزائر وفرضية استعلام أساسي واحدة والأسئلة المساندة والدليل. اكتب أن حجم الطلب «غير معروف» حتى تؤكده بيانات Search Console أو Bing Webmaster Tools أو مصدر موثوق. الاقتراحات وعناوين الصفحة مدخلات بحث، وليست دليلًا على حجم الطلب.\n\nاجعل تجربة اللغة متماسكة:\n1. امنح كل نسخة محلية فعلًا رابطًا ثابتًا يمكن للزاحف الوصول إليه.\n2. اكتب بمفردات القارئ وسياقه؛ لا تستبدل الكلمات آليًا.\n3. اربط النسخ اللغوية المتقابلة بوضوح.\n4. استخدم hreflang المتبادل للبدائل اللغوية أو الإقليمية الحقيقية فقط، مع اتساق canonical.\n5. افحص العناوين والروابط وقابلية الفهرسة بعد العرض في النسختين.\n\nفي العربية، تحقّق من الفصحى والمفردات الإقليمية من لغة الجمهور الفعلية. لا تحشو الصفحة بصيغ اللهجات. السؤال الشائع المفيد يجيب طبيعيًا عن سؤال حقيقي، وليس قائمة مرادفات.\n\nقِس كل سوق ولغة بصورة منفصلة: الظهور والنقرات حسب الصفحة والاستعلام والبلد، والزيارات المناسبة إن توفرت، والنتائج التجارية القابلة للتحقق. لا تفترض أن الصفحة فُهرست أو أن الترجمة ستتصدر أو أن إجابة ذكاء اصطناعي ستستشهد بها؛ هذه نتائج تُرصد، وليست وعودًا تصنعها العلامات البرمجية.\n\n## أضف طبقة إجابات مفيدة دون وعود بالاستشهاد في الذكاء الاصطناعي\n\nضع إجابة مباشرة قرب بداية الصفحة لكل سؤال مهم، ثم اشرح الشروط والأمثلة والحدود. وضّح الكيان والسوق والعملة والتاريخ عندما تؤثر في الإجابة. في العربية، اجمع الصيغ الإملائية والتعبيرات المحلية الحقيقية أثناء البحث، لكن لا تحشر كل صيغة في النص الظاهر. لا تنتج صفحات مدن متشابهة بكميات كبيرة؛ يجب أن تضيف كل صفحة محلية معلومات تفيد شخصًا في ذلك المكان فعلًا. يساعد التنظيم الواضح على الفهم والاستخراج، لكنه لا يضمن ترتيبًا أو استشهادًا.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "04-ppc-signal-quality",
+      "slug": "paid-media-conversion-signals",
+      "category_en": "Paid media",
+      "category_ar": "الإعلانات المدفوعة",
+      "framework_ids": [
+        "FW-014"
+      ],
+      "en": {
+        "title": "Paid Media Optimization Starts with a Trustworthy Conversion Signal",
+        "description": "Separate platform events from business outcomes and optimize against the stage that matters.",
+        "tags": [
+          "marketing",
+          "advertising",
+          "analytics",
+          "ppc"
+        ],
+        "approx_words": 357,
+        "markdown": "An ad platform can optimize only toward the signals it receives. If the imported event is a button click but the business goal is a qualified inquiry or completed sale, the system may find more clickers without finding more people who fit.\n\nBefore changing targeting or budget, draw the chain:\nad exposure → landing-page visit → intent event → received inquiry → qualified status → verified outcome\n\nFor each step, document the event owner, source system, timestamp, deduplication rule, and known gaps. Compare a sample of platform conversions with CRM, booking, or order records. Check for duplicate browser/server events, missing values, delayed imports, cancellations, and inquiries that never received follow-up.\n\nKeep event names aligned with evidence. A WhatsApp click can remain diagnostic. Import a deeper qualified-lead event only when criteria are consistent and privacy, consent, and platform requirements are addressed. Avoid unnecessary personal data. If offline conversion import is appropriate, test reconciliation before relying on it for bidding.\n\nThen change one element at a time: search terms, exclusions, creative, audience, landing page, or bid strategy. State expected effect and guardrails in advance. Evaluate across a window that matches the sales cycle, and separate early platform indicators from booked revenue or retained customers.\n\n## In COD markets, distinguish placed orders from delivered value\n\nWhere cash-on-delivery is common, a submitted order is an intermediate event. Reconcile cancellations, refusals, delivery, returns, and the value actually collected before treating order count or platform-reported revenue as the business outcome. Keep finance reporting separate from bidding values, document the conversion lag, and avoid feeding low-quality events back as if they were successful sales. Any risk-adjusted value should come from a validated business rule, not an invented multiplier.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "تحسين الإعلانات يبدأ بإشارة تحويل يمكن الوثوق بها",
+        "description": "افصل أحداث المنصة عن نتائج النشاط وافحص جودة الإشارة وحسّن الحملات على المرحلة المهمة فعلًا.",
+        "tags": [
+          "marketing",
+          "arabic",
+          "advertising",
+          "analytics"
+        ],
+        "approx_words": 341,
+        "markdown": "لا تستطيع منصة الإعلانات التحسين إلا وفق الإشارات التي تصلها. إذا كان الحدث المستورد نقرة زر بينما هدف النشاط استفسار مؤهل أو بيع مكتمل، فقد تجد المنصة مزيدًا ممن ينقرون دون أن تجد مزيدًا ممن يناسبون العرض.\n\nقبل تغيير الاستهداف أو الميزانية، ارسم السلسلة:\nظهور الإعلان ← زيارة الصفحة ← حدث نية ← وصول استفسار ← حالة تأهيل ← نتيجة مؤكدة\n\nوثّق لكل خطوة مالك الحدث والنظام المصدر والتوقيت وقاعدة إزالة التكرار والفجوات المعروفة. طابق عينة من تحويلات المنصة مع سجلات CRM أو الحجز أو الطلب. افحص تكرار أحداث المتصفح والخادم والقيم الناقصة وتأخر الاستيراد والإلغاءات والاستفسارات التي لم تتلق متابعة.\n\nاجعل أسماء الأحداث متوافقة مع الدليل. يمكن أن تظل نقرة واتساب إشارة تشخيصية. ولا تستورد حدثًا أعمق مثل «عميل مؤهل» إلا بعد توحيد معايير التأهيل ومعالجة متطلبات الخصوصية والموافقة وسياسة المنصة. تجنب البيانات الشخصية غير اللازمة. وإذا كان استيراد التحويلات غير المتصلة مناسبًا، فاختبر المطابقة قبل الاعتماد عليه للمزايدة.\n\nغيّر عنصرًا واحدًا في كل مرة: مصطلحات البحث أو الاستبعادات أو التصميم أو الجمهور أو الصفحة أو المزايدة. سجّل الأثر المتوقع ومؤشرات الحماية مسبقًا. قيّم خلال مدة تناسب دورة البيع، وافصل مؤشرات المنصة المبكرة عن الإيراد المحقق أو العملاء المستمرين.\n\n## في أسواق الدفع عند الاستلام، افصل الطلب عن القيمة التي تم تسليمها\n\nعندما ينتشر الدفع عند الاستلام، يكون إرسال الطلب مرحلة وسيطة. طابق الإلغاءات والرفض والتسليم والمرتجعات والمبلغ المحصل فعلًا قبل اعتبار عدد الطلبات أو إيراد المنصة نتيجة النشاط. افصل تقارير المالية عن القيم المرسلة للمزايدة، ووثّق تأخر التحويل، ولا تعِد إرسال الأحداث منخفضة الجودة كما لو كانت مبيعات ناجحة. يجب أن تستند أي قيمة معدّلة بالمخاطر إلى قاعدة عمل تم التحقق منها، لا إلى معامل مخترع.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "05-social-system",
+      "slug": "social-media-strategy",
+      "category_en": "Social media",
+      "category_ar": "التواصل الاجتماعي",
+      "framework_ids": [
+        "FW-023",
+        "FW-024",
+        "FW-028"
+      ],
+      "en": {
+        "title": "A Social Media Calendar Is Not a Social Media Strategy",
+        "description": "Connect audience tasks, platform-native formats, community response, and measurable next steps.",
+        "tags": [
+          "marketing",
+          "socialmedia",
+          "strategy",
+          "analytics"
+        ],
+        "approx_words": 382,
+        "markdown": "A calendar answers “what goes out on Tuesday?” A strategy answers why a specific audience should care, what the content helps them do, and what should happen after they engage.\n\nBuild the operating system in this order:\n- **Audience task:** What problem, decision, or question is the person working through?\n- **Editorial promise:** What useful perspective can this account deliver repeatedly and credibly?\n- **Native format:** Which format fits the job: demonstration, short explanation, discussion, or saved reference?\n- **Community owner:** Who answers questions, escalates issues, and records recurring objections?\n- **Next step:** Is it a deeper guide, a product page, a message, or simply continued learning?\n- **Measurement:** Which signals show discovery, useful attention, meaningful action, and downstream outcome?\n\nNot every post needs to sell. A useful mix can include teaching, evidence, process, conversation, and an offer, with each piece serving a defined role. Adapt the opening, structure, and call to action to the platform instead of pasting the same caption everywhere.\n\nTrack more than reach. Depending on the objective, compare qualified profile visits, saves, substantive replies, link visits, completed actions, and eventual outcomes. Do not interpret likes as demand or attribute a sale to a post without a credible path of evidence. Review audience questions for language that can inform future content, while respecting privacy and moderation policies.\n\n## Localize the format as well as the words\n\nA platform-native matrix should change the shape of the idea, not only its language. A short vertical video may demonstrate one action immediately; a professional-network post may explain the decision and trade-offs; a saved carousel may provide a compact checklist. For Arabic, choose the register deliberately—Egyptian colloquial, Gulf dialect, or clear MSA—rather than blending them by accident. If a post routes people to chat, preserve the source and pass only the minimum useful context to the response team.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "تقويم النشر ليس استراتيجية للتواصل الاجتماعي",
+        "description": "اربط احتياجات الجمهور بصيغ المنصة وإدارة المجتمع والخطوة التالية القابلة للقياس.",
+        "tags": [
+          "marketing",
+          "arabic",
+          "socialmedia",
+          "strategy"
+        ],
+        "approx_words": 334,
+        "markdown": "يجيب تقويم النشر عن سؤال «ماذا سننشر الثلاثاء؟». أما الاستراتيجية فتشرح لماذا يهتم جمهور محدد، وما المهمة التي يساعده المحتوى على إنجازها، وما الذي ينبغي أن يحدث بعد التفاعل.\n\nابنِ نظام العمل بهذا الترتيب:\n- **مهمة الجمهور:** ما المشكلة أو القرار أو السؤال الذي يحاول الشخص التعامل معه؟\n- **الوعد التحريري:** ما المنظور المفيد الذي يستطيع الحساب تقديمه باستمرار ومصداقية؟\n- **الصيغة المناسبة:** ما الشكل الذي يخدم المهمة: شرح أو عرض أو نقاش أو مرجع محفوظ؟\n- **مسؤول المجتمع:** من يجيب عن الأسئلة ويصعّد المشكلات ويسجل الاعتراضات المتكررة؟\n- **الخطوة التالية:** هل الأنسب دليل أعمق أو صفحة خدمة أو رسالة أم مواصلة التعلم؟\n- **القياس:** ما الإشارات التي تثبت الاكتشاف والانتباه المفيد والفعل والنتيجة اللاحقة؟\n\nليس مطلوبًا أن يبيع كل منشور. يمكن أن يجمع المزيج بين التعليم والدليل وشرح العمل والحوار والعرض الواضح، بحيث يؤدي كل عنصر دورًا محددًا. عدّل البداية والبنية والدعوة إلى الفعل حسب المنصة بدل لصق الوصف نفسه في كل مكان.\n\nقِس أكثر من الوصول. وفق الهدف، قارن زيارات الملف المناسبة والحفظ والردود ذات المعنى وزيارات الروابط والإجراءات المكتملة والنتائج اللاحقة. لا تعتبر الإعجابات طلبًا مؤكدًا، ولا تنسب بيعًا إلى منشور دون مسار دليل موثوق. راجع أسئلة الجمهور لاستخراج لغة تفيد المحتوى المقبل، مع احترام الخصوصية وسياسات الإشراف.\n\n## خصّص الصيغة، لا الكلمات فقط\n\nيجب أن يغيّر قالب المنصة شكل الفكرة، لا لغتها وحدها. قد يعرض الفيديو العمودي القصير فعلًا واحدًا فورًا، بينما يشرح منشور مهني القرار ومفاضلاته، وتقدم شرائح محفوظة قائمة تحقق موجزة. في العربية اختر السجل اللغوي بوعي—العامية المصرية أو الخليجية أو الفصحى الواضحة—ولا تخلطها عرضًا. وإذا وجّه المنشور الجمهور إلى المحادثة، فاحتفظ بالمصدر ومرّر لفريق الرد أقل قدر مفيد من السياق.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "06-content-system",
+      "slug": "audience-led-content-marketing",
+      "category_en": "Content marketing",
+      "category_ar": "تسويق المحتوى",
+      "framework_ids": [
+        "FW-034",
+        "FW-035",
+        "FW-036",
+        "FW-041"
+      ],
+      "en": {
+        "title": "Build Content from Audience Tasks, Not from a Topic List",
+        "description": "Turn real audience questions into original, useful assets with evidence, distribution, and review.",
+        "tags": [
+          "content",
+          "marketing",
+          "writing",
+          "seo"
+        ],
+        "approx_words": 385,
+        "markdown": "A list of topics is not an editorial plan. “AI,” “email,” or “SEO” names a subject; it does not specify what a reader needs to decide or do.\n\nStart with a real audience task: compare options, diagnose a failure, complete a process, reduce a risk, or explain a result. Gather wording from support questions, sales conversations, search queries, community discussions, or product use—without exposing private information. Separate verified observations from assumptions.\n\nFor every asset, write a compact brief:\n1. Reader and context.\n2. Question or task to resolve.\n3. One-sentence answer or promise.\n4. Evidence, example, or method that makes it distinct.\n5. Limits and what the material cannot prove.\n6. Primary destination and useful supporting links.\n7. How it will be adapted for each distribution channel.\n8. A review date or condition that would make it stale.\n\nCreate one substantial source asset before deriving smaller formats. A guide can become a checklist, demonstration, email lesson, or discussion prompt—but each adaptation should fit the platform and add context. Do not publish near-identical copies just to multiply URLs. That creates editorial clutter and weakens the reader’s reason to choose one version.\n\nA human review should check accuracy, permissions, clarity, and whether an example is real or synthetic. Label synthetic examples honestly. Measure the content’s intended job—qualified discovery, useful completion, informed contact, or reduced support friction—not just how many pieces were produced.\n\n## Arabic content needs transcreation and claim review\n\nA literal English-to-Arabic translation can retain a metaphor that sounds unnatural or shifts the meaning. Rewrite for the target reader, then check dialect consistency and grammatical address. For claims—especially health, beauty, finance, or measurable performance—keep a source and reviewer beside every statement that could affect a decision. A synthetic scenario is useful for demonstrating a workflow only when clearly labeled; it is never a client case study or measured outcome.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "ابنِ المحتوى من مهام الجمهور، لا من قائمة موضوعات",
+        "description": "حوّل أسئلة الجمهور الحقيقية إلى مواد أصلية مفيدة، مع الدليل والتوزيع والمراجعة.",
+        "tags": [
+          "content",
+          "arabic",
+          "marketing",
+          "writing"
+        ],
+        "approx_words": 347,
+        "markdown": "قائمة الموضوعات ليست خطة تحريرية بعد. «الذكاء الاصطناعي» أو «البريد الإلكتروني» أو «SEO» أسماء مجالات، لكنها لا تحدد ما الذي يحتاج القارئ إلى تقريره أو إنجازه.\n\nابدأ بمهمة حقيقية للجمهور: مقارنة الخيارات أو تشخيص خلل أو إتمام إجراء أو تقليل مخاطرة أو شرح نتيجة. اجمع الصياغات من أسئلة الدعم ومحادثات المبيعات واستعلامات البحث ونقاشات المجتمع واستخدام المنتج، دون كشف معلومات خاصة. افصل الملاحظات المؤكدة عن الافتراضات.\n\nاكتب موجزًا مختصرًا لكل مادة:\n1. القارئ وسياقه.\n2. السؤال أو المهمة المطلوب حلها.\n3. إجابة أو وعد في جملة واحدة.\n4. دليل أو مثال أو منهج يجعل المادة مختلفة.\n5. الحدود وما لا تستطيع المادة إثباته.\n6. الوجهة الأساسية والروابط المساندة.\n7. طريقة تكييفها لكل قناة توزيع.\n8. موعد مراجعة أو شرط يجعلها قديمة.\n\nأنشئ مادة أصلية متكاملة أولًا، ثم اشتق منها صيغًا أصغر. يمكن للدليل أن يتحول إلى قائمة تحقق أو عرض قصير أو درس بريد أو سؤال للنقاش، لكن يجب أن تلائم كل نسخة المنصة وتضيف سياقًا. لا تنشر نسخًا شبه متطابقة لمجرد زيادة عدد الروابط؛ فهذا يسبب ازدحامًا تحريريًا ويضعف سبب اختيار القارئ لنسخة بعينها.\n\nتراجع عين بشرية الدقة والأذونات والوضوح، وهل المثال حقيقي أم افتراضي. وضّح الأمثلة الاصطناعية بصدق. قِس المهمة المقصودة: اكتشاف مناسب أو إكمال مفيد أو تواصل واعٍ أو تقليل عائق الدعم، لا عدد المواد المنتجة فقط.\n\n## المحتوى العربي يحتاج تعريبًا إبداعيًا ومراجعة للادعاءات\n\nقد تحتفظ الترجمة الحرفية من الإنجليزية بتعبير مجازي يبدو غريبًا أو يغيّر المعنى. أعد الكتابة للقارئ المقصود، ثم راجع اتساق اللهجة وصيغة المخاطبة. في الادعاءات—خصوصًا الصحية أو التجميلية أو المالية أو المتعلقة بالأداء—احتفظ بمصدر ومراجع لكل عبارة قد تؤثر في القرار. يصلح السيناريو الافتراضي لشرح سير عمل إذا وُسم بوضوح؛ لكنه ليس دراسة حالة لعميل أو نتيجة مقاسة.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "07-email-lifecycle",
+      "slug": "email-lifecycle-automation",
+      "category_en": "Email marketing",
+      "category_ar": "التسويق بالبريد",
+      "framework_ids": [
+        "FW-044",
+        "FW-045"
+      ],
+      "en": {
+        "title": "Email Automation Should Follow Customer State, Not the Calendar",
+        "description": "Design lifecycle messages around consent, behavior, useful timing, suppression, and measurable outcomes.",
+        "tags": [
+          "email",
+          "marketing",
+          "automation",
+          "analytics"
+        ],
+        "approx_words": 331,
+        "markdown": "An email sequence can be perfectly timed and still be wrong for the person receiving it. Useful lifecycle programs respond to customer state: what the person requested, completed, abandoned, purchased, or needs next.\n\nMap the journey before writing messages. Specify the entry event, eligibility rules, consent basis, exit conditions, suppression rules, owner, and next action. Examples include onboarding after a requested signup, useful follow-up after a completed action, or service information after purchase. Exact rules depend on the business, jurisdiction, and platform.\n\nDesign each message around one job:\n- What does the reader need at this moment?\n- What minimum information helps them move forward?\n- Is the call to action clear and honest?\n- What happens if the person already completed the action?\n- How can they change preferences or opt out?\n\nPrevent failures with staged rollouts where appropriate, frequency caps, suppression after conversion, and checks for broken links or stale offers. Monitor delivery and complaint signals alongside outcomes such as activation, repeat purchase, or reduced service friction. Opens are an imperfect signal and should not stand alone as proof of attention or revenue.\n\n## Test preference suppression across every destination\n\nAn unsubscribe is only effective if downstream destinations receive it. Map email, SMS, CRM, and advertising-audience connections; record the preference in the source of truth; and test duplicate, delayed, and failed updates. Keep the person suppressed while a failed destination is repaired. Exact consent and retention obligations vary by market and channel, so have the responsible owner confirm the current local requirements before launch.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "أتمتة البريد تتبع حالة العميل، لا التقويم فقط",
+        "description": "صمم رسائل دورة العميل حول الموافقة والسلوك والتوقيت المفيد وقواعد الإيقاف والنتائج القابلة للقياس.",
+        "tags": [
+          "email",
+          "arabic",
+          "marketing",
+          "automation"
+        ],
+        "approx_words": 301,
+        "markdown": "قد يكون تسلسل البريد مضبوط التوقيت، ومع ذلك يكون غير مناسب للشخص الذي استلمه. برامج دورة العميل الأفضل تستجيب لحالته: ما الذي طلبه أو أنجزه أو تركه أو اشتراه أو يحتاجه بعد ذلك؟\n\nارسم الرحلة قبل كتابة الرسائل. حدّد لكل تدفق حدث البدء وشروط الأهلية وأساس الموافقة وشروط الخروج وقواعد الاستبعاد والمالك والفعل التالي. قد تشمل التدفقات تهيئة بعد تسجيل مطلوب أو متابعة بعد إجراء مكتمل أو معلومات خدمة بعد الشراء. وتتغير القواعد حسب النشاط والبلد والمنصة.\n\nصمم كل رسالة حول مهمة واحدة:\n- ما الذي يحتاجه القارئ الآن؟\n- ما أقل قدر من المعلومات الذي يساعده؟\n- هل الدعوة إلى الفعل واضحة وصادقة؟\n- ماذا يحدث إذا أنجز الشخص الإجراء بالفعل؟\n- كيف يغيّر تفضيلاته أو يوقف الرسائل؟\n\nقلل الأخطاء باستخدام إطلاق مرحلي عند ملاءمته وحدود لتكرار الإرسال وإيقاف الرسائل بعد التحويل وفحص الروابط والعروض القديمة. راقب التسليم والشكاوى إلى جانب نتائج مفيدة مثل التفعيل أو تكرار الشراء أو تقليل عوائق الخدمة. معدل الفتح إشارة غير كاملة ولا يكفي وحده لإثبات الانتباه أو الإيراد.\n\n## اختبر إيقاف الرسائل في كل وجهة\n\nلا يصبح إلغاء الاشتراك فعّالًا إلا إذا وصل تحديثه إلى الأنظمة التابعة. ارسم اتصالات البريد والرسائل النصية وCRM وجماهير الإعلانات؛ وسجّل التفضيل في مصدر الحقيقة؛ واختبر التحديثات المكررة والمتأخرة والفاشلة. أبقِ الشخص مستبعدًا أثناء إصلاح الوجهة التي لم تتحدث. تختلف متطلبات الموافقة والاحتفاظ حسب السوق والقناة؛ لذلك يجب أن يؤكد المسؤول المختص المتطلبات المحلية الحالية قبل الإطلاق.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "08-influencer-brief",
+      "slug": "influencer-campaign-measurement",
+      "category_en": "Influencer marketing",
+      "category_ar": "التسويق عبر المؤثرين",
+      "framework_ids": [
+        "FW-054",
+        "FW-055"
+      ],
+      "en": {
+        "title": "An Influencer Brief Is a Measurement Contract",
+        "description": "Align creator fit, disclosure, deliverables, usage rights, tracking, and outcome definitions before launch.",
+        "tags": [
+          "marketing",
+          "influencer",
+          "analytics",
+          "brand"
+        ],
+        "approx_words": 338,
+        "markdown": "A creator campaign often begins with a shortlist and a fee. It should begin with a clear job and shared definition of success. Otherwise, the brand expects sales, the creator expects creative freedom, and a report counts views without answering either question.\n\nA usable brief covers six areas:\n1. **Audience fit:** Who is this for, in which market and language, and why is this creator credible?\n2. **Message boundaries:** Which claims need evidence, and what should not be implied?\n3. **Creative freedom:** What facts and disclosure terms are fixed, and what can sound like the creator?\n4. **Deliverables:** Format, count, due dates, review rounds, and acceptance criteria.\n5. **Rights and disclosure:** Usage period, placements, paid amplification, edits, exclusivity, and clear sponsorship disclosure, confirmed against local rules.\n6. **Measurement:** Tagged links or codes where appropriate, baseline, attribution window, reporting access, and downstream outcome.\n\nSeparate exposure from actions and business results. Views describe distribution; they do not prove incremental demand. If the aim is awareness, define the audience and recall measure. If it is qualified inquiries, define qualification and response ownership. If it is sales, reconcile orders, cancellations, and returns where possible.\n\n## For cross-border MENA work, verify the market before contracting\n\nA creator’s residence, audience location, advertiser, and publication market can affect permits, tax, disclosures, and usage rights. Put a country-by-country verification step before the contract is approved; do not copy one market’s checklist into another. Give creators factual guardrails and required disclosures, then leave room for their natural dialect and delivery. A scripted corporate monologue can erase the creator-audience trust the partnership depends on.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "موجز المؤثر اتفاق على التنفيذ والقياس",
+        "description": "وحّد ملاءمة صانع المحتوى والإفصاح والتسليمات وحقوق الاستخدام والتتبع وتعريف النتائج قبل بدء الحملة.",
+        "tags": [
+          "marketing",
+          "arabic",
+          "influencer",
+          "analytics"
+        ],
+        "approx_words": 304,
+        "markdown": "تبدأ حملة صانع المحتوى غالبًا بقائمة أسماء وأتعاب. الأفضل أن تبدأ بمهمة واضحة وتعريف مشترك للنجاح. وإلا فقد تتوقع العلامة مبيعات، ويتوقع صانع المحتوى حرية إبداعية، ثم يحصي التقرير المشاهدات دون أن يجيب عن السؤالين.\n\nيغطي الموجز ستة مجالات:\n1. **ملاءمة الجمهور:** لمن نتحدث، وفي أي سوق ولغة، ولماذا يثق الجمهور بصانع المحتوى؟\n2. **حدود الرسالة:** ما الادعاءات التي تحتاج دليلًا؟ وما الذي يجب ألا توحي به المادة؟\n3. **الحرية الإبداعية:** ما الثابت مثل الحقائق والإفصاح، وما الذي يترك لصوت صانع المحتوى؟\n4. **التسليمات:** الصيغة والعدد والمواعيد وجولات المراجعة ومعيار القبول.\n5. **الحقوق والإفصاح:** مدة الاستخدام والمواضع والترويج المدفوع والتعديلات والحصرية والإفصاح عن الرعاية، وفق القواعد المحلية.\n6. **القياس:** روابط أو رموز تتبع عند ملاءمتها وخط أساس ونافذة إسناد وصلاحية التقرير والنتيجة اللاحقة.\n\nافصل التعرض عن الأفعال ونتائج النشاط. تصف المشاهدات التوزيع، لكنها لا تثبت طلبًا إضافيًا. إذا كان الهدف الوعي فحدد الجمهور وطريقة قياس التذكر. وإذا كان الهدف استفسارات مؤهلة فعرّف التأهيل ومسؤولية الرد. وإذا كان الهدف البيع فطابق الطلبات والإلغاءات والمرتجعات قدر الإمكان.\n\n## في تعاون المؤثرين عبر أسواق المنطقة، تحقّق من السوق قبل التعاقد\n\nقد يؤثر بلد إقامة صانع المحتوى وموقع الجمهور والمعلن وسوق النشر في التصاريح والضرائب والإفصاح وحقوق الاستخدام. ضع خطوة تحقق منفصلة لكل بلد قبل اعتماد العقد؛ ولا تنقل قائمة سوق إلى آخر. أعطِ صانع المحتوى حدودًا للحقائق والإفصاح المطلوب، واترك مساحة للهجته وطريقته الطبيعية. قد يمحو النص المؤسسي المحفوظ الثقة بين المؤثر وجمهوره التي يعتمد عليها التعاون.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "09-video-testing",
+      "slug": "video-ad-creative-testing",
+      "category_en": "Video advertising",
+      "category_ar": "إعلانات الفيديو",
+      "framework_ids": [
+        "FW-065",
+        "FW-067",
+        "FW-070"
+      ],
+      "en": {
+        "title": "Test the Hook, Proof, and Offer Separately in Video Ads",
+        "description": "A controlled creative-testing method that distinguishes attention, comprehension, intent, and qualified outcomes.",
+        "tags": [
+          "video",
+          "advertising",
+          "marketing",
+          "analytics"
+        ],
+        "approx_words": 349,
+        "markdown": "When a video ad underperforms, changing the entire edit makes it difficult to learn what mattered. Was the opening unclear? Did the proof fail to answer skepticism? Was the offer irrelevant, or was the audience mismatched?\n\nBreak the creative into jobs:\n- **Hook:** earns the next seconds by naming a relevant problem or outcome.\n- **Explanation:** makes the offer and audience fit understandable.\n- **Proof:** supports a factual claim with a demonstration, source, or transparent limitation.\n- **Offer:** gives a clear reason and next step without hiding material terms.\n- **Close:** repeats the action in language the viewer can follow.\n\nWrite a hypothesis for one variable at a time. Keep audience, placement, budget conditions, and measurement window as comparable as possible. Test two openings with the same body, or two explanations with the same opening. If every version changes several things, the result cannot identify the useful change.\n\nUse a measurement ladder: early hold or completion signals for attention; a comprehension check or downstream behavior for understanding; intent events for action; and qualified inquiries or verified sales for business impact. A strong view-through rate with no relevant follow-up may reveal a mismatch, not a winning ad.\n\n## A Gulf short-form storyboard can be only three beats\n\nFor a very short vertical placement, storyboard the first action, the essential explanation or offer, and the closing action. Put the product or relevant demonstration in frame immediately; check captions, price, and call-to-action against the platform’s current safe zones. For Arabic versions, review right-to-left text placement and readable captions on a phone. Treat any example storyboard as illustrative unless its performance was measured in the actual campaign.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "اختبر بداية الإعلان ودليله وعرضه كلًّا على حدة",
+        "description": "منهج منضبط لاختبار الإبداع يميز بين الانتباه والفهم والنية والنتائج المؤهلة.",
+        "tags": [
+          "video",
+          "arabic",
+          "advertising",
+          "marketing"
+        ],
+        "approx_words": 306,
+        "markdown": "عندما لا يحقق إعلان الفيديو أداءً جيدًا، فإن تغيير المونتاج كله يجعل معرفة السبب أصعب. هل كانت البداية غير واضحة؟ هل لم يبدد الدليل الشك؟ هل لم يكن العرض مناسبًا؟ أم أن الجمهور لم يلائم الرسالة؟\n\nقسّم الإبداع إلى وظائف:\n- **البداية:** تكسب ثواني إضافية بذكر مشكلة أو نتيجة تهم المشاهد.\n- **الشرح:** يوضح العرض والجمهور المناسب له.\n- **الدليل:** يدعم الادعاء بعرض أو مصدر أو توضيح للحدود.\n- **العرض:** يذكر سببًا واضحًا وخطوة تالية دون إخفاء شروط مهمة.\n- **الإغلاق:** يعيد الفعل المطلوب بلغة يسهل اتباعها.\n\nاكتب فرضية لمتغير واحد في كل مرة. حافظ على الجمهور والموضع وظروف الميزانية ونافذة القياس بقدر الإمكان. اختبر بدايتين مع بقية الفيديو نفسها، أو شرحين مع البداية نفسها. إذا غيّرت النسخ عناصر كثيرة معًا فلن تعرف أي تغيير أفاد.\n\nاستخدم سلمًا للقياس: إشارات المشاهدة أو الإكمال المبكرة للانتباه؛ وفحص الفهم أو السلوك اللاحق لاستيعاب الرسالة؛ وأحداث النية للفعل؛ والاستفسارات المؤهلة أو المبيعات المؤكدة لأثر النشاط. ارتفاع المشاهدة مع غياب المتابعة المناسبة قد يكشف عدم تطابق، لا إعلانًا فائزًا.\n\n## يمكن أن يتكون مخطط الفيديو الخليجي القصير من ثلاث لحظات\n\nفي موضع عمودي شديد القصر، قسّم القصة إلى فعل أول، وشرح أو عرض أساسي، ثم فعل ختامي. أظهر المنتج أو العرض المناسب فورًا، وافحص موضع الترجمة والسعر والدعوة إلى الفعل وفق مناطق الأمان الحالية للمنصة. في النسخة العربية، راجع اتجاه النص من اليمين إلى اليسار ووضوح الترجمة على الهاتف. اعتبر أي مخطط مثالًا توضيحيًا ما لم يُقَس أداؤه في الحملة الفعلية.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "10-cro-experiments",
+      "slug": "cro-experiment-design",
+      "category_en": "Conversion optimization",
+      "category_ar": "تحسين التحويل",
+      "framework_ids": [
+        "FW-078",
+        "FW-079"
+      ],
+      "en": {
+        "title": "A CRO Test Needs a Falsifiable Hypothesis and a Stop Rule",
+        "description": "Design experiments around a specific friction, measurable outcome, guardrails, and decision rule.",
+        "tags": [
+          "webdev",
+          "conversion",
+          "analytics",
+          "marketing"
+        ],
+        "approx_words": 355,
+        "markdown": "“Make the page convert better” is a desired outcome, not a test hypothesis. A useful experiment names the observed friction, proposed mechanism, audience, and signal that should change if the explanation is right.\n\nFor example: “For visitors arriving from X, replacing the unclear shipping paragraph with a concise delivery summary may reduce checkout exits because the page hides decision-critical information.” It is testable and could be wrong.\n\nBefore launch, define:\n- **Primary metric:** one outcome closest to the page’s job, such as completed checkout or qualified form.\n- **Guardrails:** cancellations, refunds, errors, lead quality, or support contacts that must not worsen materially.\n- **Eligibility:** audience, device, language, and traffic sources included.\n- **Instrumentation:** event definitions, variant assignment, deduplication, and data-quality checks.\n- **Decision rule:** sample or duration logic, practical effect threshold, and response if evidence is inconclusive.\n- **Stop rule:** technical errors, harmful outcomes, or broken user experience.\n\nDo not keep peeking and declaring a winner whenever a chart turns green. Small samples are noisy, and simultaneous changes obscure cause. If traffic is insufficient, use usability sessions, support questions, or a staged rollout and label the conclusion accordingly.\n\n## Keep MENA calendar effects inside the test design\n\nA test that compares different weeks may confuse a page change with payday, weekends, Ramadan, or a major sale period. When possible, run variants concurrently and record the market calendar that could affect demand. Do not span a major seasonal regime change with one simple comparison. Evaluate the outcome closest to business value—such as net margin or completed qualified actions—while keeping cancellation, payment failure, and support contacts as guardrails. The dates and thresholds must fit the real traffic and sales cycle.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "اختبار التحويل يحتاج فرضية قابلة للتفنيد وقاعدة توقف",
+        "description": "صمم تجارب التحويل حول عائق محدد ونتيجة أساسية ومؤشرات حماية وقاعدة قرار.",
+        "tags": [
+          "webdev",
+          "arabic",
+          "conversion",
+          "analytics"
+        ],
+        "approx_words": 327,
+        "markdown": "«حسّن تحويل الصفحة» نتيجة مرغوبة، وليست فرضية اختبار. التجربة المفيدة تسمي العائق المرصود والآلية المقترحة والجمهور والإشارة المتوقع تغيرها إذا صح التفسير.\n\nمثال: «للزوار القادمين من X، قد يؤدي استبدال فقرة الشحن غير الواضحة بملخص موجز للتوصيل إلى تقليل الخروج من الدفع، لأن الصفحة تخفي معلومة مؤثرة في القرار». هذه فرضية قابلة للاختبار ويمكن أن تكون خاطئة.\n\nقبل الإطلاق، حدّد:\n- **المقياس الأساسي:** نتيجة واحدة قريبة من وظيفة الصفحة، مثل إتمام الدفع أو إرسال نموذج مؤهل.\n- **مؤشرات الحماية:** الإلغاء والاسترداد والأخطاء وجودة العملاء المحتملين واتصالات الدعم التي يجب ألا تسوء.\n- **الأهلية:** الجمهور والجهاز واللغة ومصادر الزيارات.\n- **القياس التقني:** تعريف الأحداث وتوزيع النسخ وإزالة التكرار وفحوص البيانات.\n- **قاعدة القرار:** منطق العينة أو المدة والحد الأدنى للأثر العملي وما يحدث إن بقي الدليل غير حاسم.\n- **قاعدة الإيقاف:** أخطاء تقنية أو نتائج ضارة أو تعطل تجربة المستخدم.\n\nلا تراقب النتائج باستمرار ثم تعلن فائزًا كلما تحول الرسم إلى الأخضر. العينات الصغيرة متقلبة، والتغييرات المتزامنة تجعل السبب مجهولًا. وإذا لم تكفِ الزيارات، فاستخدم جلسات الاستخدام أو أسئلة الدعم أو إطلاقًا مرحليًا، وسمِّ الاستنتاج بحجمه الحقيقي.\n\n## أدخل تأثير التقويم المحلي في تصميم التجربة\n\nقد تخلط تجربة تقارن أسابيع مختلفة بين أثر تغيير الصفحة وأثر موعد الرواتب أو العطلات الأسبوعية أو رمضان أو موسم تخفيضات كبير. شغّل النسخ بالتزامن متى أمكن، وسجّل أحداث التقويم التي قد تؤثر في الطلب. لا تمد مقارنة بسيطة عبر انتقال موسمي كبير. قيّم النتيجة الأقرب لقيمة النشاط—مثل هامش الربح الصافي أو إجراء مؤهل مكتمل—مع مراقبة الإلغاء وفشل الدفع واتصالات الدعم كمؤشرات حماية. يجب أن تناسب المواعيد والحدود حجم الزيارات ودورة البيع الفعلية.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    },
+    {
+      "theme": "11-marketing-automation-ai",
+      "slug": "ai-marketing-workflows",
+      "category_en": "Marketing AI",
+      "category_ar": "الذكاء الاصطناعي التسويقي",
+      "framework_ids": [
+        "FW-085"
+      ],
+      "en": {
+        "title": "Use AI in Marketing Workflows with Boundaries, Not Blind Automation",
+        "description": "A practical workflow for choosing automation tasks, limiting data, validating outputs, and measuring value.",
+        "tags": [
+          "automation",
+          "ai",
+          "marketing",
+          "workflow"
+        ],
+        "approx_words": 395,
+        "markdown": "The useful question is not “Where can we add AI?” It is “Which repeatable task has clear inputs, a checkable output, and a safe fallback when the system is wrong?”\n\nGood candidates include classification, structured extraction, drafting from approved material, or routing a request. Riskier tasks include consequential eligibility decisions, unreviewed claims, or sensitive data use without controls.\n\nDesign the workflow before choosing a model:\n1. Define the task and what counts as a correct result.\n2. Limit inputs to what the task needs; remove personal or confidential data where possible.\n3. Give the system approved sources and explicit boundaries.\n4. Require structured outputs when another system depends on fields.\n5. Validate required fields and factual claims where possible.\n6. Route uncertain or high-impact cases to a person.\n7. Log versions, exceptions, overrides, and final actions.\n8. Provide a manual fallback and a way to stop the workflow.\n\nMeasure benefit and failure: time per completed task, rework, error severity, escalation rate, and user impact. Compare against the current workflow, not an imagined zero-cost baseline. A faster draft that creates more review burden may not improve operations.\n\nKeep evaluation examples representative and privacy-safe. Test edge cases, language variation, and instruction injection through untrusted content. Never treat customer input or a web page as instructions that override workflow controls. Recheck model and platform documentation as capabilities and data terms change.\n\n## Measure AI referrals as a classification problem\n\nVisits from answer engines may appear under different referral labels, while links shared privately can lose their source and arrive as direct traffic. Keep a documented reporting rule for known referrers, landing pages, and uncertain cases; do not relabel all organic or direct visits as AI traffic. Compare trends with search-console queries and visible referral evidence, and report the limits of the classification. A measurement label is an analyst’s best available grouping, not proof that an AI system cited the page.\n\n> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+      },
+      "ar": {
+        "title": "استخدم الذكاء الاصطناعي في التسويق بحدود واضحة لا بأتمتة عمياء",
+        "description": "منهج عملي لاختيار مهام الأتمتة وتقليل البيانات والتحقق من المخرجات وقياس القيمة.",
+        "tags": [
+          "automation",
+          "arabic",
+          "ai",
+          "marketing"
+        ],
+        "approx_words": 356,
+        "markdown": "السؤال المفيد ليس «أين نضيف الذكاء الاصطناعي؟» بل «أي مهمة متكررة لها مدخلات واضحة ومخرج يمكن التحقق منه ومسار آمن إذا أخطأ النظام؟»\n\nتشمل المهام المناسبة التصنيف واستخراج الحقول والصياغة من مواد معتمدة أو توجيه الطلب. أما قرارات الأهلية المؤثرة أو إرسال ادعاءات بلا مراجعة أو استخدام بيانات حساسة دون ضوابط فهي أعلى مخاطرة.\n\nصمّم سير العمل قبل اختيار النموذج:\n1. عرّف المهمة وما الذي يجعل النتيجة صحيحة.\n2. قلّل المدخلات إلى ما تحتاجه المهمة، واحذف البيانات الخاصة متى أمكن.\n3. زوّد النظام بمصادر معتمدة وحدود صريحة.\n4. اطلب مخرجات منظمة إذا اعتمد نظام لاحق على حقول محددة.\n5. تحقّق آليًا من الحقول والادعاءات حيثما أمكن.\n6. أحِل الحالات غير الواضحة أو عالية الأثر إلى شخص.\n7. سجّل الإصدارات والاستثناءات والتجاوزات والإجراء النهائي.\n8. وفّر بديلًا يدويًا وطريقة لإيقاف التدفق.\n\nقِس الفائدة والإخفاق معًا: الوقت لكل مهمة مكتملة وإعادة العمل وشدة الخطأ ومعدل التصعيد وأثر التجربة على المستخدم. قارن بسير العمل الحالي، لا بخط أساس متخيل تكلفته صفر. قد لا تحسن العمليات إذا أنتجت المسودة الأسرع عبئًا أكبر على المراجعة.\n\nاجعل أمثلة التقييم ممثلة وآمنة للخصوصية. اختبر الحالات الطرفية وتنوع اللغة وحقن التعليمات عبر محتوى غير موثوق. لا تعامل نص العميل أو صفحة الويب كتعليمات تتجاوز ضوابط سير العمل. راجع توثيق النموذج والمنصة مع تغير الإمكانات وشروط البيانات.\n\n## تعامل مع إحالات الذكاء الاصطناعي كمشكلة تصنيف\n\nقد تظهر زيارات محركات الإجابة تحت إحالات مختلفة، بينما قد تفقد الروابط المتداولة في المحادثات الخاصة مصدرها وتصل كزيارات مباشرة. وثّق قاعدة التقرير للمصادر المعروفة وصفحات الهبوط والحالات غير المؤكدة؛ ولا تعِد تصنيف كل الزيارات العضوية أو المباشرة كزيارات ذكاء اصطناعي. قارن الاتجاهات باستعلامات أدوات مشرفي المواقع ودليل الإحالة الظاهر، واذكر حدود التصنيف. تسمية القياس أفضل تجميع متاح للمحلل، وليست إثباتًا بأن نظامًا ذكيًا استشهد بالصفحة.\n\n> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+      }
+    }
+  ]
+}
