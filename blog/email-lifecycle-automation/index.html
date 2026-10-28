@@ -25,9 +25,6 @@
 <p>An unsubscribe is only effective if downstream destinations receive it. Map email, SMS, CRM, and advertising-audience connections; record the preference in the source of truth; and test duplicate, delayed, and failed updates. Keep the person suppressed while a failed destination is repaired. Exact consent and retention obligations vary by market and channel, so have the responsible owner confirm the current local requirements before launch.</p>
 <h2 id="model-the-lifecycle-as-state-transitions">Model the lifecycle as state transitions</h2>
 <p>Write the entry event, exit event, suppression rules, and human recovery path before drafting a message. For a welcome flow, the useful state may be “setup started” rather than simply “day two.” Make every message conditional on the person not already reaching the desired outcome. Test collisions: a purchase during onboarding, an unsubscribe while a reminder is queued, or a support issue during a promotional sequence. Maintain a state table that names the source of truth; if two tools disagree, the workflow should pause or defer to the safer state.</p>
-<h2 id="optional-ai-assisted-work-brief-lifecycle-state-specification">Optional AI-assisted work brief — Lifecycle state specification</h2>
-<pre><code class="language-text">Turn this lifecycle into states, entry and exit events, suppression rules, timing windows, source of truth, and human fallback. Test purchase, unsubscribe, support, and stale-data collisions. Return a transition table and edge cases; do not draft messages until the state logic is unambiguous.
-</code></pre>
 <h2 id="stop-scheduling-by-day-trigger-by-state">Stop scheduling by day; trigger by state</h2>
 <p><strong>Weak sequence</strong></p>
 <p>Day 1: setup reminder. Day 3: setup reminder again—even if setup is complete.</p>
@@ -39,8 +36,10 @@
 <p>Route errors to a person; do not send another promotion.</p>
 <p><strong>Measure</strong></p>
 <p>Count the useful outcome and delivery failures, not messages sent.</p>
-<h2 id="worked-scenario-a-subscriber-exits-the-sequence-at-the-right-moment">Worked scenario — A subscriber exits the sequence at the right moment</h2>
-<p>A new subscriber receives the first lesson and completes setup that afternoon. The completion event suppresses remaining setup reminders, while the next message introduces a distinct use case. If setup fails, route to help. Test event delay and duplicate delivery so the person does not receive both paths.</p>
+<h2 id="stop-sending-the-same-lifecycle-message-by-calendar-date">Stop sending the same lifecycle message by calendar date</h2>
+<p>A date can tell you when a message was scheduled; it cannot tell you whether the customer’s state still makes that message relevant.</p>
+<p><strong>Replace the calendar-only trigger with a state check:</strong> confirm the last meaningful action, suppress the message if the person already completed the goal, and route exceptions for review.</p>
+<p><strong>Example:</strong> after a customer completes setup, stop the “finish setup” reminder and send the next useful instruction. If the completion event is missing or duplicated, pause the branch and inspect the event before sending more messages.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

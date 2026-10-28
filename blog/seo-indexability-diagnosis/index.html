@@ -24,13 +24,14 @@
 </ol>
 <p>Fix the earliest confirmed issue first. Do not remove a <code>noindex</code>, change a canonical, or open bot access without understanding why it was set. If the page is a duplicate or low-value variant, consolidation may be better than indexing it.</p>
 <p>A manual indexing request can ask for recrawl; it cannot force inclusion or guarantee timing. Record the diagnosis, change, and follow-up status instead of repeatedly submitting the same URL. Google’s <a href="https://developers.google.com/search/docs/essentials/technical">technical requirements</a> describe the baseline conditions.</p>
-<h2 id="optional-ai-assisted-work-brief-indexability-decision-tree">Optional AI-assisted work brief — Indexability decision tree</h2>
-<pre><code class="language-text">Inspect URL response, robots directives, canonical, rendered content, internal discovery, sitemap inclusion, duplication, and Search Console evidence. Return observed facts, likely causes, tests to distinguish them, and a priority order. Separate crawl, indexing, and ranking. Do not recommend deleting or changing a URL when a reversible signal check can resolve the uncertainty.
-</code></pre>
-<h2 id="worked-example-check-the-layers-in-order">Worked example — Check the layers in order</h2>
-<p>First fetch the URL and inspect status and rendered text. Then check <code>noindex</code>, robots access, canonical, internal links, and sitemap entry. Finally compare Search Console’s indexing reason and last crawl. A page can be crawled but not indexed, indexed but not ranked, or simply not discovered yet; each state needs a different response.</p>
 <h2 id="eligibility-does-not-guarantee-indexing">Eligibility does not guarantee indexing</h2>
 <p>Google states that meeting technical requirements does not guarantee crawling, indexing, or serving. Diagnose the observed state and remove blockers; do not promise instant indexing. <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google AI Search guide</a>.</p>
+<h2 id="seo-audit-card-diagnose-why-an-important-page-is-not-indexed">SEO audit card: Diagnose Why an Important Page Is Not Indexed</h2>
+<p><strong>Inspect:</strong> When an important URL is not indexed, separate the failure stages before requesting another crawl.</p>
+<p><strong>Check the page against:</strong> Fix the earliest confirmed issue first.</p>
+<p><strong>Verify the next step:</strong> A manual indexing request can ask for recrawl; it cannot force inclusion or guarantee timing.</p>
+<p><strong>Keep as evidence:</strong> First fetch the URL and inspect status and rendered text.</p>
+<p>Use Search Console or a crawl source where available. A checklist cannot guarantee indexing or ranking.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This process does not guarantee indexing.</p>
 </blockquote></article>

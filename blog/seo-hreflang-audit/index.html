@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO, AEO &amp; GEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO, AEO &amp; GEO</p><h1>Audit Arabic and English Hreflang Pairs</h1><p class="blog-article-deck">Check that translated pages identify equivalent routes and each locale links back consistently.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/seo-hreflang-audit/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/seo-hreflang-audit/">العربية</a></div></header>
 <article class="blog-prose"><p><code>hreflang</code> helps search systems understand equivalent language or regional pages; it does not repair a page that is missing, non-canonical, or translated for the wrong audience.</p>
 <h2 id="audit-one-language-pair-as-a-set">Audit one language pair as a set</h2>
 <p>For each English page and its Arabic equivalent, verify four things:</p>
@@ -25,11 +25,12 @@
 <h2 id="diagnose-mismatches-before-editing-at-scale">Diagnose mismatches before editing at scale</h2>
 <p>If a page has no true equivalent, do not invent one; it can be self-referenced without a false counterpart. If one language page is substantially different in task or market, explain that distinction and review the pairing. For an Arabic MENA page, check right-to-left rendering and whether the text is genuinely Arabic—not merely an English page with a translated title.</p>
 <p>Validate a small sample, then crawl the full set. In Search Console, inspect selected URLs and coverage reports; tags are hints, not a guarantee that Google will choose the intended URL. Google’s <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">localized versions documentation</a> explains the supported annotation patterns.</p>
-<h2 id="optional-ai-assisted-work-brief-language-pair-audit">Optional AI-assisted work brief — Language pair audit</h2>
-<pre><code class="language-text">For every Arabic and English page pair, verify reciprocal alternate links, correct canonical, matching purpose, reachable URLs, language labels, and x-default policy. Flag missing, self-conflicting, redirected, or unrelated pairs. Compare rendered output with source templates. Do not create a pair merely because pages share a slug or topic.
-</code></pre>
-<h2 id="worked-example-find-a-false-language-pair">Worked example — Find a false language pair</h2>
-<p>An Arabic page about eligibility and an English page about pricing may share a slug but do not answer the same task. Do not mark them reciprocal alternates. Find or create the true equivalent only when the user purpose aligns; otherwise provide a clear contextual link. Validate canonical and reciprocal links from both rendered pages.</p>
+<h2 id="seo-audit-card-audit-arabic-and-english-hreflang-pairs">SEO audit card: Audit Arabic and English Hreflang Pairs</h2>
+<p><strong>Inspect:</strong> <code>hreflang</code> helps search systems understand equivalent language or regional pages; it does not repair a page that is missing, non-canonical, or translated for the wrong audience.</p>
+<p><strong>Check the page against:</strong> 1. Both URLs return the intended page and are indexable. 2. Each page names itself and the other equivalent with reciprocal <code>hreflang</code> annotations. 3. The language/region code matches the actual page language and intended audience; do not label general Arabic as a country variant without a real distinction. 4. The canonical points to the preferred URL for that page and does not collapse both languages into one URL.</p>
+<p><strong>Verify the next step:</strong> Use absolute, crawlable URLs and keep the tags consistent with the sitemap if it also lists alternates.</p>
+<p><strong>Keep as evidence:</strong> An Arabic page about eligibility and an English page about pricing may share a slug but do not answer the same task.</p>
+<p>Use Search Console or a crawl source where available. A checklist cannot guarantee indexing or ranking.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is a technical audit method, not an indexing guarantee.</p>
 </blockquote></article>

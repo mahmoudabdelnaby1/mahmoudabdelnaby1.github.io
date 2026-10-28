@@ -26,11 +26,13 @@
 <h2 id="make-the-fallback-observable">Make the fallback observable</h2>
 <p>Log exception type, source, workflow version, action taken, and whether the case was resolved. Minimize personal data in logs. Give people a clear route to correct information or reach a human. Test each exception with synthetic or anonymized cases before enabling external actions.</p>
 <p>Review exception frequency and false alarms after launch. If one branch dominates, improve the form or rules rather than adding more model instructions. Keep sending, spending, deleting, and account-permission changes behind explicit human approval unless the organization has a separately approved control.</p>
-<h2 id="optional-ai-assisted-work-brief-exception-first-automation-design">Optional AI-assisted work brief — Exception-first automation design</h2>
-<pre><code class="language-text">List normal path, missing data, duplicate trigger, timeout, conflicting state, user opt-out, and downstream outage. For each exception define detection, retry policy, idempotency, human owner, and safe stopping point. Simulate failures before automating the happy path. Never retry external messages or payments without duplicate protection and a clear limit.
-</code></pre>
-<h2 id="worked-scenario-test-the-paid-order-collision">Worked scenario — Test the paid-order collision</h2>
-<p>A workflow intended for cash-on-delivery confirmation receives a paid card order. The safe rule checks payment state before entering the confirmation queue, prevents duplicate messages, and sends unknown states to human review. Simulate the webhook twice and once with missing payment data. Record the idempotency key and maximum retry count before activating the process.</p>
+<h2 id="model-neutral-prompt-card-map-exceptions-before-automating-a-marketing-workflow">Model-neutral prompt card: Map Exceptions Before Automating a Marketing Workflow</h2>
+<p><strong>Task:</strong> An automation is defined as much by what it does when inputs are strange as by its happy path.</p>
+<p><strong>Copy-ready prompt:</strong></p>
+<blockquote>
+<p>List normal path, missing data, duplicate trigger, timeout, conflicting state, user opt-out, and downstream outage. For each exception define detection, retry policy, idempotency, human owner, and safe stopping point. Simulate failures before automating the happy path. Never retry external messages or payments without duplicate protection and a clear limit.</p>
+</blockquote>
+<p><strong>Review before use:</strong> Verify facts against the source, check privacy and audience fit, and have a person approve the final action. The prompt can assist drafting; it cannot validate its own claims.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. The routing examples are illustrative, not tested automation results.</p>
 </blockquote></article>

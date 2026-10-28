@@ -26,11 +26,15 @@
 <p>Mark each issue by task blocked, severity, frequency, and confidence. Fix blockers first: dead buttons, hidden required fields, broken locale switching, lost form state, or a contact link that opens the wrong destination. Visual polish comes after the visitor can complete the job.</p>
 <p>Test on a small screen and slower connection if that reflects the audience. For Arabic, verify RTL alignment, numeric entry, phone number format, and that button text does not clip. Check actual devices or a browser emulation plus a human review; neither alone covers every environment.</p>
 <p>After a fix, replay the same task and note the version. Measure real completion and downstream request quality; a faster path is useful only if it still captures what the service needs.</p>
-<h2 id="optional-ai-assisted-work-brief-mobile-task-walkthrough">Optional AI-assisted work brief — Mobile task walkthrough</h2>
-<pre><code class="language-text">Run this task on a real mobile viewport from the entry link through confirmation. Record each tap, wait, layout shift, keyboard effect, validation message, and point where the user must decide. Separate usability friction from analytics defects. Rank findings by blocked task and reproducibility, not visual preference. Include device, browser, language, and timestamp for each observation.
-</code></pre>
-<h2 id="worked-scenario-run-the-audit-on-a-booking-path">Worked scenario — Run the audit on a booking path</h2>
-<p>Imagine a visitor opens a service page from a social link, selects a date, enters details, then sees an error after the keyboard covers the button. Record the device, viewport, language, exact action, and reproducible error before recommending a redesign. Check whether the form retained previous entries and whether the confirmation event fired. A single documented blocked step is more useful than a list of visual preferences.</p>
+<h2 id="action-checklist-audit-a-mobile-conversion-path-in-fifteen-minutes">Action checklist: Audit a Mobile Conversion Path in Fifteen Minutes</h2>
+<ul>
+<li>[ ] A mobile conversion audit should follow one real task from first tap to confirmation.</li>
+<li>[ ] Choose a realistic phone and one audience task, such as asking whether a service covers a district.</li>
+<li>[ ] 1. <strong>First 2 minutes:</strong> Can the visitor identify the offer, market, and next action without zooming? 2. <strong>Next 5:</strong> Do controls have enough space, labels, and keyboard types? Does validation explain how to recover? 3. <strong>Next 5:</strong> Do links, maps, chat, payment, or booking handoffs preserve the task and language? 4. <strong>Final 3:</strong> Is there a clear confirmation, owner, and expectation for what happens next?</li>
+<li>[ ] These are time boxes for inspection, not performance targets.</li>
+<li>[ ] Confirm the example or outcome against the actual record: Imagine a visitor opens a service page from a social link, selects a date, enters details, then sees an error after the keyboard covers the button.</li>
+</ul>
+<p>Stop if the evidence, consent, or handoff owner is missing; resolve that gap before interpreting performance.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is a heuristic inspection method, not a usability study.</p>
 </blockquote></article>

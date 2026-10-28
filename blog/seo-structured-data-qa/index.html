@@ -19,13 +19,14 @@
 <h2 id="validate-in-two-passes">Validate in two passes</h2>
 <p>Use a syntax or rich-results validator to catch implementation issues, then compare the output with actual page content and the search feature’s eligibility rules. Validation means the markup can be parsed; it does not guarantee eligibility, display, ranking, or AI citations. Monitor warnings and search appearance after deployment.</p>
 <p>Keep markup generated from the same source of truth as the visible content where possible. When a price or author changes, update both. Google’s <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies">structured data guidelines</a> explain quality and eligibility requirements.</p>
-<h2 id="optional-ai-assisted-work-brief-schema-parity-review">Optional AI-assisted work brief — Schema parity review</h2>
-<pre><code class="language-text">Compare each structured-data property with visible page content and the actual page type. Flag invented ratings, hidden claims, stale dates, mismatched language, and properties that the page does not support. Validate syntax separately from eligibility and rich-result display. Recommend the smallest correction and state that valid markup does not guarantee a search enhancement.
-</code></pre>
-<h2 id="worked-example-validate-meaning-and-markup-separately">Worked example — Validate meaning and markup separately</h2>
-<p>A syntactically valid FAQ schema can still describe questions that users cannot see. Compare each question and answer with the visible page, then run the relevant validator. Record syntax validity separately from feature eligibility and actual appearance. Do not add ratings, reviews, or author credentials unless the page visibly supports them.</p>
 <h2 id="schema-and-ai-search-are-separate-checks">Schema and AI search are separate checks</h2>
 <p>Google says structured data is not required for generative AI features and there is no special GEO schema. Keep valid markup for supported Search features, and make it match visible content. <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google AI Search guide</a>.</p>
+<h2 id="seo-audit-card-validate-structured-data-against-visible-page-content">SEO audit card: Validate Structured Data Against Visible Page Content</h2>
+<p><strong>Inspect:</strong> Structured data should describe what a person can verify on the page.</p>
+<p><strong>Check the page against:</strong> For an article, make sure the structured title and author match the visible byline.</p>
+<p><strong>Verify the next step:</strong> Use a syntax or rich-results validator to catch implementation issues, then compare the output with actual page content and the search feature’s eligibility rules.</p>
+<p><strong>Keep as evidence:</strong> A syntactically valid FAQ schema can still describe questions that users cannot see.</p>
+<p>Use Search Console or a crawl source where available. A checklist cannot guarantee indexing or ranking.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide does not claim a rich-result outcome.</p>
 </blockquote></article>

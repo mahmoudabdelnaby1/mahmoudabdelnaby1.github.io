@@ -27,11 +27,13 @@
 <p>Use a test environment or a clearly labeled test record. Complete the user action once, inspect the browser or platform debug view, refresh, use the back button, and repeat only when the test plan requires it. Confirm that one intended action produces the expected event and that cancellation or an error does not masquerade as completion. Test Arabic and English routes separately if they use different forms or scripts.</p>
 <p>For a WhatsApp button, the event may mean <strong>click to open chat</strong>. It must not be named or reported as a message sent or lead received unless that later state is measured. For ecommerce, distinguish order submitted from paid, delivered, retained, or refunded when those states drive the decision.</p>
 <p>Keep a change log with event name, version, date, owner, and test evidence. Recheck after theme, tag, consent, or route changes.</p>
-<h2 id="optional-ai-assisted-work-brief-event-qa-protocol">Optional AI-assisted work brief — Event QA protocol</h2>
-<pre><code class="language-text">For this event, specify the user action, trigger condition, required parameters, expected count, destination, consent constraints, and downstream use. Run positive, negative, duplicate, and reload cases. Record expected versus observed payload and the owner of each defect. Do not mark it validated because a tag assistant shows a request; confirm the intended destination and reporting path.
-</code></pre>
-<h2 id="worked-example-test-the-same-interaction-twice">Worked example — Test the same interaction twice</h2>
-<p>Submit a test request once and confirm the expected event and parameters. Reload the confirmation page and verify the event does not fire again. Trigger a validation error and confirm no completion event is sent. Then check the destination report, not only the browser tag debugger. Save the test timestamp and sanitized event record so a later change can be compared.</p>
+<h2 id="measurement-scorecard-qa-a-marketing-conversion-event-before-reporting-it">Measurement scorecard: QA a Marketing Conversion Event Before Reporting It</h2>
+<p><strong>Decision to support:</strong> An analytics event is ready for reporting only after its meaning, trigger, and duplicate behavior are verified.</p>
+<p><strong>Primary evidence:</strong> Use a test environment or a clearly labeled test record.</p>
+<p><strong>Quality guardrail:</strong> For a WhatsApp button, the event may mean <strong>click to open chat</strong>.</p>
+<p><strong>Source / owner:</strong> Keep a change log with event name, version, date, owner, and test evidence.</p>
+<p><strong>Example:</strong> Submit a test request once and confirm the expected event and parameters.</p>
+<p>Report observed events separately from attributed or confirmed business outcomes.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. The examples are measurement definitions, not verified event results.</p>
 </blockquote></article>
