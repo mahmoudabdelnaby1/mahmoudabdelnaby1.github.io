@@ -26,7 +26,7 @@ jobs:
         run: |
           python scripts/prepare-indexability.py --root .
           mkdir -p _site
-          cp -R index.html ar assets assistants frameworks labs marketing-systems playbooks skill-areas skills privacy llms.txt robots.txt sitemap.xml 8ad81cc476a34605776ffdcd3d8a113b.txt .nojekyll _site/
+          cp -R index.html ar assets assistants blog frameworks labs marketing-systems playbooks skill-areas skills privacy llms.txt robots.txt sitemap.xml 8ad81cc476a34605776ffdcd3d8a113b.txt .nojekyll _site/
           rm -f _site/README.md
       - name: Add privacy choices to public pages
         run: |
@@ -98,5 +98,6 @@ jobs:
           else:
               print('No changed canonical HTML pages to submit.')
           PY
+
 
 
