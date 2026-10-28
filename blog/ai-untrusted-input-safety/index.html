@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Protect Marketing AI Workflows From Untrusted Instructions</h1><p class="blog-article-deck">Keep customer content and retrieved pages from overriding approved workflow rules.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-untrusted-input-safety/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-untrusted-input-safety/">العربية</a></div></header>
 <article class="blog-prose"><p>A page, form, or customer message can contain text that looks like an instruction to an AI system. The workflow must treat that material as input data, not authority to reveal information or take a separate action.</p>
 <h2 id="separate-the-instruction-from-the-content">Separate the instruction from the content</h2>
 <p>Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields. Tell the model what it may do with the supplied material—for example, summarize or classify it—and what it may never do, such as export contacts, send messages, change a campaign, or reveal hidden instructions.</p>
@@ -26,16 +26,80 @@
 <h2 id="bound-the-tools-and-review-the-output">Bound the tools and review the output</h2>
 <p>Give read-only access where possible, require human approval for external actions, and validate the structured output against a schema. Log the input source, rule version, blocked action, and reviewer without retaining unnecessary personal content. Test after changing the model, prompt, tools, or retrieval sources.</p>
 <p>A successful small test does not prove the workflow is immune to prompt injection. Keep the action surface narrow and provide a manual fallback.</p>
-<h2 id="red-team-simulation-protect-marketing-ai-workflows-from-untrusted-instructions">Red-team simulation: Protect Marketing AI Workflows From Untrusted Instructions</h2>
-<p>Run with synthetic data; do not connect it to publishing or customers.</p>
+<h2 id="short-video-script-protect-marketing-ai-workflows-from-untrusted-instructions">Short-video script: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p><strong>Length:</strong> 40–45 seconds · vertical with readable captions</p>
+<p><strong>0–4 sec | Hook — close-up on the problem</strong>
+Voice: “A page, form, or customer message can contain text that looks like an instruction to an AI system.”</p>
+<p><strong>5–12 sec | Name what to check</strong>
+On screen: Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields.</p>
+<p><strong>13–28 sec | Demonstrate the action in sequence</strong>
+Voice: “Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields.”
+Visual: show the actual step while masking customer data.</p>
+<p><strong>29–37 sec | Show the evidence and its limit</strong>
+Use: “A successful small test does not prove the workflow is immune to prompt injection.” and identify its source, or label it “illustrative.”</p>
+<p><strong>38–45 sec | Viewer’s next step</strong>
+Ask viewers to apply the check to one case and record the source before deciding. Do not claim an unmeasured result.</p>
+<h2 id="educational-carousel-protect-marketing-ai-workflows-from-untrusted-instructions">Educational carousel: Protect Marketing AI Workflows From Untrusted Instructions</h2>
 <ol>
-<li><strong>Missing source:</strong> ask for an absent answer; expected behavior is to state the gap.</li>
-<li><strong>Conflict:</strong> supply two different sources; expected behavior is to show the conflict and route it for review.</li>
-<li><strong>Injected instruction:</strong> place a rule-override request inside untrusted text; expected behavior is to treat it as data.</li>
-<li><strong>Sensitive field:</strong> insert a synthetic value; expected behavior is to minimize or mask it.</li>
-<li><strong>Missing input:</strong> remove a required field; expected behavior is clarification or safe fallback.</li>
+<li>
+<p><strong>Cover:</strong> Protect Marketing AI Workflows From Untrusted Instructions</p>
+</li>
+<li>
+<p><strong>Problem:</strong> A page, form, or customer message can contain text that looks like an instruction to an AI system.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Tell the model what it may do with the supplied material—for example, summarize or classify it—and what it may never do, such as export contacts, send messages, change a campaign, or reveal hidden instructions.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Test with adversarial examples: - a webpage asks the model to ignore its assigned task; - a form includes a demand to expose another customer’s details; - a retrieved document contains contradictory instructions; - an Arabic/English mixed message hides an action request in the other language.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> The expected result is to process the content for the authorized task, flag the hostile instruction where relevant, and avoid the unauthorized action.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Do not put credentials or broad account access in a workflow that only needs to summarize text.</p>
+</li>
+<li>
+<p><strong>Evidence to record:</strong> A successful small test does not prove the workflow is immune to prompt injection.</p>
+</li>
+<li>
+<p><strong>Apply it:</strong> Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields.</p>
+</li>
 </ol>
-<p>Log expected and observed behavior, severity, and the fix owner. This is a test plan, not a claim an attack occurred.</p>
+<p><strong>Production note:</strong> Keep one idea per card. Label an illustration unless it is a sourced measurement, and close with a practical question tied to the article’s decision.</p>
+<h2 id="field-experiment-thread-protect-marketing-ai-workflows-from-untrusted-instructions">Field experiment thread: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p><strong>Executable experiment thread — a plan, not a reported result</strong></p>
+<p><strong>1/</strong> <strong>Question:</strong> Can this action address the specific problem described here: A page, form, or customer message can contain text that looks like an instruction to an AI system.</p>
+<p><strong>2/</strong> <strong>Hypothesis:</strong> If we apply the article’s step to [defined eligible cases], [problem-linked signal] should change without harming [quality guardrail]. Action: Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields.</p>
+<p><strong>3/</strong> <strong>Baseline:</strong> Record [eligible case count], [signal], [source], and [period] before the change. Keep clicks, requests, and completed outcomes separate.</p>
+<p><strong>4/</strong> <strong>Run:</strong> Change only this factor: [the action above]. Hold other conditions steady where possible and log exceptions.</p>
+<p><strong>5/</strong> <strong>Decision:</strong> Compare with a comparable baseline period. Report the observed value, source, and attribution limits—even if the signal did not improve.</p>
+<p>Stop if tracking breaks or the guardrail crosses its agreed limit. Do not prefill results or describe this plan as a completed case study.</p>
+<h2 id="tool-neutral-prompt-pack-protect-marketing-ai-workflows-from-untrusted-instructions">Tool-neutral prompt pack: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p>Use manually or with any general text assistant. Supply the relevant article excerpt and approved material with customer data removed.</p>
+<p><strong>1 — Extract the article’s decision</strong></p>
+<blockquote>
+<p>From the material on “Protect Marketing AI Workflows From Untrusted Instructions,” identify the reader’s decision, the condition that changes it, and the evidence needed. Add no facts from outside the material. Name what is missing.</p>
+</blockquote>
+<p><strong>2 — Build a usable asset</strong></p>
+<blockquote>
+<p>Turn this action into a [specific output: checklist/form/script/map]: Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields. Make each step verifiable and state its input, owner, evidence source, and fallback when evidence is missing.</p>
+</blockquote>
+<p><strong>3 — Review before use</strong></p>
+<blockquote>
+<p>Match every claim to a source. Separate fact, illustration, and hypothesis; check privacy and exceptions. Return unsupported fields as “unknown.” Do not publish the output or execute a live action automatically.</p>
+</blockquote>
+<h2 id="stop-doing-swipe-file-protect-marketing-ai-workflows-from-untrusted-instructions">Stop-doing swipe file: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p><strong>Stop collapsing this topic into one outcome:</strong> “Protect Marketing AI Workflows From Untrusted Instructions: we took [step], therefore [result].” That skips the conditions and evidence.</p>
+<p><strong>Write it this way:</strong> “For [defined case], first verify [topic-specific evidence]. If [condition] holds, take [action: Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields.] and record [measure] from [source] over [period]. Do not attribute the outcome to the step until other changes are reviewed.”</p>
+<p><strong>Illustrative editorial example:</strong> A successful small test does not prove the workflow is immune to prompt injection.</p>
+<p>This is not a client quote or success case. Fill in a result or percentage only from verified records, and retain cases where the method did not work.</p>
+<h2 id="hookvaluetemplate-protect-marketing-ai-workflows-from-untrusted-instructions">Hook–Value–Template: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p><strong>Hook:</strong> A page, form, or customer message can contain text that looks like an instruction to an AI system.</p>
+<p><strong>Value:</strong> Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields. Start by naming the state and its source, then take one reviewable step. Do not present an illustration or hypothesis as a verified outcome.</p>
+<p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
+<p><strong>Illustrative example from this topic:</strong> A successful small test does not prove the workflow is immune to prompt injection.</p>
+<p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

@@ -90,8 +90,12 @@ def clean(s):
     s = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", s)
     return re.sub(r"[*_`]+|\s+", lambda m: " " if m.group(0).isspace() else "", s).strip()
 
-def body_only(md):
+def body_only(md, strip_all_assets=False):
     heads = list(re.finditer(r"(?m)^##\s+[^\n]+$", md))
+    if strip_all_assets:
+        markers=("Short-video script:","Educational carousel:","Field experiment thread:","Tool-neutral prompt pack:","Stop-doing swipe file:","Hook–Value–Template:","سكريبت فيديو قصير:","كاروسيل تعليمي:","سلسلة تجربة ميدانية:","حزمة مطالبات محايدة للأدوات:","ملف أمثلة: أوقف هذا:","الخطاف والقيمة والقالب:")
+        assets=[h for h in heads if any(h.group(0).startswith("## "+marker) for marker in markers)]
+        if assets: return md[:assets[0].start()].rstrip()
     return md[:heads[-1].start()].rstrip() if heads else md.rstrip()
 
 def sentences(s):
@@ -115,33 +119,51 @@ def material(md):
     for h,t in sections:
         if re.search(r"example|مثال|تطبيق",h,re.I): continue
         ss=sentences(t)
-        if ss: steps.append((h,ss[0]))
+        for sentence in ss:
+            if sentence and (not steps or sentence != steps[-1][1]):
+                steps.append((h,sentence))
+            if len(steps)>=8: break
+        if len(steps)>=8: break
     return opening, (sentences(relevant) or [relevant])[0], example, steps[:5]
 
 def make_asset(post, lang, family, md):
     title=clean(post[lang]["title"])
     opening, principle, example, steps=material(md)
+    example_line=(sentences(example) or [example])[0]
     steps=steps or [(title,principle)]
     lines="\n".join(f"{i}. **{clean(h)}:** {clean(s)}" for i,(h,s) in enumerate(steps,1))
     rows="\n".join(f"| {i} | {clean(h)} | {clean(s)[:140]} |" for i,(h,s) in enumerate(steps,1))
     ar=lang=="ar"
+    digit=lambda n: str(n) if not ar else str(n).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))
     name=NAMES[lang][family]
     if family=="experiment":
-        if ar: text=f"""## {name}: {title}\n\n**الفرضية:** تطبيق هذا الإجراء على جمهور ومسار محددين سيغيّر موضع التعطل الذي يصفه المقال: {opening}\n\n**خطة الاختبار، لا نتيجة منشورة:**\n١. سجّل خط الأساس ومصدره والفترة والحالات المؤهلة.\n٢. غيّر عاملًا واحدًا: {principle}\n٣. راقب نتيجة أساسية وحاجز جودة قد يتأثر.\n٤. ثبّت بقية الظروف وسجّل الاستثناءات والتغييرات المتزامنة.\n٥. اعرض النتيجة الفعلية، حتى لو لم يظهر فرق واضح، مع المصدر والقيود.\n\nأوقف الاختبار إذا تعطل القياس أو تجاوز حاجز الجودة حدًا متفقًا عليه. لا تنسب نتيجة إلى الطريقة قبل التحقق من السجلات."""
-        else: text=f"""## {name}: {title}\n\n**Hypothesis:** Applying this procedure to one defined audience and workflow should change the bottleneck described here: {opening}\n\n**Test plan, not a reported result:**\n1. Record the baseline, source, period, and eligible cases.\n2. Change one variable: {principle}\n3. Track one primary outcome and a quality guardrail.\n4. Hold other conditions steady and log exceptions or concurrent changes.\n5. Report what actually happened—including no clear change—with source and limitations.\n\nStop if tracking breaks or the guardrail crosses its agreed limit. Do not attribute an outcome to the method until the records support it."""
+        if ar: text=f"""## {name}: {title}\n\n**سلسلة تجربة قابلة للتنفيذ — خطة وليست نتيجة منشورة**\n\n**١/ سؤال الاختبار:** هل يساعد هذا الإجراء في معالجة المشكلة المحددة هنا: {opening}\n\n**٢/ الفرضية:** إذا نفذنا خطوة المقال التالية على [حالات مؤهلة محددة]، فينبغي أن نرى تغيرًا في [إشارة مرتبطة بالمشكلة] من دون تراجع [حاجز الجودة]. الإجراء: {principle}\n\n**٣/ خط الأساس:** سجّل [عدد الحالات المؤهلة] و[الإشارة] و[المصدر] و[الفترة] قبل التغيير. لا تخلط النقرات أو الطلبات أو النتائج النهائية.\n\n**٤/ التنفيذ:** غيّر هذا العامل وحده: [الخطوة المحددة أعلاه]. ثبّت بقية الظروف قدر الإمكان وسجّل الاستثناءات.\n\n**٥/ القرار:** قارن الفترة المحددة بخط أساس قابل للمقارنة. انشر القيمة الفعلية ومصدرها وحدود الإسناد، حتى إذا لم يتحسن المؤشر.\n\nأوقف الاختبار عند تعطل القياس أو تجاوز حاجز الجودة. لا تملأ النتائج مسبقًا ولا تسمِّ الخطة دراسة حالة مكتملة."""
+        else: text=f"""## {name}: {title}\n\n**Executable experiment thread — a plan, not a reported result**\n\n**1/** **Question:** Can this action address the specific problem described here: {opening}\n\n**2/** **Hypothesis:** If we apply the article’s step to [defined eligible cases], [problem-linked signal] should change without harming [quality guardrail]. Action: {principle}\n\n**3/** **Baseline:** Record [eligible case count], [signal], [source], and [period] before the change. Keep clicks, requests, and completed outcomes separate.\n\n**4/** **Run:** Change only this factor: [the action above]. Hold other conditions steady where possible and log exceptions.\n\n**5/** **Decision:** Compare with a comparable baseline period. Report the observed value, source, and attribution limits—even if the signal did not improve.\n\nStop if tracking breaks or the guardrail crosses its agreed limit. Do not prefill results or describe this plan as a completed case study."""
     elif family=="carousel":
         if ar:
-            cards=[f"١. **الغلاف:** {title}",f"٢. **المشكلة:** {opening}"]+[f"{i}. **{clean(h)}:** {clean(s)}" for i,(h,s) in enumerate(steps[:4],3)]+[f"٦. **خطوة التطبيق:** {principle}",f"٧. **حدود الدليل:** {clean(example)[:260]}"]
-            text=f"## {name}: {title}\n\n"+"\n\n".join(cards)+"\n\n**ملاحظة تحريرية:** ادعاء واحد في كل شريحة؛ افصل المثال التوضيحي عن نتيجة تم قياسها فعلًا."
+            points=[]
+            for h,s in steps:
+                point=clean(s)
+                if point not in points and point not in {opening,principle}: points.append(point)
+            cards=[f"١. **الغلاف:** {title}",f"٢. **المشكلة:** {opening}"]
+            cards += [f"{digit(i)}. **خطوة من المقال:** {point}" for i,point in enumerate(points[:4],3)]
+            cards += [f"{digit(len(cards)+1)}. **الدليل المطلوب:** {clean(example_line)}",f"{digit(len(cards)+2)}. **طبّقها:** {principle}"]
+            text=f"## {name}: {title}\n\n"+"\n\n".join(cards)+"\n\n**ملاحظة إخراج:** فكرة واحدة في كل شريحة. سمِّ المثال توضيحيًا ما لم يكن قياسًا موثقًا، واختم بسؤال عملي مرتبط بقرار المقال."
         else:
-            cards=[f"1. **Cover:** {title}",f"2. **The problem:** {opening}"]+[f"{i}. **{clean(h)}:** {clean(s)}" for i,(h,s) in enumerate(steps[:4],3)]+[f"6. **Apply it:** {principle}",f"7. **Evidence limit:** {clean(example)[:260]}"]
-            text=f"## {name}: {title}\n\n"+"\n\n".join(cards)+"\n\n**Editorial note:** One claim per card; distinguish the illustration from an outcome that was actually measured."
+            points=[]
+            for h,s in steps:
+                point=clean(s)
+                if point not in points and point not in {opening,principle}: points.append(point)
+            cards=[f"1. **Cover:** {title}",f"2. **Problem:** {opening}"]
+            cards += [f"{digit(i)}. **Article step:** {point}" for i,point in enumerate(points[:4],3)]
+            cards += [f"{digit(len(cards)+1)}. **Evidence to record:** {clean(example_line)}",f"{digit(len(cards)+2)}. **Apply it:** {principle}"]
+            text=f"## {name}: {title}\n\n"+"\n\n".join(cards)+"\n\n**Production note:** Keep one idea per card. Label an illustration unless it is a sourced measurement, and close with a practical question tied to the article’s decision."
     elif family=="prompt":
-        if ar: text=f"""## {name}: {title}\n\nاستخدمها مع أي مساعد نصي أو يدويًا. أدخل مواد معتمدة ومنقحة فقط.\n\n**التشخيص**\n> للمهمة «{title}»، افحص [المادة المعتمدة]. حدّد هدف المستخدم وآخر حالة مؤكدة وأول نقطة تعطل وما ينقص من دليل. اربط كل استنتاج بمصدره ولا تخترع أرقامًا أو نتائج.\n\n**إنشاء أداة عملية**\n> حوّل هذا المبدأ إلى خطوات قابلة للتنفيذ: {principle} أضف مسؤولًا ومصدر قياس وحاجز جودة وبديلًا يدويًا.\n\n**المراجعة**\n> راجع المخرج بحثًا عن ادعاء بلا دليل أو خطوة غير قابلة للتحقق أو خطر خصوصية. أعد التصحيحات مع مصدرها، واكتب «غير معروف» عند غياب الدليل. لا تنشر ولا تغيّر إعدادًا حيًا."""
-        else: text=f"""## {name}: {title}\n\nUse with any text assistant or manually. Supply approved, sanitized material only.\n\n**Diagnose**\n> For “{title},” inspect [approved material]. Identify the user goal, last verified state, first broken step, and missing evidence. Tie each finding to its source. Invent no figures or outcomes.\n\n**Build a practical tool**\n> Turn this principle into executable steps: {principle} Include an owner, measurement source, quality guardrail, and manual fallback.\n\n**Review**\n> Audit the output for unsupported claims, unverifiable steps, and privacy risks. Return corrections with sources; say “unknown” when evidence is absent. Do not publish or change a live setting."""
+        if ar: text=f"""## {name}: {title}\n\nيمكن تنفيذها يدويًا أو بمساعد نصي عام. أدخل مقتطف المقال وموادًا معتمدة بعد إزالة بيانات العملاء.\n\n**١ — استخرج قرار المقال**\n> من المادة الخاصة بـ«{title}»، حدّد قرار القارئ، والشرط الذي يغيّر القرار، والدليل اللازم. لا تضف حقائق من خارج المادة. اذكر ما ينقص صراحةً.\n\n**٢ — أنشئ أداة قابلة للاستخدام**\n> حوّل الإجراء التالي إلى [مخرج محدد: قائمة فحص/نموذج/سكريبت/مخطط]: {principle} اجعل كل خطوة قابلة للتحقق، واذكر المدخل والمسؤول ومصدر الإثبات والبديل عند غيابه.\n\n**٣ — راجع قبل الاستخدام**\n> طابق كل ادعاء بالمصدر. افصل الحقيقة عن المثال والفرضية، وافحص الخصوصية والاستثناءات. أعد أي خانة لا يدعمها دليل بصيغة «غير معروف»؛ لا تنشر المخرج ولا تنفذ إجراءً حيًا تلقائيًا."""
+        else: text=f"""## {name}: {title}\n\nUse manually or with any general text assistant. Supply the relevant article excerpt and approved material with customer data removed.\n\n**1 — Extract the article’s decision**\n> From the material on “{title},” identify the reader’s decision, the condition that changes it, and the evidence needed. Add no facts from outside the material. Name what is missing.\n\n**2 — Build a usable asset**\n> Turn this action into a [specific output: checklist/form/script/map]: {principle} Make each step verifiable and state its input, owner, evidence source, and fallback when evidence is missing.\n\n**3 — Review before use**\n> Match every claim to a source. Separate fact, illustration, and hypothesis; check privacy and exceptions. Return unsupported fields as “unknown.” Do not publish the output or execute a live action automatically."""
     elif family=="swipe":
-        if ar: text=f"""## {name}: {title}\n\n**صياغة ضعيفة توضيحية:** «غيّرنا [العنصر] وحققنا [نتيجة]» من دون تحديد المصدر أو الفترة أو العوامل الأخرى.\n\n**صياغة قابلة للاستخدام:** «قبل **[الإجراء الذي يتناوله المقال]**، تحقّق من **[الدليل المحدد]**. سجّل **[الحالة والفترة]**، ثم نفّذ **[خطوة واحدة]**. لا تصف التغير بأنه نتيجة مؤكدة قبل مراجعته في **[المصدر]**».\n\n**المبدأ التطبيقي:** {principle}\n\nالصياغة الضعيفة مثال تعليمي وليست اقتباسًا من عميل. املأ الخانات بسجلات حقيقية ولا تصف المنهج بأنه مثبت دون بيانات."""
-        else: text=f"""## {name}: {title}\n\n**Illustrative weak line:** “We changed [element] and achieved [result]” without naming source, period, or other changes.\n\n**Use this instead:** “Before **[action covered here]**, verify **[specific evidence]**. Record **[state and period]**, then take **[one step]**. Do not call the change a confirmed outcome until checking **[source]**.”\n\n**Applied principle:** {principle}\n\nThe weak line is a teaching example, not a client quote. Fill the fields with real records; do not call the method proven without data."""
+        if ar: text=f"""## {name}: {title}\n\n**توقف عن اختزال موضوع المقال في نتيجة واحدة:** «{title}: فعلنا [خطوة] إذن [نتيجة]». هذه الصياغة تقفز فوق الشروط والدليل.\n\n**اكتبها بهذه الصورة:** «في [الحالة المحددة]، نتحقق أولًا من [الدليل المرتبط بالموضوع]. إذا تأكد [الشرط]، ننفذ [الإجراء: {principle}] ونسجل [المقياس] من [المصدر] خلال [الفترة]. لا ننسب النتيجة للخطوة قبل مراجعة العوامل الأخرى».\n\n**مثال تحرير توضيحي:** {clean(example_line)}\n\nالمثال ليس اقتباسًا من عميل ولا حالة نجاح. لا تملأ النتيجة أو النسبة إلا ببيانات موثقة، واحتفظ بالخطوات التي لم تنجح أيضًا."""
+        else: text=f"""## {name}: {title}\n\n**Stop collapsing this topic into one outcome:** “{title}: we took [step], therefore [result].” That skips the conditions and evidence.\n\n**Write it this way:** “For [defined case], first verify [topic-specific evidence]. If [condition] holds, take [action: {principle}] and record [measure] from [source] over [period]. Do not attribute the outcome to the step until other changes are reviewed.”\n\n**Illustrative editorial example:** {clean(example_line)}\n\nThis is not a client quote or success case. Fill in a result or percentage only from verified records, and retain cases where the method did not work."""
     elif family=="decision":
         if ar: text=f"""## {name}: {title}\n\n**ابدأ بالسؤال:** {opening}\n\n- **إذا لم يوجد دليل:** أوقف التحسين وحدد من أو أي نظام يستطيع تأكيد الحالة.\n- **إذا وُجدت الإشارة وتعطل التسليم:** عالج أقرب خطوة مفقودة: {principle}\n- **إذا اكتمل التسليم وبقيت النتيجة ضعيفة:** افحص الجمهور والوعد وتجربة الخطوة التالية قبل زيادة الحجم.\n- **إذا كانت البيانات متذبذبة:** لا تنسب التغير لسبب واحد قبل مقارنة فترات وظروف متشابهة.\n\n**القرار العملي:** وثّق المرحلة والسجل والإجراء والمسؤول وحاجز الجودة. غيّر سببًا واحدًا ثم راجع النتيجة من المصدر نفسه. «غير معروف» تعني جمع دليل، لا تخمينًا."""
         else: text=f"""## {name}: {title}\n\n**Start with this question:** {opening}\n\n- **If there is no evidence:** pause optimization and identify who or which system can verify the state.\n- **If the signal exists but handoff fails:** fix the nearest missing step: {principle}\n- **If handoff completes but the outcome remains weak:** inspect audience, promise, and next-step experience before increasing volume.\n- **If the data is volatile:** do not attribute movement to one cause until periods and conditions are comparable.\n\n**Practical decision:** record the stage, source, action, owner, and guardrail. Change one cause, then review against the same source. “Unknown” means gather evidence, not guess."""
@@ -155,8 +177,8 @@ def make_asset(post, lang, family, md):
         if ar: text=f"""## {name}: {title}\n\nقيّم كل بند بـ **نعم / لا / غير معروف** وأرفق الدليل. الإجابة بلا مصدر تظل «غير معروف».\n\n| # | فحص مرتبط بالمقال | الدليل المطلوب |\n|---:|---|---|\n{rows}\n\n**قاعدة الاعتماد:** أصلح أي «لا» حرج قبل الإطلاق. اجمع دليلًا لأي «غير معروف». احفظ الإصدار والتاريخ واسم المراجع والسجل المستخدم.\n\n**نقطة الانطلاق:** {opening}"""
         else: text=f"""## {name}: {title}\n\nScore each row **Yes / No / Unknown** and attach evidence. An answer without a source remains “Unknown.”\n\n| # | Article-specific check | Evidence to retain |\n|---:|---|---|\n{rows}\n\n**Approval rule:** fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.\n\n**Starting point:** {opening}"""
     elif family=="video":
-        if ar: text=f"""## {name}: {title}\n\n**المدة:** ٣٥–٤٥ ثانية · رأسي مع ترجمة مقروءة\n\n**٠–٤ ثوانٍ | افتح بالمشكلة** — أظهرها بصريًا.\nالتعليق: «{opening}»\n\n**٥–١٥ ثانية | اعرض الفحص** — أظهر أين تبحث عن الدليل، لا شاشة شكلية.\n\n**١٦–٣٠ ثانية | نفّذ خطوة واحدة**\nالتعليق: «{principle}»\n\n**٣١–٤٢ ثانية | حدّد ما يمكن تأكيده** — أظهر المصدر والقيود أو اكتب «مثال توضيحي».\n\nلا تعرض بيانات خاصة ولا توحِ بنتيجة لم تحدث. اختم بخطوة يمكن للمشاهد تنفيذها من الدليل."""
-        else: text=f"""## {name}: {title}\n\n**Length:** 35–45 seconds · vertical with readable captions\n\n**0–4 sec | Open on the problem** — show it visually.\nVoice: “{opening}”\n\n**5–15 sec | Show the check** — demonstrate where evidence comes from, not a decorative screen.\n\n**16–30 sec | Apply one step**\nVoice: “{principle}”\n\n**31–42 sec | State what can be verified** — show the source and limitation, or label it “illustrative.”\n\nDo not expose private data or imply an outcome that did not happen. Close with one step viewers can take from the guide."""
+        if ar: text=f"""## {name}: {title}\n\n**المدة:** ٤٠–٤٥ ثانية · رأسي مع ترجمة واضحة\n\n**٠–٤ ث | الخطاف — لقطة قريبة للمشكلة**\nالتعليق: «{opening}»\n\n**٥–١٢ ث | وضّح ما يجب فحصه**\nعلى الشاشة: {clean(steps[0][1]) if steps else principle}\n\n**١٣–٢٨ ث | اعرض الإجراء بالتتابع**\nالتعليق: «{principle}»\nالصورة: لقطة فعلية للخطوة، مع إخفاء بيانات العملاء.\n\n**٢٩–٣٧ ث | أظهر الدليل والحدود**\nاستخدم: «{clean(example_line)}» وبيّن المصدر أو اكتب «مثال توضيحي».\n\n**٣٨–٤٥ ث | خطوة المشاهد التالية**\nاطلب منه تطبيق الفحص على حالة واحدة وتسجيل المصدر قبل اتخاذ القرار. لا تدّع نتيجة لم تُقَس."""
+        else: text=f"""## {name}: {title}\n\n**Length:** 40–45 seconds · vertical with readable captions\n\n**0–4 sec | Hook — close-up on the problem**\nVoice: “{opening}”\n\n**5–12 sec | Name what to check**\nOn screen: {clean(steps[0][1]) if steps else principle}\n\n**13–28 sec | Demonstrate the action in sequence**\nVoice: “{principle}”\nVisual: show the actual step while masking customer data.\n\n**29–37 sec | Show the evidence and its limit**\nUse: “{clean(example_line)}” and identify its source, or label it “illustrative.”\n\n**38–45 sec | Viewer’s next step**\nAsk viewers to apply the check to one case and record the source before deciding. Do not claim an unmeasured result."""
     elif family=="worksheet":
         if ar: text=f"""## {name}: {title}\n\nاملأها لحالة واحدة حقيقية.\n\n| الحقل | ما الذي تكتبه؟ |\n|---|---|\n| الجمهور / الحالة | [من أو ما الذي نراجعه] |\n| المطلوب | [الفعل أو النتيجة المقصودة] |\n| ما تحقق | [آخر حالة ودليلها] |\n| الفجوة | [الخطوة أو المعلومة الناقصة] |\n| الإجراء الواحد | [أقرب تغيير يمكن التحكم به] |\n| المسؤول والمصدر | [من ينفذ وأين يُسجل] |\n| حاجز الجودة | [ما يجب ألا يتدهور] |\n| قرار المراجعة | [ما الذي سيؤكد الاستمرار أو التعديل] |\n\nاستخدم منهج المقال: {principle}\n\nإذا تعذر إثبات حقل، اكتب «غير معروف» وحدد من سيتحقق منه."""
         else: text=f"""## {name}: {title}\n\nComplete this for one real case.\n\n| Field | What to record |\n|---|---|\n| Audience / case | [who or what is being reviewed] |\n| Intended state | [action or outcome sought] |\n| Verified state | [last state and its evidence] |\n| Gap | [missing step or information] |\n| One action | [nearest controllable change] |\n| Owner and source | [who acts and where it is logged] |\n| Quality guardrail | [what must not deteriorate] |\n| Review decision | [what supports continuing or revising] |\n\nApply the article’s method: {principle}\n\nIf a field cannot be proved, mark it “unknown” and assign an owner to verify it."""
@@ -180,24 +202,70 @@ def make_asset(post, lang, family, md):
         else: text=f"## {name}: {title}\n\nRun with synthetic data; do not connect it to publishing or customers.\n\n1. **Missing source:** ask for an absent answer; expected behavior is to state the gap.\n2. **Conflict:** supply two different sources; expected behavior is to show the conflict and route it for review.\n3. **Injected instruction:** place a rule-override request inside untrusted text; expected behavior is to treat it as data.\n4. **Sensitive field:** insert a synthetic value; expected behavior is to minimize or mask it.\n5. **Missing input:** remove a required field; expected behavior is clarification or safe fallback.\n\nLog expected and observed behavior, severity, and the fix owner. This is a test plan, not a claim an attack occurred."
     else:
         raise ValueError(f"Unknown content style: {family}")
-    disclosure=("> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل." if ar else "> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.")
-    return text + "\n\n" + disclosure
+    return text
+
+
+ALL_SIX = ["video", "carousel", "experiment", "prompt", "swipe", "hvt"]
+
+def make_hvt(post, lang, md):
+    title=clean(post[lang]["title"])
+    opening, principle, example, steps=material(md)
+    if lang=="ar":
+        return f"""## الخطاف والقيمة والقالب: {title}
+
+**الخطاف:** {opening}
+
+**القيمة:** {principle} ابدأ بتحديد الحالة ومصدرها، ثم نفّذ خطوة واحدة قابلة للمراجعة. لا تعتبر المثال أو الفرضية نتيجة مؤكدة.
+
+**قالب قابل للتعبئة:** «في [السوق/الحالة] نريد [هدفًا محددًا]. الدليل الحالي هو [المصدر والتاريخ]. تشير المراجعة إلى [الفجوة المرتبطة بموضوع المقال]. سننفذ [خطوة واحدة] بواسطة [المسؤول]، ونقيس [إشارة أساسية] مع حماية [مؤشر الجودة]. نراجع في [موعد]؛ وإذا غاب الدليل نكتب: غير معروف».
+
+**مثال توضيحي من موضوع المقال:** {clean((sentences(example) or [example])[0])}
+
+المثال صياغة تعليمية، وليس نتيجة عميل أو ادعاءً بأن الطريقة نجحت بالفعل."""
+    return f"""## Hook–Value–Template: {title}
+
+**Hook:** {opening}
+
+**Value:** {principle} Start by naming the state and its source, then take one reviewable step. Do not present an illustration or hypothesis as a verified outcome.
+
+**Fill-in template:** “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”
+
+**Illustrative example from this topic:** {clean((sentences(example) or [example])[0])}
+
+This is teaching copy, not a client result or a claim that the method has already worked."""
+
+def word_count(md):
+    return len(re.findall(r"\w+", md, flags=re.UNICODE))
+
+def dedupe_exact_paragraphs(md):
+    result=[]; seen=set()
+    for paragraph in re.split(r"\n\s*\n",md.strip()):
+        key=re.sub(r"\s+"," ",paragraph).strip()
+        if key and key not in seen:
+            seen.add(key); result.append(paragraph.strip())
+    return "\n\n".join(result)
 
 def main():
-    counts=Counter(); seen=Counter()
+    counts=Counter()
     for post in DATA["posts"]:
-        en=add_market_note(body_only(post["en"]["markdown"]),post["slug"],"en")
-        ar=add_market_note(body_only(post["ar"]["markdown"]),post["slug"],"ar")
-        group=post.get("theme","01").split("-",1)[0]
-        family_list=FAMILIES.get(group,FAMILIES["01"])
-        family=OVERRIDES.get(post["slug"],family_list[seen[group] % len(family_list)])
-        seen[group]+=1; counts[family]+=1
-        post["content_asset_style"]=family
-        post["en"]["markdown"]=en+"\n\n"+make_asset(post,"en",family,en)
-        post["ar"]["markdown"]=ar+"\n\n"+make_asset(post,"ar",family,ar)
+        en=dedupe_exact_paragraphs(add_market_note(body_only(post["en"]["markdown"],"content_asset_styles" in post),post["slug"],"en"))
+        ar=dedupe_exact_paragraphs(add_market_note(body_only(post["ar"]["markdown"],"content_asset_styles" in post),post["slug"],"ar"))
+        assets_en=[make_asset(post,"en",family,en) for family in ALL_SIX if family!="hvt"]
+        assets_ar=[make_asset(post,"ar",family,ar) for family in ALL_SIX if family!="hvt"]
+        assets_en.append(make_hvt(post,"en",en))
+        assets_ar.append(make_hvt(post,"ar",ar))
+        post["content_asset_styles"]=ALL_SIX
+        post.pop("content_asset_style",None)
+        disclosure_en="> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
+        disclosure_ar="> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
+        post["en"]["markdown"]=en+"\n\n"+"\n\n".join(assets_en)+"\n\n"+disclosure_en
+        post["ar"]["markdown"]=ar+"\n\n"+"\n\n".join(assets_ar)+"\n\n"+disclosure_ar
+        post["en"]["approx_words"]=word_count(post["en"]["markdown"])
+        post["ar"]["approx_words"]=word_count(post["ar"]["markdown"])
+        counts.update(ALL_SIX)
     DATA["updated"]="2026-10-28"
     DATA_PATH.write_text(json.dumps(DATA,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Rebuilt bilingual source-led assets for {len(DATA['posts'])} topics ({len(DATA['posts'])*2} language pages).")
-    print("Style counts:",dict(sorted(counts.items())))
+    print(f"Applied all six styles to {len(DATA['posts'])} topics ({len(DATA['posts'])*2} language pages).")
+    print("Per-language-page style sections:",dict(sorted(counts.items())))
 
 if __name__=="__main__": main()
