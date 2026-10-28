@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Set Human Review Boundaries for Marketing Automation</h1><p class="blog-article-deck">Route uncertain claims, sensitive inputs and consequential actions to a responsible person.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-human-review-boundaries/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-human-review-boundaries/">العربية</a></div></header>
 <article class="blog-prose"><p>Human review is most useful when assigned to specific failure types. “A human will check it” is not a control unless the reviewer knows what to inspect and can stop the action.</p>
 <h2 id="route-by-consequence-and-uncertainty">Route by consequence and uncertainty</h2>
 <p>Use three lanes:</p>
@@ -25,15 +25,20 @@
 <p>Show the reviewer the original input, approved sources, model output, uncertainty flags, and proposed action together. Provide buttons or process states for approve, edit, reject, and escalate. Record who approved what and which version was used. Reviewers need authority and enough time; a required click-through on every item can become rubber-stamping.</p>
 <h2 id="measure-whether-the-boundary-works">Measure whether the boundary works</h2>
 <p>Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer.</p>
-<h2 id="model-neutral-prompt-card-set-human-review-boundaries-for-marketing-automation">Model-neutral prompt card: Set Human Review Boundaries for Marketing Automation</h2>
-<p><strong>Task:</strong> Human review is most useful when assigned to specific failure types.</p>
-<p><strong>Copy-ready prompt:</strong></p>
+<h2 id="model-neutral-prompt-pack-set-human-review-boundaries-for-marketing-automation">Model-neutral prompt pack: Set Human Review Boundaries for Marketing Automation</h2>
+<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
+<p><strong>Build the procedure:</strong></p>
 <blockquote>
-<p>Classify outputs by consequence: low-risk internal draft, external factual claim, customer-specific advice, regulated subject, or irreversible action. Define required reviewer, source check, approval record, and prohibited automation at each level. Include escalation when the reviewer lacks evidence. Do not let confidence scores replace subject-matter review.</p>
+<p>Turn this principle into operational steps for “Set Human Review Boundaries for Marketing Automation”: - Low consequence, high confidence: draft or classify, then sample outputs for quality. - Moderate consequence or incomplete evidence: require a named reviewer before sending, publishing, or changing a campaign. - High consequence, sensitive data, or conflicting sources: stop automation and route to the qualified owner; do not let the model choose the outcome. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
 </blockquote>
-<p><strong>Review before use:</strong> Verify facts against the source, check privacy and audience fit, and have a person approve the final action. The prompt can assist drafting; it cannot validate its own claims.</p>
+<p><strong>Audit the draft:</strong></p>
 <blockquote>
-<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is an operational design pattern, not a substitute for domain-specific safety review.</p>
+<p>Check the plan against this source requirement: For marketing operations, a generated subject-line suggestion may be low consequence; a claim about a regulated service, a customer eligibility decision, or an automatic budget increase is not. The organization must define its own categories based on actual risk. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
+</blockquote>
+<p><strong>Repurpose it:</strong></p>
+<blockquote>
+<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/marketing-positioning-brief/"><span>Next guide</span><strong>Write a Positioning Brief Before Choosing Channels</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
