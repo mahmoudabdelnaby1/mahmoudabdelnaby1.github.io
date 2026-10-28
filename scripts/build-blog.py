@@ -168,9 +168,9 @@ def add_hub_promo():
   (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 200 ARTICLES</span><h2>Read the marketing blog.</h2><p>One hundred bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
   (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ٢٠٠ مقال</span><h2>اقرأ مدونة التسويق.</h2><p>مئة موضوع بالعربية والإنجليزية تربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
   text=path.read_text(encoding="utf-8")
-  if promo not in text:
-   if anchor not in text: raise SystemExit("Missing marketing library insertion point: "+str(path))
-   path.write_text(text.replace(anchor,promo+anchor,1),encoding="utf-8",newline="\n")
+  text=re.sub(r'<section class="blog-promo"[^>]*>.*?</section>',"",text,flags=re.S)
+  if anchor not in text: raise SystemExit("Missing marketing library insertion point: "+str(path))
+  path.write_text(text.replace(anchor,promo+anchor,1),encoding="utf-8",newline="\n")
 
 def update_sitemap(routes):
  path=ROOT/"sitemap.xml"; raw=path.read_text(encoding="utf-8")

@@ -874,8 +874,8 @@
       }
     },
     {
-      "slug": "influencer-brief",
-      "theme": "08-influencer-brief",
+      "slug": "influencer-break-even-planning",
+      "theme": "08-influencer-break-even-planning",
       "category_key": "08",
       "category_en": "Influencer marketing",
       "category_ar": "التسويق عبر المؤثرين",
@@ -884,16 +884,16 @@
         "FW-055"
       ],
       "en": {
-        "title": "Write a Creator Brief That Protects Accuracy and Voice",
-        "description": "State required facts and boundaries while leaving creative choices to the creator.",
-        "markdown": "Over-scripted content can sound unnatural; a vague brief can invite unsupported claims.\n\n## A practical workflow\n\n1. State the audience and goal.\n2. Separate mandatory facts from optional angles.\n3. List prohibited claims and disclosure requirements.\n4. Specify deliverables, approvals, dates and rights.\n\n## Working template\n\nGoal: ____ / verified facts: ____ / avoid: ____ / creator freedom: ____ / deliverables and rights: ____ / approver: ____.\n\n## Applied example\n\nRequire the creator to state the approved product facts and sponsorship disclosure, while letting them choose their own story and delivery.\n\n## Measure and review\n\nReview accuracy and disclosures while preserving authentic expression.\n\n## Guardrail\n\nDo not publish or boost content beyond agreed usage rights.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 138
+        "title": "Estimate a Creator Campaign Break-Even With Explicit Assumptions",
+        "description": "Model the delivery cost and break-even volume for a creator collaboration without treating attributed sales as incremental.",
+        "markdown": "A break-even estimate is a planning aid, not a forecast. Separate fixed production and usage costs from variable payment, and make the assumptions visible.\n\n## Practical workflow\n\n1. List creator fee, production, rights, paid amplification and servicing costs.\n2. Choose the business outcome and contribution value the owner confirms.\n3. Calculate the outcome volume that covers the stated cost under that assumption.\n4. Model low, middle and high scenarios, including refunds or unqualified requests.\n\n## Working template\n\nFixed cost: ____ / variable cost: ____ / contribution per outcome: ____ / break-even volume: ____ / attribution window: ____ / incremental evidence: ____.\n\n## Applied example\n\nIf the collaboration costs 1,000 units and the approved contribution per completed sale is 100 units, 10 sales would cover the cost arithmetically; this does not show that the campaign caused those sales.\n\n## Measure and review\n\nCompare actual deliverables, tagged visits and verified business outcomes with the scenario. Keep attributed and incremental results separate.\n\n## Guardrail\n\nHave the commercial owner validate cost and contribution assumptions. Do not present the break-even calculation as a sales promise.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 190
       },
       "ar": {
-        "title": "اكتب موجزًا يحمي الدقة ويصون أسلوب صانع المحتوى",
-        "description": "حدّد الحقائق والحدود المطلوبة واترك الخيارات الإبداعية لصانع المحتوى.",
-        "markdown": "قد يبدو النص المفرط في التحكم مصطنعًا، وقد يسمح الموجز الغامض بادعاءات غير مثبتة.\n\n## خطوات عملية\n\n1. حدّد الجمهور والهدف.\n2. افصل الحقائق اللازمة عن الزوايا الاختيارية.\n3. اكتب الادعاءات الممنوعة ومتطلبات الإفصاح.\n4. حدّد المخرجات والاعتمادات والمواعيد والحقوق.\n\n## نموذج عمل\n\nالهدف: ____ / الحقائق المثبتة: ____ / تجنب: ____ / مساحة الإبداع: ____ / المخرجات والحقوق: ____ / المعتمد: ____.\n\n## مثال تطبيقي\n\nاطلب من صانع المحتوى ذكر حقائق المنتج والإفصاح المعتمد، واترك له اختيار قصته وطريقة تقديمها.\n\n## القياس والمراجعة\n\nراجع الدقة والإفصاح مع الحفاظ على التعبير الطبيعي.\n\n## ضابط مهم\n\nلا تنشر أو تروّج للمادة خارج حقوق الاستخدام المتفق عليها.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 129
+        "title": "قدّر نقطة التعادل لحملة مؤثر مع توضيح الافتراضات",
+        "description": "احسب تكاليف التعاون وحجم التعادل دون اعتبار المبيعات المنسوبة مبيعات إضافية مؤكدة.",
+        "markdown": "تقدير التعادل أداة تخطيط لا توقع. افصل تكاليف الإنتاج والحقوق الثابتة عن المقابل المتغير، واكتب الافتراضات بوضوح.\n\n## خطوات عملية\n\n1. اكتب أجر المؤثر والإنتاج والحقوق والترويج والخدمة.\n2. اختر نتيجة العمل وقيمة المساهمة التي يعتمدها المسؤول.\n3. احسب عدد النتائج الذي يغطي التكلفة وفق الافتراض.\n4. أنشئ سيناريو منخفضًا ومتوسطًا ومرتفعًا يشمل المرتجعات أو الطلبات غير المؤهلة.\n\n## نموذج عمل\n\nالتكلفة الثابتة: ____ / المتغيرة: ____ / المساهمة لكل نتيجة: ____ / حجم التعادل: ____ / نافذة الإسناد: ____ / دليل الزيادة الفعلية: ____.\n\n## مثال تطبيقي\n\nإذا كلف التعاون ١٠٠٠ وحدة وكانت المساهمة المعتمدة لكل عملية بيع مكتملة ١٠٠ وحدة، فالحساب يشير إلى ١٠ مبيعات لتغطية التكلفة؛ لكنه لا يثبت أن الحملة سببت تلك المبيعات.\n\n## القياس والمراجعة\n\nقارن المخرجات والزيارات الموسومة والنتائج المؤكدة بالسيناريو. وافصل النتائج المنسوبة عن الإضافية.\n\n## ضابط مهم\n\nدع المسؤول التجاري يتحقق من التكلفة والافتراضات. لا تعرض حساب التعادل كضمان للمبيعات.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 188
       }
     },
     {
@@ -1238,8 +1238,8 @@
       }
     },
     {
-      "slug": "whatsapp-lead-verification",
-      "theme": "02-whatsapp-lead-verification",
+      "slug": "whatsapp-prefill-message-design",
+      "theme": "02-whatsapp-prefill-message-design",
       "category_key": "02",
       "category_en": "Measurement",
       "category_ar": "القياس",
@@ -1249,16 +1249,16 @@
         "FW-085"
       ],
       "en": {
-        "title": "Measure WhatsApp Inquiries Beyond the Click",
-        "description": "Separate a contact click from a sent message, a qualified conversation and a business outcome.",
-        "markdown": "Opening WhatsApp signals intent but does not prove a message was sent or received.\n\n## A practical workflow\n\n1. Track the outbound click as an intent event.\n2. Confirm message receipt through an authorized source.\n3. Define qualification and response ownership.\n4. Reconcile bookings or sales separately.\n\n## Working template\n\nClick: ____ / message received: ____ / qualified: ____ / response owner: ____ / outcome source: ____ / attribution limit: ____.\n\n## Applied example\n\nA click event is intent; a sent message is contact; a qualified request needs a stated fit rule; a booking requires a separate confirmation.\n\n## Measure and review\n\nKeep each stage distinct in reporting and avoid counting repeated clicks as multiple leads.\n\n## Guardrail\n\nDo not infer message content from a click event.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 150
+        "title": "Design a WhatsApp Prefill Message That Helps Without Sharing Private Data",
+        "description": "Draft a short, optional message starter that gives a business useful context while leaving control with the visitor.",
+        "markdown": "A prefilled message can reduce typing, but it should not pretend a message was sent or request sensitive details.\n\n## Practical workflow\n\n1. State the service or question the visitor selected.\n2. Include only non-sensitive context already chosen by the visitor.\n3. Leave the text editable and optional.\n4. Test Arabic text direction, encoding and mobile handoff.\n\n## Working template\n\nSelection: ____ / suggested message: ____ / personal data excluded: ____ / editable?: ____ / Arabic preview: ____ / owner: ____.\n\n## Applied example\n\nTest one click path in Arabic and English, review the prefilled text on a phone, and confirm it contains no unrequested personal information.\n\n## Measure and review\n\nCount clicks, completed messages and responses as separate stages; inspect user drop-off and complaints.\n\n## Guardrail\n\nNever place private data in a URL or imply that the business received a draft.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 165
       },
       "ar": {
-        "title": "قِس استفسارات واتساب بعد النقر",
-        "description": "افصل نقرة التواصل عن الرسالة المرسلة والمحادثة المؤهلة والنتيجة التجارية.",
-        "markdown": "فتح واتساب يشير إلى نية لكنه لا يثبت إرسال الرسالة أو استلامها.\n\n## خطوات عملية\n\n1. سجّل نقرة الانتقال كحدث نية.\n2. تحقق من استلام الرسالة عبر مصدر مصرح.\n3. عرّف التأهيل ومسؤول الرد.\n4. طابق الحجز أو البيع منفصلًا.\n\n## نموذج عمل\n\nالنقرة: ____ / الرسالة وصلت: ____ / مؤهل: ____ / مسؤول الرد: ____ / مصدر النتيجة: ____ / حد الإسناد: ____.\n\n## مثال تطبيقي\n\nحدث النقر نية؛ والرسالة المرسلة تواصل؛ والطلب المؤهل يحتاج قاعدة ملاءمة؛ والحجز يحتاج تأكيدًا منفصلًا.\n\n## القياس والمراجعة\n\nافصل المراحل بالتقرير ولا تعتبر النقرات المتكررة عملاء متعددين.\n\n## ضابط مهم\n\nلا تستنتج محتوى الرسالة من حدث النقر.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 128
+        "title": "صمّم رسالة واتساب مقترحة تفيد دون كشف بيانات خاصة",
+        "description": "اكتب بداية اختيارية قصيرة تمنح النشاط سياقًا مفيدًا وتترك التحكم للزائر.",
+        "markdown": "قد تقلل الرسالة المقترحة الكتابة، لكنها لا تعني أن الرسالة أُرسلت ولا ينبغي أن تطلب بيانات حساسة.\n\n## خطوات عملية\n\n1. اذكر الخدمة أو السؤال الذي اختاره الزائر.\n2. أضف سياقًا غير حساس اختاره الزائر بالفعل.\n3. اترك النص قابلًا للتعديل والترك.\n4. اختبر اتجاه العربية والترميز والانتقال على الهاتف.\n\n## نموذج عمل\n\nالاختيار: ____ / الرسالة المقترحة: ____ / البيانات المستبعدة: ____ / قابلة للتعديل؟ ____ / معاينة العربية: ____ / المسؤول: ____.\n\n## مثال تطبيقي\n\nاختبر المسار بالعربية والإنجليزية، وراجع النص المقترح على هاتف وتأكد من خلوه من بيانات شخصية لم يطلبها الزائر.\n\n## القياس والمراجعة\n\nافصل النقرات عن الرسائل المكتملة والردود؛ وافحص الانسحاب والشكاوى.\n\n## ضابط مهم\n\nلا تضع بيانات خاصة في الرابط ولا توحِ بأن النشاط استلم المسودة.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 146
       }
     },
     {
@@ -1749,26 +1749,26 @@
       }
     },
     {
-      "slug": "paid-conversion-signal-hierarchy",
-      "theme": "04-paid-conversion-signal-hierarchy",
+      "slug": "paid-auction-cost-diagnosis",
+      "theme": "04-paid-auction-cost-diagnosis",
       "category_key": "04",
       "category_en": "Paid media",
       "category_ar": "الإعلانات المدفوعة",
       "framework_ids": [
         "FW-014",
-        "FW-081"
+        "FW-028"
       ],
       "en": {
-        "title": "Choose a Conversion Signal That Matches the Campaign Goal",
-        "description": "Align optimization events with what the campaign can verify and the business values.",
-        "markdown": "Optimizing for a convenient event can produce activity without the intended outcome.\n\n## Practical workflow\n\n1. Define the true business outcome.\n2. Map observable events from intent to result.\n3. Choose the deepest reliable signal with enough volume.\n4. Keep quality and volume guardrails visible.\n\n## Working template\n\nBusiness goal: ____ / available events: ____ / reliability: ____ / selected signal: ____ / quality check: ____.\n\n## Applied example\n\nIf bookings are too sparse for learning, a verified inquiry may be an interim signal—but review booking quality separately.\n\n## Measure and review\n\nReconcile platform event counts with the receiving system and qualified outcome.\n\n## Guardrail\n\nDo not optimize to an unverified click when the goal is a completed inquiry.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 142
+        "title": "Diagnose a Paid Media Cost Increase Before Changing Budget",
+        "description": "Check auction mix, queries, placements and delivery before reacting to a rise in paid traffic cost.",
+        "markdown": "A higher CPC can reflect market competition, targeting changes, placement mix or relevance—not one universal cause.\n\n## Practical workflow\n\n1. Compare like-for-like dates, markets and campaign types.\n2. Inspect impression share, query mix, placements and auction competition.\n3. Review recent budget, bid, creative and landing changes.\n4. Change one supported factor and watch qualified outcomes.\n\n## Working template\n\nMetric change: ____ / comparison window: ____ / market or placement shift: ____ / recent edit: ____ / hypothesis: ____ / next check: ____.\n\n## Applied example\n\nIf CPC rises while qualified inquiry cost stays stable, investigate volume and quality before reducing spend; if both worsen, isolate the market or placement first.\n\n## Measure and review\n\nUse cost alongside qualified outcomes and delivery context; annotate seasonality or major edits.\n\n## Guardrail\n\nDo not cut a useful campaign based on CPC alone or assume a platform setting caused the shift.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 170
       },
       "ar": {
-        "title": "اختر إشارة تحويل تناسب هدف الحملة",
-        "description": "طابق حدث التحسين مع ما يمكن للحملة التحقق منه وما يقدّره العمل.",
-        "markdown": "قد ينتج تحسين حدث سهل نشاطًا دون النتيجة المطلوبة.\n\n## خطوات عملية\n\n1. عرّف نتيجة العمل الحقيقية.\n2. ارسم الأحداث المرصودة من النية للنتيجة.\n3. اختر أعمق إشارة موثوقة بحجم كافٍ.\n4. أظهر ضوابط الجودة والحجم.\n\n## نموذج عمل\n\nهدف العمل: ____ / الأحداث المتاحة: ____ / الموثوقية: ____ / الإشارة المختارة: ____ / فحص الجودة: ____.\n\n## مثال تطبيقي\n\nإذا كانت الحجوزات قليلة، فقد يكون الاستفسار المتحقق إشارة مؤقتة؛ لكن راجع جودة الحجز منفصلة.\n\n## القياس والمراجعة\n\nطابق عدد أحداث المنصة مع النظام المستلم والنتيجة المؤهلة.\n\n## ضابط مهم\n\nلا تحسّن نقرة غير مؤكدة إذا كان الهدف استفسارًا مكتملًا.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 124
+        "title": "شخّص ارتفاع تكلفة الإعلانات قبل تغيير الميزانية",
+        "description": "افحص المزاد والاستعلامات والمواضع والتسليم قبل الرد على ارتفاع تكلفة الزيارة المدفوعة.",
+        "markdown": "قد ينتج ارتفاع تكلفة النقرة عن المنافسة أو الاستهداف أو مزيج المواضع أو الصلة، وليس سببًا واحدًا دائمًا.\n\n## خطوات عملية\n\n1. قارن تواريخ وأسواقًا وأنواع حملات متماثلة.\n2. افحص حصة الظهور ومزيج الاستعلامات والمواضع والمنافسة.\n3. راجع تغييرات الميزانية والمزايدة والإبداع وصفحة الوصول.\n4. غيّر عاملًا واحدًا يسنده الدليل وتابع النتائج المؤهلة.\n\n## نموذج عمل\n\nتغير المؤشر: ____ / فترة المقارنة: ____ / تغير السوق أو الموضع: ____ / تعديل حديث: ____ / الفرضية: ____ / الفحص التالي: ____.\n\n## مثال تطبيقي\n\nإذا ارتفعت النقرة وبقيت تكلفة الاستفسار المؤهل مستقرة، افحص الحجم والجودة قبل خفض الإنفاق؛ وإذا ساء الاثنان فاعزل السوق أو الموضع أولًا.\n\n## القياس والمراجعة\n\nاستخدم التكلفة مع النتائج المؤهلة وسياق التسليم؛ وسجّل الموسمية والتعديلات.\n\n## ضابط مهم\n\nلا توقف حملة نافعة بسبب تكلفة النقرة وحدها ولا تفترض أن إعدادًا واحدًا سبب التغير.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 160
       }
     },
     {
@@ -2141,27 +2141,26 @@
       }
     },
     {
-      "slug": "influencer-renewal-review",
-      "theme": "08-influencer-renewal-review",
+      "slug": "influencer-delivery-recovery",
+      "theme": "08-influencer-delivery-recovery",
       "category_key": "08",
       "category_en": "Influencer marketing",
       "category_ar": "التسويق عبر المؤثرين",
       "framework_ids": [
         "FW-054",
-        "FW-055",
-        "FW-028"
+        "FW-055"
       ],
       "en": {
-        "title": "Review a Creator Campaign Before Renewing It",
-        "description": "Separate delivery, audience response and verified outcomes in a renewal decision.",
-        "markdown": "A large reach number alone cannot explain whether a partnership should continue.\n\n## Practical workflow\n\n1. Verify contracted deliverables and rights.\n2. Review response and discussion quality.\n3. Reconcile tags, codes and qualified results.\n4. Choose continue, adjust or stop with reasons.\n\n## Working template\n\nDelivered: ____ / response: ____ / qualified outcome: ____ / cost: ____ / learning: ____ / next decision: ____.\n\n## Applied example\n\nA creator can deliver every post yet miss the intended audience; assess delivery and fit separately.\n\n## Measure and review\n\nCompare consistent definitions and record attribution gaps.\n\n## Guardrail\n\nDo not generalize one creator result to all campaigns.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 128
+        "title": "Plan a Recovery Path for a Delayed Creator Deliverable",
+        "description": "Agree how to handle late drafts, changed claims or missed posting windows before a creator campaign begins.",
+        "markdown": "A campaign can lose its timing when reviews, approvals or production run late; improvising may create rights or accuracy problems.\n\n## Practical workflow\n\n1. Name draft, review and live deadlines with time zones.\n2. Set a contact and escalation path for delays.\n3. Define what can be changed without resetting approval.\n4. Agree a fallback date or cancellation decision.\n\n## Working template\n\nDeliverable: ____ / owner: ____ / review deadline: ____ / delay notice: ____ / allowed edits: ____ / fallback or cancel: ____.\n\n## Applied example\n\nIf a creator misses the draft date, pause the scheduled boost, notify the named owner and agree a new date before approving or moving budget.\n\n## Measure and review\n\nRecord actual delivery and approval time to improve future scheduling.\n\n## Guardrail\n\nDo not publish unapproved content or repurpose it outside agreed rights to recover a deadline.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 166
       },
       "ar": {
-        "title": "راجع حملة صانع المحتوى قبل تجديدها",
-        "description": "افصل التسليم واستجابة الجمهور والنتائج المؤكدة عند قرار التجديد.",
-        "markdown": "لا يوضح الوصول الكبير وحده قرار استمرار الشراكة.\n\n## خطوات عملية\n\n1. تحقق من المخرجات والحقوق المتفق عليها.\n2. راجع جودة الاستجابة والنقاش.\n3. طابق الروابط والرموز والنتائج المؤهلة.\n4. اختر الاستمرار أو التعديل أو الإيقاف مع السبب.\n\n## نموذج عمل\n\nالمسلّم: ____ / الاستجابة: ____ / النتيجة: ____ / التكلفة: ____ / التعلّم: ____ / القرار: ____.\n\n## مثال تطبيقي\n\nقد ينشر المؤثر كل المواد ولا يصل للجمهور المقصود؛ قيّم التسليم والملاءمة منفصلين.\n\n## القياس والمراجعة\n\nقارن تعريفات ثابتة وسجّل فجوات الإسناد.\n\n## ضابط مهم\n\nلا تعمم نتيجة مؤثر واحد على كل الحملات.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 118
+        "title": "خطّط لمسار معالجة تأخر تسليم المؤثر",
+        "description": "اتفق مسبقًا على التعامل مع المسودات المتأخرة أو الادعاءات المتغيرة أو فوات موعد النشر.",
+        "markdown": "قد تفقد الحملة توقيتها بسبب المراجعة أو الاعتماد أو الإنتاج؛ والارتجال قد يسبب مشكلة حقوق أو دقة.\n\n## خطوات عملية\n\n1. حدّد مواعيد المسودة والمراجعة والنشر والمنطقة الزمنية.\n2. ضع جهة اتصال ومسار تصعيد للتأخير.\n3. عرّف التعديلات التي لا تعيد الاعتماد من البداية.\n4. اتفق على موعد بديل أو قرار الإلغاء.\n\n## نموذج عمل\n\nالمخرج: ____ / المسؤول: ____ / موعد المراجعة: ____ / إشعار التأخير: ____ / التعديلات المسموحة: ____ / البديل أو الإلغاء: ____.\n\n## مثال تطبيقي\n\nإذا تأخرت المسودة، أوقف الترويج المجدول وأبلغ المسؤول وحدد موعدًا جديدًا قبل الاعتماد أو نقل الميزانية.\n\n## القياس والمراجعة\n\nسجّل وقت التسليم والاعتماد الفعلي لتحسين الجدولة القادمة.\n\n## ضابط مهم\n\nلا تنشر مادة غير معتمدة ولا تعِد استخدامها خارج الحقوق المتفق عليها لمعالجة التأخير.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 148
       }
     },
     {
@@ -2235,26 +2234,27 @@
       }
     },
     {
-      "slug": "video-landing-continuity",
-      "theme": "09-video-landing-continuity",
+      "slug": "video-cutdown-versioning",
+      "theme": "09-video-cutdown-versioning",
       "category_key": "09",
       "category_en": "Video advertising",
       "category_ar": "إعلانات الفيديو",
       "framework_ids": [
         "FW-065",
-        "FW-078"
+        "FW-067",
+        "FW-070"
       ],
       "en": {
-        "title": "Keep Video Ad and Landing Page Stories Consistent",
-        "description": "Carry the same audience, offer and qualifying details from video into the destination.",
-        "markdown": "A compelling video can create disappointment if the landing page changes the promise.\n\n## Practical workflow\n\n1. Record claims and qualifiers used in the video.\n2. Match page headline and offer context.\n3. Place the next action where expected.\n4. Check localized versions and destination behavior.\n\n## Working template\n\nVideo promise: ____ / qualifier: ____ / page headline: ____ / proof: ____ / CTA: ____ / locale check: ____.\n\n## Applied example\n\nIf the video shows a free assessment, the page should explain eligibility and what “free” includes before the contact form.\n\n## Measure and review\n\nReview qualified completion by creative and destination pair.\n\n## Guardrail\n\nDo not omit conditions on the landing page that appeared in the ad.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 142
+        "title": "Create Short Video Cutdowns Without Breaking the Story",
+        "description": "Adapt a longer master video into placement-specific versions while preserving context, evidence and the intended action.",
+        "markdown": "A short cutdown is not just a faster edit; removing one scene can remove the condition that made a claim accurate.\n\n## Practical workflow\n\n1. Mark the essential claim, proof, qualification and action in the master.\n2. Choose the story beat each length can preserve.\n3. Rebuild captions and transitions for the target placement.\n4. Review every version independently for accuracy and legibility.\n\n## Working template\n\nMaster: ____ / target lengths: ____ / must-keep proof: ____ / omitted context: ____ / caption check: ____ / reviewer: ____.\n\n## Applied example\n\nA 30-second demonstration may need to keep the setup and result; a 6-second reminder may use only a claim already understandable without the demonstration.\n\n## Measure and review\n\nCompare each cutdown within its placement and audience; keep version identifiers in reporting.\n\n## Guardrail\n\nDo not imply a stronger result when shortening or remove a material qualifier.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 169
       },
       "ar": {
-        "title": "حافظ على اتساق قصة الفيديو وصفحة الوصول",
-        "description": "انقل الجمهور والعرض وشروطه من الفيديو إلى صفحة الوصول.",
-        "markdown": "قد يسبب الفيديو المقنع خيبة إذا بدّلت صفحة الوصول الوعد.\n\n## خطوات عملية\n\n1. سجّل الادعاءات وشروطها في الفيديو.\n2. طابق العنوان وسياق العرض بالصفحة.\n3. ضع الإجراء المتوقع في موضع واضح.\n4. افحص النسخ المترجمة وسلوك الوجهة.\n\n## نموذج عمل\n\nوعد الفيديو: ____ / شرطه: ____ / عنوان الصفحة: ____ / الدليل: ____ / الإجراء: ____ / فحص اللغة: ____.\n\n## مثال تطبيقي\n\nإذا عرض الفيديو تقييمًا مجانيًا، فلتوضح الصفحة الأهلية وما يشمله «المجاني» قبل النموذج.\n\n## القياس والمراجعة\n\nراجع الإكمال المؤهل لكل زوج إعلان ووجهة.\n\n## ضابط مهم\n\nلا تحذف من الصفحة شروطًا ظهرت في الإعلان.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 122
+        "title": "أنشئ نسخ فيديو أقصر دون كسر القصة",
+        "description": "كيّف الفيديو الأساسي لأطوال ومواضع مختلفة مع الحفاظ على السياق والدليل والإجراء.",
+        "markdown": "النسخة القصيرة ليست مونتاجًا أسرع فقط؛ فقد يحذف مشهد شرطًا يجعل الادعاء دقيقًا.\n\n## خطوات عملية\n\n1. علّم الادعاء والدليل والشرط والإجراء الأساسي في النسخة الأصلية.\n2. اختر ما يمكن الحفاظ عليه في كل طول.\n3. أعد بناء الترجمة والانتقالات للموضع.\n4. راجع دقة ووضوح كل نسخة منفردة.\n\n## نموذج عمل\n\nالنسخة الأصلية: ____ / الأطوال: ____ / الدليل اللازم: ____ / السياق المحذوف: ____ / فحص الترجمة: ____ / المراجع: ____.\n\n## مثال تطبيقي\n\nقد يحتاج عرض مدته 30 ثانية إلى إبقاء البداية والنتيجة؛ بينما يستخدم تذكير من 6 ثوانٍ ادعاءً مفهومًا دون العرض.\n\n## القياس والمراجعة\n\nقارن كل نسخة ضمن موضعها وجمهورها؛ واحتفظ بمعرّف النسخة في التقارير.\n\n## ضابط مهم\n\nلا توحِ بنتيجة أقوى عند الاختصار ولا تحذف شرطًا جوهريًا.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 146
       }
     },
     {
@@ -2327,8 +2327,8 @@
       }
     },
     {
-      "slug": "ai-answer-ready-content",
-      "theme": "11-ai-answer-ready-content",
+      "slug": "ai-source-provenance",
+      "theme": "11-ai-source-provenance",
       "category_key": "11",
       "category_en": "Marketing AI",
       "category_ar": "الذكاء الاصطناعي التسويقي",
@@ -2338,16 +2338,16 @@
         "FW-012"
       ],
       "en": {
-        "title": "Structure an Answer-Ready Page Without Keyword Stuffing",
-        "description": "Make the main answer, conditions, steps and evidence easy for readers and retrieval systems to identify.",
-        "markdown": "A page written only around keyword variants can still leave the actual question unanswered.\n\n## Practical workflow\n\n1. Write the direct answer near the relevant heading.\n2. State who it applies to and key exceptions.\n3. Give steps or comparison criteria.\n4. Support factual claims and link to a useful next resource.\n\n## Working template\n\nQuestion: ____ / short answer: ____ / conditions: ____ / steps: ____ / source: ____ / next resource: ____.\n\n## Applied example\n\nFor “does a WhatsApp click count as a lead?”, answer no, explain the stages, then show how to verify message receipt.\n\n## Measure and review\n\nCheck whether a reader can answer the question without searching again; citation is not guaranteed.\n\n## Guardrail\n\nDo not add schema or FAQ text that is absent from visible content.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
-        "approx_words": 155
+        "title": "Make Searchable Answers Verifiable With Source Notes",
+        "description": "Attach source, date and limits to concise answers so readers can judge whether guidance applies to their situation.",
+        "markdown": "A clear answer is more trustworthy when its evidence and scope are visible; answer formatting alone cannot establish accuracy.\n\n## Practical workflow\n\n1. Break the answer into claim, source and applicable condition.\n2. Prefer primary documentation or first-hand measurement.\n3. Record source date and what it does not establish.\n4. Link the evidence near the related statement.\n\n## Working template\n\nAnswer: ____ / supporting source: ____ / checked date: ____ / applies when: ____ / does not establish: ____ / next review: ____.\n\n## Applied example\n\nFor an analytics instruction, link the current official documentation for the setting and separately state that configuration does not prove business outcomes.\n\n## Measure and review\n\nAudit whether a reader can verify key statements and understand the limits without relying on an AI citation.\n\n## Guardrail\n\nDo not imply that being concise or machine-readable guarantees citation or ranking.\n\n## AI disclosure\n\nAI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.\n",
+        "approx_words": 167
       },
       "ar": {
-        "title": "هيكل صفحة جاهزة للإجابة دون حشو كلمات",
-        "description": "اجعل الإجابة والشروط والخطوات والدليل واضحة للقارئ وأنظمة الاسترجاع.",
-        "markdown": "قد تترك الصفحة المبنية على مرادفات الكلمات السؤال الحقيقي بلا إجابة.\n\n## خطوات عملية\n\n1. اكتب الإجابة المباشرة قرب العنوان.\n2. اذكر من تنطبق عليه والاستثناءات.\n3. قدّم خطوات أو معايير مقارنة.\n4. وثّق الادعاءات واربط بمورد تالٍ.\n\n## نموذج عمل\n\nالسؤال: ____ / الإجابة القصيرة: ____ / الشروط: ____ / الخطوات: ____ / المصدر: ____ / المورد التالي: ____.\n\n## مثال تطبيقي\n\nلسؤال «هل نقرة واتساب عميل محتمل؟» أجب لا، ثم اشرح المراحل وكيفية تأكيد استلام الرسالة.\n\n## القياس والمراجعة\n\nتحقق هل يستطيع القارئ الإجابة دون بحث إضافي؛ فالاستشهاد غير مضمون.\n\n## ضابط مهم\n\nلا تضف schema أو FAQ غير موجود في المحتوى الظاهر.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
-        "approx_words": 129
+        "title": "اجعل إجابات البحث قابلة للتحقق بملاحظات المصادر",
+        "description": "أرفق المصدر والتاريخ والحدود بالإجابة المختصرة كي يقيّم القارئ انطباق الإرشاد عليه.",
+        "markdown": "تزداد موثوقية الإجابة الواضحة حين يظهر دليلها ونطاقها؛ لكن تنسيق الإجابة وحده لا يثبت دقتها.\n\n## خطوات عملية\n\n1. قسّم الإجابة إلى ادعاء ومصدر وشرط انطباق.\n2. فضّل التوثيق الأولي أو القياس المباشر.\n3. سجّل تاريخ المصدر وما لا يثبته.\n4. اربط الدليل قرب العبارة المعنية.\n\n## نموذج عمل\n\nالإجابة: ____ / المصدر: ____ / تاريخ التحقق: ____ / تنطبق عند: ____ / لا تثبت: ____ / المراجعة التالية: ____.\n\n## مثال تطبيقي\n\nفي إرشاد تحليلات، اربط بالتوثيق الرسمي الحالي للإعداد ووضح منفصلًا أن ضبطه لا يثبت نتائج العمل.\n\n## القياس والمراجعة\n\nتحقق أن القارئ يستطيع فحص العبارات وفهم حدودها دون الاعتماد على استشهاد ذكاء اصطناعي.\n\n## ضابط مهم\n\nلا توحِ بأن الاختصار أو سهولة القراءة الآلية يضمنان الاستشهاد أو الترتيب.\n\n## إفصاح عن الذكاء الاصطناعي\n\nاستُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.\n",
+        "approx_words": 145
       }
     },
     {
