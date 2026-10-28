@@ -12,23 +12,23 @@
 <nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>القياس</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> القياس</p><h1>اختبر حدث التحويل قبل إدخاله في التقرير</h1><p class="blog-article-deck">تحقق من تسجيل حدث التحليلات مرة واحدة بمعناه المقصود ومعاملاته الآمنة.</p>
 <div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٢ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/measurement-event-qa/">English</a></div></header>
-<article class="blog-prose"><p>وجود اسم الحدث في مدير الوسوم لا يثبت عمله في رحلة حقيقية.</p>
-<h2 id="_1">خطوات عملية</h2>
-<ol>
-<li>عرّف إجراء المستخدم ومعنى الحدث.</li>
-<li>نفّذه من الصفحة والجهاز الفعليين.</li>
-<li>افحص العدد والمعاملات والموافقة والوجهة.</li>
-<li>طابقه مع نظام العمل المستلم.</li>
-</ol>
-<h2 id="_2">نموذج عمل</h2>
-<p>الإجراء: <strong><em>_ / الحدث: </em></strong><em> / العدد المتوقع: <strong><em>_ / المعاملات: </em></strong></em> / حالة الموافقة: <strong><em>_ / تأكيد العمل: </em></strong>_.</p>
-<h2 id="_3">مثال تطبيقي</h2>
-<p>أرسل نموذجًا تجريبيًا مرة، وتحقق من حدث واحد ثم من وصول الطلب نفسه للبريد أو CRM.</p>
-<h2 id="_4">القياس والمراجعة</h2>
-<p>افصل دليل الاختبار ووقت الحدث واستلام النظام في التقرير.</p>
-<h2 id="_5">ضابط مهم</h2>
-<p>لا تصنّف نقرة كبيع مكتمل أو عميل مؤهل.</p>
-<h2 id="_6">إفصاح عن الذكاء الاصطناعي</h2>
-<p>استُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot/">أداة قرار ضبط ظهور زر «واتساب العائم» لمنع خطف متسوقي الدفع الإلكتروني الجاهزين للشراء (`Prepaid Checkout Hijack`) <span aria-hidden="true">↗</span></a><span>FW-081</span></li><li><a href="/ar/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">مسار عمل تتبع إحالات محركات الذكاء الاصطناعي في `GA4` (رصد الـ `96.9%` المسجلة داخل البحث العضوي + فصل `Perplexity` و`Claude` و`HUMAIN Chat` من الإحالات) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>لا يصبح حدث التحليلات جاهزًا للتقرير إلا بعد التحقق من معناه ومحفزه ومنع تكراره. ظهور اسم الحدث في اللوحة لا يثبت أنه يعمل مرة واحدة وفي اللحظة الصحيحة.</p>
+<h2 id="_1">اكتب عقدًا للحدث</h2>
+<p>لإجراء تحويل واحد سجّل:</p>
+<ul>
+<li><strong>المعنى التجاري:</strong> ما الذي حدث فعلًا بلغة يفهمها فريق البيع أو التشغيل.</li>
+<li><strong>المحفز:</strong> فعل المستخدم أو حالة النظام المؤكدة التي ترسل الحدث.</li>
+<li><strong>المعاملات اللازمة:</strong> ما يميز السوق أو الخدمة أو الحملة فقط، دون بيانات شخصية زائدة.</li>
+<li><strong>قاعدة منع التكرار:</strong> كيف لا تعيد المحاولة أو التحديث أو المستمعات المتعددة العدّ.</li>
+<li><strong>سلوك الموافقة:</strong> ماذا يحدث قبل الاختيار المناسب وبعده.</li>
+<li><strong>دليل التحقق:</strong> مسار الاختبار وعدد الأحداث المتوقع.</li>
+</ul>
+<h2 id="_2">اختبر المسار كاملًا</h2>
+<p>استخدم بيئة اختبار أو سجلًا موسومًا بوضوح. نفّذ الإجراء مرة، وافحص العرض التشخيصي في المتصفح أو المنصة، ثم حدّث الصفحة واستخدم الرجوع وأعد المحاولة فقط حسب خطة الاختبار. تأكد أن إجراءً واحدًا ينتج الحدث المتوقع، وأن الإلغاء أو الخطأ لا يبدو كإتمام. اختبر العربية والإنجليزية منفصلتين إذا اختلف النموذج أو الشيفرة.</p>
+<p>قد يعني حدث زر واتساب <strong>نقرة لفتح المحادثة</strong>؛ فلا تسمه أو تعرضه كرسالة مرسلة أو عميل وصل إلا إذا قست الحالة اللاحقة. وفي التجارة الإلكترونية افصل الطلب المسجل عن المدفوع والمسلم والمحتفظ به والمسترد عند اعتماد القرار عليها.</p>
+<p>احتفظ بسجل لاسم الحدث ونسخته وتاريخه ومسؤوله ودليل الاختبار. أعد الفحص بعد تغيير القالب أو الوسوم أو الموافقة أو المسار.</p>
+<blockquote>
+<p><strong>إفصاح عن الذكاء الاصطناعي:</strong> ساعدت أدوات الذكاء الاصطناعي في المسودة. هذه تعريفات قياس وليست نتائج أحداث مؤكدة.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-019-AMP-067-meta-capi-browser-server-deduplication-fbp-fbc-match-key/">قائمة فحص منع ازدواجية التحويلات (`Deduplication`) وتمرير مفاتيح `fbp`/`fbc` في `Meta CAPI` لمتاجر المنطقة <span aria-hidden="true">↗</span></a><span>FW-019</span></li><li><a href="/ar/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">قائمة فحص إعادة تصنيف المتاجر والأسواق العربية (`amazon.sa`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) في `GA4` بدلاً من ضياعها في `Referral` <span aria-hidden="true">↗</span></a><span>FW-086</span></li><li><a href="/ar/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">مسار عمل فرض مخرجات `JSON Schema` الصارمة (`strict: true`) في أتمتة الـ CRM والويب هوك والكتالوجات العربية <span aria-hidden="true">↗</span></a><span>FW-087</span></li></ul></section>
 <nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/utm-governance/"><span>الدليل التالي</span><strong>ضع قواعد UTM يفهمها الفريق كله</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

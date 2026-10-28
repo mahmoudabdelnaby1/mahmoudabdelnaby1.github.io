@@ -12,23 +12,15 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO, AEO &amp; GEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO, AEO &amp; GEO</p><h1>Validate Structured Data Against Visible Page Content</h1><p class="blog-article-deck">Use structured data to describe content that readers can actually see and verify.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/seo-structured-data-qa/">العربية</a></div></header>
-<article class="blog-prose"><p>Adding schema types that do not match the page can create misleading markup and maintenance debt.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
-<ol>
-<li>Choose a type that fits the page purpose.</li>
-<li>Map fields to visible, accurate content.</li>
-<li>Validate syntax and required fields.</li>
-<li>Review warnings, rich-result eligibility and changes after release.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>Page type: <strong><em>_ / visible source: </em></strong><em> / schema fields: <strong><em>_ / validator output: </em></strong></em> / owner: <strong><em>_ / review date: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>An article date in schema should match the actual published or materially updated date shown to readers.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Check rendered markup after template updates; structured data does not guarantee a rich result.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Do not add ratings, FAQs, reviews or claims that are not visible and genuine.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt/">MENA Native Search Root &amp; Dialect Keyword Matrix Prompt <span aria-hidden="true">↗</span></a><span>FW-001</span></li><li><a href="/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">Arabic Orthographic Normalization Checklist (Hamza, Taa Marbuta, Alef Maqsura &amp; Indic Digits) <span aria-hidden="true">↗</span></a><span>FW-002</span></li><li><a href="/frameworks/tasks/FW-012-AMP-012-mena-programmatic-city-service-page-governance-framework/">MENA Programmatic City/Service Page Governance Framework (Anti-Scaled Content Abuse) <span aria-hidden="true">↗</span></a><span>FW-012</span></li></ul></section>
+<article class="blog-prose"><p>Structured data should describe what a person can verify on the page. Adding a type because a tool supports it—or hoping for a rich result—does not make the markup accurate.</p>
+<h2 id="trace-every-property-to-visible-evidence">Trace every property to visible evidence</h2>
+<p>Choose the type that matches the page’s main purpose. Then compare each property with the rendered page: name, author, dates, image, price, rating, availability, or organization details. Remove fields the page does not show or the owner cannot verify. Do not mark up fabricated reviews, hidden FAQ text, or a generic author as an expert credential.</p>
+<p>For an article, make sure the structured title and author match the visible byline. For a product, check that price and availability are current and consistent with the page and feed. For organization details, use the correct entity and official URL. Avoid adding FAQ or how-to markup solely to seek a search feature when the page does not provide that visible content.</p>
+<h2 id="validate-in-two-passes">Validate in two passes</h2>
+<p>Use a syntax or rich-results validator to catch implementation issues, then compare the output with actual page content and the search feature’s eligibility rules. Validation means the markup can be parsed; it does not guarantee eligibility, display, ranking, or AI citations. Monitor warnings and search appearance after deployment.</p>
+<p>Keep markup generated from the same source of truth as the visible content where possible. When a price or author changes, update both. Google’s <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies">structured data guidelines</a> explain quality and eligibility requirements.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide does not claim a rich-result outcome.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-007-AMP-007-salla-mena-e-commerce-product-json-ld-brand-merchant-sch/">Salla &amp; MENA E-Commerce Product JSON-LD `brand` &amp; Merchant Schema Injection Checklist <span aria-hidden="true">↗</span></a><span>FW-007</span></li><li><a href="/frameworks/tasks/FW-037-AMP-180-arabic-aeo-geo-entity-answer-first-structuring-decision/">Arabic AEO / GEO Entity &amp; Answer-First Structuring Decision Aid (Beyond the `llms.txt` Myth) <span aria-hidden="true">↗</span></a><span>FW-037</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/seo-indexability-diagnosis/"><span>Next guide</span><strong>Diagnose Why an Important Page Is Not Indexed</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

@@ -12,23 +12,17 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>Set UTM Naming Rules Your Whole Team Can Follow</h1><p class="blog-article-deck">Create consistent campaign tags that remain readable across teams and reports.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/utm-governance/">العربية</a></div></header>
-<article class="blog-prose"><p>Uncontrolled spelling, capitalization and naming can fragment one campaign into many report rows.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
-<ol>
-<li>Choose required parameters and allowed values.</li>
-<li>Use a shared campaign naming pattern.</li>
-<li>Assign a naming owner and preflight check.</li>
-<li>Document how to correct legacy tags safely.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>source: <strong><em>_ / medium: </em></strong><em> / campaign: <strong><em>_ / content: </em></strong></em> / market-language rule: <strong><em>_ / owner: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>Use one agreed spelling for a platform and one stable campaign slug; put creative variation in utm_content, not utm_campaign.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Audit unknown values and report fragmentation monthly; preserve original links in records.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Never place names, email addresses or other personal data in query parameters.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot/">WhatsApp Floating-Button Placement &amp; Prepaid-Checkout Protection Decision Aid <span aria-hidden="true">↗</span></a><span>FW-081</span></li><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>UTM tags are shared data. A naming rule is successful when two people tag the same campaign consistently and a report can group it without guesswork.</p>
+<h2 id="define-the-fields-and-allowed-values">Define the fields and allowed values</h2>
+<p>Use the smallest schema the team will maintain: source, medium, campaign, and optional content or term when they answer a reporting question. Decide case, separators, date or market codes, and a controlled vocabulary. Keep campaign names readable; do not encode private customer information.</p>
+<p><strong>Example convention:</strong> <code>utm_source=instagram</code>, <code>utm_medium=paid_social</code>, <code>utm_campaign=eg_summer_service_2026</code>, <code>utm_content=video_problem_hook</code>. This is an illustrative pattern; choose values that match the organization’s reporting model.</p>
+<p>Use lowercase and a fixed separator, and keep a shared builder or register as the source of truth. Do not put UTMs on internal links; they can overwrite the original acquisition source. Check redirects, QR codes, and link shorteners to ensure parameters survive.</p>
+<h2 id="govern-the-register">Govern the register</h2>
+<p>Assign an owner for allowed values and a process for exceptions. Before a launch, search the register for an existing campaign name. When a name changes, document the mapping rather than silently creating a new bucket. Retire values carefully so historical reports remain interpretable.</p>
+<h2 id="audit-with-examples">Audit with examples</h2>
+<p>Test one link from each channel and verify the final landing URL and analytics source/medium. Look for <code>Instagram</code> vs <code>instagram</code>, inconsistent <code>paid</code> labels, spaces, missing campaign IDs, or parameter loss. A consistent tag improves classification but does not prove a conversion came from the campaign or that the campaign caused it.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. Example values are illustrative.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">GA4 MENA Marketplace &amp; E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) <span aria-hidden="true">↗</span></a><span>FW-086</span></li><li><a href="/frameworks/tasks/FW-088-AMP-446-mena-b2b-crm-data-hygiene-icp-alignment-offline-lead-sco/">MENA B2B CRM Data Hygiene, ICP Alignment &amp; Offline Lead-Scoring Feedback Framework <span aria-hidden="true">↗</span></a><span>FW-088</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/lead-quality-rubric/"><span>Next guide</span><strong>Create a Lead Quality Rubric Sales Can Apply</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

@@ -12,23 +12,20 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO, AEO &amp; GEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO, AEO &amp; GEO</p><h1>Diagnose Why an Important Page Is Not Indexed</h1><p class="blog-article-deck">Separate crawl access, canonical selection, duplication and page-quality signals before requesting another crawl.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/seo-indexability-diagnosis/">العربية</a></div></header>
-<article class="blog-prose"><p>Repeated requests cannot solve a canonical conflict or a page that offers little unique value.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
+<article class="blog-prose"><p>When an important URL is not indexed, separate the failure stages before requesting another crawl. A URL can be reachable, crawled, canonicalized elsewhere, and still not selected for indexing.</p>
+<h2 id="use-a-page-level-diagnosis">Use a page-level diagnosis</h2>
 <ol>
-<li>Confirm the exact URL and response.</li>
-<li>Inspect robots directives and canonical target.</li>
-<li>Compare rendered content with the preferred page.</li>
-<li>Fix the cause, then request recrawl where appropriate.</li>
+<li><strong>Fetch:</strong> Does the URL return the expected status and content without login, redirect loops, or bot challenge?</li>
+<li><strong>Crawl permission:</strong> Does <code>robots.txt</code> allow access to the page and required assets? Check the exact path.</li>
+<li><strong>Index directive:</strong> Is there a <code>noindex</code> meta or header? Remember that a crawler generally needs access to see page-level directives.</li>
+<li><strong>Canonical:</strong> Does the page declare a preferred URL? Does the search tool select a different one, such as the homepage or a duplicate language route?</li>
+<li><strong>Content and links:</strong> Does the page answer a distinct task with enough original value, and can internal links lead crawlers and readers to it?</li>
+<li><strong>Search-tool evidence:</strong> Inspect URL-level reports and last crawl in the verified property; compare rendered content with the intended page.</li>
 </ol>
-<h2 id="working-template">Working template</h2>
-<p>URL: <strong><em>_ / crawl state: </em></strong><em> / canonical selected: <strong><em>_ / duplicate candidate: </em></strong></em> / quality issue: <strong><em>_ / corrective action: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>If an Arabic page canonicals to the English page, fix the language relationship before submitting the Arabic URL again.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Track inspection status separately from indexing and ranking outcomes.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>No recrawl request guarantees indexing or timing.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt/">MENA Native Search Root &amp; Dialect Keyword Matrix Prompt <span aria-hidden="true">↗</span></a><span>FW-001</span></li><li><a href="/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">Arabic Orthographic Normalization Checklist (Hamza, Taa Marbuta, Alef Maqsura &amp; Indic Digits) <span aria-hidden="true">↗</span></a><span>FW-002</span></li><li><a href="/frameworks/tasks/FW-012-AMP-012-mena-programmatic-city-service-page-governance-framework/">MENA Programmatic City/Service Page Governance Framework (Anti-Scaled Content Abuse) <span aria-hidden="true">↗</span></a><span>FW-012</span></li></ul></section>
+<p>Fix the earliest confirmed issue first. Do not remove a <code>noindex</code>, change a canonical, or open bot access without understanding why it was set. If the page is a duplicate or low-value variant, consolidation may be better than indexing it.</p>
+<p>A manual indexing request can ask for recrawl; it cannot force inclusion or guarantee timing. Record the diagnosis, change, and follow-up status instead of repeatedly submitting the same URL. Google’s <a href="https://developers.google.com/search/docs/essentials/technical">technical requirements</a> describe the baseline conditions.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This process does not guarantee indexing.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-003-AMP-003-salla-mena-e-commerce-sitemap-hygiene-dead-ai-url-purge/">Salla &amp; MENA E-Commerce Sitemap Hygiene &amp; Dead-AI-URL Purge Checklist <span aria-hidden="true">↗</span></a><span>FW-003</span></li><li><a href="/frameworks/tasks/FW-006-AMP-006-zid-mena-storefront-robots-txt-sitemap-directive-ai-craw/">Zid &amp; MENA Storefront `robots.txt` Sitemap Directive &amp; AI-Crawler Governance Checklist <span aria-hidden="true">↗</span></a><span>FW-006</span></li><li><a href="/frameworks/tasks/FW-012-AMP-012-mena-programmatic-city-service-page-governance-framework/">MENA Programmatic City/Service Page Governance Framework (Anti-Scaled Content Abuse) <span aria-hidden="true">↗</span></a><span>FW-012</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/paid-search-vs-social/"><span>Next guide</span><strong>Choose Search or Social Ads by Demand and Discovery</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

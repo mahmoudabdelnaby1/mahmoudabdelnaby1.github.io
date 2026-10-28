@@ -12,23 +12,21 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Email marketing</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Email marketing</p><h1>QA an Email Campaign Before Scheduling It</h1><p class="blog-article-deck">Check audience, links, rendering, consent and fallback behavior before sending.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/email-campaign-qa/">العربية</a></div></header>
-<article class="blog-prose"><p>Proofreading a subject line will not catch a wrong segment or broken link.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
+<article class="blog-prose"><p>A pre-send check should follow the message from audience selection through suppression, rendering, links, and the action after the click. A successful test send to one inbox does not verify the campaign audience or destination.</p>
+<h2 id="use-a-release-sequence">Use a release sequence</h2>
 <ol>
-<li>Verify audience and exclusions.</li>
-<li>Test links and personalization fallbacks.</li>
-<li>Preview Arabic and English across screen sizes.</li>
-<li>Confirm consent, timing and rollback owner.</li>
+<li><strong>Audience:</strong> confirm segment definition, consent basis, exclusions, suppression, and send count.</li>
+<li><strong>Content:</strong> verify offer, prices, eligibility, dates, language, and every claim against the approved source.</li>
+<li><strong>Links:</strong> open each destination on mobile; check redirects, language, UTMs, and fallback text links.</li>
+<li><strong>Rendering:</strong> test representative email clients, Arabic direction and shaping, dark mode, and blocked images.</li>
+<li><strong>Action:</strong> submit the form or complete the next step using a test path; confirm the event and follow-up.</li>
+<li><strong>Ownership:</strong> confirm sender identity, reply inbox, schedule, time zone, and who can pause the send.</li>
 </ol>
-<h2 id="working-template">Working template</h2>
-<p>Segment: <strong><em>_ / exclusions: </em></strong><em> / links: <strong><em>_ / locale preview: </em></strong></em> / consent: <strong><em>_ / approver: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>Have Arabic and English reviewers test each language’s links to its matching route.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Save test evidence and monitor delivery and complaints.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Pause if audience or permission cannot be confirmed.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-044-AMP-232-saudi-pdpl-uae-decree-law-45-2021-qatar-egypt-law-151-20/">Market-Specific Marketing Permission Review <span aria-hidden="true">↗</span></a><span>FW-044</span></li><li><a href="/frameworks/tasks/FW-045-AMP-233-cross-channel-unsubscribe-synchronization-framework-emai/">Cross-Channel Preference &amp; Suppression Workflow <span aria-hidden="true">↗</span></a><span>FW-045</span></li></ul></section>
+<p>Send an internal proof with test labels before the real audience. Verify that test addresses cannot contaminate production reports or trigger fulfillment. For a high-risk or large send, use an approved staged rollout rather than assuming a small proof catches every issue.</p>
+<h2 id="record-the-release">Record the release</h2>
+<p>Save the approved version, audience count, reviewer, test evidence, scheduled time, and rollback owner. After sending, inspect delivery and errors promptly, then review complaints, clicks, and downstream actions with clear denominators. If a critical link or claim is wrong, use the incident process; do not send another campaign until the cause is contained.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This QA sequence is an operating aid, not a guarantee of inbox placement.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-043-AMP-231-arabic-html-email-dir-rtl-unicode-bdi-isolation-renderin/">Arabic HTML Email `dir=&#x27;rtl&#x27;` &amp; Unicode `&lt;bdi&gt;` Isolation Rendering Checklist (Gmail, Outlook &amp; Apple Mail) <span aria-hidden="true">↗</span></a><span>FW-043</span></li><li><a href="/frameworks/tasks/FW-046-AMP-234-arabic-email-subject-line-byte-length-anti-spam-filter-p/">Arabic Email Subject-Line Byte-Length &amp; Anti-Spam Filter Prompt Template <span aria-hidden="true">↗</span></a><span>FW-046</span></li><li><a href="/frameworks/tasks/FW-049-AMP-237-transactional-vs-promotional-email-template-separation-c/">Transactional vs. Promotional Email Template Separation Checklist (Saudi &amp; UAE PDPL Compliance) <span aria-hidden="true">↗</span></a><span>FW-049</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/influencer-audience-overlap/"><span>Next guide</span><strong>Check Audience Overlap Across a Creator Shortlist</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

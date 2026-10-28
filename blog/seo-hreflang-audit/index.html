@@ -12,23 +12,21 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO, AEO &amp; GEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO, AEO &amp; GEO</p><h1>Audit Arabic and English Hreflang Pairs</h1><p class="blog-article-deck">Check that translated pages identify equivalent routes and each locale links back consistently.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/seo-hreflang-audit/">العربية</a></div></header>
-<article class="blog-prose"><p>A language switcher alone does not tell search engines which pages are equivalents.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
+<article class="blog-prose"><p><code>hreflang</code> helps search systems understand equivalent language or regional pages; it does not repair a page that is missing, non-canonical, or translated for the wrong audience.</p>
+<h2 id="audit-one-language-pair-as-a-set">Audit one language pair as a set</h2>
+<p>For each English page and its Arabic equivalent, verify four things:</p>
 <ol>
-<li>List canonical URL pairs.</li>
-<li>Check reciprocal hreflang values and language codes.</li>
-<li>Confirm each canonical points to its own preferred URL.</li>
-<li>Test x-default policy and page availability.</li>
+<li>Both URLs return the intended page and are indexable.</li>
+<li>Each page names itself and the other equivalent with reciprocal <code>hreflang</code> annotations.</li>
+<li>The language/region code matches the actual page language and intended audience; do not label general Arabic as a country variant without a real distinction.</li>
+<li>The canonical points to the preferred URL for that page and does not collapse both languages into one URL.</li>
 </ol>
-<h2 id="working-template">Working template</h2>
-<p>English URL: <strong><em>_ / Arabic URL: </em></strong><em> / reciprocal links: <strong><em>_ / canonical: </em></strong></em> / missing pair: <strong><em>_ / fix owner: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>Pair the English service guide only with its corresponding Arabic guide, not the Arabic homepage because it is in another language.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Recheck sitemap alternates and rendered page head after changes.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Do not label unrelated or partially translated pages as exact equivalents.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt/">MENA Native Search Root &amp; Dialect Keyword Matrix Prompt <span aria-hidden="true">↗</span></a><span>FW-001</span></li><li><a href="/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">Arabic Orthographic Normalization Checklist (Hamza, Taa Marbuta, Alef Maqsura &amp; Indic Digits) <span aria-hidden="true">↗</span></a><span>FW-002</span></li><li><a href="/frameworks/tasks/FW-037-AMP-180-arabic-aeo-geo-entity-answer-first-structuring-decision/">Arabic AEO / GEO Entity &amp; Answer-First Structuring Decision Aid (Beyond the `llms.txt` Myth) <span aria-hidden="true">↗</span></a><span>FW-037</span></li></ul></section>
+<p>Use absolute, crawlable URLs and keep the tags consistent with the sitemap if it also lists alternates. Check for redirects, broken paths, accidental staging domains, and copied annotations that point every article to the homepage.</p>
+<h2 id="diagnose-mismatches-before-editing-at-scale">Diagnose mismatches before editing at scale</h2>
+<p>If a page has no true equivalent, do not invent one; it can be self-referenced without a false counterpart. If one language page is substantially different in task or market, explain that distinction and review the pairing. For an Arabic MENA page, check right-to-left rendering and whether the text is genuinely Arabic—not merely an English page with a translated title.</p>
+<p>Validate a small sample, then crawl the full set. In Search Console, inspect selected URLs and coverage reports; tags are hints, not a guarantee that Google will choose the intended URL. Google’s <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">localized versions documentation</a> explains the supported annotation patterns.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is a technical audit method, not an indexing guarantee.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-004-AMP-004-bilingual-storefront-canonical-hreflang-conflict-resolut/">Bilingual Storefront Canonical &amp; Hreflang Conflict Resolution Checklist (Salla, Zid &amp; Custom MENA Stores) <span aria-hidden="true">↗</span></a><span>FW-004</span></li><li><a href="/frameworks/tasks/FW-005-AMP-005-bilingual-storefront-en-title-meta-tag-localization-work/">Bilingual Storefront `/en/` Title &amp; Meta Tag Localization Workflow (Salla &amp; Zid) <span aria-hidden="true">↗</span></a><span>FW-005</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/seo-sitemap-triage/"><span>Next guide</span><strong>Triage a Sitemap That Search Tools Cannot Fetch</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

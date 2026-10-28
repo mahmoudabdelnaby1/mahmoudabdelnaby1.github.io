@@ -12,23 +12,19 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Classify AI Referrals Carefully in Analytics</h1><p class="blog-article-deck">Separate known referrers, tagged campaigns and unattributed traffic without overclaiming source.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-referral-classification/">العربية</a></div></header>
-<article class="blog-prose"><p>Private sharing, missing referrers and browser behavior can obscure how a visit began.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
+<article class="blog-prose"><p>AI referral reporting is a classification problem with missing data. A session with no referrer is not proof that a person arrived from an AI assistant.</p>
+<h2 id="use-three-attribution-buckets">Use three attribution buckets</h2>
 <ol>
-<li>Define a maintained list of known AI referrers.</li>
-<li>Preserve referral and UTM evidence.</li>
-<li>Create a separate unknown or dark-social bucket.</li>
-<li>Audit sample landing paths and avoid retroactive certainty.</li>
+<li><strong>Identified referrer:</strong> the analytics system records a known assistant domain or app referral. Preserve the raw source and landing page.</li>
+<li><strong>Tagged campaign:</strong> a tracked link carries campaign parameters. Report it as tagged traffic, even if the user later switches apps.</li>
+<li><strong>Unattributed or unknown:</strong> direct, stripped, private-share, app, and missing-referrer visits that cannot be reliably assigned. Keep them unknown.</li>
 </ol>
-<h2 id="working-template">Working template</h2>
-<p>Source rule: <strong><em>_ / referrer: </em></strong><em> / campaign tags: <strong><em>_ / unknown bucket: </em></strong></em> / audit date: <strong><em>_ / limitation: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>A visit copied from an AI answer into a private chat may appear direct; preserve uncertainty instead of assigning it to a guessed engine.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Report identified referrals separately from estimated or unattributed visits.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>A session with no referrer is not proof it came from an AI tool.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot/">WhatsApp Floating-Button Placement &amp; Prepaid-Checkout Protection Decision Aid <span aria-hidden="true">↗</span></a><span>FW-081</span></li><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<p>Maintain an allowlist of observed referrers with the date and reason each was added. Verify actual traffic before adding a new pattern. Do not label every “direct” session or branded search as AI traffic.</p>
+<h2 id="keep-the-measurement-chain-honest">Keep the measurement chain honest</h2>
+<p>Separate sessions, engaged visits, contact clicks, messages sent, qualified inquiries, and confirmed outcomes. If a user copies an answer into a private chat and then types the site URL, the origin may be invisible; no regex can restore evidence that was never transmitted. A model mention in a manual prompt check is also not an analytics referral.</p>
+<p>Review source/medium and landing pages, test channel rules on known examples, and keep a change log when adding patterns. Compare identified AI referrals separately from unknown traffic. Explain coverage limits in every report and avoid presenting a regex as a complete measurement solution.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. No referral volume or attribution accuracy is claimed.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">GA4 MENA Marketplace &amp; E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) <span aria-hidden="true">↗</span></a><span>FW-086</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/ai-untrusted-input-safety/"><span>Next guide</span><strong>Protect Marketing AI Workflows From Untrusted Instructions</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
