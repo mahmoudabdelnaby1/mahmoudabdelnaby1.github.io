@@ -16,7 +16,7 @@ UI = {
  "en": {
   "brand":"MAHMOUD <em>ABDELNABY</em>","home":"Portfolio","guides":"Marketing systems","language":"العربية",
   "search_label":"Search the library","search_placeholder":"Try “WhatsApp”, “SEO”, or “video testing”","all":"All topics",
-  "count":"100 practical articles · 50 topics · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
+  "count":"200 practical articles · 100 topics · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
   "title":"Useful work for the decisions behind growth.",
   "intro":"Bilingual, task-led guides for marketers working across MENA. Each article turns an operating question into a method, checks, and related tools.",
   "featured":"START HERE","featured_label":"Growth diagnosis","read":"min read","back":"All articles",
@@ -28,7 +28,7 @@ UI = {
  "ar": {
   "brand":"محمود <em>عبدالنبي</em>","home":"معرض الأعمال","guides":"الأنظمة التسويقية","language":"English",
   "search_label":"ابحث في المكتبة","search_placeholder":"جرّب «واتساب» أو «SEO» أو «اختبار الفيديو»","all":"كل الموضوعات",
-  "count":"١٠٠ مقال عملي · ٥٠ موضوعًا · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
+  "count":"٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
   "title":"عمل عملي يدعم القرارات وراء النمو.",
   "intro":"أدلة عربية وإنجليزية تبدأ من مهمة تسويقية حقيقية في أسواق MENA، ثم تحوّلها إلى منهج وخطوات وأدوات مرتبطة.",
   "featured":"ابدأ من هنا","featured_label":"تشخيص النمو","read":"دقائق للقراءة","back":"كل المقالات",
@@ -165,8 +165,8 @@ def add_links():
 
 def add_hub_promo():
  for path,anchor,promo in [
-  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 100 ARTICLES</span><h2>Read the marketing blog.</h2><p>Fifty bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
-  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ١٠٠ مقال</span><h2>اقرأ مدونة التسويق.</h2><p>خمسون موضوعًا بالعربية والإنجليزية يربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
+  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 200 ARTICLES</span><h2>Read the marketing blog.</h2><p>One hundred bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
+  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ٢٠٠ مقال</span><h2>اقرأ مدونة التسويق.</h2><p>مئة موضوع بالعربية والإنجليزية تربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
   text=path.read_text(encoding="utf-8")
   if promo not in text:
    if anchor not in text: raise SystemExit("Missing marketing library insertion point: "+str(path))
@@ -189,7 +189,7 @@ def update_sitemap(routes):
  return len(missing)
 
 def main():
- if len(POSTS)!=50 or len({p["slug"] for p in POSTS})!=50: raise SystemExit("Expected 50 bilingual topics")
+ if len(POSTS)!=100 or len({p["slug"] for p in POSTS})!=100: raise SystemExit("Expected 100 bilingual topics")
  for p in POSTS:
   for lang in ("en","ar"):
    if not p[lang]["markdown"]: raise SystemExit("Missing body: "+p["slug"])
