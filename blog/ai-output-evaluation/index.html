@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Evaluate AI Marketing Outputs With a Small Test Set</h1><p class="blog-article-deck">Check a model against known examples and failure cases before using outputs in a live workflow.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
 <article class="blog-prose"><p>A model that writes fluent copy can still fail the marketing task. Evaluate the output against examples with known answers, realistic edge cases, and the language people will actually use.</p>
 <h2 id="build-a-small-test-set-before-launch">Build a small test set before launch</h2>
 <p>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled.</p>
@@ -28,15 +28,20 @@
 <h2 id="compare-against-a-baseline">Compare against a baseline</h2>
 <p>Run the same test cases through the current human or rules-based process. Record model, prompt, source set, date, and exact version. Review failures by severity, not only frequency. Use a held-out set after tuning so the system is not being graded on examples it was optimized to memorize.</p>
 <p>Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability.</p>
-<h2 id="model-neutral-prompt-card-evaluate-ai-marketing-outputs-with-a-small-test-set">Model-neutral prompt card: Evaluate AI Marketing Outputs With a Small Test Set</h2>
-<p><strong>Task:</strong> A model that writes fluent copy can still fail the marketing task.</p>
-<p><strong>Copy-ready prompt:</strong></p>
+<h2 id="model-neutral-prompt-pack-evaluate-ai-marketing-outputs-with-a-small-test-set">Model-neutral prompt pack: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
+<p><strong>Build the procedure:</strong></p>
 <blockquote>
-<p>Create a test set with routine, edge, ambiguous, bilingual, and adversarial examples. Define an answer key and severity rubric before running the model. Score factual accuracy, instruction following, tone, privacy leakage, and reviewer correction effort separately. Keep a holdout set for later comparisons. Report failure examples and confidence limits; do not claim quality from a few hand-picked successful outputs.</p>
+<p>Turn this principle into operational steps for “Evaluate AI Marketing Outputs With a Small Test Set”: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
 </blockquote>
-<p><strong>Review before use:</strong> Verify facts against the source, check privacy and audience fit, and have a person approve the final action. The prompt can assist drafting; it cannot validate its own claims.</p>
+<p><strong>Audit the draft:</strong></p>
 <blockquote>
-<p><strong>AI disclosure:</strong> AI tools assisted with drafting. The test scenario is illustrative and not a validated benchmark.</p>
+<p>Check the plan against this source requirement: - correct task classification; - required fields extracted without invention; - unsupported claim or fabricated detail; - correct escalation when uncertain; - Arabic meaning and tone; - valid structure if another system consumes the result. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
+</blockquote>
+<p><strong>Repurpose it:</strong></p>
+<blockquote>
+<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-091-AMP-449-tiered-llm-model-orchestration-decision-aid-fast-flash-m/">LLM Model Selection &amp; Routing Decision Aid <span aria-hidden="true">↗</span></a><span>FW-091</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/ai-evidence-safe-drafting/"><span>Next guide</span><strong>Use AI to Draft Content Without Inventing Evidence</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
