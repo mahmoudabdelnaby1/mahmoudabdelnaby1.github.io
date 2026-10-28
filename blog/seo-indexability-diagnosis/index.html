@@ -26,12 +26,52 @@
 <p>A manual indexing request can ask for recrawl; it cannot force inclusion or guarantee timing. Record the diagnosis, change, and follow-up status instead of repeatedly submitting the same URL. Google’s <a href="https://developers.google.com/search/docs/essentials/technical">technical requirements</a> describe the baseline conditions.</p>
 <h2 id="eligibility-does-not-guarantee-indexing">Eligibility does not guarantee indexing</h2>
 <p>Google states that meeting technical requirements does not guarantee crawling, indexing, or serving. Diagnose the observed state and remove blockers; do not promise instant indexing. <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google AI Search guide</a>.</p>
-<h2 id="hookvaluetemplate-diagnose-why-an-important-page-is-not-indexed">Hook–Value–Template: Diagnose Why an Important Page Is Not Indexed</h2>
-<p><strong>Hook:</strong> When an important URL is not indexed, separate the failure stages before requesting another crawl. A URL can be reachable, crawled, canonicalized elsewhere, and still not selected for indexing.</p>
-<p><strong>Value:</strong> 1. Fetch: Does the URL return the expected status and content without login, redirect loops, or bot challenge? 2. Crawl permission: Does robots.txt allow access to the page and required assets? Check the exact path. 3. Index directive: Is there a noindex meta or header? Remember that a crawler generally needs access to see page-level directives. Then make it practical: Fix the earliest confirmed issue first. Do not remove a noindex, change a canonical, or open bot access without understanding why it was set. If the page is a duplicate or low-value variant, consolidation may be better than indexing it.</p>
-<p><strong>Applied template:</strong> Start with the question “Diagnose Why an Important Page Is Not Indexed.” Gather the evidence required by the guide, perform “Fix the earliest confirmed issue first. Do not remove a noindex, change a canonical, or open bot access without understanding why it was set. If the page is a duplicate or low-value variant, consolidation may be better than indexing it.,” then record the observed outcome and the limits on interpreting it.</p>
-<p><strong>Illustrative application of the article’s method:</strong> Google states that meeting technical requirements does not guarantee crawling, indexing, or serving. Diagnose the observed state and remove blockers; do not promise instant indexing. Google AI Search guide.</p>
-<p>Do not label the outcome a success until it is verified.</p>
+<h2 id="working-canvas-diagnose-why-an-important-page-is-not-indexed">Working canvas: Diagnose Why an Important Page Is Not Indexed</h2>
+<p>Complete this for one real case.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Audience / case</td>
+<td>[who or what is being reviewed]</td>
+</tr>
+<tr>
+<td>Intended state</td>
+<td>[action or outcome sought]</td>
+</tr>
+<tr>
+<td>Verified state</td>
+<td>[last state and its evidence]</td>
+</tr>
+<tr>
+<td>Gap</td>
+<td>[missing step or information]</td>
+</tr>
+<tr>
+<td>One action</td>
+<td>[nearest controllable change]</td>
+</tr>
+<tr>
+<td>Owner and source</td>
+<td>[who acts and where it is logged]</td>
+</tr>
+<tr>
+<td>Quality guardrail</td>
+<td>[what must not deteriorate]</td>
+</tr>
+<tr>
+<td>Review decision</td>
+<td>[what supports continuing or revising]</td>
+</tr>
+</tbody>
+</table>
+<p>Apply the article’s method: 1.</p>
+<p>If a field cannot be proved, mark it “unknown” and assign an owner to verify it.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

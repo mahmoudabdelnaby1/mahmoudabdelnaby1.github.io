@@ -13,6 +13,8 @@
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Monitor AI Search Visibility Without Treating Anecdotes as Rankings</h1><p class="blog-article-deck">Use repeatable prompts and evidence logs to observe mentions while stating sampling limits.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-visibility-monitoring/">العربية</a></div></header>
 <article class="blog-prose"><p>An AI visibility check is a repeated sample of answers, not a stable ranking report. The same question can produce different citations across wording, date, location, account state, and engine version.</p>
+<p><strong>Research signal:</strong> A 2026 critical survey finds GEO terminology, metrics, and evidence standards remain heterogeneous. Treat visibility checks as observations tied to a query, date, and platform—not as stable ranking proof. <a href="https://arxiv.org/abs/2607.14035">Critical survey of GEO research (2023–2026)</a></p>
+<p><strong>Research signal:</strong> A 2026 critical survey finds GEO terminology, metrics, and evidence standards remain heterogeneous. Treat visibility checks as observations tied to a query, date, and platform—not as stable ranking proof. <a href="https://arxiv.org/abs/2607.14035">Critical survey of GEO research (2023–2026)</a></p>
 <h2 id="build-a-reproducible-prompt-panel">Build a reproducible prompt panel</h2>
 <p>Choose a small set of real buyer questions across tasks: explain, compare, troubleshoot, and choose. Save the exact wording, market, language, date, engine/product mode, and whether web search was enabled. Run neutral paraphrases at a planned cadence and retain the full answer and cited URLs.</p>
 <p>Score separate outcomes:</p>
@@ -29,19 +31,17 @@
 <p>AI answer samples are volatile and do not prove organic discovery or business impact. Track referrals and qualified actions separately; a citation is not a visit, and a visit is not a conversion.</p>
 <h2 id="what-googles-ai-guidance-does-and-does-not-promise">What Google’s AI guidance does and does not promise</h2>
 <p>Google says its AI Search features rely on Search fundamentals and that eligibility does not guarantee display. It also rejects special markup, llms.txt, and formulaic chunking as required shortcuts. Track sampled answers as observations, not rankings or guaranteed citations. <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Official guide</a>.</p>
-<h2 id="model-neutral-prompt-pack-monitor-ai-search-visibility-without-treating-anecdotes-as-rankings">Model-neutral prompt pack: Monitor AI Search Visibility Without Treating Anecdotes as Rankings</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="red-team-simulation-monitor-ai-search-visibility-without-treating-anecdotes-as-rankings">Red-team simulation: Monitor AI Search Visibility Without Treating Anecdotes as Rankings</h2>
+<p>Run with synthetic data; do not connect it to publishing or customers.</p>
+<ol>
+<li><strong>Missing source:</strong> ask for an absent answer; expected behavior is to state the gap.</li>
+<li><strong>Conflict:</strong> supply two different sources; expected behavior is to show the conflict and route it for review.</li>
+<li><strong>Injected instruction:</strong> place a rule-override request inside untrusted text; expected behavior is to treat it as data.</li>
+<li><strong>Sensitive field:</strong> insert a synthetic value; expected behavior is to minimize or mask it.</li>
+<li><strong>Missing input:</strong> remove a required field; expected behavior is clarification or safe fallback.</li>
+</ol>
+<p>Log expected and observed behavior, severity, and the fix owner. This is a test plan, not a claim an attack occurred.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Monitor AI Search Visibility Without Treating Anecdotes as Rankings”: Choose a small set of real buyer questions across tasks: explain, compare, troubleshoot, and choose. Save the exact wording, market, language, date, engine/product mode, and whether web search was enabled. Run neutral paraphrases at a planned cadence and retain the full answer and cited URLs. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: - Was the brand named? - Was the site cited, and which page? - Did the source support the statement attached to it? - Was the description accurate, incomplete, or wrong? - Did the answer mention a competitor instead? Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Google says its AI Search features rely on Search fundamentals and that eligibility does not guarantee display. It also rejects special markup, llms.txt, and formulaic chunking as required shortcuts. Track sampled answers as observations, not rankings or guaranteed citations. Official guide. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-037-AMP-180-arabic-aeo-geo-entity-answer-first-structuring-decision/">Arabic AEO / GEO Entity &amp; Answer-First Structuring Decision Aid (Beyond the `llms.txt` Myth) <span aria-hidden="true">↗</span></a><span>FW-037</span></li><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">GA4 MENA Marketplace &amp; E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) <span aria-hidden="true">↗</span></a><span>FW-086</span></li></ul></section>

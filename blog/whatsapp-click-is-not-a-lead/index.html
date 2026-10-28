@@ -67,13 +67,36 @@
 <p>Keep sensitive message content out of analytics. Use a minimal source reference.</p>
 <p><strong>5/</strong></p>
 <p>Report the last verified state and reconcile it with the team’s records.</p>
-<h2 id="stop-doing-swipe-file-a-whatsapp-click-is-intent-not-a-lead">Stop-doing swipe file: A WhatsApp Click Is Intent, Not a Lead</h2>
-<p><strong>Stop:</strong> A WhatsApp button click tells us that someone chose to open a contact route. It does not prove that a message was sent, received, relevant, answered, or converted.</p>
-<p>❌ <strong>Illustrative weak line:</strong> “A WhatsApp Click Is Intent, Not a Lead means we should act immediately without checking the case or evidence.”</p>
-<p>❌ <strong>Illustrative weak line:</strong> “An intermediate metric improved, so the final outcome is proven.”</p>
-<p><strong>Use this instead:</strong> Reports often compress several distinct events into one label: “lead.” Then a team cannot tell whether the problem is page intent, message completion, response speed, qualification, or sales follow-through. Then take this step: Use precise event names such as contact_intent or whatsapp_click. Do not send message text, phone numbers, or other sensitive details to general analytics. If systems must connect the journey, use an appropriate internal identifier with limited access and retention.</p>
-<p><strong>Copy-ready line:</strong> “The issue I’m checking: [case]. Evidence available: [source]. One action: [step]. I’ll confirm the outcome only after verifying [metric] and reviewing [constraint].”</p>
-<p>Illustrative application of the article’s method: Report the last verified state and reconcile it with the team’s records.</p>
+<h2 id="evidence-scorecard-a-whatsapp-click-is-intent-not-a-lead">Evidence scorecard: A WhatsApp Click Is Intent, Not a Lead</h2>
+<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Article-specific check</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>When the next step is WhatsApp</td>
+<td>A practical triage can ask only what changes routing—for example, the person’s city or service area and when they want help.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Use a four-state contact record</td>
+<td>Keep the journey states separate: click, conversation opened, useful response received, and commercially qualified request.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>X / LinkedIn thread: count the states, not the click</td>
+<td>1/ A WhatsApp click is a signal of intent—not proof that a conversation arrived.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
+<p><strong>Starting point:</strong> A WhatsApp button click tells us that someone chose to open a contact route.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

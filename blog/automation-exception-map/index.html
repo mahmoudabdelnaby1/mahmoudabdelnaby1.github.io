@@ -26,19 +26,16 @@
 <h2 id="make-the-fallback-observable">Make the fallback observable</h2>
 <p>Log exception type, source, workflow version, action taken, and whether the case was resolved. Minimize personal data in logs. Give people a clear route to correct information or reach a human. Test each exception with synthetic or anonymized cases before enabling external actions.</p>
 <p>Review exception frequency and false alarms after launch. If one branch dominates, improve the form or rules rather than adding more model instructions. Keep sending, spending, deleting, and account-permission changes behind explicit human approval unless the organization has a separately approved control.</p>
-<h2 id="model-neutral-prompt-pack-map-exceptions-before-automating-a-marketing-workflow">Model-neutral prompt pack: Map Exceptions Before Automating a Marketing Workflow</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="field-experiment-thread-map-exceptions-before-automating-a-marketing-workflow">Field experiment thread: Map Exceptions Before Automating a Marketing Workflow</h2>
+<p><strong>Hypothesis:</strong> Applying this procedure to one defined audience and workflow should change the bottleneck described here: An automation is defined as much by what it does when inputs are strange as by its happy path.</p>
+<p><strong>Test plan, not a reported result:</strong>
+1. Record the baseline, source, period, and eligible cases.
+2. Change one variable: For each step, list expected inputs, valid range, and owner.
+3. Track one primary outcome and a quality guardrail.
+4. Hold other conditions steady and log exceptions or concurrent changes.
+5. Report what actually happened—including no clear change—with source and limitations.</p>
+<p>Stop if tracking breaks or the guardrail crosses its agreed limit. Do not attribute an outcome to the method until the records support it.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Map Exceptions Before Automating a Marketing Workflow”: For each step, list expected inputs, valid range, and owner. Then define what happens when the input is missing, duplicated, stale, contradictory, out of scope, or sensitive. Assign one of four outcomes: continue with a safe default; ask the user; send to a human queue; or stop and alert an owner. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: - Missing market → ask which country; do not infer from dialect or IP. - Service outside coverage → explain the limit or route to an approved alternative; do not create a booking. - Duplicate submission → link to the existing case and prevent repeated follow-up. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Review exception frequency and false alarms after launch. If one branch dominates, improve the form or rules rather than adding more model instructions. Keep sending, spending, deleting, and account-permission changes behind explicit human approval unless the organization has a separately approved control. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-090-AMP-448-automated-whatsapp-cod-order-confirmation-address-pin-pr/">Automated WhatsApp COD Order Confirmation, Address-Pin &amp; Prepaid-Switch Workflow (Egypt &amp; KSA) <span aria-hidden="true">↗</span></a><span>FW-090</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>

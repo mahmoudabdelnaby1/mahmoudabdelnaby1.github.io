@@ -22,12 +22,31 @@ ad exposure → landing-page visit → intent event → received inquiry → qua
 <p>Where cash-on-delivery is common, a submitted order is an intermediate event. Reconcile cancellations, refusals, delivery, returns, and the value actually collected before treating order count or platform-reported revenue as the business outcome. Keep finance reporting separate from bidding values, document the conversion lag, and avoid feeding low-quality events back as if they were successful sales. Any risk-adjusted value should come from a validated business rule, not an invented multiplier.</p>
 <h2 id="audit-the-event-from-click-to-outcome">Audit the event from click to outcome</h2>
 <p>Create a test journey for each important event and verify four separate facts: the trigger fires once, the payload describes the intended action, the destination receives it, and downstream reporting labels it correctly. Then compare platform-reported conversions with the first-party order or CRM record using a defined window and attribution caveat. In cash-on-delivery settings, distinguish order placed, confirmed, shipped, delivered, and retained. Optimize toward the deepest reliable event that has enough volume; do not feed a platform a “qualified” label that is assigned inconsistently by sales.</p>
-<h2 id="hookvaluetemplate-paid-media-optimization-starts-with-a-trustworthy-conversion-signal">Hook–Value–Template: Paid Media Optimization Starts with a Trustworthy Conversion Signal</h2>
-<p><strong>Hook:</strong> An ad platform can optimize only toward the signals it receives. If the imported event is a button click but the business goal is a qualified inquiry or completed sale, the system may find more clickers without finding more people who fit.</p>
-<p><strong>Value:</strong> Before changing targeting or budget, draw the chain: ad exposure → landing-page visit → intent event → received inquiry → qualified status → verified outcome Then make it practical: For each step, document the event owner, source system, timestamp, deduplication rule, and known gaps. Compare a sample of platform conversions with CRM, booking, or order records. Check for duplicate browser/server events, missing values, delayed imports, cancellations, and inquiries that never received follow-up.</p>
-<p><strong>Applied template:</strong> Start with the question “Paid Media Optimization Starts with a Trustworthy Conversion Signal.” Gather the evidence required by the guide, perform “For each step, document the event owner, source system, timestamp, deduplication rule, and known gaps. Compare a sample of platform conversions with CRM, booking, or order records. Check for duplicate browser/server events, missing values, delayed imports, cancellations, and inquiries that never received follow-up.,” then record the observed outcome and the limits on interpreting it.</p>
-<p><strong>Illustrative application of the article’s method:</strong> Create a test journey for each important event and verify four separate facts: the trigger fires once, the payload describes the intended action, the destination receives it, and downstream reporting labels it correctly.</p>
-<p>Do not label the outcome a success until it is verified.</p>
+<h2 id="evidence-scorecard-paid-media-optimization-starts-with-a-trustworthy-conversion-signal">Evidence scorecard: Paid Media Optimization Starts with a Trustworthy Conversion Signal</h2>
+<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Article-specific check</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>In COD markets, distinguish placed orders from delivered value</td>
+<td>Where cash-on-delivery is common, a submitted order is an intermediate event.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Audit the event from click to outcome</td>
+<td>Create a test journey for each important event and verify four separate facts: the trigger fires once, the payload describes the intended ac</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
+<p><strong>Starting point:</strong> An ad platform can optimize only toward the signals it receives.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

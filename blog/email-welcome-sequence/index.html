@@ -51,13 +51,50 @@
 <p>A subscriber requests a campaign QA checklist. The first message delivers it and says what follow-up to expect. If they click a measurement guide, the next message can explain how to use the checklist on one campaign; if they select “content”, route them to that topic instead. If the system cannot reliably detect completion, keep the sequence simple rather than pretending the automation knows more than it does.</p>
 <h2 id="measure-the-outcome-honestly">Measure the outcome honestly</h2>
 <p>Track delivery, clicks to the resource, completion where observable, unsubscribes, and complaints. Report each denominator clearly. A click is not proof that the person completed the task. Review the flow on mobile and in Arabic/English before enabling it, including the unsubscribe and preference paths.</p>
-<h2 id="stop-doing-swipe-file-map-a-welcome-sequence-to-the-first-useful-outcome">Stop-doing swipe file: Map a Welcome Sequence to the First Useful Outcome</h2>
-<p><strong>Stop:</strong> A welcome series should help a new subscriber reach a useful first outcome. It is not a fixed set of five emails that fires because a template says so.</p>
-<p>❌ <strong>Illustrative weak line:</strong> “Map a Welcome Sequence to the First Useful Outcome means we should act immediately without checking the case or evidence.”</p>
-<p>❌ <strong>Illustrative weak line:</strong> “An intermediate metric improved, so the final outcome is proven.”</p>
-<p><strong>Use this instead:</strong> Name the action that would make the first week useful: choose a preference, understand the service, finish setup, or use one resource. Then create only the messages needed to help with that action. Then take this step: The timing should match the task and what the subscriber was told at signup. Do not use engagement tracking as a substitute for consent or assume an email open means intent.</p>
-<p><strong>Copy-ready line:</strong> “The issue I’m checking: [case]. Evidence available: [source]. One action: [step]. I’ll confirm the outcome only after verifying [metric] and reviewing [constraint].”</p>
-<p>Example from the article: A subscriber requests a campaign QA checklist. The first message delivers it and says what follow-up to expect. If they click a measurement guide, the next message can explain how to use the checklist on one campaign; if they select “content”, route them to that topic instead.</p>
+<h2 id="workflow-map-map-a-welcome-sequence-to-the-first-useful-outcome">Workflow map: Map a Welcome Sequence to the First Useful Outcome</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+<th>Record</th>
+<th>Failure path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prepare</td>
+<td>Define the goal and valid state</td>
+<td>Approved source and version</td>
+<td>Stop if inputs are missing</td>
+</tr>
+<tr>
+<td>Execute</td>
+<td>Name the action that would make the first week useful: choose a preference, understand the service, finish setup, or use one resource.</td>
+<td>Action log and owner</td>
+<td>Route ambiguity to a person</td>
+</tr>
+<tr>
+<td>Verify</td>
+<td>Compare output with evidence</td>
+<td>Reviewer and date</td>
+<td>Mark unsupported items unknown</td>
+</tr>
+<tr>
+<td>Handoff</td>
+<td>Route the next step</td>
+<td>Receipt confirmation</td>
+<td>Use a manual fallback</td>
+</tr>
+<tr>
+<td>Learn</td>
+<td>Compare with baseline</td>
+<td>Measure and limitations</td>
+<td>Log concurrent changes</td>
+</tr>
+</tbody>
+</table>
+<p>Do not scale a workflow without an owner, record, and exception path.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
