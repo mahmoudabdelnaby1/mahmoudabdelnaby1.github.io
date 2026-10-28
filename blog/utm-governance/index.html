@@ -21,11 +21,13 @@
 <p>Assign an owner for allowed values and a process for exceptions. Before a launch, search the register for an existing campaign name. When a name changes, document the mapping rather than silently creating a new bucket. Retire values carefully so historical reports remain interpretable.</p>
 <h2 id="audit-with-examples">Audit with examples</h2>
 <p>Test one link from each channel and verify the final landing URL and analytics source/medium. Look for <code>Instagram</code> vs <code>instagram</code>, inconsistent <code>paid</code> labels, spaces, missing campaign IDs, or parameter loss. A consistent tag improves classification but does not prove a conversion came from the campaign or that the campaign caused it.</p>
-<h2 id="optional-ai-assisted-work-brief-utm-naming-validator">Optional AI-assisted work brief — UTM naming validator</h2>
-<pre><code class="language-text">Normalize these campaign tags into a documented lowercase scheme. Detect missing source, medium, campaign, inconsistent separators, personal data, and values that change between ads. Preserve platform macros where needed. Return a valid example, rejected examples with reasons, and a pre-launch checklist. Never place email, phone, or other personal identifiers in a URL.
-</code></pre>
-<h2 id="worked-example-resolve-a-naming-collision">Worked example — Resolve a naming collision</h2>
-<p>Two teams label the same campaign <code>social_paid</code>, <code>paid-social</code>, and <code>social</code>. Reports then split one source into three. Define allowed lowercase values, separators, owner, and migration treatment for old tags. Keep platform-specific campaign names in a separate field. Never place an email or phone number in a UTM parameter; URLs are copied, logged, and shared.</p>
+<h2 id="decision-thread-set-utm-naming-rules-your-whole-team-can-follow">Decision thread: Set UTM Naming Rules Your Whole Team Can Follow</h2>
+<p><strong>Opening:</strong> UTM tags are shared data. A naming rule is successful when two people tag the same campaign consistently and a report can group it without guesswork.</p>
+<p><strong>1/</strong> <strong>Example convention:</strong> <code>utm_source=instagram</code>, <code>utm_medium=paid_social</code>, <code>utm_campaign=eg_summer_service_2026</code>, <code>utm_content=video_problem_hook</code>.</p>
+<p><strong>2/</strong> Use lowercase and a fixed separator, and keep a shared builder or register as the source of truth.</p>
+<p><strong>3/</strong> Assign an owner for allowed values and a process for exceptions.</p>
+<p><strong>Apply it:</strong> Test one link from each channel and verify the final landing URL and analytics source/medium.</p>
+<p>Link the full guide for the assumptions, evidence, and exceptions behind the steps.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. Example values are illustrative.</p>
 </blockquote></article>

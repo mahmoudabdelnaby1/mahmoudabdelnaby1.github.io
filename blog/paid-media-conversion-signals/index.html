@@ -22,11 +22,12 @@ ad exposure → landing-page visit → intent event → received inquiry → qua
 <p>Where cash-on-delivery is common, a submitted order is an intermediate event. Reconcile cancellations, refusals, delivery, returns, and the value actually collected before treating order count or platform-reported revenue as the business outcome. Keep finance reporting separate from bidding values, document the conversion lag, and avoid feeding low-quality events back as if they were successful sales. Any risk-adjusted value should come from a validated business rule, not an invented multiplier.</p>
 <h2 id="audit-the-event-from-click-to-outcome">Audit the event from click to outcome</h2>
 <p>Create a test journey for each important event and verify four separate facts: the trigger fires once, the payload describes the intended action, the destination receives it, and downstream reporting labels it correctly. Then compare platform-reported conversions with the first-party order or CRM record using a defined window and attribution caveat. In cash-on-delivery settings, distinguish order placed, confirmed, shipped, delivered, and retained. Optimize toward the deepest reliable event that has enough volume; do not feed a platform a “qualified” label that is assigned inconsistently by sales.</p>
-<h2 id="optional-ai-assisted-work-brief-conversion-event-qa-plan">Optional AI-assisted work brief — Conversion event QA plan</h2>
-<pre><code class="language-text">From the event specification and test evidence I provide, build a trigger-to-report QA table. Check duplicate firing, payload meaning, destination receipt, attribution limits, and CRM or order reconciliation. Separate observed failures from risks. For cash-on-delivery, keep placed, confirmed, shipped, delivered, and retained outcomes distinct.
-</code></pre>
-<h2 id="worked-scenario-a-conversion-event-that-fires-twice">Worked scenario — A conversion event that fires twice</h2>
-<p>A form submission triggers once on the button and again on the thank-you page. Platform totals look stronger than CRM records. Test button click, valid submit, page reload, and back-navigation; choose one authoritative completion event and deduplicate it. Keep a sanitized test record and compare against downstream qualified requests before changing optimization.</p>
+<h2 id="channel-comparison-paid-media-optimization-starts-with-a-trustworthy-conversion-signal">Channel comparison: Paid Media Optimization Starts with a Trustworthy Conversion Signal</h2>
+<p><strong>Option A — Search:</strong> Use the guide’s demand and intent criteria: For each step, document the event owner, source system, timestamp, deduplication rule, and known gaps.</p>
+<p><strong>Option B — Paid social:</strong> Compare discovery, explanation needs, and audience state: Keep event names aligned with evidence.</p>
+<p><strong>Choose by:</strong> Then change one element at a time: search terms, exclusions, creative, audience, landing page, or bid strategy.</p>
+<p><strong>Illustration:</strong> A form submission triggers once on the button and again on the thank-you page.</p>
+<p>Compare equivalent markets, offers, and qualified outcomes. Do not label one channel the winner from clicks alone.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

@@ -25,11 +25,12 @@
 <h2 id="separate-fetch-from-indexing">Separate fetch from indexing</h2>
 <p>“Could not fetch” points to retrieval or format. “Fetched, but few URLs discovered” points to content or URL selection, not necessarily sitemap syntax. “Discovered but not indexed” requires page-level inspection: canonical, crawl access, quality, and internal links. Keep these states separate in the work log.</p>
 <p>After fixing a verified cause, resubmit once and inspect the tool’s later status. Avoid repeated submissions as a substitute for fixing access. Google’s <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">sitemaps documentation</a> describes requirements and limits.</p>
-<h2 id="optional-ai-assisted-work-brief-sitemap-fetch-diagnosis">Optional AI-assisted work brief — Sitemap fetch diagnosis</h2>
-<pre><code class="language-text">Trace the sitemap URL through HTTP status, redirects, content type, XML parse, canonical targets, robots access, and representative page fetches. Separate host, permission, format, and URL-quality failures. Provide a smallest-change remediation and a recheck sequence. Do not delete valid entries or alter robots policy without evidence and authorization.
-</code></pre>
-<h2 id="worked-example-separate-fetch-failure-from-indexing">Worked example — Separate fetch failure from indexing</h2>
-<p>A sitemap can return valid XML while a listed page redirects, is blocked, or canonicalizes elsewhere. Check the file response and sample URL responses separately. If the tool says “couldn’t fetch,” preserve the sitemap and capture status, content type, and redirect chain before editing. Fix the demonstrated cause, then resubmit or recheck through the search console.</p>
+<h2 id="seo-audit-card-triage-a-sitemap-that-search-tools-cannot-fetch">SEO audit card: Triage a Sitemap That Search Tools Cannot Fetch</h2>
+<p><strong>Inspect:</strong> If a search tool cannot fetch a sitemap, first find out what the server actually returns.</p>
+<p><strong>Check the page against:</strong> A fetchable sitemap helps discovery but does not force crawling or indexing.</p>
+<p><strong>Verify the next step:</strong> “Could not fetch” points to retrieval or format.</p>
+<p><strong>Keep as evidence:</strong> A sitemap can return valid XML while a listed page redirects, is blocked, or canonicalizes elsewhere.</p>
+<p>Use Search Console or a crawl source where available. A checklist cannot guarantee indexing or ranking.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. No sitemap status is claimed for a specific property.</p>
 </blockquote></article>

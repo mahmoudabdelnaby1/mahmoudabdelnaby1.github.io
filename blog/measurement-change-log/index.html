@@ -27,11 +27,13 @@
 <p>If a consent update changes which analytics events can fire, note the release date and the affected regions and event types. Compare pre- and post-change reports with that measurement break visible. Do not “correct” the missing historical events with an estimate unless the method is defensible and clearly labeled.</p>
 <h2 id="use-the-log-when-interpreting-a-trend">Use the log when interpreting a trend</h2>
 <p>Before calling a drop or surge, check whether a logged change occurred in the same period. If definitions changed, create a new series or annotate the discontinuity. Keep a rollback owner and verification step for important tracking releases. Review the log after each monthly reporting cycle and add any undocumented changes while they are still explainable.</p>
-<h2 id="optional-ai-assisted-work-brief-change-log-entry-generator">Optional AI-assisted work brief — Change log entry generator</h2>
-<pre><code class="language-text">Document each tracking or reporting change with timestamp, prior and new behavior, reason, affected properties, owner, validation evidence, and comparison caveat. Link a test record or screenshot without including personal data. Mark periods that should not be compared directly. Do not silently rewrite historical definitions.
-</code></pre>
-<h2 id="worked-example-annotate-a-tracking-repair">Worked example — Annotate a tracking repair</h2>
-<p>Record that the contact button began firing twice after a template update, the repair date, affected pages, test record, and reporting periods before and after the fix. Do not merge both periods into one trend without annotation. A change log lets an analyst distinguish a measurement discontinuity from a real change in visitor behavior.</p>
+<h2 id="measurement-scorecard-keep-a-measurement-change-log-for-reliable-comparisons">Measurement scorecard: Keep a Measurement Change Log for Reliable Comparisons</h2>
+<p><strong>Decision to support:</strong> A performance report needs a change log because tracking, consent, site, and campaign settings can change what the numbers mean.</p>
+<p><strong>Primary evidence:</strong> Do not store secrets or personal customer data in the log.</p>
+<p><strong>Quality guardrail:</strong> If a consent update changes which analytics events can fire, note the release date and the affected regions and event types.</p>
+<p><strong>Source / owner:</strong> Before calling a drop or surge, check whether a logged change occurred in the same period.</p>
+<p><strong>Example:</strong> If a consent update changes which analytics events can fire, note the release date and the affected regions and event types.</p>
+<p>Report observed events separately from attributed or confirmed business outcomes.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This change-log method is illustrative.</p>
 </blockquote></article>
