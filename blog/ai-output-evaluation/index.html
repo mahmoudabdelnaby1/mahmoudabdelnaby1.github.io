@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Evaluate AI Marketing Outputs With a Small Test Set</h1><p class="blog-article-deck">Check a model against known examples and failure cases before using outputs in a live workflow.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>7 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
 <article class="blog-prose"><p>A model that writes fluent copy can still fail the marketing task. Evaluate the output against examples with known answers, realistic edge cases, and the language people will actually use.</p>
 <h2 id="build-a-small-test-set-before-launch">Build a small test set before launch</h2>
 <p>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled.</p>
@@ -28,31 +28,80 @@
 <h2 id="compare-against-a-baseline">Compare against a baseline</h2>
 <p>Run the same test cases through the current human or rules-based process. Record model, prompt, source set, date, and exact version. Review failures by severity, not only frequency. Use a held-out set after tuning so the system is not being graded on examples it was optimized to memorize.</p>
 <p>Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability.</p>
-<h2 id="evidence-scorecard-evaluate-ai-marketing-outputs-with-a-small-test-set">Evidence scorecard: Evaluate AI Marketing Outputs With a Small Test Set</h2>
-<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">#</th>
-<th>Article-specific check</th>
-<th>Evidence to retain</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">1</td>
-<td>Build a small test set before launch</td>
-<td>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one c</td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td>Compare against a baseline</td>
-<td>Run the same test cases through the current human or rules-based process.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
-<p><strong>Starting point:</strong> A model that writes fluent copy can still fail the marketing task.</p>
+<h2 id="short-video-script-evaluate-ai-marketing-outputs-with-a-small-test-set">Short-video script: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p><strong>Length:</strong> 40–45 seconds · vertical with readable captions</p>
+<p><strong>0–4 sec | Hook — close-up on the problem</strong>
+Voice: “A model that writes fluent copy can still fail the marketing task.”</p>
+<p><strong>5–12 sec | Name what to check</strong>
+On screen: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation.</p>
+<p><strong>13–28 sec | Demonstrate the action in sequence</strong>
+Voice: “For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation.”
+Visual: show the actual step while masking customer data.</p>
+<p><strong>29–37 sec | Show the evidence and its limit</strong>
+Use: “Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling.” and identify its source, or label it “illustrative.”</p>
+<p><strong>38–45 sec | Viewer’s next step</strong>
+Ask viewers to apply the check to one case and record the source before deciding. Do not claim an unmeasured result.</p>
+<h2 id="educational-carousel-evaluate-ai-marketing-outputs-with-a-small-test-set">Educational carousel: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<ol>
+<li>
+<p><strong>Cover:</strong> Evaluate AI Marketing Outputs With a Small Test Set</p>
+</li>
+<li>
+<p><strong>Problem:</strong> A model that writes fluent copy can still fail the marketing task.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> For each case, write the expected route and why.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Keep personal data out of the test set unless it is necessary and safely handled.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Score each output separately for: - correct task classification; - required fields extracted without invention; - unsupported claim or fabricated detail; - correct escalation when uncertain; - Arabic meaning and tone; - valid structure if another system consumes the result.</p>
+</li>
+<li>
+<p><strong>Article step:</strong> Do not hide failures in an average score.</p>
+</li>
+<li>
+<p><strong>Evidence to record:</strong> Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling.</p>
+</li>
+<li>
+<p><strong>Apply it:</strong> For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation.</p>
+</li>
+</ol>
+<p><strong>Production note:</strong> Keep one idea per card. Label an illustration unless it is a sourced measurement, and close with a practical question tied to the article’s decision.</p>
+<h2 id="field-experiment-thread-evaluate-ai-marketing-outputs-with-a-small-test-set">Field experiment thread: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p><strong>Executable experiment thread — a plan, not a reported result</strong></p>
+<p><strong>1/</strong> <strong>Question:</strong> Can this action address the specific problem described here: A model that writes fluent copy can still fail the marketing task.</p>
+<p><strong>2/</strong> <strong>Hypothesis:</strong> If we apply the article’s step to [defined eligible cases], [problem-linked signal] should change without harming [quality guardrail]. Action: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation.</p>
+<p><strong>3/</strong> <strong>Baseline:</strong> Record [eligible case count], [signal], [source], and [period] before the change. Keep clicks, requests, and completed outcomes separate.</p>
+<p><strong>4/</strong> <strong>Run:</strong> Change only this factor: [the action above]. Hold other conditions steady where possible and log exceptions.</p>
+<p><strong>5/</strong> <strong>Decision:</strong> Compare with a comparable baseline period. Report the observed value, source, and attribution limits—even if the signal did not improve.</p>
+<p>Stop if tracking breaks or the guardrail crosses its agreed limit. Do not prefill results or describe this plan as a completed case study.</p>
+<h2 id="tool-neutral-prompt-pack-evaluate-ai-marketing-outputs-with-a-small-test-set">Tool-neutral prompt pack: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p>Use manually or with any general text assistant. Supply the relevant article excerpt and approved material with customer data removed.</p>
+<p><strong>1 — Extract the article’s decision</strong></p>
+<blockquote>
+<p>From the material on “Evaluate AI Marketing Outputs With a Small Test Set,” identify the reader’s decision, the condition that changes it, and the evidence needed. Add no facts from outside the material. Name what is missing.</p>
+</blockquote>
+<p><strong>2 — Build a usable asset</strong></p>
+<blockquote>
+<p>Turn this action into a [specific output: checklist/form/script/map]: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. Make each step verifiable and state its input, owner, evidence source, and fallback when evidence is missing.</p>
+</blockquote>
+<p><strong>3 — Review before use</strong></p>
+<blockquote>
+<p>Match every claim to a source. Separate fact, illustration, and hypothesis; check privacy and exceptions. Return unsupported fields as “unknown.” Do not publish the output or execute a live action automatically.</p>
+</blockquote>
+<h2 id="stop-doing-swipe-file-evaluate-ai-marketing-outputs-with-a-small-test-set">Stop-doing swipe file: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p><strong>Stop collapsing this topic into one outcome:</strong> “Evaluate AI Marketing Outputs With a Small Test Set: we took [step], therefore [result].” That skips the conditions and evidence.</p>
+<p><strong>Write it this way:</strong> “For [defined case], first verify [topic-specific evidence]. If [condition] holds, take [action: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation.] and record [measure] from [source] over [period]. Do not attribute the outcome to the step until other changes are reviewed.”</p>
+<p><strong>Illustrative editorial example:</strong> Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling.</p>
+<p>This is not a client quote or success case. Fill in a result or percentage only from verified records, and retain cases where the method did not work.</p>
+<h2 id="hookvaluetemplate-evaluate-ai-marketing-outputs-with-a-small-test-set">Hook–Value–Template: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p><strong>Hook:</strong> A model that writes fluent copy can still fail the marketing task.</p>
+<p><strong>Value:</strong> For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. Start by naming the state and its source, then take one reviewable step. Do not present an illustration or hypothesis as a verified outcome.</p>
+<p><strong>Fill-in template:</strong> “For [market/case], we want [specific goal]. Current evidence: [source and date]. The review points to [gap tied to this article]. [Owner] will take [one action], tracking [primary signal] while protecting [quality measure]. Review on [date]. If evidence is missing, record ‘unknown.’”</p>
+<p><strong>Illustrative example from this topic:</strong> Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling.</p>
+<p>This is teaching copy, not a client result or a claim that the method has already worked.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
