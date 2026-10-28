@@ -13,6 +13,7 @@
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Classify AI Referrals Carefully in Analytics</h1><p class="blog-article-deck">Separate known referrers, tagged campaigns and unattributed traffic without overclaiming source.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-referral-classification/">العربية</a></div></header>
 <article class="blog-prose"><p>AI referral reporting is a classification problem with missing data. A session with no referrer is not proof that a person arrived from an AI assistant.</p>
+<p><strong>Market signal (Saudi Arabia only):</strong> Deloitte’s 2026 KSA edition surveyed 1,000 consumers aged 18–50; 66% reported active AI-tool use, and information search was among common tasks (51%). This is KSA adoption evidence—not a query-volume estimate, an all-MENA claim, or a promise of AI citation. Validate actual wording and demand with first-party search data. <a href="https://www.deloitte.com/middle-east/en/about/press-room/ai-becomes-default-for-saudi-consumers-as-deloittes-2026-digital-consumer-trends-report-reveals-decisive-shift-in-how-the-kingdom-lives.html">Deloitte, Digital Consumer Trends 2026 — KSA</a></p>
 <h2 id="use-three-attribution-buckets">Use three attribution buckets</h2>
 <ol>
 <li><strong>Identified referrer:</strong> the analytics system records a known assistant domain or app referral. Preserve the raw source and landing page.</li>
@@ -23,19 +24,32 @@
 <h2 id="keep-the-measurement-chain-honest">Keep the measurement chain honest</h2>
 <p>Separate sessions, engaged visits, contact clicks, messages sent, qualified inquiries, and confirmed outcomes. If a user copies an answer into a private chat and then types the site URL, the origin may be invisible; no regex can restore evidence that was never transmitted. A model mention in a manual prompt check is also not an analytics referral.</p>
 <p>Review source/medium and landing pages, test channel rules on known examples, and keep a change log when adding patterns. Compare identified AI referrals separately from unknown traffic. Explain coverage limits in every report and avoid presenting a regex as a complete measurement solution.</p>
-<h2 id="model-neutral-prompt-pack-classify-ai-referrals-carefully-in-analytics">Model-neutral prompt pack: Classify AI Referrals Carefully in Analytics</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="evidence-scorecard-classify-ai-referrals-carefully-in-analytics">Evidence scorecard: Classify AI Referrals Carefully in Analytics</h2>
+<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Article-specific check</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Use three attribution buckets</td>
+<td>1.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Keep the measurement chain honest</td>
+<td>Separate sessions, engaged visits, contact clicks, messages sent, qualified inquiries, and confirmed outcomes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
+<p><strong>Starting point:</strong> AI referral reporting is a classification problem with missing data.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Classify AI Referrals Carefully in Analytics”: 1. Identified referrer: the analytics system records a known assistant domain or app referral. Preserve the raw source and landing page. 2. Tagged campaign: a tracked link carries campaign parameters. Report it as tagged traffic, even if the user later switches apps. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: Maintain an allowlist of observed referrers with the date and reason each was added. Verify actual traffic before adding a new pattern. Do not label every “direct” session or branded search as AI traffic. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Review source/medium and landing pages, test channel rules on known examples, and keep a change log when adding patterns. Compare identified AI referrals separately from unknown traffic. Explain coverage limits in every report and avoid presenting a regex as a complete measurement solution. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">GA4 MENA Marketplace &amp; E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) <span aria-hidden="true">↗</span></a><span>FW-086</span></li></ul></section>

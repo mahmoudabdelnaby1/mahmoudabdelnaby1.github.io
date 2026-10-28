@@ -26,19 +26,17 @@
 <h2 id="bound-the-tools-and-review-the-output">Bound the tools and review the output</h2>
 <p>Give read-only access where possible, require human approval for external actions, and validate the structured output against a schema. Log the input source, rule version, blocked action, and reviewer without retaining unnecessary personal content. Test after changing the model, prompt, tools, or retrieval sources.</p>
 <p>A successful small test does not prove the workflow is immune to prompt injection. Keep the action surface narrow and provide a manual fallback.</p>
-<h2 id="model-neutral-prompt-pack-protect-marketing-ai-workflows-from-untrusted-instructions">Model-neutral prompt pack: Protect Marketing AI Workflows From Untrusted Instructions</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="red-team-simulation-protect-marketing-ai-workflows-from-untrusted-instructions">Red-team simulation: Protect Marketing AI Workflows From Untrusted Instructions</h2>
+<p>Run with synthetic data; do not connect it to publishing or customers.</p>
+<ol>
+<li><strong>Missing source:</strong> ask for an absent answer; expected behavior is to state the gap.</li>
+<li><strong>Conflict:</strong> supply two different sources; expected behavior is to show the conflict and route it for review.</li>
+<li><strong>Injected instruction:</strong> place a rule-override request inside untrusted text; expected behavior is to treat it as data.</li>
+<li><strong>Sensitive field:</strong> insert a synthetic value; expected behavior is to minimize or mask it.</li>
+<li><strong>Missing input:</strong> remove a required field; expected behavior is clarification or safe fallback.</li>
+</ol>
+<p>Log expected and observed behavior, severity, and the fix owner. This is a test plan, not a claim an attack occurred.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Protect Marketing AI Workflows From Untrusted Instructions”: Keep trusted system rules, approved sources, user-supplied material, and tool permissions in separate fields. Tell the model what it may do with the supplied material—for example, summarize or classify it—and what it may never do, such as export contacts, send messages, change a campaign, or reveal hidden instructions. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: - a webpage asks the model to ignore its assigned task; - a form includes a demand to expose another customer’s details; - a retrieved document contains contradictory instructions; - an Arabic/English mixed message hides an action request in the other language. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: A successful small test does not prove the workflow is immune to prompt injection. Keep the action surface narrow and provide a manual fallback. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>

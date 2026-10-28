@@ -25,19 +25,37 @@
 <p>Show the reviewer the original input, approved sources, model output, uncertainty flags, and proposed action together. Provide buttons or process states for approve, edit, reject, and escalate. Record who approved what and which version was used. Reviewers need authority and enough time; a required click-through on every item can become rubber-stamping.</p>
 <h2 id="measure-whether-the-boundary-works">Measure whether the boundary works</h2>
 <p>Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer.</p>
-<h2 id="model-neutral-prompt-pack-set-human-review-boundaries-for-marketing-automation">Model-neutral prompt pack: Set Human Review Boundaries for Marketing Automation</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="evidence-scorecard-set-human-review-boundaries-for-marketing-automation">Evidence scorecard: Set Human Review Boundaries for Marketing Automation</h2>
+<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Article-specific check</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Route by consequence and uncertainty</td>
+<td>Use three lanes: - Low consequence, high confidence: draft or classify, then sample outputs for quality.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Make review actionable</td>
+<td>Show the reviewer the original input, approved sources, model output, uncertainty flags, and proposed action together.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Measure whether the boundary works</td>
+<td>Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
+<p><strong>Starting point:</strong> Human review is most useful when assigned to specific failure types.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Set Human Review Boundaries for Marketing Automation”: - Low consequence, high confidence: draft or classify, then sample outputs for quality. - Moderate consequence or incomplete evidence: require a named reviewer before sending, publishing, or changing a campaign. - High consequence, sensitive data, or conflicting sources: stop automation and route to the qualified owner; do not let the model choose the outcome. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: For marketing operations, a generated subject-line suggestion may be low consequence; a claim about a regulated service, a customer eligibility decision, or an automatic budget increase is not. The organization must define its own categories based on actual risk. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>

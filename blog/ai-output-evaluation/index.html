@@ -28,19 +28,32 @@
 <h2 id="compare-against-a-baseline">Compare against a baseline</h2>
 <p>Run the same test cases through the current human or rules-based process. Record model, prompt, source set, date, and exact version. Review failures by severity, not only frequency. Use a held-out set after tuning so the system is not being graded on examples it was optimized to memorize.</p>
 <p>Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability.</p>
-<h2 id="model-neutral-prompt-pack-evaluate-ai-marketing-outputs-with-a-small-test-set">Model-neutral prompt pack: Evaluate AI Marketing Outputs With a Small Test Set</h2>
-<p>These prompts work with any text assistant and can also be run manually. Use sanitized inputs; do not grant the model publishing or final decision authority.</p>
-<p><strong>Build the procedure:</strong></p>
+<h2 id="evidence-scorecard-evaluate-ai-marketing-outputs-with-a-small-test-set">Evidence scorecard: Evaluate AI Marketing Outputs With a Small Test Set</h2>
+<p>Score each row <strong>Yes / No / Unknown</strong> and attach evidence. An answer without a source remains “Unknown.”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>Article-specific check</th>
+<th>Evidence to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Build a small test set before launch</td>
+<td>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one c</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Compare against a baseline</td>
+<td>Run the same test cases through the current human or rules-based process.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approval rule:</strong> fix any critical “No” before launch. Gather evidence for “Unknown.” Keep the version, date, reviewer, and source record.</p>
+<p><strong>Starting point:</strong> A model that writes fluent copy can still fail the marketing task.</p>
 <blockquote>
-<p>Turn this principle into operational steps for “Evaluate AI Marketing Outputs With a Small Test Set”: For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled. Specify inputs, owner, measurement source, and risks. Separate facts from assumptions. Invent no figures or outcomes; ask for clarification when information is missing.</p>
-</blockquote>
-<p><strong>Audit the draft:</strong></p>
-<blockquote>
-<p>Check the plan against this source requirement: - correct task classification; - required fields extracted without invention; - unsupported claim or fabricated detail; - correct escalation when uncertain; - Arabic meaning and tone; - valid structure if another system consumes the result. Identify unsupported claims, vague actions, and privacy risks. Suggest a correction without adding facts.</p>
-</blockquote>
-<p><strong>Repurpose it:</strong></p>
-<blockquote>
-<p>Rewrite the approved procedure for the intended audience and format. Use this application only if relevant: Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability. Label hypothetical material, distinguish it from measured results, and do not copy the article verbatim.</p>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>
 <section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-091-AMP-449-tiered-llm-model-orchestration-decision-aid-fast-flash-m/">LLM Model Selection &amp; Routing Decision Aid <span aria-hidden="true">↗</span></a><span>FW-091</span></li></ul></section>
