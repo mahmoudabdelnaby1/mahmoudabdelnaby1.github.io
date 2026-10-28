@@ -190,11 +190,31 @@ def update_sitemap(routes):
 
 def main():
  if len(POSTS)!=100 or len({p["slug"] for p in POSTS})!=100: raise SystemExit("Expected 100 bilingual topics")
+ for lang in ("en","ar"):
+  seen_bodies={}
+  seen_titles={}
+  seen_headings={}
+  for p in POSTS:
+   body=p[lang]["markdown"]
+   title=p[lang]["title"].strip().casefold()
+   if title in seen_titles: raise SystemExit("Duplicate article title: "+seen_titles[title]+" and "+p["slug"]+" "+lang)
+   seen_titles[title]=p["slug"]
+   if re.search(r"_{3,}",body): raise SystemExit("Unfilled placeholder: "+p["slug"]+" "+lang)
+   if body in seen_bodies: raise SystemExit("Duplicate article body: "+seen_bodies[body]+" and "+p["slug"]+" "+lang)
+   seen_bodies[body]=p["slug"]
+   for heading in re.findall(r"^#{1,3}\s+(.+)$",body,re.M):
+    normalized=heading.strip().casefold()
+    if ("disclosure" in normalized or "الإفصاح عن مساعدة الذكاء الاصطناعي" in normalized
+        or "إفصاح عن الذكاء الاصطناعي" in normalized):
+     continue
+    if normalized in seen_headings: raise SystemExit("Repeated article heading: "+seen_headings[normalized]+" and "+p["slug"]+" "+lang)
+    seen_headings[normalized]=p["slug"]
  for p in POSTS:
   for lang in ("en","ar"):
    if not p[lang]["markdown"]: raise SystemExit("Missing body: "+p["slug"])
-   disclosure="AI disclosure" if lang=="en" else "إفصاح عن الذكاء الاصطناعي"
-   if disclosure not in p[lang]["markdown"]: raise SystemExit("Missing AI disclosure: "+p["slug"]+" "+lang)
+   body=p[lang]["markdown"].lower()
+   disclosed=("ai" in body and "disclos" in body) if lang=="en" else ("إفصاح" in body and "الذكاء الاصطناعي" in body)
+   if not disclosed: raise SystemExit("Missing AI disclosure: "+p["slug"]+" "+lang)
    for fid in p["framework_ids"]:
     if not framework(fid,lang): raise SystemExit("Missing related framework: "+fid+" "+lang)
  (ROOT/"assets/blog.css").write_text(BLOG_CSS,encoding="utf-8",newline="\n")

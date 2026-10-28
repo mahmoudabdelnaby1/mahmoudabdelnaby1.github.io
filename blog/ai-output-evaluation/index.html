@@ -12,23 +12,24 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Evaluate AI Marketing Outputs With a Small Test Set</h1><p class="blog-article-deck">Check a model against known examples and failure cases before using outputs in a live workflow.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-output-evaluation/">العربية</a></div></header>
-<article class="blog-prose"><p>A fluent answer may still be false, inconsistent or unsafe for the task.</p>
-<h2 id="a-practical-workflow">A practical workflow</h2>
-<ol>
-<li>Collect representative and edge cases without needless personal data.</li>
-<li>Define expected outputs and unacceptable errors.</li>
-<li>Score accuracy, format and escalation.</li>
-<li>Compare versions on the same examples; assign deployment approval.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>Task: <strong><em>_ / test case: </em></strong><em> / expected: <strong><em>_ / failure severity: </em></strong></em> / escalation: <strong><em>_ / version and reviewer: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>Test the workflow on a normal request, missing context, conflicting source and a request that should be escalated; score each against the same rubric.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Track severe errors separately from style preferences; retest after model, source or prompt changes.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Keep a human review route and manual fallback for consequential cases.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>A model that writes fluent copy can still fail the marketing task. Evaluate the output against examples with known answers, realistic edge cases, and the language people will actually use.</p>
+<h2 id="build-a-small-test-set-before-launch">Build a small test set before launch</h2>
+<p>For a lead-classification assistant, include at least one ordinary inquiry, one missing-location inquiry, one out-of-coverage request, one conflicting request, and one Arabic message with dialect or spelling variation. For each case, write the expected route and why. Keep personal data out of the test set unless it is necessary and safely handled.</p>
+<p>Score each output separately for:</p>
+<ul>
+<li>correct task classification;</li>
+<li>required fields extracted without invention;</li>
+<li>unsupported claim or fabricated detail;</li>
+<li>correct escalation when uncertain;</li>
+<li>Arabic meaning and tone;</li>
+<li>valid structure if another system consumes the result.</li>
+</ul>
+<p>Do not hide failures in an average score. A single fabricated price or missed safety escalation may outweigh many correct routine classifications.</p>
+<h2 id="compare-against-a-baseline">Compare against a baseline</h2>
+<p>Run the same test cases through the current human or rules-based process. Record model, prompt, source set, date, and exact version. Review failures by severity, not only frequency. Use a held-out set after tuning so the system is not being graded on examples it was optimized to memorize.</p>
+<p>Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. The test scenario is illustrative and not a validated benchmark.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li><li><a href="/frameworks/tasks/FW-091-AMP-449-tiered-llm-model-orchestration-decision-aid-fast-flash-m/">LLM Model Selection &amp; Routing Decision Aid <span aria-hidden="true">↗</span></a><span>FW-091</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/ai-evidence-safe-drafting/"><span>Next guide</span><strong>Use AI to Draft Content Without Inventing Evidence</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

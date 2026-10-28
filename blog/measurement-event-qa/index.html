@@ -12,23 +12,23 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>QA a Marketing Conversion Event Before Reporting It</h1><p class="blog-article-deck">Verify that an analytics event fires once, with the intended meaning and safe parameters.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/measurement-event-qa/">العربية</a></div></header>
-<article class="blog-prose"><p>An event name in a tag manager does not prove it fired correctly in the live journey.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
-<ol>
-<li>Define the user action and event meaning.</li>
-<li>Trigger it through the real page or device.</li>
-<li>Check count, parameters, consent behavior and destination.</li>
-<li>Reconcile with the receiving business system.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>Action: <strong><em>_ / event: </em></strong><em> / expected count: <strong><em>_ / parameters: </em></strong></em> / consent state: <strong><em>_ / business confirmation: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>Submit a test form once, confirm one event, then verify that the inbox or CRM received the same test request.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Keep test evidence, event time and system receipt separate in the report.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Do not mark a click event as a completed sale or qualified lead.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot/">WhatsApp Floating-Button Placement &amp; Prepaid-Checkout Protection Decision Aid <span aria-hidden="true">↗</span></a><span>FW-081</span></li><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>An analytics event is ready for reporting only after its meaning, trigger, and duplicate behavior are verified. Seeing an event name in a dashboard does not prove it fires once at the right moment.</p>
+<h2 id="write-an-event-contract">Write an event contract</h2>
+<p>For one conversion action, record:</p>
+<ul>
+<li><strong>Business meaning:</strong> what actually happened, in language sales or operations would recognize.</li>
+<li><strong>Trigger:</strong> the user action or confirmed system state that sends the event.</li>
+<li><strong>Required parameters:</strong> only fields needed to distinguish market, service, or campaign; no unnecessary personal details.</li>
+<li><strong>Deduplication rule:</strong> how retries, refreshes, or multiple listeners avoid double-counting.</li>
+<li><strong>Consent behavior:</strong> what happens before and after the applicable choice.</li>
+<li><strong>Verification evidence:</strong> the test path and expected event count.</li>
+</ul>
+<h2 id="test-the-full-path">Test the full path</h2>
+<p>Use a test environment or a clearly labeled test record. Complete the user action once, inspect the browser or platform debug view, refresh, use the back button, and repeat only when the test plan requires it. Confirm that one intended action produces the expected event and that cancellation or an error does not masquerade as completion. Test Arabic and English routes separately if they use different forms or scripts.</p>
+<p>For a WhatsApp button, the event may mean <strong>click to open chat</strong>. It must not be named or reported as a message sent or lead received unless that later state is measured. For ecommerce, distinguish order submitted from paid, delivered, retained, or refunded when those states drive the decision.</p>
+<p>Keep a change log with event name, version, date, owner, and test evidence. Recheck after theme, tag, consent, or route changes.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. The examples are measurement definitions, not verified event results.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-019-AMP-067-meta-capi-browser-server-deduplication-fbp-fbc-match-key/">Meta CAPI Browser/Server Deduplication &amp; `fbp`/`fbc` Match-Key Checklist for MENA Checkouts <span aria-hidden="true">↗</span></a><span>FW-019</span></li><li><a href="/frameworks/tasks/FW-086-AMP-444-ga4-mena-marketplace-e-commerce-referral-reclassificatio/">GA4 MENA Marketplace &amp; E-Commerce Referral Reclassification Checklist (`amazon.sa`, `amazon.ae`, `amazon.eg`, `noon.com`, `salla.sa`, `zid.sa`) <span aria-hidden="true">↗</span></a><span>FW-086</span></li><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/utm-governance/"><span>Next guide</span><strong>Set UTM Naming Rules Your Whole Team Can Follow</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

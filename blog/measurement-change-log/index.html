@@ -12,23 +12,23 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>Keep a Measurement Change Log for Reliable Comparisons</h1><p class="blog-article-deck">Document tracking edits, consent changes and platform migrations beside performance data.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/measurement-change-log/">العربية</a></div></header>
-<article class="blog-prose"><p>A sudden metric shift may reflect instrumentation, not audience behavior.</p>
-<h2 id="practical-workflow">Practical workflow</h2>
-<ol>
-<li>Record change, reason and affected events.</li>
-<li>Note release date and responsible owner.</li>
-<li>Run before-and-after event checks.</li>
-<li>Annotate reports for the affected comparison window.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>Change: <strong><em>_ / reason: </em></strong><em> / events: <strong><em>_ / release date: </em></strong></em> / QA evidence: <strong><em>_ / report note: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>When a “lead” event changes from button click to confirmed form receipt, annotate the cutover date and report the series separately.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Use the log to explain discontinuities and identify which periods remain comparable.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Do not overwrite the historical definition when an event meaning changes.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-081-AMP-394-whatsapp-floating-button-placement-prepaid-checkout-prot/">WhatsApp Floating-Button Placement &amp; Prepaid-Checkout Protection Decision Aid <span aria-hidden="true">↗</span></a><span>FW-081</span></li><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>A performance report needs a change log because tracking, consent, site, and campaign settings can change what the numbers mean. Without it, a break in measurement may look like a sudden business trend.</p>
+<h2 id="record-changes-that-affect-comparability">Record changes that affect comparability</h2>
+<p>Log the date, system, old and new state, reason, owner, expected measurement effect, and verification evidence for changes to:</p>
+<ul>
+<li>event name, trigger, parameters, or deduplication;</li>
+<li>consent banner, tags, or analytics configuration;</li>
+<li>landing URL, form, checkout, or messaging path;</li>
+<li>campaign budget, audience, objective, or optimization event;</li>
+<li>CRM stage definitions, imports, or sales follow-up process.</li>
+</ul>
+<p>Do not store secrets or personal customer data in the log. Link to the approved change request or test record.</p>
+<h2 id="example-consent-update">Example: consent update</h2>
+<p>If a consent update changes which analytics events can fire, note the release date and the affected regions and event types. Compare pre- and post-change reports with that measurement break visible. Do not “correct” the missing historical events with an estimate unless the method is defensible and clearly labeled.</p>
+<h2 id="use-the-log-when-interpreting-a-trend">Use the log when interpreting a trend</h2>
+<p>Before calling a drop or surge, check whether a logged change occurred in the same period. If definitions changed, create a new series or annotate the discontinuity. Keep a rollback owner and verification step for important tracking releases. Review the log after each monthly reporting cycle and add any undocumented changes while they are still explainable.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This change-log method is illustrative.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-019-AMP-067-meta-capi-browser-server-deduplication-fbp-fbc-match-key/">Meta CAPI Browser/Server Deduplication &amp; `fbp`/`fbc` Match-Key Checklist for MENA Checkouts <span aria-hidden="true">↗</span></a><span>FW-019</span></li><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/seo-hreflang-audit/"><span>Next guide</span><strong>Audit Arabic and English Hreflang Pairs</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

@@ -12,23 +12,21 @@
 <nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>SEO وAEO وGEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> SEO وAEO وGEO</p><h1>راجع أزواج hreflang العربية والإنجليزية</h1><p class="blog-article-deck">تحقق من أن الصفحات المتقابلة تحدد بعضها وتربط كل لغة بالأخرى.</p>
 <div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٢ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/seo-hreflang-audit/">English</a></div></header>
-<article class="blog-prose"><p>مبدل اللغة وحده لا يوضح لمحرك البحث الصفحات المتكافئة.</p>
-<h2 id="_1">خطوات عملية</h2>
+<article class="blog-prose"><p>تساعد <code>hreflang</code> أنظمة البحث على فهم الصفحات المتكافئة لغويًا أو إقليميًا؛ لكنها لا تصلح صفحة مفقودة أو غير أساسية أو مترجمة لجمهور غير مناسب.</p>
+<h2 id="_1">راجع كل زوج لغوي كوحدة واحدة</h2>
+<p>لكل صفحة إنجليزية ومقابلها العربي، تحقق من أربع نقاط:</p>
 <ol>
-<li>اكتب أزواج الروابط الأساسية.</li>
-<li>افحص قيم hreflang المتبادلة ورموز اللغة.</li>
-<li>تحقق أن كل canonical يشير لرابطه المعتمد.</li>
-<li>اختبر x-default وتوفر الصفحات.</li>
+<li>الرابطان يعرضان الصفحة المقصودة ويسمحان بالفهرسة.</li>
+<li>تشير كل صفحة إلى نفسها وإلى نظيرتها بعلامات <code>hreflang</code> متبادلة.</li>
+<li>يطابق رمز اللغة/المنطقة لغة الصفحة وجمهورها؛ لا تصف العربية العامة بأنها نسخة دولة دون فرق حقيقي.</li>
+<li>يشير canonical إلى الرابط المفضل لكل صفحة ولا يدمج اللغتين في رابط واحد.</li>
 </ol>
-<h2 id="_2">نموذج عمل</h2>
-<p>الرابط الإنجليزي: <strong><em>_ / العربي: </em></strong><em> / الربط المتبادل: <strong><em>_ / canonical: </em></strong></em> / الزوج الناقص: <strong><em>_ / المسؤول: </em></strong>_.</p>
-<h2 id="_3">مثال تطبيقي</h2>
-<p>اربط دليل الخدمة الإنجليزي بنظيره العربي لا بالصفحة الرئيسية العربية لمجرد اختلاف اللغة.</p>
-<h2 id="_4">القياس والمراجعة</h2>
-<p>أعد فحص بدائل خريطة الموقع ووسوم الصفحة بعد التعديل.</p>
-<h2 id="_5">ضابط مهم</h2>
-<p>لا تصف صفحات غير مترابطة أو غير مترجمة بما يكفي كنسخ متكافئة.</p>
-<h2 id="_6">إفصاح عن الذكاء الاصطناعي</h2>
-<p>استُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt/">قالب هندسة الكلمات المفتاحية العربية حسب الجذر اللغوي واللهجة المحلية (مصر والخليج) <span aria-hidden="true">↗</span></a><span>FW-001</span></li><li><a href="/ar/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">قائمة فحص تطبيع الحروف والأرقام العربية في البحث الداخلي والـ SEO (الهمزات، التاء المربوطة، الألف المقصورة، والأرقام الهندية) <span aria-hidden="true">↗</span></a><span>FW-002</span></li><li><a href="/ar/frameworks/tasks/FW-037-AMP-180-arabic-aeo-geo-entity-answer-first-structuring-decision/">أداة القرار لهيكلة المحتوى العربي لمحركات إجابات الذكاء الاصطناعي (`AEO / GEO` <span aria-hidden="true">↗</span></a><span>FW-037</span></li></ul></section>
+<p>استخدم روابط مطلقة قابلة للزحف، ووحّد العلامات مع خريطة الموقع إن أدرجت البدائل. افحص التحويلات والروابط المكسورة ونطاق بيئة الاختبار ونسخ علامات تشير كل صفحاتها إلى الرئيسية بالخطأ.</p>
+<h2 id="_2">شخّص الاختلاف قبل التعديل الشامل</h2>
+<p>إذا لم يوجد مقابل حقيقي لصفحة، فلا تخترع صفحة نظيرة؛ يكفي أن تشير إلى نفسها دون مقابل زائف. وإذا اختلفت مهمة أو سوق صفحة لغة اختلافًا كبيرًا، فاشرح ذلك وراجع الاقتران. في صفحة عربية لأسواق المنطقة افحص اتجاه الكتابة وهل المحتوى عربي فعلًا لا صفحة إنجليزية بعنوان مترجم فقط.</p>
+<p>تحقق من عينة صغيرة ثم ازحف المجموعة كاملة. افحص الروابط المختارة وتغطية الصفحات في Search Console؛ فالعلامات تلميحات وليست ضمانًا لاختيار Google للرابط المقصود. راجع <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">توثيق Google للنسخ المحلية</a>.</p>
+<blockquote>
+<p><strong>إفصاح عن الذكاء الاصطناعي:</strong> ساعدت أدوات الذكاء الاصطناعي في المسودة. هذه مراجعة فنية وليست ضمان فهرسة.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-004-AMP-004-bilingual-storefront-canonical-hreflang-conflict-resolut/">قائمة فحص وإصلاح تضارب `canonical` و`hreflang` في المتاجر ثنائية اللغة (العربية والإنجليزية) <span aria-hidden="true">↗</span></a><span>FW-004</span></li><li><a href="/ar/frameworks/tasks/FW-005-AMP-005-bilingual-storefront-en-title-meta-tag-localization-work/">مسار عمل تعريب وترجمة وسوم العناوين (`&lt;title&gt;`) والميتا للصفحات الإنجليزية في متاجر سلة وزد <span aria-hidden="true">↗</span></a><span>FW-005</span></li></ul></section>
 <nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/seo-sitemap-triage/"><span>الدليل التالي</span><strong>شخّص خريطة موقع لا تستطيع أدوات البحث جلبها</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

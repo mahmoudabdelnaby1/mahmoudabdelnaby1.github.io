@@ -12,23 +12,21 @@
 <nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>SEO وAEO وGEO</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> SEO وAEO وGEO</p><h1>شخّص خريطة موقع لا تستطيع أدوات البحث جلبها</h1><p class="blog-article-deck">افحص الوصول والتركيب والروابط الأساسية وسلوك الاستضافة قبل إعادة بناء الملف.</p>
 <div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٢ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/seo-sitemap-triage/">English</a></div></header>
-<article class="blog-prose"><p>قد ينتج خطأ الجلب عن الاستجابة أو الترميز أو التحويل أو XML معطوب، لا المحتوى.</p>
-<h2 id="_1">خطوات عملية</h2>
+<article class="blog-prose"><p>إذا تعذر على أداة بحث جلب خريطة الموقع، افحص أولًا ما الذي يعيده الخادم فعلًا. إعادة بناء XML قبل فحص الاستجابة قد تُبقي السبب الحقيقي.</p>
+<h2 id="_1">شخّص الطلب بالترتيب</h2>
 <ol>
-<li>افتح رابط الخريطة نفسه وسجّل الحالة والتحويل.</li>
-<li>حلل XML وافحص النطاق والترميز.</li>
-<li>افحص حالة وروبوتس وروابط أساسية عينة.</li>
-<li>أعد الإرسال بعد إصلاح السبب.</li>
+<li>افتح رابط الخريطة نفسه في المتصفح وسجّل حالة الاستجابة والرابط النهائي بعد التحويل ونوع المحتوى.</li>
+<li>تأكد أن الناتج XML المقصود لا صفحة خطأ HTML أو تسجيل دخول أو تحدي روبوتات أو الرئيسية رغم حالة 200.</li>
+<li>افحص بنية XML والنطاق، والمحارف المهربة، ووجود <code>urlset</code> صالح واحد أو فهرس خرائط.</li>
+<li>راجع عينة من الروابط: النطاق الصحيح وHTTPS والوجهة canonical وعدم حجبها أو وسمها noindex وخلوها من مسارات الاختبار.</li>
+<li>افحص مرجع الخريطة في <code>robots.txt</code> واختبر الوصول من خاصية أداة البحث الموثقة.</li>
 </ol>
-<h2 id="_2">نموذج عمل</h2>
-<p>الرابط المرسل: <strong><em>_ / الاستجابة: </em></strong><em> / التحويل: <strong><em>_ / فحص XML: </em></strong></em> / رابط عينة: <strong><em>_ / الإصلاح: </em></strong>_.</p>
-<h2 id="_3">مثال تطبيقي</h2>
-<p>إذا حُمّلت XML لكن حوّل رابط إلى نطاق آخر، فتحقق من الخاصية والرابط الأساسي قبل إعادة الإرسال.</p>
-<h2 id="_4">القياس والمراجعة</h2>
-<p>سجّل نجاح الجلب وعدد الروابط المكتشفة منفصلين عن الفهرسة.</p>
-<h2 id="_5">ضابط مهم</h2>
-<p>الخريطة الصحيحة تساعد الاكتشاف لكنها لا تضمن الفهرسة.</p>
-<h2 id="_6">إفصاح عن الذكاء الاصطناعي</h2>
-<p>استُخدمت أدوات ذكاء اصطناعي للمساعدة في إعداد المسودة. يقدّم هذا الدليل منهجًا عامًا ولا يدّعي نتائج موثقة لعميل.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-001-AMP-001-mena-native-search-root-dialect-keyword-matrix-prompt/">قالب هندسة الكلمات المفتاحية العربية حسب الجذر اللغوي واللهجة المحلية (مصر والخليج) <span aria-hidden="true">↗</span></a><span>FW-001</span></li><li><a href="/ar/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">قائمة فحص تطبيع الحروف والأرقام العربية في البحث الداخلي والـ SEO (الهمزات، التاء المربوطة، الألف المقصورة، والأرقام الهندية) <span aria-hidden="true">↗</span></a><span>FW-002</span></li></ul></section>
+<p>تساعد الخريطة القابلة للجلب على الاكتشاف لكنها لا تفرض الزحف أو الفهرسة. أدرج فيها روابط أساسية قابلة للفهرسة تريد بحثها؛ ولا تضع كل نسخ المعاملات أو المسارات اللغوية المكررة.</p>
+<h2 id="_2">افصل الجلب عن الفهرسة</h2>
+<p>«تعذر الجلب» يتعلق بالوصول أو الصيغة. «تم الجلب لكن اكتُشفت روابط قليلة» يتعلق بالمحتوى أو اختيار الروابط، لا بصيغة الخريطة دائمًا. «اكتُشفت ولم تُفهرس» يحتاج فحص الصفحة: canonical والزحف والجودة والروابط الداخلية. سجل الحالات منفصلة.</p>
+<p>بعد إصلاح سبب مؤكد، أعد الإرسال مرة وافحص الحالة اللاحقة. لا تكرر الإرسال بدل إصلاح الوصول. راجع <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">توثيق خرائط مواقع Google</a> للمتطلبات والحدود.</p>
+<blockquote>
+<p><strong>إفصاح عن الذكاء الاصطناعي:</strong> ساعدت أدوات الذكاء الاصطناعي في المسودة. لا نصف حالة خريطة موقع بعينها.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-003-AMP-003-salla-mena-e-commerce-sitemap-hygiene-dead-ai-url-purge/">قائمة فحص وتطهير خرائط المواقع (`sitemap.xml`) في متاجر سلة والتجارة الإلكترونية من الروابط المعطوبة والمحذوفة <span aria-hidden="true">↗</span></a><span>FW-003</span></li><li><a href="/ar/frameworks/tasks/FW-006-AMP-006-zid-mena-storefront-robots-txt-sitemap-directive-ai-craw/">قائمة فحص ملف `robots.txt` وإعلان `Sitemap:` وضبط زواحف الذكاء الاصطناعي في متاجر زد والمنطقة <span aria-hidden="true">↗</span></a><span>FW-006</span></li></ul></section>
 <nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/seo-structured-data-qa/"><span>الدليل التالي</span><strong>طابق البيانات المنظمة مع محتوى الصفحة الظاهر</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

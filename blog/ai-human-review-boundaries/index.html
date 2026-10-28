@@ -12,23 +12,21 @@
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Set Human Review Boundaries for Marketing Automation</h1><p class="blog-article-deck">Route uncertain claims, sensitive inputs and consequential actions to a responsible person.</p>
 <div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-human-review-boundaries/">العربية</a></div></header>
-<article class="blog-prose"><p>Automation can handle routine steps, but the team needs clear controls when context is uncertain.</p>
-<h2 id="a-practical-workflow">A practical workflow</h2>
-<ol>
-<li>Classify tasks by impact and reversibility.</li>
-<li>Define allowed inputs and actions.</li>
-<li>Set validation and escalation triggers.</li>
-<li>Log overrides and provide a stop control.</li>
-</ol>
-<h2 id="working-template">Working template</h2>
-<p>Action: <strong><em>_ / inputs: </em></strong><em> / validation: <strong><em>_ / escalation trigger: </em></strong></em> / human owner: <strong><em>_ / stop control: </em></strong>_.</p>
-<h2 id="applied-example">Applied example</h2>
-<p>A routine subject-line suggestion may be auto-drafted; a public performance claim or sensitive audience decision should be held for review.</p>
-<h2 id="measure-and-review">Measure and review</h2>
-<p>Review missed escalations, overrides and downstream harm; start with a low-risk reversible flow.</p>
-<h2 id="guardrail">Guardrail</h2>
-<p>Do not let automation silently publish unverified claims or make high-impact decisions.</p>
-<h2 id="ai-disclosure">AI disclosure</h2>
-<p>AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p></article>
-<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-085-AMP-443-ga4-ai-search-regional-ai-assistant-attribution-workflow/">GA4 AI Search &amp; Regional AI Assistant Attribution Workflow (Capturing the 96.9% in Organic Search + Custom Regex for Perplexity, Claude &amp; HUMAIN Chat) <span aria-hidden="true">↗</span></a><span>FW-085</span></li></ul></section>
+<article class="blog-prose"><p>Human review is most useful when assigned to specific failure types. “A human will check it” is not a control unless the reviewer knows what to inspect and can stop the action.</p>
+<h2 id="route-by-consequence-and-uncertainty">Route by consequence and uncertainty</h2>
+<p>Use three lanes:</p>
+<ul>
+<li><strong>Low consequence, high confidence:</strong> draft or classify, then sample outputs for quality.</li>
+<li><strong>Moderate consequence or incomplete evidence:</strong> require a named reviewer before sending, publishing, or changing a campaign.</li>
+<li><strong>High consequence, sensitive data, or conflicting sources:</strong> stop automation and route to the qualified owner; do not let the model choose the outcome.</li>
+</ul>
+<p>For marketing operations, a generated subject-line suggestion may be low consequence; a claim about a regulated service, a customer eligibility decision, or an automatic budget increase is not. The organization must define its own categories based on actual risk.</p>
+<h2 id="make-review-actionable">Make review actionable</h2>
+<p>Show the reviewer the original input, approved sources, model output, uncertainty flags, and proposed action together. Provide buttons or process states for approve, edit, reject, and escalate. Record who approved what and which version was used. Reviewers need authority and enough time; a required click-through on every item can become rubber-stamping.</p>
+<h2 id="measure-whether-the-boundary-works">Measure whether the boundary works</h2>
+<p>Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer.</p>
+<blockquote>
+<p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is an operational design pattern, not a substitute for domain-specific safety review.</p>
+</blockquote></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-087-AMP-445-strict-json-schema-enforcement-workflow-for-arabic-crm-w/">Strict JSON Schema Enforcement Workflow for Arabic CRM, Webhook &amp; Catalog Automations (`strict: true` / `responseSchema`) <span aria-hidden="true">↗</span></a><span>FW-087</span></li><li><a href="/frameworks/tasks/FW-092-AMP-450-autonomous-ai-marketing-agent-human-approval-gate-spend/">Autonomous AI Marketing Agent Human-Approval Gate &amp; Spend-Circuit-Breaker Governance Framework <span aria-hidden="true">↗</span></a><span>FW-092</span></li></ul></section>
 <nav class="blog-next" aria-label="Guide navigation"><a href="/blog/marketing-positioning-brief/"><span>Next guide</span><strong>Write a Positioning Brief Before Choosing Channels</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>200 practical articles · 100 topics · English + Arabic</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
