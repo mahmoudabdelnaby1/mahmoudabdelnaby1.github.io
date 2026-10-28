@@ -45,6 +45,11 @@
 <p>Set a review trigger for changes that can invalidate the claim: interface release, policy revision, price change, or new measurement definition. If no reliable current source exists, say what is uncertain and avoid a confident recommendation. A visible “checked on” date helps only if someone actually rechecks the source.</p>
 <h2 id="make-the-answer-citable-without-overclaiming">Make the answer citable without overclaiming</h2>
 <p>State the direct answer, the conditions that change it, and the source beside the claim. Keep the citation URL accessible and relevant. Do not imply that structured data, a citation, or answer-first formatting guarantees inclusion in an AI response. Citation and visibility vary by system and query.</p>
+<h2 id="optional-ai-assisted-work-brief-answer-provenance-record">Optional AI-assisted work brief — Answer provenance record</h2>
+<pre><code class="language-text">For every answer, retain the source title, owner, version or date, exact supporting passage, scope, and retrieval time. Flag conflicting or stale sources and require a human to resolve them. Make the answer traceable without exposing confidential material. If no source supports a claim, return a question or explicit unknown instead of a confident completion.
+</code></pre>
+<h2 id="worked-example-trace-an-answer-to-a-current-source">Worked example — Trace an answer to a current source</h2>
+<p>A workflow answer says a campaign is eligible. Trace it to the current policy page, the relevant condition, and the date checked. If the policy page conflicts with an internal summary, stop and ask the owner to resolve the mismatch. Preserve the citation in the output so a reviewer can reproduce the conclusion without trusting model memory.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide describes a source-control method, not a verified citation outcome.</p>
 </blockquote></article>

@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Marketing AI</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Marketing AI</p><h1>Use AI in Marketing Workflows with Boundaries, Not Blind Automation</h1><p class="blog-article-deck">A practical workflow for choosing automation tasks, limiting data, validating outputs, and measuring value.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-marketing-workflows/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/ai-marketing-workflows/">العربية</a></div></header>
 <article class="blog-prose"><p>The useful question is not “Where can we add AI?” It is “Which repeatable task has clear inputs, a checkable output, and a safe fallback when the system is wrong?”</p>
 <p>Good candidates include classification, structured extraction, drafting from approved material, or routing a request. Riskier tasks include consequential eligibility decisions, unreviewed claims, or sensitive data use without controls.</p>
 <p>Design the workflow before choosing a model:
@@ -27,6 +27,13 @@
 <p>Keep evaluation examples representative and privacy-safe. Test edge cases, language variation, and instruction injection through untrusted content. Never treat customer input or a web page as instructions that override workflow controls. Recheck model and platform documentation as capabilities and data terms change.</p>
 <h2 id="measure-ai-referrals-as-a-classification-problem">Measure AI referrals as a classification problem</h2>
 <p>Visits from answer engines may appear under different referral labels, while links shared privately can lose their source and arrive as direct traffic. Keep a documented reporting rule for known referrers, landing pages, and uncertain cases; do not relabel all organic or direct visits as AI traffic. Compare trends with search-console queries and visible referral evidence, and report the limits of the classification. A measurement label is an analyst’s best available grouping, not proof that an AI system cited the page.</p>
+<h2 id="place-the-model-at-a-reversible-step">Place the model at a reversible step</h2>
+<p>Give the model a bounded task with a defined input schema, allowed sources, prohibited actions, and a review state. A safe pattern is draft → factual check → brand and privacy review → human approval → publish. Keep retrieval sources attached to claims and make the model return “not found” when evidence is missing. Start with a small set containing ordinary cases, Arabic dialect variation, ambiguous requests, and adversarial text. Measure factual error and reviewer correction time, not just output speed. Do not grant a drafting workflow credentials to publish, message customers, or change campaign settings.</p>
+<h2 id="optional-ai-assisted-work-brief-bounded-ai-workflow-spec">Optional AI-assisted work brief — Bounded AI workflow spec</h2>
+<pre><code class="language-text">Design a reversible AI workflow for this task. Define approved inputs and sources, prohibited actions, output schema, uncertainty behavior, privacy controls, human review gates, and a small evaluation set including Arabic variation and adversarial input. Report factual quality and correction effort; do not grant publishing or customer-contact permissions.
+</code></pre>
+<h2 id="worked-scenario-draft-check-approve-then-publish">Worked scenario — Draft, check, approve, then publish</h2>
+<p>A model drafts a carousel from an approved article. A reviewer checks each claim against the article, verifies the Arabic adaptation, removes a misleading “guaranteed” hook, and approves the final version. The publishing tool remains inaccessible to the drafting step. Track correction types to improve the process before expanding its scope.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

@@ -25,6 +25,11 @@
 <p>Show the reviewer the original input, approved sources, model output, uncertainty flags, and proposed action together. Provide buttons or process states for approve, edit, reject, and escalate. Record who approved what and which version was used. Reviewers need authority and enough time; a required click-through on every item can become rubber-stamping.</p>
 <h2 id="measure-whether-the-boundary-works">Measure whether the boundary works</h2>
 <p>Track missed escalations, unnecessary escalations, edits, overrides, and harmful actions prevented. Review examples at the boundary, since routine cases rarely reveal whether routing is correct. If a human repeatedly corrects the same error, update the source, rule, or task scope instead of adding another generic disclaimer.</p>
+<h2 id="optional-ai-assisted-work-brief-human-review-boundary-map">Optional AI-assisted work brief — Human review boundary map</h2>
+<pre><code class="language-text">Classify outputs by consequence: low-risk internal draft, external factual claim, customer-specific advice, regulated subject, or irreversible action. Define required reviewer, source check, approval record, and prohibited automation at each level. Include escalation when the reviewer lacks evidence. Do not let confidence scores replace subject-matter review.
+</code></pre>
+<h2 id="worked-scenario-route-by-consequence">Worked scenario — Route by consequence</h2>
+<p>An internal headline draft may need one editor. A public numerical claim needs source verification. A customer-specific answer about eligibility needs current operational data. A regulated or safety claim needs a qualified reviewer. A tool that can publish, spend, or message customers needs a human approval gate and rollback path. Set the workflow from the worst plausible consequence, not the model’s confidence score.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This is an operational design pattern, not a substitute for domain-specific safety review.</p>
 </blockquote></article>
