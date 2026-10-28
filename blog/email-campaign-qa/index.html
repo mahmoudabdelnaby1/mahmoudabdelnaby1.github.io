@@ -25,6 +25,11 @@
 <p>Send an internal proof with test labels before the real audience. Verify that test addresses cannot contaminate production reports or trigger fulfillment. For a high-risk or large send, use an approved staged rollout rather than assuming a small proof catches every issue.</p>
 <h2 id="record-the-release">Record the release</h2>
 <p>Save the approved version, audience count, reviewer, test evidence, scheduled time, and rollback owner. After sending, inspect delivery and errors promptly, then review complaints, clicks, and downstream actions with clear denominators. If a critical link or claim is wrong, use the incident process; do not send another campaign until the cause is contained.</p>
+<h2 id="optional-ai-assisted-work-brief-campaign-preflight-checklist">Optional AI-assisted work brief — Campaign preflight checklist</h2>
+<pre><code class="language-text">Check audience eligibility and suppression, rendered text in supported clients, Arabic direction, links and tracking, personalization fallbacks, accessibility, sender identity, time zone, and approval. Send test cases for missing fields and long names. Confirm the destination and unsubscribe path. A successful test send is not proof the live audience or scheduling rules are correct.
+</code></pre>
+<h2 id="worked-example-find-the-arabic-rendering-failure">Worked example — Find the Arabic rendering failure</h2>
+<p>A test email may show the Arabic greeting correctly but render a mixed Arabic-English tracking link in the wrong direction. Inspect the actual mobile client, long names, missing personalization, alt text, link tracking, and unsubscribe. Save evidence from the rendered message. A desktop preview alone does not verify the live send.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This QA sequence is an operating aid, not a guarantee of inbox placement.</p>
 </blockquote></article>

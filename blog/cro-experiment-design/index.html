@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Conversion optimization</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Conversion optimization</p><h1>A CRO Test Needs a Falsifiable Hypothesis and a Stop Rule</h1><p class="blog-article-deck">Design experiments around a specific friction, measurable outcome, guardrails, and decision rule.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/cro-experiment-design/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/cro-experiment-design/">العربية</a></div></header>
 <article class="blog-prose"><p>“Make the page convert better” is a desired outcome, not a test hypothesis. A useful experiment names the observed friction, proposed mechanism, audience, and signal that should change if the explanation is right.</p>
 <p>For example: “For visitors arriving from X, replacing the unclear shipping paragraph with a concise delivery summary may reduce checkout exits because the page hides decision-critical information.” It is testable and could be wrong.</p>
 <p>Before launch, define:
@@ -24,6 +24,13 @@
 <p>Do not keep peeking and declaring a winner whenever a chart turns green. Small samples are noisy, and simultaneous changes obscure cause. If traffic is insufficient, use usability sessions, support questions, or a staged rollout and label the conclusion accordingly.</p>
 <h2 id="keep-mena-calendar-effects-inside-the-test-design">Keep MENA calendar effects inside the test design</h2>
 <p>A test that compares different weeks may confuse a page change with payday, weekends, Ramadan, or a major sale period. When possible, run variants concurrently and record the market calendar that could affect demand. Do not span a major seasonal regime change with one simple comparison. Evaluate the outcome closest to business value—such as net margin or completed qualified actions—while keeping cancellation, payment failure, and support contacts as guardrails. The dates and thresholds must fit the real traffic and sales cycle.</p>
+<h2 id="pre-register-the-decision-rule">Pre-register the decision rule</h2>
+<p>Before launch, write the primary metric, guardrail, eligible traffic, minimum runtime, stopping rule, and the person who will make the call. If the sample will be small, label the work a usability or directional test rather than claiming statistical certainty. Check whether users can see both versions consistently across language, device, and returning visits. A test is not complete when one line rises: inspect the guardrail, implementation errors, and the path after the tested page. Archive the decision and evidence whether the result is positive, negative, or inconclusive.</p>
+<h2 id="optional-ai-assisted-work-brief-experiment-pre-registration">Optional AI-assisted work brief — Experiment pre-registration</h2>
+<pre><code class="language-text">Turn this proposed page change into a test plan with eligible audience, one primary metric, a guardrail, implementation checks, minimum observation window, stopping rule, and limits on inference. If the traffic cannot support a reliable A/B test, redesign it as a usability or directional study and label it accordingly.
+</code></pre>
+<h2 id="worked-scenario-a-test-that-can-change-the-page">Worked scenario — A test that can change the page</h2>
+<p>Hypothesis: showing service coverage before the form reduces out-of-area submissions. Keep the campaign and form stable, define valid requests and total eligible inquiries as measures, and set a minimum review period. If few submissions occur, call the result inconclusive and use moderated comprehension checks rather than declaring the new layout a winner.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

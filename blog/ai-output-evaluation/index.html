@@ -28,6 +28,11 @@
 <h2 id="compare-against-a-baseline">Compare against a baseline</h2>
 <p>Run the same test cases through the current human or rules-based process. Record model, prompt, source set, date, and exact version. Review failures by severity, not only frequency. Use a held-out set after tuning so the system is not being graded on examples it was optimized to memorize.</p>
 <p>Define release gates in advance: what must be correct every time, what can be reviewed by a human, and which cases should fall back to manual handling. Re-run after changing the prompt, model, sources, or workflow. A passing sample supports only that tested scope; it does not establish universal reliability.</p>
+<h2 id="optional-ai-assisted-work-brief-small-evaluation-set">Optional AI-assisted work brief — Small evaluation set</h2>
+<pre><code class="language-text">Create a test set with routine, edge, ambiguous, bilingual, and adversarial examples. Define an answer key and severity rubric before running the model. Score factual accuracy, instruction following, tone, privacy leakage, and reviewer correction effort separately. Keep a holdout set for later comparisons. Report failure examples and confidence limits; do not claim quality from a few hand-picked successful outputs.
+</code></pre>
+<h2 id="worked-scenario-score-an-evaluation-run">Worked scenario — Score an evaluation run</h2>
+<p>For each test case, mark factual support, instruction compliance, language fit, privacy, and usefulness from a defined rubric. A fabricated discount claim should count as a severe failure even if the copy sounds polished. Compare model output with a human reference and preserve the exact input and version. Report the denominator: “17 of 20 passed this rubric,” not “the model is 85% accurate” across all marketing tasks.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. The test scenario is illustrative and not a validated benchmark.</p>
 </blockquote></article>

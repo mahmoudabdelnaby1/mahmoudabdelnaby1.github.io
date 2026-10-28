@@ -11,7 +11,7 @@
 <main id="main-content" class="blog-article-main" dir="ltr">
 <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Paid media</span></nav>
 <header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Paid media</p><h1>Paid Media Optimization Starts with a Trustworthy Conversion Signal</h1><p class="blog-article-deck">Separate platform events from business outcomes and optimize against the stage that matters.</p>
-<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>2 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/paid-media-conversion-signals/">العربية</a></div></header>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>3 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/paid-media-conversion-signals/">العربية</a></div></header>
 <article class="blog-prose"><p>An ad platform can optimize only toward the signals it receives. If the imported event is a button click but the business goal is a qualified inquiry or completed sale, the system may find more clickers without finding more people who fit.</p>
 <p>Before changing targeting or budget, draw the chain:
 ad exposure → landing-page visit → intent event → received inquiry → qualified status → verified outcome</p>
@@ -20,6 +20,13 @@ ad exposure → landing-page visit → intent event → received inquiry → qua
 <p>Then change one element at a time: search terms, exclusions, creative, audience, landing page, or bid strategy. State expected effect and guardrails in advance. Evaluate across a window that matches the sales cycle, and separate early platform indicators from booked revenue or retained customers.</p>
 <h2 id="in-cod-markets-distinguish-placed-orders-from-delivered-value">In COD markets, distinguish placed orders from delivered value</h2>
 <p>Where cash-on-delivery is common, a submitted order is an intermediate event. Reconcile cancellations, refusals, delivery, returns, and the value actually collected before treating order count or platform-reported revenue as the business outcome. Keep finance reporting separate from bidding values, document the conversion lag, and avoid feeding low-quality events back as if they were successful sales. Any risk-adjusted value should come from a validated business rule, not an invented multiplier.</p>
+<h2 id="audit-the-event-from-click-to-outcome">Audit the event from click to outcome</h2>
+<p>Create a test journey for each important event and verify four separate facts: the trigger fires once, the payload describes the intended action, the destination receives it, and downstream reporting labels it correctly. Then compare platform-reported conversions with the first-party order or CRM record using a defined window and attribution caveat. In cash-on-delivery settings, distinguish order placed, confirmed, shipped, delivered, and retained. Optimize toward the deepest reliable event that has enough volume; do not feed a platform a “qualified” label that is assigned inconsistently by sales.</p>
+<h2 id="optional-ai-assisted-work-brief-conversion-event-qa-plan">Optional AI-assisted work brief — Conversion event QA plan</h2>
+<pre><code class="language-text">From the event specification and test evidence I provide, build a trigger-to-report QA table. Check duplicate firing, payload meaning, destination receipt, attribution limits, and CRM or order reconciliation. Separate observed failures from risks. For cash-on-delivery, keep placed, confirmed, shipped, delivered, and retained outcomes distinct.
+</code></pre>
+<h2 id="worked-scenario-a-conversion-event-that-fires-twice">Worked scenario — A conversion event that fires twice</h2>
+<p>A form submission triggers once on the button and again on the thank-you page. Platform totals look stronger than CRM records. Test button click, valid submit, page reload, and back-navigation; choose one authoritative completion event and deduplicate it. Keep a sanitized test record and compare against downstream qualified requests before changing optimization.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result.</p>
 </blockquote></article>

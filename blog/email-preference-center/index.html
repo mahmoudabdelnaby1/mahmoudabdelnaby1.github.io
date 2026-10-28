@@ -20,6 +20,11 @@
 <p>Document which choice applies to which message type, who owns sync failures, and how long a change can take to propagate. If an event or transactional message has a different basis, explain it clearly and have the applicable policy reviewed; do not quietly bypass the preference.</p>
 <h2 id="watch-for-preference-failures">Watch for preference failures</h2>
 <p>Monitor saves, sync errors, complaints, and unsubscribes. A high number of users selecting “less often” may call for a cadence change; an empty topic choice may mean the labels are unclear. Do not interpret the data as consent to send more.</p>
+<h2 id="optional-ai-assisted-work-brief-preference-center-usability-audit">Optional AI-assisted work brief — Preference center usability audit</h2>
+<pre><code class="language-text">List the choices a subscriber can understand and control: topic, frequency, language, channel, pause, and unsubscribe where supported. Test whether each choice updates the source of truth and suppresses queued messages. Use plain labels and explain consequences before save. Avoid making unsubscribe harder than preference changes or inferring consent from a click.
+</code></pre>
+<h2 id="worked-example-test-whether-a-saved-preference-is-honored">Worked example — Test whether a saved preference is honored</h2>
+<p>Change the subscriber from weekly to monthly, save, and inspect the next scheduled message. Then unsubscribe and verify queued promotional mail is suppressed across tools. A preference center is not complete because the page looks clear; its state must reach the sending system and update the queue. Keep service notices governed separately and explain that choice in plain language.</p>
 <blockquote>
 <p><strong>AI disclosure:</strong> AI tools assisted with drafting. This preference-center flow is illustrative, not a legal specification.</p>
 </blockquote></article>
