@@ -35,7 +35,7 @@ The generator groups the existing article themes by subject and rotates only thr
 
 - Use the article’s own source material, examples, and steps; do not add search-volume claims or invented client metrics.
 - Distinguish a hypothesis, illustration, sourced fact, and measured result.
-- Keep the AI assistance disclosure once per article.
+- Do not append a standard AI-drafting disclosure footer. Keep factual attribution and source provenance where relevant to the claim.
 - Update the displayed reading time when the article changes.
 - Treat format as a way to serve the reader’s intent, not as a promise of search ranking, indexing, or AI citation.
 - Do not add sections that repeat a point without giving the reader another usable decision, check, or artifact.

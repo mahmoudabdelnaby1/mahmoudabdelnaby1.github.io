@@ -212,9 +212,6 @@ def main():
  for p in POSTS:
   for lang in ("en","ar"):
    if not p[lang]["markdown"]: raise SystemExit("Missing body: "+p["slug"])
-   body=p[lang]["markdown"].lower()
-   disclosed=("ai" in body and "disclos" in body) if lang=="en" else ("إفصاح" in body and "الذكاء الاصطناعي" in body)
-   if not disclosed: raise SystemExit("Missing AI disclosure: "+p["slug"]+" "+lang)
    for fid in p["framework_ids"]:
     if not framework(fid,lang): raise SystemExit("Missing related framework: "+fid+" "+lang)
  (ROOT/"assets/blog.css").write_text(BLOG_CSS,encoding="utf-8",newline="\n")
