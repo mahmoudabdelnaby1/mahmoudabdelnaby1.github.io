@@ -496,10 +496,8 @@ def main():
         post["content_asset_styles"]=ALL_SIX
         post["content_asset_extra_style"]=extra
         post.pop("content_asset_style",None)
-        disclosure_en="> **AI disclosure:** AI tools assisted with drafting. This guide presents a general method and does not claim a verified client result."
-        disclosure_ar="> **إفصاح عن الذكاء الاصطناعي:** أُعد هذا الدليل بمساعدة الذكاء الاصطناعي. يعرض منهجًا عامًا ولا يدّعي نتيجة موثقة لعميل."
-        post["en"]["markdown"]=en+"\n\n"+"\n\n".join(assets_en)+"\n\n"+disclosure_en
-        post["ar"]["markdown"]=ar+"\n\n"+"\n\n".join(assets_ar)+"\n\n"+disclosure_ar
+        post["en"]["markdown"]=en+"\n\n"+"\n\n".join(assets_en)
+        post["ar"]["markdown"]=ar+"\n\n"+"\n\n".join(assets_ar)
         post["en"]["approx_words"]=word_count(post["en"]["markdown"])
         post["ar"]["approx_words"]=word_count(post["ar"]["markdown"])
         counts.update(ALL_SIX); counts["advanced:"+extra]+=1
