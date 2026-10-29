@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>بطء متجر WooCommerce على الموبايل؟ ابدأ ببيانات المستخدمين لا بدرجة PSI | مدونة محمود عبدالنبي</title><meta name="description" content="طريقة لتشخيص LCP وINP وCLS على صفحات المتجر مع التفريق بين بيانات CrUX واختبار Lighthouse وتحديد الإصلاح حسب القالب والأثر."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/blog/mobile-commerce-core-web-vitals-field-diagnosis/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/mobile-commerce-core-web-vitals-field-diagnosis/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/mobile-commerce-core-web-vitals-field-diagnosis/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/mobile-commerce-core-web-vitals-field-diagnosis/">
+<meta property="og:type" content="article"><meta property="og:title" content="بطء متجر WooCommerce على الموبايل؟ ابدأ ببيانات المستخدمين لا بدرجة PSI | مدونة محمود عبدالنبي"><meta property="og:description" content="طريقة لتشخيص LCP وINP وCLS على صفحات المتجر مع التفريق بين بيانات CrUX واختبار Lighthouse وتحديد الإصلاح حسب القالب والأثر."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/ar/blog/mobile-commerce-core-web-vitals-field-diagnosis/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"بطء متجر WooCommerce على الموبايل؟ ابدأ ببيانات المستخدمين لا بدرجة PSI","description":"طريقة لتشخيص LCP وINP وCLS على صفحات المتجر مع التفريق بين بيانات CrUX واختبار Lighthouse وتحديد الإصلاح حسب القالب والأثر.","inLanguage":"ar","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/mobile-commerce-core-web-vitals-field-diagnosis/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/","name":"مدونة التسويق والنمو"},"about":[{"@type":"Thing","name":"SEO وAEO وGEO"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/ar/">محمود <em>عبدالنبي</em></a><nav class="nav" aria-label="التنقل الرئيسي"><div class="nav-links"><a href="/ar/blog/" aria-current="page">المدونة</a><a href="/ar/marketing-systems/">الأنظمة التسويقية</a></div><a class="lang" href="/blog/mobile-commerce-core-web-vitals-field-diagnosis/">English</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="rtl">
+<nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>SEO وAEO وGEO</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> SEO وAEO وGEO</p><h1>بطء متجر WooCommerce على الموبايل؟ ابدأ ببيانات المستخدمين لا بدرجة PSI</h1><p class="blog-article-deck">طريقة لتشخيص LCP وINP وCLS على صفحات المتجر مع التفريق بين بيانات CrUX واختبار Lighthouse وتحديد الإصلاح حسب القالب والأثر.</p>
+<div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٨ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/mobile-commerce-core-web-vitals-field-diagnosis/">English</a></div></header>
+<article class="blog-prose"><p>إذا بدا متجر WooCommerce بطيئًا على هاتف أو اتصال متغير، لا تبدأ بتصغير كل صورة أو مطاردة درجة 100 في PageSpeed Insights. حدّد أولًا أين يتأخر المحتوى، وما التفاعل الذي يتأخر، وهل يتحرك التصميم أثناء التحميل. استخدم بيانات المستخدمين عندما تكون متاحة، ثم أعد إنتاج المشكلة باختبار مختبري لتعرف ما الذي تغيّره.</p>
+<p>Core Web Vitals تقيس ثلاثة جوانب من تجربة فعلية: سرعة ظهور المحتوى الرئيسي (LCP)، سرعة الاستجابة للتفاعل (INP)، والثبات البصري (CLS). توصيات Google عند المئين 75 هي LCP خلال 2.5 ثانية، وINP لا يزيد عن 200 مللي ثانية، وCLS لا يزيد عن 0.1. هذه أهداف تجربة مستخدم وليست وعدًا بترتيب؛ تحسين الدرجة وحده لا يضمن الظهور في أعلى النتائج. <a href="https://developers.google.com/search/docs/appearance/core-web-vitals">تعريف Core Web Vitals</a> · <a href="https://developers.google.com/search/docs/appearance/page-experience">تجربة الصفحة في Google Search</a></p>
+<h2 id="_1">افصل بيانات الميدان عن المختبر</h2>
+<p><strong>بيانات الميدان</strong> من CrUX أو Search Console تعكس جلسات مستخدمين حقيقية خلال فترة مجمعة. قد تُظهر اختلافًا بين الهاتف وسطح المكتب، أو بين صفحات المنتج والفئات. لا تكشف دائمًا السبب التفصيلي أو تجربة كل مدينة وشبكة، وقد لا تتوفر بيانات URL منفرد إذا كانت الزيارات قليلة.</p>
+<p><strong>بيانات المختبر</strong> من Lighthouse تحمّل صفحة في بيئة محاكاة يمكن تكرارها. استخدمها لمعرفة الموارد أو المهام الطويلة أو عناصر التخطيط التي تسببت في المشكلة؛ لكنها لا تمثل كل جهاز أو شبكة في مصر.</p>
+<p>قد تختلف النتيجتان دون أن تكون إحداهما «خاطئة»: المختبر تجربة مضبوطة واحدة، والميدان تاريخ لتجارب مختلفة. لذلك سجّل كليهما ولا تستبدل بيانات مستخدمين بنتيجة اختبار واحدة. <a href="https://web.dev/articles/lab-and-field-data-differences">كيف يختلف اختبار المختبر عن بيانات الميدان</a></p>
+<h2 id="_2">حدّد القالب والعنصر قبل تغيير الموقع</h2>
+<p>ابدأ بعينة تمثل رحلة الشراء: الصفحة الرئيسية، فئة مزدحمة، منتج ذو صورة كبيرة، صفحة سلة، وصفحة هبوط لحملة إذا كانت موجودة. سجّل لكل URL نوع الجهاز، نوع الصفحة، مقياس Core Web Vital المتأثر، الفترة، وحالة Search Console أو PSI.</p>
+<p>إذا أظهرت صفحات المنتجات النمط نفسه، افحص قالب المنتج ومكوناته المشتركة قبل تعديل كل منتج يدويًا. وإذا كانت المشكلة محصورة بصفحة واحدة، لا تغيّر القالب العام. قسّم الزيارات حسب الهاتف وسطح المكتب؛ لا تدمج تجربتين مختلفتين في متوسط واحد.</p>
+<p>لا تستنتج أن كل زوار مصر يستخدمون هاتفًا منخفض المواصفات أو شبكة 4G بطيئة. استخدم بيانات جمهور المتجر المصرح بها، واختبر على جهاز وشبكة يمكن وصفهما بدقة. عندما لا تتوفر عينة ميدانية كافية، اذكر أن الاختبار محاكاة لا تمثيل كامل للسوق.</p>
+<h2 id="lcp">تشخيص LCP: ما العنصر الأكبر الذي ينتظر؟</h2>
+<p>حدد عنصر LCP على الصفحة: صورة المنتج أو صورة البانر أو عنوان أو كتلة نص. إذا كانت صورة رئيسية، راجع أبعادها الفعلية، صيغة الملف، ضغطه، أولوية التحميل، وهل تُحمّل صورة مناسبة لحجم الشاشة. لا تؤخر صورة البطل بأسلوب التحميل الكسول إذا كانت هي العنصر الذي يحتاج أن يظهر أولًا. تجنب تنزيل صورتين كاملتين للأجهزة المختلفة إذا كان القالب قادرًا على اختيار مورد مناسب.</p>
+<p>إذا كان العنصر نصيًا، افحص وقت استجابة الخادم وCSS أو الخطوط التي تؤخر الرسم. لا تضف <code>preload</code> عشوائيًا إلى كل صورة؛ يمكن أن ينافس ملفات أخرى مهمة. اختبر تعديلًا واحدًا، ثم قارن المختبر والميدان بعد فترة كافية لتجميع بيانات جديدة.</p>
+<h2 id="inp">تشخيص INP: أي تفاعل يتأخر؟</h2>
+<p>اختبر البحث والمرشحات واختيار المقاس وإضافة المنتج إلى السلة. افحص هل النقر يشغّل JavaScript كثيفًا أو عمليات طرف ثالث أو تحديثات DOM كبيرة. راجع سجلات التفاعل في أدوات الأداء، وافصل تنفيذ الحدث عن التأخير الناتج عن تحميل عنصر مرئي بعده.</p>
+<p>لا تزيل أداة دردشة أو تحليل لمجرد أنها خارجية. قِس أثرها على المهمة وعلى التحويل، ثم اختبر تحميلها عند الحاجة أو تأخير تشغيلها عندما لا تعطل الوظيفة. تخلص من الشيفرة الميتة أو النسخ المتكررة فقط بعد التأكد من اعتماد القالب والإضافات عليها.</p>
+<h2 id="cls">تشخيص CLS: ما الذي يقفز بعد بدء القراءة؟</h2>
+<p>ابحث عن صور بلا مساحة محجوزة، شريط عروض يظهر متأخرًا، خط بديل يغير أبعاد النص، نافذة موافقة تغطي محتوى الصفحة، أو بطاقة تتغير بعد تحميل البيانات. خصص أبعادًا أو نسبة عرض وارتفاع للعناصر المرئية، وثبّت مساحة المكونات التي تُحقن لاحقًا، وتأكد من أن رسائل الخصوصية لا تدفع واجهة الشراء دون تنبيه.</p>
+<p>اختبر على شاشة هاتف فعلية: ابدأ من أعلى الصفحة، افتح القوائم والخيارات، وانتقل إلى زر الشراء. لقطة ثابتة بعد اكتمال التحميل قد لا تكشف قفزة حصلت قبلها.</p>
+<h2 id="_3">رتّب الإصلاح حسب الأثر والمخاطر</h2>
+<p>استخدم قائمة الأولوية التالية:</p>
+<ol>
+<li>صفحات تجلب حركة أو مبيعات ولديها مقياس ميداني ضعيف.</li>
+<li>عنصر أو شيفرة مشتركة تظهر في عدة قوالب.</li>
+<li>إصلاح محدود يمكن قياسه وإرجاعه إذا كسر الوظيفة.</li>
+<li>تحسين موضعي صغير مقارنة بإعادة بناء الثيم كاملًا.</li>
+<li>فحص السلة والدفع بعد كل تغيير، لأن أداء الصفحة لا يبرر إفساد عملية الطلب.</li>
+</ol>
+<p>قبل تعديل الإنتاج، سجل قيمة البداية والمقاطع المراد تغييرها، واحفظ نسخة إعدادات أو استعمل بيئة اختبار عند توفرها. لا تحذف إضافة لمجرد أن اسمها يشير إلى بطء؛ تحقق من اعتماد الميزات عليها ومن أثر إزالتها على العرض والتتبع.</p>
+<h2 id="_4">خطة قياس للموقع المصري</h2>
+<p>استخدم مزيجًا من بيانات CrUX وSearch Console وPSI، وسجّل تاريخ الاختبار وموقعه الظاهر في التقرير والجهاز والمحاكاة. إن توفر لديك RUM أو تحليلات أداء بموافقة مناسبة، قسّم البيانات بحسب فئة الجهاز والصفحة دون جمع معلومات شخصية لا تحتاجها. افحص الطلبات المؤكدة ومعدل إتمام السلة بالتوازي؛ قد يتحسن مقياس أداء دون تغيير ملحوظ في الطلبات.</p>
+<p>بعد الإصلاح، قارن القالب أو مجموعة الصفحات نفسها على الفترة السابقة، وانتظر تجميع ميدان كافٍ. نتائج PSI الفورية مفيدة للتحقق من المختبر؛ لا تقدّمها على أنها تحسن ميداني مستقر في اليوم نفسه.</p>
+<h2 id="_5">مصادر الأداء الرسمية</h2>
+<ul>
+<li><a href="https://developers.google.com/search/docs/appearance/core-web-vitals">Google: Core Web Vitals</a></li>
+<li><a href="https://developers.google.com/search/docs/appearance/page-experience">Google: Page experience</a></li>
+<li><a href="https://web.dev/articles/lab-and-field-data-differences">web.dev: Core Web Vitals field and lab data</a></li>
+<li><a href="https://pagespeed.web.dev/">PageSpeed Insights</a></li>
+</ul>
+<p>توضح هذه المراجع المقاييس وأدوات الفحص؛ أما سبب البطء في متجرك فيحتاج بيانات الصفحة والقالب والأجهزة الفعلية.</p>
+<h2 id="100">سكريبت فيديو قصير: لا تطارد رقم 100</h2>
+<p><strong>المدة:</strong> ٥٥ ثانية. <strong>الصورة:</strong> ثلاث لقطات: صورة المنتج، زر إضافة للسلة، ثم عنصر يتحرك.</p>
+<p><strong>الخطاف:</strong> «PSI جابلك 55 على الموبايل؟ متصغّرش كل الصور مرة واحدة.»</p>
+<p><strong>المشهد الأول:</strong> «شوف بيانات الميدان في Search Console أو PSI: المشكلة تحميل ولا تفاعل ولا ثبات؟»</p>
+<p><strong>المشهد الثاني:</strong> «حدد العنصر المتأخر في Lighthouse: صورة المنتج، كود إضافة، ولا شريط بيظهر بعدين.»</p>
+<p><strong>المشهد الثالث:</strong> «غيّر سببًا واحدًا، واختبر السلة والشراء، وبعدين راقب بيانات المستخدمين.»</p>
+<p><strong>الخاتمة:</strong> «الهدف تجربة شراء مستقرة، مش درجة كاملة على حساب الوظيفة.»</p>
+<h2 id="_6">كاروسيل تعليمي: ثلاثة مقاييس، ثلاثة أسباب</h2>
+<ol>
+<li><strong>الغلاف:</strong> «متجر الموبايل بطيء؟ حدّد المقياس أولًا».</li>
+<li><strong>LCP:</strong> ما أكبر عنصر ظاهر، ولماذا ينتظر؟</li>
+<li><strong>INP:</strong> ما التفاعل الذي يستغرق وقتًا للاستجابة؟</li>
+<li><strong>CLS:</strong> ما العنصر الذي يغيّر مكانه بعد بدء العرض؟</li>
+<li>افصل بيانات CrUX الميدانية عن Lighthouse المختبرية.</li>
+<li>أصلح السبب في القالب المتأثر واختبر رحلة الشراء.</li>
+<li><strong>الخلاصة:</strong> «الدرجة مؤشر تشخيص؛ تجربة العميل هي الهدف».</li>
+</ol>
+<h2 id="_7">سلسلة تجربة ميدانية: اختبر تحسين قالب المنتج</h2>
+<p>هذه خطة اختبار مقترحة وليست نتائج أداء مرصودة.</p>
+<p><strong>السؤال:</strong> هل تعديل صورة LCP أو شيفرة التفاعل في قالب المنتج يحسن تجربة الهاتف دون الإضرار بالسلة؟</p>
+<ol>
+<li>اختر مجموعة صفحات منتج متقاربة، وسجل CrUX أو Search Console والمقاييس المختبرية لكل نوع جهاز.</li>
+<li>حدد العنصر المسبب من تقرير Lighthouse وسجل المورد أو المهمة التي ستغيّرها.</li>
+<li>احتفظ بمجموعة مقارنة أو اطرح التغيير على مراحل إذا كان ذلك ممكنًا، مع تثبيت العروض والمخزون قدر الإمكان.</li>
+<li>نفذ تحسينًا واحدًا في كل مرحلة، مثل تحديد أبعاد الصورة أو تقليل تنفيذ JavaScript غير الضروري.</li>
+<li>أعد اختبار الصفحة على ظروف مختبرية موثقة، وامشِ يدويًا في البحث والاختيار والسلة والدفع.</li>
+<li>راقب الميدان على نافذة مناسبة؛ افصل النتائج حسب الجهاز والقالب، ودوّن حجم العينة.</li>
+<li>أوقف أو ارجع التغيير إذا تأثرت الوظيفة أو ظهرت أخطاء؛ لا تفسر اختبارًا واحدًا كتحسن دائم.</li>
+</ol>
+<h2 id="_8">حزمة مطالبات محايدة للأدوات: تشخيص قابل للتكرار</h2>
+<p><strong>قراءة تقرير PSI</strong></p>
+<blockquote>
+<p>حلل التقرير التالي [الصق البيانات]. افصل مقياس الميدان عن المختبر، وحدد لكل ملاحظة: URL، الجهاز، العنصر أو المورد، السبب المحتمل، وما يلزم قياسه قبل تعديل الموقع. لا تضمن تحسن الترتيب.</p>
+</blockquote>
+<p><strong>تجميع صفحات المتجر</strong></p>
+<blockquote>
+<p>صنف هذه الصفحات إلى قالب رئيسي/فئة/منتج/سلة، واجمع فقط الصفحات التي تشترك في سبب أداء موثق. احتفظ بحدود العينة وأخرج الصفحات التي لا تكفي بياناتها للاستنتاج.</p>
+</blockquote>
+<p><strong>خطة تغيير آمن</strong></p>
+<blockquote>
+<p>صمم اختبارًا لتغيير واحد في [القالب أو المورد]. أدرج قيمة البداية، اختبار عدم الإضرار بالبحث والسلة والدفع، نافذة قياس الميدان، ومعيار التراجع. لا تضف افتراضات عن مستخدمي مصر غير موجودة في البيانات.</p>
+</blockquote>
+<h2 id="_9">ملف أمثلة: أوقف هذا: تحسين السرعة</h2>
+<p><strong>أوقف:</strong> «وصلت للدرجة 100، إذن موقعي صار أسرع لكل الناس».</p>
+<p><strong>استخدم:</strong> «تحسن اختبار المختبر على هذا URL وهذه المحاكاة؛ سأتحقق من بيانات الميدان والجهاز الآخر».</p>
+<p><strong>أوقف:</strong> «احذف كل الإضافات الخارجية».</p>
+<p><strong>استخدم:</strong> «قِس أثر كل سكريبت على التفاعل والوظيفة، ثم اختبر التخفيف أو التحميل عند الحاجة».</p>
+<p><strong>أوقف:</strong> «كل مشاكل LCP سببها الصور».</p>
+<p><strong>استخدم:</strong> «حدد عنصر LCP أولًا؛ قد يكون صورة أو نصًا أو وقت استجابة الخادم».</p>
+<h2 id="_10">الخطاف والقيمة والقالب: مقياس ثم سبب ثم إصلاح</h2>
+<p><strong>الخطاف:</strong> «درجة السرعة مش تشخيص؛ اسم المقياس هو البداية.»</p>
+<p><strong>القيمة:</strong> «LCP تحميل المحتوى، INP تفاعل، CLS ثبات. افحص بيانات الميدان ثم استخدم المختبر للعثور على السبب.»</p>
+<p><strong>القالب:</strong> «القالب [نوع الصفحة]؛ الجهاز [نوعه]؛ المقياس [LCP/INP/CLS]؛ العنصر [الدليل]؛ التغيير [محدد]؛ فحص الوظيفة [النتيجة]؛ نافذة الميدان [الفترة].»</p>
+<p><strong>مثال:</strong> «صفحة المنتج على الهاتف لديها CLS بسبب صورة بلا أبعاد؛ نحدد المساحة ثم نعيد فحص فتح الخيارات والسلة قبل مراقبة الميدان».</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/riyadh-jeddah-clinic-local-search-system/"><span>الدليل التالي</span><strong>ظهور عيادة في الرياض أو جدة: ابنِ حضورًا محليًا دقيقًا دون وعود بالصدارة</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٥٠ مقالًا عمليًا · العربية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

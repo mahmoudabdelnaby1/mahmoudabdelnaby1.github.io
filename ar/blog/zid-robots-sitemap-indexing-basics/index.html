@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>Robots.txt وخريطة الموقع في زد: افصل بين الزحف والفهرسة | مدونة محمود عبدالنبي</title><meta name="description" content="دليل عملي لمراجعة robots.txt وsitemap وروابط المنتجات في متجر زد، مع توضيح ما تستطيع هذه الإشارات فعله وما لا تضمنه."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/blog/zid-robots-sitemap-indexing-basics/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/zid-robots-sitemap-indexing-basics/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/zid-robots-sitemap-indexing-basics/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/zid-robots-sitemap-indexing-basics/">
+<meta property="og:type" content="article"><meta property="og:title" content="Robots.txt وخريطة الموقع في زد: افصل بين الزحف والفهرسة | مدونة محمود عبدالنبي"><meta property="og:description" content="دليل عملي لمراجعة robots.txt وsitemap وروابط المنتجات في متجر زد، مع توضيح ما تستطيع هذه الإشارات فعله وما لا تضمنه."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/ar/blog/zid-robots-sitemap-indexing-basics/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Robots.txt وخريطة الموقع في زد: افصل بين الزحف والفهرسة","description":"دليل عملي لمراجعة robots.txt وsitemap وروابط المنتجات في متجر زد، مع توضيح ما تستطيع هذه الإشارات فعله وما لا تضمنه.","inLanguage":"ar","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/zid-robots-sitemap-indexing-basics/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/","name":"مدونة التسويق والنمو"},"about":[{"@type":"Thing","name":"SEO وAEO وGEO"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/ar/">محمود <em>عبدالنبي</em></a><nav class="nav" aria-label="التنقل الرئيسي"><div class="nav-links"><a href="/ar/blog/" aria-current="page">المدونة</a><a href="/ar/marketing-systems/">الأنظمة التسويقية</a></div><a class="lang" href="/blog/zid-robots-sitemap-indexing-basics/">English</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="rtl">
+<nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>SEO وAEO وGEO</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> SEO وAEO وGEO</p><h1>Robots.txt وخريطة الموقع في زد: افصل بين الزحف والفهرسة</h1><p class="blog-article-deck">دليل عملي لمراجعة robots.txt وsitemap وروابط المنتجات في متجر زد، مع توضيح ما تستطيع هذه الإشارات فعله وما لا تضمنه.</p>
+<div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٨ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/zid-robots-sitemap-indexing-basics/">English</a></div></header>
+<article class="blog-prose"><p>ملف <code>robots.txt</code> وخريطة الموقع ليسا زرًا لتصدر نتائج البحث. الأول يوضح للزواحف المسارات التي يمكنها طلبها، والثانية تساعدها على اكتشاف عناوين مهمة. الفهرسة قرار منفصل، والترتيب يعتمد على عوامل أخرى. في متجر زد، ابدأ بفحص ما تنشره المنصة فعليًا وما يظهر في الروابط والصفحات، ثم غيّر الإعداد المتاح فقط إذا وجدت تعارضًا مثبتًا.</p>
+<h2 id="_1">ما وظيفة كل إشارة؟</h2>
+<table>
+<thead>
+<tr>
+<th>العنصر</th>
+<th>وظيفته الأساسية</th>
+<th>ما لا يضمنه</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>robots.txt</code></td>
+<td>توجيه الزاحف بشأن طلب مسارات معينة</td>
+<td>لا يضمن إزالة الرابط من الفهرس، ولا يمنع ظهوره إذا عرفه Google من روابط أخرى</td>
+</tr>
+<tr>
+<td><code>noindex</code></td>
+<td>طلب عدم إدراج صفحة قابلة للزحف في نتائج محرك يدعم الإشارة</td>
+<td>لا يعمل إذا منعت الزاحف من الوصول للصفحة قبل أن يقرأه</td>
+</tr>
+<tr>
+<td><code>sitemap.xml</code></td>
+<td>تقديم قائمة بعناوين تريد من محرك البحث اكتشافها ومعرفة تحديثها</td>
+<td>لا يضمن الزحف لكل URL أو فهرسته أو ترتيبه</td>
+</tr>
+<tr>
+<td>الروابط الداخلية</td>
+<td>ربط الصفحات ببنية متجر يمكن للزاحف والعميل اتباعها</td>
+<td>لا تعالج وحدها رابطًا محظورًا أو صفحة بلا قيمة كافية</td>
+</tr>
+</tbody>
+</table>
+<p>تشرح Google أن <code>robots.txt</code> يُستخدم لإدارة الزحف، وليس لإخفاء صفحة من النتائج. ولمنع الفهرسة تحتاج الصفحة إلى أن تكون قابلة للزحف كي يقرأ محرك البحث <code>noindex</code>، أو تستخدم طريقة مناسبة أخرى. كما أن sitemap اقتراح للاكتشاف وليست ضمان إدراج. <a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">مقدمة robots.txt</a> · <a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing">منع الفهرسة باستخدام noindex</a> · <a href="https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors">استكشاف الزحف</a></p>
+<h2 id="_2">راجع الإعداد المنشور، لا اسم الإعداد فقط</h2>
+<p>افتح <code>https://نطاق-متجرك/robots.txt</code> و<code>https://نطاق-متجرك/sitemap.xml</code> بعد استبدال النطاق بنطاقك. إذا اختلفت الاستجابة، تحقق مما إذا كانت المنصة تستخدم مسارًا آخر أو خريطة فهرس تجمع عدة ملفات. لا تعدّل الملف عبر طريقة خارجية قبل معرفة من يملكه وكيف تُنشر التغييرات في متجرك.</p>
+<p>في <code>robots.txt</code>، اقرأ القواعد كاملة لكل مجموعة <code>User-agent</code>، ولا تفترض أن وجود <code>Allow</code> في نهاية الملف يلغي دائمًا <code>Disallow</code> أوسع من دون فحص القاعدة المحددة. راجع خصوصًا مسارات المنتجات والفئات والصور والملفات التي يعتمد عليها عرض الصفحة. لا تحظر موارد لازمة لرؤية الصفحة كما يراها العميل أو الزاحف.</p>
+<p>في sitemap، تحقق أن كل URL:</p>
+<ul>
+<li>يعيد الصفحة النهائية المقصودة دون تحويل غير ضروري.</li>
+<li>يستخدم HTTPS والنطاق الأساسي الصحيح.</li>
+<li>قابل للزحف والفهرسة، وليس صفحة تسجيل أو سلة أو بحث داخلي أو رابط تتبع.</li>
+<li>هو النسخة الأساسية التي تربط إليها الصفحات الداخلية؛ تجنب إدراج نسخ مكررة للمعاملات أو المتغيرات بلا قرار واضح.</li>
+<li>يحتوي <code>&lt;lastmod&gt;</code> فقط عندما يعكس تاريخ تعديل حقيقيًا، لا تاريخًا يتغير آليًا مع كل بناء.</li>
+</ul>
+<p>استخدم أدوات المتجر المتاحة لإدارة الظهور أو sitemap إذا كانت موجودة، وتحقق من السلوك النهائي بعد الحفظ. إعدادات المنصات تتطور، لذلك لا تعتمد على شرح قديم لمكان زر أو صيغة ملف من دون مقارنة النتيجة المنشورة.</p>
+<h2 id="sitemap">لا تجعل sitemap بديلًا عن بنية الروابط</h2>
+<p>توصي Google بأن يصل الزاحف للمنتجات من روابط HTML عبر القوائم والفئات والفئات الفرعية. مربع البحث داخل المتجر لا يكفي كمسار اكتشاف، لأن الزاحف لا يبحث فيه عادةً. أضف رابطًا واضحًا لكل منتج تريد أن يكتشفه الزاحف، واستخدم sitemap كإشارة مساعدة خاصة عندما يكون اكتشاف بعض الصفحات من الروابط أصعب. <a href="https://developers.google.com/search/docs/specialty/ecommerce/help-google-understand-your-ecommerce-site-structure">إرشادات بنية المتجر</a></p>
+<p>قسّم الروابط إلى مجموعات مفهومة: صفحات أساسية، منتجات نشطة، فئات مفيدة، ومحتوى تحريري. افحص المنتجات التي نفدت أو حُذفت، والصفحات المتغيرة باللون أو المقاس، وروابط الفلاتر والترتيب. لا تُبقِ URL في sitemap لمجرد أن النظام يستطيع توليده؛ اسأل هل تريد أن تكون هذه النسخة صفحة مستقلة قابلة للفهرسة؟</p>
+<h2 id="_3">تشخيص حالات شائعة</h2>
+<p><strong>الرابط ظاهر في sitemap لكن لا يُفهرس:</strong> افحص URL Inspection لمعرفة هل جرى الزحف، وما canonical الذي اختاره Google، وهل الصفحة مكررة أو لا تقدم فائدة واضحة. وجود الرابط في الخريطة لا يتجاوز هذه الاعتبارات.</p>
+<p><strong>الرابط محظور في robots.txt وتريد إزالته من النتائج:</strong> لا تستخدم الحظر وحده كإزالة؛ قد يحتفظ Google بعنوان URL دون محتوى إذا وصلته روابط خارجية. حدد هل تريد منع الزحف أو الفهرسة، ثم اختر الإشارة التي تحقق الغرض ولا تجمع إشارات متعارضة.</p>
+<p><strong>صفحات المنتج غير معروفة:</strong> تحقق من الروابط الداخلية أولًا، ثم من sitemap ومسارها وحالة الاستجابة. طلب الفهرسة يصلح لعدد قليل من الصفحات بعد إزالة المانع؛ ليس بديلًا عن تنظيم مئات الروابط.</p>
+<p><strong>الصفحة تظهر «مكتشفة حاليًا غير مفهرسة» أو «تم الزحف إليها حاليًا غير مفهرسة»:</strong> هذه الحالة لا تُصلح بإضافة <code>Allow</code> تلقائيًا. اقرأ سبب الاستبعاد، ثم قيّم الجودة والتكرار والإشارات والطلب. امنح التغييرات وقتًا حتى يعيد المحرك المعالجة؛ لا تتوقع تحديثًا فوريًا.</p>
+<h2 id="_4">سير عمل آمن من أربع مراحل</h2>
+<ol>
+<li><strong>جرد:</strong> احفظ نسخة من الملفات المنشورة والإعدادات الحالية، وسجّل نطاق الموقع والمنصة والقوالب المتأثرة.</li>
+<li><strong>اختبار:</strong> افحص URL واحدًا من كل نوع: منتج عادي، متغير، فئة، صفحة غير متاحة، ورابط بمعامل.</li>
+<li><strong>تغيير ضيق:</strong> غيّر قاعدة واحدة فقط إذا ثبت أنها تمنع صفحة ينبغي السماح بها، أو تُدخل صفحات لا تريدها في الخريطة. لا تغيّر قواعد عامة اعتمادًا على التخمين.</li>
+<li><strong>تحقق:</strong> أعد فتح الملف المنشور، واختبر الصفحة الحية، ثم راقب Search Console أو Bing Webmaster Tools. سجّل التغيير وتاريخه وأثره المرصود.</li>
+</ol>
+<p>إذا لم تستطع منصة زد تعديل <code>robots.txt</code> يدويًا في باقتك أو إعداداتك، لا تحاول تجاوز المنصة بملف منسوخ في مكان آخر. وثّق القيود وافحص ما تسمح به أدواتها الأصلية. ولا تغيّر URLs لتصحيح خريطة الموقع؛ ذلك قد يخلق تحويلات وأخطاء جديدة.</p>
+<h2 id="google">مصادر Google الرسمية للزحف والفهرسة</h2>
+<ul>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">Google: robots.txt</a></li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">Google: إدارة sitemap</a></li>
+<li><a href="https://developers.google.com/search/docs/specialty/ecommerce/help-google-understand-your-ecommerce-site-structure">Google: بنية مواقع التجارة الإلكترونية</a></li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors">Google: أخطاء الزحف والفهرسة</a></li>
+</ul>
+<p>هذه إرشادات عامة من Google؛ لا تفترض أن كل خيار لوحة تحكم في زد يطابق مثالًا تقنيًا بعينه. تحقق من إعداد متجرك وواجهته المنشورة قبل التطبيق.</p>
+<h2 id="_5">سكريبت فيديو قصير: الخريطة ليست ضمان فهرسة</h2>
+<p><strong>المدة:</strong> ٤٥ ثانية. <strong>اللقطة:</strong> افتح sitemap ثم robots.txt مع إخفاء النطاق الخاص عند الحاجة.</p>
+<p><strong>الخطاف:</strong> «حاطط منتجاتك في sitemap ولسه مش ظاهرة؟ ده مش تناقض.»</p>
+<p><strong>المشهد الأول:</strong> «الخريطة تساعد على اكتشاف الرابط، لكنها ما تضمنش فهرسته.»</p>
+<p><strong>المشهد الثاني:</strong> «افحص robots.txt للزحف، وnoindex للفهرسة، وcanonical للنسخة الأساسية.»</p>
+<p><strong>المشهد الثالث:</strong> «وبعدين تأكد إن المنتج مربوط من فئة برابط HTML واضح.»</p>
+<p><strong>الخاتمة:</strong> «اختبر الرابط قبل تعديل ملف عام؛ كل إشارة لها وظيفة مختلفة.»</p>
+<p>لا تستخدم لقطة لوحة شخص آخر دون إذنه، ولا تعرض رموز تحقق أو بيانات خاصة.</p>
+<h2 id="_6">كاروسيل تعليمي: أربع إشارات وأربع وظائف</h2>
+<ol>
+<li><strong>الغلاف:</strong> «Robots.txt وsitemap: مين بيعمل إيه؟»</li>
+<li><strong>Robots.txt:</strong> يوجّه طلبات الزحف، ولا يخفي الصفحة تلقائيًا من نتائج البحث.</li>
+<li><strong>Noindex:</strong> يطلب عدم الفهرسة، ويجب أن يستطيع الزاحف قراءة الإشارة.</li>
+<li><strong>Sitemap:</strong> يساعد على اكتشاف URLs الأساسية، ولا يضمن إدراجها.</li>
+<li><strong>الروابط الداخلية:</strong> توضح علاقة المنتج بالفئة والموقع.</li>
+<li><strong>التحقق:</strong> افتح النسخة المنشورة واختبر URL من كل نوع.</li>
+<li><strong>الخلاصة:</strong> «لا تستخدم كل الإشارات للغرض نفسه».</li>
+</ol>
+<h2 id="_7">سلسلة تجربة ميدانية: راجع تأثير إصلاح قاعدة محددة</h2>
+<p>هذه خطة اختبار مقترحة وليست تقرير نتائج.</p>
+<p><strong>الفرضية:</strong> بعض صفحات المنتجات الأساسية غير قابلة للزحف بسبب قاعدة منشورة في <code>robots.txt</code>.</p>
+<ol>
+<li>اختر عينة صغيرة من المنتجات التي ينبغي أن تظهر، وسجّل عنوان كل صفحة وحالتها في Search Console.</li>
+<li>افحص الملف المنشور وتأكد من وجود قاعدة تنطبق فعليًا على مسارها. لا تعتمد على اسم القاعدة وحده.</li>
+<li>افحص مجموعة مقارنة من الصفحات التي لا تطابق القاعدة، وسجّل الاختلافات في القالب والروابط والعمر.</li>
+<li>إذا أثبت الفحص أن قاعدة واحدة تحظر الصفحات المطلوبة، عدّلها عبر المسار الرسمي للمنصة، مع حفظ الحالة السابقة وإجراء التغيير في نافذة مضبوطة.</li>
+<li>اختبر الملف المنشور وعينة الصفحات الحية فورًا؛ إذا ظهرت مشكلة وصول، أعد القاعدة السابقة.</li>
+<li>راقب الزحف والفهرسة على مدى مناسب وسجّل النتائج الفعلية دون نسب أي تغير إلى السبب وحده إذا تغيرت عوامل أخرى.</li>
+</ol>
+<p><strong>قرار التوقف:</strong> لا تغيّر الملف إذا لم تستطع تحديد القاعدة المتسببة أو استعادة الحالة السابقة.</p>
+<h2 id="_8">حزمة مطالبات محايدة للأدوات: لمراجعة الملفات</h2>
+<p><strong>تحليل robots.txt</strong></p>
+<blockquote>
+<p>حلّل النص المنشور التالي مع URL المراد فحصه: [النص] و[URL]. حدّد القاعدة المطابقة حرفيًا، واشرح حدود استنتاجك واختلافات التفسير المحتملة. لا تقترح تعديلًا قبل تحديد هدف الزحف والفهرسة.</p>
+</blockquote>
+<p><strong>مراجعة sitemap</strong></p>
+<blockquote>
+<p>صنّف روابط sitemap التالية إلى: صفحة أساسية، متغير، إعادة توجيه، خطأ، أو صفحة غير مرغوبة. استخدم بيانات الاستجابة المقدمة فقط، ولا تخمن حالة الفهرسة. أخرج الصفوف غير المؤكدة للمراجعة البشرية.</p>
+</blockquote>
+<p><strong>خطة تحقق بعد التعديل</strong></p>
+<blockquote>
+<p>بناء على التغيير التالي [وصفه]، أنشئ قائمة تحقق لملف robots.txt وsitemap وURL حي وروابط داخلية. اذكر لكل نقطة الدليل المطلوب ومعيار التراجع. لا تدّع ضمان الزحف أو الترتيب.</p>
+</blockquote>
+<h2 id="_9">ملف أمثلة: أوقف هذا: في إعدادات المتجر</h2>
+<p><strong>أوقف:</strong> «أضف كل روابط المتجر إلى sitemap وخلاص».</p>
+<p><strong>استخدم:</strong> «أدرج URLs الأساسية القابلة للفهرسة، وافحص التحويلات والنسخ المتكررة والصفحات غير المرغوبة».</p>
+<p><strong>أوقف:</strong> «امنع الرابط في robots.txt عشان يختفي من Google».</p>
+<p><strong>استخدم:</strong> «حدد هل المطلوب منع الزحف أم منع الفهرسة؛ robots.txt لا يحل محل noindex».</p>
+<p><strong>أوقف:</strong> «وجود الرابط في sitemap معناه هيتفهرس».</p>
+<p><strong>استخدم:</strong> «وجوده يسهل اكتشافه؛ افحص قابلية الجلب والنسخة الأساسية والقيمة ثم تابع الحالة».</p>
+<h2 id="_10">الخطاف والقيمة والقالب: توضيح الأدوار</h2>
+<p><strong>الخطاف:</strong> «sitemap موجودة، بس صفحات المنتجات مش بتتفهرس؟»</p>
+<p><strong>القيمة:</strong> «افصل بين اكتشاف الرابط، السماح بالزحف، السماح بالفهرسة، واختيار النسخة الأساسية. ثم راجع الروابط التي توصل إلى المنتج.»</p>
+<p><strong>القالب:</strong> «افتح [الملف المنشور] ← افحص [قاعدة URL] ← راجع [noindex وcanonical] ← اختبر [رابطًا حيًا] ← وثّق [الحالة بعد إعادة الزحف].»</p>
+<p><strong>مثال:</strong> «الرابط موجود في sitemap، لكن URL Inspection يظهر أنه محظور بالزحف؛ راجع القاعدة التي تنطبق على المسار قبل تغيير الملف كله.»</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/mena-ecommerce-ai-search-visibility/"><span>الدليل التالي</span><strong>كيف تهيّئ متجرًا عربيًا للظهور في نتائج البحث وإجابات الذكاء الاصطناعي</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٥٠ مقالًا عمليًا · العربية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

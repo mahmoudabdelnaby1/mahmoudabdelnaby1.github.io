@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>How to Diagnose Branded Search Overlap in Performance Max | Mahmoud Abdelnaby</title><meta name="description" content="Check whether branded queries are appearing in Performance Max, separate overlap from proven cannibalization, and test exclusions without assuming they will improve results."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Diagnose Branded Search Overlap in Performance Max | Mahmoud Abdelnaby"><meta property="og:description" content="Check whether branded queries are appearing in Performance Max, separate overlap from proven cannibalization, and test exclusions without assuming they will improve results."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Diagnose Branded Search Overlap in Performance Max","description":"Check whether branded queries are appearing in Performance Max, separate overlap from proven cannibalization, and test exclusions without assuming they will improve results.","inLanguage":"en","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/blog/","name":"Marketing & Growth Blog"},"about":[{"@type":"Thing","name":"Paid media"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/">MAHMOUD <em>ABDELNABY</em></a><nav class="nav" aria-label="Primary navigation"><div class="nav-links"><a href="/blog/" aria-current="page">Blog</a><a href="/marketing-systems/">Marketing systems</a></div><a class="lang" href="/ar/blog/diagnose-brand-query-overlap-performance-max/">العربية</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="ltr">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Paid media</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Paid media</p><h1>How to Diagnose Branded Search Overlap in Performance Max</h1><p class="blog-article-deck">Check whether branded queries are appearing in Performance Max, separate overlap from proven cannibalization, and test exclusions without assuming they will improve results.</p>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>8 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/diagnose-brand-query-overlap-performance-max/">العربية</a></div></header>
+<article class="blog-prose"><p>Seeing your brand name in Performance Max search terms does not, by itself, prove that the campaign took a conversion away from your Search campaign. It shows that an ad appeared for a branded query in the reporting view. To decide whether to add an exclusion, first establish what is overlapping, what the brand campaign is meant to do, and what evidence would show that the change helped or hurt.</p>
+<p>Google Ads currently provides a Performance Max search terms report with search terms, associated metrics, landing pages, and ad formats. Google also documents brand exclusions for Performance Max and Search, while cautioning that controls can limit conversion opportunities. Use the current account view and documentation to confirm which controls are available in your account before changing settings. <a href="https://support.google.com/google-ads/answer/16327396">Performance Max search terms report</a> · <a href="https://support.google.com/google-ads/answer/13721847">Brand settings for Search and Performance Max</a></p>
+<h2 id="separate-overlap-attribution-and-incrementality">Separate overlap, attribution, and incrementality</h2>
+<ul>
+<li><strong>Observed overlap:</strong> Performance Max served for a branded query during a defined period, according to the report.</li>
+<li><strong>Attribution:</strong> A conversion was credited to a campaign under the account’s conversion and attribution settings.</li>
+<li><strong>Incrementality:</strong> The conversion would not have happened, or would have happened differently, without the campaign. This is a causal question; a query row or attribution label alone does not answer it.</li>
+</ul>
+<p>These can coexist, but they are not synonyms. A brand campaign may protect coverage, support a specific landing page, or capture demand from people who already know the business. A PMax campaign may also reach branded searches. Whether that is wasteful depends on the goal, economics, query, and observed user path—not on the mere presence of the brand name.</p>
+<h2 id="build-a-baseline-from-comparable-views">Build a baseline from comparable views</h2>
+<p>Before changing an exclusion, document:</p>
+<ol>
+<li>The date range, account timezone, currency, and conversion actions included in the report.</li>
+<li>Branded query groups, including spelling and language variants where the reporting view exposes them.</li>
+<li>PMax search term, landing page, ad format, cost, and conversion details that are actually available.</li>
+<li>The corresponding brand Search campaign’s targeting, budget limits, impression coverage, landing page, and conversion definitions.</li>
+<li>Other demand sources active in the same period: organic brand searches, direct traffic, promotions, partner referrals, and offline sales where known.</li>
+</ol>
+<p>Avoid combining different attribution settings or conversion windows as though they were a single comparable series. Note reporting limits and privacy aggregation. If a query or metric is not exposed, mark it unavailable rather than reconstructing it from a category label.</p>
+<h2 id="diagnose-the-job-of-the-brand-campaign">Diagnose the job of the brand campaign</h2>
+<p>Ask what the separate brand campaign is supposed to accomplish. Is it meant to preserve a message, route to a location-specific page, provide a controlled offer, protect coverage during a promotion, or simply capture existing demand? Define that job and its guardrails before deciding to block PMax.</p>
+<p>Review whether the branded queries in PMax lead to a useful landing page and whether the business could serve those visitors at acceptable economics. Check if the brand Search campaign is limited by budget or eligibility. If there is a genuine reason to control brand traffic, compare campaign-level brand exclusions with negative keywords using Google’s current documentation. These controls may operate differently, and the account-level negative keyword option can affect other campaigns beyond PMax; do not apply a broad exclusion without tracing its scope.</p>
+<h2 id="test-an-exclusion-with-an-explicit-risk-check">Test an exclusion with an explicit risk check</h2>
+<p>If the baseline shows a specific issue and the business wants to separate branded traffic, choose the narrowest applicable control. Save the original settings, identify which inventory and campaigns the change affects, and define what would count as a problem: loss of valuable shopping coverage, fewer qualified conversions, a higher cost per completed action, or reduced reach in an important market.</p>
+<p>Where the account supports a valid experiment or a defensible comparison, use it. Otherwise, make a controlled change with a comparison period and record other changes that could affect demand. Avoid changing budget, creative, landing page, bidding, and exclusions all at once if you need to interpret the result.</p>
+<p>Review observed query and campaign measures after enough data has accumulated for the account’s volume and conversion delay. Compare costs and qualified outcomes, not only attributed conversion counts. A lower PMax conversion count after an exclusion does not automatically mean the account lost value; those conversions may have moved to another campaign. Likewise, a stronger brand Search report does not prove the change created incremental business.</p>
+<h2 id="example-an-overlap-report-is-a-starting-point-not-a-verdict">Example: an overlap report is a starting point, not a verdict</h2>
+<p>Suppose a PMax search terms view shows branded queries and the brand Search campaign also records conversions. The marketer first checks whether the PMax rows are Search or Shopping format, what landing pages were shown, how many conversions were attributed under each campaign’s settings, and whether the brand campaign was budget-limited. They then define a narrow test and monitor total qualified outcomes across both campaigns plus any business-side reconciliation available.</p>
+<p>This example illustrates a diagnosis process. It does not describe a real account or imply that an exclusion will improve results.</p>
+<h2 id="short-video-script-brand-query-overlap-is-not-proof-of-cannibalization">Short-video script: brand-query overlap is not proof of cannibalization</h2>
+<p><strong>Length:</strong> 45 seconds. <strong>Visual:</strong> two campaign cards and an evidence checklist.</p>
+<p><strong>0–5 sec — Hook:</strong> “Your brand appeared in Performance Max. Did it steal a sale? The report alone cannot tell you.”</p>
+<p><strong>6–17 sec — Explain:</strong> “Overlap is what served. Attribution is what the model credited. Incrementality asks what would have happened without the campaign.”</p>
+<p><strong>18–30 sec — Diagnose:</strong> Show query, format, landing page, conversion settings, and whether the separate brand campaign was constrained.</p>
+<p><strong>31–39 sec — Test:</strong> “If you exclude a brand, save the baseline and watch total qualified outcomes across campaigns.”</p>
+<p><strong>40–45 sec — Close:</strong> “Control only after you know what the control can change.”</p>
+<p>Use a redacted demo account or synthetic data. Do not show client names, budgets, or conversion records.</p>
+<h2 id="educational-carousel-from-brand-overlap-to-a-measured-decision">Educational carousel: from brand overlap to a measured decision</h2>
+<ol>
+<li><strong>Cover:</strong> Performance Max shows your brand. What now?</li>
+<li><strong>Do not jump to cannibalization:</strong> A search-term row proves appearance, not the counterfactual.</li>
+<li><strong>Inspect the row:</strong> Query group, date, format, landing page, and available metrics.</li>
+<li><strong>Compare the brand campaign:</strong> Goal, budget constraint, landing page, and conversion setup.</li>
+<li><strong>Map the control:</strong> Identify the precise campaigns and inventory an exclusion affects.</li>
+<li><strong>Set guardrails:</strong> Qualified outcomes, costs, useful coverage, and market reach.</li>
+<li><strong>Change carefully:</strong> Save settings and avoid simultaneous unrelated changes.</li>
+<li><strong>Report honestly:</strong> Show both campaign-level attribution and total account/business evidence, with limitations.</li>
+</ol>
+<h2 id="field-experiment-thread-evaluate-a-brand-exclusion-without-assuming-a-win">Field experiment thread: evaluate a brand exclusion without assuming a win</h2>
+<p>This is a proposed evaluation, not a performance case study.</p>
+<p><strong>1/</strong> Capture the current PMax search term view and brand Search settings for a completed period. Record timezone, currency, conversion actions, and visible reporting limitations.</p>
+<p><strong>2/</strong> Define the specific query group and business reason for considering an exclusion. If the only reason is “the brand appears,” collect more evidence before changing anything.</p>
+<p><strong>3/</strong> Write the hypothesis and guardrails: what outcome should improve, what valuable coverage must not be lost, and which total qualified measure will be reviewed.</p>
+<p><strong>4/</strong> Apply the narrowest documented control only after identifying its scope. Save the prior state and the change date. Use an experiment or comparable period when available.</p>
+<p><strong>5/</strong> Compare query visibility, campaign allocation, cost, and qualified outcomes across affected campaigns. Note promotions, seasonality, budget changes, and conversion delays; report the result as observed, not causal unless the design supports causality.</p>
+<h2 id="tool-neutral-prompt-pack-audit-pmax-brand-query-overlap">Tool-neutral prompt pack: audit PMax brand-query overlap</h2>
+<p><strong>Prompt 1 — Separate evidence from inference</strong></p>
+<blockquote>
+<p>Review these redacted search term rows and campaign settings [paste data]. Separate observed branded-query overlap, attributed conversions, and claims about incrementality. List missing fields and reporting limitations. Do not infer a sale was stolen or added.</p>
+</blockquote>
+<p><strong>Prompt 2 — Map the exclusion scope</strong></p>
+<blockquote>
+<p>Using this current official platform documentation [paste URL or excerpt] and these campaign settings [paste redacted details], map which campaigns and inventory the proposed brand exclusion or negative keyword could affect. Flag anything that requires account-level confirmation. Do not recommend a change without stating its reach and risks.</p>
+</blockquote>
+<p><strong>Prompt 3 — Draft a review plan</strong></p>
+<blockquote>
+<p>Turn this baseline [paste sanitized summary] into a test plan with a hypothesis, comparison method, primary business measure, guardrails, reporting window, confounders, and stop conditions. Distinguish attribution from incrementality and avoid promising a performance improvement.</p>
+</blockquote>
+<h2 id="stop-doing-swipe-file-stop-calling-overlap-cannibalization-without-a-test">Stop-doing swipe file: stop calling overlap cannibalization without a test</h2>
+<p><strong>Stop:</strong> “PMax took 40 conversions from Search because branded terms appeared in its report.” The query report does not show what would have happened without PMax.</p>
+<p><strong>Say instead:</strong> “PMax served for these branded query groups during [period]. The separate brand campaign recorded [observed data] under [conversion settings]. We have not established how many outcomes were incremental or displaced.”</p>
+<p><strong>Stop:</strong> applying an account-level exclusion because one campaign appears to use brand traffic. It may affect campaigns beyond the one you are diagnosing.</p>
+<p><strong>Do this instead:</strong> map control scope, preserve the baseline, set a total-outcome guardrail, and evaluate an appropriately narrow change only when the evidence supports it.</p>
+<h2 id="hookvaluetemplate-decide-whether-to-exclude-branded-traffic">Hook–Value–Template: decide whether to exclude branded traffic</h2>
+<p><strong>Hook:</strong> “A branded query in PMax is a clue to investigate—not proof of wasted spend.”</p>
+<p><strong>Value:</strong> Separate what served, what received attribution, and what was incremental. Map the control’s reach and judge the change by total qualified outcomes and business constraints.</p>
+<p><strong>Decision brief:</strong></p>
+<blockquote>
+<p><strong>Question:</strong> [what concern are we investigating?]<br>
+<strong>Period and account settings:</strong> [dates, timezone, currency, conversions]<br>
+<strong>Observed PMax brand queries:</strong> [query group, format, landing page, metrics]<br>
+<strong>Brand campaign context:</strong> [goal, budget/eligibility, landing page]<br>
+<strong>Hypothesis:</strong> [what should change, and why?]<br>
+<strong>Proposed control and scope:</strong> [setting, affected campaigns/inventory]<br>
+<strong>Primary measure:</strong> [qualified outcome across relevant campaigns]<br>
+<strong>Guardrails:</strong> [valuable coverage, cost, market reach]<br>
+<strong>Confounders and limits:</strong> [other changes, attribution, data gaps]<br>
+<strong>Decision date and owner:</strong> [date / role]</p>
+</blockquote>
+<p>Approve an exclusion only if the business goal and expected trade-off are clear. The brief is a decision aid, not a guarantee that the change will improve performance.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="Guide navigation"><a href="/blog/indexnow-bing-url-notifications-explained/"><span>Next guide</span><strong>IndexNow and Bing Webmaster Tools: What URL Notifications Do—and Don’t Do</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>250 practical articles · English</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

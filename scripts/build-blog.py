@@ -12,11 +12,14 @@ UPDATED = "2026-10-28"
 DATA = json.loads((ROOT / "data/blog-content.json").read_text(encoding="utf-8"))
 POSTS = DATA["posts"]
 
+def posts_for(lang):
+ return [p for p in POSTS if isinstance(p.get(lang),dict) and p[lang].get("markdown")]
+
 UI = {
  "en": {
   "brand":"MAHMOUD <em>ABDELNABY</em>","home":"Portfolio","guides":"Marketing systems","language":"العربية",
-  "search_label":"Describe a task or problem","search_placeholder":"e.g. I need to measure leads from WhatsApp…","all":"All topics",
-  "count":"200 practical articles · 100 topics · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
+  "search_label":"Describe what you need in your own words","search_placeholder":"e.g. My ads get clicks but no sales—what should I check?","all":"All topics",
+  "count":"200 practical articles · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
   "title":"Useful work for the decisions behind growth.",
   "intro":"Bilingual, task-led guides for marketers working across MENA. Each article turns an operating question into a method, checks, and related tools.",
   "featured":"START HERE","featured_label":"Growth diagnosis","read":"min read","back":"All articles",
@@ -27,8 +30,8 @@ UI = {
  },
  "ar": {
   "brand":"محمود <em>عبدالنبي</em>","home":"معرض الأعمال","guides":"الأنظمة التسويقية","language":"English",
-  "search_label":"اكتب المهمة أو المشكلة التي تريد حلها","search_placeholder":"مثال: عندي مشكلة في قياس العملاء من واتساب…","all":"كل الموضوعات",
-  "count":"٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
+  "search_label":"اكتب ما تحتاجه بطريقتك","search_placeholder":"مثال: عندي مشكلة؛ الإعلانات بتجيب نقرات لكن مفيش مبيعات، أعمل إيه؟","all":"كل الموضوعات",
+  "count":"٢٠٠ مقال عملي · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
   "title":"عمل عملي يدعم القرارات وراء النمو.",
   "intro":"أدلة عربية وإنجليزية تبدأ من مهمة تسويقية حقيقية في أسواق MENA، ثم تحوّلها إلى منهج وخطوات وأدوات مرتبطة.",
   "featured":"ابدأ من هنا","featured_label":"تشخيص النمو","read":"دقائق للقراءة","back":"كل المقالات",
@@ -69,13 +72,13 @@ def framework(fid,lang):
 def ld(value):
  return json.dumps(value,ensure_ascii=False,separators=(",",":")).replace("</","<\\/")
 
-def head(title,description,canonical,en_url,ar_url,lang,schema,kind):
+def head(title,description,canonical,en_url,ar_url,lang,schema,kind,has_translation=True):
+ alternates=(f'<link rel="alternate" hreflang="en" href="{esc(en_url)}"><link rel="alternate" hreflang="ar" href="{esc(ar_url)}"><link rel="alternate" hreflang="x-default" href="{esc(en_url)}">' if has_translation else "")
  return f'''<!doctype html>
 <html lang="{lang}" dir="{"rtl" if lang=="ar" else "ltr"}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
-<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{esc(canonical)}">
-<link rel="alternate" hreflang="en" href="{esc(en_url)}"><link rel="alternate" hreflang="ar" href="{esc(ar_url)}"><link rel="alternate" hreflang="x-default" href="{esc(en_url)}">
+<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{esc(canonical)}">{alternates}
 <meta property="og:type" content="{kind}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
@@ -92,49 +95,69 @@ def footer(lang):
 
 def card(post,lang,featured=False):
  ui=UI[lang]; data=post[lang]; url=f'/{("ar/" if lang=="ar" else "")}blog/{post["slug"]}/'
- label=post["category_ar" if lang=="ar" else "category_en"]
- search_text=" ".join((post["en"]["title"],post["en"]["description"],post["ar"]["title"],post["ar"]["description"],post["category_en"],post["category_ar"]))
+ label=post.get("category_ar" if lang=="ar" else "category_en",data.get("category",ui["topics"]))
+ search_headings=[]
+ for language in ("en","ar"):
+  if post.get(language): search_headings.extend(re.findall(r"^#{1,3}\s+(.+)$",post[language]["markdown"],flags=re.M))
+ search_tags=sum((post.get(language,{}).get("tags",[]) for language in ("en","ar")),[])
+ search_parts=[]
+ for language in ("en","ar"):
+  if post.get(language): search_parts.extend((post[language]["title"],post[language].get("description","")))
+ search_parts.extend((post.get("category_en",""),post.get("category_ar",""),*search_tags,*search_headings))
+ search_text=" ".join(search_parts)
+ search_title=" ".join(post[l]["title"] for l in ("en","ar") if post.get(l))
  cls="blog-feature-card" if featured else "blog-card"
  eyebrow=ui["featured_label"] if featured else label
- return f'''<a class="{cls}" href="{url}" data-theme="{esc(post.get("category_key",post["theme"][:2]))}" data-search="{esc(search_text.lower())}" data-search-title="{esc((post["en"]["title"]+" "+post["ar"]["title"]).lower())}">
+ return f'''<a class="{cls}" href="{url}" data-theme="{esc(post.get("category_key",post.get("theme","00")[:2]))}" data-search="{esc(search_text.lower())}" data-search-title="{esc(search_title.lower())}">
 <span class="blog-card-kicker">{esc(eyebrow)} <span aria-hidden="true">↗</span></span><h2>{esc(data["title"])}</h2><p>{esc(data["description"])}</p><span class="blog-card-meta">{minutes(post,lang)} {esc(ui["read"])}</span></a>'''
 
 def index_page(lang):
- ui=UI[lang]; basepath="/ar/blog/" if lang=="ar" else "/blog/"
+ posts=posts_for(lang)
+ if not posts: raise SystemExit("No blog articles for language: "+lang)
+ ui=dict(UI[lang]); basepath="/ar/blog/" if lang=="ar" else "/blog/"
+ if lang=="ar":
+  count=str(len(posts)).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))+" مقالًا عمليًا · العربية"
+ else: count=f"{len(posts)} practical articles · English"
+ ui["count"]=count
  canonical=BASE+basepath; en_url=BASE+"/blog/"; ar_url=BASE+"/ar/blog/"
  schema={"@context":"https://schema.org","@type":"CollectionPage","name":ui["title"],"description":ui["intro"],"url":canonical,"inLanguage":lang,
  "author":{"@type":"Person","name":"Mahmoud Abdelnaby","url":BASE+"/"},
- "mainEntity":{"@type":"ItemList","numberOfItems":len(POSTS),"itemListElement":[
-  {"@type":"ListItem","position":i+1,"url":BASE+f'/{("ar/" if lang=="ar" else "")}blog/{p["slug"]}/',"name":p[lang]["title"]} for i,p in enumerate(POSTS)]}}
+ "mainEntity":{"@type":"ItemList","numberOfItems":len(posts),"itemListElement":[
+  {"@type":"ListItem","position":i+1,"url":BASE+f'/{("ar/" if lang=="ar" else "")}blog/{p["slug"]}/',"name":p[lang]["title"]} for i,p in enumerate(posts)]}}
  pagehead=head(("مدونة التسويق والنمو | محمود عبدالنبي" if lang=="ar" else "Marketing & Growth Blog | Mahmoud Abdelnaby"),ui["intro"],canonical,en_url,ar_url,lang,schema,"website")
  filters=[f'<button class="blog-filter" type="button" data-filter="all" aria-pressed="true">{esc(ui["all"])}</button>']
  seen=set()
- for p in POSTS:
+ for p in posts:
   category_key=p.get("category_key",p["theme"][:2])
   if category_key in seen: continue
   seen.add(category_key)
   label=p["category_ar" if lang=="ar" else "category_en"]
   filters.append(f'<button class="blog-filter" type="button" data-filter="{esc(category_key)}" aria-pressed="false">{esc(label)}</button>')
- cards="\n".join(card(p,lang) for p in POSTS[1:])
+ cards="\n".join(card(p,lang) for p in posts[1:])
  language_href="/blog/" if lang=="ar" else "/ar/blog/"
  return f'''{pagehead}
 <body class="blog-page blog-index-page"><div class="wrap blog-wrap">{nav(lang,language_href)}
 <main id="main-content" class="blog-main">
-<section class="blog-index-hero"><div class="blog-index-copy"><p class="blog-kicker">{esc(ui["kicker"])}</p><h1>{esc(ui["title"])}</h1><p class="blog-intro">{esc(ui["intro"])}</p><p class="blog-count">{esc(ui["count"])}</p></div><div class="blog-hero-mark" aria-hidden="true"><span>FIELD<br>NOTES</span><b>{len(POSTS)}</b><i>01 — {len(POSTS):02d}</i></div></section>
-<section class="blog-featured"><div class="blog-featured-aside"><span>{esc(ui["featured"])}</span><p>{esc(ui["language_note"])}</p></div>{card(POSTS[0],lang,True)}</section>
-<section class="blog-library" aria-labelledby="blog-library-title"><div class="blog-library-heading"><div><p class="blog-kicker">{esc(ui["topics"])}</p><h2 id="blog-library-title">{esc(ui["explore"])}</h2></div><label class="blog-search"><span>{esc(ui["search_label"])}</span><input type="search" data-blog-search placeholder="{esc(ui["search_placeholder"])}" autocomplete="off"></label></div>
+<section class="blog-index-hero"><div class="blog-index-copy"><p class="blog-kicker">{esc(ui["kicker"])}</p><h1>{esc(ui["title"])}</h1><p class="blog-intro">{esc(ui["intro"])}</p><p class="blog-count">{esc(ui["count"])}</p></div><div class="blog-hero-mark" aria-hidden="true"><span>FIELD<br>NOTES</span><b>{len(posts)}</b><i>01 — {len(posts):02d}</i></div></section>
+<section class="blog-featured"><div class="blog-featured-aside"><span>{esc(ui["featured"])}</span><p>{esc(ui["language_note"])}</p></div>{card(posts[0],lang,True)}</section>
+<section class="blog-library" aria-labelledby="blog-library-title"><div class="blog-library-heading"><div><p class="blog-kicker">{esc(ui["topics"])}</p><h2 id="blog-library-title">{esc(ui["explore"])}</h2></div><label class="blog-search"><span>{esc(ui["search_label"])}</span><input type="search" data-blog-search placeholder="{esc(ui["search_placeholder"])}" autocomplete="off" dir="auto"></label></div>
 <div class="blog-filter-list" aria-label="{esc(ui["topics"])}">{"".join(filters)}</div><p class="blog-results-status" data-blog-status data-default="{esc(ui["count"])}" data-one="{esc(ui["shown_one"])}" data-many="{esc(ui["shown"])}" aria-live="polite">{esc(ui["count"])}</p>
 <div class="blog-grid" data-blog-grid>{"".join(cards)}</div><p class="blog-empty" data-blog-empty hidden>{esc(ui["no_results"])}</p></section>
 <section class="blog-faq-note"><span class="blog-faq-index">MENA · EN / AR</span><p>{esc(ui["intro"])}</p><a href="{("/ar/marketing-systems/" if lang=="ar" else "/marketing-systems/")}">{esc(ui["guides"])} ↗</a></section>
-</main>{footer(lang)}</div><script defer src="/assets/blog.js?v=20261029-natural-language-v1"></script></body></html>'''
+</main>{footer(lang)}</div><script defer src="/assets/blog.js?v=20261029-natural-search-v5"></script></body></html>'''
 
-def article_page(index,lang):
- p=POSTS[index]; data=p[lang]; ui=UI[lang]
+def article_page(p,lang,localized_posts):
+ data=p[lang]; ui=dict(UI[lang])
+ if lang=="ar":
+  ui["count"]=str(len(localized_posts)).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))+" مقالًا عمليًا · العربية"
+ else: ui["count"]=f"{len(localized_posts)} practical articles · English"
  basepath=f'/{("ar/" if lang=="ar" else "")}blog/{p["slug"]}/'
  en_url=BASE+f'/blog/{p["slug"]}/'; ar_url=BASE+f'/ar/blog/{p["slug"]}/'
  canonical=ar_url if lang=="ar" else en_url
+ other_lang="ar" if lang=="en" else "en"
+ has_translation=isinstance(p.get(other_lang),dict) and bool(p[other_lang].get("markdown"))
  collection=BASE+("/ar/blog/" if lang=="ar" else "/blog/")
- category=p["category_ar" if lang=="ar" else "category_en"]
+ category=p.get("category_ar" if lang=="ar" else "category_en",data.get("category",UI[lang]["topics"]))
  resources=[framework(fid,lang) for fid in p["framework_ids"]]
  resources=[x for x in resources if x]
  rendered=markdown.markdown(data["markdown"],extensions=["tables","fenced_code","sane_lists","toc"],output_format="html5")
@@ -142,10 +165,11 @@ def article_page(index,lang):
  "author":{"@type":"Person","@id":BASE+"/#person","name":"Mahmoud Abdelnaby","url":BASE+"/"},"publisher":{"@type":"Person","@id":BASE+"/#person"},
  "mainEntityOfPage":{"@type":"WebPage","@id":canonical},"isPartOf":{"@type":"Blog","@id":collection,"name":("مدونة التسويق والنمو" if lang=="ar" else "Marketing & Growth Blog")},
  "about":[{"@type":"Thing","name":category}]}
- next_post=POSTS[(index+1)%len(POSTS)]; next_url=f'/{("ar/" if lang=="ar" else "")}blog/{next_post["slug"]}/'
+ index=localized_posts.index(p)
+ next_post=localized_posts[(index+1)%len(localized_posts)]; next_url=f'/{("ar/" if lang=="ar" else "")}blog/{next_post["slug"]}/'
  related_html="".join(f'<li><a href="{esc(x["href"])}">{esc(x["title"])} <span aria-hidden="true">↗</span></a><span>{esc(x["id"])}</span></li>' for x in resources)
- language_href=f'/{("ar/" if lang=="en" else "")}blog/{p["slug"]}/'
- pagehead=head(data["title"]+(" | مدونة محمود عبدالنبي" if lang=="ar" else " | Mahmoud Abdelnaby"),data["description"],canonical,en_url,ar_url,lang,schema,"article")
+ language_href=(f'/{("ar/" if other_lang=="ar" else "")}blog/{p["slug"]}/' if has_translation else ("/ar/blog/" if lang=="en" else "/blog/"))
+ pagehead=head(data["title"]+(" | مدونة محمود عبدالنبي" if lang=="ar" else " | Mahmoud Abdelnaby"),data["description"],canonical,en_url,ar_url,lang,schema,"article",has_translation)
  return f'''{pagehead}<body class="blog-page blog-article-page"><div class="wrap blog-wrap">{nav(lang,language_href)}
 <main id="main-content" class="blog-article-main" dir="{"rtl" if lang=="ar" else "ltr"}">
 <nav class="blog-breadcrumb" aria-label="{"مسار الصفحة" if lang=="ar" else "Breadcrumb"}"><a href="{("/ar/blog/" if lang=="ar" else "/blog/")}">{esc(ui["back"])}</a><span aria-hidden="true">/</span><span>{esc(category)}</span></nav>
@@ -165,9 +189,12 @@ def add_links():
    path.write_text(text.replace(anchor,anchor+addition,1),encoding="utf-8",newline="\n")
 
 def add_hub_promo():
+ en_count=len(posts_for("en")); ar_count=len(posts_for("ar")); total=en_count+ar_count
+ ar_total=str(total).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))
+ en_total=f"{total:,}"
  for path,anchor,promo in [
-  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo"><div><span>FIELD NOTES · 200 ARTICLES</span><h2>Read the marketing blog.</h2><p>One hundred bilingual guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
-  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">','<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · ٢٠٠ مقال</span><h2>اقرأ مدونة التسويق.</h2><p>مئة موضوع بالعربية والإنجليزية تربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
+  (ROOT/"marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">',f'<section class="blog-promo"><div><span>FIELD NOTES · {en_total} ARTICLE PAGES</span><h2>Read the marketing blog.</h2><p>{en_count} English and {ar_count} Arabic guides connect day-to-day marketing questions with practical frameworks.</p></div><a href="/blog/">Explore all articles <span aria-hidden="true">↗</span></a></section>'),
+  (ROOT/"ar/marketing-systems/index.html",'<section class="systems-utm-product" aria-labelledby="creator-planner-title">',f'<section class="blog-promo" dir="rtl"><div><span>ملاحظات تطبيقية · {ar_total} مقالًا</span><h2>اقرأ مدونة التسويق.</h2><p>{str(ar_count).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))} دليلًا بالعربية و{str(en_count).translate(str.maketrans("0123456789","٠١٢٣٤٥٦٧٨٩"))} بالإنجليزية تربط أسئلة العمل التسويقي بأطر عملية.</p></div><a href="/ar/blog/">استكشف المقالات <span aria-hidden="true">↗</span></a></section>')]:
   text=path.read_text(encoding="utf-8")
   text=re.sub(r'<section class="blog-promo"[^>]*>.*?</section>',"",text,flags=re.S)
   if anchor not in text: raise SystemExit("Missing marketing library insertion point: "+str(path))
@@ -181,7 +208,10 @@ def update_sitemap(routes):
  if not missing: return 0
  blocks=[]
  for r in missing:
-  blocks.append('  <url>\n    <loc>'+html.escape(r["url"])+'</loc>\n    <lastmod>'+UPDATED+'</lastmod>\n    <xhtml:link rel="alternate" hreflang="en" href="'+html.escape(r["en"])+'" />\n    <xhtml:link rel="alternate" hreflang="ar" href="'+html.escape(r["ar"])+'" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="'+html.escape(r["en"])+'" />\n  </url>')
+  block='  <url>\n    <loc>'+html.escape(r["url"])+'</loc>\n    <lastmod>'+UPDATED+'</lastmod>'
+  if r.get("en") and r.get("ar"):
+   block+='\n    <xhtml:link rel="alternate" hreflang="en" href="'+html.escape(r["en"])+'" />\n    <xhtml:link rel="alternate" hreflang="ar" href="'+html.escape(r["ar"])+'" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="'+html.escape(r["en"])+'" />'
+  blocks.append(block+'\n  </url>')
  closing=re.search(r"</urlset>\s*$",raw)
  if not closing: raise SystemExit("Sitemap closing tag not found")
  result=raw[:closing.start()]+"\n"+"\n".join(blocks)+"\n"+raw[closing.start():]
@@ -190,12 +220,14 @@ def update_sitemap(routes):
  return len(missing)
 
 def main():
- if len(POSTS)!=100 or len({p["slug"] for p in POSTS})!=100: raise SystemExit("Expected 100 bilingual topics")
+ if len({p["slug"] for p in POSTS})!=len(POSTS): raise SystemExit("Duplicate blog slug")
  for lang in ("en","ar"):
+  localized=posts_for(lang)
+  if not localized: raise SystemExit("No blog pages for language: "+lang)
   seen_bodies={}
   seen_titles={}
   seen_headings={}
-  for p in POSTS:
+  for p in localized:
    body=p[lang]["markdown"]
    title=p[lang]["title"].strip().casefold()
    if title in seen_titles: raise SystemExit("Duplicate article title: "+seen_titles[title]+" and "+p["slug"]+" "+lang)
@@ -212,8 +244,9 @@ def main():
     seen_headings[normalized]=p["slug"]
  for p in POSTS:
   for lang in ("en","ar"):
-   if not p[lang]["markdown"]: raise SystemExit("Missing body: "+p["slug"])
-   for fid in p["framework_ids"]:
+   if not p.get(lang): continue
+   if not p[lang].get("markdown"): raise SystemExit("Missing body: "+p["slug"]+" "+lang)
+   for fid in p.get("framework_ids",[]):
     if not framework(fid,lang): raise SystemExit("Missing related framework: "+fid+" "+lang)
  (ROOT/"assets/blog.css").write_text(BLOG_CSS,encoding="utf-8",newline="\n")
  (ROOT/"assets/blog.js").write_text(BLOG_JS,encoding="utf-8",newline="\n")
@@ -221,15 +254,17 @@ def main():
  for lang in ("en","ar"):
   dest=ROOT/("ar/blog/index.html" if lang=="ar" else "blog/index.html"); dest.parent.mkdir(parents=True,exist_ok=True)
   dest.write_text(index_page(lang),encoding="utf-8",newline="\n")
- for i,p in enumerate(POSTS):
+ for p in POSTS:
   for lang in ("en","ar"):
+   if not p.get(lang): continue
    dest=ROOT/("ar" if lang=="ar" else "")/"blog"/p["slug"]/"index.html"
-   dest.parent.mkdir(parents=True,exist_ok=True); dest.write_text(article_page(i,lang),encoding="utf-8",newline="\n")
-  routes.extend([
-   {"url":BASE+"/blog/"+p["slug"]+"/","en":BASE+"/blog/"+p["slug"]+"/","ar":BASE+"/ar/blog/"+p["slug"]+"/"},
-   {"url":BASE+"/ar/blog/"+p["slug"]+"/","en":BASE+"/blog/"+p["slug"]+"/","ar":BASE+"/ar/blog/"+p["slug"]+"/"}])
+   dest.parent.mkdir(parents=True,exist_ok=True); dest.write_text(article_page(p,lang,posts_for(lang)),encoding="utf-8",newline="\n")
+   route={"url":BASE+f'/{("ar/" if lang=="ar" else "")}blog/{p["slug"]}/'}
+   if p.get("en") and p.get("ar"):
+    route.update({"en":BASE+"/blog/"+p["slug"]+"/","ar":BASE+"/ar/blog/"+p["slug"]+"/"})
+   routes.append(route)
  add_links(); add_hub_promo(); added=update_sitemap(routes)
- print(f"Generated {len(POSTS)*2} bilingual article pages and 2 indexes.")
+ print(f"Generated {len(posts_for('en'))} English and {len(posts_for('ar'))} Arabic article pages and 2 indexes.")
  print(f"Added {added} canonical routes to sitemap.")
  print("Each article links to its existing matching frameworks in both languages.")
 
@@ -284,20 +319,25 @@ BLOG_JS = r"""(() => {
  const empty=document.querySelector("[data-blog-empty]");
  if(!cards.length)return;
  let active="all";
- const stopWords=new Set(("a an and are as at be by do for from how i in is it me my of on or the to was what when where why with you your need want looking find show help have has had this that please can could would should about into using find عندي عندنا لدي عندي عايز عايزه عاوز عاوزه اريد محتاج محتاجه ابغى ابي ازاي ازاى كيف ماذا ايه اي ما في فين من على عن الي اللي الذي التي و او ثم لكن لو هل هو هي يكون كذا كده كمان جدا مش مو ليس لا مشكلة مشاكل عند لدي لديّ اريد اريد ان عايز ان عايزة ان محتاج ان اريد اعرف طريقة طرق شيء حاجه حاجة عايز اعمل اعمل اعرف حل حلول ليه ليش اريد معرفة" ).split(/\s+/));
+ const stopWords=new Set(("a an and are as at be by do does did for from how i in is it me my of on or the to was were what when where why with you your need want looking find show help have has had this that please can could would should about into using get gets getting make makes made much many more most some any something anything thing things aint dont doesn't didn't not no but so then than there here they them their we us our he she his her its if while after before very really much just also still already done going go goes got give giving take taking have has had am is are was were will would can could should do does did pls please want to רוצה i want looking for trying to need to" ).split(/\s+/));
+ const arabicStopWords="انا أنا احنا إحنا انت انتو انتم هو هي هما هم هن احنا عندي عندنا لدي لديك لي عند عايز عايزة عاوز عاوزه عايزين عاوزين محتاج محتاجة محتاجين اريد أرغب ابغى ابغي ابي نفسي ازاي ازاى كيف ماذا ايه ايش اي ايه هو هي هل في ف فين من على عن الي اللي الذي التي و او ثم لكن لو يكون كده كدا كذا كمان جدا مش مو مشي ما لا ليس لسه دلوقتي حاليا بعدها بهم بي بقى بقي على الرغم عندي لدي طريقة طرق حاجه حاجة شيء حل حلول مشكله مشكلة مشاكل يعني مثلا مثل مثلا عايز اعرف اريد ان عايز ان عايزة ان محتاج ان انا عندي عندنا يوجد عندهم عندنا بتاع بتاعتي بتاعتي بتاعه بتاعها بتاعهم بتاعت بتاعتي اللي هو اللي هي بيكون يكون بقي بخصوص الخاصه الخاصة بتاعتي بتاعتهم عشان عشان كده الخ إلخ من بقا بقى كدا جدا فعلا قوي كويس حلو افضل أفضل احسن أحسن ممكن اقدر أقدر اقدر اعمل أعمل اعمل اجيب ازود أزود ياريت يريت لو سمحت ممكن تعمل ازاي ازاي ليه لماذا ليش مش عارف معرفش ماعرفش مش فاهم فاهم فكره فكرة عايز حاجة".split(/\s+/);
+ for(const word of arabicStopWords)stopWords.add(word);
  const synonymGroups=[
-  "lead leads prospect prospects inquiry inquiries enquiry enquiries contact conversion العملاء عميل عملاء محتمل محتملة محتملين محتملون استفسار استفسارات استعلام تواصل رسالة رسائل",
-  "measure measurement tracking track analytics attribution قياس قياسه قياسها تتبع تتبعها تتبعهم تحليلات احصاء احصائيات نسبه نتائج",
-  "problem issue broken fix troubleshoot diagnose diagnosis حل حلول مشكلة مشاكل عطل اعطال لايعمل لايعملش اصلاح تشخيص",
-  "growth grow improve improvement optimize optimization increase increase sales revenue profit business performance sales growth نمو نموه تنمية تطور تطوير تحسين احسن ازود زيادة زياده مبيعات المبيعات بيع ايرادات ربح ارباح اداء نتائج",
-  "campaign campaigns ads advertising paid media إعلان اعلانات اعلاني حملة حملات اعلان اعلانية اعلانيه",
-  "content writing write draft article blog copy content كتابة اكتب محتوى مقال مقالات نص صياغة صياغه",
-  "search seo ranking indexing searchengine بحث بحثا ظهور ترتيب فهرسة فهرسة نتائج جوجل",
+  "lead leads prospect prospects inquiry inquiries enquiry enquiries contact conversion customer customers buyer buyers signup signups العميل العملاء عميل عملاء محتمل محتملة محتملين محتملون زبون زباين استفسار استفسارات استعلام تواصل رسالة رسائل",
+  "measure measurement tracking track analytics attribution pixel event events conversion rate reporting metrics measure clicks clicks click قياس قياسه قياسها تتبع تتبعها تتبعهم تحليلات احصاء احصائيات نسبه نتائج نقره نقرة نقرات",
+  "problem issue broken fix troubleshoot diagnose diagnosis stuck failing fail fails failed notworking حل حلول مشكلة مشاكل عطل اعطال لايعمل لايعملش اصلاح تشخيص مش شغال مش شغالة واقف بيعلق مش بيشتغل مش راضي",
+  "growth grow improve improvement optimize optimization increase increased boost raise scale scaling sales revenue profit business performance sales growth sale sell selling grow نمو نموه تنمية تطور تطوير تحسين احسن ازود زيادة زياده مبيعات المبيعات بيع ايرادات ربح ارباح اداء نتائج ازود ازودها تكبير",
+  "campaign campaigns ads advertising paid media ad spend advertising spend budget اعلان اعلانات اعلاني حملة حملات اعلان اعلانية اعلانيه اعلان ممول اعلانات مموله مصاريف ميزانية",
+  "content writing write draft article blog copy content post posts idea ideas calendar كتابة اكتب محتوى مقال مقالات نص صياغة صياغه بوست بوستات منشور منشورات افكار افكار محتوى تقويم",
+  "search seo ranking rankings index indexing indexed discover discoverability visibility visible showing show appear appearing appear google searchengine serp rank بحث بحثا ظهور اظهر اظهره ترتيب فهرسة مفهرس فهرسة نتائج جوجل ظاهر ظاهرش بيظهر بيظهرش يطلع يطلعش مش ظاهر مش بيظهر مش بيطلع مش لاقي",
   "whatsapp واتساب واتس اب واتسآب",
   "video videos creative film فيديو فيديوهات مرئي اعلان اعلانات تصوير مونتاج",
-  "website page landing site web موقع صفحة صفحات صفحة هبوط لاندنج",
-  "email emails newsletter emailmarketing بريد ايميل ايميلات رسائل نشرة",
-  "social socials instagram tiktok linkedin youtube سوشيال اجتماعي اجتماعية انستغرام انستجرام تيك توك لينكدان يوتيوب"
+  "website page landing site web mobile form checkout websiteconversion conversion rate customer journey site speed website site speed موقع صفحات موقع صفحة صفحات صفحة هبوط لاندنج موبايل جوال فورم نموذج checkout",
+  "email emails newsletter emailmarketing deliverability bounce inbox open click unsubscribers subscribe welcome automation lifecycle بريد ايميل ايميلات رسائل نشرة يوصل بيوصلش مش بيوصل مش بيفتح",
+  "social socials instagram tiktok linkedin youtube engagement community post posts instagram tiktok linkedin سوشيال اجتماعي اجتماعية انستغرام انستجرام تيك توك لينكدان يوتيوب تفاعل متابعين جمهور بوستات",
+  "video videos creative film views watch watched hook ad creative storyboard production video فيديو فيديوهات مرئي تصوير مونتاج مشاهدات مشاهده اعلان اعلانات",
+  "influencer influencers creator creators brand sponsorship disclosure audience partnership المؤثرين مؤثر مؤثرين صانع صناع محتوى رعاية افصاح",
+  "budget spend cost cpa cpc cpm bidding auction paid budget الميزانية ميزانيه صرف تكلفة تكاليف مزايدة مزايدات"
  ];
  const normalize=value=>value.toLocaleLowerCase().normalize("NFKC").replace(/[\u064B-\u065F\u0670\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/[ؤ]/g,"و").replace(/[ئ]/g,"ي").replace(/ة/g,"ه").replace(/[^a-z0-9\u0600-\u06ff]+/g," ").trim();
  const stem=word=>{
@@ -309,6 +349,24 @@ BLOG_JS = r"""(() => {
  const concepts=synonymGroups.map(group=>new Set(group.split(/\s+/).map(word=>stem(normalize(word))).filter(Boolean)));
  const tokens=value=>Array.from(new Set(normalize(value).split(/\s+/).map(stem).filter(word=>word.length>1&&!stopWords.has(word))));
  const expanded=word=>{const group=concepts.find(set=>set.has(word));return group||new Set([word]);};
+ const intentRules=[
+  {pattern:/(مش\s*(ظاهر|بيظهر|بيطلع|مفهرس)|مش\s*بيبان|مش\s*لاق[يى].{0,12}(جوجل|google)|اظهر.{0,20}(جوجل|google|بحث)|ظهور.{0,20}(جوجل|google|بحث)|doesn\s*t\s*(show|appear|rank|index)|not\s*(showing|appearing|indexed|ranking)|can\s*t\s*find.{0,20}(site|page)|missing\s*from\s*google|not\s*in\s*search)/,terms:["search","seo","indexing","visibility"]},
+  {pattern:/(واتساب|واتس\s*اب|whatsapp).{0,45}(ضغط|نقر|بعت|يبعت|رساله|استفسار|عميل|lead|message|click|contact)|(ضغط|نقر|click).{0,35}(واتساب|whatsapp)|clicks?.{0,35}(but|no|without).{0,25}(message|lead|sales?)/,terms:["whatsapp","contact","lead","measure"]},
+  {pattern:/(اعلان|إعلان|حمل[هة]|ads?|campaign).{0,55}(صرف|فلوس|نقر|مبيع|عميل|نتيج|تحويل|مفيش|مش|but|no|without|click|sale|lead|result|convert|spend)|(صرف|فلوس|مبيع|نقر).{0,35}(اعلان|إعلان|ads?|campaign)|ads?.{0,40}(but|no|without).{0,25}(sales?|leads?|conversions?)/,terms:["campaign","paid","sales","conversion","measure"]},
+  {pattern:/(محتاج|عايز|اريد|want|need|looking).{0,35}(محتوى|مقال|بوست|افكار|كتابة|content|article|post|ideas?)/,terms:["content","writing","social"]},
+  {pattern:/(فيديو|video|creative|اعلان فيديو).{0,45}(مش|ضعيف|قليل|مشاهد|نتيج|بيجيب|views?|perform|hook|click|watch)|(مشاهدات|مشاهده|views?).{0,35}(فيديو|video|اعلان|ad)/,terms:["video","creative","campaign"]},
+  {pattern:/(موقع|صفحه|صفحة|form|landing page|website).{0,45}(موبايل|موبايل|جوال|بطيء|بيخرج|بيسيب|مش بيكمل|نموذج|تحويل|موبايل|mobile|slow|drop|leave|form|convert)|(checkout|form).{0,30}(drop|abandon|fail|مشكله|مشكلة)/,terms:["website","mobile","conversion","form"]},
+  {pattern:/(ايميل|إيميل|email|بريد).{0,40}(مش بيوصل|مش بيظهر|spam|inbox|bounce|مش بيفتح|deliver|open|مشكله|مشكلة)/,terms:["email","deliverability","measurement"]},
+  {pattern:/(مؤثر|مؤثرين|influencer|creator).{0,45}(مش|نتيج|جمهور|اعلان|حملة|قياس|سعر|سعره|result|audience|campaign|measure|cost)/,terms:["influencer","campaign","measure"]},
+  {pattern:/(عايز|عايزة|عاوز|اريد|want|need).{0,45}(ازود|زيادة|مبيع|عملاء|استفسارات|leads?|sales?|grow|increase|more customers)/,terms:["growth","sales","lead"]},
+  {pattern:/(مش عارف|مش فاهم|ازاي اعرف|كيف اعرف|how do i know|how can i tell).{0,50}(قناة|حملة|نتيجة|اعلان|تسويق|channel|campaign|result|ads?)/,terms:["measure","campaign","growth"]}
+ ];
+ const interpretQuery=value=>{
+  const normalized=normalize(value);
+  const queryTokens=tokens(value);
+  for(const rule of intentRules)if(rule.pattern.test(normalized))queryTokens.push(...rule.terms.flatMap(term=>tokens(term)));
+  return Array.from(new Set(queryTokens));
+ };
  const searchScore=(card,queryTokens)=>{
   if(!queryTokens.length)return 1;
   const title=new Set(tokens(card.dataset.searchTitle||""));
@@ -325,7 +383,7 @@ BLOG_JS = r"""(() => {
   return coverage>=minimum?score+coverage:-1;
  };
  const apply=()=>{
-  const queryTokens=tokens(search?search.value:"");
+  const queryTokens=interpretQuery(search?search.value:"");
   let visible=0;
   const ranked=[];
   for(const card of cards){
@@ -349,6 +407,8 @@ BLOG_JS = r"""(() => {
  });
  if(search)search.addEventListener("input",apply);
 })();"""
+
+BLOG_JS = (ROOT / "assets/blog.js").read_text(encoding="utf-8")
 
 if __name__ == "__main__":
  main()

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>عدم تطابق المنتج في Merchant Center: تتبع الموجز والصفحة والبيانات المنظمة | مدونة محمود عبدالنبي</title><meta name="description" content="طريقة لتشخيص اختلاف السعر أو التوفر بمقارنة عنصر المنتج نفسه عبر الموجز والصفحة والبيانات المنظمة والدفع."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/blog/merchant-center-product-data-mismatch-diagnosis/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/merchant-center-product-data-mismatch-diagnosis/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/merchant-center-product-data-mismatch-diagnosis/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/merchant-center-product-data-mismatch-diagnosis/">
+<meta property="og:type" content="article"><meta property="og:title" content="عدم تطابق المنتج في Merchant Center: تتبع الموجز والصفحة والبيانات المنظمة | مدونة محمود عبدالنبي"><meta property="og:description" content="طريقة لتشخيص اختلاف السعر أو التوفر بمقارنة عنصر المنتج نفسه عبر الموجز والصفحة والبيانات المنظمة والدفع."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/ar/blog/merchant-center-product-data-mismatch-diagnosis/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"عدم تطابق المنتج في Merchant Center: تتبع الموجز والصفحة والبيانات المنظمة","description":"طريقة لتشخيص اختلاف السعر أو التوفر بمقارنة عنصر المنتج نفسه عبر الموجز والصفحة والبيانات المنظمة والدفع.","inLanguage":"ar","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/merchant-center-product-data-mismatch-diagnosis/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/","name":"مدونة التسويق والنمو"},"about":[{"@type":"Thing","name":"تحسين محركات البحث"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/ar/">محمود <em>عبدالنبي</em></a><nav class="nav" aria-label="التنقل الرئيسي"><div class="nav-links"><a href="/ar/blog/" aria-current="page">المدونة</a><a href="/ar/marketing-systems/">الأنظمة التسويقية</a></div><a class="lang" href="/blog/merchant-center-product-data-mismatch-diagnosis/">English</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="rtl">
+<nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>تحسين محركات البحث</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> تحسين محركات البحث</p><h1>عدم تطابق المنتج في Merchant Center: تتبع الموجز والصفحة والبيانات المنظمة</h1><p class="blog-article-deck">طريقة لتشخيص اختلاف السعر أو التوفر بمقارنة عنصر المنتج نفسه عبر الموجز والصفحة والبيانات المنظمة والدفع.</p>
+<div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٦ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/merchant-center-product-data-mismatch-diagnosis/">English</a></div></header>
+<article class="blog-prose"><h1 id="merchant-center">عدم تطابق المنتج في Merchant Center: تتبع الموجز والصفحة والبيانات المنظمة</h1>
+<p>إذا ظهر خطأ اختلاف سعر أو توفر في Merchant Center، لا تبدأ بتغيير عناوين المنتجات أو إعادة بناء الموجز كله. افحص المنتج نفسه والنسخة نفسها والسوق ووقت التقرير، ثم قارن بيانات المصدر بما تعرضه صفحة الوصول وما تقوله البيانات المنظمة والدفع. قد يقع الخلل في الموجز أو اختيار المتغير أو توقيت الخصم أو طريقة عرض الصفحة.</p>
+<p>توضح Google أن صفحات الوصول تُقارن ببيانات المنتج، وأن السعر أو التوفر المختلف قد يؤدي إلى رفض المنتج. كما تشير إلى أن القيم المحقونة بجافاسكريبت بعد التحميل قد لا تطابق ما يراه الزاحف في HTML الأولي، وأن بيانات Product وOffer يجب أن تصف العرض الظاهر. <a href="https://support.google.com/merchants/answer/12159029?hl=ar">Merchant Center: عدم تطابق السعر</a> · <a href="https://support.google.com/merchants/answer/9773127?hl=ar">Merchant Center: اختلاف التوفر</a> · <a href="https://support.google.com/merchants/answer/7331077?hl=ar">Google: بيانات منتجات Merchant Center المنظمة</a></p>
+<h2 id="_1">ثبّت المنتج والمتغير والسوق والتوقيت</h2>
+<p>ابدأ بمعرف العنصر واللون والمقاس والبلد والعملة ووقت ظهور التحذير. لا تقارن منتجًا أساسيًا بمقاس فرعي أو سعر السوق المحلي بسعر سوق آخر. احتفظ بلقطة أو تصدير لقيمة <code>price</code> أو <code>availability</code> المرسلة، وتاريخ تحديث المصدر، والرابط النهائي.</p>
+<p>إذا كانت المشكلة عرضًا أو سعرًا ترويجيًا، راجع تاريخ البداية والنهاية والمنطقة الزمنية. إذا كانت المشكلة توفرًا، افحص المخزون والشحن والاستلام والقيود الجغرافية وحالة الطلب المؤجل أو الحجز المسبق.</p>
+<h2 id="_2">قارن أربع نقاط لنفس العرض</h2>
+<p>افتح الصفحة كما يصل إليها المستخدم وسجل السعر والتوفر الظاهرين قبل التفاعل وبعد اختيار المتغير. ثم افحص HTML الذي يرجع من الخادم، والبيانات المنظمة إن وجدت، وصف الدفع. قارن الجميع مع سجل المنتج في Merchant Center.</p>
+<p>تحقق من أن كل طرف يصف العرض نفسه: المنتج والمتغير والعملة والكمية وموعد التوفر. إذا تغيرت الصفحة حسب الموقع أو ملفات تعريف الارتباط، افحص الرابط الإقليمي أو المعاملات التي تضيفها Google. لا تغيّر إعدادات IP قبل فهم المتطلبات الحالية للمنطقة وحالة العرض.</p>
+<h2 id="_3">شخّص السبب قبل تعديل المصدر</h2>
+<table>
+<thead>
+<tr>
+<th>موضع الخلل المحتمل</th>
+<th>فحص عملي</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>بيانات المنتج</td>
+<td>القيمة المرسلة، العملة، معرف المتغير، ووقت المزامنة</td>
+</tr>
+<tr>
+<td>صفحة الوصول</td>
+<td>السعر والتوفر الظاهران عند أول تحميل</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>هل تظهر القيمة بعد التحميل فقط؟</td>
+</tr>
+<tr>
+<td>البيانات المنظمة</td>
+<td>Product/Offer والسعر والعملة والحالة الظاهرة</td>
+</tr>
+<tr>
+<td>الدفع أو المخزون</td>
+<td>هل يمكن شراء المتغير وهل الشحن متاح؟</td>
+</tr>
+<tr>
+<td>التوقيت والسوق</td>
+<td>تاريخ العرض والمنطقة الزمنية والمنطقة المستهدفة</td>
+</tr>
+</tbody>
+</table>
+<p>إذا أكدت أن القيمة القديمة في الموجز، صحح مصدر البيانات. إذا كانت الصفحة غير دقيقة، أصلح الصفحة ثم حدّث الموجز والبيانات المنظمة من المصدر نفسه. إذا كان التناقض موسميًا أو بسبب توقيت التحديث، أصلح الجدولة ومنع نافذة اختلاف بين القنوات.</p>
+<h2 id="_4">صحح المصدر وانتظر إعادة الفحص</h2>
+<p>بعد الإصلاح، اختبر الرابط النهائي بأداة النتائج المنسقة أو أداة التشخيص المناسبة، لكن تذكر أن نجاح الاختبار يثبت صلاحية ما فحصته، لا موافقة المنتج على الإدراج. راجع حالة العنصر في Merchant Center بعد إعادة الزحف أو التحديث، واحتفظ بوقت الإصلاح والنتيجة.</p>
+<p>لا ترسل طلب مراجعة قبل معالجة التناقض الظاهر. إذا بقي التحذير، افحص مثال العنصر وتوقيت التقرير ومصدر تحديث البيانات قبل تكرار التعديل. لا تخلط اختفاء الخطأ مع تحسن الترتيب أو زيادة المبيعات.</p>
+<h2 id="_5">سجل المصالحة لكل عنصر</h2>
+<table>
+<thead>
+<tr>
+<th>الحقل</th>
+<th>القيمة المطلوب تسجيلها</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>العنصر والمتغير</td>
+<td>المعرف والسوق والعملة</td>
+</tr>
+<tr>
+<td>تقرير Merchant Center</td>
+<td>الخطأ وتاريخ ووقت الالتقاط</td>
+</tr>
+<tr>
+<td>مصدر البيانات</td>
+<td>القيمة والوقت وطريقة الإرسال</td>
+</tr>
+<tr>
+<td>الصفحة</td>
+<td>القيمة الظاهرة عند أول تحميل</td>
+</tr>
+<tr>
+<td>البيانات المنظمة</td>
+<td>السعر والعملة والتوفر إن وجدت</td>
+</tr>
+<tr>
+<td>الدفع</td>
+<td>قبول الطلب وسعره وشروط التوصيل</td>
+</tr>
+<tr>
+<td>القرار</td>
+<td>المصدر الذي تم تصحيحه والمالك ووقت المراجعة</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">سكريبت فيديو قصير: قارن نفس المتغير في كل مكان</h2>
+<p><strong>الخطاف:</strong> «Merchant Center يقول السعر مختلف؟ لا تقارن منتجين أو وقتين مختلفين».</p>
+<p><strong>القيمة:</strong> اعرض صف الموجز والصفحة والبيانات المنظمة والدفع لنفس المتغير والسوق، ثم حدد أين يختلف الرقم.</p>
+<p><strong>الخاتمة:</strong> «صحح المصدر المسبب، وبعدها راقب إعادة الفحص».</p>
+<h2 id="_7">كاروسيل تعليمي: ست نقاط لاكتشاف عدم التطابق</h2>
+<ol>
+<li><strong>الغلاف:</strong> من أين جاء اختلاف المنتج؟</li>
+<li>ثبت المعرف والمتغير والسوق والوقت.</li>
+<li>قارن قيمة الموجز بصفحة الوصول.</li>
+<li>افحص HTML والبيانات المنظمة.</li>
+<li>راجع السعر والتوفر في الدفع والشحن.</li>
+<li>حدّث المصدر ثم تابع حالة العنصر بعد إعادة الفحص.</li>
+</ol>
+<h2 id="_8">سلسلة تجربة ميدانية: تتبع عنصرًا واحدًا</h2>
+<p><strong>1/</strong> اختر عنصرًا ورد في التنبيه واحفظ تاريخ التقرير والسوق والعملة.</p>
+<p><strong>2/</strong> قارن قيمة الموجز والصفحة والبيانات المنظمة والدفع للمتغير ذاته.</p>
+<p><strong>3/</strong> اختبر صفحة أول تحميل ونسخة المستخدم، ولاحظ ما إذا كانت البيانات تظهر بعد تنفيذ JavaScript.</p>
+<p><strong>4/</strong> أصلح المصدر الذي يثبت أنه غير متسق، ثم أعد مزامنته وتأكد من العناوين والتوقيت.</p>
+<p><strong>5/</strong> سجل حالة العنصر بعد إعادة الفحص، ولا تدّعِ موافقة أو ظهورًا قبل ظهور دليل من الأداة.</p>
+<h2 id="_9">حزمة مطالبات محايدة للأدوات: راجع حقول المنتج</h2>
+<p><strong>المطالبة 1 — مقارنة القيم:</strong> «قارن السعر والتوفر والعملة والمتغير في هذه السجلات الأربع [الموجز/الصفحة/HTML/الدفع]. أظهر الفروق دون افتراض أي مصدر صحيح».</p>
+<p><strong>المطالبة 2 — تحديد السبب المحتمل:</strong> «رتب الأسباب التي يدعمها الدليل، مثل التوقيت أو العملة أو JavaScript أو المتغير. اذكر ما يجب التحقق منه يدويًا ولا تخترع قيمة».</p>
+<p><strong>المطالبة 3 — سجل الإصلاح:</strong> «لخص المصدر المصحح وتاريخ المزامنة وحالة إعادة الفحص. افصل نجاح التحديث عن قبول Merchant Center أو أثر الترتيب».</p>
+<p>احذف بيانات الطلبات الشخصية والمفاتيح قبل مشاركة سجلات المتجر مع خدمة خارجية.</p>
+<h2 id="_10">ملف أمثلة: أوقف هذا: الإصلاح الواسع بلا دليل</h2>
+<p><strong>أوقف:</strong> «كل أسعار المتجر غلط، سنغير القالب كله» اعتمادًا على عنصر واحد.</p>
+<p><strong>استخدم:</strong> «نقارن عينة العناصر ونحدد ما إذا كان الخطأ عامًا أو خاصًا بمتغير أو تحديث».</p>
+<p><strong>أوقف:</strong> «الاختبار المنظم ناجح، إذن Merchant Center سيوافق».</p>
+<p><strong>استخدم:</strong> «اجتاز هذا الفحص الفني؛ ننتظر حالة العنصر بعد معالجة التنبيه».</p>
+<p><strong>أوقف:</strong> تغيير السعر في الموجز فقط دون تحديث الصفحة والدفع.</p>
+<p><strong>استخدم:</strong> صحح المصدر الأساسي ثم حافظ على التطابق بين الصفحة والموجز والبيانات المنظمة.</p>
+<h2 id="_11">الخطاف والقيمة والقالب: تتبع العرض الذي يراه العميل</h2>
+<p><strong>الخطاف:</strong> «هل الموجز والصفحة والدفع يصفون المنتج نفسه بالسعر والتوفر نفسيهما؟»</p>
+<p><strong>القيمة:</strong> مقارنة عنصرية تمنع تعديلًا واسعًا بناءً على تنبيه غير مفهوم وتحدد إن كان الخلل في البيانات أو الصفحة أو التوقيت.</p>
+<p><strong>القالب:</strong> «المعرف والمتغير والسوق [ ]. التنبيه ووقته [ ]. الموجز [ ]. أول تحميل للصفحة [ ]. البيانات المنظمة [ ]. الدفع والشحن [ ]. التناقض المؤكد [ ]. المصدر الذي عُدّل [ ]. وقت المزامنة [ ]. حالة إعادة الفحص [ ]. ما لا نعرفه بعد [ ].»</p>
+<h3 id="_12">مصادر تشخيص اختلاف الأسعار والتوفر</h3>
+<ul>
+<li><a href="https://support.google.com/merchants/answer/12159029?hl=ar">Google Merchant Center: إصلاح عدم تطابق السعر</a></li>
+<li><a href="https://support.google.com/merchants/answer/9773127?hl=ar">Google Merchant Center: إصلاح اختلاف التوفر</a></li>
+<li><a href="https://support.google.com/merchants/answer/7331077?hl=ar">Google Merchant Center: البيانات المنظمة</a></li>
+<li><a href="https://mahmoudabdelnaby1.github.io/blog/merchant-center-price-currency-consistency/">من هذا الموقع: اتساق السعر والعملة</a></li>
+</ul>
+<p>قواعد Merchant Center وحالة المراجعة قد تتغير. تحقق من التنبيه الفعلي وتوثيق Google قبل إرسال طلب مراجعة.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul><li><a href="/ar/frameworks/tasks/FW-002-AMP-002-arabic-orthographic-normalization-checklist-hamza-taa-ma/">قائمة فحص تطبيع الحروف والأرقام العربية في البحث الداخلي والـ SEO (الهمزات، التاء المربوطة، الألف المقصورة، والأرقام الهندية) <span aria-hidden="true">↗</span></a><span>FW-002</span></li><li><a href="/ar/frameworks/tasks/FW-088-AMP-446-mena-b2b-crm-data-hygiene-icp-alignment-offline-lead-sco/">الإطار التشغيلي لتنظيف بيانات `CRM` ومواءمة معايير العميل المثالي (`ICP`) بين التسويق والمبيعات في قطاع الأعمال (`B2B`) <span aria-hidden="true">↗</span></a><span>FW-088</span></li></ul></section>
+<nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/boost-post-vs-ads-manager-decision-guide/"><span>الدليل التالي</span><strong>زر الترويج أم مدير الإعلانات؟ اختَر الأداة حسب هدف الحملة</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٥٠ مقالًا عمليًا · العربية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
