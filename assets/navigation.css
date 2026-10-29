@@ -1,5 +1,5 @@
 /* Primary navigation: compact library grouping, with a touch-first responsive panel. */
-.topbar{gap:clamp(18px,2.4vw,36px)}
+.topbar{gap:clamp(18px,2.4vw,36px);padding-inline:clamp(20px,2vw,32px)}
 .topbar .brand{flex:0 0 auto;white-space:nowrap}
 .topbar .nav{position:relative;display:flex;flex:1 1 auto;min-width:0;justify-content:flex-end;gap:clamp(12px,1.5vw,22px)}
 .nav-links{display:flex;flex:0 1 auto;min-width:0;align-items:center;justify-content:flex-end;gap:clamp(13px,1.65vw,25px)}
@@ -35,7 +35,7 @@
  html[dir="rtl"] .nav.is-open .nav-library-panel{padding-right:12px;padding-left:0}
 }
 @media(max-width:480px){
- .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+ .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding-inline:12px}
  .topbar .brand{font-size:12px}
  .topbar .nav{gap:6px}
  .nav .lang,.nav .nav-contact,.nav-mobile-toggle{min-height:38px;padding:0 9px;font-size:9px;line-height:1}
