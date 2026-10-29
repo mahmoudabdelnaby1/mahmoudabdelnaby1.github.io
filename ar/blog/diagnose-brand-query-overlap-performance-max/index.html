@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>كيف تشخّص تداخل بحث اسم العلامة مع Performance Max | مدونة محمود عبدالنبي</title><meta name="description" content="دليل لتشخيص تداخل استعلامات العلامة بين Search وPerformance Max باستخدام تقارير Google وإعداداتها، مع فصل الملاحظة عن السببية قبل أي تغيير."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/diagnose-brand-query-overlap-performance-max/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/diagnose-brand-query-overlap-performance-max/">
+<meta property="og:type" content="article"><meta property="og:title" content="كيف تشخّص تداخل بحث اسم العلامة مع Performance Max | مدونة محمود عبدالنبي"><meta property="og:description" content="دليل لتشخيص تداخل استعلامات العلامة بين Search وPerformance Max باستخدام تقارير Google وإعداداتها، مع فصل الملاحظة عن السببية قبل أي تغيير."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/ar/blog/diagnose-brand-query-overlap-performance-max/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"كيف تشخّص تداخل بحث اسم العلامة مع Performance Max","description":"دليل لتشخيص تداخل استعلامات العلامة بين Search وPerformance Max باستخدام تقارير Google وإعداداتها، مع فصل الملاحظة عن السببية قبل أي تغيير.","inLanguage":"ar","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/diagnose-brand-query-overlap-performance-max/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/ar/blog/","name":"مدونة التسويق والنمو"},"about":[{"@type":"Thing","name":"الإعلانات المدفوعة"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/ar/">محمود <em>عبدالنبي</em></a><nav class="nav" aria-label="التنقل الرئيسي"><div class="nav-links"><a href="/ar/blog/" aria-current="page">المدونة</a><a href="/ar/marketing-systems/">الأنظمة التسويقية</a></div><a class="lang" href="/blog/diagnose-brand-query-overlap-performance-max/">English</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="rtl">
+<nav class="blog-breadcrumb" aria-label="مسار الصفحة"><a href="/ar/blog/">كل المقالات</a><span aria-hidden="true">/</span><span>الإعلانات المدفوعة</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">دليل تطبيقي <span>·</span> الإعلانات المدفوعة</p><h1>كيف تشخّص تداخل بحث اسم العلامة مع Performance Max</h1><p class="blog-article-deck">دليل لتشخيص تداخل استعلامات العلامة بين Search وPerformance Max باستخدام تقارير Google وإعداداتها، مع فصل الملاحظة عن السببية قبل أي تغيير.</p>
+<div class="blog-article-meta"><span>محمود عبدالنبي</span><span aria-hidden="true">·</span><span>٦ دقائق للقراءة</span><span aria-hidden="true">·</span><a href="/blog/diagnose-brand-query-overlap-performance-max/">English</a></div></header>
+<article class="blog-prose"><p>ظهور إعلانات Performance Max وSearch في فترة متقاربة لا يثبت وحده أن حملة تسرق ميزانية الأخرى أو أنها تضر المبيعات. قد يستهدف الحساب استعلامات العلامة في أكثر من حملة، لكن طريقة المزاد والتقارير وإعدادات العلامة والصفحة المقصودة والطلب الموسمي كلها تؤثر في ما تراه. ابدأ بتحديد السؤال: هل تريد قياس الطلب الذي كانت ستلتقطه Search من دون PMax، أم حماية استعلامات العلامة، أم فهم سبب تغير التكلفة؟ فكل سؤال يحتاج دليلًا مختلفًا.</p>
+<p>تتيح Google تقرير مصطلحات بحث Performance Max وتوثق إعدادات العلامة لحملات Search وPerformance Max، بما فيها قوائم الاستبعاد. ظهور تفاصيل التقرير وإتاحتها قد يعتمد على حجم البيانات والخصوصية، وإضافة استبعاد قد تمنع استعلامات ذات صلة. راجع الواجهة والوثائق الحالية قبل التغيير. <a href="https://support.google.com/google-ads/answer/16327396">تقرير مصطلحات بحث Performance Max</a> · <a href="https://support.google.com/google-ads/answer/13721847">إعدادات العلامة في Search وPerformance Max</a></p>
+<h2 id="_1">عرّف ما تعنيه كلمة «تداخل» في هذا الحساب</h2>
+<p>قد تعني ملاحظة التداخل أن حملتين أظهرتا إعلانات لاستعلامات تحمل اسم العلامة، أو أن تقسيم التحويلات تغيّر، أو أن المستخدم شاهد أكثر من إعلان قبل التحويل، أو أن التكلفة ارتفعت. لا تخلط هذه الملاحظات مع «سرقة المبيعات» أو زيادة الإنفاق الصافي بسبب حملة بعينها.</p>
+<p>حدد الحملات والاستعلامات والسوق والفترة والهدف. اجمع التقرير المتاح لكل حملة مع أسماء الحملات والإعدادات والميزانية والصفحة المقصودة والتحويلات. راجع تعريف التحويل ونافذة الإسناد والوقت والمنطقة الجغرافية. إذا لم يعرض التقرير تفاصيل لاستعلام بعينه، لا تستنتجها من كلمة «Other» أو من إجمالي الحملة.</p>
+<h2 id="_2">افحص الإعداد والتقرير قبل إضافة استبعاد</h2>
+<p>راجع قوائم العلامات المرتبطة بالحملة، وأي استبعادات أو قيود، والكلمات المفتاحية في حملات Search، وحالة المطابقة والميزانية. تأكد من تهجئات العلامة والمنتجات والعلامات الفرعية، وأن القائمة تطابق النطاق المقصود. الاستبعاد الواسع قد يمنع استعلامات فيها اسم العلامة مع نية عامة أو منتج أو موقع أو خدمة دعم.</p>
+<p>افحص مصطلحات البحث المتاحة وميز بين استعلامات العلامة الواضحة والاستعلامات غير المرتبطة بها أو المختلطة. لا تفترض أن كل استعلام يحتوي اسم العلامة هو تنقل مباشر إليها؛ قد يبحث الشخص عن منتج أو مشكلة أو مقارنة. احتفظ بصفحات الهبوط والرسائل نفسها قدر الإمكان عند تقييم النتائج.</p>
+<h2 id="_3">افصل تقرير الإسناد عن الأثر الإضافي</h2>
+<p>التحويل المنسوب إلى PMax لا يثبت وحده أن الحملة أنشأت طلبًا جديدًا. قد يكون الشخص سيبحث عن العلامة أو يشتري دون الإعلان. لقياس الزيادة الإضافية تحتاج مقارنة أو تجربة تناسب الحساب، وتحتاج تعريف تحويل موثوقًا وحجمًا كافيًا؛ تقرير مصطلحات البحث وحده ليس اختبارًا سببيًا.</p>
+<p>إذا كان السؤال عن حماية البحث بالعلامة، قارن تكلفة الحملة وظهور الإعلانات وجودة الطلب في فترة مناسبة، مع مراعاة التغييرات الأخرى. إذا كان السؤال عن الزيادة، استخدم تجربة أو منهج قياس يدعم المقارنة حيث يتاح، ولا تستنتج من التحويلات المنسوبة فقط.</p>
+<h2 id="_4">سلسلة تجربة ميدانية: اختبر استبعاد العلامة بنطاق محدد</h2>
+<p>هذه خطة اختبار مقترحة وليست نتيجة مؤكدة عن حساب معين.</p>
+<p><strong>1/</strong> سجل إعدادات PMax وSearch الحالية، وقوائم العلامات، والفترة والسوق وتعريف التحويل.</p>
+<p><strong>2/</strong> استخرج مصطلحات البحث والتصنيفات المتاحة وسجل ما يمكن ملاحظته وما لا تعرضه التقارير.</p>
+<p><strong>3/</strong> حدد استعلامات العلامة المقصودة والاستعلامات المختلطة التي قد تتأثر. راجع صفحة كل استعلام والغرض المحتمل.</p>
+<p><strong>4/</strong> صغ فرضية: ما الذي سيحدث للتكلفة أو الظهور أو الطلب المؤهل إذا استُبعد نطاق محدد؟</p>
+<p><strong>5/</strong> غيّر إعدادًا واحدًا فقط، مع تسجيل التاريخ والمالك وخطة التراجع. لا تخلط التجربة بتغييرات الميزانية والصفحة والتحويل.</p>
+<p><strong>6/</strong> قارن وفق فترة وحجم مناسبين، وافصل التحويلات المنسوبة عن الأثر الإضافي. إذا لم تكفِ البيانات، اكتب أن النتيجة غير حاسمة.</p>
+<h2 id="_5">حزمة مطالبات محايدة للأدوات: صنّف التقرير دون ادعاء السببية</h2>
+<p>استخدم بيانات الحملة المنزوعة من معلومات العملاء، مع توثيق الإعدادات والفترة.</p>
+<blockquote>
+<p>«حلل بيانات Search وPerformance Max للفترة [الفترة] والسوق [السوق]. قوائم العلامة والإعدادات هي [الإعداد]. صنّف الاستعلامات المتاحة إلى علامة صريحة، استعلام مختلط، غير علامة، وغير كافٍ للحكم. أظهر المصدر والتقرير وحدود الإتاحة لكل تصنيف. قارن الإنفاق والظهور والنقر والتحويلات وفق التعريف نفسه حيث أمكن، وعلّم الاختلافات. لا تستنتج أن حملة سرقت المبيعات أو سببت الزيادة من التزامن أو التحويلات المنسوبة وحدها. اقترح اختبارًا محدودًا وقاعدة تراجع ومقياسًا للطلب المؤهل.»</p>
+</blockquote>
+<p>تحقق من كل تصنيف مع تقرير Google Ads والصفحات الفعلية. لا تسمح للأداة بتغيير إعداد العلامة أو التوسيع تلقائيًا.</p>
+<h2 id="pmax">سكريبت فيديو قصير: هل تتنافس PMax مع البحث على اسم علامتك؟</h2>
+<p><strong>الافتتاح:</strong> «ظهور حملتين لا يثبت أن واحدة سرقت مبيعات الأخرى».</p>
+<p><strong>المشهد الأول:</strong> اعرض تقريري الحملتين. «حدد الاستعلام والسوق والفترة وتعريف التحويل».</p>
+<p><strong>المشهد الثاني:</strong> اعرض إعداد العلامة. «راجع القائمة والاستبعادات قبل أي تعديل».</p>
+<p><strong>المشهد الثالث:</strong> اعرض خطة اختبار. «الإسناد ليس دليلًا على الطلب الإضافي».</p>
+<p><strong>الخاتمة:</strong> «غيّر نطاقًا واحدًا، واحتفظ بخطة تراجع، وقل غير حاسم إذا كانت البيانات قليلة».</p>
+<h2 id="pmax_1">كاروسيل تعليمي: فحص تداخل العلامة في PMax</h2>
+<ol>
+<li><strong>حدد السؤال:</strong> حماية العلامة أم فهم الإنفاق أم قياس الزيادة؟</li>
+<li><strong>ثبت النطاق:</strong> الحملات والسوق والفترة وتعريف التحويل.</li>
+<li><strong>راجع التقارير:</strong> مصطلحات البحث والتصنيفات المتاحة.</li>
+<li><strong>دقق القائمة:</strong> تهجئات العلامة والمنتجات والعلامات الفرعية.</li>
+<li><strong>افحص الاستعلامات المختلطة:</strong> اسم علامة مع منتج أو دعم أو مقارنة.</li>
+<li><strong>اختر الاختبار:</strong> تغيير واحد وفرضية قابلة للملاحظة.</li>
+<li><strong>سجل التراجع:</strong> من يعيد الإعداد ومتى؟</li>
+<li><strong>افصل القياس:</strong> تحويل منسوب وطلب إضافي ليسا الشيء نفسه.</li>
+</ol>
+<h2 id="_6">ملف أمثلة: أوقف هذا: تفسير التداخل</h2>
+<p><strong>توقف:</strong> «PMax سرقت المبيعات من Search» اعتمادًا على تزامن الظهور.</p>
+<p><strong>استخدم:</strong> «ظهر استعلام [الاستعلام] في تقارير [الحملتين] خلال [الفترة]؛ لم نعزل الأثر الإضافي بعد».</p>
+<p><strong>توقف:</strong> «كل بحث يحمل العلامة يجب استبعاده».</p>
+<p><strong>استخدم:</strong> «نراجع الاستعلامات المختلطة ونحدد نطاق العلامة قبل الاستبعاد».</p>
+<p><strong>توقف:</strong> «التحويلات المنسوبة تثبت أن PMax ولدت طلبًا».</p>
+<p><strong>استخدم:</strong> «سجلت Google [تحويلات منسوبة] وفق [الإعداد]؛ لا يثبت ذلك وحده أثرًا إضافيًا».</p>
+<p><strong>توقف:</strong> إضافة استبعاد ثم تغيير الميزانية والصفحة في اليوم نفسه.</p>
+<p><strong>استخدم:</strong> «غيّرنا [الإعداد] في [التاريخ] واحتفظنا [بالعوامل] ثابتة قدر الإمكان».</p>
+<h2 id="_7">الخطاف والقيمة والقالب: اختبر تداخل العلامة بالدليل</h2>
+<p><strong>الخطاف:</strong> «قبل استبعاد اسم العلامة من PMax، حدد ما الذي تريد قياسه».</p>
+<p><strong>القيمة:</strong> «تقارير الاستعلام وإعدادات العلامة تساعد على التشخيص، لكن لا تثبت وحدها أن حملة سببت مبيعات إضافية».</p>
+<p><strong>القالب:</strong> «في [السوق] خلال [الفترة] رصدنا [الاستعلامات أو التصنيفات] في [الحملات]. إعداد العلامة الحالي هو [الإعداد]، وتعريف التحويل [التعريف]. نريد اختبار [السؤال]. سنغير [عنصرًا واحدًا] بتاريخ [التاريخ] ونراقب [المؤشرات] ومقياس جودة [النتيجة المؤهلة]. لا نعتبر الإسناد دليلًا سببيًا، وسنراجع أو نتراجع إذا [الشرط].»</p>
+<h2 id="_8">المصادر وحدود التحليل</h2>
+<ul>
+<li><a href="https://support.google.com/google-ads/answer/16327396">تقرير مصطلحات بحث Performance Max</a></li>
+<li><a href="https://support.google.com/google-ads/answer/13721847">إعدادات العلامة في Search وPerformance Max</a></li>
+</ul>
+<p>تقارير البحث والخيارات المتاحة تتغير. افحص الحساب والوثائق الحالية، ولا تضمن أن الاستبعاد أو إبقاء العلامة يحسن النتائج في كل حساب.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">أطر وأدوات مرتبطة</p><h2 id="blog-related-title">استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="التنقل بين الأدلة"><a href="/ar/blog/indexnow-bing-url-notifications-explained/"><span>الدليل التالي</span><strong>IndexNow وBing Webmaster Tools: ما الذي تفعله إشعارات الروابط؟</strong><b aria-hidden="true">↗</b></a><a href="/ar/blog/"><span>كل المقالات</span><strong>٢٥٠ مقالًا عمليًا · العربية</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/ar/">محمود <em>عبدالنبي</em></a><span>أنظمة تسويق عملية لأسواق MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

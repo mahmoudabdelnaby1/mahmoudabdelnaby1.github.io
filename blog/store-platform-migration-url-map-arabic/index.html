@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>Plan a Store Platform Migration With a Page-by-Page URL Map | Mahmoud Abdelnaby</title><meta name="description" content="A controlled migration workflow for mapping, testing, and monitoring store URLs across platforms."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map-arabic/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map-arabic/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/store-platform-migration-url-map-arabic/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map-arabic/">
+<meta property="og:type" content="article"><meta property="og:title" content="Plan a Store Platform Migration With a Page-by-Page URL Map | Mahmoud Abdelnaby"><meta property="og:description" content="A controlled migration workflow for mapping, testing, and monitoring store URLs across platforms."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map-arabic/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Plan a Store Platform Migration With a Page-by-Page URL Map","description":"A controlled migration workflow for mapping, testing, and monitoring store URLs across platforms.","inLanguage":"en","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map-arabic/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/blog/","name":"Marketing & Growth Blog"},"about":[{"@type":"Thing","name":"SEO"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/">MAHMOUD <em>ABDELNABY</em></a><nav class="nav" aria-label="Primary navigation"><div class="nav-links"><a href="/blog/" aria-current="page">Blog</a><a href="/marketing-systems/">Marketing systems</a></div><a class="lang" href="/ar/blog/store-platform-migration-url-map-arabic/">العربية</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="ltr">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO</p><h1>Plan a Store Platform Migration With a Page-by-Page URL Map</h1><p class="blog-article-deck">A controlled migration workflow for mapping, testing, and monitoring store URLs across platforms.</p>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/store-platform-migration-url-map-arabic/">العربية</a></div></header>
+<article class="blog-prose"><h1 id="plan-a-store-platform-migration-with-a-page-by-page-url-map">Plan a Store Platform Migration With a Page-by-Page URL Map</h1>
+<p>Moving from WooCommerce or Shopify to another store platform can change product and category URLs, redirect controls, templates, and how data is rendered. Do not delete the old pages or launch redirects before you know which URL exists, which new page serves the same need, and whether the new platform can implement and test the redirect.</p>
+<p>No migration method guarantees that every visit or keyword position will remain unchanged. Google's site-move guidance recommends preparing a mapping from old URLs to their corresponding new destinations, using permanent server-side redirects where possible, updating internal links and canonicals, submitting the new sitemap, and monitoring errors and traffic. Search visibility may fluctuate temporarily while systems process the changes. <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes">Google Search Central: site moves with URL changes</a> · <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects">Google Search Central: redirects</a></p>
+<h2 id="inventory-the-urls-and-assets-that-matter">Inventory the URLs and assets that matter</h2>
+<p>Collect URLs from the existing sitemap, the content system, analytics, and Search Console or Bing Webmaster Tools where available. Include product, category, article, and important image URLs; do not rely only on remembered links. Prioritize by real page value: organic visits, orders or leads, external links, customer support use, and role in the buying journey.</p>
+<p>Record the page type, current canonical, status code, primary language and market, and any query parameters needed for variants or tracking. Preserve the source export so the team can revisit the mapping if a redirect fails.</p>
+<h2 id="match-each-old-url-to-a-genuinely-equivalent-destination">Match each old URL to a genuinely equivalent destination</h2>
+<p>Map a product page to the same product or its clear successor, and a category to the corresponding group—not automatically to the new homepage. If no equivalent exists, decide whether a useful alternative, a relevant consolidated page, or a real 404 is the honest outcome. Do not redirect unrelated retired products to a general category merely to avoid a not-found response.</p>
+<p>For each mapping, record why the new page meets the same user need, whether the product is still sold, and what happens to variants, language, currency, and stock. Keep unmatched rows visible until the business owner decides; do not silently drop them.</p>
+<h2 id="prepare-the-new-platform-before-switching-traffic">Prepare the new platform before switching traffic</h2>
+<p>Build and test important destination pages before launch. Check titles, visible content, canonical URLs, language alternates, product details, structured data, internal links, mobile display, checkout, and tracking. Make sure temporary staging restrictions will not carry into production, but keep the pre-launch environment protected while it is not public.</p>
+<p>Create redirect rules from the approved map. Prefer direct permanent redirects to the final destination; avoid chains and loops. Test representative URLs across products, categories, posts, variants, and language paths. Confirm that a redirect does not send an Arabic page to an unrelated English page or lose an important product selection.</p>
+<h2 id="launch-in-a-controlled-sequence-and-monitor">Launch in a controlled sequence and monitor</h2>
+<p>At launch, activate the planned redirects, update internal links and canonicals, publish the new sitemap, and check key page status codes. Inspect Search Console and Bing Webmaster Tools for crawl errors, excluded pages, and sitemap processing. Compare traffic and outcomes against the recorded baseline with the same dates and definitions.</p>
+<p>Check the most valuable URLs first, then sample the rest of the map. Keep redirects active long enough for search engines and users to update; Google recommends maintaining them for at least a year and indefinitely from a user perspective where practical. Do not infer a technical failure from short-term fluctuation alone; verify exact destinations, crawl access, and response codes.</p>
+<h2 id="url-map-decision-table">URL-map decision table</h2>
+<table>
+<thead>
+<tr>
+<th>Old page</th>
+<th>New page</th>
+<th>Relationship</th>
+<th>Redirect</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product variant</td>
+<td>Same product/variant</td>
+<td>Equivalent</td>
+<td>Direct permanent redirect if URL changes</td>
+<td>Product data, stock, currency, checkout</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Corresponding category</td>
+<td>Equivalent</td>
+<td>Direct permanent redirect</td>
+<td>Products, title, canonical, internal links</td>
+</tr>
+<tr>
+<td>Article</td>
+<td>Same guide or true consolidation</td>
+<td>Same reader task</td>
+<td>Redirect only if equivalent</td>
+<td>Language, content, canonical</td>
+</tr>
+<tr>
+<td>Discontinued item</td>
+<td>Support page or no destination</td>
+<td>Depends on lasting value</td>
+<td>Case-specific</td>
+<td>Customer need and status code</td>
+</tr>
+</tbody>
+</table>
+<h2 id="short-video-script-map-before-migrating">Short-video script: map before migrating</h2>
+<p><strong>Hook:</strong> “Changing store platforms? Don't redirect every old URL to the homepage.”</p>
+<p><strong>Value:</strong> Show one old product and its equivalent new page, then explain how to handle a URL with no true replacement.</p>
+<p><strong>Close:</strong> “Map, test, and preserve the customer task before launch.”</p>
+<h2 id="educational-carousel-five-migration-gates">Educational carousel: five migration gates</h2>
+<ol>
+<li><strong>Cover:</strong> Prepare the URL map before a store move.</li>
+<li>Inventory valuable URLs and current status.</li>
+<li>Map each old page to a truly equivalent destination.</li>
+<li>Test redirects, canonical, language, product data, and checkout.</li>
+<li>Update internal links and sitemap at launch.</li>
+<li>Monitor errors and outcomes without promising no fluctuation.</li>
+</ol>
+<h2 id="field-experiment-thread-rehearse-a-migration-sample">Field experiment thread: rehearse a migration sample</h2>
+<p><strong>1/</strong> Select a representative sample across products, categories, articles, variants, and languages.</p>
+<p><strong>2/</strong> Map each old URL to its new destination and document the equivalence reason.</p>
+<p><strong>3/</strong> Test direct redirects, final status codes, canonicals, product data, and conversion paths in the new environment.</p>
+<p><strong>4/</strong> Resolve mismatches before broad launch; keep rows with no destination for an explicit business decision.</p>
+<p><strong>5/</strong> After launch, check the sampled pages and monitoring tools, then expand the audit based on errors. The sample does not prove every URL is correct.</p>
+<h2 id="tool-neutral-prompt-pack-review-the-url-map">Tool-neutral prompt pack: review the URL map</h2>
+<p><strong>Prompt 1 — Normalize:</strong> “Normalize the supplied URL inventory without discarding query parameters that identify variants or markets. Flag duplicates and ambiguous rows.”</p>
+<p><strong>Prompt 2 — Assess equivalence:</strong> “Compare the old and new page descriptions, language, product, and user task. Classify each mapping as equivalent, consolidated with justification, no destination, or needs review. Do not invent replacements.”</p>
+<p><strong>Prompt 3 — Test plan:</strong> “Create test cases for representative redirects, status codes, canonicals, hreflang, product availability, and checkout. Separate verified results from planned checks.”</p>
+<h2 id="stop-doing-swipe-file-replace-mass-redirects">Stop-doing swipe file: replace mass redirects</h2>
+<p><strong>Stop:</strong> “Send every deleted product to the new homepage.”</p>
+<p><strong>Use:</strong> Map the URL to a relevant successor only when it satisfies the same need; otherwise decide the correct retirement response.</p>
+<p><strong>Stop:</strong> “The new site looks right, so launch the redirects.”</p>
+<p><strong>Use:</strong> Test status codes, final destinations, canonical URLs, product data, and language variants first.</p>
+<p><strong>Stop:</strong> “Traffic dipped the first day, so the migration failed.”</p>
+<p><strong>Use:</strong> Check crawl and redirect evidence over a suitable period; report the observed fluctuation without overclaiming cause.</p>
+<h2 id="hookvaluetemplate-make-each-url-decision-auditable">Hook–Value–Template: make each URL decision auditable</h2>
+<p><strong>Hook:</strong> “Can you explain why each old page should send a visitor to its new destination?”</p>
+<p><strong>Value:</strong> A documented map protects useful paths, prevents irrelevant redirects, and gives the launch team concrete checks for each page type.</p>
+<p><strong>Template:</strong> “Old URL [ ]. Page role and user need [ ]. New URL [ ]. Equivalence rationale [ ]. Language/market/variant [ ]. Redirect and status test [ ]. Canonical/internal links [ ]. Product or form behavior [ ]. Owner [ ]. Post-launch check [ ]. Unresolved issue [ ].”</p>
+<h3 id="sources-for-migration-and-url-changes">Sources for migration and URL changes</h3>
+<ul>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes">Google Search Central: site moves with URL changes</a></li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects">Google Search Central: redirects and Search</a></li>
+<li><a href="https://mahmoudabdelnaby1.github.io/blog/store-platform-migration-url-map/">From this site: migration URL map for a store</a></li>
+<li><a href="https://mahmoudabdelnaby1.github.io/blog/redesign-theme-change-seo-checklist/">From this site: preserve product and category SEO during redesign</a></li>
+</ul>
+<p>Migration behavior depends on the platform and map. This process reduces avoidable errors; it cannot guarantee unchanged rankings or traffic.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul><li><a href="/frameworks/tasks/FW-012-AMP-012-mena-programmatic-city-service-page-governance-framework/">MENA Programmatic City/Service Page Governance Framework (Anti-Scaled Content Abuse) <span aria-hidden="true">↗</span></a><span>FW-012</span></li><li><a href="/frameworks/tasks/FW-039-AMP-182-arabic-grammatical-gender-targeting-dual-plural-morpholo/">Arabic Grammatical Gender-Targeting &amp; Dual/Plural Morphology Prompt Template <span aria-hidden="true">↗</span></a><span>FW-039</span></li></ul></section>
+<nav class="blog-next" aria-label="Guide navigation"><a href="/blog/internal-link-matrix-reader-paths/"><span>Next guide</span><strong>Build an Internal-Link Map Around the Reader’s Next Step</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>250 practical articles · English</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

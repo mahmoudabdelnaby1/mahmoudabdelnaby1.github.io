@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>How to Audit an Ad Agency Report: Separate Reach, Visits, and Outcomes | Mahmoud Abdelnaby</title><meta name="description" content="A practical audit for tracing campaign metrics from platform delivery to analytics, qualified leads, and business outcomes."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/blog/audit-an-ad-agency-report/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/audit-an-ad-agency-report/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/audit-an-ad-agency-report/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/audit-an-ad-agency-report/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Audit an Ad Agency Report: Separate Reach, Visits, and Outcomes | Mahmoud Abdelnaby"><meta property="og:description" content="A practical audit for tracing campaign metrics from platform delivery to analytics, qualified leads, and business outcomes."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/blog/audit-an-ad-agency-report/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Audit an Ad Agency Report: Separate Reach, Visits, and Outcomes","description":"A practical audit for tracing campaign metrics from platform delivery to analytics, qualified leads, and business outcomes.","inLanguage":"en","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/blog/audit-an-ad-agency-report/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/blog/","name":"Marketing & Growth Blog"},"about":[{"@type":"Thing","name":"Measurement"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/">MAHMOUD <em>ABDELNABY</em></a><nav class="nav" aria-label="Primary navigation"><div class="nav-links"><a href="/blog/" aria-current="page">Blog</a><a href="/marketing-systems/">Marketing systems</a></div><a class="lang" href="/ar/blog/audit-an-ad-agency-report/">العربية</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="ltr">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>Measurement</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> Measurement</p><h1>How to Audit an Ad Agency Report: Separate Reach, Visits, and Outcomes</h1><p class="blog-article-deck">A practical audit for tracing campaign metrics from platform delivery to analytics, qualified leads, and business outcomes.</p>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>6 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/audit-an-ad-agency-report/">العربية</a></div></header>
+<article class="blog-prose"><h1 id="how-to-audit-an-ad-agency-report-separate-reach-visits-and-outcomes">How to Audit an Ad Agency Report: Separate Reach, Visits, and Outcomes</h1>
+<p>A polished agency report can still hide a measurement problem if it blends reach, website sessions, inquiries, and sales into one story. Audit each stage separately: what the platform recorded, what analytics measured, what the CRM or sales team confirmed, and which attribution rule connects them. The aim is not to dismiss a result; it is to know what the evidence supports before making a budget decision.</p>
+<p>Google Analytics distinguishes traffic-acquisition reporting from user acquisition and provides session-scoped source and medium dimensions. Platform-reported conversions may use different attribution windows, definitions, and modeled data. Reconcile the metric definitions and period before comparing totals. <a href="https://support.google.com/analytics/answer/12923437?hl=en">GA4: Traffic acquisition report</a> · <a href="https://support.google.com/analytics/answer/15612152?hl=en">GA4: Traffic-source dimensions</a></p>
+<h2 id="start-with-the-decision-the-report-should-support">Start with the decision the report should support</h2>
+<p>Write down the business decision: maintain spend, change a creative, repair tracking, or investigate lead quality. Then state the outcome that matters, such as qualified inquiries or fulfilled orders. If the report only answers “how many people saw an ad,” do not use it alone to decide whether the campaign generated profitable demand.</p>
+<p>Ask for the reporting period, time zone, campaign scope, currency, objective, conversion event, attribution window, and comparison basis. Confirm that the same campaign and account are included in every table.</p>
+<h2 id="trace-each-metric-to-its-source">Trace each metric to its source</h2>
+<p>Create a metric ledger with the platform, source report, event definition, date window, deduplication rule, and owner. Separate reach and impressions from clicks; paid clicks from analytics sessions; inquiries from qualified opportunities; and orders from completed, retained revenue.</p>
+<p>Check whether the landing URL and UTM parameters match the campaign. Review redirects, consent settings, cross-domain behavior, and event firing when the numbers diverge. A click is not a session, a form submission is not necessarily a qualified lead, and an attributed sale is not automatically incremental.</p>
+<h2 id="reconcile-counts-without-forcing-them-to-match">Reconcile counts without forcing them to match</h2>
+<p>Platform and analytics totals can differ because they measure different events, use different attribution windows, apply consent modeling, or count interactions differently. Document each definition and explain the largest gaps. Do not adjust numbers until they look aligned; investigate the paths and preserve the raw figures.</p>
+<p>Where appropriate, compare platform-reported conversions with analytics events and CRM outcomes using consistent dates and identifiers that comply with privacy and access requirements. Record unmatched or duplicated records as limitations. Do not upload customer-level data to an external tool without checking permissions and data terms.</p>
+<h2 id="judge-outcomes-with-quality-and-economics">Judge outcomes with quality and economics</h2>
+<p>For lead campaigns, define what makes a lead qualified, who verifies it, and how long sales follow-up takes. For ecommerce, distinguish placed orders from fulfilled orders, cancellations, refunds, and contribution after variable costs. A low platform CPA can coexist with poor business quality; a tracking change can also create an apparent trend without a demand change.</p>
+<p>Use a comparison period that accounts for seasonality, promotions, budget shifts, inventory, and landing-page changes. If the data cannot isolate causation, report an association or an inconclusive result.</p>
+<h2 id="a-report-audit-scorecard">A report-audit scorecard</h2>
+<table>
+<thead>
+<tr>
+<th>Audit item</th>
+<th>Evidence to request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>Accounts, campaigns, dates, time zone, currency, and objective</td>
+</tr>
+<tr>
+<td>Metric definitions</td>
+<td>Exact event names and what qualifies as a result</td>
+</tr>
+<tr>
+<td>Tracking path</td>
+<td>Destination, UTMs, analytics sessions, and event QA</td>
+</tr>
+<tr>
+<td>Reconciliation</td>
+<td>Platform, analytics, CRM, or order totals with known gaps</td>
+</tr>
+<tr>
+<td>Outcome quality</td>
+<td>Qualified leads or completed and retained orders</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>Recommended action linked to evidence and uncertainty</td>
+</tr>
+</tbody>
+</table>
+<p>If an essential definition is missing, mark the affected conclusion provisional and request the source export or event evidence.</p>
+<h2 id="short-video-script-dont-let-one-dashboard-number-decide">Short-video script: don't let one dashboard number decide</h2>
+<p><strong>Hook:</strong> “The ad platform says 40 conversions. How many became qualified opportunities?”</p>
+<p><strong>Value:</strong> Walk through platform conversion, analytics session, CRM verification, and final business outcome as separate checkpoints.</p>
+<p><strong>Close:</strong> “Ask for the event definition and reconciliation before judging performance.”</p>
+<h2 id="educational-carousel-six-layers-in-an-agency-report">Educational carousel: six layers in an agency report</h2>
+<ol>
+<li><strong>Cover:</strong> A conversion count needs a definition.</li>
+<li>Reach and impressions describe exposure.</li>
+<li>Clicks and sessions describe different steps.</li>
+<li>Leads need a qualification rule and follow-up owner.</li>
+<li>Orders need fulfillment, cancellations, and margin context.</li>
+<li>Make a budget decision only from evidence that matches the goal.</li>
+</ol>
+<h2 id="field-experiment-thread-audit-one-campaign-end-to-end">Field experiment thread: audit one campaign end to end</h2>
+<p><strong>1/</strong> Choose one campaign and freeze the date range, time zone, currency, and objective.</p>
+<p><strong>2/</strong> Export platform delivery and conversion definitions; record its attribution window.</p>
+<p><strong>3/</strong> Verify the landing destination, UTMs, analytics sessions, and event receipt for the same period.</p>
+<p><strong>4/</strong> Reconcile inquiries or orders in the source system, documenting duplicates, unqualified leads, cancellations, and missing matches.</p>
+<p><strong>5/</strong> Write the strongest supported conclusion and its limitations. Change one thing only after the evidence locates a gap.</p>
+<h2 id="tool-neutral-prompt-pack-review-a-performance-report">Tool-neutral prompt pack: review a performance report</h2>
+<p><strong>Prompt 1 — Metric inventory:</strong> “List each reported metric, its source, definition, time window, currency, and attribution rule from the provided report. Mark anything absent as unknown.”</p>
+<p><strong>Prompt 2 — Reconciliation:</strong> “Compare these aggregate platform, analytics, and CRM totals. Show absolute and percentage gaps, preserve original numbers, and list plausible measurement differences without choosing a cause unsupported by evidence.”</p>
+<p><strong>Prompt 3 — Decision memo:</strong> “Summarize what the evidence supports, what remains uncertain, and the next verification step. Do not claim incrementality or profitability unless the supplied data supports it.”</p>
+<p>Remove personal information before sharing reports and follow the access and data-handling rules of any analysis service.</p>
+<h2 id="stop-doing-swipe-file-replace-blended-performance-claims">Stop-doing swipe file: replace blended performance claims</h2>
+<p><strong>Stop:</strong> “The campaign generated 100 leads.”</p>
+<p><strong>Use:</strong> “The platform recorded 100 form events; [N] met our CRM qualification rule during [period].”</p>
+<p><strong>Stop:</strong> “Our cost per conversion fell, so profitability improved.”</p>
+<p><strong>Use:</strong> “Platform CPA fell; margin and completed-order evidence are [result/unknown].”</p>
+<p><strong>Stop:</strong> “Analytics disagrees, so tracking is broken.”</p>
+<p><strong>Use:</strong> “The reports differ by [amount]; we will compare definitions, windows, consent, and event receipt before assigning a cause.”</p>
+<h2 id="hookvaluetemplate-make-the-report-decision-ready">Hook–Value–Template: make the report decision-ready</h2>
+<p><strong>Hook:</strong> “Can you trace every headline result to a source and a business outcome?”</p>
+<p><strong>Value:</strong> A metric ledger shows whether a conclusion rests on platform delivery, website behavior, verified lead quality, or completed sales—and exposes where evidence is missing.</p>
+<p><strong>Template:</strong> “Decision [ ]. Campaign and dates [ ]. Platform metric and definition [ ]. Analytics source/session [ ]. CRM or order outcome [ ]. Attribution window [ ]. Reconciliation gap [ ]. Quality/economic adjustment [ ]. Known changes and confounders [ ]. Supported conclusion [ ]. Unknowns [ ]. Next check [ ].”</p>
+<h3 id="references-for-report-definitions">References for report definitions</h3>
+<ul>
+<li><a href="https://support.google.com/analytics/answer/12923437?hl=en">Google Analytics: Traffic acquisition report</a></li>
+<li><a href="https://support.google.com/analytics/answer/15612152?hl=en">Google Analytics: traffic-source dimensions</a></li>
+<li><a href="https://mahmoudabdelnaby1.github.io/blog/measurement-event-qa/">From this site: event measurement QA</a></li>
+<li><a href="https://mahmoudabdelnaby1.github.io/blog/lead-quality-rubric/">From this site: lead-quality rubric</a></li>
+</ul>
+<p>Reporting tools and attribution methods change. Verify current definitions and never treat platform attribution alone as proof of incremental business impact.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="Guide navigation"><a href="/blog/merchant-center-price-currency-consistency/"><span>Next guide</span><strong>Merchant Center Price and Currency Mismatches: Trace One Offer Across the Journey</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>250 practical articles · English</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>

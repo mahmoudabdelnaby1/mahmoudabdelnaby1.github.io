@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<title>Salla Product Page Missing from Google? Diagnose Before Requesting Indexing | Mahmoud Abdelnaby</title><meta name="description" content="A practical workflow to check product discovery, crawling, canonical signals, and internal links before requesting a recrawl. No indexing guarantee."><link rel="canonical" href="https://mahmoudabdelnaby1.github.io/blog/salla-product-page-indexing-diagnosis/"><link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/blog/salla-product-page-indexing-diagnosis/"><link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/blog/salla-product-page-indexing-diagnosis/"><link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/blog/salla-product-page-indexing-diagnosis/">
+<meta property="og:type" content="article"><meta property="og:title" content="Salla Product Page Missing from Google? Diagnose Before Requesting Indexing | Mahmoud Abdelnaby"><meta property="og:description" content="A practical workflow to check product discovery, crawling, canonical signals, and internal links before requesting a recrawl. No indexing guarantee."><meta property="og:url" content="https://mahmoudabdelnaby1.github.io/blog/salla-product-page-indexing-diagnosis/"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/blog.css?v=20261029-blog-mobile-language-v3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Salla Product Page Missing from Google? Diagnose Before Requesting Indexing","description":"A practical workflow to check product discovery, crawling, canonical signals, and internal links before requesting a recrawl. No indexing guarantee.","inLanguage":"en","dateModified":"2026-10-28","author":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person","name":"Mahmoud Abdelnaby","url":"https://mahmoudabdelnaby1.github.io/"},"publisher":{"@type":"Person","@id":"https://mahmoudabdelnaby1.github.io/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mahmoudabdelnaby1.github.io/blog/salla-product-page-indexing-diagnosis/"},"isPartOf":{"@type":"Blog","@id":"https://mahmoudabdelnaby1.github.io/blog/","name":"Marketing & Growth Blog"},"about":[{"@type":"Thing","name":"SEO, AEO & GEO"}]}</script></head><body class="blog-page blog-article-page"><div class="wrap blog-wrap"><header class="topbar blog-topbar"><a class="brand" href="/">MAHMOUD <em>ABDELNABY</em></a><nav class="nav" aria-label="Primary navigation"><div class="nav-links"><a href="/blog/" aria-current="page">Blog</a><a href="/marketing-systems/">Marketing systems</a></div><a class="lang" href="/ar/blog/salla-product-page-indexing-diagnosis/">العربية</a></nav></header>
+<main id="main-content" class="blog-article-main" dir="ltr">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/blog/">All articles</a><span aria-hidden="true">/</span><span>SEO, AEO &amp; GEO</span></nav>
+<header class="blog-article-header"><p class="blog-kicker">PRACTICAL GUIDE <span>·</span> SEO, AEO &amp; GEO</p><h1>Salla Product Page Missing from Google? Diagnose Before Requesting Indexing</h1><p class="blog-article-deck">A practical workflow to check product discovery, crawling, canonical signals, and internal links before requesting a recrawl. No indexing guarantee.</p>
+<div class="blog-article-meta"><span>Mahmoud Abdelnaby</span><span aria-hidden="true">·</span><span>8 min read</span><span aria-hidden="true">·</span><a href="/ar/blog/salla-product-page-indexing-diagnosis/">العربية</a></div></header>
+<article class="blog-prose"><p>When a product page is missing from Google, “not indexed” describes a status, not the cause. Google may not know the URL, may not be able to fetch it, may encounter a redirect or <code>noindex</code> directive, may select another canonical URL, or may decide the page adds too little distinct value. Inspect the evidence for the specific URL before changing settings. A request to index a page does not fix a technical issue or guarantee that it will appear.</p>
+<p>This workflow is for Salla store owners and marketers, but many checks apply to other ecommerce platforms. Salla's current help article describes product-level SEO fields and sitemap submission; the exact controls depend on the store setup. Verify the public rendered page instead of assuming a setting name or saved value proves what Google can see. <a href="https://help.salla.sa/en/article/improve-your-store-visibility-on-search-engines-seo/oi134aj2ud6ts12ysumrm5za">Salla: Improve store visibility in search engines</a>, <a href="https://help.salla.sa/en/article/actions-on-a-specific-product-1/d5r56l6y5r9uwbrhyejeo0t8">Salla: Product SEO controls</a>, <a href="https://developers.google.com/search/docs/essentials/technical">Google: Technical requirements</a>, and <a href="https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl">Google: Request a recrawl</a>.</p>
+<h2 id="start-with-the-exact-url-inspection-result">Start with the exact URL Inspection result</h2>
+<p>In Search Console, inspect the full public URL of one affected product in the correct verified property. Record the indexed result first, then run the live URL test. These answer related but different questions: the indexed report describes what Google last processed; the live test checks what Google can access now. Save the inspection date, reported indexing state, crawl result, selected canonical when available, and any stated reason. Do not infer that every product shares the same issue from one example.</p>
+<p>Confirm the tested URL is the final canonical product URL shoppers can open without signing in. Check for redirects, protocol or hostname variants, and accidental query parameters. Compare the URL in the browser, the product link in the store, the canonical tag, and the sitemap entry. A sitemap can help discovery, but submitting it does not guarantee crawling, indexing, or ranking. Google says an indexing request can take days or weeks and is not a guarantee.</p>
+<h2 id="check-access-response-and-indexing-directives">Check access, response, and indexing directives</h2>
+<p>Open the page in a private browser window or an unauthenticated session. Confirm it loads successfully, presents the intended product rather than an error, and does not require a customer account. Review the final rendered HTML and response behavior using available diagnostics. Check whether <code>robots.txt</code> blocks crawling, whether a <code>noindex</code> directive is present, and whether redirects lead to the expected page. A blocked crawl and a <code>noindex</code> instruction are different conditions; do not remove either until you know whether it is intentional.</p>
+<p>On Salla, review the product's visibility and SEO settings in the current merchant interface, then check what the public page actually outputs. Theme changes, product state, inventory, and platform behavior can affect the visible page. Do not make a broad template or URL change to solve one product's status without evidence.</p>
+<h2 id="compare-canonical-sitemap-and-internal-links">Compare canonical, sitemap, and internal links</h2>
+<p>Check whether the page declares a canonical URL and whether that destination matches the product page you intend Google to index. A canonical is a signal, not a command. If it points to a category, another product, or a different URL variant, investigate why before editing. Make sure the sitemap uses the preferred URL and that the page is not a redirect or an intentional non-indexable variant.</p>
+<p>Next, check whether a visitor and crawler can reach the product through ordinary store navigation: a relevant category, search-filter-free listing, or contextual internal link. Google recommends linking to important products with crawlable links; pages reachable only through a store's internal search may be harder for Googlebot to discover. Make sure the anchor and surrounding context identify the destination. Do not add sitewide links to every product as a reflex.</p>
+<h2 id="check-whether-the-page-gives-shoppers-distinct-information">Check whether the page gives shoppers distinct information</h2>
+<p>A technically accessible URL may still not be selected for search. Compare the product page with other pages on the store and with the manufacturer's description. Does it include accurate specifications, variants, compatibility, availability, delivery or return details, and original information that helps a shopper decide? Are important details visible in the rendered page rather than only implied by a product image?</p>
+<p>Do not add paragraphs just to make the page longer. Resolve missing or contradictory specifications, copied boilerplate, unavailable products, and thin variants according to the real product facts. If two URLs are actually the same item with no meaningful difference, review the intended canonical or variant structure rather than manufacturing separate near-identical descriptions. Search Console's status is evidence to investigate, not a verdict that a product is valuable or worthless.</p>
+<h2 id="use-a-bounded-troubleshooting-sequence">Use a bounded troubleshooting sequence</h2>
+<ol>
+<li>Record the exact URL, product status, and inspection date.</li>
+<li>Read the indexed report and run the live URL test.</li>
+<li>Confirm the public page loads and returns the expected content.</li>
+<li>Check crawl access, <code>noindex</code>, redirects, and canonical signals.</li>
+<li>Compare the preferred URL with the sitemap and internal links.</li>
+<li>Review whether the page provides accurate, distinct shopper information.</li>
+<li>Correct only the confirmed cause, then recheck the rendered page.</li>
+<li>Request indexing for an eligible individual URL only after the underlying issue is resolved; for many URLs, maintain a clean sitemap and wait for recrawl.</li>
+</ol>
+<p>Record what changed and what evidence confirms it. If Search Console has not updated yet, note that Google may need to crawl again; do not repeatedly submit the same unchanged URL expecting it to move faster.</p>
+<h2 id="short-video-script-diagnose-before-you-request-indexing">Short-video script: Diagnose before you request indexing</h2>
+<p><strong>Hook:</strong> “A missing product page? ‘Not indexed’ isn't the diagnosis.”</p>
+<p><strong>Show:</strong> Search Console URL Inspection for one public product URL. Contrast the indexed report with the live URL test.</p>
+<p><strong>Explain:</strong> “Check access, <code>noindex</code>, redirects, canonical, sitemap, and internal links. Then review whether the page gives shoppers distinct, accurate information.”</p>
+<p><strong>Close:</strong> “Fix the cause you can verify. A recrawl request can help Google revisit a page, but it cannot guarantee indexing.”</p>
+<h2 id="educational-carousel-the-product-page-indexing-checklist">Educational carousel: The product-page indexing checklist</h2>
+<ol>
+<li><strong>Cover:</strong> Product page absent from Google? Diagnose first.</li>
+<li><strong>Inspect one URL:</strong> Use the exact public product URL in the correct Search Console property.</li>
+<li><strong>Separate reports:</strong> Indexed status and live test describe different moments.</li>
+<li><strong>Check access:</strong> Does the page load publicly with the expected content?</li>
+<li><strong>Review directives:</strong> robots.txt, <code>noindex</code>, redirects, and canonical.</li>
+<li><strong>Trace discovery:</strong> Sitemap plus a crawlable internal link from a relevant category.</li>
+<li><strong>Review value:</strong> Accurate, distinct information that helps a shopper decide.</li>
+<li><strong>Set expectations:</strong> A request may prompt a recrawl; indexing is not guaranteed.</li>
+</ol>
+<h2 id="field-experiment-thread-triage-a-small-set-of-missing-products">Field experiment thread: Triage a small set of missing products</h2>
+<p>This is a proposed diagnostic exercise, not a report of indexing results.</p>
+<p><strong>1/</strong> Choose a small, representative set of affected product URLs. Record why each matters and confirm each is intended to be publicly discoverable.</p>
+<p><strong>2/</strong> Capture URL Inspection's indexed result and live test separately for each URL. Note the date and any canonical or crawl details shown.</p>
+<p><strong>3/</strong> Verify the page loads publicly. Compare its final URL, response, directives, canonical, sitemap entry, and route from a relevant category.</p>
+<p><strong>4/</strong> Review the actual product information for accuracy, completeness, duplication, and distinct shopper value. Do not use word count as a quality proxy.</p>
+<p><strong>5/</strong> Group URLs by evidenced cause. Correct one cause in a controlled batch; do not change storewide URLs or crawler rules based on a single page.</p>
+<p><strong>6/</strong> Re-test the live page, document the change, then monitor for a later crawl and index-state update. Report “not yet updated” or “inconclusive” when Google has not processed the change.</p>
+<h2 id="tool-neutral-prompt-pack-review-an-indexing-diagnosis">Tool-neutral prompt pack: Review an indexing diagnosis</h2>
+<p><strong>Prompt 1 — Separate observation from cause</strong></p>
+<blockquote>
+<p>Given this Search Console URL Inspection output [paste], classify each statement as observed, inferred, or unknown. List plausible causes supported by the evidence and the next check for each. Do not claim a fix or guarantee indexing.</p>
+</blockquote>
+<p><strong>Prompt 2 — Compare page signals</strong></p>
+<blockquote>
+<p>Compare this public product URL [URL], rendered page details [paste], canonical [value], sitemap entry [value], and internal route [description]. Identify inconsistencies and missing evidence. Do not recommend changing a URL unless the evidence demonstrates a mismatch.</p>
+</blockquote>
+<p><strong>Prompt 3 — Product-page quality review</strong></p>
+<blockquote>
+<p>Using only these verified product facts [facts] and page text [text], identify missing, contradictory, duplicated, or unsupported claims that could prevent a shopper from making an informed decision. Propose corrections without inventing specifications or adding filler.</p>
+</blockquote>
+<h2 id="stop-doing-swipe-file-replace-indexing-shortcuts-with-diagnosis">Stop-doing swipe file: Replace indexing shortcuts with diagnosis</h2>
+<p><strong>Stop:</strong> “Request indexing again; that will make the product appear.”</p>
+<p><strong>Use:</strong> “Record the current inspection result, find and correct an evidenced issue, then request a recrawl if appropriate. Inclusion is not guaranteed.”</p>
+<p><strong>Stop:</strong> Removing <code>noindex</code> or changing robots rules before checking whether the restriction is intentional.</p>
+<p><strong>Use:</strong> Verify the public page's indexing directives and the business reason behind them before changing configuration.</p>
+<p><strong>Stop:</strong> Changing the product URL because the old one is not indexed.</p>
+<p><strong>Use:</strong> Compare the intended URL across the page, canonical, sitemap, and internal links first. Preserve established URLs unless a separate migration decision is justified.</p>
+<p><strong>Stop:</strong> Adding generic text to every product page to make it “longer.”</p>
+<p><strong>Use:</strong> Add or correct only useful, verified product details that help the customer decide.</p>
+<h2 id="hookvaluetemplate-find-the-reason-before-taking-action">Hook–Value–Template: Find the reason before taking action</h2>
+<p><strong>Hook:</strong> “A missing result is a symptom. Which signal explains this URL?”</p>
+<p><strong>Value:</strong> Check the indexed report and live test, then trace access, canonical, discovery, and page usefulness. Fix one supported cause at a time and keep a record.</p>
+<p><strong>Diagnostic note:</strong> “URL: [exact URL]. Checked on: [date]. Indexed report: [observed state]. Live test: [observed state]. Access/directives: [evidence]. Canonical: [value]. Sitemap: [yes/no and exact URL]. Internal path: [source link]. Page information gap: [verified issue or none found]. Action: [specific correction]. Recheck: [date or pending crawl]. Outcome: [updated / unchanged / inconclusive].”</p>
+<p>This template separates evidence from assumptions. It does not promise that a corrected page will be indexed or rank in Google.</p></article>
+<section class="blog-related" aria-labelledby="blog-related-title"><div class="blog-related-intro"><p class="blog-kicker">Related frameworks and tools</p><h2 id="blog-related-title">Use these resources to apply the method to a specific task.</h2></div><ul></ul></section>
+<nav class="blog-next" aria-label="Guide navigation"><a href="/blog/zid-robots-sitemap-indexing-basics/"><span>Next guide</span><strong>Zid Robots.txt and Sitemaps: Separate Crawling from Indexing</strong><b aria-hidden="true">↗</b></a><a href="/blog/"><span>All articles</span><strong>250 practical articles · English</strong><b aria-hidden="true">↗</b></a></nav></main><footer class="blog-footer"><a class="blog-footer-brand" href="/">MAHMOUD <em>ABDELNABY</em></a><span>Practical marketing systems for MENA</span><a href="https://github.com/mahmoudabdelnaby1/mena-ai-marketing-frameworks" rel="noopener">GitHub frameworks ↗</a></footer></div></body></html>
