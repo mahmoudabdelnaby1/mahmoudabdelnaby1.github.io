@@ -15,25 +15,25 @@ POSTS = DATA["posts"]
 UI = {
  "en": {
   "brand":"MAHMOUD <em>ABDELNABY</em>","home":"Portfolio","guides":"Marketing systems","language":"العربية",
-  "search_label":"Search the library","search_placeholder":"Try “WhatsApp”, “SEO”, or “video testing”","all":"All topics",
+  "search_label":"Describe a task or problem","search_placeholder":"e.g. I need to measure leads from WhatsApp…","all":"All topics",
   "count":"200 practical articles · 100 topics · English + Arabic","kicker":"FIELD NOTES · MARKETING SYSTEMS",
   "title":"Useful work for the decisions behind growth.",
   "intro":"Bilingual, task-led guides for marketers working across MENA. Each article turns an operating question into a method, checks, and related tools.",
   "featured":"START HERE","featured_label":"Growth diagnosis","read":"min read","back":"All articles",
   "related":"Related frameworks and tools","related_text":"Use these resources to apply the method to a specific task.",
-  "next":"Next guide","footer":"Practical marketing systems for MENA","no_results":"No articles match. Try a broader term.",
+  "next":"Next guide","footer":"Practical marketing systems for MENA","no_results":"No guides match yet. Try describing the task another way.",
   "topics":"Browse by topic","language_note":"Written for English-reading marketers in MENA.",
   "shown":"articles shown","shown_one":"article shown","explore":"Explore the guides",
  },
  "ar": {
   "brand":"محمود <em>عبدالنبي</em>","home":"معرض الأعمال","guides":"الأنظمة التسويقية","language":"English",
-  "search_label":"ابحث في المكتبة","search_placeholder":"جرّب «واتساب» أو «SEO» أو «اختبار الفيديو»","all":"كل الموضوعات",
+  "search_label":"اكتب المهمة أو المشكلة التي تريد حلها","search_placeholder":"مثال: عندي مشكلة في قياس العملاء من واتساب…","all":"كل الموضوعات",
   "count":"٢٠٠ مقال عملي · ١٠٠ موضوع · العربية والإنجليزية","kicker":"ملاحظات تطبيقية · أنظمة التسويق",
   "title":"عمل عملي يدعم القرارات وراء النمو.",
   "intro":"أدلة عربية وإنجليزية تبدأ من مهمة تسويقية حقيقية في أسواق MENA، ثم تحوّلها إلى منهج وخطوات وأدوات مرتبطة.",
   "featured":"ابدأ من هنا","featured_label":"تشخيص النمو","read":"دقائق للقراءة","back":"كل المقالات",
   "related":"أطر وأدوات مرتبطة","related_text":"استخدم هذه الموارد لتطبيق المنهج على مهمة محددة.",
-  "next":"الدليل التالي","footer":"أنظمة تسويق عملية لأسواق MENA","no_results":"لا توجد مقالات تطابق البحث. جرّب كلمة أوسع.",
+  "next":"الدليل التالي","footer":"أنظمة تسويق عملية لأسواق MENA","no_results":"لم نعثر على دليل مطابق. جرّب وصف المهمة بطريقة أخرى.",
   "topics":"تصفّح حسب الموضوع","language_note":"صياغة عربية تراعي سياق المسوقين في أسواق MENA.",
   "shown":"مقالًا ظاهرًا","shown_one":"مقال ظاهر","explore":"تصفّح الأدلة",
  }
@@ -93,9 +93,10 @@ def footer(lang):
 def card(post,lang,featured=False):
  ui=UI[lang]; data=post[lang]; url=f'/{("ar/" if lang=="ar" else "")}blog/{post["slug"]}/'
  label=post["category_ar" if lang=="ar" else "category_en"]
+ search_text=" ".join((post["en"]["title"],post["en"]["description"],post["ar"]["title"],post["ar"]["description"],post["category_en"],post["category_ar"]))
  cls="blog-feature-card" if featured else "blog-card"
  eyebrow=ui["featured_label"] if featured else label
- return f'''<a class="{cls}" href="{url}" data-theme="{esc(post.get("category_key",post["theme"][:2]))}" data-search="{esc((data["title"]+" "+data["description"]+" "+label).lower())}">
+ return f'''<a class="{cls}" href="{url}" data-theme="{esc(post.get("category_key",post["theme"][:2]))}" data-search="{esc(search_text.lower())}" data-search-title="{esc((post["en"]["title"]+" "+post["ar"]["title"]).lower())}">
 <span class="blog-card-kicker">{esc(eyebrow)} <span aria-hidden="true">↗</span></span><h2>{esc(data["title"])}</h2><p>{esc(data["description"])}</p><span class="blog-card-meta">{minutes(post,lang)} {esc(ui["read"])}</span></a>'''
 
 def index_page(lang):
@@ -125,7 +126,7 @@ def index_page(lang):
 <div class="blog-filter-list" aria-label="{esc(ui["topics"])}">{"".join(filters)}</div><p class="blog-results-status" data-blog-status data-default="{esc(ui["count"])}" data-one="{esc(ui["shown_one"])}" data-many="{esc(ui["shown"])}" aria-live="polite">{esc(ui["count"])}</p>
 <div class="blog-grid" data-blog-grid>{"".join(cards)}</div><p class="blog-empty" data-blog-empty hidden>{esc(ui["no_results"])}</p></section>
 <section class="blog-faq-note"><span class="blog-faq-index">MENA · EN / AR</span><p>{esc(ui["intro"])}</p><a href="{("/ar/marketing-systems/" if lang=="ar" else "/marketing-systems/")}">{esc(ui["guides"])} ↗</a></section>
-</main>{footer(lang)}</div><script defer src="/assets/blog.js?v=20261028-blog-v1"></script></body></html>'''
+</main>{footer(lang)}</div><script defer src="/assets/blog.js?v=20261029-natural-language-v1"></script></body></html>'''
 
 def article_page(index,lang):
  p=POSTS[index]; data=p[lang]; ui=UI[lang]
@@ -283,17 +284,61 @@ BLOG_JS = r"""(() => {
  const empty=document.querySelector("[data-blog-empty]");
  if(!cards.length)return;
  let active="all";
+ const stopWords=new Set(("a an and are as at be by do for from how i in is it me my of on or the to was what when where why with you your need want looking find show help have has had this that please can could would should about into using find عندي عندنا لدي عندي عايز عايزه عاوز عاوزه اريد محتاج محتاجه ابغى ابي ازاي ازاى كيف ماذا ايه اي ما في فين من على عن الي اللي الذي التي و او ثم لكن لو هل هو هي يكون كذا كده كمان جدا مش مو ليس لا مشكلة مشاكل عند لدي لديّ اريد اريد ان عايز ان عايزة ان محتاج ان اريد اعرف طريقة طرق شيء حاجه حاجة عايز اعمل اعمل اعرف حل حلول ليه ليش اريد معرفة" ).split(/\s+/));
+ const synonymGroups=[
+  "lead leads prospect prospects inquiry inquiries enquiry enquiries contact conversion العملاء عميل عملاء محتمل محتملة محتملين محتملون استفسار استفسارات استعلام تواصل رسالة رسائل",
+  "measure measurement tracking track analytics attribution قياس قياسه قياسها تتبع تتبعها تتبعهم تحليلات احصاء احصائيات نسبه نتائج",
+  "problem issue broken fix troubleshoot diagnose diagnosis حل حلول مشكلة مشاكل عطل اعطال لايعمل لايعملش اصلاح تشخيص",
+  "growth grow improve improvement optimize optimization increase increase sales revenue profit business performance sales growth نمو نموه تنمية تطور تطوير تحسين احسن ازود زيادة زياده مبيعات المبيعات بيع ايرادات ربح ارباح اداء نتائج",
+  "campaign campaigns ads advertising paid media إعلان اعلانات اعلاني حملة حملات اعلان اعلانية اعلانيه",
+  "content writing write draft article blog copy content كتابة اكتب محتوى مقال مقالات نص صياغة صياغه",
+  "search seo ranking indexing searchengine بحث بحثا ظهور ترتيب فهرسة فهرسة نتائج جوجل",
+  "whatsapp واتساب واتس اب واتسآب",
+  "video videos creative film فيديو فيديوهات مرئي اعلان اعلانات تصوير مونتاج",
+  "website page landing site web موقع صفحة صفحات صفحة هبوط لاندنج",
+  "email emails newsletter emailmarketing بريد ايميل ايميلات رسائل نشرة",
+  "social socials instagram tiktok linkedin youtube سوشيال اجتماعي اجتماعية انستغرام انستجرام تيك توك لينكدان يوتيوب"
+ ];
+ const normalize=value=>value.toLocaleLowerCase().normalize("NFKC").replace(/[\u064B-\u065F\u0670\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/[ؤ]/g,"و").replace(/[ئ]/g,"ي").replace(/ة/g,"ه").replace(/[^a-z0-9\u0600-\u06ff]+/g," ").trim();
+ const stem=word=>{
+  if(word.length>5) word=word.replace(/^(وال|بال|كال|لل|ال)/," ").trim();
+  if(word.length>5) word=word.replace(/(يات|ات|ون|ين|ان|ها|هم|هن|ية|يه|نا|كم|كن)$/," ").trim();
+  if(word.length>5) word=word.replace(/(ing|ers|ies|ied|ed|es|s)$/," ").trim();
+  return word;
+ };
+ const concepts=synonymGroups.map(group=>new Set(group.split(/\s+/).map(word=>stem(normalize(word))).filter(Boolean)));
+ const tokens=value=>Array.from(new Set(normalize(value).split(/\s+/).map(stem).filter(word=>word.length>1&&!stopWords.has(word))));
+ const expanded=word=>{const group=concepts.find(set=>set.has(word));return group||new Set([word]);};
+ const searchScore=(card,queryTokens)=>{
+  if(!queryTokens.length)return 1;
+  const title=new Set(tokens(card.dataset.searchTitle||""));
+  const body=new Set(tokens(card.dataset.search||""));
+  let score=0,matched=0;
+  for(const queryToken of queryTokens){
+   const alternatives=expanded(queryToken);
+   const titleHit=Array.from(alternatives).some(word=>title.has(word)||Array.from(title).some(candidate=>candidate.startsWith(word)&&word.length>=4));
+   const bodyHit=titleHit||Array.from(alternatives).some(word=>body.has(word)||Array.from(body).some(candidate=>candidate.startsWith(word)&&word.length>=4));
+   if(bodyHit){matched++;score+=titleHit?3:1;}
+  }
+  const coverage=matched/queryTokens.length;
+  const minimum=queryTokens.length===1?1:queryTokens.length===2?.5:Math.min(.55,2/queryTokens.length);
+  return coverage>=minimum?score+coverage:-1;
+ };
  const apply=()=>{
-  const query=(search?search.value:"").trim().toLocaleLowerCase();
+  const queryTokens=tokens(search?search.value:"");
   let visible=0;
+  const ranked=[];
   for(const card of cards){
    const matchTheme=active==="all"||card.dataset.theme===active;
-   const matchSearch=!query||(card.dataset.search||"").includes(query);
+   const score=searchScore(card,queryTokens);
+   const matchSearch=score>=0;
    const show=matchTheme&&matchSearch; card.hidden=!show; if(show)visible+=1;
+   if(card.classList.contains("blog-card"))ranked.push({card,score:matchTheme&&show?score:-1});
   }
+  if(queryTokens.length){ranked.sort((a,b)=>b.score-a.score);const grid=document.querySelector("[data-blog-grid]");if(grid)for(const item of ranked)grid.append(item.card);}
   if(empty)empty.hidden=visible!==0;
   if(status){
-   if(query||active!=="all") status.textContent=String(visible)+" "+(visible===1?status.dataset.one:status.dataset.many);
+   if(queryTokens.length||active!=="all") status.textContent=String(visible)+" "+(visible===1?status.dataset.one:status.dataset.many);
    else status.textContent=status.dataset.default;
   }
  };
