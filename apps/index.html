@@ -6,7 +6,7 @@
   <title data-en="MENA Digital Marketing Static App Suite | 100 Client-Side Tools" data-ar="منظومة أدوات التسويق الرقمي لمنطقة الشرق الأوسط | 100 أداة ثابتة">منظومة أدوات التسويق الرقمي لمنطقة الشرق الأوسط | 100 أداة ثابتة</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/">
   <meta name="description" content="100 high-utility, browser-only digital marketing static applications for Egypt, Saudi Arabia, UAE, and GCC markets. Zero backend, zero tracking, 100% private.">
-  <link rel="stylesheet" href="shared/shared.css?v=20261030-nav-v1">
+  <link rel="stylesheet" href="shared/shared.css?v=20261030-natural-search-v1">
   <style>
     .no-results {
       grid-column: 1 / -1;
@@ -66,7 +66,7 @@
     <!-- Search & Category Filters -->
     <div class="search-filter-bar">
       <div class="search-input-wrapper">
-        <input type="text" id="catalog-search" class="form-control" placeholder="بحث فوري في الـ 100 أداة (بالاسم، الرقم، أو الكلمة المفتاحية)..." data-en="Instant search across 100 tools (by name, ID, or keyword)..." data-ar="بحث فوري في الـ 100 أداة (بالاسم، الرقم، أو الكلمة المفتاحية)...">
+        <input type="text" id="catalog-search" class="form-control" placeholder="اكتب اللي عايز تعمله أو المشكلة اللي بتحاول تحلها..." data-en="Describe what you want to do or the problem you need to solve..." data-ar="اكتب اللي عايز تعمله أو المشكلة اللي بتحاول تحلها...">
       </div>
       <div style="font-size:0.875rem;color:var(--text-muted);white-space:nowrap;">
         <span id="results-count">100</span> <span data-en="tools found" data-ar="أداة متاحة">أداة متاحة</span>
@@ -1803,7 +1803,7 @@
     </footer>
   </div>
 
-  <script src="shared/shared.js?v=20261030-nav-v1"></script>
+  <script src="shared/shared.js?v=20261030-natural-search-v1"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var searchInput = document.getElementById('catalog-search');
@@ -1811,18 +1811,27 @@
       var cards = document.querySelectorAll('.catalog-card');
       var resultsCount = document.getElementById('results-count');
       var noResults = document.getElementById('no-results');
+      var catalogGrid = document.getElementById('catalog-grid');
       var currentCategory = 'All';
+      var originalCardOrder = Array.prototype.slice.call(cards);
 
       function filterCatalog() {
-        var query = searchInput.value.toLowerCase().trim();
+        var query = searchInput.value.trim();
         var visibleCount = 0;
+        var rankedCards = originalCardOrder.map(function (card, index) {
+          var localizedContent = Array.prototype.map.call(card.querySelectorAll('[data-en], [data-ar]'), function (el) {
+            return [el.getAttribute('data-en'), el.getAttribute('data-ar')].join(' ');
+          }).join(' ');
+          var searchData = [card.getAttribute('data-search'), localizedContent].join(' ');
+          return { card: card, index: index, score: query ? window.DMApp.searchScore(query, searchData) : 0 };
+        });
+        if (query) rankedCards.sort(function (a, b) { return b.score - a.score || a.index - b.index; });
 
-        cards.forEach(function (card) {
+        rankedCards.forEach(function (item) {
+          var card = item.card;
           var cardCategory = card.getAttribute('data-category');
-          var searchData = card.getAttribute('data-search') || '';
-
           var matchesCategory = (currentCategory === 'All' || cardCategory === currentCategory);
-          var matchesQuery = (!query || searchData.indexOf(query) !== -1);
+          var matchesQuery = (!query || item.score > 0);
 
           if (matchesCategory && matchesQuery) {
             card.style.display = 'flex';
@@ -1830,6 +1839,7 @@
           } else {
             card.style.display = 'none';
           }
+          catalogGrid.appendChild(card);
         });
 
         resultsCount.textContent = visibleCount;
@@ -1841,6 +1851,11 @@
       }
 
       searchInput.addEventListener('input', filterCatalog);
+      var initialQuery = new URLSearchParams(window.location.search).get('q');
+      if (initialQuery) {
+        searchInput.value = initialQuery;
+        filterCatalog();
+      }
 
       filterButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
