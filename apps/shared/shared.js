@@ -344,7 +344,7 @@
   function getSearchGroups(query) {
     var normalized = normalizeSearchText(query);
     var tokens = normalized.split(/\s+/).filter(function (token) {
-      return token.length > 1 && !searchStopWords.has(token);
+      return token.length > 1 && !/^\d+$/.test(token) && !searchStopWords.has(token);
     });
     var seen = new Set();
     return tokens.filter(function (token) {
@@ -360,6 +360,7 @@
   function searchScore(query, searchableText) {
     var normalizedQuery = normalizeSearchText(query);
     var normalizedText = normalizeSearchText(searchableText);
+    if (normalizedQuery.length > 2 && normalizedText.indexOf(normalizedQuery) !== -1) return 2;
     var groups = getSearchGroups(query);
     if (!groups.length || !normalizedText) return 0;
     var tokens = new Set();
@@ -371,10 +372,9 @@
     groups.forEach(function (group) {
       if (group.some(function (term) { return tokens.has(normalizeSearchText(term)); })) hits++;
     });
-    var requiredHits = groups.length <= 2 ? 1 : Math.max(2, Math.ceil(groups.length * 0.22));
+    var requiredHits = groups.length <= 2 ? 1 : (groups.length <= 5 ? Math.ceil(groups.length * 0.6) : Math.max(3, Math.ceil(groups.length * 0.4)));
     if (hits < requiredHits) return 0;
     var score = hits / groups.length;
-    if (normalizedQuery.length > 2 && normalizedText.indexOf(normalizedQuery) !== -1) score += 1;
     return score;
   }
 
