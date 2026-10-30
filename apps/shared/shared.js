@@ -6,6 +6,8 @@
 (function () {
   'use strict';
 
+  var sharedScriptSrc = document.currentScript ? document.currentScript.src : '';
+
   // Global State
   var currentLang = 'ar'; // Default Arabic for MENA suite
 
@@ -41,6 +43,16 @@
       }
     }
 
+    var localizedLinks = document.querySelectorAll('[data-href-en][data-href-ar]');
+    for (var j = 0; j < localizedLinks.length; j++) {
+      localizedLinks[j].setAttribute('href', localizedLinks[j].getAttribute('data-href-' + lang));
+    }
+
+    var localizedLabels = document.querySelectorAll('[data-aria-en][data-aria-ar]');
+    for (var k = 0; k < localizedLabels.length; k++) {
+      localizedLabels[k].setAttribute('aria-label', localizedLabels[k].getAttribute('data-aria-' + lang));
+    }
+
     // Update language toggle button text
     var toggleBtn = document.getElementById('lang-toggle-btn');
     if (toggleBtn) {
@@ -56,6 +68,149 @@
     try {
       localStorage.setItem('dm_app_lang', lang);
     } catch (e) {}
+  }
+
+  function setupPortfolioNavigation() {
+    var header = document.querySelector('.top-nav');
+    if (!header || header.getAttribute('data-portfolio-nav') === 'ready') return;
+
+    var oldBrand = header.querySelector('.nav-brand');
+    var oldBadge = oldBrand ? oldBrand.querySelector('.brand-badge') : null;
+    var appId = oldBadge && /^APP-\d+/i.test(oldBadge.textContent.trim()) ? oldBadge.textContent.trim() : '';
+    var oldToggle = header.querySelector('#lang-toggle-btn');
+
+    function localizedText(tag, className, en, ar) {
+      var element = document.createElement(tag);
+      if (className) element.className = className;
+      element.setAttribute('data-en', en);
+      element.setAttribute('data-ar', ar);
+      element.textContent = currentLang === 'ar' ? ar : en;
+      return element;
+    }
+
+    function localizedLink(en, ar, enHref, arHref, className) {
+      var link = localizedText('a', className || '', en, ar);
+      link.setAttribute('data-href-en', enHref);
+      link.setAttribute('data-href-ar', arHref);
+      link.setAttribute('href', currentLang === 'ar' ? arHref : enHref);
+      return link;
+    }
+
+    var brandGroup = document.createElement('div');
+    brandGroup.className = 'portfolio-tools-brand-group';
+    var brand = document.createElement('a');
+    brand.className = 'portfolio-tools-brand';
+    brand.setAttribute('data-href-en', '/');
+    brand.setAttribute('data-href-ar', '/ar/');
+    brand.setAttribute('href', currentLang === 'ar' ? '/ar/' : '/');
+    brand.setAttribute('data-aria-en', 'Return to the portfolio');
+    brand.setAttribute('data-aria-ar', 'العودة إلى الملف المهني');
+    brand.setAttribute('aria-label', currentLang === 'ar' ? 'العودة إلى الملف المهني' : 'Return to the portfolio');
+    var firstName = localizedText('span', '', 'MAHMOUD ', 'محمود ');
+    var surname = localizedText('em', '', 'ABDELNABY', 'عبدالنبي');
+    brand.appendChild(firstName);
+    brand.appendChild(surname);
+    brandGroup.appendChild(brand);
+
+    var contextLink = localizedLink(
+      appId ? 'All tools' : 'Marketing tools',
+      appId ? 'كل الأدوات' : 'الأدوات التسويقية',
+      '/apps/', '/apps/', 'portfolio-tools-context'
+    );
+    contextLink.setAttribute('aria-current', appId ? 'location' : 'page');
+    brandGroup.appendChild(contextLink);
+    if (appId) {
+      var appBadge = document.createElement('span');
+      appBadge.className = 'portfolio-tools-app-id';
+      appBadge.textContent = appId;
+      brandGroup.appendChild(appBadge);
+    }
+
+    var nav = document.createElement('nav');
+    nav.className = 'portfolio-tools-nav';
+    nav.setAttribute('data-aria-en', 'Primary navigation');
+    nav.setAttribute('data-aria-ar', 'التنقل الرئيسي');
+    nav.setAttribute('aria-label', currentLang === 'ar' ? 'التنقل الرئيسي' : 'Primary navigation');
+    var links = document.createElement('div');
+    links.className = 'portfolio-tools-nav-links';
+    links.id = 'portfolio-tools-primary-links';
+    links.appendChild(localizedLink('Experience', 'الأثر والخبرة', '/#selected-work', '/ar/#selected-work'));
+    links.appendChild(localizedLink('Expertise', 'الخبرات', '/#expertise', '/ar/#expertise'));
+
+    var libraryMenu = document.createElement('details');
+    libraryMenu.className = 'portfolio-tools-library-menu';
+    var summary = localizedText('summary', '', 'Libraries', 'المكتبات');
+    libraryMenu.appendChild(summary);
+    var panel = document.createElement('div');
+    panel.className = 'portfolio-tools-library-panel';
+    [
+      ['Playbooks', 'الأدلة العملية', '/playbooks/', '/ar/playbooks/'],
+      ['Frameworks', 'الأطر', '/frameworks/', '/ar/frameworks/'],
+      ['Skills library', 'مكتبة المهارات', '/skills/', '/ar/skills/'],
+      ['Marketing systems', 'الأنظمة التسويقية', '/marketing-systems/', '/ar/marketing-systems/'],
+      ['Marketing tools', 'الأدوات التسويقية', '/apps/', '/apps/'],
+      ['Blog & articles', 'المدونة والمقالات', '/blog/', '/ar/blog/'],
+      ['Assistant library', 'مكتبة المساعدين', '/#assistant-library', '/ar/#assistant-library']
+    ].forEach(function (item) {
+      var link = localizedLink(item[0], item[1], item[2], item[3]);
+      if (item[0] === 'Marketing tools') {
+        link.setAttribute('aria-current', appId ? 'location' : 'page');
+      }
+      panel.appendChild(link);
+    });
+    libraryMenu.appendChild(panel);
+    links.appendChild(libraryMenu);
+    nav.appendChild(links);
+
+    var actions = document.createElement('div');
+    actions.className = 'nav-actions portfolio-tools-nav-actions';
+    if (oldToggle) {
+      oldToggle.className = 'btn btn-secondary btn-sm';
+      actions.appendChild(oldToggle);
+    } else {
+      var languageToggle = document.createElement('button');
+      languageToggle.id = 'lang-toggle-btn';
+      languageToggle.type = 'button';
+      languageToggle.className = 'btn btn-secondary btn-sm';
+      actions.appendChild(languageToggle);
+    }
+    var contact = localizedLink('WhatsApp', 'واتساب', 'https://wa.me/201205904700', 'https://wa.me/201205904700', 'portfolio-tools-contact');
+    contact.setAttribute('rel', 'noopener');
+    actions.appendChild(contact);
+    var menuToggle = localizedText('button', 'portfolio-tools-menu-toggle', 'Menu', 'القائمة');
+    menuToggle.type = 'button';
+    menuToggle.setAttribute('aria-controls', links.id);
+    menuToggle.setAttribute('aria-expanded', 'false');
+    actions.appendChild(menuToggle);
+    nav.appendChild(actions);
+
+    header.replaceChildren(brandGroup, nav);
+    header.classList.add('portfolio-tools-top-nav');
+    header.setAttribute('data-portfolio-nav', 'ready');
+
+    menuToggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (event) {
+      if (!nav.contains(event.target)) {
+        nav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        libraryMenu.open = false;
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        if (libraryMenu.open) {
+          libraryMenu.open = false;
+          summary.focus();
+        } else if (nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.focus();
+        }
+      }
+    });
   }
 
   // Toast Notification
@@ -164,6 +319,7 @@
 
   // Initialize on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function () {
+    setupPortfolioNavigation();
     applyLanguage(currentLang);
 
     var toggleBtn = document.getElementById('lang-toggle-btn');
