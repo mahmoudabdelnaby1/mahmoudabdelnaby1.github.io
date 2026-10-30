@@ -234,8 +234,9 @@
     'ضريبه': ['tax', 'vat'],
     'قيمه': ['vat', 'tax'],
     'عموله': ['fee', 'markup', 'commission', 'payment'],
-    'كارت': ['card', 'currency', 'markup'],
-    'بطاقه': ['card', 'currency', 'markup'],
+    'كارت': ['card'],
+    'بطاقه': ['card'],
+    'بنك': ['bank', 'debit', 'fee'],
     'فيزا': ['card', 'currency', 'payment'],
     'دولار': ['usd', 'dollar', 'currency'],
     'عميل': ['customer', 'client', 'lead'],
@@ -244,11 +245,6 @@
     'رساله': ['sms', 'message'],
     'رسائل': ['sms', 'message'],
     'واتساب': ['whatsapp'],
-    'احسب': ['calculate', 'calculator', 'estimate'],
-    'حساب': ['calculate', 'calculator', 'estimate'],
-    'احسبلي': ['calculate', 'calculator', 'estimate'],
-    'اعرف': ['calculate', 'calculator', 'estimate'],
-    'يطلع': ['calculate', 'calculator', 'estimate'],
     'مبيعات': ['sales', 'revenue', 'conversion'],
     'تحويل': ['conversion', 'convert', 'attribution'],
     'سله': ['cart', 'basket'],
@@ -287,6 +283,7 @@
     'مخالفه': ['compliance', 'policy', 'regulatory'],
     'ضرائب': ['tax', 'vat'],
     'charge': ['card', 'debit', 'fee', 'cost'],
+    'bank': ['bank', 'debit', 'fee'],
     'charged': ['card', 'debit', 'fee', 'cost'],
     'bill': ['invoice', 'tax', 'vat', 'fee'],
     'withdraw': ['debit', 'card', 'fee', 'spend'],
@@ -325,7 +322,7 @@
   };
 
   var searchStopWords = new Set(('i me my we our you your he she it they them a an the and or but if then how what which who where when why is are am was were be been being do does did can could would should need want find looking for help with about on in at to from of by as into per this that these those there have has had much many tell show use please can will should could would tool tools app apps ' +
-    'انا انت انتي هو هي احنا هم انا عايز عايزه عايزين محتاج محتاجه اريد ابغى ابحث بدور بدورعلى بدورعن عايزاعرف عايزه اعرف من فضلك لو سمحت ممكن ازاي كيف هل اي ايه ما ماذا في من على عن الي اللي ده دي دول دا كده كذا جدا عندي عنده عندها بتاع بتاعة يكون تكون كان كانت يتم لي و او ثم بس لكن بقى بقي كام قد يعني عايز اعرف عايزه اعرف عاوز عاوزه عاوز اعرف').split(/\s+/));
+    'انا انت انتي هو هي احنا هم انا عايز عايزه عايزين محتاج محتاجه اريد ابغى ابحث بدور بدورعلى بدورعن عايزاعرف عايزه اعرف من فضلك لو سمحت ممكن ازاي كيف هل اي ايه ما ماذا في من على عن الي اللي ده دي دول دا كده كذا جدا عندي عنده عندها بتاع بتاعة يكون تكون كان كانت يتم لي و او ثم بس لكن بقى بقي كام قد يعني عايز اعرف عايزه اعرف عاوز عاوزه عاوز اعرف احسب احسبلي حساب اعرف يطلع').split(/\s+/));
 
   function normalizeSearchText(value) {
     return String(value || '').toLowerCase()
@@ -335,7 +332,7 @@
   }
 
   function stemSearchToken(token) {
-    var stem = token.replace(/^ال(?=.{4,})/, '').replace(/(ات|ون|ين|ان)$/, '');
+    var stem = token.replace(/^لل(?=.{4,})/, '').replace(/^ال(?=.{4,})/, '').replace(/(ات|ون|ين|ان)$/, '');
     if (/^[a-z]+$/.test(stem)) {
       if (/ies$/.test(stem) && stem.length > 5) stem = stem.replace(/ies$/, 'y');
       else if (/(ches|shes|xes|zes|sses)$/.test(stem)) stem = stem.replace(/es$/, '');
