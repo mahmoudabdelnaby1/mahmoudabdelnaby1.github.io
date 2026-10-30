@@ -64,6 +64,9 @@
     if (typeof window.onAppLanguageChange === 'function') {
       window.onAppLanguageChange(lang);
     }
+    if (typeof window.refreshPortfolioToolSearch === 'function') {
+      window.refreshPortfolioToolSearch();
+    }
 
     try {
       localStorage.setItem('dm_app_lang', lang);
@@ -188,6 +191,8 @@
     header.classList.add('portfolio-tools-top-nav');
     header.setAttribute('data-portfolio-nav', 'ready');
 
+    setupPortfolioToolSearch(nav, actions);
+
     menuToggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -211,6 +216,318 @@
         }
       }
     });
+  }
+
+  var searchSynonyms = {
+    'تكلفه': ['cost', 'price', 'fee', 'spend', 'budget'],
+    'صرف': ['spend', 'cost', 'budget'],
+    'هصرف': ['spend', 'cost', 'budget'],
+    'اصرف': ['spend', 'cost', 'budget'],
+    'فلوس': ['spend', 'budget', 'cost', 'revenue'],
+    'ميزانيه': ['budget', 'spend', 'allocation'],
+    'نسبه': ['rate', 'ratio', 'conversion', 'percentage'],
+    'معدل': ['rate', 'ratio', 'velocity', 'metrics'],
+    'قياس': ['measure', 'metric', 'score', 'analytics'],
+    'اعلان': ['ad', 'ads', 'advertising', 'campaign', 'paid'],
+    'اعلن': ['ad', 'ads', 'advertising', 'campaign', 'paid'],
+    'حمله': ['campaign', 'ads', 'paid'],
+    'ضريبه': ['tax', 'vat'],
+    'قيمه': ['vat', 'tax'],
+    'عموله': ['fee', 'markup', 'commission', 'payment'],
+    'كارت': ['card', 'currency', 'markup'],
+    'بطاقه': ['card', 'currency', 'markup'],
+    'فيزا': ['card', 'currency', 'payment'],
+    'دولار': ['usd', 'dollar', 'currency'],
+    'عميل': ['customer', 'client', 'lead'],
+    'عملاء': ['customer', 'client', 'lead'],
+    'محادثه': ['whatsapp', 'chat'],
+    'رساله': ['sms', 'message'],
+    'رسائل': ['sms', 'message'],
+    'واتساب': ['whatsapp'],
+    'احسب': ['calculate', 'calculator', 'estimate'],
+    'حساب': ['calculate', 'calculator', 'estimate'],
+    'احسبلي': ['calculate', 'calculator', 'estimate'],
+    'اعرف': ['calculate', 'calculator', 'estimate'],
+    'يطلع': ['calculate', 'calculator', 'estimate'],
+    'مبيعات': ['sales', 'revenue', 'conversion'],
+    'تحويل': ['conversion', 'convert', 'attribution'],
+    'سله': ['cart', 'basket'],
+    'سلات': ['cart', 'basket'],
+    'دفع': ['payment', 'checkout', 'bnpl'],
+    'خصم': ['discount', 'debit', 'fee', 'cost'],
+    'يتخصم': ['debit', 'card', 'fee', 'cost'],
+    'هيتخصم': ['debit', 'card', 'fee', 'cost'],
+    'يخصم': ['debit', 'card', 'fee', 'cost'],
+    'ارجع': ['recovery', 'abandoned', 'cart', 'winback'],
+    'متروكه': ['abandoned', 'cart', 'recovery'],
+    'مشكله': ['diagnostic', 'checker', 'audit', 'issue'],
+    'مشاكل': ['diagnostic', 'checker', 'audit', 'issue'],
+    'بطئ': ['speed', 'performance', 'vitals'],
+    'بطيء': ['speed', 'performance', 'vitals'],
+    'سرعه': ['speed', 'performance', 'vitals'],
+    'ظهور': ['search', 'seo', 'impressions', 'visibility'],
+    'ترتيب': ['ranking', 'seo'],
+    'رابط': ['link', 'url'],
+    'موقع': ['website', 'landing', 'page'],
+    'صفحه': ['landing', 'page'],
+    'محتوي': ['content', 'copy', 'social'],
+    'كلام': ['copy', 'content', 'writing'],
+    'فيديو': ['video', 'script', 'reels', 'tiktok'],
+    'بوست': ['social', 'post', 'linkedin', 'content'],
+    'مؤثر': ['influencer', 'creator'],
+    'متابعين': ['follower', 'engagement', 'influencer'],
+    'استرجاع': ['recovery', 'abandoned', 'cart', 'winback'],
+    'مخزون': ['inventory', 'stock'],
+    'ربح': ['profit', 'margin', 'profitability'],
+    'تتبع': ['tracking', 'utm', 'attribution'],
+    'اختبار': ['test', 'ab', 'statistical'],
+    'اقتراح': ['budget', 'proposal', 'recommendation'],
+    'شحن': ['shipping', 'delivery'],
+    'توصيل': ['shipping', 'delivery', 'fulfillment'],
+    'مخالفه': ['compliance', 'policy', 'regulatory'],
+    'ضرائب': ['tax', 'vat'],
+    'charge': ['card', 'debit', 'fee', 'cost'],
+    'charged': ['card', 'debit', 'fee', 'cost'],
+    'bill': ['invoice', 'tax', 'vat', 'fee'],
+    'withdraw': ['debit', 'card', 'fee', 'spend'],
+    'spend': ['cost', 'budget', 'ad'],
+    'cost': ['fee', 'price', 'budget'],
+    'problem': ['issue', 'diagnostic', 'checker', 'audit'],
+    'issue': ['problem', 'diagnostic', 'checker', 'audit'],
+    'slow': ['speed', 'performance', 'vitals'],
+    'track': ['tracking', 'utm', 'attribution'],
+    'tracking': ['utm', 'attribution'],
+    'sales': ['revenue', 'conversion', 'checkout'],
+    'measure': ['calculate', 'calculator', 'track', 'analytics', 'diagnostic'],
+    'improve': ['optimize', 'optimizer', 'conversion', 'performance'],
+    'rate': ['ratio', 'percentage', 'conversion', 'score'],
+    'customers': ['customer', 'client', 'lead'],
+    'ads': ['ad', 'advertising', 'campaign', 'paid'],
+    'tax': ['vat', 'fee'],
+    'video': ['script', 'reels', 'tiktok'],
+    'followers': ['follower', 'engagement', 'influencer'],
+    'stock': ['inventory', 'reorder'],
+    'shipping': ['delivery', 'fulfillment'],
+    'website': ['site', 'landing', 'page']
+  };
+
+  var searchCategoryLabels = {
+    'Paid Ads, Media Buying & Tax': 'الإعلانات والضرائب والعملات',
+    'E-commerce & COD Economics': 'التجارة الإلكترونية والدفع عند الاستلام',
+    'SEO & Technical Optimization': 'السيو والتحسين التقني',
+    'WhatsApp Marketing & SMS': 'واتساب والرسائل النصية',
+    'Social Media & Copywriting': 'السوشيال ميديا وصناعة المحتوى',
+    'Influencer & Creator Marketing': 'المؤثرون وصناع المحتوى',
+    'CRO & Funnel Optimization': 'تحسين التحويل وصفحات الهبوط',
+    'Marketing Analytics & Attribution': 'التحليلات ونسب الإسناد',
+    'B2B Marketing & Lead Gen': 'التسويق بين الشركات والعملاء المحتملين',
+    'Growth Strategy & Seasonal Pricing': 'استراتيجيات النمو والمواسم'
+  };
+
+  var searchStopWords = new Set(('i me my we our you your he she it they them a an the and or but if then how what which who where when why is are am was were be been being do does did can could would should need want find looking for help with about on in at to from of by as into per this that these those there have has had much many tell show use please can will should could would tool tools app apps ' +
+    'انا انت انتي هو هي احنا هم انا عايز عايزه عايزين محتاج محتاجه اريد ابغى ابحث بدور بدورعلى بدورعن عايزاعرف عايزه اعرف من فضلك لو سمحت ممكن ازاي كيف هل اي ايه ما ماذا في من على عن الي اللي ده دي دول دا كده كذا جدا عندي عنده عندها بتاع بتاعة يكون تكون كان كانت يتم لي و او ثم بس لكن بقى بقي كام قد يعني عايز اعرف عايزه اعرف عاوز عاوزه عاوز اعرف').split(/\s+/));
+
+  function normalizeSearchText(value) {
+    return String(value || '').toLowerCase()
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+      .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه')
+      .replace(/[’'`]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  }
+
+  function stemSearchToken(token) {
+    var stem = token.replace(/^ال(?=.{4,})/, '').replace(/(ات|ون|ين|ان)$/, '');
+    if (/^[a-z]+$/.test(stem)) {
+      if (/ies$/.test(stem) && stem.length > 5) stem = stem.replace(/ies$/, 'y');
+      else if (/(ches|shes|xes|zes|sses)$/.test(stem)) stem = stem.replace(/es$/, '');
+      else if (/s$/.test(stem) && !/ss$/.test(stem) && stem.length > 4) stem = stem.slice(0, -1);
+    }
+    return stem;
+  }
+
+  function getSearchGroups(query) {
+    var normalized = normalizeSearchText(query);
+    var tokens = normalized.split(/\s+/).filter(function (token) {
+      return token.length > 1 && !searchStopWords.has(token);
+    });
+    var seen = new Set();
+    return tokens.filter(function (token) {
+      if (seen.has(token)) return false;
+      seen.add(token);
+      return true;
+    }).map(function (token) {
+      var stem = stemSearchToken(token);
+      return Array.from(new Set([token, stem].concat(searchSynonyms[token] || [], searchSynonyms[stem] || [])));
+    });
+  }
+
+  function searchScore(query, searchableText) {
+    var normalizedQuery = normalizeSearchText(query);
+    var normalizedText = normalizeSearchText(searchableText);
+    var groups = getSearchGroups(query);
+    if (!groups.length || !normalizedText) return 0;
+    var tokens = new Set();
+    normalizedText.split(/\s+/).forEach(function (token) {
+      tokens.add(token);
+      tokens.add(stemSearchToken(token));
+    });
+    var hits = 0;
+    groups.forEach(function (group) {
+      if (group.some(function (term) { return tokens.has(normalizeSearchText(term)); })) hits++;
+    });
+    var requiredHits = groups.length <= 2 ? 1 : Math.max(2, Math.ceil(groups.length * 0.22));
+    if (hits < requiredHits) return 0;
+    var score = hits / groups.length;
+    if (normalizedQuery.length > 2 && normalizedText.indexOf(normalizedQuery) !== -1) score += 1;
+    return score;
+  }
+
+  function setupPortfolioToolSearch(nav, actions) {
+    if (document.getElementById('portfolio-tools-search-panel')) return;
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'portfolio-tools-search-toggle';
+    var icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('aria-hidden', 'true');
+    var iconCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    iconCircle.setAttribute('cx', '10.8');
+    iconCircle.setAttribute('cy', '10.8');
+    iconCircle.setAttribute('r', '6.8');
+    var iconHandle = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    iconHandle.setAttribute('d', 'm16 16 4.5 4.5');
+    icon.appendChild(iconCircle);
+    icon.appendChild(iconHandle);
+    trigger.appendChild(icon);
+    trigger.appendChild(localizedText('span', 'portfolio-tools-search-toggle-label', 'Search', 'بحث'));
+    trigger.setAttribute('aria-controls', 'portfolio-tools-search-panel');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('data-aria-en', 'Search all marketing tools');
+    trigger.setAttribute('data-aria-ar', 'ابحث في كل الأدوات التسويقية');
+    trigger.setAttribute('aria-label', currentLang === 'ar' ? 'ابحث في كل الأدوات التسويقية' : 'Search all marketing tools');
+    actions.insertBefore(trigger, actions.firstChild);
+
+    var panel = document.createElement('section');
+    panel.className = 'portfolio-tools-search-panel';
+    panel.id = 'portfolio-tools-search-panel';
+    panel.hidden = true;
+    panel.setAttribute('aria-label', currentLang === 'ar' ? 'البحث في الأدوات' : 'Search tools');
+    var label = localizedText('label', 'portfolio-tools-search-label', 'Describe what you need', 'اكتب ما تحتاجه بطريقتك');
+    label.setAttribute('for', 'portfolio-tools-search-input');
+    var input = document.createElement('input');
+    input.type = 'search';
+    input.id = 'portfolio-tools-search-input';
+    input.className = 'portfolio-tools-search-input';
+    input.autocomplete = 'off';
+    input.setAttribute('data-placeholder-en', 'e.g. “I spend $500 on ads in Egypt. What will my card charge?”');
+    input.setAttribute('data-placeholder-ar', 'مثال: «عايز أعرف هيتخصم كام من كارت البنك للإعلانات؟»');
+    input.placeholder = input.getAttribute('data-placeholder-' + currentLang);
+    input.setAttribute('aria-describedby', 'portfolio-tools-search-help');
+    var help = localizedText('p', 'portfolio-tools-search-help', 'Search across 100 tools in Arabic or English. Your query stays in this browser.', 'ابحث في 100 أداة بالعربية أو الإنجليزية. يظل بحثك داخل المتصفح.');
+    help.id = 'portfolio-tools-search-help';
+    var results = document.createElement('div');
+    results.className = 'portfolio-tools-search-results';
+    results.id = 'portfolio-tools-search-results';
+    results.setAttribute('aria-live', 'polite');
+    results.setAttribute('aria-label', currentLang === 'ar' ? 'نتائج البحث' : 'Search results');
+    panel.appendChild(label);
+    panel.appendChild(input);
+    panel.appendChild(help);
+    panel.appendChild(results);
+    nav.appendChild(panel);
+
+    var toolsPromise = null;
+    function loadTools() {
+      if (!toolsPromise) {
+        var indexUrl = new URL('tools-index.json', sharedScriptSrc || window.location.href);
+        if (sharedScriptSrc) {
+          var assetVersion = new URL(sharedScriptSrc).searchParams.get('v');
+          if (assetVersion) indexUrl.searchParams.set('v', assetVersion);
+        }
+        toolsPromise = fetch(indexUrl.href).then(function (response) {
+          if (!response.ok) throw new Error('Search index request failed');
+          return response.json();
+        }).catch(function (error) {
+          toolsPromise = null;
+          throw error;
+        });
+      }
+      return toolsPromise;
+    }
+    function renderResults() {
+      var query = input.value.trim();
+      input.placeholder = input.getAttribute('data-placeholder-' + currentLang);
+      panel.setAttribute('aria-label', currentLang === 'ar' ? 'البحث في الأدوات' : 'Search tools');
+      results.setAttribute('aria-label', currentLang === 'ar' ? 'نتائج البحث' : 'Search results');
+      results.replaceChildren();
+      if (query.length < 2) return;
+      var loading = document.createElement('p');
+      loading.className = 'portfolio-tools-search-empty';
+      loading.textContent = currentLang === 'ar' ? 'أبحث عن الأدوات المناسبة…' : 'Finding relevant tools…';
+      results.appendChild(loading);
+      loadTools().then(function (tools) {
+        if (!panel.isConnected || !input.value.trim() || query !== input.value.trim()) return;
+        var matches = tools.map(function (tool) {
+          var searchable = [tool.href, tool.id, tool.category, tool.titleEn, tool.titleAr, tool.descriptionEn, tool.descriptionAr].join(' ');
+          return { tool: tool, score: searchScore(query, searchable) };
+        }).filter(function (item) { return item.score > 0; })
+          .sort(function (a, b) { return b.score - a.score; }).slice(0, 6);
+        results.replaceChildren();
+        if (!matches.length) {
+          var empty = document.createElement('p');
+          empty.className = 'portfolio-tools-search-empty';
+          empty.textContent = currentLang === 'ar' ? 'لم أجد أداة مطابقة. جرّب وصف المشكلة بكلمات أبسط.' : 'No close match yet. Try describing the problem in simpler words.';
+          results.appendChild(empty);
+          return;
+        }
+        matches.forEach(function (match) {
+          var tool = match.tool;
+          var link = document.createElement('a');
+          link.className = 'portfolio-tools-search-result';
+          link.href = new URL('/apps/' + tool.href, window.location.origin).href;
+          var meta = document.createElement('span');
+          meta.className = 'portfolio-tools-search-result-meta';
+          meta.textContent = tool.id + ' · ' + (currentLang === 'ar' ? (searchCategoryLabels[tool.category] || tool.category) : tool.category);
+          var title = document.createElement('strong');
+          title.textContent = currentLang === 'ar' ? tool.titleAr : tool.titleEn;
+          var description = document.createElement('span');
+          description.className = 'portfolio-tools-search-result-description';
+          description.textContent = currentLang === 'ar' ? tool.descriptionAr : tool.descriptionEn;
+          link.appendChild(meta);
+          link.appendChild(title);
+          if (currentLang !== 'ar' || tool.descriptionAr !== tool.descriptionEn) {
+            link.appendChild(description);
+          }
+          results.appendChild(link);
+        });
+      }).catch(function () {
+        if (query !== input.value.trim()) return;
+        var error = document.createElement('p');
+        error.className = 'portfolio-tools-search-empty';
+        error.textContent = currentLang === 'ar' ? 'تعذر تحميل فهرس البحث. أعد المحاولة بعد لحظة.' : 'Search could not load. Please try again in a moment.';
+        results.replaceChildren(error);
+      });
+    }
+    trigger.addEventListener('click', function () {
+      var open = panel.hidden;
+      panel.hidden = !open;
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) input.focus();
+    });
+    input.addEventListener('input', renderResults);
+    document.addEventListener('click', function (event) {
+      if (!panel.contains(event.target) && event.target !== trigger) {
+        panel.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !panel.hidden) {
+        panel.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      }
+    });
+    window.refreshPortfolioToolSearch = renderResults;
   }
 
   // Toast Notification
@@ -342,7 +659,8 @@
     formatPercent: formatPercent,
     saveAppState: saveAppState,
     loadAppState: loadAppState,
-    clearAppState: clearAppState
+    clearAppState: clearAppState,
+    searchScore: searchScore
   };
 
 })();
