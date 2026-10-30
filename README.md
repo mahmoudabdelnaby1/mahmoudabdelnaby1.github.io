@@ -3,6 +3,7 @@
 Bilingual English/Arabic professional portfolio and visual library of reusable AI assistant prompts, with prompt source files maintained in a dedicated public repository.
 
 - Website: https://mahmoudabdelnaby1.github.io
+- Marketing tools library: https://mahmoudabdelnaby1.github.io/apps/ (100 bilingual browser-based tools)
 - LinkedIn: https://eg.linkedin.com/in/mahmoudabdelnaby4
 - Assistant prompt source library: https://github.com/mahmoudabdelnaby1/assistant-prompt-library
 - Marketing systems playbooks: https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks

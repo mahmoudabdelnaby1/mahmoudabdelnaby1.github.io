@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Customer Win-Back & Dormant Account Reactivation ROI Modeler | DM Static App Suite" data-ar="محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة | منظومة أدوات التسويق الرقمي">محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة | منظومة أدوات التسويق الرقمي</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/customer-winback-dormant-reactivation-roi-modeler/">
+  <meta name="description" content="Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers.">
+  <link rel="stylesheet" href="../shared/shared.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <span class="brand-badge">APP-100</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Growth Strategy & Seasonal Pricing" data-ar="Growth Strategy & Seasonal Pricing">Growth Strategy & Seasonal Pricing</div>
+      <h1 class="app-title" data-en="Customer Win-Back & Dormant Account Reactivation ROI Modeler" data-ar="محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة">محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة</h1>
+      <p class="app-promise" data-en="Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers." data-ar="Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers.">Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="dormant_customer_count">
+              <span data-en="Dormant / Lapsed Customers (No order in 90-180 days)" data-ar="عدد العملاء الخاملين (لم يشتروا منذ 90-180 يوم)">عدد العملاء الخاملين (لم يشتروا منذ 90-180 يوم)</span><span class="required">*</span>
+            </label>
+            <input type="number" id="dormant_customer_count" class="form-control" value="8500" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="average_order_value">
+              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب AOV">متوسط قيمة الطلب AOV</span><span class="required">*</span>
+            </label>
+            <input type="number" id="average_order_value" class="form-control" value="290" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gross_margin_pct">
+              <span data-en="Gross Profit Margin %" data-ar="هامش الربح الإجمالي للمتجر %">هامش الربح الإجمالي للمتجر %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="gross_margin_pct" class="form-control" value="48" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="winback_discount_pct">
+              <span data-en="Reactivation Incentive Discount % (e.g. 15%)" data-ar="نسبة الخصم التنشيطي المعروض %">نسبة الخصم التنشيطي المعروض %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="winback_discount_pct" class="form-control" value="15" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="messaging_channel">
+              <span data-en="Channel (WhatsApp Broadcast / SMS Promo / Email)" data-ar="قناة إعادة التنشيط">قناة إعادة التنشيط</span><span class="required">*</span>
+            </label>
+            <select id="messaging_channel" class="form-control">
+              <option value="whatsapp" data-en="WhatsApp Direct Personal Message (~9% Reactivation Benchmark)" data-ar="رسائل واتساب المباشرة (~9% إعادة تنشيط)" selected>رسائل واتساب المباشرة (~9% إعادة تنشيط)</option>
+              <option value="sms" data-en="SMS Broadcast Promo (~5% Reactivation Benchmark)" data-ar="رسائل SMS النصية القصيرة (~5% إعادة تنشيط)">رسائل SMS النصية القصيرة (~5% إعادة تنشيط)</option>
+              <option value="email" data-en="Email Winback Campaign (~2.5% Reactivation Benchmark)" data-ar="حملة البريد الإلكتروني (~2.5% إعادة تنشيط)">حملة البريد الإلكتروني (~2.5% إعادة تنشيط)</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Projected Reactivated Buying Customers (at channel benchmark response rate)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Gross Revenue Generated from Dormant Base</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Net Profit Realized After Discount & Messaging Costs</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Projected Reactivated Buying Customers (at channel benchmark response rate)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Gross Revenue Generated from Dormant Base</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Net Profit Realized After Discount & Messaging Costs</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Effective Reactivation CAC (typically <$3 vs cold ads >$20)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Recommended 3-Step Win-Back Offer Sequence Timing</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://hbr.org/2014/10/the-value-of-keeping-the-right-customers" target="_blank" rel="noopener noreferrer">https://hbr.org/2014/10/the-value-of-keeping-the-right-customers</a> (2026-10-29) &mdash; Harvard Business Review customer economics confirming that reactivating lapsed customers is up to 5x cheaper than cold customer acquisition.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> MENA customer win-back response benchmarks across WhatsApp, SMS, and Email &mdash; <a href="https://hbr.org" target="_blank" rel="noopener noreferrer">https://hbr.org</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
+        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-100 • Customer Win-Back & Dormant Account Reactivation ROI Modeler</p>
+      <p style="margin-top:0.25rem;">DM Static App Suite v2.0 • Deterministic Client-Side Engineering</p>
+    </footer>
+  </div>
+
+  <script src="../shared/shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

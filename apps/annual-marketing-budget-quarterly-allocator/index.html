@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Annual Digital Marketing Budget Allocation by Quarter & Season | DM Static App Suite" data-ar="مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة | منظومة أدوات التسويق الرقمي">مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة | منظومة أدوات التسويق الرقمي</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/annual-marketing-budget-quarterly-allocator/">
+  <meta name="description" content="Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity.">
+  <link rel="stylesheet" href="../shared/shared.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <span class="brand-badge">APP-098</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Growth Strategy & Seasonal Pricing" data-ar="Growth Strategy & Seasonal Pricing">Growth Strategy & Seasonal Pricing</div>
+      <h1 class="app-title" data-en="Annual Digital Marketing Budget Allocation by Quarter & Season" data-ar="مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة">مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة</h1>
+      <p class="app-promise" data-en="Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity." data-ar="Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity.">Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="total_annual_budget">
+              <span data-en="Total Annual Marketing Budget ($/SAR/EGP)" data-ar="إجمالي الميزانية التسويقية السنوية">إجمالي الميزانية التسويقية السنوية</span><span class="required">*</span>
+            </label>
+            <input type="number" id="total_annual_budget" class="form-control" value="180000" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="business_vertical">
+              <span data-en="Vertical (Retail E-Commerce, B2B Corporate, Real Estate, Education)" data-ar="طبيعة النشاط التجاري">طبيعة النشاط التجاري</span><span class="required">*</span>
+            </label>
+            <select id="business_vertical" class="form-control">
+              <option value="ecommerce_mena" data-en="E-Commerce MENA (Peak Q2 Ramadan & Q4 White Friday)" data-ar="تجارة إلكترونية بالخليج (ذروة الربع الثاني والربع الرابع)" selected>تجارة إلكترونية بالخليج (ذروة الربع الثاني والربع الرابع)</option>
+              <option value="b2b_saas" data-en="B2B Software & Consulting (Q1 & Q4 Corporate Budgets)" data-ar="شركات وبرمجيات B2B (الربع الأول والربع الرابع)">شركات وبرمجيات B2B (الربع الأول والربع الرابع)</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Quarterly Budget Breakdown (Q1 %, Q2 %, Q3 %, Q4 %)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Month-by-Month Recommended Allocation Schedule</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Seasonal Peak Surges (Ramadan Surge, Summer Slump Adjustment, White November Surge)</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Quarterly Budget Breakdown (Q1 %, Q2 %, Q3 %, Q4 %)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Month-by-Month Recommended Allocation Schedule</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Seasonal Peak Surges (Ramadan Surge, Summer Slump Adjustment, White November Surge)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Interactive Quarterly Rebalancing Chart</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.thinkwithgoogle.com/intl/en-mena/consumer-insights/consumer-trends/ramadan-marketing-guide/" target="_blank" rel="noopener noreferrer">https://www.thinkwithgoogle.com/intl/en-mena/consumer-insights/consumer-trends/ramadan-marketing-guide/</a> (2026-10-29) &mdash; Google MENA seasonal retail spending analysis showing Q4 (White Friday) and Ramadan months drive over 55% of annual digital commerce volume in the region.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Quarterly retail expenditure distributions across Egyptian and Gulf economies &mdash; <a href="https://www.thinkwithgoogle.com" target="_blank" rel="noopener noreferrer">https://www.thinkwithgoogle.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
+        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-098 • Annual Digital Marketing Budget Allocation by Quarter & Season</p>
+      <p style="margin-top:0.25rem;">DM Static App Suite v2.0 • Deterministic Client-Side Engineering</p>
+    </footer>
+  </div>
+
+  <script src="../shared/shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
