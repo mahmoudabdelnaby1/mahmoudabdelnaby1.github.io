@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="MENA Digital Marketing Static App Suite | 100 Client-Side Tools" data-ar="منظومة أدوات التسويق الرقمي لمنطقة الشرق الأوسط | 100 أداة ثابتة">منظومة أدوات التسويق الرقمي لمنطقة الشرق الأوسط | 100 أداة ثابتة</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/">
+  <meta name="description" content="100 high-utility, browser-only digital marketing static applications for Egypt, Saudi Arabia, UAE, and GCC markets. Zero backend, zero tracking, 100% private.">
+  <link rel="stylesheet" href="shared/shared.css">
+  <style>
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <a class="nav-brand" href="/" aria-label="Return to the portfolio">
+        <span class="brand-badge">MAHMOUD ABDELNABY</span>
+        <span class="brand-title" data-en="Marketing Tools" data-ar="أدوات التسويق">أدوات التسويق</span>
+      </a>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- Portal Hero Header -->
+    <div class="portal-header">
+      <div class="app-meta-badge" data-en="100% Pure Static • Zero Backend • Zero Cloud Run Costs" data-ar="ثابتة 100% • بدون خادم • بدون تكاليف تشغيل سحابية">ثابتة 100% • بدون خادم • بدون تكاليف تشغيل سحابية</div>
+      <h1 class="portal-title" data-en="MENA Marketing Static App Suite" data-ar="منظومة أدوات التسويق الرقمي للشرق الأوسط">منظومة أدوات التسويق الرقمي للشرق الأوسط</h1>
+      <p class="portal-subtitle" data-en="A production-ready suite of 100 deterministic, browser-only marketing calculators, generators, and simulators built for Egypt, Saudi Arabia, the UAE, and the GCC region." data-ar="مكتبة متكاملة تضم 100 أداة وحاسبة ومحاكي تسويقي فائق الفاعلية يعمل بالكامل داخل المتصفح، مخصصة لأسواق مصر والسعودية والإمارات ودول الخليج.">
+        مكتبة متكاملة تضم 100 أداة وحاسبة ومحاكي تسويقي فائق الفاعلية يعمل بالكامل داخل المتصفح، مخصصة لأسواق مصر والسعودية والإمارات ودول الخليج.
+      </p>
+
+      <!-- Key Verification Indicators -->
+      <div class="portal-stats-bar">
+        <div class="portal-stat-pill">
+          <span style="color:var(--accent);font-size:1.1rem;">&#9881;</span>
+          <span data-en="<strong>100</strong> Production Tools" data-ar="<strong>100</strong> أداة متكاملة"><strong>100</strong> أداة متكاملة</span>
+        </div>
+        <div class="portal-stat-pill">
+          <span style="color:var(--success);font-size:1.1rem;">&#10003;</span>
+          <span data-en="<strong>10</strong> Thematic Clusters" data-ar="<strong>10</strong> مسارات تخصصية"><strong>10</strong> مسارات تخصصية</span>
+        </div>
+        <div class="portal-stat-pill">
+          <span style="color:var(--warning);font-size:1.1rem;">&#9889;</span>
+          <span data-en="<strong>0</strong> Backend / APIs" data-ar="<strong>0</strong> خادم أو استدعاءات خارجية"><strong>0</strong> خادم أو استدعاءات خارجية</span>
+        </div>
+        <div class="portal-stat-pill">
+          <span style="color:#a855f7;font-size:1.1rem;">&#128274;</span>
+          <span data-en="<strong>100%</strong> Device Privacy" data-ar="خصوصية محلية <strong>100%</strong>">خصوصية محلية <strong>100%</strong></span>
+        </div>
+        <div class="portal-stat-pill">
+          <span style="color:#06b6d4;font-size:1.1rem;">&#9729;</span>
+          <span data-en="<strong>Browser-based</strong> tools" data-ar="أدوات تعمل داخل المتصفح"><strong>أدوات تعمل داخل المتصفح</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Category Filters -->
+    <div class="search-filter-bar">
+      <div class="search-input-wrapper">
+        <input type="text" id="catalog-search" class="form-control" placeholder="بحث فوري في الـ 100 أداة (بالاسم، الرقم، أو الكلمة المفتاحية)..." data-en="Instant search across 100 tools (by name, ID, or keyword)..." data-ar="بحث فوري في الـ 100 أداة (بالاسم، الرقم، أو الكلمة المفتاحية)...">
+      </div>
+      <div style="font-size:0.875rem;color:var(--text-muted);white-space:nowrap;">
+        <span id="results-count">100</span> <span data-en="tools found" data-ar="أداة متاحة">أداة متاحة</span>
+      </div>
+    </div>
+
+    <!-- Cluster Pills -->
+    <div class="cluster-pills" id="cluster-pills">
+        <button class="cluster-btn active" data-filter="All" data-en="All" data-ar="الكل">الكل</button>
+        <button class="cluster-btn" data-filter="Paid Ads, Media Buying & Tax" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</button>
+        <button class="cluster-btn" data-filter="E-commerce & COD Economics" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</button>
+        <button class="cluster-btn" data-filter="SEO & Technical Optimization" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</button>
+        <button class="cluster-btn" data-filter="WhatsApp Marketing & SMS" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</button>
+        <button class="cluster-btn" data-filter="Social Media & Copywriting" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</button>
+        <button class="cluster-btn" data-filter="Influencer & Creator Marketing" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</button>
+        <button class="cluster-btn" data-filter="CRO & Funnel Optimization" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</button>
+        <button class="cluster-btn" data-filter="Marketing Analytics & Attribution" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</button>
+        <button class="cluster-btn" data-filter="B2B Marketing & Lead Gen" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</button>
+        <button class="cluster-btn" data-filter="Growth Strategy & Seasonal Pricing" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</button>
+    </div>
+
+    <!-- 100 Applications Catalog Grid -->
+    <main class="catalog-grid" id="catalog-grid">
+      <a href="egypt-ad-card-markup-vat-calculator/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-001" data-search="app-001 egypt-ad-card-markup-vat-calculator egypt ad spend foreign currency card markup & vat calculator حاسبة ضريبة القيمة المضافة وعمولة تدبير العملة لبطاقات إعلانات مصر paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-001</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egypt Ad Spend Foreign Currency Card Markup & VAT Calculator" data-ar="حاسبة ضريبة القيمة المضافة وعمولة تدبير العملة لبطاقات إعلانات مصر">حاسبة ضريبة القيمة المضافة وعمولة تدبير العملة لبطاقات إعلانات مصر</h3>
+          <p class="catalog-card-desc" data-en="Calculate exact total Egyptian Pound (EGP) bank debits from dollar ad invoices including 14% VAT and specific bank currency fees." data-ar="Calculate exact total Egyptian Pound (EGP) bank debits from dollar ad invoices including 14% VAT and specific bank currency fees.">Calculate exact total Egyptian Pound (EGP) bank debits from dollar ad invoices including 14% VAT and specific bank currency fees.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="saudi-uae-ad-vat-planner/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-002" data-search="app-002 saudi-uae-ad-vat-planner saudi & uae ad spend net/gross vat budget planner مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة للسعودية والإمارات paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-002</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Saudi & UAE Ad Spend Net/Gross VAT Budget Planner" data-ar="مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة للسعودية والإمارات">مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة للسعودية والإمارات</h3>
+          <p class="catalog-card-desc" data-en="Instantly compute the exact net auction budget, payable VAT, and required platform deposits for KSA and UAE tax regimes." data-ar="Instantly compute the exact net auction budget, payable VAT, and required platform deposits for KSA and UAE tax regimes.">Instantly compute the exact net auction budget, payable VAT, and required platform deposits for KSA and UAE tax regimes.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gcc-multi-currency-media-budget-matrix/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-003" data-search="app-003 gcc-multi-currency-media-budget-matrix gcc multi-currency media budget converter & allocation matrix محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-003</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="GCC Multi-Currency Media Budget Converter & Allocation Matrix" data-ar="محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار">محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار</h3>
+          <p class="catalog-card-desc" data-en="Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks." data-ar="Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks.">Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-blended-roas-mer-calculator/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-004" data-search="app-004 mena-blended-roas-mer-calculator mena blended roas & marketing efficiency ratio (mer) calculator حاسبة العائد الكلي على الإنفاق الإعلاني Blended ROAS ونسبة الكفاءة MER لمتاجر الشرق الأوسط paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-004</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA Blended ROAS & Marketing Efficiency Ratio (MER) Calculator" data-ar="حاسبة العائد الكلي على الإنفاق الإعلاني Blended ROAS ونسبة الكفاءة MER لمتاجر الشرق الأوسط">حاسبة العائد الكلي على الإنفاق الإعلاني Blended ROAS ونسبة الكفاءة MER لمتاجر الشرق الأوسط</h3>
+          <p class="catalog-card-desc" data-en="Calculate your true store-wide Marketing Efficiency Ratio (MER) and blended ROAS against total actual bank/gateway revenue to expose platform double-counting." data-ar="Calculate your true store-wide Marketing Efficiency Ratio (MER) and blended ROAS against total actual bank/gateway revenue to expose platform double-counting.">Calculate your true store-wide Marketing Efficiency Ratio (MER) and blended ROAS against total actual bank/gateway revenue to expose platform double-counting.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="meta-ads-audience-overlap-budget-saver/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-005" data-search="app-005 meta-ads-audience-overlap-budget-saver meta ads audience overlap & budget cannibalization estimator مقدر تداخل الجماهير وحرق الميزانيات لحملات إعلانات ميتا في مصر والخليج paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-005</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Meta Ads Audience Overlap & Budget Cannibalization Estimator" data-ar="مقدر تداخل الجماهير وحرق الميزانيات لحملات إعلانات ميتا في مصر والخليج">مقدر تداخل الجماهير وحرق الميزانيات لحملات إعلانات ميتا في مصر والخليج</h3>
+          <p class="catalog-card-desc" data-en="Estimate self-competition risk and calculate potential budget savings by identifying audience size overlap between targeting sets." data-ar="Estimate self-competition risk and calculate potential budget savings by identifying audience size overlap between targeting sets.">Estimate self-competition risk and calculate potential budget savings by identifying audience size overlap between targeting sets.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="tiktok-snapchat-mvb-calculator-gcc/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-006" data-search="app-006 tiktok-snapchat-mvb-calculator-gcc tiktok & snapchat minimum viable budget (mvb) calculator for gcc حاسبة الميزانية الصغرى لخوارزميات تيك توك وسناب شات في الخليج paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-006</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="TikTok & Snapchat Minimum Viable Budget (MVB) Calculator for GCC" data-ar="حاسبة الميزانية الصغرى لخوارزميات تيك توك وسناب شات في الخليج">حاسبة الميزانية الصغرى لخوارزميات تيك توك وسناب شات في الخليج</h3>
+          <p class="catalog-card-desc" data-en="Determine the exact minimum daily budget required for TikTok and Snapchat ad sets to achieve 50 conversions in 7 days in KSA and UAE markets." data-ar="Determine the exact minimum daily budget required for TikTok and Snapchat ad sets to achieve 50 conversions in 7 days in KSA and UAE markets.">Determine the exact minimum daily budget required for TikTok and Snapchat ad sets to achieve 50 conversions in 7 days in KSA and UAE markets.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ad-creative-decay-fatigue-predictor/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-007" data-search="app-007 ad-creative-decay-fatigue-predictor ad fatigue & creative decay velocity predictor مؤشر إجهاد الإعلانات وسرعة تراجع أداء التصاميم والفيديوهات الإعلانية paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-007</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Ad Fatigue & Creative Decay Velocity Predictor" data-ar="مؤشر إجهاد الإعلانات وسرعة تراجع أداء التصاميم والفيديوهات الإعلانية">مؤشر إجهاد الإعلانات وسرعة تراجع أداء التصاميم والفيديوهات الإعلانية</h3>
+          <p class="catalog-card-desc" data-en="Diagnose creative fatigue severity and predict remaining profitable lifespan days based on frequency growth and CTR degradation trends." data-ar="Diagnose creative fatigue severity and predict remaining profitable lifespan days based on frequency growth and CTR degradation trends.">Diagnose creative fatigue severity and predict remaining profitable lifespan days based on frequency growth and CTR degradation trends.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="google-ads-quality-score-discount-calculator/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-008" data-search="app-008 google-ads-quality-score-discount-calculator google ads quality score impact & cpc discount forecaster حاسبة أثر رتبة الجودة Quality Score على خفض تكلفة النقرة في إعلانات جوجل paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-008</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Google Ads Quality Score Impact & CPC Discount Forecaster" data-ar="حاسبة أثر رتبة الجودة Quality Score على خفض تكلفة النقرة في إعلانات جوجل">حاسبة أثر رتبة الجودة Quality Score على خفض تكلفة النقرة في إعلانات جوجل</h3>
+          <p class="catalog-card-desc" data-en="Calculate your exact percentage CPC discount or penalty based on current Google Search Quality Score vs standard benchmark." data-ar="Calculate your exact percentage CPC discount or penalty based on current Google Search Quality Score vs standard benchmark.">Calculate your exact percentage CPC discount or penalty based on current Google Search Quality Score vs standard benchmark.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="break-even-roas-target-cpa-matrix/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-009" data-search="app-009 break-even-roas-target-cpa-matrix break-even roas & maximum target cpa threshold matrix مصفوفة نقطة التعادل للـ ROAS والحد الأقصى لتكلفة الاكتساب CPA للمتاجر paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-009</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Break-Even ROAS & Maximum Target CPA Threshold Matrix" data-ar="مصفوفة نقطة التعادل للـ ROAS والحد الأقصى لتكلفة الاكتساب CPA للمتاجر">مصفوفة نقطة التعادل للـ ROAS والحد الأقصى لتكلفة الاكتساب CPA للمتاجر</h3>
+          <p class="catalog-card-desc" data-en="Instantly calculate your true break-even ROAS and maximum permissible CPA incorporating COGS, packaging, shipping, payment gateway fees, and returns." data-ar="Instantly calculate your true break-even ROAS and maximum permissible CPA incorporating COGS, packaging, shipping, payment gateway fees, and returns.">Instantly calculate your true break-even ROAS and maximum permissible CPA incorporating COGS, packaging, shipping, payment gateway fees, and returns.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ramadan-ad-bid-surge-cpm-planner/" class="catalog-card" data-category="Paid Ads, Media Buying & Tax" data-id="APP-010" data-search="app-010 ramadan-ad-bid-surge-cpm-planner ramadan ad auction bid surge & cpm inflation compensator حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات paid ads, media buying & tax الإعلانات والضرائب والعملات">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-010</span>
+            <span class="catalog-card-cat" data-en="Paid Ads, Media Buying & Tax" data-ar="الإعلانات والضرائب والعملات">الإعلانات والضرائب والعملات</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Ramadan Ad Auction Bid Surge & CPM Inflation Compensator" data-ar="حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات">حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات</h3>
+          <p class="catalog-card-desc" data-en="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks." data-ar="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.">Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="egypt-gcc-cod-rto-profitability-simulator/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-011" data-search="app-011 egypt-gcc-cod-rto-profitability-simulator egypt & gcc cod return rate (rto) loss & profitability simulator محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-011</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egypt & GCC COD Return Rate (RTO) Loss & Profitability Simulator" data-ar="محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي">محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي</h3>
+          <p class="catalog-card-desc" data-en="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees." data-ar="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.">Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gcc-free-shipping-threshold-margin-preserver/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-012" data-search="app-012 gcc-free-shipping-threshold-margin-preserver gcc free shipping threshold & margin preserver حاسبة الحد الأدنى للشحن المجاني لحماية هوامش أرباح المتاجر الخليجية e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-012</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="GCC Free Shipping Threshold & Margin Preserver" data-ar="حاسبة الحد الأدنى للشحن المجاني لحماية هوامش أرباح المتاجر الخليجية">حاسبة الحد الأدنى للشحن المجاني لحماية هوامش أرباح المتاجر الخليجية</h3>
+          <p class="catalog-card-desc" data-en="Calculate the mathematically optimal free shipping threshold that maximizes cart size increase (AOV) while safeguarding net profit margins." data-ar="Calculate the mathematically optimal free shipping threshold that maximizes cart size increase (AOV) while safeguarding net profit margins.">Calculate the mathematically optimal free shipping threshold that maximizes cart size increase (AOV) while safeguarding net profit margins.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-payment-gateway-fee-comparator/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-013" data-search="app-013 mena-payment-gateway-fee-comparator mena payment gateway fee & net payout comparator مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-013</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA Payment Gateway Fee & Net Payout Comparator" data-ar="مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج">مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج</h3>
+          <p class="catalog-card-desc" data-en="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size." data-ar="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.">Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="tabby-tamara-bnpl-margin-basket-forecaster/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-014" data-search="app-014 tabby-tamara-bnpl-margin-basket-forecaster tabby & tamara bnpl net margin & basket size forecaster حاسبة صافي هامش الربح بعد خصم رسوم تابي وتمارا مقابل زيادة سلة الشراء e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-014</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Tabby & Tamara BNPL Net Margin & Basket Size Forecaster" data-ar="حاسبة صافي هامش الربح بعد خصم رسوم تابي وتمارا مقابل زيادة سلة الشراء">حاسبة صافي هامش الربح بعد خصم رسوم تابي وتمارا مقابل زيادة سلة الشراء</h3>
+          <p class="catalog-card-desc" data-en="Model whether activating Tabby/Tamara BNPL delivers incremental net gross profit or erodes existing card payment margins." data-ar="Model whether activating Tabby/Tamara BNPL delivers incremental net gross profit or erodes existing card payment margins.">Model whether activating Tabby/Tamara BNPL delivers incremental net gross profit or erodes existing card payment margins.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ecommerce-ltv-cac-ratio-calculator/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-015" data-search="app-015 ecommerce-ltv-cac-ratio-calculator e-commerce customer lifetime value (ltv) to cac ratio calculator حاسبة نسبة القيمة الدائمة للعميل LTV إلى تكلفة الاكتساب CAC لمتاجر الخليج ومصر e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-015</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="E-Commerce Customer Lifetime Value (LTV) to CAC Ratio Calculator" data-ar="حاسبة نسبة القيمة الدائمة للعميل LTV إلى تكلفة الاكتساب CAC لمتاجر الخليج ومصر">حاسبة نسبة القيمة الدائمة للعميل LTV إلى تكلفة الاكتساب CAC لمتاجر الخليج ومصر</h3>
+          <p class="catalog-card-desc" data-en="Calculate your true 6-month and 12-month Customer LTV to CAC ratio and determine sustainable maximum first-order acquisition bids." data-ar="Calculate your true 6-month and 12-month Customer LTV to CAC ratio and determine sustainable maximum first-order acquisition bids.">Calculate your true 6-month and 12-month Customer LTV to CAC ratio and determine sustainable maximum first-order acquisition bids.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="inventory-velocity-reorder-alert-forecaster/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-016" data-search="app-016 inventory-velocity-reorder-alert-forecaster inventory velocity & reorder point alert forecaster حاسبة معدل دوران المخزون وتحديد نقطة إعادة الطلب للمتاجر قبل نفاد البضائع e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-016</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Inventory Velocity & Reorder Point Alert Forecaster" data-ar="حاسبة معدل دوران المخزون وتحديد نقطة إعادة الطلب للمتاجر قبل نفاد البضائع">حاسبة معدل دوران المخزون وتحديد نقطة إعادة الطلب للمتاجر قبل نفاد البضائع</h3>
+          <p class="catalog-card-desc" data-en="Calculate exact days of inventory remaining, stockout date, and safe reorder trigger point based on ad spend velocity and supplier lead times." data-ar="Calculate exact days of inventory remaining, stockout date, and safe reorder trigger point based on ad spend velocity and supplier lead times.">Calculate exact days of inventory remaining, stockout date, and safe reorder trigger point based on ad spend velocity and supplier lead times.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gulf-cross-border-customs-vat-estimator/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-017" data-search="app-017 gulf-cross-border-customs-vat-estimator gulf cross-border e-commerce customs & tariffs estimator مقدر الرسوم الجمركية وضريبة القيمة المضافة للشحن بين دول الخليج e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-017</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Gulf Cross-Border E-Commerce Customs & Tariffs Estimator" data-ar="مقدر الرسوم الجمركية وضريبة القيمة المضافة للشحن بين دول الخليج">مقدر الرسوم الجمركية وضريبة القيمة المضافة للشحن بين دول الخليج</h3>
+          <p class="catalog-card-desc" data-en="Estimate exact destination customs duties, import VAT, and clearance charges for cross-border e-commerce parcels entering Saudi Arabia and UAE." data-ar="Estimate exact destination customs duties, import VAT, and clearance charges for cross-border e-commerce parcels entering Saudi Arabia and UAE.">Estimate exact destination customs duties, import VAT, and clearance charges for cross-border e-commerce parcels entering Saudi Arabia and UAE.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="abandoned-cart-revenue-recovery-forecaster/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-018" data-search="app-018 abandoned-cart-revenue-recovery-forecaster abandoned cart revenue recovery forecaster حاسبة العائد المتوقع من استعادة السلات المتروكة عبر واتساب والبريد e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-018</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Abandoned Cart Revenue Recovery Forecaster" data-ar="حاسبة العائد المتوقع من استعادة السلات المتروكة عبر واتساب والبريد">حاسبة العائد المتوقع من استعادة السلات المتروكة عبر واتساب والبريد</h3>
+          <p class="catalog-card-desc" data-en="Calculate projected monthly recovered revenue and optimal incentive discounts for multi-channel abandoned cart recovery flows." data-ar="Calculate projected monthly recovered revenue and optimal incentive discounts for multi-channel abandoned cart recovery flows.">Calculate projected monthly recovered revenue and optimal incentive discounts for multi-channel abandoned cart recovery flows.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="product-bundle-pricing-margin-analyzer/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-019" data-search="app-019 product-bundle-pricing-margin-analyzer product bundle pricing & cannibalization margin analyzer محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة السلة e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-019</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Product Bundle Pricing & Cannibalization Margin Analyzer" data-ar="محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة السلة">محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة السلة</h3>
+          <p class="catalog-card-desc" data-en="Analyze bundle pricing feasibility, profit contribution per order, and break-even sales volume required to beat standalone product profits." data-ar="Analyze bundle pricing feasibility, profit contribution per order, and break-even sales volume required to beat standalone product profits.">Analyze bundle pricing feasibility, profit contribution per order, and break-even sales volume required to beat standalone product profits.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ecommerce-gross-margin-markup-reverse-calculator/" class="catalog-card" data-category="E-commerce & COD Economics" data-id="APP-020" data-search="app-020 ecommerce-gross-margin-markup-reverse-calculator e-commerce gross margin & mark-up reverse calculator حاسبة عكسية لهامش الربح الإجمالي ونسبة الإضافة التسعيرية للمنتجات e-commerce & cod economics التجارة الإلكترونية والدفع عند الاستلام">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-020</span>
+            <span class="catalog-card-cat" data-en="E-commerce & COD Economics" data-ar="التجارة الإلكترونية والدفع عند الاستلام">التجارة الإلكترونية والدفع عند الاستلام</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="E-Commerce Gross Margin & Mark-Up Reverse Calculator" data-ar="حاسبة عكسية لهامش الربح الإجمالي ونسبة الإضافة التسعيرية للمنتجات">حاسبة عكسية لهامش الربح الإجمالي ونسبة الإضافة التسعيرية للمنتجات</h3>
+          <p class="catalog-card-desc" data-en="Instantly calculate the exact retail selling price needed to achieve your target gross margin after accounting for landed COGS, VAT, and gateway costs." data-ar="Instantly calculate the exact retail selling price needed to achieve your target gross margin after accounting for landed COGS, VAT, and gateway costs.">Instantly calculate the exact retail selling price needed to achieve your target gross margin after accounting for landed COGS, VAT, and gateway costs.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (96/100)" data-ar="جاهز (96/100)">جاهز (96/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-seo-slug-clean-permalink-generator/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-021" data-search="app-021 arabic-seo-slug-clean-permalink-generator arabic seo slug & clean permalinks converter محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-021</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Arabic SEO Slug & Clean Permalinks Converter" data-ar="محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة">محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة</h3>
+          <p class="catalog-card-desc" data-en="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration." data-ar="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.">Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (100/100)" data-ar="جاهز (100/100)">جاهز (100/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-multiregional-hreflang-tag-generator/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-022" data-search="app-022 mena-multiregional-hreflang-tag-generator mena multi-regional hreflang tag & header generator مولد وسوم ولغة المناطق Hreflang لمصر ودول الخليج العربي seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-022</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA Multi-Regional Hreflang Tag & Header Generator" data-ar="مولد وسوم ولغة المناطق Hreflang لمصر ودول الخليج العربي">مولد وسوم ولغة المناطق Hreflang لمصر ودول الخليج العربي</h3>
+          <p class="catalog-card-desc" data-en="Generate complete, copy-paste HTML hreflang tags, HTTP headers, or XML sitemap snippets tailored to all GCC and MENA regional variants." data-ar="Generate complete, copy-paste HTML hreflang tags, HTTP headers, or XML sitemap snippets tailored to all GCC and MENA regional variants.">Generate complete, copy-paste HTML hreflang tags, HTTP headers, or XML sitemap snippets tailored to all GCC and MENA regional variants.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-meta-pixel-serp-previewer/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-023" data-search="app-023 arabic-meta-pixel-serp-previewer arabic meta title & description pixel-width serp checker أداة فحص طول عناوين ووصف محركات البحث بالبكسل للنصوص العربية seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-023</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Arabic Meta Title & Description Pixel-Width SERP Checker" data-ar="أداة فحص طول عناوين ووصف محركات البحث بالبكسل للنصوص العربية">أداة فحص طول عناوين ووصف محركات البحث بالبكسل للنصوص العربية</h3>
+          <p class="catalog-card-desc" data-en="Test and preview your exact Arabic Meta Title and Meta Description against Google's real desktop and mobile pixel limits (600px title / 960px snippet)." data-ar="Test and preview your exact Arabic Meta Title and Meta Description against Google's real desktop and mobile pixel limits (600px title / 960px snippet).">Test and preview your exact Arabic Meta Title and Meta Description against Google's real desktop and mobile pixel limits (600px title / 960px snippet).</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="local-business-schema-generator-mena/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-024" data-search="app-024 local-business-schema-generator-mena local business schema.org json-ld generator for mena cities مولد بيانات المخطط Schema المنظمة للأنشطة المحلية في مدن مصر والخليج seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-024</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Local Business Schema.org JSON-LD Generator for MENA Cities" data-ar="مولد بيانات المخطط Schema المنظمة للأنشطة المحلية في مدن مصر والخليج">مولد بيانات المخطط Schema المنظمة للأنشطة المحلية في مدن مصر والخليج</h3>
+          <p class="catalog-card-desc" data-en="Generate Google-validated LocalBusiness Schema JSON-LD tailored to MENA cities, postal formats, working hours, and local currencies." data-ar="Generate Google-validated LocalBusiness Schema JSON-LD tailored to MENA cities, postal formats, working hours, and local currencies.">Generate Google-validated LocalBusiness Schema JSON-LD tailored to MENA cities, postal formats, working hours, and local currencies.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-keyword-density-diacritic-stripper/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-025" data-search="app-025 arabic-keyword-density-diacritic-stripper arabic keyword density & diacritic stripper for clean content محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة التشكيل والهمزات seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-025</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Arabic Keyword Density & Diacritic Stripper for Clean Content" data-ar="محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة التشكيل والهمزات">محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة التشكيل والهمزات</h3>
+          <p class="catalog-card-desc" data-en="Analyze true Arabic keyword density, normalized word counts, and search frequency while stripping diacritics and unifying Alef/Yaa variants." data-ar="Analyze true Arabic keyword density, normalized word counts, and search frequency while stripping diacritics and unifying Alef/Yaa variants.">Analyze true Arabic keyword density, normalized word counts, and search frequency while stripping diacritics and unifying Alef/Yaa variants.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-opengraph-twitter-card-previewer/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-026" data-search="app-026 arabic-opengraph-twitter-card-previewer opengraph & twitter card previewer for arabic social feeds معاين بطاقات السوشيال ميديا ووسوم OG للنصوص والصور العربية seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-026</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="OpenGraph & Twitter Card Previewer for Arabic Social Feeds" data-ar="معاين بطاقات السوشيال ميديا ووسوم OG للنصوص والصور العربية">معاين بطاقات السوشيال ميديا ووسوم OG للنصوص والصور العربية</h3>
+          <p class="catalog-card-desc" data-en="Preview and generate perfect OpenGraph and Twitter/X card tags with live visual simulation of WhatsApp, LinkedIn, X, and Facebook cards." data-ar="Preview and generate perfect OpenGraph and Twitter/X card tags with live visual simulation of WhatsApp, LinkedIn, X, and Facebook cards.">Preview and generate perfect OpenGraph and Twitter/X card tags with live visual simulation of WhatsApp, LinkedIn, X, and Facebook cards.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="robots-txt-canonical-validator-mena/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-027" data-search="app-027 robots-txt-canonical-validator-mena robots.txt & canonical tag validator for mena sites مدقق ومنشئ ملف robots.txt والروابط الكنسية Canonical للمتاجر العربية seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-027</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Robots.txt & Canonical Tag Validator for MENA Sites" data-ar="مدقق ومنشئ ملف robots.txt والروابط الكنسية Canonical للمتاجر العربية">مدقق ومنشئ ملف robots.txt والروابط الكنسية Canonical للمتاجر العربية</h3>
+          <p class="catalog-card-desc" data-en="Generate and validate an optimized robots.txt file with tailored crawl-delay, disallow rules for cart/checkout, and canonical tag structures." data-ar="Generate and validate an optimized robots.txt file with tailored crawl-delay, disallow rules for cart/checkout, and canonical tag structures.">Generate and validate an optimized robots.txt file with tailored crawl-delay, disallow rules for cart/checkout, and canonical tag structures.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="faq-schema-json-ld-generator-rtl/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-028" data-search="app-028 faq-schema-json-ld-generator-rtl faq schema.org json-ld generator with arabic rtl preview مولد كود الأسئلة الشائعة FAQ Schema المنظم مع معاينة اتجاه اليمين seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-028</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="FAQ Schema.org JSON-LD Generator with Arabic RTL Preview" data-ar="مولد كود الأسئلة الشائعة FAQ Schema المنظم مع معاينة اتجاه اليمين">مولد كود الأسئلة الشائعة FAQ Schema المنظم مع معاينة اتجاه اليمين</h3>
+          <p class="catalog-card-desc" data-en="Create Google-compliant FAQPage JSON-LD structured data with multi-question reordering and instant RTL accordion preview." data-ar="Create Google-compliant FAQPage JSON-LD structured data with multi-question reordering and instant RTL accordion preview.">Create Google-compliant FAQPage JSON-LD structured data with multi-question reordering and instant RTL accordion preview.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="core-web-vitals-resource-budget-planner/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-029" data-search="app-029 core-web-vitals-resource-budget-planner core web vitals budget & resource weight planner مخطط ميزانية سرعة الموقع وحجم الأصول لمعايير تجربة الصفحة في الشرق الأوسط seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-029</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Core Web Vitals Budget & Resource Weight Planner" data-ar="مخطط ميزانية سرعة الموقع وحجم الأصول لمعايير تجربة الصفحة في الشرق الأوسط">مخطط ميزانية سرعة الموقع وحجم الأصول لمعايير تجربة الصفحة في الشرق الأوسط</h3>
+          <p class="catalog-card-desc" data-en="Calculate exact byte budgets for HTML, CSS, JavaScript, fonts, and images to guarantee sub-2.5 second LCP load times on MENA mobile connections." data-ar="Calculate exact byte budgets for HTML, CSS, JavaScript, fonts, and images to guarantee sub-2.5 second LCP load times on MENA mobile connections.">Calculate exact byte budgets for HTML, CSS, JavaScript, fonts, and images to guarantee sub-2.5 second LCP load times on MENA mobile connections.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-url-sanitizer-decoder/" class="catalog-card" data-category="SEO & Technical Optimization" data-id="APP-030" data-search="app-030 arabic-url-sanitizer-decoder arabic url encoding/decoding & query parameter sanitizer أداة فك وتشفير الروابط العربية وتنظيف بارامترات التتبع والإعلانات seo & technical optimization السيو والتحسين التقني">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-030</span>
+            <span class="catalog-card-cat" data-en="SEO & Technical Optimization" data-ar="السيو والتحسين التقني">السيو والتحسين التقني</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Arabic URL Encoding/Decoding & Query Parameter Sanitizer" data-ar="أداة فك وتشفير الروابط العربية وتنظيف بارامترات التتبع والإعلانات">أداة فك وتشفير الروابط العربية وتنظيف بارامترات التتبع والإعلانات</h3>
+          <p class="catalog-card-desc" data-en="Clean, sanitize, encode, or decode complex Arabic URLs and extract query parameters into structured key-value pairs." data-ar="Clean, sanitize, encode, or decode complex Arabic URLs and extract query parameters into structured key-value pairs.">Clean, sanitize, encode, or decode complex Arabic URLs and extract query parameters into structured key-value pairs.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (96/100)" data-ar="جاهز (96/100)">جاهز (96/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-click-to-chat-link-builder-mena/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-031" data-search="app-031 whatsapp-click-to-chat-link-builder-mena whatsapp click-to-chat link builder with mena country codes & prefilled text منشئ روابط واتساب المباشرة مع رموز دول الشرق الأوسط والرسائل الجاهزة whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-031</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="WhatsApp Click-to-Chat Link Builder with MENA Country Codes & Prefilled Text" data-ar="منشئ روابط واتساب المباشرة مع رموز دول الشرق الأوسط والرسائل الجاهزة">منشئ روابط واتساب المباشرة مع رموز دول الشرق الأوسط والرسائل الجاهزة</h3>
+          <p class="catalog-card-desc" data-en="Generate error-free WhatsApp Click-to-Chat links and QR codes with automatic country code normalization and pre-filled Arabic message encoding." data-ar="Generate error-free WhatsApp Click-to-Chat links and QR codes with automatic country code normalization and pre-filled Arabic message encoding.">Generate error-free WhatsApp Click-to-Chat links and QR codes with automatic country code normalization and pre-filled Arabic message encoding.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-sms-unicode-segment-cost-calculator/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-032" data-search="app-032 mena-sms-unicode-segment-cost-calculator mena sms unicode segment & cost calculator حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية والإنجليزية لشبكات الاتصالات whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-032</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA SMS Unicode Segment & Cost Calculator" data-ar="حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية والإنجليزية لشبكات الاتصالات">حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية والإنجليزية لشبكات الاتصالات</h3>
+          <p class="catalog-card-desc" data-en="Detect GSM vs Unicode encoding, calculate exact billable SMS parts, and identify high-cost characters to slash promotional SMS costs." data-ar="Detect GSM vs Unicode encoding, calculate exact billable SMS parts, and identify high-cost characters to slash promotional SMS costs.">Detect GSM vs Unicode encoding, calculate exact billable SMS parts, and identify high-cost characters to slash promotional SMS costs.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (100/100)" data-ar="جاهز (100/100)">جاهز (100/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-broadcast-segmenter-safety-planner/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-033" data-search="app-033 whatsapp-broadcast-segmenter-safety-planner whatsapp broadcast list segmenter & anti-ban timing planner مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-033</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="WhatsApp Broadcast List Segmenter & Anti-Ban Timing Planner" data-ar="مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم">مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم</h3>
+          <p class="catalog-card-desc" data-en="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags." data-ar="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.">Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-catalog-order-message-generator/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-034" data-search="app-034 whatsapp-catalog-order-message-generator interactive whatsapp catalog order message generator مولد رسائل طلبات المنتجات الجاهزة عبر الواتساب لتجار المتاجر والمطاعم whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-034</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Interactive WhatsApp Catalog Order Message Generator" data-ar="مولد رسائل طلبات المنتجات الجاهزة عبر الواتساب لتجار المتاجر والمطاعم">مولد رسائل طلبات المنتجات الجاهزة عبر الواتساب لتجار المتاجر والمطاعم</h3>
+          <p class="catalog-card-desc" data-en="Generate structured, pre-formatted order summary templates that customers submit with one tap, including SKU, delivery address, and payment choice." data-ar="Generate structured, pre-formatted order summary templates that customers submit with one tap, including SKU, delivery address, and payment choice.">Generate structured, pre-formatted order summary templates that customers submit with one tap, including SKU, delivery address, and payment choice.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="bilingual-support-macro-vault-mena/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-035" data-search="app-035 bilingual-support-macro-vault-mena bilingual whatsapp customer support quick-reply macro vault مخزن قوالب الردود السريعة لخدمة العملاء بالعامية المصرية والخليجية والفصحى whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-035</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Bilingual WhatsApp Customer Support Quick-Reply Macro Vault" data-ar="مخزن قوالب الردود السريعة لخدمة العملاء بالعامية المصرية والخليجية والفصحى">مخزن قوالب الردود السريعة لخدمة العملاء بالعامية المصرية والخليجية والفصحى</h3>
+          <p class="catalog-card-desc" data-en="Search, filter, customize, and copy 100+ proven customer service quick-replies localized into Egyptian, Gulf, and Modern Standard Arabic." data-ar="Search, filter, customize, and copy 100+ proven customer service quick-replies localized into Egyptian, Gulf, and Modern Standard Arabic.">Search, filter, customize, and copy 100+ proven customer service quick-replies localized into Egyptian, Gulf, and Modern Standard Arabic.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-business-bio-catalog-formatter/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-036" data-search="app-036 whatsapp-business-bio-catalog-formatter whatsapp business profile bio & catalog character formatter أداة تنسيق نبذة الواتساب والكتالوج بأفضل طول مسموح وتنسيقات الخط whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-036</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="WhatsApp Business Profile Bio & Catalog Character Formatter" data-ar="أداة تنسيق نبذة الواتساب والكتالوج بأفضل طول مسموح وتنسيقات الخط">أداة تنسيق نبذة الواتساب والكتالوج بأفضل طول مسموح وتنسيقات الخط</h3>
+          <p class="catalog-card-desc" data-en="Craft, preview, and format WhatsApp Business profile bios and catalog descriptions with real-time character counters and WhatsApp formatting tags." data-ar="Craft, preview, and format WhatsApp Business profile bios and catalog descriptions with real-time character counters and WhatsApp formatting tags.">Craft, preview, and format WhatsApp Business profile bios and catalog descriptions with real-time character counters and WhatsApp formatting tags.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (96/100)" data-ar="جاهز (96/100)">جاهز (96/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-sms-opt-out-compliance-formatter/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-037" data-search="app-037 mena-sms-opt-out-compliance-formatter mena sms opt-out compliance tag & sender id formatter أداة تنسيق اسم المرسل وشروط عدم الاشتراك للرسائل الترويجية حسب هيئات الاتصالات whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-037</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA SMS Opt-Out Compliance Tag & Sender ID Formatter" data-ar="أداة تنسيق اسم المرسل وشروط عدم الاشتراك للرسائل الترويجية حسب هيئات الاتصالات">أداة تنسيق اسم المرسل وشروط عدم الاشتراك للرسائل الترويجية حسب هيئات الاتصالات</h3>
+          <p class="catalog-card-desc" data-en="Format regulatory-compliant SMS footers (e.g. 'To stop send X to Y' / 'لإلغاء الاشتراك') and validate 11-character Sender IDs according to CITC and NTRA rules." data-ar="Format regulatory-compliant SMS footers (e.g. 'To stop send X to Y' / 'لإلغاء الاشتراك') and validate 11-character Sender IDs according to CITC and NTRA rules.">Format regulatory-compliant SMS footers (e.g. 'To stop send X to Y' / 'لإلغاء الاشتراك') and validate 11-character Sender IDs according to CITC and NTRA rules.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="click-to-whatsapp-ad-attribution-tracker/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-038" data-search="app-038 click-to-whatsapp-ad-attribution-tracker click-to-whatsapp ad conversion attribution tracker حاسبة ومقيس عائد إعلانات التحويل إلى واتساب ونسبة الإغلاق الفعلي من المحادثات whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-038</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Click-to-WhatsApp Ad Conversion Attribution Tracker" data-ar="حاسبة ومقيس عائد إعلانات التحويل إلى واتساب ونسبة الإغلاق الفعلي من المحادثات">حاسبة ومقيس عائد إعلانات التحويل إلى واتساب ونسبة الإغلاق الفعلي من المحادثات</h3>
+          <p class="catalog-card-desc" data-en="Calculate your true Cost Per Order (CPO), chat-to-sale closing rate, and real ROAS for Click-to-WhatsApp ad campaigns." data-ar="Calculate your true Cost Per Order (CPO), chat-to-sale closing rate, and real ROAS for Click-to-WhatsApp ad campaigns.">Calculate your true Cost Per Order (CPO), chat-to-sale closing rate, and real ROAS for Click-to-WhatsApp ad campaigns.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-chat-flow-logic-tree-builder/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-039" data-search="app-039 whatsapp-chat-flow-logic-tree-builder whatsapp automated chat flow logic tree visualizer مخطط شجري تفاعلي لمنطق مسارات ردود الشات بوت والواتساب التفاعلية whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-039</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="WhatsApp Automated Chat Flow Logic Tree Visualizer" data-ar="مخطط شجري تفاعلي لمنطق مسارات ردود الشات بوت والواتساب التفاعلية">مخطط شجري تفاعلي لمنطق مسارات ردود الشات بوت والواتساب التفاعلية</h3>
+          <p class="catalog-card-desc" data-en="Build, test, and visualize branching WhatsApp conversational decision trees with instant flowchart rendering and exportable logic JSON." data-ar="Build, test, and visualize branching WhatsApp conversational decision trees with instant flowchart rendering and exportable logic JSON.">Build, test, and visualize branching WhatsApp conversational decision trees with instant flowchart rendering and exportable logic JSON.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="whatsapp-csat-survey-link-builder/" class="catalog-card" data-category="WhatsApp Marketing & SMS" data-id="APP-040" data-search="app-040 whatsapp-csat-survey-link-builder whatsapp customer satisfaction (csat) survey link builder منشئ روابط استبيان رضا العملاء عبر الواتساب بروابط تقييم بنقرة واحدة whatsapp marketing & sms واتساب والرسائل النصية">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-040</span>
+            <span class="catalog-card-cat" data-en="WhatsApp Marketing & SMS" data-ar="واتساب والرسائل النصية">واتساب والرسائل النصية</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="WhatsApp Customer Satisfaction (CSAT) Survey Link Builder" data-ar="منشئ روابط استبيان رضا العملاء عبر الواتساب بروابط تقييم بنقرة واحدة">منشئ روابط استبيان رضا العملاء عبر الواتساب بروابط تقييم بنقرة واحدة</h3>
+          <p class="catalog-card-desc" data-en="Create 1-click WhatsApp rating links (1 to 5 stars) that pre-fill customer ratings and review feedback directly into your support chat." data-ar="Create 1-click WhatsApp rating links (1 to 5 stars) that pre-fill customer ratings and review feedback directly into your support chat.">Create 1-click WhatsApp rating links (1 to 5 stars) that pre-fill customer ratings and review feedback directly into your support chat.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="egypt-gulf-dialect-copywriting-lexicon/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-041" data-search="app-041 egypt-gulf-dialect-copywriting-lexicon egyptian vs gulf arabic dialect copywriting tone translator & lexicon قاموس ومحول المصطلحات التسويقية بين اللهجة المصرية والخليجية والفصحى social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-041</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egyptian vs Gulf Arabic Dialect Copywriting Tone Translator & Lexicon" data-ar="قاموس ومحول المصطلحات التسويقية بين اللهجة المصرية والخليجية والفصحى">قاموس ومحول المصطلحات التسويقية بين اللهجة المصرية والخليجية والفصحى</h3>
+          <p class="catalog-card-desc" data-en="Instantly translate and localize marketing slogans and CTA terms across Egyptian, Saudi/Gulf, and Modern Standard Arabic with tone nuance tags." data-ar="Instantly translate and localize marketing slogans and CTA terms across Egyptian, Saudi/Gulf, and Modern Standard Arabic with tone nuance tags.">Instantly translate and localize marketing slogans and CTA terms across Egyptian, Saudi/Gulf, and Modern Standard Arabic with tone nuance tags.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (100/100)" data-ar="جاهز (100/100)">جاهز (100/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="carousel-slide-text-splitter-formatter/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-042" data-search="app-042 carousel-slide-text-splitter-formatter instagram & linkedin carousel slide text splitter & formatter أداة تقطيع النصوص الطويلة إلى شرائح كاروسيل متناسقة للينكد إن وإنستجرام social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-042</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Instagram & LinkedIn Carousel Slide Text Splitter & Formatter" data-ar="أداة تقطيع النصوص الطويلة إلى شرائح كاروسيل متناسقة للينكد إن وإنستجرام">أداة تقطيع النصوص الطويلة إلى شرائح كاروسيل متناسقة للينكد إن وإنستجرام</h3>
+          <p class="catalog-card-desc" data-en="Automatically split long Arabic or English articles into perfectly balanced 8-to-10 slide carousel cards with designated Hook, Body, and CTA slides." data-ar="Automatically split long Arabic or English articles into perfectly balanced 8-to-10 slide carousel cards with designated Hook, Body, and CTA slides.">Automatically split long Arabic or English articles into perfectly balanced 8-to-10 slide carousel cards with designated Hook, Body, and CTA slides.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-social-hook-truncation-tester/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-043" data-search="app-043 mena-social-hook-truncation-tester mena social media character & hook length truncation tester مدقق طول الخطاف التسويقي ونقاط قطع النصوص 'اقرأ المزيد' في السوشيال ميديا social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-043</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA Social Media Character & Hook Length Truncation Tester" data-ar="مدقق طول الخطاف التسويقي ونقاط قطع النصوص 'اقرأ المزيد' في السوشيال ميديا">مدقق طول الخطاف التسويقي ونقاط قطع النصوص 'اقرأ المزيد' في السوشيال ميديا</h3>
+          <p class="catalog-card-desc" data-en="Preview the exact truncation cutoff point of your Arabic caption across LinkedIn, Instagram, Facebook, and TikTok before you publish." data-ar="Preview the exact truncation cutoff point of your Arabic caption across LinkedIn, Instagram, Facebook, and TikTok before you publish.">Preview the exact truncation cutoff point of your Arabic caption across LinkedIn, Instagram, Facebook, and TikTok before you publish.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ramadan-national-holidays-calendar-generator/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-044" data-search="app-044 ramadan-national-holidays-calendar-generator ramadan & national holidays campaign content calendar generator مولد جدول محتوى المواسم والأعياد الوطنية لمصر والسعودية والإمارات social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-044</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Ramadan & National Holidays Campaign Content Calendar Generator" data-ar="مولد جدول محتوى المواسم والأعياد الوطنية لمصر والسعودية والإمارات">مولد جدول محتوى المواسم والأعياد الوطنية لمصر والسعودية والإمارات</h3>
+          <p class="catalog-card-desc" data-en="Generate a complete 12-month marketing campaign roadmap aligned with Islamic holidays, Egyptian national holidays, and Gulf National Days with lead-time alerts." data-ar="Generate a complete 12-month marketing campaign roadmap aligned with Islamic holidays, Egyptian national holidays, and Gulf National Days with lead-time alerts.">Generate a complete 12-month marketing campaign roadmap aligned with Islamic holidays, Egyptian national holidays, and Gulf National Days with lead-time alerts.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="social-hashtag-counter-tier-sorter/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-045" data-search="app-045 social-hashtag-counter-tier-sorter social media hashtag counter & category tiering sorter أداة تصنيف الهاشتاجات حسب الحجم وتوزيع النسب لمنع الحظر الخفي social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-045</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Social Media Hashtag Counter & Category Tiering Sorter" data-ar="أداة تصنيف الهاشتاجات حسب الحجم وتوزيع النسب لمنع الحظر الخفي">أداة تصنيف الهاشتاجات حسب الحجم وتوزيع النسب لمنع الحظر الخفي</h3>
+          <p class="catalog-card-desc" data-en="Organize and sort your Arabic and English hashtags into balanced tiers (Mega, Macro, Micro, Branded) and verify platform safe limits." data-ar="Organize and sort your Arabic and English hashtags into balanced tiers (Mega, Macro, Micro, Branded) and verify platform safe limits.">Organize and sort your Arabic and English hashtags into balanced tiers (Mega, Macro, Micro, Branded) and verify platform safe limits.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (96/100)" data-ar="جاهز (96/100)">جاهز (96/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-video-script-teleprompter-timer/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-046" data-search="app-046 arabic-video-script-teleprompter-timer arabic video script teleprompter & wpm duration calculator حاسبة مدة ومعدل قراءة سكريبت الفيديو الإعلاني باللغة العربية WPM social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-046</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Arabic Video Script Teleprompter & WPM Duration Calculator" data-ar="حاسبة مدة ومعدل قراءة سكريبت الفيديو الإعلاني باللغة العربية WPM">حاسبة مدة ومعدل قراءة سكريبت الفيديو الإعلاني باللغة العربية WPM</h3>
+          <p class="catalog-card-desc" data-en="Calculate exact spoken duration of Arabic scripts based on dialect pace (WPM), with interactive browser teleprompter preview." data-ar="Calculate exact spoken duration of Arabic scripts based on dialect pace (WPM), with interactive browser teleprompter preview.">Calculate exact spoken duration of Arabic scripts based on dialect pace (WPM), with interactive browser teleprompter preview.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-cultural-nuance-ad-compliance-checklist/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-047" data-search="app-047 mena-cultural-nuance-ad-compliance-checklist egyptian & gulf cultural nuance & taboo content checklist قائمة فحص الملاءمة الثقافية والتوافق مع الضوابط الإعلانية في مصر والخليج social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-047</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egyptian & Gulf Cultural Nuance & Taboo Content Checklist" data-ar="قائمة فحص الملاءمة الثقافية والتوافق مع الضوابط الإعلانية في مصر والخليج">قائمة فحص الملاءمة الثقافية والتوافق مع الضوابط الإعلانية في مصر والخليج</h3>
+          <p class="catalog-card-desc" data-en="Audit your campaign creative and copy against official GCC advertising laws (GCAM Saudi, UAE Media Council) and cultural sensitivity standards." data-ar="Audit your campaign creative and copy against official GCC advertising laws (GCAM Saudi, UAE Media Council) and cultural sensitivity standards.">Audit your campaign creative and copy against official GCC advertising laws (GCAM Saudi, UAE Media Council) and cultural sensitivity standards.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="social-bio-link-micro-page-builder/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-048" data-search="app-048 social-bio-link-micro-page-builder social media bio & link-in-bio micro-page builder مولد صفحة روابط البايو الثابتة والسريعة لحسابات إنستجرام وتيك توك social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-048</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Social Media Bio & Link-in-Bio Micro-Page Builder" data-ar="مولد صفحة روابط البايو الثابتة والسريعة لحسابات إنستجرام وتيك توك">مولد صفحة روابط البايو الثابتة والسريعة لحسابات إنستجرام وتيك توك</h3>
+          <p class="catalog-card-desc" data-en="Generate a single lightweight, ultra-fast, RTL-friendly HTML link-in-bio landing page you can host for free on Cloudflare Pages." data-ar="Generate a single lightweight, ultra-fast, RTL-friendly HTML link-in-bio landing page you can host for free on Cloudflare Pages.">Generate a single lightweight, ultra-fast, RTL-friendly HTML link-in-bio landing page you can host for free on Cloudflare Pages.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="tiktok-reels-hook-generator-mena/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-049" data-search="app-049 tiktok-reels-hook-generator-mena tiktok & reels hook generator for local e-commerce & service niches مولد خطافات وبدايات الفيديو الإعلاني للمتاجر والخدمات المحلية في مصر والخليج social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-049</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="TikTok & Reels Hook Generator for Local E-Commerce & Service Niches" data-ar="مولد خطافات وبدايات الفيديو الإعلاني للمتاجر والخدمات المحلية في مصر والخليج">مولد خطافات وبدايات الفيديو الإعلاني للمتاجر والخدمات المحلية في مصر والخليج</h3>
+          <p class="catalog-card-desc" data-en="Generate 20+ viral short-form video opening hooks categorized by psychological angle (Curiosity, Negative Bias, Social Proof, Local Problem) in Egyptian and Gulf Arabic." data-ar="Generate 20+ viral short-form video opening hooks categorized by psychological angle (Curiosity, Negative Bias, Social Proof, Local Problem) in Egyptian and Gulf Arabic.">Generate 20+ viral short-form video opening hooks categorized by psychological angle (Curiosity, Negative Bias, Social Proof, Local Problem) in Egyptian and Gulf Arabic.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="linkedin-post-formatter-unicode-styler/" class="catalog-card" data-category="Social Media & Copywriting" data-id="APP-050" data-search="app-050 linkedin-post-formatter-unicode-styler linkedin post formatter with unicode bold/italic & bullet styler منسق منشورات لينكد إن العربية بالأشكال والرموز التعبيرية والتعداد النقطي social media & copywriting السوشيال ميديا وصناعة المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-050</span>
+            <span class="catalog-card-cat" data-en="Social Media & Copywriting" data-ar="السوشيال ميديا وصناعة المحتوى">السوشيال ميديا وصناعة المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="LinkedIn Post Formatter with Unicode Bold/Italic & Bullet Styler" data-ar="منسق منشورات لينكد إن العربية بالأشكال والرموز التعبيرية والتعداد النقطي">منسق منشورات لينكد إن العربية بالأشكال والرموز التعبيرية والتعداد النقطي</h3>
+          <p class="catalog-card-desc" data-en="Format and beautify LinkedIn posts with Mathematical Alphanumeric Unicode bold/italic headers, clean bullets, and mobile feed preview." data-ar="Format and beautify LinkedIn posts with Mathematical Alphanumeric Unicode bold/italic headers, clean bullets, and mobile feed preview.">Format and beautify LinkedIn posts with Mathematical Alphanumeric Unicode bold/italic headers, clean bullets, and mobile feed preview.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (96/100)" data-ar="جاهز (96/100)">جاهز (96/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gcc-influencer-rate-fair-price-estimator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-051" data-search="app-051 gcc-influencer-rate-fair-price-estimator gcc influencer rate benchmark & fair price estimator مقدر الأسعار العادلة ومؤشرات تكلفة مشاهير السوشيال ميديا في الخليج influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-051</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="GCC Influencer Rate Benchmark & Fair Price Estimator" data-ar="مقدر الأسعار العادلة ومؤشرات تكلفة مشاهير السوشيال ميديا في الخليج">مقدر الأسعار العادلة ومؤشرات تكلفة مشاهير السوشيال ميديا في الخليج</h3>
+          <p class="catalog-card-desc" data-en="Estimate a fair market rate and maximum justifiable sponsorship fee for Gulf influencers based on verified view counts, niche, and engagement benchmarks." data-ar="Estimate a fair market rate and maximum justifiable sponsorship fee for Gulf influencers based on verified view counts, niche, and engagement benchmarks.">Estimate a fair market rate and maximum justifiable sponsorship fee for Gulf influencers based on verified view counts, niche, and engagement benchmarks.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="barter-vs-paid-influencer-roi-calculator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-052" data-search="app-052 barter-vs-paid-influencer-roi-calculator barter vs paid influencer collaboration roi calculator حاسبة جدوى وعائد الإهداءات والتعاون بالتبادل Barter مقابل الدفع النقدي influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-052</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Barter vs Paid Influencer Collaboration ROI Calculator" data-ar="حاسبة جدوى وعائد الإهداءات والتعاون بالتبادل Barter مقابل الدفع النقدي">حاسبة جدوى وعائد الإهداءات والتعاون بالتبادل Barter مقابل الدفع النقدي</h3>
+          <p class="catalog-card-desc" data-en="Compare the true bottom-line cost and projected customer acquisition ROI between product gifting (barter) vs paid creator sponsorships." data-ar="Compare the true bottom-line cost and projected customer acquisition ROI between product gifting (barter) vs paid creator sponsorships.">Compare the true bottom-line cost and projected customer acquisition ROI between product gifting (barter) vs paid creator sponsorships.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="influencer-engagement-rate-fake-follower-scrutinizer/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-053" data-search="app-053 influencer-engagement-rate-fake-follower-scrutinizer influencer true engagement rate & fake follower ratio scrutinizer محلل معدل التفاعل الحقيقي واكتشاف نسب المتابعين الوهميين للحسابات influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-053</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Influencer True Engagement Rate & Fake Follower Ratio Scrutinizer" data-ar="محلل معدل التفاعل الحقيقي واكتشاف نسب المتابعين الوهميين للحسابات">محلل معدل التفاعل الحقيقي واكتشاف نسب المتابعين الوهميين للحسابات</h3>
+          <p class="catalog-card-desc" data-en="Calculate true engagement rate (ER) by tier benchmarks and detect statistical anomalies indicative of fake bot followers and engagement pods." data-ar="Calculate true engagement rate (ER) by tier benchmarks and detect statistical anomalies indicative of fake bot followers and engagement pods.">Calculate true engagement rate (ER) by tier benchmarks and detect statistical anomalies indicative of fake bot followers and engagement pods.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="affiliate-commission-tier-payout-simulator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-054" data-search="app-054 affiliate-commission-tier-payout-simulator affiliate marketing commission tier & payout simulator محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-054</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Affiliate Marketing Commission Tier & Payout Simulator" data-ar="محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية">محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية</h3>
+          <p class="catalog-card-desc" data-en="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes." data-ar="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.">Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-influencer-contract-checklist-generator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-055" data-search="app-055 mena-influencer-contract-checklist-generator influencer campaign deliverables contract checklist for mena قائمة فحص بنود العقود وحقوق استخدام المواد الإعلانية مع المؤثرين influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-055</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Influencer Campaign Deliverables Contract Checklist for MENA" data-ar="قائمة فحص بنود العقود وحقوق استخدام المواد الإعلانية مع المؤثرين">قائمة فحص بنود العقود وحقوق استخدام المواد الإعلانية مع المؤثرين</h3>
+          <p class="catalog-card-desc" data-en="Generate a comprehensive, tailored campaign deliverables checklist and term sheet covering usage rights, exclusivity, Mawthoq compliance, and payment milestones." data-ar="Generate a comprehensive, tailored campaign deliverables checklist and term sheet covering usage rights, exclusivity, Mawthoq compliance, and payment milestones.">Generate a comprehensive, tailored campaign deliverables checklist and term sheet covering usage rights, exclusivity, Mawthoq compliance, and payment milestones.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="promo-code-margin-erosion-analyzer/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-056" data-search="app-056 promo-code-margin-erosion-analyzer promo code performance & discount margin erosion analyzer محلل أداء كودات الخصم ومدى تآكل هامش الربح لكل كود مؤثر للمتاجر influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-056</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Promo Code Performance & Discount Margin Erosion Analyzer" data-ar="محلل أداء كودات الخصم ومدى تآكل هامش الربح لكل كود مؤثر للمتاجر">محلل أداء كودات الخصم ومدى تآكل هامش الربح لكل كود مؤثر للمتاجر</h3>
+          <p class="catalog-card-desc" data-en="Audit influencer coupon code profitability, detect organic coupon leakage, and calculate the true incremental revenue generated per creator code." data-ar="Audit influencer coupon code profitability, detect organic coupon leakage, and calculate the true incremental revenue generated per creator code.">Audit influencer coupon code profitability, detect organic coupon leakage, and calculate the true incremental revenue generated per creator code.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="creator-whitelisting-ad-spend-splitter/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-057" data-search="app-057 creator-whitelisting-ad-spend-splitter creator whitelisting & partnership ad spend splitter حاسبة توزيع الميزانية بين رسوم الترخيص للمنشئ والإنفاق الإعلاني Whitelisting influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-057</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Creator Whitelisting & Partnership Ad Spend Splitter" data-ar="حاسبة توزيع الميزانية بين رسوم الترخيص للمنشئ والإنفاق الإعلاني Whitelisting">حاسبة توزيع الميزانية بين رسوم الترخيص للمنشئ والإنفاق الإعلاني Whitelisting</h3>
+          <p class="catalog-card-desc" data-en="Calculate the optimal mathematical budget split between creator content licensing fees and paid ad spend behind the creator's handle." data-ar="Calculate the optimal mathematical budget split between creator content licensing fees and paid ad spend behind the creator's handle.">Calculate the optimal mathematical budget split between creator content licensing fees and paid ad spend behind the creator's handle.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="multi-tier-influencer-budget-allocator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-058" data-search="app-058 multi-tier-influencer-budget-allocator multi-tier influencer budget allocator (nano, micro, macro) موزع ميزانية الحملات على المشاهير حسب فئات المتابعين لتحقيق أعلى وصول influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-058</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Multi-Tier Influencer Budget Allocator (Nano, Micro, Macro)" data-ar="موزع ميزانية الحملات على المشاهير حسب فئات المتابعين لتحقيق أعلى وصول">موزع ميزانية الحملات على المشاهير حسب فئات المتابعين لتحقيق أعلى وصول</h3>
+          <p class="catalog-card-desc" data-en="Distribute your influencer marketing budget across Nano (1k-10k), Micro (10k-100k), and Macro (100k-500k) tiers based on the 70/20/10 strategic framework." data-ar="Distribute your influencer marketing budget across Nano (1k-10k), Micro (10k-100k), and Macro (100k-500k) tiers based on the 70/20/10 strategic framework.">Distribute your influencer marketing budget across Nano (1k-10k), Micro (10k-100k), and Macro (100k-500k) tiers based on the 70/20/10 strategic framework.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="influencer-unboxing-ugc-brief-generator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-059" data-search="app-059 influencer-unboxing-ugc-brief-generator influencer unboxing & ugc brief generator مولد بريف وتعليمات تصوير فيديوهات تجربة المنتجات والمحتوى المنشأ UGC influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-059</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Influencer Unboxing & UGC Brief Generator" data-ar="مولد بريف وتعليمات تصوير فيديوهات تجربة المنتجات والمحتوى المنشأ UGC">مولد بريف وتعليمات تصوير فيديوهات تجربة المنتجات والمحتوى المنشأ UGC</h3>
+          <p class="catalog-card-desc" data-en="Generate structured, professional video briefing documents in Arabic and English specifying lighting, camera angles, key talking points, and non-negotiable dos and don'ts." data-ar="Generate structured, professional video briefing documents in Arabic and English specifying lighting, camera angles, key talking points, and non-negotiable dos and don'ts.">Generate structured, professional video briefing documents in Arabic and English specifying lighting, camera angles, key talking points, and non-negotiable dos and don'ts.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="creator-cpm-vs-paid-ads-arbitrage-calculator/" class="catalog-card" data-category="Influencer & Creator Marketing" data-id="APP-060" data-search="app-060 creator-cpm-vs-paid-ads-arbitrage-calculator creator cpm/cpe vs direct paid ads cost arbitrage calculator مقارن تكلفة الوصول والتفاعل بين إعلانات المنصات المباشرة ورعاية المؤثرين influencer & creator marketing المؤثرون وصناع المحتوى">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-060</span>
+            <span class="catalog-card-cat" data-en="Influencer & Creator Marketing" data-ar="المؤثرون وصناع المحتوى">المؤثرون وصناع المحتوى</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Creator CPM/CPE vs Direct Paid Ads Cost Arbitrage Calculator" data-ar="مقارن تكلفة الوصول والتفاعل بين إعلانات المنصات المباشرة ورعاية المؤثرين">مقارن تكلفة الوصول والتفاعل بين إعلانات المنصات المباشرة ورعاية المؤثرين</h3>
+          <p class="catalog-card-desc" data-en="Calculate the exact cost arbitrage between hiring a specific influencer vs deploying that identical budget directly into Meta/TikTok auction ads." data-ar="Calculate the exact cost arbitrage between hiring a specific influencer vs deploying that identical budget directly into Meta/TikTok auction ads.">Calculate the exact cost arbitrage between hiring a specific influencer vs deploying that identical budget directly into Meta/TikTok auction ads.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-landing-page-rtl-trust-auditor/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-061" data-search="app-061 mena-landing-page-rtl-trust-auditor mena landing page rtl visual hierarchy & trust badge auditor مدقق الهيكلية البصرية وشارات الثقة لصفحات الهبوط الموجهة للشرق الأوسط cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-061</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="MENA Landing Page RTL Visual Hierarchy & Trust Badge Auditor" data-ar="مدقق الهيكلية البصرية وشارات الثقة لصفحات الهبوط الموجهة للشرق الأوسط">مدقق الهيكلية البصرية وشارات الثقة لصفحات الهبوط الموجهة للشرق الأوسط</h3>
+          <p class="catalog-card-desc" data-en="Audit your Arabic landing page against 25 proven MENA conversion standards including RTL eye-tracking flow, local payment badges, and WhatsApp trust triggers." data-ar="Audit your Arabic landing page against 25 proven MENA conversion standards including RTL eye-tracking flow, local payment badges, and WhatsApp trust triggers.">Audit your Arabic landing page against 25 proven MENA conversion standards including RTL eye-tracking flow, local payment badges, and WhatsApp trust triggers.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (100/100)" data-ar="جاهز (100/100)">جاهز (100/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="checkout-drop-off-funnel-leakage-detector/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-062" data-search="app-062 checkout-drop-off-funnel-leakage-detector e-commerce checkout drop-off funnel leakage detector كاشف تسرب الزوار في خطوات الدفع وتحديد المرحلة الأكثر إهداراً للمبيعات cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-062</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="E-Commerce Checkout Drop-off Funnel Leakage Detector" data-ar="كاشف تسرب الزوار في خطوات الدفع وتحديد المرحلة الأكثر إهداراً للمبيعات">كاشف تسرب الزوار في خطوات الدفع وتحديد المرحلة الأكثر إهداراً للمبيعات</h3>
+          <p class="catalog-card-desc" data-en="Pinpoint the exact bottleneck where you lose the most revenue across your 4 checkout steps and calculate revenue gained by fixing it." data-ar="Pinpoint the exact bottleneck where you lose the most revenue across your 4 checkout steps and calculate revenue gained by fixing it.">Pinpoint the exact bottleneck where you lose the most revenue across your 4 checkout steps and calculate revenue gained by fixing it.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-ab-test-statistical-significance-calculator/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-063" data-search="app-063 mena-ab-test-statistical-significance-calculator a/b test statistical significance & sample size calculator for mena حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-063</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="A/B Test Statistical Significance & Sample Size Calculator for MENA" data-ar="حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط">حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط</h3>
+          <p class="catalog-card-desc" data-en="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant." data-ar="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant.">Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="lead-form-friction-completion-forecaster/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-064" data-search="app-064 lead-form-friction-completion-forecaster lead gen form field friction & completion rate forecaster مقدر تأثير عدد حقول استمارة التسجيل على نسبة ملء البيانات cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-064</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Lead Gen Form Field Friction & Completion Rate Forecaster" data-ar="مقدر تأثير عدد حقول استمارة التسجيل على نسبة ملء البيانات">مقدر تأثير عدد حقول استمارة التسجيل على نسبة ملء البيانات</h3>
+          <p class="catalog-card-desc" data-en="Model the exact conversion rate penalty of each additional form field and determine the optimal field count to balance lead volume vs lead quality." data-ar="Model the exact conversion rate penalty of each additional form field and determine the optimal field count to balance lead volume vs lead quality.">Model the exact conversion rate penalty of each additional form field and determine the optimal field count to balance lead volume vs lead quality.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="flash-sale-urgency-timer-banner-generator/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-065" data-search="app-065 flash-sale-urgency-timer-banner-generator urgency & scarcity timer banner generator for flash sales مولد شريط العد التنازلي التفاعلي للعروض الخاطفة وعروض اليوم الوطني cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-065</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Urgency & Scarcity Timer Banner Generator for Flash Sales" data-ar="مولد شريط العد التنازلي التفاعلي للعروض الخاطفة وعروض اليوم الوطني">مولد شريط العد التنازلي التفاعلي للعروض الخاطفة وعروض اليوم الوطني</h3>
+          <p class="catalog-card-desc" data-en="Generate a lightweight, zero-dependency, pure HTML/CSS/JS countdown banner with native Arabic typography and RTL layout you can embed anywhere." data-ar="Generate a lightweight, zero-dependency, pure HTML/CSS/JS countdown banner with native Arabic typography and RTL layout you can embed anywhere.">Generate a lightweight, zero-dependency, pure HTML/CSS/JS countdown banner with native Arabic typography and RTL layout you can embed anywhere.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="arabic-cta-microcopy-optimizer/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-066" data-search="app-066 arabic-cta-microcopy-optimizer call-to-action (cta) arabic microcopy optimizer & assessor محسن عبارات الدعوة لاتخاذ إجراء CTA الأكثر جذباً للمستهلك العربي cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-066</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Call-to-Action (CTA) Arabic Microcopy Optimizer & Assessor" data-ar="محسن عبارات الدعوة لاتخاذ إجراء CTA الأكثر جذباً للمستهلك العربي">محسن عبارات الدعوة لاتخاذ إجراء CTA الأكثر جذباً للمستهلك العربي</h3>
+          <p class="catalog-card-desc" data-en="Transform passive Arabic button copy into high-converting, value-driven CTAs categorized by urgency, low-risk, and localized trust triggers." data-ar="Transform passive Arabic button copy into high-converting, value-driven CTAs categorized by urgency, low-risk, and localized trust triggers.">Transform passive Arabic button copy into high-converting, value-driven CTAs categorized by urgency, low-risk, and localized trust triggers.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="value-proposition-5-second-test-evaluator/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-067" data-search="app-067 value-proposition-5-second-test-evaluator value proposition clarity & 5-second test evaluator أداة تقييم وضوح الرسالة التسويقية لصفحة الهبوط في اختبار الـ 5 ثواني الأولى cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-067</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Value Proposition Clarity & 5-Second Test Evaluator" data-ar="أداة تقييم وضوح الرسالة التسويقية لصفحة الهبوط في اختبار الـ 5 ثواني الأولى">أداة تقييم وضوح الرسالة التسويقية لصفحة الهبوط في اختبار الـ 5 ثواني الأولى</h3>
+          <p class="catalog-card-desc" data-en="Audit your above-the-fold Arabic headline, subheadline, and imagery against the 3 core questions of the 5-Second Usability Rule." data-ar="Audit your above-the-fold Arabic headline, subheadline, and imagery against the 3 core questions of the 5-Second Usability Rule.">Audit your above-the-fold Arabic headline, subheadline, and imagery against the 3 core questions of the 5-Second Usability Rule.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mobile-viewport-tap-target-checker/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-068" data-search="app-068 mobile-viewport-tap-target-checker mobile-first responsive layout viewport & tap target checker مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-068</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Mobile-First Responsive Layout Viewport & Tap Target Checker" data-ar="مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة">مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة</h3>
+          <p class="catalog-card-desc" data-en="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines." data-ar="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.">Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="exit-intent-popup-offer-simulator/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-069" data-search="app-069 exit-intent-popup-offer-simulator exit-intent popup offer simulator & discount impact modeler محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-069</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Exit-Intent Popup Offer Simulator & Discount Impact Modeler" data-ar="محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر">محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر</h3>
+          <p class="catalog-card-desc" data-en="Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation." data-ar="Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation.">Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="sticky-footer-buy-bar-configurator/" class="catalog-card" data-category="CRO & Funnel Optimization" data-id="APP-070" data-search="app-070 sticky-footer-buy-bar-configurator sticky footer buy bar & fast-checkout floating bar configurator منشئ شريط الشراء السريع الثابت لأسفل شاشات الهواتف للمتاجر cro & funnel optimization تحسين التحويل وصفحات الهبوط">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-070</span>
+            <span class="catalog-card-cat" data-en="CRO & Funnel Optimization" data-ar="تحسين التحويل وصفحات الهبوط">تحسين التحويل وصفحات الهبوط</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Sticky Footer Buy Bar & Fast-Checkout Floating Bar Configurator" data-ar="منشئ شريط الشراء السريع الثابت لأسفل شاشات الهواتف للمتاجر">منشئ شريط الشراء السريع الثابت لأسفل شاشات الهواتف للمتاجر</h3>
+          <p class="catalog-card-desc" data-en="Generate a lightweight, zero-dependency, sticky bottom mobile buy bar with price, variant picker, and 1-tap checkout that appears on scroll." data-ar="Generate a lightweight, zero-dependency, sticky bottom mobile buy bar with price, variant picker, and 1-tap checkout that appears on scroll.">Generate a lightweight, zero-dependency, sticky bottom mobile buy bar with price, variant picker, and 1-tap checkout that appears on scroll.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="mena-campaign-utm-builder-presets/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-071" data-search="app-071 mena-campaign-utm-builder-presets comprehensive campaign utm builder with mena channel presets منشئ روابط التتبع UTM الشامل بقوالب مجهزة لمنصات الشرق الأوسط marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-071</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Comprehensive Campaign UTM Builder with MENA Channel Presets" data-ar="منشئ روابط التتبع UTM الشامل بقوالب مجهزة لمنصات الشرق الأوسط">منشئ روابط التتبع UTM الشامل بقوالب مجهزة لمنصات الشرق الأوسط</h3>
+          <p class="catalog-card-desc" data-en="Generate standardized, clean, lowercase UTM tracking links with one-click presets for MENA-dominant channels (Snapchat, TikTok, WhatsApp, SMS, Meta)." data-ar="Generate standardized, clean, lowercase UTM tracking links with one-click presets for MENA-dominant channels (Snapchat, TikTok, WhatsApp, SMS, Meta).">Generate standardized, clean, lowercase UTM tracking links with one-click presets for MENA-dominant channels (Snapchat, TikTok, WhatsApp, SMS, Meta).</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="multi-touch-attribution-weighting-simulator/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-072" data-search="app-072 multi-touch-attribution-weighting-simulator multi-touch attribution weighting model simulator محاكي نماذج العزو التسويقي: أول نقرة، آخر نقرة، خطي، وتناقص زمني marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-072</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Multi-Touch Attribution Weighting Model Simulator" data-ar="محاكي نماذج العزو التسويقي: أول نقرة، آخر نقرة، خطي، وتناقص زمني">محاكي نماذج العزو التسويقي: أول نقرة، آخر نقرة، خطي، وتناقص زمني</h3>
+          <p class="catalog-card-desc" data-en="Simulate and compare campaign revenue distribution across First-Click, Last-Click, Linear, Time-Decay, and Position-Based (40-20-40) attribution models." data-ar="Simulate and compare campaign revenue distribution across First-Click, Last-Click, Linear, Time-Decay, and Position-Based (40-20-40) attribution models.">Simulate and compare campaign revenue distribution across First-Click, Last-Click, Linear, Time-Decay, and Position-Based (40-20-40) attribution models.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="channel-marginal-roi-budget-reallocator/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-073" data-search="app-073 channel-marginal-roi-budget-reallocator marketing channel budget reallocation & marginal roi planner مخطط إعادة توزيع الميزانيات بين القنوات التسويقية بناءً على العائد الحدي marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-073</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Marketing Channel Budget Reallocation & Marginal ROI Planner" data-ar="مخطط إعادة توزيع الميزانيات بين القنوات التسويقية بناءً على العائد الحدي">مخطط إعادة توزيع الميزانيات بين القنوات التسويقية بناءً على العائد الحدي</h3>
+          <p class="catalog-card-desc" data-en="Calculate diminishing marginal returns across your ad channels and find the optimal budget reallocation to maximize total cross-channel revenue." data-ar="Calculate diminishing marginal returns across your ad channels and find the optimal budget reallocation to maximize total cross-channel revenue.">Calculate diminishing marginal returns across your ad channels and find the optimal budget reallocation to maximize total cross-channel revenue.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="customer-churn-retention-cohort-analyzer/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-074" data-search="app-074 customer-churn-retention-cohort-analyzer customer churn rate & retention cohort analyzer محلل معدل تسرب العملاء والاحتفاظ بهم لمشروعات الاشتراكات والتجارة المتكررة marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-074</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Customer Churn Rate & Retention Cohort Analyzer" data-ar="محلل معدل تسرب العملاء والاحتفاظ بهم لمشروعات الاشتراكات والتجارة المتكررة">محلل معدل تسرب العملاء والاحتفاظ بهم لمشروعات الاشتراكات والتجارة المتكررة</h3>
+          <p class="catalog-card-desc" data-en="Calculate your exact monthly churn rate, customer half-life, and retention cohort decay curve with interactive visual cohort matrix." data-ar="Calculate your exact monthly churn rate, customer half-life, and retention cohort decay curve with interactive visual cohort matrix.">Calculate your exact monthly churn rate, customer half-life, and retention cohort decay curve with interactive visual cohort matrix.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="net-promoter-score-sentiment-calculator/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-075" data-search="app-075 net-promoter-score-sentiment-calculator net promoter score (nps) & customer sentiment index calculator حاسبة مؤشر صافي الترويج NPS وتصنيف العملاء المروجين والمحايدين والمنتقدين marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-075</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Net Promoter Score (NPS) & Customer Sentiment Index Calculator" data-ar="حاسبة مؤشر صافي الترويج NPS وتصنيف العملاء المروجين والمحايدين والمنتقدين">حاسبة مؤشر صافي الترويج NPS وتصنيف العملاء المروجين والمحايدين والمنتقدين</h3>
+          <p class="catalog-card-desc" data-en="Calculate your exact official Net Promoter Score (-100 to +100), classify Promoters, Passives, and Detractors, and benchmark against MENA retail averages." data-ar="Calculate your exact official Net Promoter Score (-100 to +100), classify Promoters, Passives, and Detractors, and benchmark against MENA retail averages.">Calculate your exact official Net Promoter Score (-100 to +100), classify Promoters, Passives, and Detractors, and benchmark against MENA retail averages.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="ad-ctr-to-landing-page-conversion-diagnostic/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-076" data-search="app-076 ad-ctr-to-landing-page-conversion-diagnostic ad click-through rate (ctr) to landing page conversion diagnostic أداة تشخيص التوافق بين نقرات الإعلان ومعدل تحويل صفحة الهبوط Message Match marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-076</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Ad Click-Through Rate (CTR) to Landing Page Conversion Diagnostic" data-ar="أداة تشخيص التوافق بين نقرات الإعلان ومعدل تحويل صفحة الهبوط Message Match">أداة تشخيص التوافق بين نقرات الإعلان ومعدل تحويل صفحة الهبوط Message Match</h3>
+          <p class="catalog-card-desc" data-en="Diagnose the exact root cause behind high CTR with low conversion (or vice versa) using the 4-Quadrant Funnel Diagnostic Matrix." data-ar="Diagnose the exact root cause behind high CTR with low conversion (or vice versa) using the 4-Quadrant Funnel Diagnostic Matrix.">Diagnose the exact root cause behind high CTR with low conversion (or vice versa) using the 4-Quadrant Funnel Diagnostic Matrix.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="customer-acquisition-payback-period-calculator/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-077" data-search="app-077 customer-acquisition-payback-period-calculator customer acquisition payback period calculator حاسبة فترة استرداد تكلفة اكتساب العميل في الأعمال المتكررة marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-077</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Customer Acquisition Payback Period Calculator" data-ar="حاسبة فترة استرداد تكلفة اكتساب العميل في الأعمال المتكررة">حاسبة فترة استرداد تكلفة اكتساب العميل في الأعمال المتكررة</h3>
+          <p class="catalog-card-desc" data-en="Calculate your exact CAC Payback Period in months and determine working capital runway needed to sustain ad spend scaling." data-ar="Calculate your exact CAC Payback Period in months and determine working capital runway needed to sustain ad spend scaling.">Calculate your exact CAC Payback Period in months and determine working capital runway needed to sustain ad spend scaling.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="paid-search-impression-share-lost-budget-forecaster/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-078" data-search="app-078 paid-search-impression-share-lost-budget-forecaster paid search impression share & lost budget due to rank forecaster محلل حصة ظهور الإعلانات المفقودة بسبب الميزانية أو رتبة الإعلان marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-078</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Paid Search Impression Share & Lost Budget Due to Rank Forecaster" data-ar="محلل حصة ظهور الإعلانات المفقودة بسبب الميزانية أو رتبة الإعلان">محلل حصة ظهور الإعلانات المفقودة بسبب الميزانية أو رتبة الإعلان</h3>
+          <p class="catalog-card-desc" data-en="Diagnose lost search impressions between budget constraints vs poor Ad Rank and calculate additional clicks available from fixing each." data-ar="Diagnose lost search impressions between budget constraints vs poor Ad Rank and calculate additional clicks available from fixing each.">Diagnose lost search impressions between budget constraints vs poor Ad Rank and calculate additional clicks available from fixing each.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="marketing-kpi-executive-scorecard-generator/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-079" data-search="app-079 marketing-kpi-executive-scorecard-generator marketing kpi executive dashboard scorecard generator مولد بطاقة قياس الأداء التسويقي التنفيذية الشهرية لتقارير الإدارة والعملاء marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-079</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Marketing KPI Executive Dashboard Scorecard Generator" data-ar="مولد بطاقة قياس الأداء التسويقي التنفيذية الشهرية لتقارير الإدارة والعملاء">مولد بطاقة قياس الأداء التسويقي التنفيذية الشهرية لتقارير الإدارة والعملاء</h3>
+          <p class="catalog-card-desc" data-en="Generate a clean, printable, bilingual executive marketing scorecard summarizing Spend, Revenue, Blended ROAS, CAC, and MoM deltas in seconds." data-ar="Generate a clean, printable, bilingual executive marketing scorecard summarizing Spend, Revenue, Blended ROAS, CAC, and MoM deltas in seconds.">Generate a clean, printable, bilingual executive marketing scorecard summarizing Spend, Revenue, Blended ROAS, CAC, and MoM deltas in seconds.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="romi-net-profit-marketing-modeler/" class="catalog-card" data-category="Marketing Analytics & Attribution" data-id="APP-080" data-search="app-080 romi-net-profit-marketing-modeler return on marketing investment (romi) & net profit modeler حاسبة العائد الحقيقي على الاستثمار التسويقي ROMI بعد خصم نفقات الفريق والأدوات marketing analytics & attribution التحليلات ونسب الإسناد">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-080</span>
+            <span class="catalog-card-cat" data-en="Marketing Analytics & Attribution" data-ar="التحليلات ونسب الإسناد">التحليلات ونسب الإسناد</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Return on Marketing Investment (ROMI) & Net Profit Modeler" data-ar="حاسبة العائد الحقيقي على الاستثمار التسويقي ROMI بعد خصم نفقات الفريق والأدوات">حاسبة العائد الحقيقي على الاستثمار التسويقي ROMI بعد خصم نفقات الفريق والأدوات</h3>
+          <p class="catalog-card-desc" data-en="Calculate your true Return on Marketing Investment (ROMI) and net dollar profit contribution accounting for all overhead, retainers, and tools." data-ar="Calculate your true Return on Marketing Investment (ROMI) and net dollar profit contribution accounting for all overhead, retainers, and tools.">Calculate your true Return on Marketing Investment (ROMI) and net dollar profit contribution accounting for all overhead, retainers, and tools.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gcc-b2b-cpql-pipeline-velocity-calculator/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-081" data-search="app-081 gcc-b2b-cpql-pipeline-velocity-calculator gcc b2b cost per qualified lead (cpql) & pipeline velocity calculator حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-081</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="GCC B2B Cost Per Qualified Lead (CPQL) & Pipeline Velocity Calculator" data-ar="حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج">حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج</h3>
+          <p class="catalog-card-desc" data-en="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD." data-ar="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.">Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="egypt-uae-real-estate-ad-spend-commission-simulator/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-082" data-search="app-082 egypt-uae-real-estate-ad-spend-commission-simulator egypt & uae real estate broker ad spend to commission ratio simulator محاكي نسبة الإنفاق الإعلاني إلى عمولة الوسطاء العقاريين في مصر ودبي b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-082</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egypt & UAE Real Estate Broker Ad Spend to Commission Ratio Simulator" data-ar="محاكي نسبة الإنفاق الإعلاني إلى عمولة الوسطاء العقاريين في مصر ودبي">محاكي نسبة الإنفاق الإعلاني إلى عمولة الوسطاء العقاريين في مصر ودبي</h3>
+          <p class="catalog-card-desc" data-en="Simulate ad spend runway, closing ratios, and net broker take-home profit after splits and platform ad costs for property sales." data-ar="Simulate ad spend runway, closing ratios, and net broker take-home profit after splits and platform ad costs for property sales.">Simulate ad spend runway, closing ratios, and net broker take-home profit after splits and platform ad costs for property sales.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="b2b-lead-scoring-matrix-assessor/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-083" data-search="app-083 b2b-lead-scoring-matrix-assessor lead scoring matrix & sales hand-off qualification assessor مصفوفة تقييم جودة العملاء المحتملين MQL to SQL لتحديد أولويات المبيعات b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-083</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Lead Scoring Matrix & Sales Hand-Off Qualification Assessor" data-ar="مصفوفة تقييم جودة العملاء المحتملين MQL to SQL لتحديد أولويات المبيعات">مصفوفة تقييم جودة العملاء المحتملين MQL to SQL لتحديد أولويات المبيعات</h3>
+          <p class="catalog-card-desc" data-en="Build a custom, weighted BANT (Budget, Authority, Need, Timeline) lead scoring model (0-100) and establish unambiguous MQL-to-SQL hand-off thresholds." data-ar="Build a custom, weighted BANT (Budget, Authority, Need, Timeline) lead scoring model (0-100) and establish unambiguous MQL-to-SQL hand-off thresholds.">Build a custom, weighted BANT (Budget, Authority, Need, Timeline) lead scoring model (0-100) and establish unambiguous MQL-to-SQL hand-off thresholds.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="high-ticket-service-proposal-pricing-calculator/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-084" data-search="app-084 high-ticket-service-proposal-pricing-calculator high-ticket service proposal pricing & margin calculator حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-084</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="High-Ticket Service Proposal Pricing & Margin Calculator" data-ar="حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل">حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل</h3>
+          <p class="catalog-card-desc" data-en="Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins." data-ar="Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins.">Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="cold-outreach-email-sequence-timing-planner/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-085" data-search="app-085 cold-outreach-email-sequence-timing-planner cold outreach email sequence timing & follow-up planner مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري الشركات b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-085</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Cold Outreach Email Sequence Timing & Follow-up Planner" data-ar="مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري الشركات">مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري الشركات</h3>
+          <p class="catalog-card-desc" data-en="Generate a psychologically optimized 5-touch B2B cold email cadence with optimal day-delays and localized MENA workweek timing (accounting for Friday/Saturday weekends)." data-ar="Generate a psychologically optimized 5-touch B2B cold email cadence with optimal day-delays and localized MENA workweek timing (accounting for Friday/Saturday weekends).">Generate a psychologically optimized 5-touch B2B cold email cadence with optimal day-delays and localized MENA workweek timing (accounting for Friday/Saturday weekends).</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="event-webinar-attendee-show-up-optimizer/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-086" data-search="app-086 event-webinar-attendee-show-up-optimizer event & webinar attendee drop-off & show-up rate optimizer حاسبة ومحسن نسب حضور الفعاليات والندوات عبر الإنترنت في المنطقة b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-086</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Event & Webinar Attendee Drop-off & Show-Up Rate Optimizer" data-ar="حاسبة ومحسن نسب حضور الفعاليات والندوات عبر الإنترنت في المنطقة">حاسبة ومحسن نسب حضور الفعاليات والندوات عبر الإنترنت في المنطقة</h3>
+          <p class="catalog-card-desc" data-en="Model expected webinar show-up attendance, identify reminder drop-off stages, and configure WhatsApp/SMS reminder cadences to boost attendance above 45%." data-ar="Model expected webinar show-up attendance, identify reminder drop-off stages, and configure WhatsApp/SMS reminder cadences to boost attendance above 45%.">Model expected webinar show-up attendance, identify reminder drop-off stages, and configure WhatsApp/SMS reminder cadences to boost attendance above 45%.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="agency-retainer-profitability-capacity-meter/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-087" data-search="app-087 agency-retainer-profitability-capacity-meter agency client retainer profitability & capacity utilization meter مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-087</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Agency Client Retainer Profitability & Capacity Utilization Meter" data-ar="مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق">مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق</h3>
+          <p class="catalog-card-desc" data-en="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts." data-ar="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.">Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="real-estate-project-launch-ad-sizer/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-088" data-search="app-088 real-estate-project-launch-ad-sizer real estate property launch ad budget sizer by unit inventory حاسبة ميزانية إطلاق المشروعات العقارية حسب عدد الوحدات وسعر المتر b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-088</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Real Estate Property Launch Ad Budget Sizer by Unit Inventory" data-ar="حاسبة ميزانية إطلاق المشروعات العقارية حسب عدد الوحدات وسعر المتر">حاسبة ميزانية إطلاق المشروعات العقارية حسب عدد الوحدات وسعر المتر</h3>
+          <p class="catalog-card-desc" data-en="Calculate the total required marketing budget and monthly lead generation targets required to sell out a property development project on schedule." data-ar="Calculate the total required marketing budget and monthly lead generation targets required to sell out a property development project on schedule.">Calculate the total required marketing budget and monthly lead generation targets required to sell out a property development project on schedule.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="b2b-referral-partner-commission-calculator/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-089" data-search="app-089 b2b-referral-partner-commission-calculator b2b referral & partner commission incentive calculator حاسبة حوافز وعمولات الإحالة والشراكات الإستراتيجية للأعمال B2B b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-089</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="B2B Referral & Partner Commission Incentive Calculator" data-ar="حاسبة حوافز وعمولات الإحالة والشراكات الإستراتيجية للأعمال B2B">حاسبة حوافز وعمولات الإحالة والشراكات الإستراتيجية للأعمال B2B</h3>
+          <p class="catalog-card-desc" data-en="Model referral commission structures (First-Year percentage vs Recurring trailing commission) and calculate partner earnings vs company customer lifetime profit." data-ar="Model referral commission structures (First-Year percentage vs Recurring trailing commission) and calculate partner earnings vs company customer lifetime profit.">Model referral commission structures (First-Year percentage vs Recurring trailing commission) and calculate partner earnings vs company customer lifetime profit.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="customer-case-study-storyboard-structurer/" class="catalog-card" data-category="B2B Marketing & Lead Gen" data-id="APP-090" data-search="app-090 customer-case-study-storyboard-structurer customer testimonial & case study storyboard structurer منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع العملاء المحتملين b2b marketing & lead gen التسويق بين الشركات والعملاء المحتملين">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-090</span>
+            <span class="catalog-card-cat" data-en="B2B Marketing & Lead Gen" data-ar="التسويق بين الشركات والعملاء المحتملين">التسويق بين الشركات والعملاء المحتملين</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Customer Testimonial & Case Study Storyboard Structurer" data-ar="منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع العملاء المحتملين">منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع العملاء المحتملين</h3>
+          <p class="catalog-card-desc" data-en="Transform raw client notes into a compelling, metric-driven B2B case study storyboard formatted in Arabic and English following the STAR framework." data-ar="Transform raw client notes into a compelling, metric-driven B2B case study storyboard formatted in Arabic and English following the STAR framework.">Transform raw client notes into a compelling, metric-driven B2B case study storyboard formatted in Arabic and English following the STAR framework.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="white-friday-black-november-discount-forecaster/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-091" data-search="app-091 white-friday-black-november-discount-forecaster white friday / black november mega-sale discount & stock forecaster مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح وحجم المبيعات growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-091</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="White Friday / Black November Mega-Sale Discount & Stock Forecaster" data-ar="مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح وحجم المبيعات">مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح وحجم المبيعات</h3>
+          <p class="catalog-card-desc" data-en="Model discounted unit economics, inventory clearance targets, and ad spend thresholds for White Friday and Singles Day sales." data-ar="Model discounted unit economics, inventory clearance targets, and ad spend thresholds for White Friday and Singles Day sales.">Model discounted unit economics, inventory clearance targets, and ad spend thresholds for White Friday and Singles Day sales.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="egypt-bank-card-limit-ad-spend-router/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-092" data-search="app-092 egypt-bank-card-limit-ad-spend-router egypt bank card limit multi-account ad spend routing planner مخطط توزيع ميزانيات الإعلانات على بطاقات بنكية متعددة وفق حدود تدبير العملة growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-092</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Egypt Bank Card Limit Multi-Account Ad Spend Routing Planner" data-ar="مخطط توزيع ميزانيات الإعلانات على بطاقات بنكية متعددة وفق حدود تدبير العملة">مخطط توزيع ميزانيات الإعلانات على بطاقات بنكية متعددة وفق حدود تدبير العملة</h3>
+          <p class="catalog-card-desc" data-en="Plan and distribute your monthly foreign currency ad spend across multiple bank accounts and cards without exceeding monthly credit limits." data-ar="Plan and distribute your monthly foreign currency ad spend across multiple bank accounts and cards without exceeding monthly credit limits.">Plan and distribute your monthly foreign currency ad spend across multiple bank accounts and cards without exceeding monthly credit limits.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="gcc-market-entry-expansion-ad-budget-sizer/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-093" data-search="app-093 gcc-market-entry-expansion-ad-budget-sizer gcc market entry expansion ad budget sizer حاسبة تقدير ميزانية التوسع ودخول أسواق خليجية جديدة KSA, UAE, Kuwait growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-093</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="GCC Market Entry Expansion Ad Budget Sizer" data-ar="حاسبة تقدير ميزانية التوسع ودخول أسواق خليجية جديدة KSA, UAE, Kuwait">حاسبة تقدير ميزانية التوسع ودخول أسواق خليجية جديدة KSA, UAE, Kuwait</h3>
+          <p class="catalog-card-desc" data-en="Calculate realistic market entry media budgets, expected customer acquisition costs, and 90-day cash requirements for entering KSA, UAE, and Kuwait." data-ar="Calculate realistic market entry media budgets, expected customer acquisition costs, and 90-day cash requirements for entering KSA, UAE, and Kuwait.">Calculate realistic market entry media budgets, expected customer acquisition costs, and 90-day cash requirements for entering KSA, UAE, and Kuwait.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="freemium-to-paid-tier-conversion-simulator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-094" data-search="app-094 freemium-to-paid-tier-conversion-simulator freemium to paid tier conversion economics simulator محاكي تحويل المستخدمين المجانيين إلى باقات مدفوعة في التطبيقات والخدمات growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-094</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Freemium to Paid Tier Conversion Economics Simulator" data-ar="محاكي تحويل المستخدمين المجانيين إلى باقات مدفوعة في التطبيقات والخدمات">محاكي تحويل المستخدمين المجانيين إلى باقات مدفوعة في التطبيقات والخدمات</h3>
+          <p class="catalog-card-desc" data-en="Simulate free-to-paid conversion funnels, server cost drag per free user, and optimize feature gating to achieve a sustainable 4%+ conversion rate." data-ar="Simulate free-to-paid conversion funnels, server cost drag per free user, and optimize feature gating to achieve a sustainable 4%+ conversion rate.">Simulate free-to-paid conversion funnels, server cost drag per free user, and optimize feature gating to achieve a sustainable 4%+ conversion rate.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="dynamic-price-elasticity-demand-estimator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-095" data-search="app-095 dynamic-price-elasticity-demand-estimator dynamic price elasticity of demand estimator مقدر مرونة الطلب السعرية وتأثير تعديل الأسعار على إجمالي الإيرادات growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-095</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Dynamic Price Elasticity of Demand Estimator" data-ar="مقدر مرونة الطلب السعرية وتأثير تعديل الأسعار على إجمالي الإيرادات">مقدر مرونة الطلب السعرية وتأثير تعديل الأسعار على إجمالي الإيرادات</h3>
+          <p class="catalog-card-desc" data-en="Calculate your product's Price Elasticity of Demand (PED) and determine whether raising or lowering prices maximizes total gross revenue." data-ar="Calculate your product's Price Elasticity of Demand (PED) and determine whether raising or lowering prices maximizes total gross revenue.">Calculate your product's Price Elasticity of Demand (PED) and determine whether raising or lowering prices maximizes total gross revenue.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="referral-viral-coefficient-k-factor-simulator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-096" data-search="app-096 referral-viral-coefficient-k-factor-simulator referral viral coefficient (k-factor) & growth loop simulator محاكي معامل الانتشار الفيروسي K-factor لبرامج دعوة الأصدقاء والنمو الذاتي growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-096</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Referral Viral Coefficient (K-Factor) & Growth Loop Simulator" data-ar="محاكي معامل الانتشار الفيروسي K-factor لبرامج دعوة الأصدقاء والنمو الذاتي">محاكي معامل الانتشار الفيروسي K-factor لبرامج دعوة الأصدقاء والنمو الذاتي</h3>
+          <p class="catalog-card-desc" data-en="Calculate your viral coefficient (K-Factor) and simulate exponential customer growth compounding cycles." data-ar="Calculate your viral coefficient (K-Factor) and simulate exponential customer growth compounding cycles.">Calculate your viral coefficient (K-Factor) and simulate exponential customer growth compounding cycles.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (97/100)" data-ar="جاهز (97/100)">جاهز (97/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="agency-pitch-budget-recommendation-deck-generator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-097" data-search="app-097 agency-pitch-budget-recommendation-deck-generator marketing agency pitch roi & client budget recommendation deck generator مولد توصيات الميزانيات وتوقعات العائد لعروض وكالات التسويق growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-097</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Marketing Agency Pitch ROI & Client Budget Recommendation Deck Generator" data-ar="مولد توصيات الميزانيات وتوقعات العائد لعروض وكالات التسويق">مولد توصيات الميزانيات وتوقعات العائد لعروض وكالات التسويق</h3>
+          <p class="catalog-card-desc" data-en="Generate a structured, 3-tier client media budget proposal (Conservative, Growth, Aggressive) with projected conversions, revenue, and expected ROAS." data-ar="Generate a structured, 3-tier client media budget proposal (Conservative, Growth, Aggressive) with projected conversions, revenue, and expected ROAS.">Generate a structured, 3-tier client media budget proposal (Conservative, Growth, Aggressive) with projected conversions, revenue, and expected ROAS.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="annual-marketing-budget-quarterly-allocator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-098" data-search="app-098 annual-marketing-budget-quarterly-allocator annual digital marketing budget allocation by quarter & season مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-098</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Annual Digital Marketing Budget Allocation by Quarter & Season" data-ar="مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة">مخطط توزيع الميزانية التسويقية السنوية حسب المواسم وأرباع السنة</h3>
+          <p class="catalog-card-desc" data-en="Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity." data-ar="Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity.">Distribute your annual marketing budget across Q1, Q2, Q3, and Q4 weighted by MENA seasonal shopping peaks and historical retail spending velocity.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="competitive-ad-share-of-voice-sov-calculator/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-099" data-search="app-099 competitive-ad-share-of-voice-sov-calculator competitive ad spend share of voice (sov) & market share predictor حاسبة حصة الصوت الإعلاني SOV ومقارنتها بالحصة السوقية للمنافسين growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-099</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Competitive Ad Spend Share of Voice (SOV) & Market Share Predictor" data-ar="حاسبة حصة الصوت الإعلاني SOV ومقارنتها بالحصة السوقية للمنافسين">حاسبة حصة الصوت الإعلاني SOV ومقارنتها بالحصة السوقية للمنافسين</h3>
+          <p class="catalog-card-desc" data-en="Calculate your Share of Voice (SOV), compare against your current Market Share (SOM), and predict market share growth using the proven ESOV rule." data-ar="Calculate your Share of Voice (SOV), compare against your current Market Share (SOM), and predict market share growth using the proven ESOV rule.">Calculate your Share of Voice (SOV), compare against your current Market Share (SOM), and predict market share growth using the proven ESOV rule.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (98/100)" data-ar="جاهز (98/100)">جاهز (98/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <a href="customer-winback-dormant-reactivation-roi-modeler/" class="catalog-card" data-category="Growth Strategy & Seasonal Pricing" data-id="APP-100" data-search="app-100 customer-winback-dormant-reactivation-roi-modeler customer win-back & dormant account reactivation roi modeler محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة growth strategy & seasonal pricing استراتيجيات النمو والمواسم">
+        <div>
+          <div class="catalog-card-header">
+            <span class="catalog-card-id">APP-100</span>
+            <span class="catalog-card-cat" data-en="Growth Strategy & Seasonal Pricing" data-ar="استراتيجيات النمو والمواسم">استراتيجيات النمو والمواسم</span>
+          </div>
+          <h3 class="catalog-card-title" data-en="Customer Win-Back & Dormant Account Reactivation ROI Modeler" data-ar="محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة">محاكي عائد حملات إعادة تنشيط العملاء القدامى والخاملين لمتاجر التجزئة</h3>
+          <p class="catalog-card-desc" data-en="Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers." data-ar="Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers.">Calculate projected revenue, optimal reactivation discount incentives, and net profit from deploying WhatsApp/SMS win-back campaigns to lapsed customers.</p>
+        </div>
+        <div class="catalog-card-footer">
+          <span style="display:inline-flex;align-items:center;gap:0.35rem;">
+            <span style="color:var(--success);">&#9679;</span>
+            <span data-en="Ready (99/100)" data-ar="جاهز (99/100)">جاهز (99/100)</span>
+          </span>
+          <span data-en="Launch Tool &rarr;" data-ar="فتح الأداة &larr;">فتح الأداة &larr;</span>
+        </div>
+      </a>
+      <div class="no-results" id="no-results">
+        <h3 data-en="No tools found matching your search" data-ar="لم يتم العثور على أدوات تطابق بحثك">لم يتم العثور على أدوات تطابق بحثك</h3>
+        <p data-en="Try searching for another keyword or select 'All' categories." data-ar="جرب البحث بكلمة مفتاحية أخرى أو اختر تصنيف 'الكل'.">جرب البحث بكلمة مفتاحية أخرى أو اختر تصنيف 'الكل'.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.875rem;color:var(--text-dim);">
+      <p data-en="DM Static App Suite v2.0 • Deterministic Client-Side Engineering • Built for Cloudflare Pages" data-ar="منظومة تطبيقات التسويق الرقمي الثابتة v2.0 • هندسة برمجية متصفحية محضة • مهيأة للنشر على Cloudflare Pages">منظومة تطبيقات التسويق الرقمي الثابتة v2.0 • هندسة برمجية متصفحية محضة • مهيأة للنشر على Cloudflare Pages</p>
+      <p style="margin-top:0.35rem;" data-en="Verified with Zero External Network Calls & Fully Preserved User Privacy" data-ar="تم الفحص والتدقيق: خالية تماماً من أي اتصالات خارجية وتضمن الخصوصية الكاملة">تم الفحص والتدقيق: خالية تماماً من أي اتصالات خارجية وتضمن الخصوصية الكاملة</p>
+    </footer>
+  </div>
+
+  <script src="shared/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var searchInput = document.getElementById('catalog-search');
+      var filterButtons = document.querySelectorAll('.cluster-btn');
+      var cards = document.querySelectorAll('.catalog-card');
+      var resultsCount = document.getElementById('results-count');
+      var noResults = document.getElementById('no-results');
+      var currentCategory = 'All';
+
+      function filterCatalog() {
+        var query = searchInput.value.toLowerCase().trim();
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+          var cardCategory = card.getAttribute('data-category');
+          var searchData = card.getAttribute('data-search') || '';
+
+          var matchesCategory = (currentCategory === 'All' || cardCategory === currentCategory);
+          var matchesQuery = (!query || searchData.indexOf(query) !== -1);
+
+          if (matchesCategory && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        resultsCount.textContent = visibleCount;
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+
+      searchInput.addEventListener('input', filterCatalog);
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          currentCategory = this.getAttribute('data-filter');
+          filterCatalog();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -26,7 +26,7 @@ jobs:
         run: |
           python scripts/prepare-indexability.py --root .
           mkdir -p _site
-          cp -R index.html ar assets assistants blog frameworks labs marketing-systems playbooks skill-areas skills privacy llms.txt robots.txt sitemap.xml 8ad81cc476a34605776ffdcd3d8a113b.txt .nojekyll _site/
+          cp -R index.html ar apps assets assistants blog frameworks labs marketing-systems playbooks skill-areas skills privacy llms.txt robots.txt sitemap.xml 8ad81cc476a34605776ffdcd3d8a113b.txt .nojekyll _site/
           rm -f _site/README.md
       - name: Add privacy choices to public pages
         run: |
@@ -36,6 +36,8 @@ jobs:
           root = Path('_site')
           script = '<script defer src="/assets/privacy-consent.js?v=20261027-consent-v4"></script>'
           for page in root.rglob('*.html'):
+              if page.relative_to(root).parts[0] == 'apps':
+                  continue
               html = page.read_text(encoding='utf-8')
               if 'privacy-consent.js' in html or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', html, re.I):
                   continue

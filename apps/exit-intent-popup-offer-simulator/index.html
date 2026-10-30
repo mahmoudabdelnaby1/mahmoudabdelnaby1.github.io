@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Exit-Intent Popup Offer Simulator & Discount Impact Modeler | DM Static App Suite" data-ar="محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر | منظومة أدوات التسويق الرقمي">محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر | منظومة أدوات التسويق الرقمي</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/exit-intent-popup-offer-simulator/">
+  <meta name="description" content="Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation.">
+  <link rel="stylesheet" href="../shared/shared.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <span class="brand-badge">APP-069</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="CRO & Funnel Optimization" data-ar="CRO & Funnel Optimization">CRO & Funnel Optimization</div>
+      <h1 class="app-title" data-en="Exit-Intent Popup Offer Simulator & Discount Impact Modeler" data-ar="محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر">محاكي عروض نوافذ نية الخروج وحساب صافي الربح من الخصم المعروض للمتاجر</h1>
+      <p class="app-promise" data-en="Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation." data-ar="Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation.">Model the net profitability of exit-intent discount offers to find the sweet spot between shopper recovery rate and gross margin preservation.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="monthly_bouncing_visitors">
+              <span data-en="Monthly Bouncing Visitors" data-ar="عدد الزوار المغادرين شهرياً">عدد الزوار المغادرين شهرياً</span><span class="required">*</span>
+            </label>
+            <input type="number" id="monthly_bouncing_visitors" class="form-control" value="" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="average_order_value">
+              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب">متوسط قيمة الطلب</span><span class="required">*</span>
+            </label>
+            <input type="number" id="average_order_value" class="form-control" value="280" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gross_margin_pct">
+              <span data-en="Store Gross Margin %" data-ar="هامش الربح الإجمالي للمتجر %">هامش الربح الإجمالي للمتجر %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="gross_margin_pct" class="form-control" value="" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="exit_discount_pct">
+              <span data-en="Exit Discount Offered % (e.g. 10%)" data-ar="نسبة الخصم المعروضة في نافذة الخروج %">نسبة الخصم المعروضة في نافذة الخروج %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="exit_discount_pct" class="form-control" value="" step="1">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Projected Recovered Orders (at 3% baseline conversion)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Gross Revenue Recovered from Bouncing Traffic</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Net Profit Realized After Discount Deductions</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Projected Recovered Orders (at 3% baseline conversion)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Gross Revenue Recovered from Bouncing Traffic</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Net Profit Realized After Discount Deductions</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Discount Breakeven Limit (Maximum allowable exit discount before margin loss)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Live Interactive Arabic Exit-Popup HTML/CSS Preview Card</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://cxl.com/blog/exit-intent-popups/" target="_blank" rel="noopener noreferrer">https://cxl.com/blog/exit-intent-popups/</a> (2026-10-29) &mdash; CXL conversion research showing exit popups recover 2-4% of abandoning visitors when paired with targeted, margin-safe incentives.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> E-commerce exit-intent conversion rate distribution benchmarks &mdash; <a href="https://cxl.com" target="_blank" rel="noopener noreferrer">https://cxl.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
+        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-069 • Exit-Intent Popup Offer Simulator & Discount Impact Modeler</p>
+      <p style="margin-top:0.25rem;">DM Static App Suite v2.0 • Deterministic Client-Side Engineering</p>
+    </footer>
+  </div>
+
+  <script src="../shared/shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="High-Ticket Service Proposal Pricing & Margin Calculator | DM Static App Suite" data-ar="حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل | منظومة أدوات التسويق الرقمي">حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل | منظومة أدوات التسويق الرقمي</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/high-ticket-service-proposal-pricing-calculator/">
+  <meta name="description" content="Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins.">
+  <link rel="stylesheet" href="../shared/shared.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <span class="brand-badge">APP-084</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing & Lead Gen</div>
+      <h1 class="app-title" data-en="High-Ticket Service Proposal Pricing & Margin Calculator" data-ar="حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل">حاسبة تسعير عروض الخدمات المرتفعة القيمة وهامش الربح وساعات العمل</h1>
+      <p class="app-promise" data-en="Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins." data-ar="Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins.">Calculate accurate, profitable project proposal fees based on billable labor hours, executive review buffer, and target net profit margins.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="estimated_delivery_hours">
+              <span data-en="Total Team Delivery Hours" data-ar="ساعات العمل المتوقعة للتنفيذ">ساعات العمل المتوقعة للتنفيذ</span><span class="required">*</span>
+            </label>
+            <input type="number" id="estimated_delivery_hours" class="form-control" value="" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="average_team_hourly_cost">
+              <span data-en="Blended Team Hourly Labor Cost" data-ar="متوسط تكلفة ساعة الفريق">متوسط تكلفة ساعة الفريق</span><span class="required">*</span>
+            </label>
+            <input type="number" id="average_team_hourly_cost" class="form-control" value="" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="scope_creep_buffer_pct">
+              <span data-en="Scope Creep & Client Revision Buffer % (Default: 20%)" data-ar="نسبة طوارئ التعديلات والاجتماعات %">نسبة طوارئ التعديلات والاجتماعات %</span>
+            </label>
+            <input type="number" id="scope_creep_buffer_pct" class="form-control" value="" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="target_profit_margin_pct">
+              <span data-en="Desired Agency Net Margin % (e.g. 35%)" data-ar="هامش الربح الصافي المستهدف %">هامش الربح الصافي المستهدف %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="target_profit_margin_pct" class="form-control" value="45" step="1">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Recommended Proposal Selling Price</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Total Estimated Internal Delivery Cost</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Net Profit Contribution Dollar/SAR Amount</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Recommended Proposal Selling Price</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Total Estimated Internal Delivery Cost</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Net Profit Contribution Dollar/SAR Amount</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Effective Hourly Billing Rate</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Three-Option Proposal Tier Matrix (Anchor / Recommended / Minimum)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.bain.com/insights/pricing-for-value/" target="_blank" rel="noopener noreferrer">https://www.bain.com/insights/pricing-for-value/</a> (2026-10-29) &mdash; Bain consulting pricing frameworks on value-based pricing and cost-plus labor margin preservation in professional services.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Agency pricing benchmarks and billable utilization standards for professional services &mdash; <a href="https://www.bain.com" target="_blank" rel="noopener noreferrer">https://www.bain.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
+        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-084 • High-Ticket Service Proposal Pricing & Margin Calculator</p>
+      <p style="margin-top:0.25rem;">DM Static App Suite v2.0 • Deterministic Client-Side Engineering</p>
+    </footer>
+  </div>
+
+  <script src="../shared/shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

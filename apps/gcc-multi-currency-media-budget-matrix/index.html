@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="GCC Multi-Currency Media Budget Converter & Allocation Matrix | DM Static App Suite" data-ar="محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار | منظومة أدوات التسويق الرقمي">محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار | منظومة أدوات التسويق الرقمي</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/gcc-multi-currency-media-budget-matrix/">
+  <meta name="description" content="Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks.">
+  <link rel="stylesheet" href="../shared/shared.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <span class="brand-badge">APP-003</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Paid Ads, Media Buying & Tax" data-ar="Paid Ads, Media Buying & Tax">Paid Ads, Media Buying & Tax</div>
+      <h1 class="app-title" data-en="GCC Multi-Currency Media Budget Converter & Allocation Matrix" data-ar="محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار">محول وموزع ميزانيات الحملات الإعلانية بين عملات الخليج ومصر والدولار</h1>
+      <p class="app-promise" data-en="Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks." data-ar="Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks.">Distribute a regional total budget into localized ad campaign budgets across 7 MENA currencies using verified fixed GCC pegs and user-adjusted benchmarks.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="total_budget">
+              <span data-en="Total Regional Budget" data-ar="إجمالي الميزانية الإقليمية">إجمالي الميزانية الإقليمية</span><span class="required">*</span>
+            </label>
+            <input type="number" id="total_budget" class="form-control" value="50000" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="base_currency">
+              <span data-en="Base Currency (USD, SAR, AED, EGP, KWD, QAR)" data-ar="عملة الأساس">عملة الأساس</span><span class="required">*</span>
+            </label>
+            <select id="base_currency" class="form-control">
+              <option value="SAR" data-en="SAR - Saudi Riyal" data-ar="ريال سعودي (SAR)" selected>ريال سعودي (SAR)</option>
+              <option value="AED" data-en="AED - UAE Dirham" data-ar="درهم إماراتي (AED)">درهم إماراتي (AED)</option>
+              <option value="USD" data-en="USD - US Dollar" data-ar="دولار أمريكي (USD)">دولار أمريكي (USD)</option>
+              <option value="EGP" data-en="EGP - Egyptian Pound" data-ar="جنيه مصري (EGP)">جنيه مصري (EGP)</option>
+              <option value="KWD" data-en="KWD - Kuwaiti Dinar" data-ar="دينار كويتي (KWD)">دينار كويتي (KWD)</option>
+              <option value="QAR" data-en="QAR - Qatari Riyal" data-ar="ريال قطري (QAR)">ريال قطري (QAR)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="allocation_weights">
+              <span data-en="Country Split Percentages (e.g. KSA 50%, UAE 30%, Kuwait 20%)" data-ar="نسب التوزيع بين الدول">نسب التوزيع بين الدول</span><span class="required">*</span>
+            </label>
+            <input type="text" id="allocation_weights" class="form-control" value="KSA: 50, UAE: 30, Kuwait: 20">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Per-Country Localized Budget Breakdown</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Platform Currency Equivalent (USD)</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Suggested Daily Ad Set Bids in Local Currency</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Per-Country Localized Budget Breakdown</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Platform Currency Equivalent (USD)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Suggested Daily Ad Set Bids in Local Currency</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Summary Allocation Table with Printable Export</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.sama.gov.sa/en-US/EconomicReports/Pages/YearlyStatistics.aspx" target="_blank" rel="noopener noreferrer">https://www.sama.gov.sa/en-US/EconomicReports/Pages/YearlyStatistics.aspx</a> (2026-10-29) &mdash; Saudi Central Bank (SAMA) fixed USD peg (3.75 SAR/USD) and UAE Central Bank peg (3.6725 AED/USD) provide exact deterministic benchmarks.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Official GCC central bank currency peg ratios to USD &mdash; <a href="https://www.sama.gov.sa" target="_blank" rel="noopener noreferrer">https://www.sama.gov.sa</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
+        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-003 • GCC Multi-Currency Media Budget Converter & Allocation Matrix</p>
+      <p style="margin-top:0.25rem;">DM Static App Suite v2.0 • Deterministic Client-Side Engineering</p>
+    </footer>
+  </div>
+
+  <script src="../shared/shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
