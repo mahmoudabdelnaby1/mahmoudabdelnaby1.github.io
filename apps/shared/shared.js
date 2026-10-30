@@ -383,6 +383,15 @@
 
   function setupPortfolioToolSearch(nav, actions) {
     if (document.getElementById('portfolio-tools-search-panel')) return;
+    function searchText(tag, className, en, ar) {
+      var element = document.createElement(tag);
+      if (className) element.className = className;
+      element.setAttribute('data-en', en);
+      element.setAttribute('data-ar', ar);
+      element.textContent = currentLang === 'ar' ? ar : en;
+      return element;
+    }
+
     var trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.className = 'portfolio-tools-search-toggle';
@@ -398,7 +407,7 @@
     icon.appendChild(iconCircle);
     icon.appendChild(iconHandle);
     trigger.appendChild(icon);
-    trigger.appendChild(localizedText('span', 'portfolio-tools-search-toggle-label', 'Search', 'بحث'));
+    trigger.appendChild(searchText('span', 'portfolio-tools-search-toggle-label', 'Search', 'بحث'));
     trigger.setAttribute('aria-controls', 'portfolio-tools-search-panel');
     trigger.setAttribute('aria-expanded', 'false');
     trigger.setAttribute('data-aria-en', 'Search all marketing tools');
@@ -411,7 +420,7 @@
     panel.id = 'portfolio-tools-search-panel';
     panel.hidden = true;
     panel.setAttribute('aria-label', currentLang === 'ar' ? 'البحث في الأدوات' : 'Search tools');
-    var label = localizedText('label', 'portfolio-tools-search-label', 'Describe what you need', 'اكتب ما تحتاجه بطريقتك');
+    var label = searchText('label', 'portfolio-tools-search-label', 'Describe what you need', 'اكتب ما تحتاجه بطريقتك');
     label.setAttribute('for', 'portfolio-tools-search-input');
     var input = document.createElement('input');
     input.type = 'search';
@@ -422,7 +431,7 @@
     input.setAttribute('data-placeholder-ar', 'مثال: «عايز أعرف هيتخصم كام من كارت البنك للإعلانات؟»');
     input.placeholder = input.getAttribute('data-placeholder-' + currentLang);
     input.setAttribute('aria-describedby', 'portfolio-tools-search-help');
-    var help = localizedText('p', 'portfolio-tools-search-help', 'Search across 100 tools in Arabic or English. Your query stays in this browser.', 'ابحث في 100 أداة بالعربية أو الإنجليزية. يظل بحثك داخل المتصفح.');
+    var help = searchText('p', 'portfolio-tools-search-help', 'Search across 100 tools in Arabic or English. Your query stays in this browser.', 'ابحث في 100 أداة بالعربية أو الإنجليزية. يظل بحثك داخل المتصفح.');
     help.id = 'portfolio-tools-search-help';
     var results = document.createElement('div');
     results.className = 'portfolio-tools-search-results';
