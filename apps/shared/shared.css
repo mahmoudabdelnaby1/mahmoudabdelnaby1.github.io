@@ -126,6 +126,356 @@ body {
   }
 }
 
+/* Portfolio navigation shared by the tools catalog and all individual tools. */
+.portfolio-tools-top-nav {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 90;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.7rem, 2vw, 1.8rem);
+  min-height: 3.9rem;
+  margin-block: -0.2rem 2rem;
+  padding: 0.65rem 0 0.75rem;
+  border-bottom: 1px solid #ffffff20;
+  background: #07111bd9;
+  backdrop-filter: saturate(1.1) blur(10px);
+}
+
+.portfolio-tools-brand-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  gap: clamp(0.55rem, 1vw, 0.9rem);
+  min-width: 0;
+}
+
+.portfolio-tools-brand {
+  color: #f2f5f7;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.portfolio-tools-brand em {
+  color: inherit;
+  font-style: normal;
+}
+
+.portfolio-tools-brand:hover,
+.portfolio-tools-brand:focus-visible {
+  color: #79efc8;
+}
+
+.portfolio-tools-context {
+  padding-inline-start: 0.8rem;
+  border-inline-start: 1px solid #ffffff28;
+  color: #9db1c1;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-tools-context[aria-current] {
+  color: #79efc8;
+}
+
+.portfolio-tools-app-id {
+  padding: 0.15rem 0.4rem;
+  border: 1px solid #ffffff20;
+  border-radius: 999px;
+  color: #9db1c1;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.portfolio-tools-nav {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.6rem, 1.4vw, 1.25rem);
+  min-width: 0;
+}
+
+.portfolio-tools-nav-links {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.65rem, 1.5vw, 1.35rem);
+  min-width: 0;
+}
+
+.portfolio-tools-nav-links > a,
+.portfolio-tools-library-menu > summary {
+  color: #c9d8e7;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.portfolio-tools-nav-links > a:hover,
+.portfolio-tools-nav-links > a:focus-visible,
+.portfolio-tools-library-menu > summary:hover,
+.portfolio-tools-library-menu > summary:focus-visible,
+.portfolio-tools-library-menu[open] > summary {
+  color: #79efc8;
+}
+
+.portfolio-tools-library-menu {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.portfolio-tools-library-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  list-style: none;
+  outline-offset: 5px;
+}
+
+.portfolio-tools-library-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.portfolio-tools-library-menu > summary::after {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-inline-end: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  content: "";
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+}
+
+.portfolio-tools-library-menu[open] > summary::after {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.portfolio-tools-library-panel {
+  position: absolute;
+  inset-block-start: calc(100% + 0.85rem);
+  inset-inline-start: -0.85rem;
+  z-index: 100;
+  display: none;
+  gap: 0;
+  width: min(18rem, calc(100vw - 2rem));
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ffffff24;
+  border-radius: 3px 18px 3px 18px;
+  background: #0d1b27;
+  box-shadow: 0 18px 48px #0008;
+}
+
+.portfolio-tools-library-menu[open] > .portfolio-tools-library-panel {
+  display: grid;
+}
+
+.portfolio-tools-library-panel a {
+  display: block;
+  min-height: 2.6rem;
+  padding: 0.7rem 0.25rem;
+  border-bottom: 1px solid #ffffff14;
+  color: #d7e3ed;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.portfolio-tools-library-panel a:last-child {
+  border-bottom: 0;
+}
+
+.portfolio-tools-library-panel a:hover,
+.portfolio-tools-library-panel a:focus-visible,
+.portfolio-tools-library-panel a[aria-current] {
+  color: #79efc8;
+}
+
+.portfolio-tools-nav-actions {
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+.portfolio-tools-nav-actions #lang-toggle-btn,
+.portfolio-tools-contact,
+.portfolio-tools-menu-toggle {
+  display: inline-flex;
+  min-height: 2.45rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
+  border: 1px solid #ffffff30;
+  border-radius: 999px;
+  background: #ffffff08;
+  color: #edf5fb;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-tools-nav-actions #lang-toggle-btn {
+  cursor: pointer;
+}
+
+.portfolio-tools-contact {
+  border-color: #1fd0ff80;
+}
+
+.portfolio-tools-menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.portfolio-tools-nav-actions #lang-toggle-btn:hover,
+.portfolio-tools-nav-actions #lang-toggle-btn:focus-visible,
+.portfolio-tools-contact:hover,
+.portfolio-tools-contact:focus-visible,
+.portfolio-tools-menu-toggle:hover,
+.portfolio-tools-menu-toggle:focus-visible,
+.portfolio-tools-menu-toggle[aria-expanded="true"] {
+  border-color: #79efc8;
+  background: #79efc810;
+  color: #79efc8;
+}
+
+.portfolio-tools-top-nav a:focus-visible,
+.portfolio-tools-top-nav button:focus-visible,
+.portfolio-tools-top-nav summary:focus-visible {
+  outline: 2px solid #79efc8;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1020px) {
+  .portfolio-tools-top-nav {
+    position: sticky;
+    gap: 0.75rem;
+    padding-block: 0.5rem 0.65rem;
+  }
+
+  .portfolio-tools-nav {
+    flex: 0 0 auto;
+    gap: 0.4rem;
+  }
+
+  .portfolio-tools-nav-links {
+    display: none;
+  }
+
+  .portfolio-tools-menu-toggle {
+    display: inline-flex;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .portfolio-tools-nav.is-open .portfolio-tools-nav-links {
+    position: absolute;
+    inset-block-start: calc(100% + 0.55rem);
+    inset-inline-end: 0;
+    z-index: 95;
+    display: flex;
+    width: min(23rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 6rem);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: auto;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #ffffff24;
+    border-radius: 3px 20px 3px 20px;
+    background: #0d1b27;
+    box-shadow: 0 20px 52px #0009;
+  }
+
+  .portfolio-tools-nav.is-open .portfolio-tools-nav-links > a,
+  .portfolio-tools-nav.is-open .portfolio-tools-library-menu > summary {
+    display: flex;
+    min-height: 2.8rem;
+    align-items: center;
+    padding: 0.65rem 0.2rem;
+    border-bottom: 1px solid #ffffff14;
+    font-size: 0.82rem;
+    white-space: normal;
+  }
+
+  .portfolio-tools-nav.is-open .portfolio-tools-library-menu {
+    width: 100%;
+    border-bottom: 1px solid #ffffff14;
+  }
+
+  .portfolio-tools-nav.is-open .portfolio-tools-library-menu > summary {
+    justify-content: space-between;
+  }
+
+  .portfolio-tools-library-panel,
+  .portfolio-tools-nav.is-open .portfolio-tools-library-panel {
+    position: static;
+    width: auto;
+    padding: 0 0.75rem 0.45rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .portfolio-tools-nav.is-open .portfolio-tools-library-panel a {
+    min-height: 2.45rem;
+    padding: 0.6rem 0.25rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .portfolio-tools-top-nav {
+    gap: 0.5rem;
+  }
+
+  .portfolio-tools-brand {
+    font-size: 0.72rem;
+  }
+
+  .portfolio-tools-context,
+  .portfolio-tools-app-id,
+  .portfolio-tools-contact {
+    display: none;
+  }
+
+  .portfolio-tools-nav-actions {
+    gap: 0.35rem;
+  }
+
+  .portfolio-tools-nav-actions #lang-toggle-btn,
+  .portfolio-tools-menu-toggle {
+    min-height: 2.6rem;
+    padding-inline: 0.65rem;
+    font-size: 0.68rem;
+  }
+}
+
 /* Header & Navigation Bar */
 .top-nav {
   display: flex;
