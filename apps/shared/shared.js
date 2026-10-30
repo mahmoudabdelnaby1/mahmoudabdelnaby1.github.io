@@ -521,7 +521,7 @@
     });
     input.addEventListener('input', renderResults);
     document.addEventListener('click', function (event) {
-      if (!panel.contains(event.target) && event.target !== trigger) {
+      if (!panel.contains(event.target) && !trigger.contains(event.target)) {
         panel.hidden = true;
         trigger.setAttribute('aria-expanded', 'false');
       }
