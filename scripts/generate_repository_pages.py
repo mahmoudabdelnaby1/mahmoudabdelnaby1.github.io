@@ -33,6 +33,15 @@ CATEGORY_AR = {
     "social": "التواصل الاجتماعي",
 }
 
+FORMAT_AR = {
+    "CLI_SCRIPT": "أداة سطر أوامر",
+    "CURATED_DATASET": "مجموعة بيانات منتقاة",
+    "PROJECT_BLUEPRINT": "مخطط مشروع",
+    "SKILL_MD": "مهارة تشغيلية",
+    "STATIC_INTERACTIVE_TOOL": "أداة تفاعلية",
+    "TEMPLATE_FRAMEWORK": "قالب وإطار عمل",
+}
+
 
 def section(text: str, heading: str) -> str:
     match = re.search(rf"^##[^\n]*{re.escape(heading)}[^\n]*\n([\s\S]*?)(?=^##\s+|\Z)", text, re.M | re.I)
@@ -101,13 +110,14 @@ def render(item: dict, all_items: list[dict], lang: str) -> str:
     en_url, ar_url = f"{BASE}/repositories/{slug}/", f"{BASE}/ar/repositories/{slug}/"
     here = ar_url if lang == "ar" else en_url
     title = item["title_en"]
-    display_title = f"دليل المستودع: {title}" if lang == "ar" else title
+    display_name = item.get("title_ar", title) if lang == "ar" else title
+    display_title = f"دليل المستودع: {display_name}" if lang == "ar" else title
     description = (
-        f"دليل عربي لمستودع {title}: المشكلة التي يعالجها، الملفات التي يضمها، طريقة مراجعته، وحدود استخدامه."
+        f"دليل عربي لمستودع {display_name}: المشكلة التي يعالجها، الملفات التي يضمها، طريقة مراجعته، وحدود استخدامه."
         if lang == "ar" else (item["tagline_en"] or f"Explore {title}: its problem, intended audience, deliverables, usage notes, and limitations.")
     )
     intro = (
-        f"صفحة تعريفية مستقلة بمستودع {title}. توضّح ما الذي يحاول حله، ولمن يناسب، وما الملفات التي ستجدها قبل الانتقال إلى المصدر."
+        f"صفحة تعريفية مستقلة بمستودع {display_name}. توضّح ما الذي يحاول حله، ولمن يناسب، وما الملفات التي ستجدها قبل الانتقال إلى المصدر."
         if lang == "ar" else (item["tagline_en"] or f"A source-based guide to {title}, including its intended use, included files, and practical limitations.")
     )
     category = category_name(item, lang)
@@ -118,7 +128,7 @@ def render(item: dict, all_items: list[dict], lang: str) -> str:
     constraints = item["constraints_en"][:5]
     related = [x for x in all_items if x["slug"] != slug and x["category"] == item["category"]][:3]
     related_markup = "".join(
-        f'<li><a href="/{"ar/" if lang == "ar" else ""}repositories/{esc(x["slug"])}/">{esc(x["title_en"])}</a></li>' for x in related
+        f'<li><a href="/{"ar/" if lang == "ar" else ""}repositories/{esc(x["slug"])}/">{esc(x.get("title_ar", x["title_en"]) if lang == "ar" else x["title_en"])}</a></li>' for x in related
     )
     files_markup = "".join(f"<li><code>{esc(f)}</code></li>" for f in files) or f"<li>{esc(title)}</li>"
     limits_markup = "".join(f"<li>{esc(c)}</li>" for c in constraints)
@@ -162,10 +172,36 @@ def render(item: dict, all_items: list[dict], lang: str) -> str:
 <link rel="stylesheet" href="/assets/site.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/marketing-systems.css?v=20261027-marketing-systems-v1"><link rel="stylesheet" href="/assets/repositories.css?v=20261031-repositories-v1">
 <script type="application/ld+json">{schema}</script></head><body class="marketing-systems-page repositories-page"><div class="wrap">
 <header class="topbar"><a class="brand" href="/{'ar/' if lang == 'ar' else ''}">{'محمود <em>عبدالنبي</em>' if lang == 'ar' else 'MAHMOUD <em>ABDELNABY</em>'}</a><nav class="nav"><a href="/{'ar/' if lang == 'ar' else ''}">{labels['portfolio']}</a><a class="lang" href="/{'ar/' if lang == 'en' else ''}repositories/{slug}/">{labels['lang']}</a></nav></header>
-<main class="systems-detail repository-detail"><nav class="systems-breadcrumb" aria-label="{'مسار التنقل' if lang == 'ar' else 'Breadcrumb'}"><a href="/{'ar/' if lang == 'ar' else ''}">{labels['portfolio']}</a><span>/</span><a href="/{'ar/' if lang == 'ar' else ''}repositories/">{labels['directory']}</a><span>/</span><span aria-current="page">{esc(title)}</span></nav>
-<article><header class="systems-detail-hero"><span class="eyebrow">{esc(category)} · {esc(item['format'].replace('_', ' '))} · {esc(item['tier'])}</span><h1>{esc(display_title)}</h1><p class="systems-answer">{esc(intro)}</p></header>
+<main class="systems-detail repository-detail"><nav class="systems-breadcrumb" aria-label="{'مسار التنقل' if lang == 'ar' else 'Breadcrumb'}"><a href="/{'ar/' if lang == 'ar' else ''}">{labels['portfolio']}</a><span>/</span><a href="/{'ar/' if lang == 'ar' else ''}repositories/">{labels['directory']}</a><span>/</span><span aria-current="page">{esc(display_name)}</span></nav>
+<article><header class="systems-detail-hero"><span class="eyebrow">{esc(category)} · {esc(FORMAT_AR.get(item['format'], item['format'].replace('_', ' ').title()) if lang == 'ar' else item['format'].replace('_', ' ').title())} · {esc(item['tier'])}</span><h1>{esc(display_title)}</h1><p class="systems-answer">{esc(intro)}</p></header>
 <div class="systems-detail-grid"><section><h2>{labels['problem']}</h2>{problem_section}</section><section><h2>{labels['who']}</h2>{audience}</section><section><h2>{labels['files']}</h2><p>{'الملفات الأساسية التي يسردها قسم بنية المستودع في README:' if lang == 'ar' else 'Key files listed in the README repository architecture:'}</p><ul>{files_markup}</ul></section><section><h2>{labels['use']}</h2><ol>{steps_markup}</ol>{quick_note}</section><section class="systems-limits"><h2>{labels['limits']}</h2><ul>{limits_markup}</ul><p>{'هذه الصفحة تلخص التوثيق المتاح ولا تثبت أداءً أو نتيجة تجارية. تحقق من صلاحية البيانات والمتطلبات قبل الاستخدام.' if lang == 'ar' else 'This page summarizes the available documentation; it does not establish performance or business results. Verify data and prerequisites before use.'}</p></section><section><h2>{labels['related']}</h2><ul>{related_markup}</ul></section></div>
 <footer class="systems-detail-actions"><a class="btn" href="{esc(item['repo_url'])}" target="_blank" rel="noopener noreferrer">{labels['repo']} ↗</a><a class="btn secondary" href="/{'ar/' if lang == 'ar' else ''}repositories/">{labels['directory']} ↗</a></footer></article></main></div></body></html>'''
+
+
+def update_ar_directory(items: list[dict]) -> None:
+    path = ROOT / "ar" / "repositories" / "index.html"
+    page = path.read_text(encoding="utf-8")
+    for item in items:
+        slug = re.escape(item["slug"])
+        card_pattern = re.compile(
+            rf'(<a class="repo-card" href="/ar/repositories/{slug}/"[^>]*>)([\s\S]*?)(</a>)'
+        )
+        match = card_pattern.search(page)
+        if not match:
+            raise SystemExit(f"Missing Arabic directory card: {item['slug']}")
+        card = match.group(2)
+        title = item.get("title_ar", item["title_en"])
+        card, heading_count = re.subn(r"<h2(?:\s[^>]*)?>[\s\S]*?</h2>", f"<h2 lang=\"ar\">{esc(title)}</h2>", card, count=1)
+        if heading_count != 1:
+            raise SystemExit(f"Missing Arabic title element: {item['slug']}")
+        search_match = re.search(r'data-search="([^"]*)"', match.group(1))
+        attrs = match.group(1)
+        if search_match:
+            search_terms = html.unescape(search_match.group(1))
+            if title not in search_terms:
+                attrs = attrs.replace(search_match.group(0), f'data-search="{esc(search_terms + " " + title)}"')
+        page = page[:match.start()] + attrs + card + match.group(3) + page[match.end():]
+    path.write_text(page, encoding="utf-8", newline="\n")
 
 
 def main() -> None:
@@ -182,8 +218,9 @@ def main() -> None:
         for lang, folder in (("en", ROOT / "repositories" / item["slug"]), ("ar", ROOT / "ar" / "repositories" / item["slug"])):
             folder.mkdir(parents=True, exist_ok=True)
             (folder / "index.html").write_text(render(item, items, lang), encoding="utf-8", newline="\n")
+    update_ar_directory(items)
     # Store a compact source catalog for reproducible page generation.
-    keep = ("slug", "repo_url", "category", "format", "tier", "title_en", "tagline_en", "persona_en", "problem_en", "deliverables", "constraints_en", "quick_start")
+    keep = ("slug", "repo_url", "category", "format", "tier", "title_en", "title_ar", "tagline_en", "persona_en", "problem_en", "deliverables", "constraints_en", "quick_start")
     CATALOG.write_text(json.dumps([{k: x[k] for k in keep} for x in items], ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"Generated {len(items) * 2} pages for {len(items)} repositories.")
 
