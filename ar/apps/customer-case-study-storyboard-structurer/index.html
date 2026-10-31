@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Customer Testimonial &amp; Case Study Storyboard Structurer" data-ar="منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع…">منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/customer-case-study-storyboard-structurer/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/customer-case-study-storyboard-structurer/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/customer-case-study-storyboard-structurer/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/customer-case-study-storyboard-structurer/">
+  <meta name="description" content="حوّل ملاحظات العميل إلى مخطط دراسة حالة تسويقية منظم باستخدام خطوات STAR، دون اختلاق بيانات." data-en="Transform raw client notes into a compelling, metric-driven B2B case study storyboard formatted in Arabic and English following the STAR framework." data-ar="حوّل ملاحظات العميل إلى مخطط دراسة حالة تسويقية منظم باستخدام خطوات STAR، دون اختلاق بيانات.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-090</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing &amp; Lead Gen</div>
+      <h1 class="app-title" data-en="Customer Testimonial & Case Study Storyboard Structurer" data-ar="منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع العملاء المحتملين">منظم قصص نجاح العملاء ودراسات الحالة التسويقية لإقناع العملاء المحتملين</h1>
+      <p class="app-promise" data-en="Transform raw client notes into a compelling, metric-driven B2B case study storyboard formatted in Arabic and English following the STAR framework." data-ar="حوّل ملاحظات العميل إلى مخطط دراسة حالة تسويقية منظم باستخدام خطوات STAR، دون اختلاق بيانات.">حوّل ملاحظات العميل إلى مخطط دراسة حالة تسويقية منظم باستخدام خطوات STAR، دون اختلاق بيانات.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="client_industry">
+              <span data-en="Client Industry & Company Size" data-ar="مجال العميل وحجم الشركة">مجال العميل وحجم الشركة</span><span class="required">*</span>
+            </label>
+            <input type="text" id="client_industry" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="core_challenge">
+              <span data-en="Core Problem / Challenge Faced Before" data-ar="التحدي أو المشكلة التي كان يعاني منها">التحدي أو المشكلة التي كان يعاني منها</span><span class="required">*</span>
+            </label>
+            <input type="text" id="core_challenge" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="solution_implemented">
+              <span data-en="Solution & Strategy Implemented" data-ar="الحل والإستراتيجية المطبقة">الحل والإستراتيجية المطبقة</span><span class="required">*</span>
+            </label>
+            <input type="text" id="solution_implemented" class="form-control" value="تفعيل مسار تأكيد تلقائي عبر واتساب وإعادة هيكلة الإعلانات لتطبيق عروض الشحن المجاني الذكي">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quantifiable_results">
+              <span data-en="Key Numeric Results (e.g. +310% sales in 60 days)" data-ar="النتائج بالأرقام والنسب المئوية">النتائج بالأرقام والنسب المئوية</span><span class="required">*</span>
+            </label>
+            <input type="text" id="quantifiable_results" class="form-control" value="">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Executive Case Study One-Pager (Bilingual Arabic/English)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Prominent Metric Callout Cards (+X% Uplift, $ Saved, Time Cut)</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">LinkedIn Carousel Storyboard Ready to Post</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Executive Case Study One-Pager (Bilingual Arabic/English)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Prominent Metric Callout Cards (+X% Uplift, $ Saved, Time Cut)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">LinkedIn Carousel Storyboard Ready to Post</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Copyable Client Quote Pull-Out Snippet</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://business.linkedin.com/marketing-solutions/blog/b2b-content-marketing/how-to-write-a-b2b-case-study" target="_blank" rel="noopener noreferrer">https://business.linkedin.com/marketing-solutions/blog/b2b-content-marketing/how-to-write-a-b2b-case-study</a> (2026-10-29) &mdash; LinkedIn B2B Content Marketing research showing structured, metric-forward case studies are the #1 most influential content asset for closing high-ticket deals.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> B2B case study narrative frameworks and visual callout standards &mdash; <a href="https://business.linkedin.com" target="_blank" rel="noopener noreferrer">https://business.linkedin.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-090 • Customer Testimonial & Case Study Storyboard Structurer</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

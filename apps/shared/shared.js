@@ -9,16 +9,16 @@
   var sharedScriptSrc = document.currentScript ? document.currentScript.src : '';
 
   // Global State
-  var currentLang = 'ar'; // Default Arabic for MENA suite
+  var currentLang = 'en'; // Locale route or the saved preference selects Arabic.
 
-  // Check saved preference or URL param
+  // Locale-specific URLs win on first load; saved preference is the fallback.
+  var routeLang = /^\/ar\/apps(?:\/|$)/.test(window.location.pathname) ? 'ar'
+    : /^\/apps(?:\/|$)/.test(window.location.pathname) ? 'en' : null;
   try {
     var savedLang = localStorage.getItem('dm_app_lang');
-    if (savedLang === 'en' || savedLang === 'ar') {
-      currentLang = savedLang;
-    }
+    currentLang = routeLang || ((savedLang === 'en' || savedLang === 'ar') ? savedLang : 'en');
   } catch (e) {
-    // LocalStorage disabled or sandboxed
+    currentLang = routeLang || 'en';
   }
 
   // Set initial document attributes
@@ -42,6 +42,9 @@
         }
       }
     }
+
+    var description = document.querySelector('meta[name="description"][data-en][data-ar]');
+    if (description) description.setAttribute('content', description.getAttribute('data-' + lang));
 
     var localizedLinks = document.querySelectorAll('[data-href-en][data-href-ar]');
     for (var j = 0; j < localizedLinks.length; j++) {
@@ -118,7 +121,7 @@
     var contextLink = localizedLink(
       appId ? 'All tools' : 'Marketing tools',
       appId ? 'كل الأدوات' : 'الأدوات التسويقية',
-      '/apps/', '/apps/', 'portfolio-tools-context'
+      '/apps/', '/ar/apps/', 'portfolio-tools-context'
     );
     contextLink.setAttribute('aria-current', appId ? 'location' : 'page');
     brandGroup.appendChild(contextLink);
@@ -151,7 +154,8 @@
       ['Frameworks', 'الأطر', '/frameworks/', '/ar/frameworks/'],
       ['Skills library', 'مكتبة المهارات', '/skills/', '/ar/skills/'],
       ['Marketing systems', 'الأنظمة التسويقية', '/marketing-systems/', '/ar/marketing-systems/'],
-      ['Marketing tools', 'الأدوات التسويقية', '/apps/', '/apps/'],
+      ['Marketing tools', 'الأدوات التسويقية', '/apps/', '/ar/apps/'],
+      ['Find resources by problem', 'دليل الموارد حسب المشكلة', '/resources/', '/ar/resources/'],
       ['Blog & articles', 'المدونة والمقالات', '/blog/', '/ar/blog/'],
       ['Assistant library', 'مكتبة المساعدين', '/#assistant-library', '/ar/#assistant-library']
     ].forEach(function (item) {
@@ -489,7 +493,7 @@
           var tool = match.tool;
           var link = document.createElement('a');
           link.className = 'portfolio-tools-search-result';
-          link.href = new URL('/apps/' + tool.href, window.location.origin).href;
+          link.href = new URL((currentLang === 'ar' ? '/ar/apps/' : '/apps/') + tool.href, window.location.origin).href;
           var meta = document.createElement('span');
           meta.className = 'portfolio-tools-search-result-meta';
           meta.textContent = tool.id + ' · ' + (currentLang === 'ar' ? (searchCategoryLabels[tool.category] || tool.category) : tool.category);

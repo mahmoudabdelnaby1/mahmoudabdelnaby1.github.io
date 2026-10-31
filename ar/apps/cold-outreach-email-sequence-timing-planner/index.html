@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Cold Outreach Email Sequence Timing &amp; Follow-up Planner" data-ar="مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري…">مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/cold-outreach-email-sequence-timing-planner/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/cold-outreach-email-sequence-timing-planner/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/cold-outreach-email-sequence-timing-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/cold-outreach-email-sequence-timing-planner/">
+  <meta name="description" content="خطط سلسلة تواصل B2B من خمس رسائل مع فواصل زمنية وتوقيت ملائم لأسبوع العمل في المنطقة." data-en="Generate a psychologically optimized 5-touch B2B cold email cadence with optimal day-delays and localized MENA workweek timing (accounting for Friday/Saturday…" data-ar="خطط سلسلة تواصل B2B من خمس رسائل مع فواصل زمنية وتوقيت ملائم لأسبوع العمل في المنطقة.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-085</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing &amp; Lead Gen</div>
+      <h1 class="app-title" data-en="Cold Outreach Email Sequence Timing & Follow-up Planner" data-ar="مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري الشركات">مخطط فترات المتابعة وحملات التواصل المباشر البارد مع مديري الشركات</h1>
+      <p class="app-promise" data-en="Generate a psychologically optimized 5-touch B2B cold email cadence with optimal day-delays and localized MENA workweek timing (accounting for Friday/Saturday weekends)." data-ar="خطط سلسلة تواصل B2B من خمس رسائل مع فواصل زمنية وتوقيت ملائم لأسبوع العمل في المنطقة.">خطط سلسلة تواصل B2B من خمس رسائل مع فواصل زمنية وتوقيت ملائم لأسبوع العمل في المنطقة.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="campaign_start_date">
+              <span data-en="First Email Send Date (YYYY-MM-DD)" data-ar="تاريخ إرسال أول رسالة">تاريخ إرسال أول رسالة</span><span class="required">*</span>
+            </label>
+            <input type="text" id="campaign_start_date" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="target_country_weekend">
+              <span data-en="Regional Workweek (Saudi/Egypt: Sun-Thu / UAE: Mon-Fri)" data-ar="طبيعة أسبوع العمل (السعودية ومصر: الأحد-الخميس / الإمارات: الإثنين-الجمعة)">طبيعة أسبوع العمل (السعودية ومصر: الأحد-الخميس / الإمارات: الإثنين-الجمعة)</span><span class="required">*</span>
+            </label>
+            <select id="target_country_weekend" class="form-control">
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prospect_seniority">
+              <span data-en="Prospect Seniority (C-Suite / Director / Manager)" data-ar="المستوى الوظيفي للمستهدف">المستوى الوظيفي للمستهدف</span><span class="required">*</span>
+            </label>
+            <select id="prospect_seniority" class="form-control">
+
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">5-Step Scheduled Calendar Cadence with Exact Send Dates</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Touchpoint Angle Blueprint (Touch 1: Value Hook, Touch 2: Case Study, Touch 3: Quick Question, Touch 4: Resource, Touch 5: Breakup)</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Optimal Send Time Window (e.g. 08:30 - 10:00 AM local time)</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">5-Step Scheduled Calendar Cadence with Exact Send Dates</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Touchpoint Angle Blueprint (Touch 1: Value Hook, Touch 2: Case Study, Touch 3: Quick Question, Touch 4: Resource, Touch 5: Breakup)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Optimal Send Time Window (e.g. 08:30 - 10:00 AM local time)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Automatic Weekend & Friday Blackout Protection</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.salesforce.com/resources/articles/sales-cadence/" target="_blank" rel="noopener noreferrer">https://www.salesforce.com/resources/articles/sales-cadence/</a> (2026-10-29) &mdash; Salesforce B2B cadence benchmarks showing 80% of corporate sales deals require 5 follow-up touches over an 18-day period.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> MENA business workweek schedules and executive email response window statistics &mdash; <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer">https://www.salesforce.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-085 • Cold Outreach Email Sequence Timing & Follow-up Planner</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

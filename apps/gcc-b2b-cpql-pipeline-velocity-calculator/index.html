@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="GCC B2B Cost Per Qualified Lead (CPQL) & Pipeline Velocity Calculator | DM Static App Suite" data-ar="حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج | منظومة أدوات التسويق الرقمي">حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="GCC B2B Cost Per Qualified Lead (CPQL) &amp; Pipeline Velocity…" data-ar="حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع…">GCC B2B Cost Per Qualified Lead (CPQL) &amp; Pipeline Velocity…</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/gcc-b2b-cpql-pipeline-velocity-calculator/">
-  <meta name="description" content="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/gcc-b2b-cpql-pipeline-velocity-calculator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/gcc-b2b-cpql-pipeline-velocity-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/gcc-b2b-cpql-pipeline-velocity-calculator/">
+  <meta name="description" content="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD." data-en="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD." data-ar="احسب تكلفة العميل المحتمل المؤهل ومعدل تأهيل المبيعات وسرعة مسار الصفقات في B2B.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-081</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing & Lead Gen</div>
-      <h1 class="app-title" data-en="GCC B2B Cost Per Qualified Lead (CPQL) & Pipeline Velocity Calculator" data-ar="حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج">حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج</h1>
-      <p class="app-promise" data-en="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD." data-ar="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.">Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.</p>
+      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing &amp; Lead Gen</div>
+      <h1 class="app-title" data-en="GCC B2B Cost Per Qualified Lead (CPQL) & Pipeline Velocity Calculator" data-ar="حاسبة تكلفة العميل المحتمل المؤهل وسرعة تدفق الصفقات لقطاع B2B في الخليج">GCC B2B Cost Per Qualified Lead (CPQL) &amp; Pipeline Velocity Calculator</h1>
+      <p class="app-promise" data-en="Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD." data-ar="احسب تكلفة العميل المحتمل المؤهل ومعدل تأهيل المبيعات وسرعة مسار الصفقات في B2B.">Calculate your true Cost Per Qualified Lead (CPQL), sales qualification rate, and deal pipeline velocity in SAR, AED, and USD.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,45 +38,45 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="total_lead_gen_spend">
-              <span data-en="Total Marketing Spend ($/SAR)" data-ar="إجمالي الإنفاق على جلب العملاء">إجمالي الإنفاق على جلب العملاء</span><span class="required">*</span>
+              <span data-en="Total Marketing Spend ($/SAR)" data-ar="إجمالي الإنفاق على جلب العملاء">Total Marketing Spend ($/SAR)</span><span class="required">*</span>
             </label>
             <input type="number" id="total_lead_gen_spend" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="raw_leads_generated">
-              <span data-en="Raw Leads Generated" data-ar="عدد بيانات الاتصال الإجمالية">عدد بيانات الاتصال الإجمالية</span><span class="required">*</span>
+              <span data-en="Raw Leads Generated" data-ar="عدد بيانات الاتصال الإجمالية">Raw Leads Generated</span><span class="required">*</span>
             </label>
             <input type="number" id="raw_leads_generated" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="sales_qualified_leads">
-              <span data-en="Sales Qualified Leads (SQL) Verified" data-ar="العملاء المؤهلين فعلياً للمبيعات SQL">العملاء المؤهلين فعلياً للمبيعات SQL</span><span class="required">*</span>
+              <span data-en="Sales Qualified Leads (SQL) Verified" data-ar="العملاء المؤهلين فعلياً للمبيعات SQL">Sales Qualified Leads (SQL) Verified</span><span class="required">*</span>
             </label>
             <input type="number" id="sales_qualified_leads" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="average_deal_size">
-              <span data-en="Average Contract / Deal Value" data-ar="متوسط قيمة الصفقة أو العقد">متوسط قيمة الصفقة أو العقد</span><span class="required">*</span>
+              <span data-en="Average Contract / Deal Value" data-ar="متوسط قيمة الصفقة أو العقد">Average Contract / Deal Value</span><span class="required">*</span>
             </label>
             <input type="number" id="average_deal_size" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="sales_cycle_days">
-              <span data-en="Average Sales Cycle Length (Days)" data-ar="متوسط فترة إغلاق الصفقة (أيام)">متوسط فترة إغلاق الصفقة (أيام)</span><span class="required">*</span>
+              <span data-en="Average Sales Cycle Length (Days)" data-ar="متوسط فترة إغلاق الصفقة (أيام)">Average Sales Cycle Length (Days)</span><span class="required">*</span>
             </label>
             <input type="number" id="sales_cycle_days" class="form-control" value="45" step="1">
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -83,9 +86,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -111,13 +114,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -147,7 +150,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -157,16 +160,14 @@
           <strong>Benchmark Reference:</strong> Regional GCC B2B benchmark lead-to-opportunity ratios by industry (SaaS, Logistics, Consulting) &mdash; <a href="https://business.linkedin.com" target="_blank" rel="noopener noreferrer">https://business.linkedin.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-081 • GCC B2B Cost Per Qualified Lead (CPQL) & Pipeline Velocity Calculator</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

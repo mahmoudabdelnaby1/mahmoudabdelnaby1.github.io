@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Mobile-First Responsive Layout Viewport & Tap Target Checker | DM Static App Suite" data-ar="مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة | منظومة أدوات التسويق الرقمي">مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Mobile-First Responsive Layout Viewport &amp; Tap Target Checker" data-ar="مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على…">Mobile-First Responsive Layout Viewport &amp; Tap Target Checker</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/mobile-viewport-tap-target-checker/">
-  <meta name="description" content="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/mobile-viewport-tap-target-checker/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/mobile-viewport-tap-target-checker/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/mobile-viewport-tap-target-checker/">
+  <meta name="description" content="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines." data-en="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines." data-ar="راجع مساحة الأزرار وأهداف اللمس ومناطق الإبهام لتحسين سهولة الاستخدام على الهاتف.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-068</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="CRO & Funnel Optimization" data-ar="CRO & Funnel Optimization">CRO & Funnel Optimization</div>
-      <h1 class="app-title" data-en="Mobile-First Responsive Layout Viewport & Tap Target Checker" data-ar="مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة">مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة</h1>
-      <p class="app-promise" data-en="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines." data-ar="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.">Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.</p>
+      <div class="app-meta-badge" data-en="CRO & Funnel Optimization" data-ar="CRO & Funnel Optimization">CRO &amp; Funnel Optimization</div>
+      <h1 class="app-title" data-en="Mobile-First Responsive Layout Viewport & Tap Target Checker" data-ar="مدقق استجابة مقاسات الأزرار وسهولة النقر بالإبهام على الهواتف المحمولة">Mobile-First Responsive Layout Viewport &amp; Tap Target Checker</h1>
+      <p class="app-promise" data-en="Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines." data-ar="راجع مساحة الأزرار وأهداف اللمس ومناطق الإبهام لتحسين سهولة الاستخدام على الهاتف.">Audit your button pixel dimensions, tap target spacing, and thumb-zone accessibility according to Apple and Google Mobile UX guidelines.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,21 +38,21 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="button_height_px">
-              <span data-en="Primary Button Height (CSS Pixels)" data-ar="ارتفاع الزر الرئيسي بالبكسل">ارتفاع الزر الرئيسي بالبكسل</span><span class="required">*</span>
+              <span data-en="Primary Button Height (CSS Pixels)" data-ar="ارتفاع الزر الرئيسي بالبكسل">Primary Button Height (CSS Pixels)</span><span class="required">*</span>
             </label>
             <input type="number" id="button_height_px" class="form-control" value="48" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="button_width_type">
-              <span data-en="Button Width (Full Width 100% / Auto / Fixed Pixels)" data-ar="عرض الزر (كامل الشاشة 100% أو تلقائي)">عرض الزر (كامل الشاشة 100% أو تلقائي)</span><span class="required">*</span>
+              <span data-en="Button Width (Full Width 100% / Auto / Fixed Pixels)" data-ar="عرض الزر (كامل الشاشة 100% أو تلقائي)">Button Width (Full Width 100% / Auto / Fixed Pixels)</span><span class="required">*</span>
             </label>
             <select id="button_width_type" class="form-control">
 
@@ -57,21 +60,21 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="spacing_between_links_px">
-              <span data-en="Spacing Between Adjacent Clickable Items (Pixels)" data-ar="المسافة الفاصلة بين الروابط أو الأزرار المتجاورة">المسافة الفاصلة بين الروابط أو الأزرار المتجاورة</span><span class="required">*</span>
+              <span data-en="Spacing Between Adjacent Clickable Items (Pixels)" data-ar="المسافة الفاصلة بين الروابط أو الأزرار المتجاورة">Spacing Between Adjacent Clickable Items (Pixels)</span><span class="required">*</span>
             </label>
             <input type="number" id="spacing_between_links_px" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="thumb_zone_position">
-              <span data-en="Screen Placement (Sticky Bottom Bar / Middle of Page / Top Header)" data-ar="موقع الزر بالنسبة لمنطقة الإبهام">موقع الزر بالنسبة لمنطقة الإبهام</span><span class="required">*</span>
+              <span data-en="Screen Placement (Sticky Bottom Bar / Middle of Page / Top Header)" data-ar="موقع الزر بالنسبة لمنطقة الإبهام">Screen Placement (Sticky Bottom Bar / Middle of Page / Top Header)</span><span class="required">*</span>
             </label>
             <select id="thumb_zone_position" class="form-control">
 
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -81,9 +84,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -109,13 +112,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -145,7 +148,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -155,16 +158,14 @@
           <strong>Benchmark Reference:</strong> W3C WCAG 2.2 Target Size (Minimum 2.5.8) and Google Material Design touch target standards &mdash; <a href="https://support.google.com/webmasters" target="_blank" rel="noopener noreferrer">https://support.google.com/webmasters</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-068 • Mobile-First Responsive Layout Viewport & Tap Target Checker</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

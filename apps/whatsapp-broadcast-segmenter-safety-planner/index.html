@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="WhatsApp Broadcast List Segmenter & Anti-Ban Timing Planner | DM Static App Suite" data-ar="مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم | منظومة أدوات التسويق الرقمي">مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="WhatsApp Broadcast List Segmenter &amp; Anti-Ban Timing Planner" data-ar="مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة…">WhatsApp Broadcast List Segmenter &amp; Anti-Ban Timing Planner</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/whatsapp-broadcast-segmenter-safety-planner/">
-  <meta name="description" content="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/whatsapp-broadcast-segmenter-safety-planner/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/whatsapp-broadcast-segmenter-safety-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/whatsapp-broadcast-segmenter-safety-planner/">
+  <meta name="description" content="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags." data-en="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags." data-ar="خطط أحجام دفعات رسائل WhatsApp والفواصل الزمنية والمدة التقديرية للإرسال وفق إعداداتك.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-033</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="WhatsApp Marketing & SMS" data-ar="WhatsApp Marketing & SMS">WhatsApp Marketing & SMS</div>
-      <h1 class="app-title" data-en="WhatsApp Broadcast List Segmenter & Anti-Ban Timing Planner" data-ar="مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم">مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم</h1>
-      <p class="app-promise" data-en="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags." data-ar="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.">Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.</p>
+      <div class="app-meta-badge" data-en="WhatsApp Marketing & SMS" data-ar="WhatsApp Marketing & SMS">WhatsApp Marketing &amp; SMS</div>
+      <h1 class="app-title" data-en="WhatsApp Broadcast List Segmenter & Anti-Ban Timing Planner" data-ar="مخطط ومقسم قوائم رسائل الواتساب مع فترات التباعد الآمنة لمنع حظر الرقم">WhatsApp Broadcast List Segmenter &amp; Anti-Ban Timing Planner</h1>
+      <p class="app-promise" data-en="Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags." data-ar="خطط أحجام دفعات رسائل WhatsApp والفواصل الزمنية والمدة التقديرية للإرسال وفق إعداداتك.">Calculate safe sending batch sizes, recommended inter-message delays, and time required to complete outreach safely without spam flags.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,21 +38,21 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="total_contacts">
-              <span data-en="Total Contacts to Message" data-ar="إجمالي جهات الاتصال">إجمالي جهات الاتصال</span><span class="required">*</span>
+              <span data-en="Total Contacts to Message" data-ar="إجمالي جهات الاتصال">Total Contacts to Message</span><span class="required">*</span>
             </label>
             <input type="number" id="total_contacts" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="relationship_type">
-              <span data-en="Contact Relationship (Existing Customers / Warm Leads / Cold Opt-in)" data-ar="طبيعة العلاقة بالجمهور">طبيعة العلاقة بالجمهور</span><span class="required">*</span>
+              <span data-en="Contact Relationship (Existing Customers / Warm Leads / Cold Opt-in)" data-ar="طبيعة العلاقة بالجمهور">Contact Relationship (Existing Customers / Warm Leads / Cold Opt-in)</span><span class="required">*</span>
             </label>
             <select id="relationship_type" class="form-control">
 
@@ -57,15 +60,15 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="phone_type">
-              <span data-en="Account Age (New Account <30 days / Aged Account)" data-ar="عمر الحساب ورقم الواتساب">عمر الحساب ورقم الواتساب</span><span class="required">*</span>
+              <span data-en="Account Age (New Account <30 days / Aged Account)" data-ar="عمر الحساب ورقم الواتساب">Account Age (New Account &lt;30 days / Aged Account)</span><span class="required">*</span>
             </label>
             <select id="phone_type" class="form-control">
 
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -75,9 +78,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -103,13 +106,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -139,7 +142,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -149,16 +152,14 @@
           <strong>Benchmark Reference:</strong> WhatsApp messaging frequency thresholds and spam prevention benchmarks &mdash; <a href="https://www.whatsapp.com/legal/business-policy/" target="_blank" rel="noopener noreferrer">https://www.whatsapp.com/legal/business-policy/</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-033 • WhatsApp Broadcast List Segmenter & Anti-Ban Timing Planner</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

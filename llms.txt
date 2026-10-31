@@ -60,12 +60,27 @@
 - [Education Lead Quality Review](https://mahmoudabdelnaby1.github.io/marketing-systems/education-lead-quality-review/) | [مراجعة جودة استفسارات التعليم](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/education-lead-quality-review/) — A planning guide for classifying education enquiries, documenting qualification criteria, routing follow-up, and reviewing outcomes without assuming a CRM integration. / دليل لتصنيف استفسارات التعليم وتوثيق معايير التأهيل وتوجيه المتابعة ومراجعة النتائج دون افتراض وجود تكامل مع نظام CRM.
 - [Paid Media Creative Test Matrix](https://mahmoudabdelnaby1.github.io/marketing-systems/paid-media-creative-test-matrix/) | [مصفوفة اختبار إبداعات الإعلانات](https://mahmoudabdelnaby1.github.io/ar/marketing-systems/paid-media-creative-test-matrix/) — Structure a controlled creative test with hypotheses, comparable variants, delivery checks, and a recorded decision. / نظّم اختبارًا للإبداع الإعلاني بفرضيات ونسخ قابلة للمقارنة وفحوص للتسليم وقرار موثق.
 
+## Problem-first resource finder
+
+- [English resource finder](https://mahmoudabdelnaby1.github.io/resources/)
+- [دليل الموارد حسب المشكلة](https://mahmoudabdelnaby1.github.io/ar/resources/)
+
+## Browser-based marketing tools
+
+- [English marketing tools](https://mahmoudabdelnaby1.github.io/apps/)
+- [الأدوات التسويقية بالعربية](https://mahmoudabdelnaby1.github.io/ar/apps/)
+
+## GitHub repositories
+
+- [English repository directory](https://mahmoudabdelnaby1.github.io/repositories/)
+- [دليل مستودعات GitHub](https://mahmoudabdelnaby1.github.io/ar/repositories/)
+
 ## Assistant library
 
 > The assistant library grows over time. Browse the current catalog or use the sitemap for the complete index of public localized pages.
 
-- [Browse the English assistant library](https://mahmoudabdelnaby1.github.io/#assistant-library)
-- [تصفح مكتبة المساعدين بالعربية](https://mahmoudabdelnaby1.github.io/ar/#assistant-library)
+- [Browse the English assistant library](https://mahmoudabdelnaby1.github.io/assistants/library/)
+- [تصفح مكتبة المساعدين بالعربية](https://mahmoudabdelnaby1.github.io/ar/assistants/library/)
 - [XML sitemap](https://mahmoudabdelnaby1.github.io/sitemap.xml)
 
 ## Page guidance

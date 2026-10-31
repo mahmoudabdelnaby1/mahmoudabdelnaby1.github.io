@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Affiliate Marketing Commission Tier & Payout Simulator | DM Static App Suite" data-ar="محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية | منظومة أدوات التسويق الرقمي">محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Affiliate Marketing Commission Tier &amp; Payout Simulator" data-ar="محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة…">Affiliate Marketing Commission Tier &amp; Payout Simulator</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/affiliate-commission-tier-payout-simulator/">
-  <meta name="description" content="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/affiliate-commission-tier-payout-simulator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/affiliate-commission-tier-payout-simulator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/affiliate-commission-tier-payout-simulator/">
+  <meta name="description" content="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes." data-en="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes." data-ar="نمذج شرائح عمولات التسويق بالعمولة واحسب ما يتبقى من ربح التاجر بعد استخدام أكواد الخصم.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-054</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="Influencer & Creator Marketing" data-ar="Influencer & Creator Marketing">Influencer & Creator Marketing</div>
-      <h1 class="app-title" data-en="Affiliate Marketing Commission Tier & Payout Simulator" data-ar="محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية">محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية</h1>
-      <p class="app-promise" data-en="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes." data-ar="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.">Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.</p>
+      <div class="app-meta-badge" data-en="Influencer & Creator Marketing" data-ar="Influencer & Creator Marketing">Influencer &amp; Creator Marketing</div>
+      <h1 class="app-title" data-en="Affiliate Marketing Commission Tier & Payout Simulator" data-ar="محاكي شرائح العمولات ونسب الأرباح لبرامج التسويق بالعمولة المحلية">Affiliate Marketing Commission Tier &amp; Payout Simulator</h1>
+      <p class="app-promise" data-en="Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes." data-ar="نمذج شرائح عمولات التسويق بالعمولة واحسب ما يتبقى من ربح التاجر بعد استخدام أكواد الخصم.">Simulate tiered affiliate commission structures (e.g. 5%, 8%, 12%) and calculate merchant net profit retention after discount codes.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,39 +38,39 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="average_order_value">
-              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب">متوسط قيمة الطلب</span><span class="required">*</span>
+              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب">Average Order Value (AOV)</span><span class="required">*</span>
             </label>
             <input type="number" id="average_order_value" class="form-control" value="280" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="gross_margin_pct">
-              <span data-en="Store Gross Margin %" data-ar="هامش الربح الإجمالي للمتجر %">هامش الربح الإجمالي للمتجر %</span><span class="required">*</span>
+              <span data-en="Store Gross Margin %" data-ar="هامش الربح الإجمالي للمتجر %">Store Gross Margin %</span><span class="required">*</span>
             </label>
             <input type="number" id="gross_margin_pct" class="form-control" value="48" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="customer_discount_code_pct">
-              <span data-en="Discount Given to Shopper % (e.g. 10%)" data-ar="نسبة الخصم المعطاة للزبون %">نسبة الخصم المعطاة للزبون %</span><span class="required">*</span>
+              <span data-en="Discount Given to Shopper % (e.g. 10%)" data-ar="نسبة الخصم المعطاة للزبون %">Discount Given to Shopper % (e.g. 10%)</span><span class="required">*</span>
             </label>
             <input type="number" id="customer_discount_code_pct" class="form-control" value="10" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="affiliate_commission_pct">
-              <span data-en="Affiliate Commission % (e.g. 7%)" data-ar="نسبة عمولة المسوق %">نسبة عمولة المسوق %</span><span class="required">*</span>
+              <span data-en="Affiliate Commission % (e.g. 7%)" data-ar="نسبة عمولة المسوق %">Affiliate Commission % (e.g. 7%)</span><span class="required">*</span>
             </label>
             <input type="number" id="affiliate_commission_pct" class="form-control" value="12" step="1">
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -77,9 +80,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -105,13 +108,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -145,7 +148,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -155,16 +158,14 @@
           <strong>Benchmark Reference:</strong> MENA e-commerce affiliate commission standard rates by category (Beauty, Fashion, Supplements) &mdash; <a href="https://salla.com" target="_blank" rel="noopener noreferrer">https://salla.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-054 • Affiliate Marketing Commission Tier & Payout Simulator</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

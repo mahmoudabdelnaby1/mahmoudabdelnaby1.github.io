@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Arabic Keyword Density &amp; Diacritic Stripper for Clean…" data-ar="محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة…">محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/arabic-keyword-density-diacritic-stripper/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/arabic-keyword-density-diacritic-stripper/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/arabic-keyword-density-diacritic-stripper/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/arabic-keyword-density-diacritic-stripper/">
+  <meta name="description" content="حلّل تكرار الكلمات في النص العربي مع تطبيع الألف والياء وإزالة التشكيل لتسهيل مراجعة الصياغة." data-en="Analyze true Arabic keyword density, normalized word counts, and search frequency while stripping diacritics and unifying Alef/Yaa variants." data-ar="حلّل تكرار الكلمات في النص العربي مع تطبيع الألف والياء وإزالة التشكيل لتسهيل مراجعة الصياغة.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-025</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="SEO & Technical Optimization" data-ar="SEO & Technical Optimization">SEO &amp; Technical Optimization</div>
+      <h1 class="app-title" data-en="Arabic Keyword Density & Diacritic Stripper for Clean Content" data-ar="محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة التشكيل والهمزات">محلل كثافة الكلمات المفتاحية باللغة العربية مع معالج إزالة التشكيل والهمزات</h1>
+      <p class="app-promise" data-en="Analyze true Arabic keyword density, normalized word counts, and search frequency while stripping diacritics and unifying Alef/Yaa variants." data-ar="حلّل تكرار الكلمات في النص العربي مع تطبيع الألف والياء وإزالة التشكيل لتسهيل مراجعة الصياغة.">حلّل تكرار الكلمات في النص العربي مع تطبيع الألف والياء وإزالة التشكيل لتسهيل مراجعة الصياغة.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="content_text">
+              <span data-en="Arabic Article Text" data-ar="نص المقال أو المحتوى بالعربي">نص المقال أو المحتوى بالعربي</span><span class="required">*</span>
+            </label>
+            <input type="text" id="content_text" class="form-control" value="تعتبر القهوة المختصة من أكثر المشروبات طلباً في السعودية، حيث يحرص عشاق القهوة على تحضير القهوة باستخدام أدوات القهوة الاحترافية لضمان أفضل مذاق للقهوة.">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="target_keyword">
+              <span data-en="Target Focus Keyword (Optional)" data-ar="الكلمة المفتاحية المستهدفة">الكلمة المفتاحية المستهدفة</span>
+            </label>
+            <input type="text" id="target_keyword" class="form-control" value="القهوة">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ignore_common_words">
+              <span data-en="Exclude Arabic Stop Words" data-ar="استبعاد كلمات الربط الشائعة">استبعاد كلمات الربط الشائعة</span><span class="required">*</span>
+            </label>
+            <select id="ignore_common_words" class="form-control">
+              <option value="yes" data-en="Yes (Focus on content words)" data-ar="نعم (استبعاد حروف الجر والضمائر)" selected>نعم (استبعاد حروف الجر والضمائر)</option>
+              <option value="no" data-en="No (Count all words)" data-ar="لا (حساب كل الكلمات)">لا (حساب كل الكلمات)</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Total Word & Character Count (Raw vs Normalized)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Top 1-Gram, 2-Gram, and 3-Gram Phrase Density Table</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Focus Keyword Occurrence Count and Density %</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Total Word & Character Count (Raw vs Normalized)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Top 1-Gram, 2-Gram, and 3-Gram Phrase Density Table</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Focus Keyword Occurrence Count and Density %</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Keyword Stuffing Over-Optimization Warning (>3.5%)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Cleaned Normalized Text Output</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">https://developers.google.com/search/docs/fundamentals/creating-helpful-content</a> (2026-10-29) &mdash; Google Search Helpful Content guidelines advise natural keyword integration without unnatural density stuffing.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Arabic stop words list and Unicode regex normalization rules &mdash; <a href="https://www.w3.org/International/articles/arabic-letter-combinations/" target="_blank" rel="noopener noreferrer">https://www.w3.org/International/articles/arabic-letter-combinations/</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-025 • Arabic Keyword Density & Diacritic Stripper for Clean Content</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

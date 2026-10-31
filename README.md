@@ -4,6 +4,8 @@ Bilingual English/Arabic professional portfolio and visual library of reusable A
 
 - Website: https://mahmoudabdelnaby1.github.io
 - Marketing tools library: https://mahmoudabdelnaby1.github.io/apps/ (100 bilingual browser-based tools)
+- Arabic marketing tools: https://mahmoudabdelnaby1.github.io/ar/apps/
+- Problem-first resource finder: https://mahmoudabdelnaby1.github.io/resources/ and https://mahmoudabdelnaby1.github.io/ar/resources/
 - LinkedIn: https://eg.linkedin.com/in/mahmoudabdelnaby4
 - Assistant prompt source library: https://github.com/mahmoudabdelnaby1/assistant-prompt-library
 - Marketing systems playbooks: https://github.com/mahmoudabdelnaby1/marketing-systems-playbooks

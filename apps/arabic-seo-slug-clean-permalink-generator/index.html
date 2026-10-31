@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Arabic SEO Slug & Clean Permalinks Converter | DM Static App Suite" data-ar="محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة | منظومة أدوات التسويق الرقمي">محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Arabic SEO Slug &amp; Clean Permalinks Converter" data-ar="محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز…">Arabic SEO Slug &amp; Clean Permalinks Converter</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/arabic-seo-slug-clean-permalink-generator/">
-  <meta name="description" content="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/arabic-seo-slug-clean-permalink-generator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/arabic-seo-slug-clean-permalink-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/arabic-seo-slug-clean-permalink-generator/">
+  <meta name="description" content="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration." data-en="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration." data-ar="حوّل العناوين العربية إلى روابط URL نظيفة، مع إزالة التشكيل والكلمات الشائعة وإتاحة النقل الصوتي.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-021</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="SEO & Technical Optimization" data-ar="SEO & Technical Optimization">SEO & Technical Optimization</div>
-      <h1 class="app-title" data-en="Arabic SEO Slug & Clean Permalinks Converter" data-ar="محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة">محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة</h1>
-      <p class="app-promise" data-en="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration." data-ar="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.">Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.</p>
+      <div class="app-meta-badge" data-en="SEO & Technical Optimization" data-ar="SEO & Technical Optimization">SEO &amp; Technical Optimization</div>
+      <h1 class="app-title" data-en="Arabic SEO Slug & Clean Permalinks Converter" data-ar="محول الروابط الدائمة للغة العربية ومولد سلاج SEO بدون رموز مشفرة">Arabic SEO Slug &amp; Clean Permalinks Converter</h1>
+      <p class="app-promise" data-en="Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration." data-ar="حوّل العناوين العربية إلى روابط URL نظيفة، مع إزالة التشكيل والكلمات الشائعة وإتاحة النقل الصوتي.">Convert Arabic headlines into clean, URL-safe, hyphenated slugs with diacritic removal, stop-word filtering, and optional transliteration.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,39 +38,39 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="arabic_title">
-              <span data-en="Arabic Article / Product Title" data-ar="عنوان المقال أو المنتج بالعربي">عنوان المقال أو المنتج بالعربي</span><span class="required">*</span>
+              <span data-en="Arabic Article / Product Title" data-ar="عنوان المقال أو المنتج بالعربي">Arabic Article / Product Title</span><span class="required">*</span>
             </label>
             <input type="text" id="arabic_title" class="form-control" value="أفضل 10 استراتيجيات لزيادة مبيعات المتاجر الإلكترونية في السعودية 2026">
           </div>
           <div class="form-group">
             <label class="form-label" for="mode">
-              <span data-en="Format (Clean Arabic UTF-8 / English Arabizi Transliteration)" data-ar="النوع (عربي نظيف مفصول بشرطات / إنجليزي معرب)">النوع (عربي نظيف مفصول بشرطات / إنجليزي معرب)</span><span class="required">*</span>
+              <span data-en="Format (Clean Arabic UTF-8 / English Arabizi Transliteration)" data-ar="النوع (عربي نظيف مفصول بشرطات / إنجليزي معرب)">Format (Clean Arabic UTF-8 / English Arabizi Transliteration)</span><span class="required">*</span>
             </label>
             <select id="mode" class="form-control">
-              <option value="arabic" data-en="Clean Arabic UTF-8 (Hyphen-separated)" data-ar="عربي نظيف مفصول بشرطات (UTF-8)" selected>عربي نظيف مفصول بشرطات (UTF-8)</option>
-              <option value="translit" data-en="Arabizi / English Transliteration" data-ar="معرب بحروف إنجليزية (Transliteration)">معرب بحروف إنجليزية (Transliteration)</option>
+              <option value="arabic" data-en="Clean Arabic UTF-8 (Hyphen-separated)" data-ar="عربي نظيف مفصول بشرطات (UTF-8)" selected>Clean Arabic UTF-8 (Hyphen-separated)</option>
+              <option value="translit" data-en="Arabizi / English Transliteration" data-ar="معرب بحروف إنجليزية (Transliteration)">Arabizi / English Transliteration</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label" for="remove_arabic_stop_words">
-              <span data-en="Remove Stop Words (في، من، على، إلى...)" data-ar="حذف حروف الجر والكلمات الشائعة">حذف حروف الجر والكلمات الشائعة</span><span class="required">*</span>
+              <span data-en="Remove Stop Words (في، من، على، إلى...)" data-ar="حذف حروف الجر والكلمات الشائعة">Remove Stop Words (في، من، على، إلى...)</span><span class="required">*</span>
             </label>
             <select id="remove_arabic_stop_words" class="form-control">
-              <option value="yes" data-en="Yes (Remove stop words: في، من، إلى، على، عن، مع...)" data-ar="نعم (حذف حروف الجر والكلمات الشائعة)" selected>نعم (حذف حروف الجر والكلمات الشائعة)</option>
-              <option value="no" data-en="No (Keep all words intact)" data-ar="لا (الاحتفاظ بجميع الكلمات)">لا (الاحتفاظ بجميع الكلمات)</option>
+              <option value="yes" data-en="Yes (Remove stop words: في، من، إلى، على، عن، مع...)" data-ar="نعم (حذف حروف الجر والكلمات الشائعة)" selected>Yes (Remove stop words: في، من، إلى، على، عن، مع...)</option>
+              <option value="no" data-en="No (Keep all words intact)" data-ar="لا (الاحتفاظ بجميع الكلمات)">No (Keep all words intact)</option>
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -77,9 +80,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -105,13 +108,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -141,7 +144,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -151,16 +154,14 @@
           <strong>Benchmark Reference:</strong> Arabic stop words list (حروف الجر، أسماء الإشارة، الضمائر) &mdash; <a href="https://developers.google.com" target="_blank" rel="noopener noreferrer">https://developers.google.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-021 • Arabic SEO Slug & Clean Permalinks Converter</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

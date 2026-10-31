@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Product Bundle Pricing &amp; Cannibalization Margin Analyzer" data-ar="محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة…">محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/product-bundle-pricing-margin-analyzer/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/product-bundle-pricing-margin-analyzer/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/product-bundle-pricing-margin-analyzer/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/product-bundle-pricing-margin-analyzer/">
+  <meta name="description" content="حلّل مساهمة ربحية الباقات والعروض المجمعة وحجم المبيعات اللازم لمقارنتها ببيع المنتجات منفردة." data-en="Analyze bundle pricing feasibility, profit contribution per order, and break-even sales volume required to beat standalone product profits." data-ar="حلّل مساهمة ربحية الباقات والعروض المجمعة وحجم المبيعات اللازم لمقارنتها ببيع المنتجات منفردة.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-019</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="E-commerce & COD Economics" data-ar="E-commerce & COD Economics">E-commerce &amp; COD Economics</div>
+      <h1 class="app-title" data-en="Product Bundle Pricing & Cannibalization Margin Analyzer" data-ar="محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة السلة">محلل تسعير البكجات والعروض المجمعة لحماية هامش الربح وزيادة السلة</h1>
+      <p class="app-promise" data-en="Analyze bundle pricing feasibility, profit contribution per order, and break-even sales volume required to beat standalone product profits." data-ar="حلّل مساهمة ربحية الباقات والعروض المجمعة وحجم المبيعات اللازم لمقارنتها ببيع المنتجات منفردة.">حلّل مساهمة ربحية الباقات والعروض المجمعة وحجم المبيعات اللازم لمقارنتها ببيع المنتجات منفردة.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="product_1_price">
+              <span data-en="Item 1 Retail Price" data-ar="سعر المنتج الأول">سعر المنتج الأول</span><span class="required">*</span>
+            </label>
+            <input type="number" id="product_1_price" class="form-control" value="180" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="product_1_cogs">
+              <span data-en="Item 1 COGS" data-ar="تكلفة المنتج الأول">تكلفة المنتج الأول</span><span class="required">*</span>
+            </label>
+            <input type="number" id="product_1_cogs" class="form-control" value="60" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="product_2_price">
+              <span data-en="Item 2 Retail Price" data-ar="سعر المنتج الثاني">سعر المنتج الثاني</span><span class="required">*</span>
+            </label>
+            <input type="number" id="product_2_price" class="form-control" value="120" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="product_2_cogs">
+              <span data-en="Item 2 COGS" data-ar="تكلفة المنتج الثاني">تكلفة المنتج الثاني</span><span class="required">*</span>
+            </label>
+            <input type="number" id="product_2_cogs" class="form-control" value="35" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bundle_discount_pct">
+              <span data-en="Bundle Discount % Offered" data-ar="نسبة الخصم على البكج %">نسبة الخصم على البكج %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="bundle_discount_pct" class="form-control" value="15" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="single_shipping_cost">
+              <span data-en="Shared Shipping Cost per Parcel" data-ar="تكلفة الشحن الموحدة للطلب">تكلفة الشحن الموحدة للطلب</span><span class="required">*</span>
+            </label>
+            <input type="number" id="single_shipping_cost" class="form-control" value="25" step="1">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Standalone Combined Price vs Bundle Selling Price</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Bundle Net Profit Contribution per Order</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Shipping Cost Savings Saved by Single Parcel Delivery</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Standalone Combined Price vs Bundle Selling Price</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Bundle Net Profit Contribution per Order</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Shipping Cost Savings Saved by Single Parcel Delivery</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Volume Multiplier Required to Equal Single-Item Profit</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Pricing Recommendation</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://hbr.org/2010/02/how-to-design-a-discount-offer" target="_blank" rel="noopener noreferrer">https://hbr.org/2010/02/how-to-design-a-discount-offer</a> (2026-10-29) &mdash; Harvard Business Review pricing research on bundling demonstrates that uncalculated bundle discounts erode gross margins unless accompanied by fixed operational cost efficiencies.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Retail bundle pricing and shipping consolidation benchmarks &mdash; <a href="https://hbr.org" target="_blank" rel="noopener noreferrer">https://hbr.org</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-019 • Product Bundle Pricing & Cannibalization Margin Analyzer</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

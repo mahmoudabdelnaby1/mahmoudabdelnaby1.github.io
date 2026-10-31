@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="MENA Payment Gateway Fee & Net Payout Comparator | DM Static App Suite" data-ar="مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج | منظومة أدوات التسويق الرقمي">مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="MENA Payment Gateway Fee &amp; Net Payout Comparator" data-ar="مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر…">MENA Payment Gateway Fee &amp; Net Payout Comparator</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/mena-payment-gateway-fee-comparator/">
-  <meta name="description" content="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/mena-payment-gateway-fee-comparator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-payment-gateway-fee-comparator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/mena-payment-gateway-fee-comparator/">
+  <meta name="description" content="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket…" data-en="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket…" data-ar="قارن رسوم المعاملات والاشتراكات وصافي التحصيل لدى بوابات دفع في مصر والخليج وفق حجم المبيعات ومتوسط الطلب.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-013</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="E-commerce & COD Economics" data-ar="E-commerce & COD Economics">E-commerce & COD Economics</div>
-      <h1 class="app-title" data-en="MENA Payment Gateway Fee & Net Payout Comparator" data-ar="مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج">مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج</h1>
-      <p class="app-promise" data-en="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size." data-ar="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.">Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.</p>
+      <div class="app-meta-badge" data-en="E-commerce & COD Economics" data-ar="E-commerce & COD Economics">E-commerce &amp; COD Economics</div>
+      <h1 class="app-title" data-en="MENA Payment Gateway Fee & Net Payout Comparator" data-ar="مقارن رسوم بوابات الدفع الإلكتروني وصافي التحصيل لمصر والخليج">MENA Payment Gateway Fee &amp; Net Payout Comparator</h1>
+      <p class="app-promise" data-en="Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size." data-ar="قارن رسوم المعاملات والاشتراكات وصافي التحصيل لدى بوابات دفع في مصر والخليج وفق حجم المبيعات ومتوسط الطلب.">Compare exact total transaction deductions, monthly fees, and net payouts across all major MENA payment gateways based on your specific sales volume and ticket size.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,45 +38,45 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="monthly_sales_volume">
-              <span data-en="Expected Monthly Sales Volume" data-ar="حجم المبيعات الشهرية المتوقعة">حجم المبيعات الشهرية المتوقعة</span><span class="required">*</span>
+              <span data-en="Expected Monthly Sales Volume" data-ar="حجم المبيعات الشهرية المتوقعة">Expected Monthly Sales Volume</span><span class="required">*</span>
             </label>
             <input type="number" id="monthly_sales_volume" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="average_ticket_size">
-              <span data-en="Average Transaction Value" data-ar="متوسط قيمة المعاملة الواحدة">متوسط قيمة المعاملة الواحدة</span><span class="required">*</span>
+              <span data-en="Average Transaction Value" data-ar="متوسط قيمة المعاملة الواحدة">Average Transaction Value</span><span class="required">*</span>
             </label>
             <input type="number" id="average_ticket_size" class="form-control" value="350" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="country">
-              <span data-en="Country (Egypt / KSA / UAE)" data-ar="الدولة">الدولة</span><span class="required">*</span>
+              <span data-en="Country (Egypt / KSA / UAE)" data-ar="الدولة">Country (Egypt / KSA / UAE)</span><span class="required">*</span>
             </label>
             <select id="country" class="form-control">
-              <option value="ksa" data-en="Saudi Arabia (Moyasar, Geidea, HyperPay)" data-ar="المملكة العربية السعودية (ميسر، جيديا، هايبرباي)" selected>المملكة العربية السعودية (ميسر، جيديا، هايبرباي)</option>
-              <option value="egypt" data-en="Egypt (Paymob, Fawry, Kashier)" data-ar="جمهورية مصر العربية (باي موب، فوري، كاشير)">جمهورية مصر العربية (باي موب، فوري، كاشير)</option>
-              <option value="uae" data-en="United Arab Emirates (Stripe, Telr, Checkout)" data-ar="الإمارات العربية المتحدة (سترايب، تيلر، تشيك آوت)">الإمارات العربية المتحدة (سترايب، تيلر، تشيك آوت)</option>
+              <option value="ksa" data-en="Saudi Arabia (Moyasar, Geidea, HyperPay)" data-ar="المملكة العربية السعودية (ميسر، جيديا، هايبرباي)" selected>Saudi Arabia (Moyasar, Geidea, HyperPay)</option>
+              <option value="egypt" data-en="Egypt (Paymob, Fawry, Kashier)" data-ar="جمهورية مصر العربية (باي موب، فوري، كاشير)">Egypt (Paymob, Fawry, Kashier)</option>
+              <option value="uae" data-en="United Arab Emirates (Stripe, Telr, Checkout)" data-ar="الإمارات العربية المتحدة (سترايب، تيلر، تشيك آوت)">United Arab Emirates (Stripe, Telr, Checkout)</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label" for="payment_mix">
-              <span data-en="Card Mix (Mada/Meeza vs Visa/Mastercard)" data-ar="نوعية البطاقات (مدى/ميزة مقابل فيزا وماستركارد)">نوعية البطاقات (مدى/ميزة مقابل فيزا وماستركارد)</span><span class="required">*</span>
+              <span data-en="Card Mix (Mada/Meeza vs Visa/Mastercard)" data-ar="نوعية البطاقات (مدى/ميزة مقابل فيزا وماستركارد)">Card Mix (Mada/Meeza vs Visa/Mastercard)</span><span class="required">*</span>
             </label>
             <select id="payment_mix" class="form-control">
 
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -83,9 +86,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -111,13 +114,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -151,7 +154,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -161,16 +164,14 @@
           <strong>Benchmark Reference:</strong> Published rates for Paymob (Egypt/KSA/UAE), Fawry, Geidea, Moyasar, Tap Payments, HyperPay &mdash; <a href="https://www.paymob.com" target="_blank" rel="noopener noreferrer">https://www.paymob.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-013 • MENA Payment Gateway Fee & Net Payout Comparator</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

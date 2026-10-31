@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Saudi &amp; UAE Ad Spend Net/Gross VAT Budget Planner" data-ar="مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة…">مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/saudi-uae-ad-vat-planner/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/saudi-uae-ad-vat-planner/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/saudi-uae-ad-vat-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/saudi-uae-ad-vat-planner/">
+  <meta name="description" content="قدّر صافي ميزانية الإعلانات والضريبة والإيداع المطلوب وفق مدخلات الإنفاق في السعودية أو الإمارات." data-en="Instantly compute the exact net auction budget, payable VAT, and required platform deposits for KSA and UAE tax regimes." data-ar="قدّر صافي ميزانية الإعلانات والضريبة والإيداع المطلوب وفق مدخلات الإنفاق في السعودية أو الإمارات.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-002</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Paid Ads, Media Buying & Tax" data-ar="Paid Ads, Media Buying & Tax">Paid Ads, Media Buying &amp; Tax</div>
+      <h1 class="app-title" data-en="Saudi & UAE Ad Spend Net/Gross VAT Budget Planner" data-ar="مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة للسعودية والإمارات">مخطط ميزانية الإعلانات الصافية بعد ضريبة القيمة المضافة للسعودية والإمارات</h1>
+      <p class="app-promise" data-en="Instantly compute the exact net auction budget, payable VAT, and required platform deposits for KSA and UAE tax regimes." data-ar="قدّر صافي ميزانية الإعلانات والضريبة والإيداع المطلوب وفق مدخلات الإنفاق في السعودية أو الإمارات.">قدّر صافي ميزانية الإعلانات والضريبة والإيداع المطلوب وفق مدخلات الإنفاق في السعودية أو الإمارات.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="target_gross_or_net">
+              <span data-en="Calculation Direction" data-ar="طريقة الحساب (من الميزانية الكلية أو الميزانية الصافية)">طريقة الحساب (من الميزانية الكلية أو الميزانية الصافية)</span><span class="required">*</span>
+            </label>
+            <select id="target_gross_or_net" class="form-control">
+              <option value="gross" data-en="Gross Total Budget (VAT is included inside total)" data-ar="الميزانية الكلية شاملة الضريبة (استقطاع الضريبة من الداخل)" selected>الميزانية الكلية شاملة الضريبة (استقطاع الضريبة من الداخل)</option>
+              <option value="net" data-en="Net Auction Budget (Add VAT on top of spend)" data-ar="الميزانية الصافية في المزاد (إضافة الضريبة فوق الإنفاق)">الميزانية الصافية في المزاد (إضافة الضريبة فوق الإنفاق)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="budget_amount">
+              <span data-en="Budget Amount" data-ar="المبلغ المرصود">المبلغ المرصود</span><span class="required">*</span>
+            </label>
+            <input type="number" id="budget_amount" class="form-control" value="10000" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="jurisdiction">
+              <span data-en="Country (KSA 15% / UAE 5%)" data-ar="الدولة (السعودية 15% / الإمارات 5%)">الدولة (السعودية 15% / الإمارات 5%)</span><span class="required">*</span>
+            </label>
+            <select id="jurisdiction" class="form-control">
+              <option value="ksa" data-en="Saudi Arabia (ZATCA 15% VAT)" data-ar="المملكة العربية السعودية (هيئة الزكاة والضريبة 15%)" selected>المملكة العربية السعودية (هيئة الزكاة والضريبة 15%)</option>
+              <option value="uae" data-en="United Arab Emirates (FTA 5% VAT)" data-ar="دولة الإمارات العربية المتحدة (الهيئة الاتحادية 5%)">دولة الإمارات العربية المتحدة (الهيئة الاتحادية 5%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="has_tax_registration">
+              <span data-en="Advertiser has Registered TRN/VAT ID" data-ar="هل الحساب مسجل برقم ضريبي (Reverse Charge)؟">هل الحساب مسجل برقم ضريبي (Reverse Charge)؟</span><span class="required">*</span>
+            </label>
+            <select id="has_tax_registration" class="form-control">
+              <option value="no" data-en="No (Platform charges VAT on invoice directly)" data-ar="لا (تقوم المنصة بخصم الضريبة مباشرة في الفاتورة)" selected>لا (تقوم المنصة بخصم الضريبة مباشرة في الفاتورة)</option>
+              <option value="yes" data-en="Yes (Reverse Charge Mechanism - Business TRN provided)" data-ar="نعم (آلية التكليف العكسي Reverse Charge - مسجل ضريبياً)">نعم (آلية التكليف العكسي Reverse Charge - مسجل ضريبياً)</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Net Auction Spend Available</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">VAT Obligation Amount</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Total Invoiced Platform Billing</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Net Auction Spend Available</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">VAT Obligation Amount</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Total Invoiced Platform Billing</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Daily Maximum Target Spend Limit</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://zatca.gov.sa/en/RulesRegulations/Taxes/Pages/VAT.aspx" target="_blank" rel="noopener noreferrer">https://zatca.gov.sa/en/RulesRegulations/Taxes/Pages/VAT.aspx</a> (2026-10-29) &mdash; ZATCA enforces 15% standard VAT on digital advertising in KSA, while UAE FTA enforces 5% VAT under Cabinet Decision No. 52.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> ZATCA and UAE FTA tax guidance for digital non-resident vendors &mdash; <a href="https://tax.gov.ae" target="_blank" rel="noopener noreferrer">https://tax.gov.ae</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-002 • Saudi & UAE Ad Spend Net/Gross VAT Budget Planner</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

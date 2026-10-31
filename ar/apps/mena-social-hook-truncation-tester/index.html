@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="MENA Social Media Character &amp; Hook Length Truncation Tester" data-ar="مدقق طول الخطاف التسويقي ونقاط قطع النصوص &#x27;اقرأ المزيد&#x27; في…">مدقق طول الخطاف التسويقي ونقاط قطع النصوص &#x27;اقرأ المزيد&#x27; في…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-social-hook-truncation-tester/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/mena-social-hook-truncation-tester/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-social-hook-truncation-tester/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/mena-social-hook-truncation-tester/">
+  <meta name="description" content="عاين موضع اختصار النص في وصف المنشور على LinkedIn وInstagram وFacebook وTikTok قبل النشر." data-en="Preview the exact truncation cutoff point of your Arabic caption across LinkedIn, Instagram, Facebook, and TikTok before you publish." data-ar="عاين موضع اختصار النص في وصف المنشور على LinkedIn وInstagram وFacebook وTikTok قبل النشر.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-043</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Social Media & Copywriting" data-ar="Social Media & Copywriting">Social Media &amp; Copywriting</div>
+      <h1 class="app-title" data-en="MENA Social Media Character & Hook Length Truncation Tester" data-ar="مدقق طول الخطاف التسويقي ونقاط قطع النصوص 'اقرأ المزيد' في السوشيال ميديا">مدقق طول الخطاف التسويقي ونقاط قطع النصوص &#x27;اقرأ المزيد&#x27; في السوشيال ميديا</h1>
+      <p class="app-promise" data-en="Preview the exact truncation cutoff point of your Arabic caption across LinkedIn, Instagram, Facebook, and TikTok before you publish." data-ar="عاين موضع اختصار النص في وصف المنشور على LinkedIn وInstagram وFacebook وTikTok قبل النشر.">عاين موضع اختصار النص في وصف المنشور على LinkedIn وInstagram وFacebook وTikTok قبل النشر.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="post_caption">
+              <span data-en="Social Media Post Caption" data-ar="نص المنشور الكامل">نص المنشور الكامل</span><span class="required">*</span>
+            </label>
+            <input type="text" id="post_caption" class="form-control" value="السر الأكبر اللي يخفيه عنك خبراء الإعلانات في الخليج لخفض تكلفة النقرة CPC للنصف بدون زيادة الميزانية! تابع القراءة لمعرفة التفاصيل كاملة...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="target_platform">
+              <span data-en="Platform (LinkedIn / Instagram / Facebook / TikTok / X)" data-ar="المنصة المستهدفة">المنصة المستهدفة</span><span class="required">*</span>
+            </label>
+            <select id="target_platform" class="form-control">
+
+            </select>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Visible Above-the-Fold Hook Text</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Hidden Below-the-Fold Text (After 'اقرأ المزيد')</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Hook Character & Line Count Analysis</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Visible Above-the-Fold Hook Text</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Hidden Below-the-Fold Text (After 'اقرأ المزيد')</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Hook Character & Line Count Analysis</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Interactive Visual Post Feed Preview (Mobile Frame with RTL)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Hook Punchiness Score & Recommendation</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.facebook.com/business/help/223106797811279" target="_blank" rel="noopener noreferrer">https://www.facebook.com/business/help/223106797811279</a> (2026-10-29) &mdash; Platform UI guidelines: LinkedIn truncates at ~140 chars on mobile; Instagram truncates after 125 chars; Facebook truncates after 3 lines.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> Platform caption truncation thresholds across mobile and desktop clients &mdash; <a href="https://www.facebook.com/business" target="_blank" rel="noopener noreferrer">https://www.facebook.com/business</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-043 • MENA Social Media Character & Hook Length Truncation Tester</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

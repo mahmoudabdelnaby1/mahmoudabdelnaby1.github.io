@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="White Friday / Black November Mega-Sale Discount &amp; Stock…" data-ar="مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح…">مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/white-friday-black-november-discount-forecaster/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/white-friday-black-november-discount-forecaster/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/white-friday-black-november-discount-forecaster/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/white-friday-black-november-discount-forecaster/">
+  <meta name="description" content="نمذج خصومات الجمعة البيضاء ومبيعات نوفمبر وأثرها المتوقع على المخزون والهامش والإنفاق الإعلاني." data-en="Model discounted unit economics, inventory clearance targets, and ad spend thresholds for White Friday and Singles Day sales." data-ar="نمذج خصومات الجمعة البيضاء ومبيعات نوفمبر وأثرها المتوقع على المخزون والهامش والإنفاق الإعلاني.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-091</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="Growth Strategy & Seasonal Pricing" data-ar="Growth Strategy & Seasonal Pricing">Growth Strategy &amp; Seasonal Pricing</div>
+      <h1 class="app-title" data-en="White Friday / Black November Mega-Sale Discount & Stock Forecaster" data-ar="مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح وحجم المبيعات">مخطط خصومات وعروض الجمعة البيضاء ونوفمبر للتوازن بين الربح وحجم المبيعات</h1>
+      <p class="app-promise" data-en="Model discounted unit economics, inventory clearance targets, and ad spend thresholds for White Friday and Singles Day sales." data-ar="نمذج خصومات الجمعة البيضاء ومبيعات نوفمبر وأثرها المتوقع على المخزون والهامش والإنفاق الإعلاني.">نمذج خصومات الجمعة البيضاء ومبيعات نوفمبر وأثرها المتوقع على المخزون والهامش والإنفاق الإعلاني.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="standard_retail_price">
+              <span data-en="Regular Retail Price" data-ar="سعر البيع الأصلي">سعر البيع الأصلي</span><span class="required">*</span>
+            </label>
+            <input type="number" id="standard_retail_price" class="form-control" value="380" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="product_cogs">
+              <span data-en="Product Cost (COGS)" data-ar="تكلفة شراء المنتج">تكلفة شراء المنتج</span><span class="required">*</span>
+            </label>
+            <input type="number" id="product_cogs" class="form-control" value="120" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="planned_discount_pct">
+              <span data-en="Planned Discount % (e.g. 35%)" data-ar="نسبة الخصم المخططة %">نسبة الخصم المخططة %</span><span class="required">*</span>
+            </label>
+            <input type="number" id="planned_discount_pct" class="form-control" value="35" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inventory_units_to_clear">
+              <span data-en="Stock Units Allocated for Promotion" data-ar="عدد القطع المرصودة للعرض">عدد القطع المرصودة للعرض</span><span class="required">*</span>
+            </label>
+            <input type="number" id="inventory_units_to_clear" class="form-control" value="1200" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="blended_shipping_cost">
+              <span data-en="Shipping & Packaging Cost per Unit" data-ar="تكلفة الشحن والتغليف">تكلفة الشحن والتغليف</span><span class="required">*</span>
+            </label>
+            <input type="number" id="blended_shipping_cost" class="form-control" value="35" step="1">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Sale Selling Price per Unit</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Net Profit Margin per Unit Sold During Sale</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Total Projected Net Profit from Campaign</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Sale Selling Price per Unit</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Net Profit Margin per Unit Sold During Sale</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Total Projected Net Profit from Campaign</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Maximum Permissible Ad Spend (CPA) per Sale to Break Even</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">Volume Multiplier Needed to Match Regular Month Gross Profit</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.thinkwithgoogle.com/intl/en-mena/consumer-insights/consumer-trends/white-friday-shopping-insights/" target="_blank" rel="noopener noreferrer">https://www.thinkwithgoogle.com/intl/en-mena/consumer-insights/consumer-trends/white-friday-shopping-insights/</a> (2026-10-29) &mdash; Google MENA White Friday shopping research revealing 78% of regional consumers research November promotions weeks in advance with massive volume surges.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> MENA White Friday and Singles Day retail discount and margin benchmarks &mdash; <a href="https://www.thinkwithgoogle.com" target="_blank" rel="noopener noreferrer">https://www.thinkwithgoogle.com</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-091 • White Friday / Black November Mega-Sale Discount & Stock Forecaster</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

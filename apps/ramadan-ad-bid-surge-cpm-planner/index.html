@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Ramadan Ad Auction Bid Surge & CPM Inflation Compensator | DM Static App Suite" data-ar="حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات | منظومة أدوات التسويق الرقمي">حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Ramadan Ad Auction Bid Surge &amp; CPM Inflation Compensator" data-ar="حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات…">Ramadan Ad Auction Bid Surge &amp; CPM Inflation Compensator</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/ramadan-ad-bid-surge-cpm-planner/">
-  <meta name="description" content="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/ramadan-ad-bid-surge-cpm-planner/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/ramadan-ad-bid-surge-cpm-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/ramadan-ad-bid-surge-cpm-planner/">
+  <meta name="description" content="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks." data-en="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks." data-ar="قدّر تغير CPM خلال رمضان والعيد أسبوعًا بأسبوع لمساعدتك على مراجعة عروض الأسعار والميزانية.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-010</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="Paid Ads, Media Buying & Tax" data-ar="Paid Ads, Media Buying & Tax">Paid Ads, Media Buying & Tax</div>
-      <h1 class="app-title" data-en="Ramadan Ad Auction Bid Surge & CPM Inflation Compensator" data-ar="حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات">حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات</h1>
-      <p class="app-promise" data-en="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks." data-ar="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.">Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.</p>
+      <div class="app-meta-badge" data-en="Paid Ads, Media Buying & Tax" data-ar="Paid Ads, Media Buying & Tax">Paid Ads, Media Buying &amp; Tax</div>
+      <h1 class="app-title" data-en="Ramadan Ad Auction Bid Surge & CPM Inflation Compensator" data-ar="حاسبة تضخم أسعار إعلانات CPM في موسم رمضان وتعديل ميزانيات الحملات">Ramadan Ad Auction Bid Surge &amp; CPM Inflation Compensator</h1>
+      <p class="app-promise" data-en="Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks." data-ar="قدّر تغير CPM خلال رمضان والعيد أسبوعًا بأسبوع لمساعدتك على مراجعة عروض الأسعار والميزانية.">Model expected CPM inflation week-by-week across Ramadan and Eid to adjust daily bids and prevent budget exhaustion in high-surge weeks.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,48 +38,48 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="baseline_cpm">
-              <span data-en="Regular Baseline CPM ($/SAR)" data-ar="متوسط الـ CPM في الأيام العادية">متوسط الـ CPM في الأيام العادية</span><span class="required">*</span>
+              <span data-en="Regular Baseline CPM ($/SAR)" data-ar="متوسط الـ CPM في الأيام العادية">Regular Baseline CPM ($/SAR)</span><span class="required">*</span>
             </label>
             <input type="number" id="baseline_cpm" class="form-control" value="4.5" step="any">
           </div>
           <div class="form-group">
             <label class="form-label" for="total_campaign_budget">
-              <span data-en="Total Ramadan Campaign Budget" data-ar="إجمالي ميزانية حملة رمضان">إجمالي ميزانية حملة رمضان</span><span class="required">*</span>
+              <span data-en="Total Ramadan Campaign Budget" data-ar="إجمالي ميزانية حملة رمضان">Total Ramadan Campaign Budget</span><span class="required">*</span>
             </label>
             <input type="number" id="total_campaign_budget" class="form-control" value="25000" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="target_market">
-              <span data-en="Market (Egypt / Saudi Arabia / UAE)" data-ar="السوق المستهدف (مصر / السعودية / الإمارات)">السوق المستهدف (مصر / السعودية / الإمارات)</span><span class="required">*</span>
+              <span data-en="Market (Egypt / Saudi Arabia / UAE)" data-ar="السوق المستهدف (مصر / السعودية / الإمارات)">Market (Egypt / Saudi Arabia / UAE)</span><span class="required">*</span>
             </label>
             <select id="target_market" class="form-control">
-              <option value="ksa" data-en="Saudi Arabia (High CPM surge late Ramadan)" data-ar="السعودية (ذروة حادة في الثلث الأخير للعيد)" selected>السعودية (ذروة حادة في الثلث الأخير للعيد)</option>
-              <option value="uae" data-en="United Arab Emirates (Consistent high luxury surge)" data-ar="الإمارات (تضخم مبكر ومستمر للعلامات التجارية)">الإمارات (تضخم مبكر ومستمر للعلامات التجارية)</option>
-              <option value="egypt" data-en="Egypt (Massive prime-time FMCG & Media surge)" data-ar="مصر (منافسة تلفزيونية ورقمية قياسية)">مصر (منافسة تلفزيونية ورقمية قياسية)</option>
+              <option value="ksa" data-en="Saudi Arabia (High CPM surge late Ramadan)" data-ar="السعودية (ذروة حادة في الثلث الأخير للعيد)" selected>Saudi Arabia (High CPM surge late Ramadan)</option>
+              <option value="uae" data-en="United Arab Emirates (Consistent high luxury surge)" data-ar="الإمارات (تضخم مبكر ومستمر للعلامات التجارية)">United Arab Emirates (Consistent high luxury surge)</option>
+              <option value="egypt" data-en="Egypt (Massive prime-time FMCG & Media surge)" data-ar="مصر (منافسة تلفزيونية ورقمية قياسية)">Egypt (Massive prime-time FMCG &amp; Media surge)</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label" for="primary_channel">
-              <span data-en="Channel (Meta, TikTok, Snapchat, YouTube)" data-ar="القناة الأساسية">القناة الأساسية</span><span class="required">*</span>
+              <span data-en="Channel (Meta, TikTok, Snapchat, YouTube)" data-ar="القناة الأساسية">Channel (Meta, TikTok, Snapchat, YouTube)</span><span class="required">*</span>
             </label>
             <select id="primary_channel" class="form-control">
-              <option value="meta" data-en="Meta (Instagram / Facebook)" data-ar="ميتا (إنستجرام وفيسبوك)" selected>ميتا (إنستجرام وفيسبوك)</option>
-              <option value="tiktok" data-en="TikTok (Heavy entertainment & gifting surge)" data-ar="تيك توك (ترفيه وتفاعلات رمضانية)">تيك توك (ترفيه وتفاعلات رمضانية)</option>
-              <option value="snapchat" data-en="Snapchat (GCC dominant social camera surge)" data-ar="سناب شات (القناة الأكثر نشاطاً خليجياً)">سناب شات (القناة الأكثر نشاطاً خليجياً)</option>
-              <option value="youtube" data-en="YouTube (Series and cooking prime-time)" data-ar="يوتيوب (مسلسلات وبرامج الطهي)">يوتيوب (مسلسلات وبرامج الطهي)</option>
+              <option value="meta" data-en="Meta (Instagram / Facebook)" data-ar="ميتا (إنستجرام وفيسبوك)" selected>Meta (Instagram / Facebook)</option>
+              <option value="tiktok" data-en="TikTok (Heavy entertainment & gifting surge)" data-ar="تيك توك (ترفيه وتفاعلات رمضانية)">TikTok (Heavy entertainment &amp; gifting surge)</option>
+              <option value="snapchat" data-en="Snapchat (GCC dominant social camera surge)" data-ar="سناب شات (القناة الأكثر نشاطاً خليجياً)">Snapchat (GCC dominant social camera surge)</option>
+              <option value="youtube" data-en="YouTube (Series and cooking prime-time)" data-ar="يوتيوب (مسلسلات وبرامج الطهي)">YouTube (Series and cooking prime-time)</option>
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -86,9 +89,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -114,13 +117,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -150,7 +153,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -160,16 +163,14 @@
           <strong>Benchmark Reference:</strong> Historical MENA Ramadan advertising auction data compiled by Google and Meta MENA reports &mdash; <a href="https://www.thinkwithgoogle.com" target="_blank" rel="noopener noreferrer">https://www.thinkwithgoogle.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-010 • Ramadan Ad Auction Bid Surge & CPM Inflation Compensator</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

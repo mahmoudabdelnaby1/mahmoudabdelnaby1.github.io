@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Egypt & GCC COD Return Rate (RTO) Loss & Profitability Simulator | DM Static App Suite" data-ar="محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي | منظومة أدوات التسويق الرقمي">محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Egypt &amp; GCC COD Return Rate (RTO) Loss &amp; Profitability…" data-ar="محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح…">Egypt &amp; GCC COD Return Rate (RTO) Loss &amp; Profitability…</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/egypt-gcc-cod-rto-profitability-simulator/">
-  <meta name="description" content="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/egypt-gcc-cod-rto-profitability-simulator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/egypt-gcc-cod-rto-profitability-simulator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/egypt-gcc-cod-rto-profitability-simulator/">
+  <meta name="description" content="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees." data-en="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees." data-ar="نمذج التدفق النقدي وهامش الربح عند اختلاف نسب رفض الدفع عند الاستلام ورسوم إرجاع الشحنات.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-011</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="E-commerce & COD Economics" data-ar="E-commerce & COD Economics">E-commerce & COD Economics</div>
-      <h1 class="app-title" data-en="Egypt & GCC COD Return Rate (RTO) Loss & Profitability Simulator" data-ar="محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي">محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي</h1>
-      <p class="app-promise" data-en="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees." data-ar="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.">Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.</p>
+      <div class="app-meta-badge" data-en="E-commerce & COD Economics" data-ar="E-commerce & COD Economics">E-commerce &amp; COD Economics</div>
+      <h1 class="app-title" data-en="Egypt & GCC COD Return Rate (RTO) Loss & Profitability Simulator" data-ar="محاكي خسائر مرتجعات الدفع عند الاستلام RTO وصافي الأرباح الحقيقي">Egypt &amp; GCC COD Return Rate (RTO) Loss &amp; Profitability Simulator</h1>
+      <p class="app-promise" data-en="Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees." data-ar="نمذج التدفق النقدي وهامش الربح عند اختلاف نسب رفض الدفع عند الاستلام ورسوم إرجاع الشحنات.">Simulate exact net cash flow and true profit margins under varying Cash On Delivery refusal rates and courier return fees.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,57 +38,57 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="total_orders">
-              <span data-en="Total Monthly Orders" data-ar="إجمالي عدد الطلبات">إجمالي عدد الطلبات</span><span class="required">*</span>
+              <span data-en="Total Monthly Orders" data-ar="إجمالي عدد الطلبات">Total Monthly Orders</span><span class="required">*</span>
             </label>
             <input type="number" id="total_orders" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="average_order_value">
-              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب AOV">متوسط قيمة الطلب AOV</span><span class="required">*</span>
+              <span data-en="Average Order Value (AOV)" data-ar="متوسط قيمة الطلب AOV">Average Order Value (AOV)</span><span class="required">*</span>
             </label>
             <input type="number" id="average_order_value" class="form-control" value="450" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="cogs_pct">
-              <span data-en="Product Cost (COGS) % of AOV" data-ar="تكلفة المنتج % من قيمة الطلب">تكلفة المنتج % من قيمة الطلب</span><span class="required">*</span>
+              <span data-en="Product Cost (COGS) % of AOV" data-ar="تكلفة المنتج % من قيمة الطلب">Product Cost (COGS) % of AOV</span><span class="required">*</span>
             </label>
             <input type="number" id="cogs_pct" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="rto_refusal_rate_pct">
-              <span data-en="COD Refusal / Return Rate %" data-ar="نسبة رفض واسترجاع الشحنات %">نسبة رفض واسترجاع الشحنات %</span><span class="required">*</span>
+              <span data-en="COD Refusal / Return Rate %" data-ar="نسبة رفض واسترجاع الشحنات %">COD Refusal / Return Rate %</span><span class="required">*</span>
             </label>
             <input type="number" id="rto_refusal_rate_pct" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="forward_shipping_cost">
-              <span data-en="Forward Shipping Cost per Order" data-ar="تكلفة الشحن للعميل">تكلفة الشحن للعميل</span><span class="required">*</span>
+              <span data-en="Forward Shipping Cost per Order" data-ar="تكلفة الشحن للعميل">Forward Shipping Cost per Order</span><span class="required">*</span>
             </label>
             <input type="number" id="forward_shipping_cost" class="form-control" value="55" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="reverse_shipping_cost">
-              <span data-en="Return Shipping Fee per Refusal" data-ar="تكلفة شحن المرتجع للمستودع">تكلفة شحن المرتجع للمستودع</span><span class="required">*</span>
+              <span data-en="Return Shipping Fee per Refusal" data-ar="تكلفة شحن المرتجع للمستودع">Return Shipping Fee per Refusal</span><span class="required">*</span>
             </label>
             <input type="number" id="reverse_shipping_cost" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="blended_cpa">
-              <span data-en="Cost Per Acquisition (CPA) on Ads" data-ar="تكلفة الإعلانات لكل طلب CPA">تكلفة الإعلانات لكل طلب CPA</span><span class="required">*</span>
+              <span data-en="Cost Per Acquisition (CPA) on Ads" data-ar="تكلفة الإعلانات لكل طلب CPA">Cost Per Acquisition (CPA) on Ads</span><span class="required">*</span>
             </label>
             <input type="number" id="blended_cpa" class="form-control" value="" step="1">
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -95,9 +98,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -123,13 +126,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -163,7 +166,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -173,16 +176,14 @@
           <strong>Benchmark Reference:</strong> Regional courier RTO fee structures (Bosta, Aramex, SMSA, J&T) &mdash; <a href="https://bosta.co" target="_blank" rel="noopener noreferrer">https://bosta.co</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-011 • Egypt & GCC COD Return Rate (RTO) Loss & Profitability Simulator</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="Agency Client Retainer Profitability & Capacity Utilization Meter | DM Static App Suite" data-ar="مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق | منظومة أدوات التسويق الرقمي">مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="Agency Client Retainer Profitability &amp; Capacity Utilization…" data-ar="مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات…">Agency Client Retainer Profitability &amp; Capacity Utilization…</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/agency-retainer-profitability-capacity-meter/">
-  <meta name="description" content="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/agency-retainer-profitability-capacity-meter/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/agency-retainer-profitability-capacity-meter/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/agency-retainer-profitability-capacity-meter/">
+  <meta name="description" content="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts." data-en="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts." data-ar="حلّل ربحية عقود العملاء الشهرية واستغلال ساعات الفريق لدى وكالات التسويق.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-087</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing & Lead Gen</div>
-      <h1 class="app-title" data-en="Agency Client Retainer Profitability & Capacity Utilization Meter" data-ar="مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق">مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق</h1>
-      <p class="app-promise" data-en="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts." data-ar="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.">Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.</p>
+      <div class="app-meta-badge" data-en="B2B Marketing & Lead Gen" data-ar="B2B Marketing & Lead Gen">B2B Marketing &amp; Lead Gen</div>
+      <h1 class="app-title" data-en="Agency Client Retainer Profitability & Capacity Utilization Meter" data-ar="مقياس ربحية عقود عملاء وكالات التسويق ونسبة استغلال ساعات الفريق">Agency Client Retainer Profitability &amp; Capacity Utilization Meter</h1>
+      <p class="app-promise" data-en="Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts." data-ar="حلّل ربحية عقود العملاء الشهرية واستغلال ساعات الفريق لدى وكالات التسويق.">Audit the true hourly profitability of every client monthly retainer and calculate team capacity utilization to eliminate loss-making client accounts.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,33 +38,33 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="monthly_retainer_fee">
-              <span data-en="Monthly Retainer Paid by Client ($/SAR/EGP)" data-ar="قيمة العقد الشهري للعميل">قيمة العقد الشهري للعميل</span><span class="required">*</span>
+              <span data-en="Monthly Retainer Paid by Client ($/SAR/EGP)" data-ar="قيمة العقد الشهري للعميل">Monthly Retainer Paid by Client ($/SAR/EGP)</span><span class="required">*</span>
             </label>
             <input type="number" id="monthly_retainer_fee" class="form-control" value="12000" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="actual_team_hours_spent">
-              <span data-en="Actual Team Hours Spent This Month" data-ar="ساعات العمل الفعلية المستهلكة هذا الشهر">ساعات العمل الفعلية المستهلكة هذا الشهر</span><span class="required">*</span>
+              <span data-en="Actual Team Hours Spent This Month" data-ar="ساعات العمل الفعلية المستهلكة هذا الشهر">Actual Team Hours Spent This Month</span><span class="required">*</span>
             </label>
             <input type="number" id="actual_team_hours_spent" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="blended_hourly_cost">
-              <span data-en="Internal Hourly Cost per Employee Hour" data-ar="تكلفة الساعة الداخلية للفريق">تكلفة الساعة الداخلية للفريق</span><span class="required">*</span>
+              <span data-en="Internal Hourly Cost per Employee Hour" data-ar="تكلفة الساعة الداخلية للفريق">Internal Hourly Cost per Employee Hour</span><span class="required">*</span>
             </label>
             <input type="number" id="blended_hourly_cost" class="form-control" value="" step="1">
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -71,9 +74,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -99,13 +102,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -135,7 +138,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -145,16 +148,14 @@
           <strong>Benchmark Reference:</strong> Advertising agency operating margin and billable rate benchmarks &mdash; <a href="https://www.bain.com" target="_blank" rel="noopener noreferrer">https://www.bain.com</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-087 • Agency Client Retainer Profitability & Capacity Utilization Meter</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="MENA SMS Unicode Segment &amp; Cost Calculator" data-ar="حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية…">حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية…</title>
+  <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-sms-unicode-segment-cost-calculator/">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/mena-sms-unicode-segment-cost-calculator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-sms-unicode-segment-cost-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/mena-sms-unicode-segment-cost-calculator/">
+  <meta name="description" content="اكتشف ترميز GSM أو Unicode واحسب أجزاء الرسائل النصية المدفوعة، مع تحديد المحارف التي تزيد التكلفة." data-en="Detect GSM vs Unicode encoding, calculate exact billable SMS parts, and identify high-cost characters to slash promotional SMS costs." data-ar="اكتشف ترميز GSM أو Unicode واحسب أجزاء الرسائل النصية المدفوعة، مع تحديد المحارف التي تزيد التكلفة.">
+  <link rel="stylesheet" href="/apps/shared/shared.css?v=20261030-natural-search-v1">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">→ جميع الأدوات</a>
+        <span class="brand-badge">APP-032</span>
+      </div>
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="btn btn-secondary btn-sm" aria-label="Switch Language">English</button>
+      </div>
+    </header>
+
+    <!-- App Header & Promise -->
+    <div class="app-header">
+      <div class="app-meta-badge" data-en="WhatsApp Marketing & SMS" data-ar="WhatsApp Marketing & SMS">WhatsApp Marketing &amp; SMS</div>
+      <h1 class="app-title" data-en="MENA SMS Unicode Segment & Cost Calculator" data-ar="حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية والإنجليزية لشبكات الاتصالات">حاسبة أجزاء وتكلفة الرسائل النصية SMS للنصوص العربية والإنجليزية لشبكات الاتصالات</h1>
+      <p class="app-promise" data-en="Detect GSM vs Unicode encoding, calculate exact billable SMS parts, and identify high-cost characters to slash promotional SMS costs." data-ar="اكتشف ترميز GSM أو Unicode واحسب أجزاء الرسائل النصية المدفوعة، مع تحديد المحارف التي تزيد التكلفة.">اكتشف ترميز GSM أو Unicode واحسب أجزاء الرسائل النصية المدفوعة، مع تحديد المحارف التي تزيد التكلفة.</p>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="app-grid">
+      <!-- Input Panel -->
+      <section class="card" aria-labelledby="inputs-title">
+        <div class="card-header">
+          <h2 class="card-title" id="inputs-title">
+            <span>&#9881;</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+          </h2>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+        </div>
+
+        <form id="app-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="sms_text">
+              <span data-en="SMS Message Content" data-ar="نص الرسالة القصيرة">نص الرسالة القصيرة</span><span class="required">*</span>
+            </label>
+            <input type="text" id="sms_text" class="form-control" value="خصم خاص 30% بمناسبة يوم التأسيس! استخدم كود KSA30 واستمتع بشحن مجاني لطلبك اليوم: https://store.sa/sale">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="recipient_volume">
+              <span data-en="Target Recipient Count" data-ar="عدد المستلمين المستهدفين">عدد المستلمين المستهدفين</span><span class="required">*</span>
+            </label>
+            <input type="number" id="recipient_volume" class="form-control" value="15000" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cost_per_sms">
+              <span data-en="Cost per Single SMS Unit" data-ar="سعر الرسالة الواحدة">سعر الرسالة الواحدة</span><span class="required">*</span>
+            </label>
+            <input type="number" id="cost_per_sms" class="form-control" value="0.08" step="any">
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Panel -->
+      <section class="card" aria-labelledby="results-title">
+        <div class="card-header">
+          <h2 class="card-title" id="results-title">
+            <span>&#128202;</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+          </h2>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-0">Detected Encoding (GSM-7 Standard vs UCS-2 Unicode)</span>
+            <span class="metric-value highlight" id="val-metric-0">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-1">Billable Parts per Message (1, 2, 3... segments)</span>
+            <span class="metric-value" id="val-metric-1">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label" id="lbl-metric-2">Characters Remaining Until Next Segment Trigger</span>
+            <span class="metric-value" id="val-metric-2">--</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation / Alert Banner -->
+        <div id="alert-banner" class="alert-banner info" style="display:block;">
+          <strong id="alert-banner-title">تحليل استرشادي</strong>
+          <p id="alert-banner-text" style="margin-top:0.25rem;">جاري احتساب المؤشرات وفق القواعد المعيارية...</p>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-0">Detected Encoding (GSM-7 Standard vs UCS-2 Unicode)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-0">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-1">Billable Parts per Message (1, 2, 3... segments)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-1">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-2">Characters Remaining Until Next Segment Trigger</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-2">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-3">Total Campaign Send Cost</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-3">--</td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;" id="table-lbl-4">High-Cost Character Highlighter (Identifies emojis, smart quotes, hidden symbols)</td>
+                <td style="text-align:end;font-weight:700;" id="table-val-4">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Provenance & Reference Section -->
+    <section class="provenance-card">
+      <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
+        <span>&#128218;</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+      </h4>
+      <ul class="provenance-list">
+        <li>
+          <strong>Source:</strong> <a href="https://www.itu.int/rec/T-REC-E.164/en" target="_blank" rel="noopener noreferrer">https://www.itu.int/rec/T-REC-E.164/en</a> (2026-10-29) &mdash; 3GPP TS 23.038 telecom standards define character encoding limits: 160 chars for 7-bit GSM vs 70 chars for 16-bit UCS-2 Unicode.
+        </li>
+        <li>
+          <strong>Benchmark Reference:</strong> 3GPP TS 23.038 GSM 7-bit default alphabet and extension table &mdash; <a href="https://www.itu.int" target="_blank" rel="noopener noreferrer">https://www.itu.int</a> (Verified: 2026-10-29)
+        </li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
+      <p>APP-032 • MENA SMS Unicode Segment & Cost Calculator</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+    </footer>
+  </div>
+
+  <script src="/apps/shared/shared.js?v=20261030-natural-search-v5"></script>
+  <script src="app.js"></script>
+</body>
+</html>

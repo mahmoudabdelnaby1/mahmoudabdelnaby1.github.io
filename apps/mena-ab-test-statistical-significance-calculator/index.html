@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="A/B Test Statistical Significance & Sample Size Calculator for MENA | DM Static App Suite" data-ar="حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط | منظومة أدوات التسويق الرقمي">حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط | منظومة أدوات التسويق الرقمي</title>
+  <title data-en="A/B Test Statistical Significance &amp; Sample Size Calculator…" data-ar="حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر…">A/B Test Statistical Significance &amp; Sample Size Calculator…</title>
   <link rel="canonical" href="https://mahmoudabdelnaby1.github.io/apps/mena-ab-test-statistical-significance-calculator/">
-  <meta name="description" content="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant.">
+  <link rel="alternate" hreflang="en" href="https://mahmoudabdelnaby1.github.io/apps/mena-ab-test-statistical-significance-calculator/">
+  <link rel="alternate" hreflang="ar" href="https://mahmoudabdelnaby1.github.io/ar/apps/mena-ab-test-statistical-significance-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://mahmoudabdelnaby1.github.io/apps/mena-ab-test-statistical-significance-calculator/">
+  <meta name="description" content="Determine whether your A/B test has reached 95% statistical significance (p &lt; 0.05) and calculate minimum required sample size per variant." data-en="Determine whether your A/B test has reached 95% statistical significance (p &lt; 0.05) and calculate minimum required sample size per variant." data-ar="قدّر حجم العينة والدلالة الإحصائية لاختبار A/B قبل اعتماد نتيجة المقارنة.">
   <link rel="stylesheet" href="../shared/shared.css?v=20261030-natural-search-v1">
 </head>
 <body>
@@ -13,7 +16,7 @@
     <!-- Top Navigation -->
     <header class="top-nav">
       <div class="nav-brand">
-        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">&rarr; جميع الأدوات</a>
+        <a href="../" class="btn btn-secondary btn-sm" data-en="&larr; All Tools" data-ar="&rarr; جميع الأدوات">← All Tools</a>
         <span class="brand-badge">APP-063</span>
       </div>
       <div class="nav-actions">
@@ -23,9 +26,9 @@
 
     <!-- App Header & Promise -->
     <div class="app-header">
-      <div class="app-meta-badge" data-en="CRO & Funnel Optimization" data-ar="CRO & Funnel Optimization">CRO & Funnel Optimization</div>
-      <h1 class="app-title" data-en="A/B Test Statistical Significance & Sample Size Calculator for MENA" data-ar="حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط">حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط</h1>
-      <p class="app-promise" data-en="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant." data-ar="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant.">Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant.</p>
+      <div class="app-meta-badge" data-en="CRO & Funnel Optimization" data-ar="CRO & Funnel Optimization">CRO &amp; Funnel Optimization</div>
+      <h1 class="app-title" data-en="A/B Test Statistical Significance & Sample Size Calculator for MENA" data-ar="حاسبة الدلالة الإحصائية وحجم العينة لاختبارات A/B لمتاجر الشرق الأوسط">A/B Test Statistical Significance &amp; Sample Size Calculator for MENA</h1>
+      <p class="app-promise" data-en="Determine whether your A/B test has reached 95% statistical significance (p < 0.05) and calculate minimum required sample size per variant." data-ar="قدّر حجم العينة والدلالة الإحصائية لاختبار A/B قبل اعتماد نتيجة المقارنة.">Determine whether your A/B test has reached 95% statistical significance (p &lt; 0.05) and calculate minimum required sample size per variant.</p>
     </div>
 
     <!-- Workspace Grid -->
@@ -35,49 +38,49 @@
         <div class="card-header">
           <h2 class="card-title" id="inputs-title">
             <span>&#9881;</span>
-            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">معطيات ومدخلات الحساب</span>
+            <span data-en="Input Parameters" data-ar="معطيات ومدخلات الحساب">Input Parameters</span>
           </h2>
-          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</button>
+          <button id="btn-reset" class="btn btn-secondary btn-sm" data-en="Reset" data-ar="إعادة ضبط">Reset</button>
         </div>
 
         <form id="app-form" onsubmit="return false;">
           <div class="form-group">
             <label class="form-label" for="visitors_a">
-              <span data-en="Variant A Visitors (Control)" data-ar="عدد زوار النسخة الأساسية (A)">عدد زوار النسخة الأساسية (A)</span><span class="required">*</span>
+              <span data-en="Variant A Visitors (Control)" data-ar="عدد زوار النسخة الأساسية (A)">Variant A Visitors (Control)</span><span class="required">*</span>
             </label>
             <input type="number" id="visitors_a" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="conversions_a">
-              <span data-en="Variant A Conversions" data-ar="عدد تحويلات النسخة (A)">عدد تحويلات النسخة (A)</span><span class="required">*</span>
+              <span data-en="Variant A Conversions" data-ar="عدد تحويلات النسخة (A)">Variant A Conversions</span><span class="required">*</span>
             </label>
             <input type="number" id="conversions_a" class="form-control" value="160" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="visitors_b">
-              <span data-en="Variant B Visitors (Challenger)" data-ar="عدد زوار النسخة البديلة (B)">عدد زوار النسخة البديلة (B)</span><span class="required">*</span>
+              <span data-en="Variant B Visitors (Challenger)" data-ar="عدد زوار النسخة البديلة (B)">Variant B Visitors (Challenger)</span><span class="required">*</span>
             </label>
             <input type="number" id="visitors_b" class="form-control" value="" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="conversions_b">
-              <span data-en="Variant B Conversions" data-ar="عدد تحويلات النسخة (B)">عدد تحويلات النسخة (B)</span><span class="required">*</span>
+              <span data-en="Variant B Conversions" data-ar="عدد تحويلات النسخة (B)">Variant B Conversions</span><span class="required">*</span>
             </label>
             <input type="number" id="conversions_b" class="form-control" value="225" step="1">
           </div>
           <div class="form-group">
             <label class="form-label" for="confidence_level">
-              <span data-en="Confidence Level (95% Standard / 90% Quick / 99% High)" data-ar="مستوى الثقة الإحصائية المطلوبة">مستوى الثقة الإحصائية المطلوبة</span><span class="required">*</span>
+              <span data-en="Confidence Level (95% Standard / 90% Quick / 99% High)" data-ar="مستوى الثقة الإحصائية المطلوبة">Confidence Level (95% Standard / 90% Quick / 99% High)</span><span class="required">*</span>
             </label>
             <select id="confidence_level" class="form-control">
-              <option value="95" data-en="95% Confidence (Industry Standard, p < 0.05)" data-ar="مستوى ثقة 95% (المعيار المعتمد في اختبارات A/B)" selected>مستوى ثقة 95% (المعيار المعتمد في اختبارات A/B)</option>
-              <option value="99" data-en="99% High Confidence (p < 0.01)" data-ar="مستوى ثقة صارم 99%">مستوى ثقة صارم 99%</option>
-              <option value="90" data-en="90% Relaxed Confidence (p < 0.10)" data-ar="مستوى ثقة مخفف 90%">مستوى ثقة مخفف 90%</option>
+              <option value="95" data-en="95% Confidence (Industry Standard, p < 0.05)" data-ar="مستوى ثقة 95% (المعيار المعتمد في اختبارات A/B)" selected>95% Confidence (Industry Standard, p &lt; 0.05)</option>
+              <option value="99" data-en="99% High Confidence (p < 0.01)" data-ar="مستوى ثقة صارم 99%">99% High Confidence (p &lt; 0.01)</option>
+              <option value="90" data-en="90% Relaxed Confidence (p < 0.10)" data-ar="مستوى ثقة مخفف 90%">90% Relaxed Confidence (p &lt; 0.10)</option>
             </select>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">حساب النتائج</button>
-            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">حفظ في المتصفح</button>
+            <button id="btn-calculate" type="button" class="btn btn-primary" style="flex:1;" data-en="Calculate Now" data-ar="حساب النتائج">Calculate Now</button>
+            <button id="btn-save-state" type="button" class="btn btn-secondary" data-en="Save (Browser Only)" data-ar="حفظ في المتصفح">Save (Browser Only)</button>
           </div>
         </form>
       </section>
@@ -87,9 +90,9 @@
         <div class="card-header">
           <h2 class="card-title" id="results-title">
             <span>&#128202;</span>
-            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">نتائج التحليل والمخرجات</span>
+            <span data-en="Calculation Results" data-ar="نتائج التحليل والمخرجات">Calculation Results</span>
           </h2>
-          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">نسخ التقرير</button>
+          <button id="btn-copy-summary" class="btn btn-secondary btn-sm" data-en="Copy Summary" data-ar="نسخ التقرير">Copy Summary</button>
         </div>
 
         <!-- Metric Cards Grid -->
@@ -115,13 +118,13 @@
         </div>
 
         <!-- Detailed Breakdown Table -->
-        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">تفصيل الحسابات الدقيقة</h3>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-top:1.5rem;margin-bottom:0.5rem;color:var(--text-muted);" data-en="Detailed Metrics Breakdown" data-ar="تفصيل الحسابات الدقيقة">Detailed Metrics Breakdown</h3>
         <div class="results-table-wrapper">
           <table class="results-table">
             <thead>
               <tr>
-                <th data-en="Metric Component" data-ar="بند التحليل">بند التحليل</th>
-                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">القيمة المحسوبة</th>
+                <th data-en="Metric Component" data-ar="بند التحليل">Metric Component</th>
+                <th style="text-align:end;" data-en="Computed Value" data-ar="القيمة المحسوبة">Computed Value</th>
               </tr>
             </thead>
             <tbody>
@@ -155,7 +158,7 @@
     <section class="provenance-card">
       <h4 data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">
         <span>&#128218;</span>
-        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">المرجعية التنظيمية ومصادر القواعد</span>
+        <span data-en="Regulatory & Algorithmic Provenance" data-ar="المرجعية التنظيمية ومصادر القواعد">Regulatory &amp; Algorithmic Provenance</span>
       </h4>
       <ul class="provenance-list">
         <li>
@@ -165,16 +168,14 @@
           <strong>Benchmark Reference:</strong> Standard normal distribution critical Z-value tables for 90%, 95%, 99% confidence intervals &mdash; <a href="https://www.evanmiller.org" target="_blank" rel="noopener noreferrer">https://www.evanmiller.org</a> (Verified: 2026-10-29)
         </li>
       </ul>
-      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">
-        بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط
-      </p>
+      <p style="margin-top:0.75rem;font-size:0.775rem;color:var(--text-dim);" data-en="Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory" data-ar="بنية برمجية متصفحية محضة • 0 اتصالات خارجية بعد تحميل الصفحة • البيانات تعالج في ذاكرة جهازك فقط">Pure Client-Side Architecture • 0 Network Requests After Asset Load • Device-Only Memory</p>
     </section>
 
     <!-- Footer -->
     <footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.8rem;color:var(--text-dim);">
       <p>APP-063 • A/B Test Statistical Significance & Sample Size Calculator for MENA</p>
-      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">أداة مجانية • تتم الحسابات في متصفحك</p>
-      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.</p>
+      <p style="margin-top:0.25rem;" data-en="Free tool • Calculations run in your browser" data-ar="أداة مجانية • تتم الحسابات في متصفحك">Free tool • Calculations run in your browser</p>
+      <p style="margin-top:0.25rem;" data-en="Your entries are not sent to external AI or analytics services." data-ar="لا تُرسل مدخلاتك إلى خدمات ذكاء اصطناعي أو تحليلات خارجية.">Your entries are not sent to external AI or analytics services.</p>
     </footer>
   </div>
 
