@@ -18,6 +18,12 @@
 .repo-language-note{margin:0 0 66px;color:var(--systems-muted);font-size:.85rem}
 .repo-footer{display:flex;gap:22px;flex-wrap:wrap;padding:20px 0 34px;border-top:1px solid var(--systems-line)}
 .repo-footer a{color:var(--systems-muted);text-decoration:none}.repo-footer a:hover{color:#79e8c5}
+.repository-detail .systems-detail-grid ul{margin:0;padding-inline-start:22px}.repository-detail .systems-detail-grid li+li{margin-top:7px}
+.repository-detail blockquote{margin:15px 0 0;padding:16px 18px;border-inline-start:3px solid #79e8c5;border-radius:0 10px 10px 0;background:#0b1721;color:#c0ceda;line-height:1.8}
+.repository-detail .repo-source-note{margin-top:16px;padding-top:14px;border-top:1px solid var(--systems-line);font-size:.9rem}
+.repository-detail code{overflow-wrap:anywhere;color:#ffe19a;font-size:.9em}
+.repository-detail .systems-detail-grid a{color:#9be9d1;text-underline-offset:3px}
+.repository-detail .systems-detail-grid a:hover{color:#ffe19a}
 html[dir=rtl] .repo-card h2{text-align:right}
 @media(max-width:900px){.repo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.repo-controls,.repo-grid{grid-template-columns:1fr}.repo-card{min-height:176px;padding:19px}.repo-card h2{font-size:1.08rem}.repo-controls input,.repo-controls select{min-height:50px}}

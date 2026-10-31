@@ -1,0 +1,3014 @@
+[
+  {
+    "slug": "geo-citation-benchmark-protocol",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/geo-citation-benchmark-protocol",
+    "category": "seo",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Generative Engine Optimization (GEO) Citation Benchmark Protocol",
+    "tagline_en": "Measure, benchmark, and improve your brand's citation frequency and authoritative link presence across AI search engines (Perplexity, ChatGPT Search, Gemini).",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an exhaustive GEO citation audit protocol repository containing: 1) Benchmark query matrix (50 Arabic and 50 English test queries for e-commerce, B2B, and travel), 2) Citation scoring rubric (Direct Link, Named Entity Mention, Sentiment Polarity, Hallucination Risk), 3) Markdown evaluation templates, 4) Python CLI script (geo_scorer.py) that calculates citation density from saved LLM output text files.",
+    "deliverables": [
+      "examples/geo_audit_output.json",
+      "examples/sample-brand-audit.md",
+      "examples/sample_llm.txt",
+      "LICENSE",
+      "protocol/query-benchmarks-ar-en.json",
+      "protocol/scoring-rubric.md",
+      "README.md",
+      "templates/audit-sheet.md",
+      "tests/test_geo_scorer.py",
+      "tools/geo_scorer.py"
+    ],
+    "constraints_en": [
+      "LLM Probabilistic Output: Generative engine optimization metrics represent observational heuristic frequencies of LLM citations across temperature settings, not algorithmic guarantees.",
+      "Multi-Engine Volatility: Citation presence varies between Perplexity, ChatGPT Search, and Google Gemini depending on model versions and search index freshing.",
+      "Neutral Attribution Auditing: Brand mentions are scored based on contextual prominence, authoritative source linking, and factual entity clustering."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python tools/geo_scorer.py --help"
+    ]
+  },
+  {
+    "slug": "arabic-search-intent-classifier",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-search-intent-classifier",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Arabic Search Intent Classifier & Heuristic Taxonomy",
+    "tagline_en": "Stop misclassifying Arabic queries. Classify Egyptian and Gulf search intents accurately with a zero-dependency Python heuristic engine.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a lightweight, dependency-free Python CLI (arabic_intent_classifier.py) that ingests a CSV of Arabic keywords and classifies each query into Informational, Commercial Investigation, Transactional, or Navigational using a dialect-aware heuristic lexicon covering Egyptian, Saudi, and Gulf phrasing. Includes test suite with 100 sample queries.",
+    "deliverables": [
+      "data/intent_lexicon_ar.json",
+      "examples/classified_output.csv",
+      "examples/input_keywords.csv",
+      "LICENSE",
+      "README.md",
+      "src/classifier.py",
+      "tests/test_classifier.py"
+    ],
+    "constraints_en": [
+      "Colloquial Arabic Intent Ambiguity: Informational and commercial intent often overlap in Arabic social queries (e.g., 'كام سعره' vs 'أفضل نوع').",
+      "Transliterated Brand Queries: Queries containing Arabizi or English brand names require phonological normalization prior to intent scoring.",
+      "Local Commercial Heuristics: Keywords containing 'في الرياض' or 'كاش' signal immediate transactional and local purchase intent."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/classifier.py --help"
+    ]
+  },
+  {
+    "slug": "internal-link-equity-grapher",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/internal-link-equity-grapher",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Internal Link Equity Grapher & Orphan Page Radar",
+    "tagline_en": "Visualize internal PageRank distribution and spot orphan pages instantly from your crawl data with zero external dependencies.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create a standalone Python CLI tool that parses standard crawl export CSVs (Screaming Frog or Sitebulb format), builds a directed graph of internal links, computes internal PageRank using iterative power-iteration, identifies orphan pages (0 inlinks), and generates an interactive, standalone HTML topology visualization report.",
+    "deliverables": [
+      "LICENSE",
+      "README.md",
+      "reports/sample_report.html",
+      "sample_data/crawl_export.csv",
+      "src/pagerank_graph.py",
+      "tests/test_graph.py"
+    ],
+    "constraints_en": [
+      "Graph Traversal Scale: Large enterprise e-commerce catalogs (>50,000 URLs) require directed graph adjacency matrices to compute PageRank without memory exhaustion.",
+      "Canonical & Noindex Filters: Orphan page radar must distinguish between intentionally hidden landing pages and accidental orphans missing internal links.",
+      "Crawl Depth Limits: Search bots prioritize pages within 3 to 4 click depths from the root domain."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/pagerank_graph.py --help"
+    ]
+  },
+  {
+    "slug": "arabic-schema-jsonld-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-schema-jsonld-linter",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Arabic Schema.org JSON-LD Linter & Entity Validator",
+    "tagline_en": "Validate JSON-LD syntax and flag selected Arabic text or encoding issues. Passing checks cannot guarantee rich results or search eligibility.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an Arabic-focused Schema.org JSON-LD linter in pure Python. It must validate: 1) UTF-8 encoding and character escaping for Arabic text, 2) Schema.org Organization, LocalBusiness, Product, and FAQPage schemas, 3) Middle East specific business fields (taxID, vatID, addressCountry, telephone E.164). Include 12 pre-tested JSON-LD templates.",
+    "deliverables": [
+      "LICENSE",
+      "README.md",
+      "src/schema_linter.py",
+      "templates/ecommerce-product-salla-zid.json",
+      "templates/local-business-ksa-eg.json",
+      "templates/organization-bilingual.json",
+      "tests/test_linter.py"
+    ],
+    "constraints_en": [
+      "Valid Schema.org Types: Validates standard schema vocabularies including Organization, LocalBusiness, Product, and FAQPage.",
+      "Arabic UTF-8 & Right-to-Left Encoding: Ensures JSON-LD entity names, descriptions, and localized strings are properly formatted in UTF-8 without corrupting Arabic characters.",
+      "MENA Regional Business Identifiers: Supports regional business fields such as VAT registration (taxID), commercial registration numbers, and E.164 regional phone formats."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/schema_linter.py --help"
+    ]
+  },
+  {
+    "slug": "ecommerce-faceted-navigation-audit-playbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ecommerce-faceted-navigation-audit-playbook",
+    "category": "seo",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "E-Commerce Faceted Navigation SEO Audit Playbook",
+    "tagline_en": "Eliminate crawl budget waste and index bloat from e-commerce filters with a practical audit framework for Salla, Zid, and Shopify that should be validated against each store and crawler data.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an exhaustive technical SEO playbook for managing faceted navigation on e-commerce stores: 1) Decision tree matrix for indexing vs canonicalizing vs noindexing filter combinations, 2) Ready-to-use robots.txt and server header rule templates for Salla, Zid, and Shopify, 3) 25-point audit checklist for crawl budget waste, 4) Real-world case study audit example.",
+    "deliverables": [
+      "configs/robots-rules-salla-zid.txt",
+      "configs/server-headers-canonical.md",
+      "examples/fashion-store-audit.md",
+      "LICENSE",
+      "playbook/audit-checklist-25pt.md",
+      "playbook/facet-decision-tree.md",
+      "README.md"
+    ],
+    "constraints_en": [
+      "Crawl Space Explosion: Uncontrolled facet combinations (e.g. size + color + brand + price) multiply crawl URLs exponentially, exhausting crawl budget.",
+      "Canonical Tag Self-Reference: Filtered facet URLs must either canonicalize back to the parent category or carry robots 'noindex, follow' directives.",
+      "Internal Link Crawlability: Facet filters rendered purely through JavaScript clicks must maintain valid <a href> fallback links for search indexers."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "hreflang-mena-bilingual-validator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/hreflang-mena-bilingual-validator",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Bilingual Hreflang Configuration Linter for MENA Domains",
+    "tagline_en": "Catch hreflang return errors, wrong regional ISO codes, and currency mismatches across your Arabic and English domains.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build a Python CLI (hreflang_validator.py) that audits bilingual Arabic/English XML sitemaps: 1) Validates language and country codes against official ISO 639-1 and ISO 3166-1 registries (strictly rejecting non-existent codes like zz-xx), 2) Enforces reciprocal bidirectional return links across URLs, 3) Treats x-default as an optional fallback in full alignment with official Google Search Central guidelines, 4) Generates structured JSON audit reports.",
+    "deliverables": [
+      "data/mena_iso_locales.json",
+      "examples/audit_output.json",
+      "examples/sample_sitemap.xml",
+      "LICENSE",
+      "README.md",
+      "src/hreflang_validator.py",
+      "tests/test_validator.py"
+    ],
+    "constraints_en": [
+      "Official ISO Code Verification: Codes must strictly exist in the official ISO 639-1 (language) and ISO 3166-1 alpha-2 (country) registries. Formats matching regex ^[a-z]{2}-[a-z]{2}$ but with fake entries (e.g. zz-xx) are flagged as fatal errors.",
+      "Hreflang Reciprocal Confirmation: If Page A links to Page B via an alternate hreflang annotation, Page B must link back to Page A; missing return links cause search engines to disregard annotations.",
+      "Optional x-default: In accordance with Google Search Central guidelines, x-default is recommended for unmatched landing pages, but its absence is never flagged as an error."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/hreflang_validator.py --sitemap examples/sample_sitemap.xml"
+    ]
+  },
+  {
+    "slug": "programmatic-seo-content-brief-engine",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/programmatic-seo-content-brief-engine",
+    "category": "seo",
+    "format": "SKILL_MD",
+    "tier": "1",
+    "title_en": "Programmatic SEO Content Brief Engine for Arabic Markets",
+    "tagline_en": "Generate programmatic SEO content briefs in Arabic that pass Google Helpful Content standards and avoid search spam penalties.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an Agent Skill and toolkit for generating high-quality programmatic SEO content briefs in Arabic: 1) SKILL.md specifying entity density, local proof points, and heading hierarchy rules, 2) Anti-thin-content validation checklist, 3) Python merger script that converts structured CSV data into comprehensive markdown briefs, 4) Two complete worked examples (Real Estate Cairo & Services Riyadh).",
+    "deliverables": [
+      "examples/brief-ac-maintenance-al-narjis.md",
+      "examples/brief-furniture-moving-al-yasmin.md",
+      "examples/brief-home-cleaning-al-malqa.md",
+      "examples/output-brief-sample.md",
+      "examples/services-riyadh.csv",
+      "LICENSE",
+      "README.md",
+      "scripts/generate_briefs.py",
+      "SKILL.md",
+      "templates/brief-template-ar.md",
+      "tests/test_generate_briefs.py"
+    ],
+    "constraints_en": [
+      "Spam Policy Adherence: Content briefs must mandate unique localized data points per page to avoid Google scaled content abuse penalties.",
+      "Template Fatigue Mitigation: Dynamic variables must support randomized semantic syntactic variations across city/industry landing pages.",
+      "Structured Data Automation: Each programmatic page brief includes automated Schema.org LocalBusiness or Service JSON-LD specifications."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python scripts/generate_briefs.py --help"
+    ]
+  },
+  {
+    "slug": "edge-seo-header-governance-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/edge-seo-header-governance-kit",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Edge SEO Header & Security Governance Kit for Cloudflare",
+    "tagline_en": "Deploy 301 redirects, canonical tags, and security headers at Cloudflare edge without touching backend server code.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Cloudflare Workers toolkit for Edge SEO: 1) worker.js handling 301 redirect map lookups (KV-ready), canonical header injection, X-Robots-Tag management, and bot prerendering detection, 2) Unit test suite validating status codes and headers, 3) Deployment guide for non-developers, 4) Security header templates (HSTS, CSP, X-Frame-Options).",
+    "deliverables": [
+      "configs/redirect-map-sample.json",
+      "docs/deployment-guide.md",
+      "docs/security-headers-cheat-sheet.md",
+      "LICENSE",
+      "README.md",
+      "src/worker.js",
+      "src/worker_helpers.js",
+      "tests/test_worker.py",
+      "tests/worker.test.js"
+    ],
+    "constraints_en": [
+      "Sub-Millisecond Edge Latency: Cloudflare Workers edge rules must execute within tight CPU limits (<10ms) to prevent TTFB degradation.",
+      "Canonical Header Precedence: HTTP 'Link: <url>; rel=\"canonical\"' headers take precedence over conflicting in-HTML meta tags across search engines.",
+      "Security Header Compatibility: Strict CSP and HSTS headers must not block legitimate third-party analytics (GA4, CAPI) or regional payment gateways."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "node --test tests/*.test.js"
+    ]
+  },
+  {
+    "slug": "gsc-query-cannibalization-radar",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/gsc-query-cannibalization-radar",
+    "category": "seo",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Google Search Console Query Cannibalization Radar",
+    "tagline_en": "Identify keyword cannibalization and SERP position flapping from your Google Search Console exports in 5 seconds.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python CLI script (cannibalization_radar.py) that analyzes GSC performance exports (Query + Page + Clicks + Impressions + Position). It calculates the URL conflict score for each query, identifies SERP flapping pairs, outputs an interactive HTML report with severity color-coding, and provides a clear Markdown resolution playbook.",
+    "deliverables": [
+      "examples/gsc_sample_export.csv",
+      "examples/report_preview.html",
+      "LICENSE",
+      "playbook/resolution-strategies.md",
+      "README.md",
+      "src/cannibalization_radar.py",
+      "tests/test_radar.py"
+    ],
+    "constraints_en": [
+      "Data Thresholding & API Limits: Google Search Console Search Analytics API limits exports to 25,000 rows per query request; pagination required for enterprise sites.",
+      "Intent Differentiation: Two URLs ranking for the same keyword is only true cannibalization if neither URL converts or achieves top 3 ranking.",
+      "Timeframe Smoothing: Audits require at least a 28-day window to distinguish temporary algorithmic A/B testing from chronic page conflict."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/cannibalization_radar.py --help"
+    ]
+  },
+  {
+    "slug": "arabic-news-discover-seo-checklist",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-news-discover-seo-checklist",
+    "category": "seo",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Arabic News & Discover SEO Editorial Checklist and QA System",
+    "tagline_en": "Review Arabic publisher pages against practical Google Discover and News editorial and technical checks. Passing this checklist cannot guarantee traffic, eligibility, or legal compliance.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an exhaustive Google Discover and Google News optimization toolkit for Arabic publishers: 1) editorial pre-publish checklist, 2) Technical template requirements (high-res images, NewsArticle schema, AMP/mobile responsiveness), 3) E-E-A-T author bio and editorial transparency templates, 4) Discover traffic drop recovery diagnostic workflow.",
+    "deliverables": [
+      "checklists/editorial-prepublish-checklist.md",
+      "checklists/technical-discover-audit.md",
+      "LICENSE",
+      "playbooks/discover-traffic-recovery.md",
+      "README.md",
+      "templates/author-transparency-page.md",
+      "templates/news-article-schema.json",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "High-Resolution Featured Images: Articles require image assets at least 1200px wide with max-image-preview:large robots setting for Discover eligibility.",
+      "Bilingual Editorial Accuracy: News headlines must avoid sensational clickbait while maintaining compelling emotional engagement in Arabic.",
+      "Author Transparency & Schema: Every news item requires explicit NewsArticle schema with Person author entity and publisher verification."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "meta-ad-fatigue-velocity-radar",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/meta-ad-fatigue-velocity-radar",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Meta Ad Creative Fatigue Velocity Radar",
+    "tagline_en": "Detect ad creative fatigue before your CPA spikes. Analyze Meta Ads CSV exports locally with zero API tokens or credentials.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python CLI (fatigue_radar.py) that ingests daily Meta Ads performance CSVs (Date, Ad ID, Impressions, Reach, Frequency, Spend, Clicks, Conversions). Calculates 3-day and 7-day rolling CTR and CPA slopes, flags ads entering the 'Fatigue Danger Zone', outputs an interactive HTML radar dashboard with visual status badges, and generates a rotation priority list.",
+    "deliverables": [
+      "examples/fatigue_dashboard.html",
+      "examples/meta_sample_export.csv",
+      "LICENSE",
+      "README.md",
+      "src/fatigue_radar.py",
+      "templates/creative-refresh-sop.md",
+      "tests/test_radar.py"
+    ],
+    "constraints_en": [
+      "Audience Saturation Dynamics: Ad fatigue is measured via First-Time Impression Ratio (FTIR) and frequency acceleration curves, not static CTR drops.",
+      "API Rate Limiting: Meta Marketing API queries must implement exponential backoff when fetching granular daily ad-level insights.",
+      "Budget-Dependent Decay: Small daily budgets (<$50/ad set) exhibit slower decay curves than scaled ASC campaigns with rapid frequency buildup."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/fatigue_radar.py --help"
+    ]
+  },
+  {
+    "slug": "google-pmax-search-query-unmasker",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/google-pmax-search-query-unmasker",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Google Ads Performance Max Available Search-Term Analyzer",
+    "tagline_en": "Analyze search-term data available in a Performance Max export, identify review candidates, and support budget decisions. The tool cannot reveal terms withheld by Google or guarantee spend savings.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Google Ads PMax auditing toolkit: 1) Production-ready Google Ads JavaScript snippet (pmax_unmasker.js) that runs inside the Google Ads script editor and logs search category queries to a Google Sheet / CSV, 2) Python companion script (analyze_queries.py) that separates brand vs non-brand search terms and calculates incremental ROAS, 3) Automated negative keyword list generator.",
+    "deliverables": [
+      "docs/setup-guide.md",
+      "examples/sample_pmax_export.csv",
+      "LICENSE",
+      "README.md",
+      "scripts/pmax_unmasker.js",
+      "src/analyze_queries.py",
+      "templates/negative-keyword-template.csv",
+      "tests/test_analyzer.py"
+    ],
+    "constraints_en": [
+      "Opaque Query Reporting: Google Ads Performance Max groups minor search terms into 'Other' categories; script parses available Search Term Insights.",
+      "Brand vs Non-Brand Isolation: Unmasker separates existing brand keywords from generic conquesting search terms to measure real incremental ROAS.",
+      "Script Runtime Limits: Google Ads Scripts execute within a 30-minute maximum timeout; large accounts require segmented date filtering."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/analyze_queries.py --help"
+    ]
+  },
+  {
+    "slug": "ad-spend-circuit-breaker",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ad-spend-circuit-breaker",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Ad Spend Anomaly & Seasonal Circuit Breaker",
+    "tagline_en": "Protect client ad accounts from runaway budgets, checkout crashes, and accidental overspending with an automated circuit breaker.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create a Python spend anomaly detection script (circuit_breaker.py) that monitors campaign spend records against hourly velocity thresholds, conversion drop-off anomalies, and CPA ceilings. Features: 1) Configurable JSON rules for spend limits, 2) Mock simulation test suite replicating flash-sale pacing spikes, 3) Out-of-the-box Telegram and Discord alert webhook dispatchers, 4) Complete operational runbook.",
+    "deliverables": [
+      "config/alert_rules.sample.json",
+      "examples/simulated_spend_log.json",
+      "LICENSE",
+      "playbooks/emergency-runbook.md",
+      "README.md",
+      "src/circuit_breaker.py",
+      "tests/test_circuit_breaker.py"
+    ],
+    "constraints_en": [
+      "Multi-Platform API Latency: Real-time spend anomaly detection must account for 15-to-45 minute reporting delays on Meta and TikTok APIs.",
+      "Seasonal Spend Spikes: Circuit breakers during White Friday or Ramadan require dynamic thresholds to avoid pausing profitable hyper-scaling campaigns.",
+      "Safe Auto-Pause Execution: Automated script errors default to notifying on-call media buyers via webhook rather than silently killing high-ROI ads."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/circuit_breaker.py --help"
+    ]
+  },
+  {
+    "slug": "tiktok-mena-creative-fatigue-benchmark",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/tiktok-mena-creative-fatigue-benchmark",
+    "category": "media-buying",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "TikTok Ads MENA Creative Decay & Fatigue Benchmark",
+    "tagline_en": "An illustrative creative-fatigue planning worksheet for TikTok Ads. The included figures are synthetic examples, not measured MENA benchmarks.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Provide a planning toolkit with illustrative creative-decay scenarios, a production pipeline planner, and a fatigue-monitoring SOP. The included example values are synthetic and must not be used as regional benchmarks or client forecasts.",
+    "deliverables": [
+      "data/benchmarks_by_country.csv",
+      "data/benchmarks_by_industry.csv",
+      "data/creative_decay_benchmarks.json",
+      "data/tiktok_mena_benchmarks.json",
+      "docs/methodology-and-sources.md",
+      "docs/methodology.md",
+      "LICENSE",
+      "README.md",
+      "SOURCES.md",
+      "templates/creative-production-pipeline.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Decay Monitoring: Track each campaign against its own spend, audience, and creative baseline; the included scenario values are not evidence of a standard MENA fatigue window.",
+      "Hook Drop-Off Telemetry: Creative decay manifests first in 2-second and 6-second video view completion rates before impacting CPA.",
+      "Dialectal Sound Fatigue: Native Gulf audio trends burn out faster than generic commercial music tracks; rotator tracks sound fatigue separately."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "snapchat-saudi-ad-spec-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/snapchat-saudi-ad-spec-linter",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Snapchat Saudi Ad Spec & Regulatory Compliance Linter",
+    "tagline_en": "Prevent Snapchat ad rejections in Saudi Arabia. Automatically verify video safe-zones, technical specs, and Mawthooq compliance.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source pre-flight validation toolkit for Snapchat Saudi advertising: 1) Python inspection script (snap_spec_linter.py) that checks video dimensions (1080x1920), duration, file size, audio presence, and text bounding-box safe-zone clearance, 2) SVG safe-zone overlays for Figma and Premiere Pro, 3) 20-point Saudi advertising legal compliance checklist (Mawthooq, pricing clarity, VAT transparency).",
+    "deliverables": [
+      "assets/safe_zone_overlay_1080x1920.svg",
+      "checklists/saudi-advertising-compliance.md",
+      "examples/sample_manifest.json",
+      "LICENSE",
+      "README.md",
+      "src/snap_spec_linter.py",
+      "tests/test_linter.py"
+    ],
+    "constraints_en": [
+      "Saudi Mawthooq Verification: Commercial creator ads in KSA must display valid Mawthooq license numbers to avoid punitive ad account suspensions.",
+      "Snap Safe Zone Inset: Vertical 9:16 videos must maintain top (150px) and bottom (250px) clear zones to prevent CTA button overlap.",
+      "Bitrate & File Size Compression: Max file size of 32MB and H.264/AAC encoding constraints strictly enforced for fast loading on cellular networks."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/snap_spec_linter.py --help"
+    ]
+  },
+  {
+    "slug": "linkedin-abm-matched-audience-health-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/linkedin-abm-matched-audience-health-kit",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "LinkedIn B2B ABM Matched Audience Health Check Kit",
+    "tagline_en": "Normalize company names and domains before a LinkedIn audience upload. Matching rates depend on record quality and LinkedIn’s matching systems; no increase is guaranteed.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build a LinkedIn Matched Audience pre-upload data sanitization tool in Python (clean_abm_list.py): 1) Strips regional corporate entity suffixes (LLC, FZ-LLC, PJSC, WLL, ش.م.م, ذ.م.م), 2) Extracts and normalizes root company domains from URLs and email addresses, 3) Deduplicates records and flags generic public domains (gmail, yahoo), 4) Formats clean CSV output matching LinkedIn's official schema.",
+    "deliverables": [
+      "data/regional_legal_suffixes.json",
+      "examples/raw_input_sample.csv",
+      "LICENSE",
+      "playbooks/match-rate-optimization.md",
+      "README.md",
+      "src/audience_health.py",
+      "src/clean_abm_list.py",
+      "templates/abm-audience-governance.md",
+      "templates/matched_audience_template.csv",
+      "tests/test_cleaner.py",
+      "tests/test_health.py",
+      "tests/test_sanitizer.py"
+    ],
+    "constraints_en": [
+      "Minimum Audience Threshold: LinkedIn requires at least 300 matched active members before an audience segment can serve impressions.",
+      "Company Domain Match Rate: B2B company list uploads in MENA may have low match rates without normalized domain formatting and country tags.",
+      "List Decay Velocity: Contact records can become stale; set a refresh cadence based on the account’s data quality, consent, and campaign needs."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/audience_health.py --help"
+    ]
+  },
+  {
+    "slug": "ad-copy-bayesian-significance-engine",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ad-copy-bayesian-significance-engine",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Ad Copy Split-Test Bayesian Significance Engine",
+    "tagline_en": "Stop guessing on ad creative A/B tests. Compute exact Bayesian winning probabilities and expected loss without complex statistics.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a zero-dependency Python script (bayesian_ad_tester.py) that computes Bayesian posterior probabilities for multi-variant creative tests (Beta-Binomial conjugate model for CTR and conversion rates). Features: 1) Calculates probability of variant A outperforming B, 2) Expected loss calculation (risk of being wrong), 3) Minimum sample size recommendation, 4) Generates a standalone visual HTML report.",
+    "deliverables": [
+      "examples/ab_test_sample.csv",
+      "LICENSE",
+      "protocols/creative-testing-standard.md",
+      "README.md",
+      "reports/sample_decision_report.html",
+      "reports/significance_report.html",
+      "src/bayesian_ad_tester.py",
+      "src/bayesian_calculator.py",
+      "tests/test_bayesian.py"
+    ],
+    "constraints_en": [
+      "Bayesian vs Frequentist Framing: Reports posterior probability of winning rather than confusing p-values, preventing premature test stopping.",
+      "Informative Prior Calibration: Uses user-supplied priors; choose them from relevant account history rather than a claimed regional average.",
+      "Multi-Armed Bandit Integration: Calculates expected loss in conversions if the currently leading ad variant is chosen immediately."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/bayesian_ad_tester.py --help"
+    ]
+  },
+  {
+    "slug": "ramadan-seasonal-campaign-flighting-playbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ramadan-seasonal-campaign-flighting-playbook",
+    "category": "media-buying",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Ramadan & Seasonal Retail Campaign Flighting Playbook",
+    "tagline_en": "Master the largest retail season in the MENA region with an adaptable four-phase Ramadan campaign planning framework. The suggested pacing is a planning example, not a measured or proven allocation.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an authoritative Ramadan and Eid marketing campaign flighting framework: 1) 4-phase campaign blueprint (Pre-Ramadan warming, Mid-Ramadan engagement, Late-Ramadan gifting rush, Post-Eid clearance), 2) illustrative budget allocation example (15% - 25% - 45% - 15%) to be replaced with account-specific pacing, 3) Dayparting bid scheduling rules for nighttime shopping spikes, 4) Real-world creative messaging matrix per phase.",
+    "deliverables": [
+      "case-studies/retail-ecommerce-ramadan.md",
+      "checklists/iftar-suhoor-dayparting.md",
+      "examples/ecommerce-retail-case.md",
+      "LICENSE",
+      "messaging/creative-angle-matrix.md",
+      "models/budget-allocation-calculator.xlsx",
+      "playbook/four-phase-blueprint.md",
+      "playbooks/ramadan-4-phase-flighting.md",
+      "README.md",
+      "schedules/dayparting-bid-rules.md",
+      "templates/bid-multiplier-matrix.md"
+    ],
+    "constraints_en": [
+      "Iftar & Suhoor Dayparting: Ad impressions shift drastically towards 10 PM - 3 AM; daytime bids require tactical deprioritization.",
+      "Phase-Based Budget Allocation: Campaign spend splits into 4 distinct phases (Pre-Ramadan Stocking, Early Fasting, Mid-Month Peak, Eid Gifting).",
+      "Courier Blackout Buffers: Saudi and Gulf couriers halt last-mile delivery 4 to 6 days before Eid al-Fitr, forcing earlier shipping cutoffs."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "meta-advantage-plus-governance-pack",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/meta-advantage-plus-governance-pack",
+    "category": "media-buying",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Meta Advantage+ Shopping Campaign (ASC) Governance Pack",
+    "tagline_en": "Stop wasting Meta ad budget on people who would have bought anyway. Enforce real incrementality in Advantage+ Shopping Campaigns.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a comprehensive governance framework for Meta Advantage+ Shopping Campaigns: 1) Account-level existing customer audience definition protocol (email lists, 180-day purchasers, CRM data), 2) Existing customer budget cap guidelines (with configurable budget guardrails to be chosen from account-specific evidence), 3) Geographically isolated holdout test design to measure true incremental revenue lift, 4) 20-point campaign launch checklist.",
+    "deliverables": [
+      "checklists/creative-diversity-matrix.md",
+      "governance/asc-launch-checklist.md",
+      "governance/existing-customer-cap-rules.md",
+      "LICENSE",
+      "playbooks/asc-budget-allocation.md",
+      "playbooks/cannibalization-troubleshooting.md",
+      "README.md",
+      "templates/existing-customer-cap-model.md",
+      "templates/reporting-sanity-check.md",
+      "testing/incrementality-holdout-protocol.md"
+    ],
+    "constraints_en": [
+      "Existing Customer Budget Caps: ASC campaigns risk burning budget on brand loyals; should be evaluated with account-level incrementality evidence and campaign settings.",
+      "Creative Asset Overlap: Meta's algorithmic asset combinations can generate disjointed Arabic headlines and descriptions if not grouped into strict theme sets.",
+      "Attribution Reality Check: ASC heavily claims 1-day view conversions; media buyers must audit incrementality against 7-day click attribution."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "ad-creative-naming-taxonomy-validator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ad-creative-naming-taxonomy-validator",
+    "category": "media-buying",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Ad Creative Naming Taxonomy Governance & Linter",
+    "tagline_en": "Eliminate chaotic ad names, fix broken creative dashboards, and automate naming governance across Meta, TikTok, and Google Ads.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an ad naming governance and validation toolkit: 1) Universal ad naming taxonomy specification ([Channel]_[Objective]_[Audience]_[Angle]_[Format]_[Date]), 2) Pure Python linter script (taxonomy_linter.py) that audits CSV ad exports and flags invalid names, 3) Interactive Excel/Sheets formula generator for building valid names, 4) Integration guide for automated Slack/Discord notifications.",
+    "deliverables": [
+      "config/taxonomy_rules.json",
+      "examples/ad_names_sample.csv",
+      "examples/valid_and_invalid_campaigns.csv",
+      "LICENSE",
+      "README.md",
+      "reports/validation_errors.csv",
+      "spec/universal-taxonomy-spec.md",
+      "src/naming_validator.py",
+      "src/taxonomy_linter.py",
+      "templates/formula-builder.md",
+      "tests/test_linter.py",
+      "tests/test_naming.py",
+      "tests/test_taxonomy.py"
+    ],
+    "constraints_en": [
+      "Delimiter Parsing Consistency: Standardizes double-underscore or pipe delimiters across Meta, Google, and TikTok naming conventions.",
+      "Token Integrity: Enforces required fields (Geo, Funnel Stage, Objective, Creator Handle, Angle, Format, Aspect Ratio).",
+      "Automated ETL Cleanliness: Validated names ensure clean dimension splitting in BigQuery and Looker Studio dashboards without messy regex overrides."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/naming_validator.py --help"
+    ]
+  },
+  {
+    "slug": "ga4-mena-ecommerce-taxonomy-schema",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ga4-mena-ecommerce-taxonomy-schema",
+    "category": "reporting",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "GA4 MENA E-Commerce Event Taxonomy & BigQuery Schema",
+    "tagline_en": "Deploy a complete GA4 e-commerce event taxonomy and BigQuery SQL suite built specifically for Middle East retail, COD, and BNPL.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an exhaustive GA4 e-commerce taxonomy and BigQuery SQL schema pack for MENA: 1) Extended e-commerce event taxonomy specification (including cod_placed, cod_verified, bnpl_selected, delivery_completed), 2) BigQuery SQL query templates that require adaptation and validation against your GA4 export schema (unnesting events, customer lifetime value, blended attribution), 3) GTM Web and Server-Side container examples that require review and configuration before import.",
+    "deliverables": [
+      "data/event_dictionary.csv",
+      "docs/mena-payment-tracking-guide.md",
+      "docs/mena_custom_dimensions.md",
+      "gtm/gtm-web-container-template.json",
+      "LICENSE",
+      "README.md",
+      "schema/ga4_mena_event_schema.json",
+      "schemas/ga4-event-taxonomy.json",
+      "SOURCES.md",
+      "sql/bigquery_ecommerce_unnester.sql",
+      "sql/customer_ltv_analysis.sql",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Required E-Commerce Parameter Consistency: Enforces official items array schemas with item_id, item_name, price, and item_category.",
+      "Currency Normalization: Multi-currency regional transactions (SAR, AED, EGP, USD) must be explicitly passed at event level to prevent conversion distortion.",
+      "BigQuery Partitioning: Daily event export partitions require integer transaction timestamps (event_timestamp) for performant querying."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "meta-capi-offline-conversion-reconciler",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/meta-capi-offline-conversion-reconciler",
+    "category": "reporting",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Meta CAPI Offline Conversion Reconciliation Utility",
+    "tagline_en": "Format, validate, and SHA256-hash offline CRM conversion data to maximize Meta Conversions API (CAPI) Event Match Quality.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python CLI utility (capi_reconciler.py) for formatting Meta CAPI offline events: 1) Normalizes Egyptian (+20) and GCC (+966, +971, +965, etc.) phone numbers to strict E.164 standards, handling missing leading zeroes, 2) Performs lowercase SHA256 hashing on emails, names, and phone numbers, 3) Formats Unix timestamps, 4) Generates a pre-flight validation report showing estimated Event Match Quality.",
+    "deliverables": [
+      "data/mena_phone_rules.json",
+      "examples/hashed_meta_ready.csv",
+      "examples/raw_crm_sample.csv",
+      "examples/unmatched_crm_leads.csv",
+      "LICENSE",
+      "README.md",
+      "reports/reconciliation_summary.json",
+      "src/capi_reconciler.py",
+      "templates/offline_event_payload.json",
+      "tests/test_reconciler.py"
+    ],
+    "constraints_en": [
+      "Event Deduplication (event_id): Requires identical event_id and event_name on both browser pixel and server CAPI payloads within 48-hour deduplication window.",
+      "Customer Information Parameters: Hashes PII (email, phone, first/last name) with SHA-256 before transmission to maximize Event Quality Match score.",
+      "Timezone Normalization: Offline CRM delivery events must be converted to UTC Unix timestamps to match Meta ad auction attribution windows."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/capi_reconciler.py --help"
+    ]
+  },
+  {
+    "slug": "utm-campaign-governance-hub",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/utm-campaign-governance-hub",
+    "category": "reporting",
+    "format": "STATIC_INTERACTIVE_TOOL",
+    "tier": "2",
+    "title_en": "UTM Campaign Governance Hub & Interactive Builder",
+    "tagline_en": "Create consistently tagged campaign links and reduce avoidable UTM classification errors. This tool cannot guarantee that GA4 will eliminate '(Other)' or 'Unassigned' traffic.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source UTM governance hub: 1) Single-file responsive HTML/JS tool (index.html) running client-side with dropdown enforcement strictly adhering to GA4 Default Channel Grouping rules, 2) Python CLI (utm_validator.py) auditing CSV lists of live ad links, 3) Enterprise UTM policy document, 4) Integration cheat sheet for Slack/Teams.",
+    "deliverables": [
+      "config/utm_taxonomy.json",
+      "docs/utm-best-practices.md",
+      "examples/sample_links_audit.csv",
+      "index.html",
+      "LICENSE",
+      "policy/enterprise-utm-standards.md",
+      "README.md",
+      "src/url_cleaner.py",
+      "src/utm_validator.py",
+      "tests/test_cleaner.py",
+      "tests/test_validator.py",
+      "tools/index.html"
+    ],
+    "constraints_en": [
+      "Case Sensitivity & Normalization: Enforces strict lowercase normalization on utm_source, utm_medium, and utm_campaign to prevent reporting fragmentation.",
+      "Delimiter Standard: Replaces spaces with hyphens or underscores; flags unauthorized punctuation characters.",
+      "Encoding Compliance: Ensures landing page URLs with Arabic query parameters or anchors are properly percent-encoded per RFC 3986."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/url_cleaner.py --help"
+    ]
+  },
+  {
+    "slug": "server-side-gtm-cost-optimizer",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/server-side-gtm-cost-optimizer",
+    "category": "reporting",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Server-Side GTM Cost Optimizer & Noise Event Pruner",
+    "tagline_en": "Model server-side GTM event filtering and Cloud Run settings. Actual cost effects depend on traffic, configuration, and pricing; no savings percentage is promised.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an open-source server-side GTM cost optimization toolkit: 1) Architecture guide detailing client-side event filtering triggers (blocking scroll, timer, and visibility events from sending sGTM requests), 2) Ready-to-import Web GTM transformation rules, 3) Python cloud billing cost estimator (estimate_sgtm_cost.py), 4) Step-by-step GCP Cloud Run auto-scaling and concurrency tuning instructions.",
+    "deliverables": [
+      "architecture/filtering-blueprint.md",
+      "configs/cloud-run-budget-alerts.json",
+      "docs/cloud-run-tuning.md",
+      "examples/cost-reduction-case-study.md",
+      "examples/cost_reduction_case_study.md",
+      "gtm-templates/noise-filter-trigger.json",
+      "LICENSE",
+      "README.md",
+      "scripts/estimate_sgtm_cost.py",
+      "scripts/filter_noise_events.py",
+      "templates/sgtm-cost-reduction-rules.md",
+      "tests/test_cost_optimizer.py"
+    ],
+    "constraints_en": [
+      "Cloud Run Concurrency Limits: Configures container min/max instances to handle flash sales without incurring idle runtime billing during low-traffic night hours.",
+      "High-Volume Noise Event Pruning: Discards non-essential interaction events (e.g. scroll_depth, element_visibility) before firing billable downstream endpoints.",
+      "First-Party Cookie Lifetime: Extends cookie expiration using server-side Set-Cookie headers while remaining compliant with regional privacy guidelines."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python scripts/estimate_sgtm_cost.py --help"
+    ]
+  },
+  {
+    "slug": "whatsapp-attribution-bridge-blueprint",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/whatsapp-attribution-bridge-blueprint",
+    "category": "reporting",
+    "format": "PROJECT_BLUEPRINT",
+    "tier": "3",
+    "title_en": "WhatsApp Click-to-Chat Attribution Bridge & CRM Matcher",
+    "tagline_en": "Bridge the attribution gap between Meta Click-to-WhatsApp ads and closed CRM deals with an open tracking architecture.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source WhatsApp attribution bridge blueprint: 1) System architecture specification for passing encoded tracking tokens in wa.me/?text= pre-filled messages, 2) Python webhook receiver script (whatsapp_webhook_parser.py) extracting lead parameters into CRM format, 3) Offline conversion upload formatting for Meta CAPI, 4) Sales representative logging SOP.",
+    "deliverables": [
+      "architecture/system-architecture.md",
+      "ARCHITECTURE.md",
+      "crm-templates/sales-rep-logging-sheet.md",
+      "DATA_MODEL.md",
+      "LICENSE",
+      "MONETIZATION.md",
+      "PRD.md",
+      "PROBLEM.md",
+      "README.md",
+      "ROADMAP.md",
+      "scripts/generate_tracking_links.py",
+      "scripts/whatsapp_webhook_parser.py",
+      "src/token_generator.py",
+      "src/webhook_listener.py",
+      "tests/test_bridge.py",
+      "tests/test_parser.py",
+      "*(Additional supporting documentation and assets)*"
+    ],
+    "constraints_en": [
+      "WABA Click-to-Chat Handshake: Captures pre-filled message reference tokens or dynamic URL parameters to connect ad click IDs (fbclid, gclid) to incoming CRM chats.",
+      "Downstream Conversion Attribution: Maps completed offline WhatsApp orders back into Meta CAPI and Google Ads as offline purchase conversions.",
+      "GDPR / PDPL Opt-In Consent: Captures explicit user consent prior to saving telephone numbers and initiating automated remarketing sequences."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/token_generator.py --help"
+    ]
+  },
+  {
+    "slug": "egyptian-payment-tracking-gtm-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/egyptian-payment-tracking-gtm-kit",
+    "category": "reporting",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Egyptian Payment Gateway (Fawry/Instapay) Tracking GTM Kit",
+    "tagline_en": "Track Fawry, Instapay, and Vodafone Cash transactions accurately in GA4 and Meta CAPI without broken checkout attribution.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create a specialized tracking toolkit for Egyptian payment gateways (Fawry, Instapay, Paymob, Vodafone Cash): 1) Data Layer specification distinguishing 'payment_initiated' vs 'payment_confirmed', 2) Ready-to-import GTM container JSON with custom variables and triggers, 3) Python reconciliation script (reconcile_payments.py) matching bank transaction logs to order numbers, 4) Implementation guide for WooCommerce and custom checkouts.",
+    "deliverables": [
+      "data-layer/dataLayer-spec-fawry-instapay.js",
+      "docs/egyptian-payment-tracking-guide.md",
+      "docs/implementation-guide-woocommerce.md",
+      "gtm/gtm-egypt-payments-container.json",
+      "LICENSE",
+      "README.md",
+      "scripts/dataLayer_payment_listener.js",
+      "src/reconcile_payments.py",
+      "src/validate_datalayer.py",
+      "templates/fawry-instapay-gtm-container.json",
+      "tests/test_reconciler.py",
+      "tests/test_reconciliation.py",
+      "tests/test_validator.py"
+    ],
+    "constraints_en": [
+      "Asynchronous Payment Handshake: Cash-at-kiosk (Fawry) and Instapay transfers do not finalize immediately; requires server-side webhook listener to confirm purchase events.",
+      "Iframe Checkout Sandboxing: Hosted payment redirect pages require postMessage listener bridges to trigger GTM dataLayer events on parent merchant window.",
+      "EGP Currency & Decimal Precision: Ensures Fawry fee surcharges and decimal places are calculated accurately in e-commerce purchase payloads."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/reconcile_payments.py --help"
+    ]
+  },
+  {
+    "slug": "shapley-attribution-game-engine",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/shapley-attribution-game-engine",
+    "category": "reporting",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Cooperative Game Theory Shapley Multi-Touch Attribution Engine",
+    "tagline_en": "Distribute marketing credit fairly using Cooperative Game Theory. Compare Shapley attribution against First-Touch and Last-Touch with zero dependencies.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build a standalone Python multi-touch attribution engine (shapley_attribution.py): 1) Implements exact Shapley value calculation from user touchpoint journey strings (e.g., 'Google > Facebook > Email > Conversion'), 2) Compares Shapley credit against First-Touch, Last-Touch, Linear, and Time-Decay models, 3) Exports an interactive HTML comparison table and bar chart, 4) Includes 1,000 synthetic multi-channel touchpoint journeys.",
+    "deliverables": [
+      "docs/mathematical-foundations.md",
+      "examples/touchpoint_journeys.csv",
+      "LICENSE",
+      "README.md",
+      "reports/attribution_comparison.html",
+      "reports/attribution_weights.html",
+      "sample_data/touchpoint_journeys.csv",
+      "src/shapley_attribution.py",
+      "tests/test_attribution.py",
+      "tests/test_shapley.py"
+    ],
+    "constraints_en": [
+      "Combinatorial Complexity ($2^N$): Computes exact Shapley marginal contributions for up to 10 distinct marketing channels; uses Monte Carlo sampling for larger sets.",
+      "First-Touch & Last-Touch Bias Elimination: Fairly distributes revenue credit to middle-funnel touchpoints (e.g. email, content) undervalued by default ad platform reports.",
+      "Path Deduplication: Sequences repeated visits from identical channels within short timeframes (e.g. 1 hour) into single consolidated interactions."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/shapley_attribution.py --help"
+    ]
+  },
+  {
+    "slug": "ga4-data-thresholding-debugger",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ga4-data-thresholding-debugger",
+    "category": "reporting",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "GA4 Data Thresholding & Google Signals Diagnostic Playbook",
+    "tagline_en": "Eliminate GA4 data thresholding and unmask hidden report rows with diagnostic guidance for reporting identity and BigQuery export analysis. BigQuery does not recover data that was never exported, and these examples require an available export and schema validation.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an authoritative troubleshooting guide and solution pack for GA4 data thresholding: 1) Diagnostic decision tree identifying the exact cause of orange threshold icons, 2) Step-by-step instructions for toggling Reporting Identity spaces safely without losing historical data, 3) BigQuery SQL templates for analyzing exported event-level data, subject to export availability, consent settings, schema, and applicable platform limits, 4) Client-facing explanation slide template.",
+    "deliverables": [
+      "checklists/google-signals-audit.md",
+      "configs/reporting-identity-guide.md",
+      "examples/ecommerce-threshold-audit.md",
+      "LICENSE",
+      "playbooks/thresholding-diagnosis-tree.md",
+      "playbooks/thresholding-recovery-sop.md",
+      "README.md",
+      "sql/unthresholded_channel_report.sql",
+      "templates/stakeholder-explanation-template.md"
+    ],
+    "constraints_en": [
+      "Google Signals Thresholding: Small audience cell counts (<50 users) trigger privacy thresholding in standard GA4 reports when Google Signals is enabled.",
+      "Reporting Identity Impact: Compares Blended (Device ID + User ID + Google Signals + Modeled) vs Device-Only identity to identify suppressed rows.",
+      "BigQuery Unsampled Verification: Cross-examines UI report discrepancies against un-thresholded raw BigQuery event exports."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "ad-blocker-telemetry-loss-estimator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ad-blocker-telemetry-loss-estimator",
+    "category": "reporting",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Telemetry Discrepancy Estimator for Regional Publishers",
+    "tagline_en": "Estimate pageview discrepancies between first-party server logs and client analytics. A discrepancy is not proof of ad-blocking or revenue loss.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source telemetry discrepancy estimator: 1) an optional same-origin pageview beacon that sends only after explicit analytics consent, 2) a Python log analyzer that compares server and client event counts, and 3) guidance for interpreting discrepancies. Differences may result from consent choices, JavaScript failures, sampling, caching, bots, or blockers; the tool cannot identify the cause by itself.",
+    "deliverables": [
+      "docs/reverse-proxy-guide.md",
+      "examples/sample_access_logs.txt",
+      "LICENSE",
+      "README.md",
+      "reports/loss_analysis.html",
+      "src/audit_loss.py",
+      "src/beacon_test.js (Node tests for consent and same-origin safeguards)",
+      "src/telemetry_beacon.js",
+      "src/telemetry_loss_estimator.py",
+      "tests/test_audit.py",
+      "tests/test_estimator.py"
+    ],
+    "constraints_en": [
+      "Consent-Gated Beacon: Sends a minimal pageview event to a configured same-origin endpoint only when the host page explicitly sets window.__analyticsConsent = true. It does not attempt to evade blockers or identify a person.",
+      "Interpretation: Do not infer regional ad-blocker penetration from the sample logs. Use consented, account-specific measurements and describe the result as a tracking discrepancy unless the cause is independently established.",
+      "Privacy Respect: Script strictly measures aggregated loss metrics without tracking personal identifiers or circumventing client browser privacy settings."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/audit_loss.py --help"
+    ]
+  },
+  {
+    "slug": "data-layer-integrity-sentinel",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/data-layer-integrity-sentinel",
+    "category": "reporting",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Data Layer Integrity Sentinel & E-Commerce Event QA CLI",
+    "tagline_en": "Stop deploying broken tracking tags. Automatically validate dataLayer e-commerce event payloads in your CI/CD pipeline before release.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python dataLayer integrity testing tool (datalayer_sentinel.py): 1) Validates JSON-LD and dataLayer payloads against GA4 standard schemas (view_item, add_to_cart, begin_checkout, purchase), 2) Checks for critical parameters (currency ISO code, value numeric type, item arrays, transaction_id uniqueness), 3) Emits clear pass/fail terminal reports and JSON summaries suitable for GitHub Actions CI/CD.",
+    "deliverables": [
+      "ci/github-action-workflow.yml",
+      "examples/sample_datalayer_dumps.json",
+      "examples/sample_page_datalayer.json",
+      "LICENSE",
+      "README.md",
+      "schema/ecommerce_datalayer_schema.json",
+      "schemas/ga4_ecommerce_schemas.json",
+      "src/datalayer_sentinel.py",
+      "tests/test_sentinel.py"
+    ],
+    "constraints_en": [
+      "JSON Schema Validation: Validates client-side dataLayer.push payloads against strict schema contracts for standard e-commerce events.",
+      "Asynchronous Event Race Conditions: Detects when purchase or addToCart events push before user consent or container library initialization.",
+      "Automated CI/CD Quality Gate: Runs headless assertion tests during automated staging builds to prevent regressions during store checkout updates."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/datalayer_sentinel.py --help"
+    ]
+  },
+  {
+    "slug": "mena-mobile-checkout-friction-audit-pack",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/mena-mobile-checkout-friction-audit-pack",
+    "category": "cro",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "MENA Mobile Checkout Friction Audit Pack (50-Point Standard)",
+    "tagline_en": "Uncover why mobile shoppers abandon your checkout. Audit your mobile store against 50 MENA-specific UX friction points.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an exhaustive 50-point mobile checkout CRO audit pack tailored to MENA: 1) Weighted scoring rubric across 5 categories (Address & Location, Payment & BNPL, Mobile Keyboard Ergonomics, SMS/OTP Verification, Trust & Transparency), 2) Visual defect examples with before/after fixes, 3) Markdown audit report template ready for agency client presentations, 4) Interactive HTML audit card generator.",
+    "deliverables": [
+      "assets/visual_friction_patterns.md",
+      "checklists/30-point-mobile-ux-rubric.md",
+      "examples/riyadh-perfume-store-audit.html",
+      "examples/sample_audit_fashion_store.md",
+      "LICENSE",
+      "playbook/checkout-friction-audit-sop.md",
+      "README.md",
+      "rubric/50-point-checkout-audit.md",
+      "templates/benchmark-scoring-sheet.md",
+      "templates/client-audit-report-template.md",
+      "tools/audit_grader.html"
+    ],
+    "constraints_en": [
+      "Mandatory Mobile Touch Targets: Checkout buttons and form inputs must maintain a minimum bounding box of 48x48 CSS pixels.",
+      "Regional Address Formats: Saudi National Address (short 4-character code) and Egyptian landmark-based addresses require tailored input fields.",
+      "Payment Gateway Redundancy: High failure rates on local debit networks require clear fallback routing to Mada, Apple Pay, or Cash on Delivery."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "form-field-hesitation-telemetry-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/form-field-hesitation-telemetry-kit",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Form Field Hesitation & Abandonment Telemetry Snippet",
+    "tagline_en": "Discover the exact form field that makes your visitors abandon. Drop in a 1KB, privacy-safe JavaScript telemetry snippet.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a lightweight, privacy-safe form hesitation tracking library (form_telemetry.js): 1) Tracks time spent per field (focus to blur), correction count (backspaces), and last-interacted field upon abandonment, 2) Does not record keystroke text by design; field timing and correction-count events still require appropriate consent, minimization, and disclosure, 3) Pushes structured form_friction events to dataLayer, 4) Includes GTM container JSON and GA4 exploration guide.",
+    "deliverables": [
+      "docs/ga4-exploration-setup.md",
+      "examples/sample_form_events.json",
+      "gtm/form-telemetry-gtm-recipe.json",
+      "LICENSE",
+      "README.md",
+      "reports/hesitation_heatmap.html",
+      "src/aggregate_hesitation.py",
+      "src/form_telemetry.js",
+      "src/form_telemetry.min.js",
+      "src/hesitation_tracker.js",
+      "tests/telemetry.test.js",
+      "tests/test_hesitation.py"
+    ],
+    "constraints_en": [
+      "Performance Impact: Event listeners for focus, blur, and keystroke timing must use passive listeners and debounce routines to prevent input lag.",
+      "PII Data Isolation: Field value contents are never logged or transmitted; telemetry captures field names, character counts, and hesitation milliseconds only.",
+      "Bilingual Field Identification: Normalizes Arabic input labels (e.g. 'رقم الجوال') to standard telemetry keys (e.g. 'phone_input')."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "node --test tests/*.test.js",
+      "python src/aggregate_hesitation.py --help"
+    ]
+  },
+  {
+    "slug": "visual-saliency-attention-simulator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/visual-saliency-attention-simulator",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Visual Saliency Attention Heatmap Simulator for Landing Pages",
+    "tagline_en": "Generate a local visual-saliency map from an image. It is a computational proxy, not eye-tracking data or a prediction of how real users will look at a page.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source visual attention saliency generator in Python (visual_saliency.py): 1) Uses multi-scale luminance, color-opponent, and edge orientation gradients (Itti-Koch-Niebur model approximation) to calculate visual attention maps from landing page screenshots, 2) Overlays a smooth jet/turbo colormap heatmap onto the original image, 3) Computes a heuristic CTA prominence score (0-100) for comparative exploration, not a validated measure of conversion or gaze.",
+    "deliverables": [
+      "docs/cognitive-load-benchmarks.md",
+      "docs/visual-hierarchy-guidelines.md",
+      "examples/input_hero.png",
+      "examples/output_heatmap.png",
+      "LICENSE",
+      "README.md",
+      "src/saliency_simulator.py",
+      "src/visual_saliency.py",
+      "tests/test_saliency.py"
+    ],
+    "constraints_en": [
+      "Heuristic Scope: Saliency heatmaps represent algorithmic approximations of pre-attentive human vision (luminance, color contrast, edge orientation), not actual eye-tracking.",
+      "RTL Scanning Bias: Saliency models for Arabic interfaces must account for right-to-left scanning patterns that reverse traditional Western F-shaped gaze paths.",
+      "Above-the-Fold Viewport Constraints: Evaluates primary CTA visual pop against busy background imagery on mobile viewports (390px width)."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/saliency_simulator.py --help"
+    ]
+  },
+  {
+    "slug": "arabic-rtl-layout-micro-jank-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-rtl-layout-micro-jank-linter",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Arabic RTL Layout Micro-Jank & Mirroring Linter",
+    "tagline_en": "Catch embarrassing RTL mirroring bugs, flipped arrows, and broken text layouts before your Arabic website launches.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an automated RTL design quality assurance toolkit: 1) Python scanner (rtl_linter.py) auditing CSS and HTML files for non-logical properties (margin-left vs margin-inline-start), hardcoded left-aligned icons, missing dir attributes, and unisolated bidirectional text tags (<bdi>), 2) 35-point visual RTL inspection checklist, 3) Modern CSS logical property migration guide.",
+    "deliverables": [
+      "checklists/35-point-rtl-visual-qa.md",
+      "css/rtl-fix-resets.css",
+      "examples/bad_and_good_rtl_styles.css",
+      "examples/sample_broken_rtl.html",
+      "LICENSE",
+      "README.md",
+      "snippets/css-logical-properties-cheatsheet.css",
+      "src/rtl_linter.py",
+      "tests/test_linter.py",
+      "tests/test_rtl_linter.py"
+    ],
+    "constraints_en": [
+      "CSS Logical Properties: Audits CSS stylesheets to ensure 'margin-inline-start' and 'inset-inline' replace legacy directional 'margin-left' and 'left' properties.",
+      "Icon Mirroring Directionality: Verifies that directional icons (arrows, back buttons, progress bars) mirror in RTL while non-directional icons (clocks, checkmarks) remain static.",
+      "Cumulative Layout Shift (CLS): Prevents layout jumps caused by late font swap or directional flips by enforcing RTL directionality on root <html> tag."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/rtl_linter.py --help"
+    ]
+  },
+  {
+    "slug": "b2b-lead-quality-scoring-matrix",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/b2b-lead-quality-scoring-matrix",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "B2B Lead Quality Scoring Matrix & Spam Submission Filter",
+    "tagline_en": "Automatically filter fake phone numbers, personal emails, and junk submissions from your B2B marketing funnels before sending to sales.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source B2B lead scoring and spam filtering package: 1) Python scoring script (lead_scorer.py) evaluating email domain (blocking free providers), phone number validity (E.164 and sequential number traps), company name length, and job title keywords, 2) Curated JSON list of 4,000+ disposable and free consumer email domains, 3) Marketing-Sales SLA agreement template.",
+    "deliverables": [
+      "config/scoring_rules.json",
+      "data/disposable_and_free_email_domains.json",
+      "examples/b2b_inbound_leads.csv",
+      "examples/sample_inbound_leads.csv",
+      "LICENSE",
+      "README.md",
+      "reports/scored_leads.csv",
+      "src/lead_scorer.py",
+      "templates/mql-sla-framework.md",
+      "tests/test_scorer.py"
+    ],
+    "constraints_en": [
+      "Disposable Domain Detection: Flags and down-ranks disposable/temporary email domains (e.g. mailinator, tempmail) in B2B inbound submissions.",
+      "Free Webmail Deprioritization: Assigns weighted scoring differentiating free consumer webmail (gmail.com, yahoo.com) from corporate business domains.",
+      "Form Honeypot & Bot Defense: Implements zero-friction CSS-hidden honeypots to filter automated spam without annoying legitimate B2B prospects."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/lead_scorer.py --help"
+    ]
+  },
+  {
+    "slug": "checkout-abandonment-taxonomy-survey",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/checkout-abandonment-taxonomy-survey",
+    "category": "cro",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Checkout Abandonment Reason Taxonomy & Exit Survey System",
+    "tagline_en": "Stop guessing why shoppers abandon your cart. Capture exact reasons with an open taxonomy and lightweight exit-intent micro-survey.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an open-source cart abandonment diagnostic system: 1) Standardized 12-factor abandonment taxonomy tailored to regional commerce (unexpected shipping fees, lack of COD/Tabby, address form complexity, slow delivery, trust doubts), 2) Zero-dependency lightweight HTML/JS exit survey modal (exit_survey.js), 3) Step-by-step remediation strategies for each abandonment trigger.",
+    "deliverables": [
+      "components/exit_survey.css",
+      "components/exit_survey.js",
+      "examples/survey-results-analysis.csv",
+      "examples/survey-results-salla-store.md",
+      "LICENSE",
+      "playbooks/cod-vs-prepaid-interventions.md",
+      "playbooks/remediation-action-plan.md",
+      "README.md",
+      "scripts/survey_collector.js",
+      "taxonomy/abandonment-reasons-12factor.md",
+      "templates/exit-intent-modal.html",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Exit-Intent Triggering: Desktop exit surveys trigger on mouse velocity heading out of viewport; mobile surveys trigger on back-button popstate events.",
+      "Taxonomy Standardization: Classifies reasons into 5 core buckets (Surprise Shipping Costs, COD Surcharge, Payment Rejection, Need More Time, Trust Concern).",
+      "Non-Intrusive Dismissal: Users who close the survey are suppressed from re-triggering for a configurable period using local storage; align the behavior with consent and privacy requirements."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "cro-experiment-prioritization-scorecard",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/cro-experiment-prioritization-scorecard",
+    "category": "cro",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "CRO Experiment Prioritization & Statistical Power Scorecard",
+    "tagline_en": "Prioritize high-impact A/B tests and calculate required sample sizes and test durations before writing a single line of code.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a professional CRO experiment prioritization system: 1) Extended ICE/PIE scoring framework incorporating Traffic Feasibility and Technical Effort, 2) Python sample size calculator (calc_power.py) computing required sample sizes and test duration (days) given baseline conversion rate and desired MDE, 3) Complete Markdown experiment planning template.",
+    "deliverables": [
+      "examples/ecommerce-experiment-roadmap.md",
+      "examples/sample_cro_backlog.csv",
+      "framework/prioritization-rubric.md",
+      "LICENSE",
+      "models/cro-experiment-backlog.xlsx",
+      "playbooks/sample-size-calculator.py",
+      "README.md",
+      "src/calc_power.py",
+      "templates/experiment-design-document.md",
+      "templates/ice-pie-scoring-model.md",
+      "tests/test_calculator.py",
+      "tests/test_power.py",
+      "tests/test_sample_size.py"
+    ],
+    "constraints_en": [
+      "Statistical Power Requirements: Enforces minimum sample size calculation before launching split tests, preventing tests with insufficient statistical power.",
+      "ICE vs P.I.E. Hybrid Scoring: Combines Potential, Importance, and Ease with regional implementation risk multipliers.",
+      "Guardrail Metric Tracking: Prioritization models require explicit guardrail metrics (e.g. Return Rate, Unsubscribe Rate) to prevent destructive short-term conversion gains."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/calc_power.py --help"
+    ]
+  },
+  {
+    "slug": "landing-page-trust-signals-swipe-file",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/landing-page-trust-signals-swipe-file",
+    "category": "cro",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "Landing Page Trust Signals & Regulatory Compliance Swipe File",
+    "tagline_en": "Review editable trust-signal examples and copy patterns for Arabic landing pages. Use official assets only when authorized and display regulatory credentials only when they apply to the business.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source landing page trust signals repository for MENA: 1) illustrative trust-strip and badge examples; do not use third-party or regulatory marks without authorization and current eligibility, 2) Responsive, accessible HTML/CSS trust strip components, 3) Bilingual Arabic/English micro-copy swipe file for refund, privacy, and shipping guarantees, 4) Placement best practice guide.",
+    "deliverables": [
+      "assets/svg-badges/mawthooq-verified.svg",
+      "components/trust-strip-responsive.html",
+      "components/trust-strip.css",
+      "data/trust_signals_library.json",
+      "docs/mena-trust-psychology.md",
+      "docs/trust-architecture-guide.md",
+      "examples/preview_gallery.html",
+      "LICENSE",
+      "README.md",
+      "SOURCES.md",
+      "swipe-file/guarantee-microcopy-ar-en.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Saudi Statutory Disclosures: E-commerce landing pages in KSA must prominently display CR number, VAT tax registration number, and physical commercial address.",
+      "Payment Gateway Badge Accuracy: Merchant badges must accurately reflect authorized regional payment networks (Mada, Apple Pay, Tabby, Tamara).",
+      "Truth in Advertising Regulations: Prohibits unsubstantiated '100% Satisfaction' or '#1 in Market' claims without auditable proof to comply with consumer protection laws."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "mobile-persistent-sticky-cta-benchmark",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/mobile-persistent-sticky-cta-benchmark",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Mobile Persistent Bottom Sticky CTA Conversion Benchmark",
+    "tagline_en": "Boost mobile landing page conversions with a 60fps, zero-dependency sticky CTA bar built with modern IntersectionObserver.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a high-performance mobile sticky CTA component (sticky_cta.js): 1) Uses modern IntersectionObserver (0 scroll event listeners) for 60fps performance and zero INP penalty, 2) Automatically detects when native CTA is visible and hides smoothly, 3) Supports bilingual RTL/LTR layouts with countdown timer and price display, 4) Complete HTML demo and performance test suite.",
+    "deliverables": [
+      "css/sticky_cta.css",
+      "demo/index.html",
+      "docs/performance-benchmark-inp.md",
+      "docs/sticky-cta-ab-test-results.md",
+      "examples/demo_storefront.html",
+      "LICENSE",
+      "README.md",
+      "src/sticky_cta.css",
+      "src/sticky_cta.js",
+      "src/sticky_cta_logic.js",
+      "tests/component.test.js",
+      "tests/test_sticky_cta.py"
+    ],
+    "constraints_en": [
+      "iOS Safe Area Inset Accommodation: Persistent bottom CTAs must include 'padding-bottom: env(safe-area-inset-bottom)' to prevent overlap with native iOS home indicators.",
+      "Screen Real Estate Budget: Fixed bottom bar height should be tested at the actual viewport and text scale so it does not obscure essential content.",
+      "Scroll-Directional Visibility: Bar reveals on subtle scroll-up or maintains persistent presence with smooth opacity transition."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "node --test tests/*.test.js"
+    ]
+  },
+  {
+    "slug": "b2b-lead-velocity-funnel-diagnostic",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/b2b-lead-velocity-funnel-diagnostic",
+    "category": "cro",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "B2B Sales Lead Velocity & Funnel Bottleneck Diagnostic CLI",
+    "tagline_en": "Identify exact sales pipeline bottlenecks and audit lead response time latency from your CRM exports in seconds.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source pipeline velocity diagnostic tool in Python (lead_velocity_analyzer.py): 1) Parses CRM lead exports with timestamps (Created, First Contact, Qualified, Won/Lost), 2) Calculates median time-to-first-contact and stage transition velocity, 3) Flags stalled leads exceeding SLA thresholds, 4) Generates an interactive visual HTML funnel diagram with bottleneck callouts.",
+    "deliverables": [
+      "examples/hubspot_salesforce_leads.csv",
+      "examples/sample_crm_leads.csv",
+      "LICENSE",
+      "README.md",
+      "reports/funnel_velocity_dashboard.html",
+      "reports/funnel_velocity_preview.html",
+      "src/lead_velocity_analyzer.py",
+      "src/lead_velocity_calculator.py",
+      "templates/speed-to-lead-sla.md",
+      "tests/test_analyzer.py",
+      "tests/test_velocity.py"
+    ],
+    "constraints_en": [
+      "Lead Velocity Rate (LVR) Formula: Measures qualified lead pipeline growth month-over-month as a reliable leading indicator of future closed-won revenue.",
+      "Sales Stage Conversion Benchmarks: Diagnoses conversion drop-offs between Lead -> MQL -> SQL -> Opportunity -> Closed-Won.",
+      "Sales Cycle Length Accommodation: Accounts for longer B2B purchasing cycles in the Middle East (typically 60-120 days for enterprise software)."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/lead_velocity_analyzer.py --help"
+    ]
+  },
+  {
+    "slug": "ugc-creator-video-brief-factory",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ugc-creator-video-brief-factory",
+    "category": "content",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "UGC Video Creator Creative Brief & Storyboard Factory",
+    "tagline_en": "Stop getting bad creator videos. Deliver structured, shot-by-shot 9:16 UGC storyboards that direct-response video creators understand instantly.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source UGC creator brief and storyboard system: 1) 10 vertical video narrative formulas (Hook, Problem, Demonstration, Social Proof, CTA), 2) Visual storyboard wireframe templates with exact camera angle notations (POV, Close-up, Selfie), 3) Scriptwriting template with timed audio cues (0-3s, 4-15s, 16-25s, 26-30s), 4) Creator deliverable agreement and QA checklist.",
+    "deliverables": [
+      "briefs/10-direct-response-video-formulas.md",
+      "checklists/creator-deliverable-qa.md",
+      "examples/beauty_ecommerce_sample_brief.md",
+      "examples/perfume_skincare_hooks.md",
+      "LICENSE",
+      "playbooks/3-second-retention-playbook.md",
+      "README.md",
+      "scripts/hook_randomizer.py",
+      "templates/creator-storyboard-template.md",
+      "templates/hook_matrix_ar.json",
+      "templates/shot-list-worksheet.md",
+      "tests/test_hook_randomizer.py"
+    ],
+    "constraints_en": [
+      "Native 9:16 Storyboard Structure: Briefs structure scripts into 3-second hook, problem/relatability, product demonstration, and single clear CTA.",
+      "Regional Dialect Alignment: Distinguishes between Egyptian energetic casual tone and Saudi authentic conversational Gulf dialect.",
+      "B-Roll Safe Zone Layout: Creator shooting instructions specify keeping text overlays away from platform UI icons (heart, comment, share buttons)."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python scripts/hook_randomizer.py --help"
+    ]
+  },
+  {
+    "slug": "shortform-video-3s-hook-benchmark",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/shortform-video-3s-hook-benchmark",
+    "category": "content",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "Short-Form Video 3-Second Thumbstop Hook Benchmark",
+    "tagline_en": "A bilingual set of illustrative short-form video hook examples, plus an offline retention-curve analyzer. No measured hook-performance benchmark is claimed.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Provide a small, expandable set of Arabic and English hook examples organized by category, an offline retention-curve analyzer, and a skill for drafting context-specific hooks. The included examples and retention fixtures are illustrative; they do not establish market performance.",
+    "deliverables": [
+      "data/video_hooks_300.json (currently 11 illustrative hooks; filename retained for compatibility)",
+      "data/video_hooks_catalog.csv",
+      "docs/hook-psychology-breakdown.md",
+      "examples/hook_testing_case_study.md",
+      "examples/tiktok_retention_curve.csv",
+      "LICENSE",
+      "README.md",
+      "reports/retention_waterfall.html",
+      "SKILL.md",
+      "src/retention_analyzer.py",
+      "tests/test_retention.py"
+    ],
+    "constraints_en": [
+      "3-Second Thumbstop Metric: A user-supplied campaign metric: calculate it from the selected platform export and compare against that account’s own baseline. This repository provides no universal target or measured benchmark.",
+      "Visual Pattern Interrupts: Audits presence of rapid visual motion, unexpected text overlays, or sound cues within the first 1.5 seconds.",
+      "Dialectal Hook Examples: Includes illustrative openings such as 'أكبر غلطة...' and 'لو ساكن في الرياض...'; they are not represented as validated top performers."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/retention_analyzer.py --help"
+    ]
+  },
+  {
+    "slug": "bilingual-copy-cadence-meter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/bilingual-copy-cadence-meter",
+    "category": "content",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Bilingual Arabic-English Copywriting Cadence & Punchiness Meter",
+    "tagline_en": "Make your copy impossible to stop reading. Measure sentence rhythm and eliminate bloated filler words in Arabic and English.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source copywriting rhythm and cadence analyzer in Python (cadence_meter.py): 1) Analyzes sentence word-length variance (calculating cadence score and visual rhythm wave), 2) Detects configured passive or filler phrases in Arabic and English, 3) Suggests direct, punchy alternatives, 4) Outputs an interactive HTML visual report highlighting monotonous paragraphs.",
+    "deliverables": [
+      "data/arabic_filler_phrases.json",
+      "data/english_weak_words.json",
+      "examples/saudi-fintech-ceo-case.md",
+      "LICENSE",
+      "playbooks/linkedin-carousel-adapter.md",
+      "README.md",
+      "reports/sample_rhythm_report.html",
+      "src/cadence_meter.py",
+      "templates/interview-transcript-intake.md",
+      "templates/pillar-article-framework.md",
+      "tests/test_cadence.py",
+      "tests/test_meter.py"
+    ],
+    "constraints_en": [
+      "Syllable & Word Length Ratios: Measures reading cadence in Arabic and English, calculating syllables-per-word and sentence punchiness.",
+      "Arabic Morphological Complexity: Distinguishes between heavy classical agglutinative words and punchy modern colloquial advertising copy.",
+      "CTA Readability Scoring: Flags wordy, passive CTAs and recommends concise, action-oriented regional verbs."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/cadence_meter.py --help"
+    ]
+  },
+  {
+    "slug": "video-to-multiplatform-repurposing-pipeline",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/video-to-multiplatform-repurposing-pipeline",
+    "category": "content",
+    "format": "SKILL_MD",
+    "tier": "1",
+    "title_en": "Long-Form Video to Multi-Platform Asset Repurposing Pipeline",
+    "tagline_en": "Transform one 60-minute video into 15 high-performing marketing assets across LinkedIn, TikTok, Email, and SEO.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source 1-to-15 content repurposing framework: 1) Agent Skill (SKILL.md) that ingests a podcast/webinar transcript and extracts 5 core thesis statements, 2) Transformation templates for 5 output formats (Short-form video script, LinkedIn carousel copy, Email newsletter, Twitter/X thread, Long-form blog post), 3) Production tracking board template, 4) Complete end-to-end worked example.",
+    "deliverables": [
+      "examples/60min-webinar-repurposed/breakdown.md",
+      "examples/60min-webinar-repurposed/carousel.md",
+      "examples/60min-webinar-repurposed/tweets.md",
+      "LICENSE",
+      "README.md",
+      "scripts/extract_key_segments.py",
+      "SKILL.md",
+      "templates/linkedin-carousel-blueprint.md",
+      "templates/multiplatform-brief.md",
+      "templates/newsletter-curation.md",
+      "templates/production-tracker.csv",
+      "templates/short-video-extractor.md",
+      "tests/test_extract_segments.py"
+    ],
+    "constraints_en": [
+      "Aspect Ratio Crop Optimization: Calculates safe 9:16 vertical, 1:1 square, and 16:9 widescreen crops without slicing off speaker faces.",
+      "Sub-Clipping Cadence: Identifies high-energy conversational moments based on audio volume spikes and speech pause boundaries.",
+      "Platform Export Encoding: Standardizes video bitrates, H.264 profiles, and AAC audio settings for fast multi-channel distribution."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python scripts/extract_key_segments.py --help"
+    ]
+  },
+  {
+    "slug": "kinetic-typography-subtitle-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/kinetic-typography-subtitle-linter",
+    "category": "content",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Kinetic Typography Subtitle Linter for Arabic Social Ads",
+    "tagline_en": "Check selected subtitle timing, line length, and wrapping rules for Arabic and English SRT/VTT files. Results are lint suggestions, not a guarantee of readability on every device.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python subtitle validation tool for Arabic and English social video (subtitle_linter.py): 1) Parses SRT and VTT files, 2) Flags subtitles exceeding recommended reading speed (>160 WPM), 3) Checks maximum characters per line (flagging >38 chars on mobile), 4) Detects reversed punctuation marks in Arabic bidirectional text, 5) Outputs an automated correction report.",
+    "deliverables": [
+      "docs/arabic-subtitle-best-practices.md",
+      "examples/bad_subtitles.srt",
+      "examples/fixed_subtitles.srt",
+      "guidelines/mobile-subtitle-standards.md",
+      "LICENSE",
+      "README.md",
+      "src/subtitle_linter.py",
+      "tests/test_linter.py",
+      "tests/test_subtitles.py"
+    ],
+    "constraints_en": [
+      "Arabic Glyph Shaping & BiDi Integrity: Ensures subtitle renderers do not detach Arabic letters or reverse character sequences when applying kinetic motion effects.",
+      "Words-Per-Screen Limits: Caps subtitle chunks at 3 to 5 words to maintain readability during fast-paced social video narration.",
+      "Contrast & Shadow Enclosure: Mandates text drop shadows or contrasting backdrop bars to prevent white text from disappearing on bright video backgrounds."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/subtitle_linter.py --help"
+    ]
+  },
+  {
+    "slug": "marketing-claim-verification-fixture",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/marketing-claim-verification-fixture",
+    "category": "content",
+    "format": "SKILL_MD",
+    "tier": "1",
+    "title_en": "Marketing Claim Fact-Checking & Source Verification Fixture",
+    "tagline_en": "Protect your brand from AI hallucinations and fake statistics. Extract, verify, and audit marketing claims before publishing.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source marketing claim verification system: 1) Agent Skill (SKILL.md) that extracts factual assertions, percentages, pricing claims, and competitive comparisons from marketing copy, 2) Python CLI script (extract_claims.py) that surfaces unverified numerical claims for human review, 3) 20-point legal and regulatory compliance checklist for consumer claims.",
+    "deliverables": [
+      "checklists/legal-signoff-checklist.md",
+      "examples/sample-episode-shownotes.md",
+      "examples/sample_ad_copy_audit.md",
+      "LICENSE",
+      "README.md",
+      "rubrics/claim-verification-rubric.md",
+      "scripts/generate_chapters.py",
+      "SKILL.md",
+      "src/extract_claims.py",
+      "templates/episode-schema.json",
+      "templates/podcast-shownotes-template-ar.md",
+      "tests/test_claims.py"
+    ],
+    "constraints_en": [
+      "Auditable Claim Evidence: Replaces vague marketing superlatives with verifiable factual assertions and documented performance metrics.",
+      "Saudi Statutory Anti-Misleading Rules: Verifies compliance with Saudi Ministry of Commerce prohibitions against false advertising.",
+      "Testimonial Attribution Standards: Mandates documented user consent and proof of real customer status before publishing testimonials."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/extract_claims.py --help"
+    ]
+  },
+  {
+    "slug": "carousel-density-swipe-pacing-auditor",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/carousel-density-swipe-pacing-auditor",
+    "category": "content",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Carousel Slide Density & Swipe Pacing Auditor",
+    "tagline_en": "Audit your LinkedIn and Instagram carousels for slide text density, reading fatigue, and swipe momentum before designing.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an automated carousel pacing auditor in Python (carousel_auditor.py): 1) Ingests multi-slide Markdown or JSON files representing social carousels, 2) Evaluates word density per slide (flagging >50 words), 3) Checks for presence of cliffhanger transition hooks between slides, 4) Generates an interactive visual HTML preview simulating mobile swipe flow with pass/fail metrics.",
+    "deliverables": [
+      "data/copywriting_angles_ar.json",
+      "data/dialect_variations.csv",
+      "docs/angle-selection-guide.md",
+      "examples/good_and_bad_carousel.json",
+      "frameworks/10-slide-carousel-architecture.md",
+      "LICENSE",
+      "README.md",
+      "reports/preview_simulation.html",
+      "SOURCES.md",
+      "src/carousel_auditor.py",
+      "tests/test_auditor.py",
+      "tests/test_carousel.py"
+    ],
+    "constraints_en": [
+      "Cognitive Load Limits: Enforces maximum word counts (30-50 words per slide) to ensure comfortable mobile legibility without pinch-to-zoom.",
+      "Visual Hook & Drop-Off Pacing: Audits slide 1 visual punch and slide 2 bridge question to minimize initial swipe drop-off.",
+      "Safe Zone Padding: Keeps text and critical illustrations away from outer margins and platform swipe navigation badges."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/carousel_auditor.py --help"
+    ]
+  },
+  {
+    "slug": "direct-response-arab-metaphor-bank",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/direct-response-arab-metaphor-bank",
+    "category": "content",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "Direct-Response Arab Metaphor Bank & Cultural Analogy Lexicon",
+    "tagline_en": "Review a small editorial collection of Arabic copy metaphors and examples. Localize and validate wording with native speakers for the intended audience.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source direct-response cultural metaphor database for Arabic copywriters: 1) 3 illustrative metaphor records from Egyptian and Gulf vernacular categorized by marketing job (Speed, Reliability, Economy/Saving, Luxury, Ease of Use, Security), 2) Modern advertising application examples, 3) Agent Skill (SKILL.md) for suggesting native metaphors during ad copywriting.",
+    "deliverables": [
+      "config/banned_terms_and_tone.json",
+      "data/metaphors_by_category.csv",
+      "data/metaphors_catalog.json",
+      "docs/cultural-storytelling-guide.md",
+      "examples/before-and-after-headlines.md",
+      "examples/sample_draft_article.md",
+      "LICENSE",
+      "README.md",
+      "reports/voice_compliance_report.json",
+      "SKILL.md",
+      "src/brand_voice_linter.py",
+      "tests/test_voice.py"
+    ],
+    "constraints_en": [
+      "Cultural Authenticity: Curated metaphors drawn from lived Egyptian and Gulf idioms to convey speed, reliability, economy, and luxury.",
+      "Tone Sensitivity: Classifies metaphors by customer journey stage to prevent informal slang from undermining luxury or B2B brand authority.",
+      "Demonstrative Editorial Selection: Provides illustrative creative copywriting examples, not formal linguistic statistical corpora."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/brand_voice_linter.py --help"
+    ]
+  },
+  {
+    "slug": "ai-ad-visual-brand-safety-guard",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ai-ad-visual-brand-safety-guard",
+    "category": "content",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "AI-Generated Advertising Visuals Brand Safety & Distortion Guard",
+    "tagline_en": "Prevent embarrassing AI image blunders on ad campaigns. 25-point visual QA audit rubric and vetted negative prompt library.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an enterprise quality control framework for AI-generated marketing imagery: 1) 25-point visual artifact checklist (Anatomy, Text & Logos, Lighting Consistency, Cultural Appropriateness for MENA), 2) Curated negative prompt library for Midjourney and Flux, 3) Real-world defect gallery with failure analysis, 4) Sign-off workflow template for agency art directors.",
+    "deliverables": [
+      "checklists/25-point-ai-visual-qa.md",
+      "examples/saudi-logistics-case-study.md",
+      "gallery/defect_examples.md",
+      "guidelines/mena-cultural-visual-standards.md",
+      "LICENSE",
+      "playbooks/mena-client-approval-sop.md",
+      "prompts/negative-prompt-library.json",
+      "README.md",
+      "templates/art-director-signoff.md",
+      "templates/case-study-interview-guide.md",
+      "templates/one-pager-slide-template.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Synthetic Visual Artifacts: Screens AI-generated ad imagery for common generative distortions (mangled hands, warped text, unnatural symmetry).",
+      "GCC Modesty & Visual Decency: Audits visual assets against regional advertising modesty standards to prevent ad rejection under GAMR guidelines.",
+      "Mobile Viewport Clarity: Verifies that product focal points remain clear and un-cropped across 1:1, 4:5, and 9:16 mobile aspect ratios."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "content-agency-capacity-planner",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/content-agency-capacity-planner",
+    "category": "content",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Content Production Agency Capacity & Sprint Velocity Planner",
+    "tagline_en": "Stop burning out your creative team. Accurately calculate design and video capacity, revision buffers, and agency sprint velocity.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a professional content agency capacity planning system: 1) Mathematical resource model calculating realistic monthly creative throughput per FTE (designer, video editor, copywriter) with built-in revision buffers, 2) Client revision governance framework (limiting free revision rounds), 3) Python sprint calculator (calc_capacity.py), 4) Markdown onboarding guide for account managers.",
+    "deliverables": [
+      "examples/boutique-agency-30-clients.md",
+      "LICENSE",
+      "models/agency-capacity-calculator.xlsx",
+      "playbooks/burnout-prevention-rules.md",
+      "policies/client-revision-governance.md",
+      "README.md",
+      "src/calc_capacity.py",
+      "templates/client-retainer-tier-matrix.md",
+      "templates/sprint-planning-sheet.md",
+      "tests/test_capacity.py"
+    ],
+    "constraints_en": [
+      "Billable Utilization Caps: Lets teams model their own billable-capacity target alongside leave, admin work, and workload constraints.",
+      "Revision Buffer Scheduling: Factors standard 2-round revision cycles into production timelines before locking client delivery milestones.",
+      "Skill-Based Task Allocation: Maps high-complexity tasks (creative strategy, motion graphics) against specialist availability to avoid bottlenecking."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/calc_capacity.py --help"
+    ]
+  },
+  {
+    "slug": "influencer-fake-engagement-auditor",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/influencer-fake-engagement-auditor",
+    "category": "social",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Influencer Fake Engagement & Engagement Pod Detection Script",
+    "tagline_en": "Expose fake influencer engagement and private comment pods. Audit exported social comments for bot entropy and repetitive spam.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python influencer audit utility (pod_detector.py): 1) Ingests exported comment CSVs (Author, Text, Timestamp), 2) Calculates Lexical Diversity (Shannon Entropy) to spot repetitive canned phrases, 3) Detects comment timing bursts (50 comments in 2 minutes = pod coordination), 4) Outputs an authenticity score (0-100) and visual HTML diagnostic report.",
+    "deliverables": [
+      "checklists/deliverable-qa-checklist.md",
+      "contracts/influencer-usage-rights-addendum.md",
+      "examples/fake_comments_sample.csv",
+      "examples/perfume-brand-brief-case.md",
+      "LICENSE",
+      "README.md",
+      "reports/authenticity_audit_sample.html",
+      "rubrics/influencer-vetting-scorecard.md",
+      "src/pod_detector.py",
+      "templates/creator-creative-brief.md",
+      "tests/test_detector.py",
+      "tests/test_pod_detector.py"
+    ],
+    "constraints_en": [
+      "Engagement Pod Detection: Flags repetitive, generic comments ('روعة', 'ما شاء الله', emoji strings) posted within minutes of publishing.",
+      "Follower Spike Telemetry: Identifies unnatural overnight follower increases inconsistent with typical organic discovery curves.",
+      "Audience Geography Audit: Measures percentage of followers located outside the target GCC/MENA market."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/pod_detector.py --help"
+    ]
+  },
+  {
+    "slug": "gulf-influencer-contract-qa-checklist",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/gulf-influencer-contract-qa-checklist",
+    "category": "social",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Gulf Influencer Contract Deliverable QA & Licensing Checklist",
+    "tagline_en": "Protect your brand and secure paid ad usage rights. Bilingual Gulf influencer contract framework and 25-point deliverable QA checklist.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create a comprehensive Gulf influencer contract and deliverable QA pack: 1) Standard bilingual agreement template covering post permanence, exclusivity, revisions, and usage rights for paid ads (Spark Ads / Meta Partnership), 2) Regulatory compliance clauses for Saudi Mawthooq and UAE NMC disclosures, 3) 25-point post-flight deliverable audit checklist, 4) Creator briefing intake form.",
+    "deliverables": [
+      "checklists/25-point-deliverable-qa.md",
+      "clauses/paid-ad-usage-rights-clauses.md",
+      "compliance/saudi-mawthooq-guide.md",
+      "contracts/influencer-agreement-bilingual.md",
+      "examples/campaign_influencers_data.csv",
+      "LICENSE",
+      "README.md",
+      "reports/influencer_roas_leaderboard.html",
+      "src/influencer_audit.py",
+      "templates/creator-brief-intake.md",
+      "tests/test_audit.py"
+    ],
+    "constraints_en": [
+      "Mawthooq License Mandate: Verifies that Saudi creators hold an active Mawthooq permit prior to signing commercial binding agreements.",
+      "Exclusivity & Competing Brand Restrictions: Defines strict duration and category scope for competitive exclusivity clauses.",
+      "Paid Usage Rights Terms: Outlines clear duration (e.g. 30/60 days), channels (Meta Whitelist, TikTok Spark), and intellectual property licensing fees."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/influencer_audit.py --help"
+    ]
+  },
+  {
+    "slug": "social-media-crisis-response-decision-tree",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/social-media-crisis-response-decision-tree",
+    "category": "social",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Social Media Brand Crisis Response & Escalation Decision Tree",
+    "tagline_en": "De-escalate viral social media crises before they ruin your brand reputation. Actionable 4-tier decision tree and pre-approved response statements.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source social media crisis management protocol: 1) Four-tier crisis classification matrix (Tier 1: Isolated Complaint, Tier 2: Emerging Trend, Tier 3: Influencer Backlash, Tier 4: Viral PR Outrage), 2) Decision tree mapping when to respond, when to pause ads, and when to escalate to C-suite, 3) Bilingual Arabic/English holding statement swipe files, 4) Post-crisis retrospection template.",
+    "deliverables": [
+      "checklists/daily-posting-checklist.md",
+      "decision-trees/crisis-response-flowchart.md",
+      "examples/ecom-zero-to-100k-case.md",
+      "LICENSE",
+      "playbooks/four-tier-escalation-matrix.md",
+      "playbooks/post-mortem-audit.md",
+      "playbooks/tiktok-algorithm-mechanics.md",
+      "README.md",
+      "swipe-files/holding-statements-bilingual.md",
+      "templates/content-calendar-notion-style.md",
+      "templates/internal-notification-matrix.md"
+    ],
+    "constraints_en": [
+      "Severity Escalation Matrix: Categorizes brand incidents into Level 1 (Minor Grievance), Level 2 (Public Backlash), and Level 3 (Regulatory Threat).",
+      "Response Time SLA: Mandates initial containment holding statements within 60 minutes for high-severity viral incidents.",
+      "Cross-Departmental Governance: Coordinates public PR statements with legal, customer support, and executive leadership."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "arabic-social-listening-sentiment-rules",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-social-listening-sentiment-rules",
+    "category": "social",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "Arabic Social Listening Sentiment Classification Rules & Lexicon",
+    "tagline_en": "Explore a small illustrative Arabic sentiment lexicon and rule-based classifier. It is not a validated 600-rule corpus, and its outputs require human review.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source dialectal Arabic social listening sentiment package: 1) Illustrative dialectal sentiment lexicon categorized into True Positive, True Negative, Sarcastic/Ironic Negative, and Delivery/Service Complaints across Egyptian and Gulf vernacular, 2) Python heuristic classifier (arabic_sentiment.py), 3) Unit tests for selected classifier behaviors.",
+    "deliverables": [
+      "data/arabic_sentiment_lexicon.json",
+      "docs/annotation-methodology.md",
+      "docs/sentiment-methodology.md",
+      "examples/classified_sample_tweets.csv",
+      "LICENSE",
+      "README.md",
+      "rules/arabic_sentiment_lexicon.json",
+      "rules/sarcasm_dialect_markers.json",
+      "SOURCES.md",
+      "src/arabic_sentiment.py",
+      "src/sentiment_tester.py",
+      "tests/test_sarcasm_cases.py",
+      "tests/test_sentiment.py"
+    ],
+    "constraints_en": [
+      "Sarcasm & Dialectal Inversion: Accounts for common Arabic sarcastic expressions where surface positive words convey negative sentiment.",
+      "Regional Morphology Handling: Distinguishes between Egyptian (مش حلو), Gulf (مو زين), and Levant (مو منيح) negation structures.",
+      "Auditable Heuristic Ruleset: Rule definitions run locally using regex and token lookups without requiring black-box paid APIs."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/arabic_sentiment.py --help"
+    ]
+  },
+  {
+    "slug": "linkedin-executive-ghostwriting-system",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/linkedin-executive-ghostwriting-system",
+    "category": "social",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "LinkedIn Thought Leadership Ghostwriting Framework & Voice System",
+    "tagline_en": "Turn 15-minute CEO voice notes into high-impact LinkedIn thought leadership posts that build authority and drive enterprise deals.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create a professional LinkedIn executive ghostwriting operating system: 1) 30-minute founder voice-intake questionnaire, 2) Voice calibration matrix (Tone, Vocabulary, Contrariness, Storytelling Style), 3) 8 high-performing executive post architectures (Contrarian Teardown, Behind-the-Scenes Failure, Industry Prediction, Tactical Playbook, Company Milestone), 4) Bilingual Arab/English examples.",
+    "deliverables": [
+      "examples/before-and-after-executive-posts.md",
+      "examples/fintech-founder-30days.md",
+      "guidelines/hook-and-formatting-rules.md",
+      "intake/executive-voice-questionnaire.md",
+      "LICENSE",
+      "playbooks/outreach-and-commenting-strategy.md",
+      "prompts/voice-calibration-agent.md",
+      "README.md",
+      "templates/8-thought-leadership-templates.md",
+      "templates/client-voice-profile.md",
+      "templates/content-matrix-90days.md"
+    ],
+    "constraints_en": [
+      "Executive Voice Preservation: Captures distinctive phrasing, professional vocabulary, and leadership perspective of the named executive.",
+      "Feed Algorithm Dwell Time: Formats posts with strong 2-line hooks, progressive line breaks, and clear call-to-conversation questions.",
+      "Compliance with Corporate Disclosures: Prevents sharing of non-public forward-looking corporate figures or material enterprise news."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "creator-sponsorship-rate-benchmarking-tool",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/creator-sponsorship-rate-benchmarking-tool",
+    "category": "social",
+    "format": "STATIC_INTERACTIVE_TOOL",
+    "tier": "2",
+    "title_en": "Regional Creator Sponsorship Rate Benchmarking Worksheet",
+    "tagline_en": "Stop overpaying for influencer sponsorships. Calculate fair market rates for GCC and Egyptian creators based on real median views and ad usage rights.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a regional creator pricing valuation toolkit: 1) Dynamic pricing formula factoring Median Views (not vanity followers), Engagement Rate, Audience Geography (KSA/UAE vs Egypt), Content Production Complexity, and Paid Ad Usage Rights duration, 2) Single-file responsive HTML/JS calculator (calculator.html), 3) Negotiation counter-offer email/WhatsApp scripts.",
+    "deliverables": [
+      "data/regional_rate_cards.json",
+      "docs/pricing-factors-guide.md",
+      "docs/pricing-formula-methodology.md",
+      "index.html",
+      "LICENSE",
+      "models/creator-rate-benchmark-model.xlsx",
+      "README.md",
+      "scripts/negotiation-scripts-bilingual.md",
+      "tests/test_data_integrity.py",
+      "tools/calculator.html"
+    ],
+    "constraints_en": [
+      "Median Views Valuation: Base pricing formula calculates cost-per-view strictly from median views of recent 10 posts, ignoring vanity follower counts.",
+      "Usage Rights Licensing Surcharges: Mandates explicit percentage markups (e.g. +30-50% for 30-day paid ad whitelist usage).",
+      "Mawthooq License Verification: Ensures all sponsored creators in Saudi Arabia possess active regulatory advertising permits."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "employee-advocacy-social-selling-playbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/employee-advocacy-social-selling-playbook",
+    "category": "social",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Employee Advocacy & Social Selling Operational Playbook",
+    "tagline_en": "Transform your team into trusted brand advocates. Modern employee social media policy and 52-week authentic content prompt kit.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source corporate employee advocacy framework: 1) Modern, empowering social media employee policy (clear boundaries without stifling creativity), 2) 52-week employee content prompt calendar categorized by department (Engineering, Sales, Customer Support, Leadership), 3) Recognition and gamification program design, 4) Complete 1-hour workshop slide deck outline.",
+    "deliverables": [
+      "checklists/compliance-and-disclosure-policy.md",
+      "examples/saudi-telecom-advocacy-case.md",
+      "LICENSE",
+      "playbooks/launch-roadmap-90days.md",
+      "policies/modern-employee-social-policy.md",
+      "prompts/52-week-employee-content-calendar.md",
+      "README.md",
+      "templates/advocacy-gamification-rules.md",
+      "templates/weekly-advocacy-prompt-bank.md",
+      "training/social-selling-workshop-slides.md"
+    ],
+    "constraints_en": [
+      "Organic Engagement Governance: Outlines clear social media participation rules, personal disclosure standards, and hashtag etiquette.",
+      "Pre-Approved Content Vaults: Provides modular copy blocks and industry insights that employees can personalize without risking compliance breaches.",
+      "Incentive & Gamification Ethics: Encourages authentic employee participation without making personal social posts mandatory for employment."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "comment-to-lead-qualification-fsm",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/comment-to-lead-qualification-fsm",
+    "category": "social",
+    "format": "PROJECT_BLUEPRINT",
+    "tier": "3",
+    "title_en": "Inbound Social Comment-to-Lead Qualification FSM Specification",
+    "tagline_en": "Convert social media comments into qualified CRM leads. A robust Finite State Machine architecture and webhook qualification engine.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Finite State Machine qualification architecture for social commerce: 1) Mermaid FSM state diagram modeling transition states (Comment_Detected -> Intent_Classified -> Soft_DM_Triggered -> Needs_Human_Handoff -> Lead_Qualified), 2) Python state machine simulation script (fsm_simulator.py) validating edge cases, 3) Anti-ban rate limiting and human-handoff triggers.",
+    "deliverables": [
+      "architecture/fsm-state-machine-spec.md",
+      "ARCHITECTURE.md",
+      "DATA_MODEL.md",
+      "diagrams/lead_qualification_fsm.mmd",
+      "examples/simulated_conversation_logs.json",
+      "LICENSE",
+      "MONETIZATION.md",
+      "PRD.md",
+      "PROBLEM.md",
+      "README.md",
+      "ROADMAP.md",
+      "src/fsm_engine.py",
+      "src/fsm_simulator.py",
+      "tests/test_fsm.py",
+      "USER_FLOWS.md",
+      "WHY_NOT_BUILT_YET.md",
+      "*(Additional supporting documentation and assets)*"
+    ],
+    "constraints_en": [
+      "Deterministic State Transitions: Implements a Finite State Machine tracking comment lead lifecycle (Unreviewed -> Scored -> DM Initiated -> Qualified -> CRM Synced).",
+      "Platform Automation Rules: Adheres to Meta and Instagram API rate limits and messaging policies regarding automated direct messaging.",
+      "Sentiment & Keyword Routing: Prioritizes commercial intent keywords ('السعر', 'التوصيل') while deprioritizing spam and negative customer service complaints."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/fsm_engine.py --help"
+    ]
+  },
+  {
+    "slug": "customer-ugc-rights-consent-ledger",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/customer-ugc-rights-consent-ledger",
+    "category": "social",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Customer UGC Rights Management & Consent Ledger System",
+    "tagline_en": "Safely turn customer social posts into high-converting paid ads. Standardized UGC consent request templates and license tracking ledger.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source customer UGC rights clearance system: 1) Standardized bilingual consent request copy for Instagram/TikTok comments and DMs, 2) CSV/Markdown rights tracking ledger schema (Asset URL, Creator Handle, Consent Timestamp, Usage Scope, Expiration Date), 3) Python audit script (audit_rights.py) warning of expiring usage licenses, 4) Takedown response protocol.",
+    "deliverables": [
+      "docs/gcc-privacy-ugc-law.md",
+      "LICENSE",
+      "playbooks/rights-clearance-sop.md",
+      "README.md",
+      "schemas/ugc_rights_ledger.csv",
+      "src/audit_rights.py",
+      "src/consent_ledger_validator.py",
+      "templates/consent-request-copy-bilingual.md",
+      "templates/consent-tracking-sheet.csv",
+      "templates/ugc-rights-request-dms.md",
+      "tests/test_audit.py",
+      "tests/test_ledger.py",
+      "tests/test_rights.py"
+    ],
+    "constraints_en": [
+      "Verifiable Consent Audit Trail: Stores timestamped digital consent records connecting specific social media post URLs to marketing usage permissions.",
+      "Scope of Commercial Rights: Documents exact permitted channels (Organic Social, Paid Ads, Website Hero, Email Newsletters) and license duration.",
+      "Saudi PDPL & GDPR Alignment: Ensures user right-to-revoke consent is implemented with automated asset retirement workflows."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/audit_rights.py --help"
+    ]
+  },
+  {
+    "slug": "rfc-8058-email-deliverability-sentinel",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/rfc-8058-email-deliverability-sentinel",
+    "category": "automation",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "RFC 8058 One-Click Unsubscribe & Deliverability Sentinel",
+    "tagline_en": "Verify Google and Yahoo RFC 8058 compliance, test SPF/DKIM/DMARC alignment, and protect your domain sender reputation.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source email deliverability and header audit CLI (deliverability_sentinel.py): 1) Parses raw .eml or RFC 822 email files, 2) Validates presence and syntax of List-Unsubscribe and List-Unsubscribe-Post: List-Unsubscribe=One-Click, 3) Checks DNS domain alignment for SPF, DKIM, and DMARC policies, 4) Outputs an executive compliance scorecard with pass/fail terminal status.",
+    "deliverables": [
+      "checklists/gmail-yahoo-2024-standards.md",
+      "examples/sample_compliant_and_broken.eml",
+      "LICENSE",
+      "playbooks/spam-folder-recovery-sop.md",
+      "README.md",
+      "reports/audit_report.json",
+      "src/deliverability_checker.py",
+      "src/deliverability_sentinel.py",
+      "templates/dns-records-template.md",
+      "tests/test_deliverability.py",
+      "tests/test_sentinel.py"
+    ],
+    "constraints_en": [
+      "Header-Based One-Click Unsubscribe: Enforces presence of valid 'List-Unsubscribe: <https:...>' and 'List-Unsubscribe-Post: List-Unsubscribe=One-Click' headers.",
+      "HTTPS POST Processing: Unsubscribe URLs must execute unsubscription upon receipt of an HTTP POST request without redirecting to a confirmation landing page.",
+      "Bulk Sender Compliance: Aligns with mandatory 2024 Gmail and Yahoo sender guidelines for domains sending >5,000 emails daily."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/deliverability_checker.py --help"
+    ]
+  },
+  {
+    "slug": "whatsapp-template-rejection-guard",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/whatsapp-template-rejection-guard",
+    "category": "automation",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "WhatsApp Business Template Rejection Guard & Compliance Linter",
+    "tagline_en": "Check selected WhatsApp template structure and flag possible policy issues before submission. Meta reviews and approves templates; this linter cannot guarantee acceptance.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source WhatsApp Business template compliance checker: 1) Python linter (wa_template_linter.py) scanning template text for disallowed promotional trigger words, sequential variable constraints ({{1}}, {{2}}), and required unsubscribe/opt-out phrasing, 2) Four illustrative template examples; they are not pre-tested or Meta-approved (Order Updates, COD Verification, Cart Abandonment, Back-in-Stock), 3) Meta policy cheat sheet.",
+    "deliverables": [
+      "config/meta_rejection_rules.json",
+      "data/illustrative_templates.json",
+      "examples/valid_and_rejected_templates.json",
+      "LICENSE",
+      "policies/meta-whatsapp-policy-summary.md",
+      "README.md",
+      "reports/linter_results.csv",
+      "src/template_guard.py",
+      "src/wa_template_linter.py",
+      "templates/illustrative_templates_ar.json",
+      "tests/test_guard.py",
+      "tests/test_linter.py"
+    ],
+    "constraints_en": [
+      "Variable Parameter Spacing: Flags templates where dynamic variables (e.g. {{1}}) lack surrounding space or contain trailing punctuation that causes Meta API rejections.",
+      "Category Classification Alignment: Audits template text to ensure Marketing, Utility, and Authentication templates are correctly declared per Meta pricing tiers.",
+      "Prohibited Content Screening: Screens text against Meta commercial policies prohibiting deceptive promises, sensitive health claims, and gambling terms."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/template_guard.py --help"
+    ]
+  },
+  {
+    "slug": "email-darkmode-rtl-patch-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/email-darkmode-rtl-patch-kit",
+    "category": "automation",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Email Dark Mode Rendering Patch Kit for Arabic & RTL",
+    "tagline_en": "Stop your brand logos and text from vanishing in email dark mode. Bulletproof HTML/CSS boilerplate with full Arabic RTL support.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Dark Mode and RTL email development boilerplate: 1) Master responsive HTML template compatible with Apple Mail, Outlook, Gmail, and Yahoo Mail, 2) Dual-mode CSS rules using @media (prefers-color-scheme: dark) and [data-ogsc] (Outlook Web), 3) Transparent logo handling techniques (subtle white outer-glow trick), 4) RTL table alignment fixtures.",
+    "deliverables": [
+      "css/darkmode-rtl-resets.css",
+      "docs/client-compatibility-matrix.md",
+      "examples/promotional_newsletter_demo.html",
+      "examples/rendered-previews.md",
+      "LICENSE",
+      "playbooks/outlook-apple-mail-testing.md",
+      "README.md",
+      "snippets/outlook-darkmode-hacks.css",
+      "snippets/transparent-logo-fixes.css",
+      "templates/master-darkmode-rtl-template.html",
+      "templates/promotional-newsletter-rtl.html",
+      "templates/transactional-receipt-rtl.html"
+    ],
+    "constraints_en": [
+      "Inverted Contrast Safeguards: Prevents dark-mode email clients (Apple Mail, Outlook) from inverting dark brand logos into invisible dark backgrounds.",
+      "RTL Table Alignment: Employs 'dir=\"rtl\"' on outer tables and wraps to prevent nested text containers from flipping incorrectly across desktop Outlook engines.",
+      "prefers-color-scheme Media Queries: Injects targeted CSS media queries to explicitly control custom dark theme colors rather than relying on browser auto-inversion."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "ecommerce-rfm-segmentation-engine",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ecommerce-rfm-segmentation-engine",
+    "category": "automation",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "E-Commerce RFM Customer Segmentation Engine in Python",
+    "tagline_en": "Segment your e-commerce customers into VIPs, Promising, and At-Risk tiers using automated RFM analysis on your order exports.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python RFM customer segmentation tool (rfm_engine.py): 1) Parses e-commerce order CSV exports (Customer ID, Order Date, Order Value), 2) Computes Recency, Frequency, and Monetary quintiles (1-5), 3) Assigns actionable customer segment labels (Champions, Loyal Customers, Potential Loyalists, At-Risk, Hibernating, Lost), 4) Outputs segmented CSVs and visual HTML summary charts.",
+    "deliverables": [
+      "examples/salla_orders_sample.csv",
+      "LICENSE",
+      "playbooks/rfm-campaign-playbook.md",
+      "playbooks/segment-retention-playbook.md",
+      "README.md",
+      "reports/rfm_segment_summary.html",
+      "reports/rfm_segments_summary.html",
+      "sample_data/orders_sample.csv",
+      "src/rfm_calculator.py",
+      "src/rfm_engine.py",
+      "tests/test_rfm.py"
+    ],
+    "constraints_en": [
+      "Recency, Frequency, Monetary Quantiles: Computes quintile scores (1-5) across transactional order histories to classify customers into actionable lifecycle cohorts.",
+      "Cohort Definitions: Maps numerical scores into 11 standard segments (Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost).",
+      "Currency & Timeframe Normalization: Adjusts monetary scoring for local currencies and enforces trailing 365-day rolling analysis windows."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/rfm_calculator.py --help"
+    ]
+  },
+  {
+    "slug": "whatsapp-lead-routing-sla-monitor",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/whatsapp-lead-routing-sla-monitor",
+    "category": "automation",
+    "format": "PROJECT_BLUEPRINT",
+    "tier": "3",
+    "title_en": "WhatsApp Lead Routing & Sales SLA Response Monitor",
+    "tagline_en": "Distribute inbound WhatsApp leads fairly across your sales team and monitor response time SLAs with an open webhook routing architecture.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source WhatsApp lead routing and SLA monitoring toolkit: 1) System architecture blueprint for automated round-robin lead assignment with working hours and capacity rules, 2) Python webhook simulation engine (lead_router.py) tracking message timestamps and flagging SLA breaches (>15 min), 3) Slack/Telegram notification templates for abandoned leads.",
+    "deliverables": [
+      "architecture/lead-routing-blueprint.md",
+      "ARCHITECTURE.md",
+      "DATA_MODEL.md",
+      "examples/simulated_lead_event_stream.json",
+      "LICENSE",
+      "MONETIZATION.md",
+      "PRD.md",
+      "PROBLEM.md",
+      "README.md",
+      "ROADMAP.md",
+      "src/lead_router.py",
+      "src/sla_calculator.py",
+      "templates/sla-breach-notification.json",
+      "tests/test_router.py",
+      "tests/test_sla.py",
+      "USER_FLOWS.md",
+      "*(Additional supporting documentation and assets)*"
+    ],
+    "constraints_en": [
+      "Business Hours SLA Windows: Calculates response time latencies exclusively during active working hours, excluding overnight delays from agent performance metrics.",
+      "Round-Robin & Skill Routing: Distributes inbound chats across sales agents based on territory (KSA vs UAE vs Egypt) and product knowledge.",
+      "Webhook Queue Ingestion: Processes incoming Meta WhatsApp message status webhooks with deduplication to ensure accurate first-response timestamps."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/lead_router.py --help"
+    ]
+  },
+  {
+    "slug": "bilingual-email-subject-line-radar",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/bilingual-email-subject-line-radar",
+    "category": "automation",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Bilingual Email Subject Line & Inbox Snippet Radar",
+    "tagline_en": "Preview mobile inbox truncation, test preheader alignment, and catch Arabic spam trigger words before sending your newsletter.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an open-source bilingual subject line and preheader inspection tool: 1) Python CLI (subject_linter.py) auditing character length (desktop vs mobile truncation limits), preheader padding characters (&#8204;&nbsp;), and bidirectional Unicode mark isolation, 2) Curated list of 150+ Arabic spam trigger words, 3) Interactive HTML mobile inbox preview card.",
+    "deliverables": [
+      "data/arabic_spam_triggers.json",
+      "data/spam_triggers_ar_en.json",
+      "examples/sample_subject_lines.csv",
+      "examples/sample_subject_tests.json",
+      "LICENSE",
+      "README.md",
+      "reports/inbox_preview_simulator.html",
+      "src/subject_line_analyzer.py",
+      "src/subject_linter.py",
+      "tests/test_analyzer.py",
+      "tests/test_linter.py",
+      "tests/test_subject.py",
+      "tools/inbox_previewer.html"
+    ],
+    "constraints_en": [
+      "MIME Encoded-Word Headers: Ensures Arabic subject lines are properly encoded in UTF-8 base64 ('=?UTF-8?B?...?=' per RFC 2047) to avoid character garbling.",
+      "Mobile Inbox Cutoff Limits: Previews how subject lines and preheaders appear across mobile screens, capping visible characters at 35 to 45 units.",
+      "Directional Neutrality: Enforces Unicode directional marks to prevent bracket displacement when English brand names appear in Arabic subject lines."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/subject_line_analyzer.py --help"
+    ]
+  },
+  {
+    "slug": "customer-lifecycle-flow-architecture-maps",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/customer-lifecycle-flow-architecture-maps",
+    "category": "automation",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Customer Lifecycle Flow Architecture Maps for D2C Brands",
+    "tagline_en": "Adapt documented customer lifecycle automation flow examples for an e-commerce store; validate timing, channel rules, and copy in your own platform before deployment.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Provide four Mermaid lifecycle-flow examples (welcome, cart abandonment, post-purchase cross-sell, and COD verification), suggested delay and branching patterns, and copy frameworks. These are reference designs, not production-tested flows or guaranteed conversion improvements.",
+    "deliverables": [
+      "copy-frameworks/lifecycle-email-copy-templates.md",
+      "flows/cart-abandonment-multi-stage.mmd",
+      "flows/cod-verification-retention.mmd",
+      "flows/post-purchase-cross-sell.mmd",
+      "flows/welcome-series.mmd",
+      "LICENSE",
+      "playbooks/klaviyo-omnisend-setup.md",
+      "README.md",
+      "specs/trigger-and-delay-rules.md",
+      "templates/copy-templates-ar.md"
+    ],
+    "constraints_en": [
+      "Multi-Stage Sequence Timing: Maps optimal delay schedules for Welcome Series, Browse Abandonment, Cart Abandonment, and Post-Purchase Replenishment.",
+      "Conditional Split Logic: Routes customers based on purchase history, average order value (VIP vs Standard), and preferred communication channel (Email vs WhatsApp).",
+      "Delivery Fatigue Suppression: Implements global message frequency caps (max 2 promotional touches per week per contact) to protect sender reputation."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "email-list-hygiene-sunsetting-spec",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/email-list-hygiene-sunsetting-spec",
+    "category": "automation",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Email Subscriber List Hygiene & Automated Sunsetting Spec",
+    "tagline_en": "Boost your open rates and cut your ESP billing bills. Standardized email sunsetting policy and automated suppression workflow logic.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source email list hygiene and sunsetting toolkit: 1) 3-stage sunset policy (Engagement Warning, Last-Chance Re-engagement, Automated Suppression), 2) example copy templates for the 'Goodbye / Are you still there?' re-engagement sequence, 3) Python audit script (audit_inactives.py) parsing subscriber activity exports, 4) Executive business case slide template justifying list pruning.",
+    "deliverables": [
+      "docs/executive-business-case.md",
+      "examples/clean_output.csv",
+      "examples/scrubbed_contacts_sample.csv",
+      "LICENSE",
+      "playbooks/automated-sunset-policy.md",
+      "policies/enterprise-sunsetting-policy.md",
+      "README.md",
+      "src/audit_inactives.py",
+      "src/list_scrubber.py",
+      "templates/last-chance-reengagement-copy.md",
+      "templates/re-engagement-campaign-ar.md",
+      "tests/test_audit.py",
+      "tests/test_hygiene.py",
+      "tests/test_scrubber.py"
+    ],
+    "constraints_en": [
+      "Inactivity Thresholds: Automatically flags contacts with 0 opens and 0 clicks over 90, 120, or 180 days for progressive re-engagement and sunsetting.",
+      "Hard Bounce vs Soft Bounce Handling: Automatically purges fatal hard bounces (code 5.X.X) while allowing transient soft bounces up to 3 attempts.",
+      "Spam Trap Avoidance: Recovers sender domain reputation by suppressing unengaged subscribers before inbox providers convert dormant addresses into spam traps."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/audit_inactives.py --help"
+    ]
+  },
+  {
+    "slug": "sms-character-encoding-cost-calculator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/sms-character-encoding-cost-calculator",
+    "category": "automation",
+    "format": "STATIC_INTERACTIVE_TOOL",
+    "tier": "2",
+    "title_en": "SMS Character Concatenation & Cost Optimization Calculator",
+    "tagline_en": "Stop getting billed triple for marketing SMS. Detect non-GSM Unicode characters and calculate exact SMS segments instantly.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source SMS character and encoding cost calculator: 1) Single-file responsive HTML/JS tool (sms_calculator.html) with real-time character counter, GSM-7 vs UCS-2 encoding detection, segment count split (160/153 vs 70/67), and highlighting of offending non-GSM characters, 2) Python CLI script (sms_linter.py) for automated batch testing, 3) Cost estimation worksheet.",
+    "deliverables": [
+      "docs/gsm7-vs-ucs2-explanation.md",
+      "examples/cost_overage_scenarios.json",
+      "index.html",
+      "LICENSE",
+      "README.md",
+      "src/sms_calculator.py",
+      "src/sms_linter.py",
+      "tests/test_calculator.py",
+      "tests/test_linter.py",
+      "tools/sms_calculator.html"
+    ],
+    "constraints_en": [
+      "3GPP GSM 03.38 Concatenation: Single GSM-7 messages allow up to 160 characters. Concatenated multi-part messages require a 7-byte UDH header, reducing payload capacity to 153 characters per segment.",
+      "UCS-2 Arabic Multi-Part Limits: Single Arabic messages allow up to 70 characters. Concatenated messages reduce payload capacity to 67 characters per segment.",
+      "Unicode Supplementary Plane & Surrogate Pairs: Characters outside the Basic Multilingual Plane (> U+FFFF, such as emojis 🚀, 🎉) require 2 UTF-16 code units (surrogate pair) in UCS-2 transmission, consuming 2 units towards the 70 / 67 segment limit.",
+      "Escape Character Double-Weighting: GSM 03.38 extension characters (| ^ € { } [ ] ~ \\) require an escape octet (0x1B), consuming 2 characters from the segment limit.",
+      "Dynamic Pricing Reliance: Carrier SMS costs vary across Saudi Arabia, UAE, and Egypt; calculation relies strictly on the user-provided per-segment unit rate."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/sms_calculator.py --text \"عزيزي العميل، تم تجهيز طلبك رقم 123 بنجاح وسيصلك غداً.\" --rate 0.15 --currency SAR",
+      "python src/sms_linter.py --help"
+    ]
+  },
+  {
+    "slug": "cod-return-to-origin-mitigation-playbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/cod-return-to-origin-mitigation-playbook",
+    "category": "e-commerce",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Cash on Delivery (COD) Return-to-Origin (RTO) Mitigation Playbook",
+    "tagline_en": "A planning playbook for measuring and addressing Cash on Delivery return-to-origin risk. It does not claim a measured reduction or production-tested flows.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source COD Return-to-Origin (RTO) mitigation toolkit for MENA: 1) operational playbook (Pre-Purchase Friction, WhatsApp 1-Click Confirmation, Prepaid Incentive Surcharges, Courier SLA Tracking, Blacklist Governance), 2) WhatsApp automated confirmation message templates (Arabic and English), 3) Python risk scoring script (rto_risk_scorer.py), 4) Courier handover reconciliation sheet.",
+    "deliverables": [
+      "examples/riyadh-fashion-rto-case.md",
+      "LICENSE",
+      "models/cod-unit-economics-calculator.xlsx",
+      "playbooks/cod-otp-verification-sop.md",
+      "playbooks/rto-mitigation-master-playbook.md",
+      "README.md",
+      "scripts/rto_risk_scorer.py",
+      "src/rto_risk_scorer.py",
+      "templates/courier-sla-scorecard.md",
+      "templates/whatsapp-confirmation-flows.md",
+      "tests/test_rto.py",
+      "tests/test_scorer.py"
+    ],
+    "constraints_en": [
+      "Multi-Pillar Risk Scoring: Calculates RTO probability based on address completeness, previous order refusal history, and city delivery performance.",
+      "Pre-Purchase Friction Rules: Offers optional confirmation and incentive ideas to evaluate against customer experience, local rules, and account data.",
+      "Courier SLA Handover Tracking: Tracks last-mile courier attempts, requiring automated WhatsApp intervention upon the first failed delivery attempt."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/rto_risk_scorer.py --help"
+    ]
+  },
+  {
+    "slug": "salla-zid-cro-audit-checklist",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/salla-zid-cro-audit-checklist",
+    "category": "e-commerce",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Salla & Zid Storefront UX & Mobile CRO Audit Checklist",
+    "tagline_en": "Optimize your Salla or Zid store for maximum mobile sales. 40-point conversion rate optimization checklist and theme CSS enhancements.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an authoritative Salla and Zid storefront CRO audit package: 1) 40-point visual and functional audit checklist (Mobile Hero, Variant Selectors, Sticky Buy Buttons, Tabby/Tamara Badges, Social Proof, Shipping Clarity), 2) CSS enhancement snippets compatible with Salla/Zid theme customizers, 3) Real-world before/after case studies with conversion lift data.",
+    "deliverables": [
+      "case-studies/perfume-store-cro-win.md",
+      "checklists/40-point-salla-zid-audit.md",
+      "checklists/50-point-storefront-audit.md",
+      "configs/salla-custom-css-snippets.css",
+      "configs/zid-theme-patches.css",
+      "examples/beauty-store-audit-report.md",
+      "LICENSE",
+      "README.md",
+      "snippets/salla-theme-enhancements.css",
+      "snippets/zid-theme-enhancements.css",
+      "templates/client-presentation-audit.md",
+      "templates/speed-optimization-guide.md"
+    ],
+    "constraints_en": [
+      "Mobile-First Saudi Storefront UX: Evaluates theme layout against Mada/Apple Pay express checkout placement, product image zoom, and delivery estimate badges.",
+      "Platform App Bloat Audit: Identifies third-party JS apps and tracking pixels that degrade Core Web Vitals and slow mobile checkout loading.",
+      "Address Capture Optimization: Ensures integration with Saudi National Address lookup to minimize address input errors."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "amazon-noon-listing-seo-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/amazon-noon-listing-seo-linter",
+    "category": "e-commerce",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Amazon & Noon Regional Listing SEO & Keyword Parity Linter",
+    "tagline_en": "Prevent Amazon and Noon listing suppression. Audit title length, bullet point formatting, and backend Arabic search terms in seconds.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source marketplace listing optimization and linting CLI (marketplace_linter.py): 1) Validates title length (200 chars), bullet point count (5 bullets, 150-250 chars), and backend search terms (250 bytes limit, UTF-8 aware for Arabic characters), 2) Detects 100+ prohibited promotional terms, 3) Compares listing text against top competitor keyword lists to output a keyword coverage gap score.",
+    "deliverables": [
+      "data/marketplace_rules.json",
+      "data/prohibited_terms_amazon_noon.json",
+      "examples/sample_product_listing.json",
+      "LICENSE",
+      "README.md",
+      "reports/listing_qa_report.json",
+      "src/marketplace_linter.py",
+      "tests/test_linter.py"
+    ],
+    "constraints_en": [
+      "Backend Search Terms Limits: Enforces strict byte limits (249 bytes on Amazon.sa, 250 characters on Noon) without repeating words already in the title.",
+      "Bilingual Keyword Parity: Ensures high-volume Arabic search terms are present alongside English brand names in titles, bullet points, and A+ content.",
+      "Prohibited Promotional Phrases: Screens text to prevent terms like 'Best Seller', 'Free Shipping', or warranty claims that trigger listing suppression."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/marketplace_linter.py --help"
+    ]
+  },
+  {
+    "slug": "ecom-unit-economics-margin-model",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ecom-unit-economics-margin-model",
+    "category": "e-commerce",
+    "format": "STATIC_INTERACTIVE_TOOL",
+    "tier": "2",
+    "title_en": "E-Commerce Contribution Margin & Break-Even Unit Economics Model",
+    "tagline_en": "Know your real profit before scaling ad spend. Calculate exact contribution margins and break-even ROAS factoring GCC payment fees and COD returns.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source e-commerce unit economics and break-even ROAS calculation toolkit: 1) Single-file responsive HTML/JS calculator (unit_economics.html) calculating Contribution Margin 1, 2, and 3, factoring Product COGS, Shipping, Payment Fees (Mada, Credit Card, Tamara 6.5%), Return Rates, and Ad CAC, 2) Excel financial model with sensitivity tables, 3) Break-even ROAS formula guide.",
+    "deliverables": [
+      "docs/break-even-roas-formulas.md",
+      "LICENSE",
+      "models/ecommerce-unit-economics-master.xlsx",
+      "README.md",
+      "src/sku_margin_analyzer.py",
+      "tests/test_calculator.py",
+      "tools/unit_economics.html"
+    ],
+    "constraints_en": [
+      "Fully-Loaded Landed Cost: Incorporates COGS, international freight, customs and tax assumptions, clearance fees, and Saudi VAT inputs that must be verified for the product and shipment.",
+      "Payment Gateway & COD Surcharges: Models payment and COD fees using editable assumptions supplied by the merchant.",
+      "Contribution Margin 3 (CM3): Calculates true profitability after deducting marketing acquisition costs (CAC) and estimated return-to-origin losses."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/sku_margin_analyzer.py --help"
+    ]
+  },
+  {
+    "slug": "bnpl-onsite-cro-impact-framework",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/bnpl-onsite-cro-impact-framework",
+    "category": "e-commerce",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Buy Now Pay Later (Tabby/Tamara) On-Site CRO Impact Framework",
+    "tagline_en": "Maximize AOV and checkout conversion with Tabby and Tamara. Practical on-site BNPL widget placement hypotheses and example calculation scripts to evaluate in controlled tests.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source BNPL on-site CRO implementation toolkit: 1) Placement and visual hierarchy guide for Tabby/Tamara widgets on Product, Cart, and Header bars, 2) Lightweight JavaScript snippet (bnpl_calculator.js) dynamically dividing prices by 4 and formatting Arabic/English currency strings on variant changes, 3) 15-point BNPL UX audit checklist.",
+    "deliverables": [
+      "checklists/15-point-bnpl-ux-audit.md",
+      "components/bnpl-badge-preview.html",
+      "css/bnpl-badges.css",
+      "examples/electronics-store-lift-case.md",
+      "LICENSE",
+      "playbooks/bnpl-onsite-cro-playbook.md",
+      "playbooks/tabby-tamara-onsite-messaging.md",
+      "README.md",
+      "scripts/bnpl_widget_injector.js",
+      "src/bnpl_calculator.js",
+      "templates/a-b-test-measurement-plan.md",
+      "tests/calculator.test.js",
+      "tests/test_calculator.py"
+    ],
+    "constraints_en": [
+      "Regulatory Price Ceiling: Enforces SAMA and regional central bank transaction caps for split-in-4 installment products (e.g. Tabby/Tamara up to SAR 5,000).",
+      "On-Site Messaging Widget Placement: Audits presence of dynamic installment price calculators on product detail pages and cart drawers.",
+      "Incremental Conversion vs Margin Dilution: Models whether BNPL merchant fee (typically 4.5% to 6.5%) is offset by higher average order value (AOV)."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "node --test tests/*.test.js"
+    ]
+  },
+  {
+    "slug": "google-merchant-feed-diagnostics-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/google-merchant-feed-diagnostics-linter",
+    "category": "e-commerce",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Google Merchant Center Feed Diagnostics & Catalog Integrity Linter",
+    "tagline_en": "Stop product disapprovals in Google Shopping. Audit XML and CSV product feeds against Google Merchant Center specifications in seconds.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python Google Merchant Center feed linter (gmc_feed_linter.py): 1) Parses XML (RSS 2.0 / Atom) and TSV/CSV product feeds, 2) Validates mandatory attributes (id, title, description, link, image_link, availability, price with ISO currency, brand, gtin), 3) Checks for prohibited title formatting (ALL CAPS, marketing fluff), 4) Outputs an executive terminal error summary and CSV export of defective SKUs.",
+    "deliverables": [
+      "LICENSE",
+      "playbooks/merchant-center-suspension-recovery.md",
+      "README.md",
+      "reports/sample_error_report.csv",
+      "sample_data/sample_broken_feed.xml",
+      "src/gmc_feed_linter.py",
+      "tests/test_linter.py"
+    ],
+    "constraints_en": [
+      "Mandatory XML/TSV Attribute Completeness: Validates presence of id, title, description, link, image_link, availability, price, gtin, and brand.",
+      "Currency & VAT Inclusivity: Enforces localized ISO 4217 currencies (SAR, AED, EGP) and mandates prices inclusive of statutory VAT for consumer feeds.",
+      "Google Taxonomy Categorization: Validates that product_type and google_product_category conform to Google's official taxonomy numerical IDs."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/gmc_feed_linter.py --help"
+    ]
+  },
+  {
+    "slug": "gcc-cross-border-landed-cost-calculator",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/gcc-cross-border-landed-cost-calculator",
+    "category": "e-commerce",
+    "format": "STATIC_INTERACTIVE_TOOL",
+    "tier": "2",
+    "title_en": "Cross-Border GCC Customs, VAT & Landed Cost Pricing Calculator",
+    "tagline_en": "Estimate landed costs from the rates and assumptions supplied to the calculator. Actual tax, duty, and clearance depend on current rules, classification, origin, and shipment details; verify before quoting customers.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source cross-border GCC landed cost calculator: 1) Single-file responsive HTML/JS tool (landed_cost.html) estimating landed costs from configurable assumptions; tax and duty treatment varies by destination, product classification, origin, and shipment, so users must verify current rates, 2) Excel master pricing workbook, 3) DDP (Delivered Duty Paid) customer checkout disclosure copy swipe file.",
+    "deliverables": [
+      "data/gcc_tariffs_and_vat_matrix.json",
+      "LICENSE",
+      "models/gcc-cross-border-pricing-model.xlsx",
+      "README.md",
+      "src/landed_cost.js",
+      "templates/ddp-checkout-disclosures.md",
+      "tests/calculator.test.js",
+      "tests/test_calculator.py",
+      "tools/landed_cost.html"
+    ],
+    "constraints_en": [
+      "Unified GCC Customs Tariff: Uses a fixed 5% customs-duty scenario for illustration; actual rates depend on tariff classification, origin, destination, and exemptions.",
+      "VAT Inbound Assessment: Uses destination VAT assumptions for an estimate. Import VAT bases and applicable rates depend on current law and shipment details; verify with the relevant authority or broker.",
+      "Estimate Limits: Rates are fixed examples rather than live tariff lookups. Product codes, origin rules, exemptions, de minimis rules, and courier charges can change the actual total."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "node --test tests/*.test.js"
+    ]
+  },
+  {
+    "slug": "ecom-inventory-scarcity-backorder-playbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ecom-inventory-scarcity-backorder-playbook",
+    "category": "e-commerce",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "E-Commerce Inventory Scarcity & Backorder Messaging Playbook",
+    "tagline_en": "Don't let stockouts kill your ad momentum. Turn out-of-stock product pages into profitable pre-order and waitlist funnels.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source inventory scarcity and backorder conversion toolkit: 1) Pre-order operational playbook (deposit vs full prepayment models, fulfillment buffer schedules, refund guarantees), 2) Bilingual customer notification email/WhatsApp sequences (Pre-Order Confirmed, Production Update, Shipping Tracking), 3) Zero-dependency HTML/JS back-in-stock lead capture modal component.",
+    "deliverables": [
+      "components/back_in_stock_modal.html",
+      "components/modal_styles.css",
+      "docs/legal-backorder-guidelines.md",
+      "examples/sneaker-drop-case-study.html",
+      "LICENSE",
+      "playbooks/low-stock-urgency-mechanics.md",
+      "playbooks/preorder-conversion-master-playbook.md",
+      "README.md",
+      "scripts/simulate_cart_hold.py",
+      "templates/backorder-deposit-flow.md",
+      "templates/customer-communication-sequences.md",
+      "tests/test_simulate_hold.py"
+    ],
+    "constraints_en": [
+      "Truthful Stock Disclosures: Prevents artificial 'Only 1 left' countdown widgets that violate consumer protection truth-in-advertising statutes.",
+      "Backorder SLA Communication: Mandates clear promised dispatch dates and automatic customer notification sequences upon pre-order confirmation.",
+      "Pre-Order Deposit vs Full Payment: Formulates operational refund policies compliant with regional commercial cancellation regulations."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python scripts/simulate_cart_hold.py --help"
+    ]
+  },
+  {
+    "slug": "d2c-unboxing-experience-referral-blueprint",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/d2c-unboxing-experience-referral-blueprint",
+    "category": "e-commerce",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "D2C Post-Purchase Unboxing Experience & Referral Architecture",
+    "tagline_en": "Turn shipping boxes into high-ROI referral engines. Master unboxing architecture, physical insert swipe files, and QR tracking loops.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source post-purchase unboxing experience and referral system: 1) Physical unboxing architecture blueprint (Sensory cues, Branded tape, Tissue wrap, Thank-you note placement), 2) 10 physical package insert copy templates with dynamic QR referral mechanics, 3) UTM tracking architecture for measuring package-driven repurchases, 4) Packaging supplier specification cheat sheet.",
+    "deliverables": [
+      "architecture/unboxing-experience-master-blueprint.md",
+      "checklists/packaging-sustainability-gcc.md",
+      "examples/beauty_brand_unboxing_case_study.md",
+      "examples/perfume-unboxing-sop.md",
+      "LICENSE",
+      "playbooks/whatsapp-vip-onboarding.md",
+      "README.md",
+      "specs/packaging-print-specifications.md",
+      "templates/10-package-insert-copy-templates.md",
+      "templates/insert-card-qr-flyers.md",
+      "tracking/qr-code-attribution-architecture.md"
+    ],
+    "constraints_en": [
+      "Packaging Component Architecture: Blueprints packaging inserts, custom QR code landing pages, and branded physical touchpoints.",
+      "Referral Incentive Framing: Designs two-sided reward mechanics (e.g. SAR 50 for the referee, SAR 50 for the advocate) to optimize viral loop k-factor.",
+      "Post-Purchase Review Timing: Sequences digital review requests to trigger after a configurable interval following confirmed delivery; test timing with customer feedback and local rules."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "egypt-vs-gulf-marketing-lexicon",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/egypt-vs-gulf-marketing-lexicon",
+    "category": "localization",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "Egyptian vs. Gulf Marketing Commercial Lexicon & Dialect Dictionary",
+    "tagline_en": "Compare six illustrative e-commerce terms across Egyptian and Gulf Arabic. Validate wording with local speakers before using it in customer-facing copy.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source curated editorial commercial dialect dictionary and adaptation toolkit: 1) Curated terminology examples mapped across English, MSA, Egyptian Ammiya, Saudi (Najdi/Hejazi), and Emirati vernacular, categorized by customer journey stage (Attraction, Offer/Urgency, Pricing, Trust/Guarantee, Checkout/Delivery), 2) Agent Skill (SKILL.md) for real-time copy adaptation, 3) Searchable JSON/CSV schema.",
+    "deliverables": [
+      "data/banned_terms_cultural_sensitivities.csv",
+      "data/commercial_lexicon_eg_gulf.json",
+      "data/commercial_lexicon_master.json",
+      "data/lexicon_by_funnel_stage.csv",
+      "docs/dialect-cultural-nuances.md",
+      "docs/morphological-dialect-rules.md",
+      "examples/ad-copy-comparison-table.md",
+      "examples/sample_ad_copy_transformations.md",
+      "LICENSE",
+      "README.md",
+      "SKILL.md",
+      "SOURCES.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Dialectal Register Nuance: Egyptian commercial phrasing differs significantly from Saudi/Gulf Najdi-Hejazi terminology; confusing colloquial terms across regions damages trust.",
+      "BiDi Punctuation Placement: Mixing Arabic text with English brand names or numerals requires strict Unicode directional formatting to avoid displaced brackets or punctuation.",
+      "Demonstrative Editorial Selection: Provides an editorial collection of commercial copywriting terminology, not a formal academic linguistics corpus."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "saudi-mawthooq-ad-compliance-handbook",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/saudi-mawthooq-ad-compliance-handbook",
+    "category": "localization",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Saudi Mawthooq & Advertising Regulatory Compliance Handbook",
+    "tagline_en": "Launch ads in Saudi Arabia with zero legal risk. 30-point regulatory compliance handbook covering Mawthooq, VAT, and GAMR ad rules.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an open-source Saudi advertising regulatory compliance pack: 1) Master handbook synthesizing GAMR, Ministry of Commerce, and ZATCA ad rules, 2) 30-point pre-flight campaign compliance checklist, 3) Mandatory disclosure copy templates (Mawthooq number, VAT breakdown, commercial registration), 4) Restricted categories and prohibited claims guide (medical, cosmetics, financial).",
+    "deliverables": [
+      "checklists/30-point-preflight-ad-audit.md",
+      "checklists/ad-creative-compliance-audit.md",
+      "docs/restricted-categories-guide.md",
+      "examples/compliant-influencer-contract.md",
+      "examples/compliant_ad_samples.md",
+      "handbook/mawthooq-licensing-sop.md",
+      "handbook/saudi-ad-regulations-master.md",
+      "LICENSE",
+      "playbooks/fines-and-appeals-process.md",
+      "README.md",
+      "templates/disclosure-badges-svg.html",
+      "templates/mandatory-disclosures-bilingual.md"
+    ],
+    "constraints_en": [
+      "Mawthooq Platform Mandate: All individuals publishing commercial advertising on social platforms in KSA must hold an active Mawthooq permit.",
+      "Commercial Disclosure Placement: Sponsored posts must explicitly display the statutory ad disclosure badge (#إعلان or #مادة_إعلانية) prominently.",
+      "Sanctions & Penalties Framework: Outlines legal repercussions for advertising unlicensed financial, medical, or real estate products under GAMR regulations."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "arabic-web-typography-performance-kit",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-web-typography-performance-kit",
+    "category": "localization",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Arabic Web Typography Performance & Font Loading Optimization Kit",
+    "tagline_en": "Practical Arabic web font optimization examples. File-size savings and CLS impact depend on the chosen font, glyph subset, browser, and baseline; this kit does not claim a fixed 65% reduction or guaranteed CLS elimination.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Arabic web font optimization toolkit with example @font-face CSS, a Python glyph subsetting script, and guidance for measuring Core Web Vitals. The included snippet is not production-tested across all listed fonts, and no fixed file-size reduction is guaranteed.",
+    "deliverables": [
+      "configs/arabic_unicode_ranges.json",
+      "css/arabic-fonts-performance-reset.css",
+      "docs/eliminating-cls-arabic-fonts.md",
+      "LICENSE",
+      "README.md",
+      "src/subset_arabic_font.py",
+      "tests/test_subsetting.py"
+    ],
+    "constraints_en": [
+      "FOUT & FOIT Prevention: Uses 'font-display: swap' and targeted preloading of initial Arabic glyph subsets to eliminate invisible text flashing.",
+      "Variable Font Compression: WOFF2 and glyph subsetting can reduce transfer size; measure the actual source and subset files for each font rather than relying on a universal size target.",
+      "Baseline Vertical Alignment: Corrects Arabic font vertical metric clipping (ascent/descent) across multi-line headings and buttons."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/subset_arabic_font.py --help"
+    ]
+  },
+  {
+    "slug": "dialect-aware-copywriting-skill",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/dialect-aware-copywriting-skill",
+    "category": "localization",
+    "format": "SKILL_MD",
+    "tier": "1",
+    "title_en": "Dialect-Aware Copywriting Adaptation Agent Skill",
+    "tagline_en": "Stop AI from mixing Arabic dialects. An authoritative Agent Skill that writes native Egyptian, Saudi, and Emirati ad copy with zero vocabulary bleed.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an authoritative Agent Skill (SKILL.md) for dialect-aware Arabic marketing copy: 1) Strict dialect isolation rules preventing vocabulary bleed between Egyptian, Saudi (Najdi/Hejazi), and Emirati vernacular, 2) Tone matching (Casual UGC vs Premium B2B vs Conversational Direct Response), 3) Reference vocabulary guides, 4) Worked transformation test fixtures.",
+    "deliverables": [
+      "examples/before-and-after-copy-tests.md",
+      "examples/multidialect-campaign-sample.md",
+      "LICENSE",
+      "README.md",
+      "references/egyptian-colloquial-glossary.md",
+      "references/egyptian-commercial-slang.md",
+      "references/emirati-tone-guide.md",
+      "references/gulf-slang-glossary.md",
+      "references/saudi-vernacular-rules.md",
+      "SKILL.md",
+      "templates/tone-adapter-rules.json",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Morphological Particle Adaptation: Adapts future tense markers (هـ in Egyptian vs بـ / راح in Gulf) and negation particles (مش vs مو) to preserve natural vernacular flow.",
+      "Cultural Metaphor Relevance: Replaces regionally specific Egyptian cultural references with equivalent Gulf commercial hooks.",
+      "Demonstrative Editorial Selection: Provides illustrative transformation rules and editorial patterns, not an exhaustive academic dialect atlas."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "mena-marketing-holiday-calendar-dataset",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/mena-marketing-holiday-calendar-dataset",
+    "category": "localization",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "MENA Cultural & Religious Holiday Marketing Planning Dataset",
+    "tagline_en": "Never get caught unprepared by shifted lunar holidays. Multi-year structured dataset (2025-2028) and iCal calendar of Arab commercial holidays.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source MENA commercial and cultural holiday dataset (2025-2028): 1) Machine-readable JSON and CSV detailing dates, shopping phase duration, and recommended creative lead times for all major Islamic and national holidays (Saudi National Day, Saudi Foundation Day, UAE National Day, Ramadan, Eid al-Fitr, Eid al-Adha, White Friday, Mother's Day, Back-to-School), 2) Importable .ics calendar file, 3) 52-week marketing flighting schedule.",
+    "deliverables": [
+      "calendar/mena_marketing_calendar.ics",
+      "data/events_table.csv",
+      "data/mena_marketing_events_2026_2027.json",
+      "data/mena_marketing_holidays.csv",
+      "data/mena_marketing_holidays_2025_2028.json",
+      "docs/holiday-consumer-spending-profiles.md",
+      "docs/retail-preparation-lead-times.md",
+      "LICENSE",
+      "README.md",
+      "SOURCES.md",
+      "templates/campaign-leadtime-planner.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Lunar Calendar Sightings: Islamic holidays (Ramadan, Eid al-Fitr, Eid al-Adha) depend on lunar moon sightings; dates require documented operational sighting buffers.",
+      "National Days & Civil Gazettes: Incorporates fixed statutory civil holidays (Saudi National Day, Saudi Founding Day, UAE National Day, Egypt Revolution Day).",
+      "Commercial Retail Seasons: Maps major promotional buying seasons (Back to School, White Friday, Yellow Friday, Ramadan retail surge)."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "arabic-number-bidi-normalization-linter",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/arabic-number-bidi-normalization-linter",
+    "category": "localization",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Arabic Number Formatting & BiDi Text Normalization Linter",
+    "tagline_en": "Eliminate scrambled phone numbers, flipped percentages, and mixed numerals on Arabic web pages with automated BiDi normalization.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python Arabic numeral and bidirectional text normalization CLI (bidi_linter.py): 1) Scans text and HTML files for mixed Western/Eastern numerals, 2) Automates one-click normalization to either system, 3) Detects phone numbers and currency strings that lack proper <bdi> or Unicode RLM/LRM isolation marks, 4) Outputs a clean terminal report and corrected text files.",
+    "deliverables": [
+      "docs/unicode-bidi-best-practices.md",
+      "examples/scrambled_and_fixed_text.html",
+      "LICENSE",
+      "README.md",
+      "src/bidi_linter.py",
+      "tests/test_bidi.py",
+      "tools/web_normalizer.html"
+    ],
+    "constraints_en": [
+      "Eastern Arabic (٠-٩) vs Western Arabic (0-9) Digits: Enforces numeral consistency within regional markets (Saudi retail predominantly Western 0-9).",
+      "BiDi Formatting Characters: Injects Unicode Left-to-Right Mark (&lrm; / U+200E) around telephone numbers and prices to prevent displaced currency symbols.",
+      "Mathematical Operator Placement: Preserves proper visual ordering for percentages (e.g. 50%) and mathematical ranges within RTL sentences."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/bidi_linter.py --help"
+    ]
+  },
+  {
+    "slug": "cross-cultural-brand-safety-matrix-mena",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/cross-cultural-brand-safety-matrix-mena",
+    "category": "localization",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Cross-Cultural Brand Safety & Taboo Avoidance Matrix for GCC/Egypt",
+    "tagline_en": "Prevent costly cultural blunders and PR boycotts. 35-point cultural brand safety audit framework for advertising in Saudi Arabia, UAE, and Egypt.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source cross-cultural brand safety framework for MENA advertising: 1) Cultural sensitivity matrix across 6 core pillars (Religious Reverence, Gender & Social Representation, Body Language & Gestures, Idiomatic Subtext, National Pride & Sovereign Symbols, Seasonal Etiquette), 2) 35-point pre-publish creative review rubric, 3) 10 real-world case studies analyzing past advertising missteps and PR fallout.",
+    "deliverables": [
+      "case-studies/past-campaign-failures-teardown.md",
+      "checklists/creative-review-matrix.md",
+      "checklists/regional-signoff-checklist.md",
+      "examples/brand-safety-incident-audits.md",
+      "framework/cultural-sensitivity-matrix.md",
+      "LICENSE",
+      "matrix/religious-cultural-sensitivities.md",
+      "playbooks/pr-crisis-containment-sop.md",
+      "README.md",
+      "rubrics/35-point-creative-audit.md"
+    ],
+    "constraints_en": [
+      "Cultural & Religious Sensitivities: Catalogs taboo imagery, sensitive phrases, and prohibited commercial associations across GCC and Egypt.",
+      "Modesty & Advertising Visual Standards: Guides image selection to comply with regional advertising decency regulations across digital channels.",
+      "Platform Policy Intersection: Correlates regional statutory regulations with Meta, Google, and TikTok commercial advertising policies."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "bilingual-landing-page-parity-qa",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/bilingual-landing-page-parity-qa",
+    "category": "localization",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Bilingual Landing Page Parity & Content Synchronization QA Checklist",
+    "tagline_en": "Catch pricing mismatches and outdated content between your Arabic and English landing pages automatically with Python.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python bilingual landing page parity testing tool (parity_checker.py): 1) Scrapes paired Arabic and English URLs, 2) Extracts and compares all numerical values (prices, percentages, dates) to flag discrepancies, 3) Verifies heading tag count hierarchy match, 4) Checks for reciprocal canonical and hreflang links, 5) Emits an executive visual HTML discrepancy diff report.",
+    "deliverables": [
+      "checklists/25-point-bilingual-qa.md",
+      "examples/paired_urls_test.json",
+      "LICENSE",
+      "README.md",
+      "reports/sample_parity_diff_report.html",
+      "src/parity_checker.py",
+      "tests/test_parity.py"
+    ],
+    "constraints_en": [
+      "Content Parity Auditing: Ensures promotional offers, discount percentages, and warranty terms match identically between Arabic and English page versions.",
+      "Visual Asset Mirroring: Verifies that image orientations, badge positions, and CTA buttons maintain appropriate layout parity across writing directions.",
+      "SEO Tag Synchronization: Confirms canonical tags, hreflang links, and open graph social tags are synchronized across both language URLs."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/parity_checker.py --help"
+    ]
+  },
+  {
+    "slug": "gcc-payment-methods-svg-pack",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/gcc-payment-methods-svg-pack",
+    "category": "localization",
+    "format": "CURATED_DATASET",
+    "tier": "1",
+    "title_en": "GCC Localized Payment Method & Digital Wallet Vector Asset Pack",
+    "tagline_en": "Stop using blurry payment logos. Pixel-perfect SVG vector icons for Mada, Knet, Benefit, Fawry, Instapay, Tabby, and Tamara in light and dark mode.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source SVG vector asset repository for Middle Eastern payment methods: 1) Pixel-perfect, minified SVG files for Mada, Knet, Benefit (Bahrain), Fawry (Egypt), Instapay (Egypt), Meeza (Egypt), Tabby, Tamara, Apple Pay, Google Pay, STC Pay, and Cash on Delivery, 2) Light and dark mode variations, 3) Responsive HTML/CSS badge strip snippets, 4) Official brand usage rules (clear space, aspect ratio).",
+    "deliverables": [
+      "css/payment-badge-grid.css",
+      "demo/index.html",
+      "docs/brand-usage-guidelines.md",
+      "docs/official-brand-guidelines.md",
+      "examples/preview_showcase.html",
+      "LICENSE",
+      "README.md",
+      "snippets/payment-badges-responsive.html",
+      "snippets/payment-badges.css",
+      "SOURCES.md",
+      "svg/dark-mode/mada.svg",
+      "svg/light-mode/mada.svg"
+    ],
+    "constraints_en": [
+      "Official Brand Identity Guidelines: Vector artwork conforms strictly to published brand standards for Mada, Apple Pay, Tabby, Tamara, STC Pay, and KNET.",
+      "Aspect Ratio & Clear Space Constraints: Maintains official clear space margins and prohibits altering brand colors, typography, or proportions.",
+      "Dark Mode & Light Mode Variants: Provides optimized SVG assets for both light and dark checkout backgrounds with pure vector paths."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "marketing-prompt-regression-suite",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/marketing-prompt-regression-suite",
+    "category": "career",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "Marketing Prompt Regression Testing Suite across LLM Version Upgrades",
+    "tagline_en": "Stop prompt drift after LLM API updates. Automate regression testing, JSON schema validation, and tone checks for marketing prompts.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source prompt regression testing framework for marketing teams (prompt_eval_runner.py): 1) Evaluates prompt outputs against strict assertions (Valid JSON schema, Max word count, Presence of required CTA, Absence of forbidden AI clichés like 'delve' or 'game-changer'), 2) Calculates semantic tone similarity against golden reference answers, 3) Terminal pass/fail test reports suitable for CI/CD.",
+    "deliverables": [
+      "eval_suites/ad_copy_json_suite.json",
+      "eval_suites/seo_meta_suite.json",
+      "LICENSE",
+      "README.md",
+      "reports/sample_eval_report.html",
+      "src/prompt_eval_runner.py",
+      "tests/test_runner.py"
+    ],
+    "constraints_en": [
+      "Deterministic Evaluation Fixtures: Runs assertions against LLM outputs across version upgrades to detect regression in tone, dialect, or factual accuracy.",
+      "Multi-Model Parity: Evaluates prompt performance across GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro to identify breaking prompt behaviors.",
+      "Hallucination Score Bounds: Quantifies factual consistency and flags forbidden promotional superlative claims."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/prompt_eval_runner.py --help"
+    ]
+  },
+  {
+    "slug": "client-monthly-growth-report-automation-spec",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/client-monthly-growth-report-automation-spec",
+    "category": "reporting",
+    "format": "PROJECT_BLUEPRINT",
+    "tier": "3",
+    "title_en": "Client Monthly Growth Report Automation Spec & Deck PRD",
+    "tagline_en": "Plan a monthly growth-reporting workflow and use the included executive narrative template. No time-saving outcome has been measured.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source client monthly growth reporting system: 1) System architecture PRD detailing automated ETL data aggregation from Meta, Google, and GA4, 2) 12-slide executive deck narrative framework (Executive Summary, Blended ROAS, Channel Breakdown, Top Winning Creatives, What Worked / What Didn't, Next Month Action Plan), 3) Python summary compiler (compile_report.py).",
+    "deliverables": [
+      "ARCHITECTURE.md",
+      "DATA_MODEL.md",
+      "LICENSE",
+      "MONETIZATION.md",
+      "prd/reporting-automation-architecture.md",
+      "PRD.md",
+      "PROBLEM.md",
+      "README.md",
+      "reports/sample_client_executive_summary.md",
+      "ROADMAP.md",
+      "sample_data/monthly_ad_exports.csv",
+      "src/compile_report.py",
+      "src/mock_report_compiler.py",
+      "templates/12-slide-executive-deck-blueprint.md",
+      "tests/test_compiler.py",
+      "USER_FLOWS.md",
+      "*(Additional supporting documentation and assets)*"
+    ],
+    "constraints_en": [
+      "Multi-Source API Merging: Spec outlines programmatic ingestion and reconciliation across Google Ads, Meta Ads, TikTok, and GA4.",
+      "Executive Deck Generation: Mandates high-level North Star metrics (MER, Blended ROAS, Contribution Margin) before granular channel tables.",
+      "Currency Normalization: Formats blended reports across GCC currencies using central bank monthly exchange rate benchmarks."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/compile_report.py --help"
+    ]
+  },
+  {
+    "slug": "agency-client-onboarding-discovery-vault",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/agency-client-onboarding-discovery-vault",
+    "category": "career",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Agency Client Onboarding Brand Discovery Vault & Credential SOP",
+    "tagline_en": "A structured marketing-client onboarding vault with brand discovery prompts and secure platform-access delegation steps. The time required depends on the client and access process.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Create an open-source agency client onboarding system: 1) Deep Brand Discovery intake questionnaire (Brand Voice, Target ICP, Unit Economics, Past Campaign Failures, Approved Assets), 2) Visual step-by-step platform access delegation guide (Meta Business Portfolio, Google Ads MCC, GA4, TikTok Business Center, Shopify Staff), 3) 7-day onboarding kick-off milestone schedule.",
+    "deliverables": [
+      "checklists/account-access-delegation-runbook.md",
+      "checklists/asset-intake-qa.md",
+      "examples/saudi-ecom-client-intake-sample.md",
+      "guides/platform-access-delegation-sop.md",
+      "intake/brand-discovery-questionnaire.md",
+      "LICENSE",
+      "playbooks/first-30-days-kickoff-sop.md",
+      "README.md",
+      "schedules/7-day-onboarding-timeline.md",
+      "templates/client-brand-discovery-survey.md",
+      "templates/welcome-email-sequence.md"
+    ],
+    "constraints_en": [
+      "Zero Shared Password Policy: Mandates role-based enterprise access via Meta Business Portfolio, Google MCC, and TikTok Business Center rather than raw logins.",
+      "Brand Asset Intake Governance: Systematic collection of vector logos, brand books, typography licenses, and past campaign performance data.",
+      "Stakeholder SLA Alignment: Establishes clear feedback turnaround SLAs and change request protocols during the first 30 days of client engagement."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "ai-ad-copy-hallucination-guardrails",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/ai-ad-copy-hallucination-guardrails",
+    "category": "career",
+    "format": "CLI_SCRIPT",
+    "tier": "2",
+    "title_en": "AI-Generated Ad Copy Hallucination Guardrails & Assertion Validator",
+    "tagline_en": "Catch AI ad copy hallucinations and fake discounts before launching ad spend. Rule-based assertion validator for advertising claims.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Develop a pure Python ad copy guardrails validator (copy_guardrails.py): 1) Ingests generated ad copy CSV files and a JSON configuration of authorized claims (Max Discount %, Allowed Shipping Terms, Return Window Days), 2) Flags unauthorized discount codes, extreme superlatives ('100% cure'), or hallucinated guarantees, 3) Outputs a pass/flagged CSV and terminal summary.",
+    "deliverables": [
+      "config/authorized_offer_bounds.sample.json",
+      "examples/unreviewed_ad_copy_sample.csv",
+      "LICENSE",
+      "README.md",
+      "reports/flagged_claims_report.csv",
+      "src/copy_guardrails.py",
+      "tests/test_guardrails.py"
+    ],
+    "constraints_en": [
+      "Factual Assertion Validation: Compares generated copy against verified product specification sheets to catch fabricated features or false pricing.",
+      "Regulatory Claims Screening: Flags unsubstantiated claims ('#1 Doctor Recommended', 'Guaranteed Cure') that trigger regulatory advertising penalties.",
+      "Automated CI/CD Quality Gate: Integrates into content generation pipelines to block hallucinated copy before human editorial review."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/copy_guardrails.py --help"
+    ]
+  },
+  {
+    "slug": "agency-scope-change-order-governance",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/agency-scope-change-order-governance",
+    "category": "career",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Agency Scope-of-Work (SOW) Change Order Governance Framework",
+    "tagline_en": "Stop doing free work for demanding clients. Professional Scope of Work boundary matrix and diplomatic Change Order negotiation scripts.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source agency Scope of Work and Change Order governance kit: 1) Scope boundary matrix clearly separating Core Deliverables vs Out-of-Scope Add-ons across 6 marketing disciplines, 2) Legally binding 1-page Change Order addendum template, 3) Diplomatic email scripts for saying 'Yes, and here is what it will cost', 4) Client expectation-setting onboarding slides.",
+    "deliverables": [
+      "contracts/formal-change-order-addendum.md",
+      "examples/ad-hoc-creative-sow-case.md",
+      "frameworks/scope-boundary-matrix.md",
+      "LICENSE",
+      "playbooks/client-pushback-scripts-ar.md",
+      "README.md",
+      "scripts/diplomatic-change-order-responses.md",
+      "templates/change-order-request-form.md",
+      "templates/client-sow-template.md",
+      "templates/out-of-scope-hourly-rate-card.md"
+    ],
+    "constraints_en": [
+      "Scope Creep Containment: Establishes clear boundary definitions between included retainer deliverables and billable out-of-scope work.",
+      "Formal Change Order Workflow: Requires documented impact assessments (timeline extension + cost adjustment) before initiating out-of-scope tasks.",
+      "Client Sign-Off Audit Trail: Implements binding digital sign-off workflows to prevent invoice disputes during project delivery."
+    ],
+    "quick_start": []
+  },
+  {
+    "slug": "freelance-marketer-operating-system",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/freelance-marketer-operating-system",
+    "category": "career",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Freelance Digital Marketer Operating System & Proposal Workspace",
+    "tagline_en": "Run your freelance marketing business like a professional agency. High-converting proposal templates, client CRM tracker, and contract agreements.",
+    "persona_en": "BOTH operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Freelance Marketing Operating System in Markdown: 1) High-converting value-based proposal template (Executive Problem, Proposed Solution, 3-Tier Pricing, Milestone Timeline), 2) Client CRM tracker schema in CSV/Markdown, 3) Professional invoice template with GCC VAT and Egyptian tax withholding notations, 4) Offboarding and testimonial request sequence.",
+    "deliverables": [
+      "contracts/freelance-marketing-agreement.md",
+      "examples/media-buyer-proposal-won.md",
+      "LICENSE",
+      "models/freelance-hourly-rate-calculator.xlsx",
+      "playbooks/retainer-pricing-rules.md",
+      "README.md",
+      "schemas/client-crm-tracker.csv",
+      "templates/invoicing-terms-zatca-compliant.md",
+      "templates/professional-invoice-template.md",
+      "templates/proposal-contract-bundle-ar.md",
+      "templates/testimonial-capture-sequence.md",
+      "templates/value-based-proposal-template.md",
+      "tests/test_data_integrity.py"
+    ],
+    "constraints_en": [
+      "Value-Based Proposal Structuring: Formulates commercial proposals tying pricing to business impact rather than commoditized hourly billing.",
+      "Freelance Licensing Compliance: Integrates guidelines for acquiring the Saudi Freelance Certificate (Mustaqil) for legal invoicing in KSA.",
+      "Retainer Milestones & Late Fee Governance: Enforces clear payment milestones (50% upfront, 50% on milestone) and interest terms on delayed receivables."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests"
+    ]
+  },
+  {
+    "slug": "agency-safe-ai-adoption-policy",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/agency-safe-ai-adoption-policy",
+    "category": "career",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Marketing Agency Safe AI Adoption & Data Privacy Policy",
+    "tagline_en": "Deploy AI across your agency safely without client data leaks. Enterprise AI usage policy, RFP disclosure clauses, and automated PII scrubber.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Marketing Agency AI Adoption and Privacy Pack: 1) Complete corporate AI usage policy (Approved vs Restricted tools, Model training opt-outs, Copyright guidelines), 2) Client RFP compliance disclosure addendum, 3) Python PII data scrubber script (scrub_pii.py) anonymizing names, phones, and emails before AI prompting, 4) Employee AI onboarding checklist.",
+    "deliverables": [
+      "checklists/employee-ai-tool-whitelist.md",
+      "contracts/client-ai-disclosure-addendum.md",
+      "LICENSE",
+      "policies/agency-ai-governance-policy.md",
+      "policy/agency-ai-data-security-charter.md",
+      "README.md",
+      "src/check_pii_leakage.py",
+      "src/scrub_pii.py",
+      "templates/client-ai-usage-disclosure.md",
+      "tests/test_pii.py",
+      "tests/test_scrubber.py",
+      "training/employee-ai-dos-and-donts.md"
+    ],
+    "constraints_en": [
+      "Client Data Isolation: Prohibits pasting sensitive client PII, financial statements, or unreleased product roadmaps into public AI model prompts.",
+      "Enterprise Opt-Out Verification: Mandates use of enterprise AI tiers with zero data retention and explicit exclusion from public model training datasets.",
+      "Human-in-the-Loop Deliverable Accountability: Requires human agency review and fact-checking of every AI-assisted client deliverable before client delivery."
+    ],
+    "quick_start": [
+      "python -m unittest discover -s tests",
+      "python src/check_pii_leakage.py --help"
+    ]
+  },
+  {
+    "slug": "marketing-deliverable-quality-gate",
+    "repo_url": "https://github.com/mahmoudabdelnaby1/marketing-deliverable-quality-gate",
+    "category": "career",
+    "format": "TEMPLATE_FRAMEWORK",
+    "tier": "1",
+    "title_en": "Marketing Deliverable Quality Gate Scorecard & PR Review System",
+    "tagline_en": "Bring engineering-grade quality assurance to your marketing team. 25-point peer review scorecard and GitHub PR templates for marketing assets.",
+    "persona_en": "PRO operating in high-growth e-commerce, digital publishing, and direct-response marketing across Saudi Arabia, UAE, and Egypt.",
+    "problem_en": "Build an open-source Marketing Quality Gate and Peer Review system: 1) 25-point weighted QA scorecard covering Copywriting, Visual Design, Technical Tracking/UTMs, and Legal Compliance, 2) Ready-to-use GitHub Pull Request templates (.github/PULL_REQUEST_TEMPLATE/marketing_release.md), 3) Pre-flight campaign launch sign-off matrix, 4) Incident post-mortem template for marketing failures.",
+    "deliverables": [
+      "checklists/preflight-launch-signoff.md",
+      "examples/perfect-score-media-plan.md",
+      "LICENSE",
+      "playbooks/marketing-incident-postmortem.md",
+      "README.md",
+      "rubrics/creative-ad-quality-gate.md",
+      "rubrics/media-plan-quality-gate.md",
+      "rubrics/monthly-report-quality-gate.md",
+      "scorecards/25-point-marketing-qa-scorecard.md",
+      "templates/pull-request-template-marketing.md",
+      "templates/qa-signoff-certificate.md"
+    ],
+    "constraints_en": [
+      "Multi-Point Review Scorecard: Evaluates deliverables across 5 dimensions (Brief Alignment, Factual Accuracy, Technical Formatting, Brand Tone, Proofing).",
+      "Peer Review Pull Request Model: Adapts software pull-request review culture into marketing creative and strategic deliverables.",
+      "Zero Defect Threshold: Mandates passing all quality gate checks before deliverables are exported or presented to clients."
+    ],
+    "quick_start": []
+  }
+]
