@@ -4,6 +4,7 @@ import argparse
 from html.parser import HTMLParser
 from pathlib import Path
 import re
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
@@ -219,6 +220,11 @@ def main() -> int:
         updated = normalize_assistant_pages(root)
         pages, ignored = collect_pages(root)
         write_sitemap(root, pages)
+        if (root / "data/blog-content.json").is_file():
+            subprocess.run(
+                [sys.executable, str(root / "scripts/build-blog-feeds.py"), "--root", str(root)],
+                check=True,
+            )
     except (OSError, UnicodeError, ValueError) as error:
         print(error, file=sys.stderr)
         return 1

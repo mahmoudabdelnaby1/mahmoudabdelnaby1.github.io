@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://mahmoudabdelnaby1.github.io/sitemap.xml
+Sitemap: https://mahmoudabdelnaby1.github.io/blog/feed.xml
+Sitemap: https://mahmoudabdelnaby1.github.io/ar/blog/feed.xml

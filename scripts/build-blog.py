@@ -74,10 +74,11 @@ def ld(value):
 
 def head(title,description,canonical,en_url,ar_url,lang,schema,kind,has_translation=True):
  alternates=(f'<link rel="alternate" hreflang="en" href="{esc(en_url)}"><link rel="alternate" hreflang="ar" href="{esc(ar_url)}"><link rel="alternate" hreflang="x-default" href="{esc(en_url)}">' if has_translation else "")
+ feed=(f'<link rel="alternate" type="application/rss+xml" title="{"مدونة التسويق والنمو" if lang=="ar" else "Marketing &amp; Growth Blog"} RSS feed" href="/{"ar/" if lang=="ar" else ""}blog/feed.xml">' if kind=="website" and canonical.endswith(("/blog/","/ar/blog/")) else "")
  return f'''<!doctype html>
 <html lang="{lang}" dir="{"rtl" if lang=="ar" else "ltr"}">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d27">{feed}
 <title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{esc(canonical)}">{alternates}
 <meta property="og:type" content="{kind}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}"><meta property="og:site_name" content="Mahmoud Abdelnaby | Technical Marketing &amp; Growth"><meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
