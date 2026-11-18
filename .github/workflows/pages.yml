@@ -44,6 +44,23 @@ jobs:
               if re.search(r'</body\s*>', html, re.I):
                   page.write_text(re.sub(r'</body\s*>', script + '</body>', html, count=1, flags=re.I), encoding='utf-8')
           PY
+      - name: Refresh portfolio stylesheet cache keys
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          root = Path('_site')
+          version = '20261118-assistant-artwork-hidden'
+          pattern = r"""(/assets/site\.css\?v=)[^"'\s>]+"""
+          changed = 0
+          for page in root.rglob('*.html'):
+              html = page.read_text(encoding='utf-8')
+              updated = re.sub(pattern, lambda match: match.group(1) + version, html)
+              if updated != html:
+                  page.write_text(updated, encoding='utf-8')
+                  changed += 1
+          print(f'Refreshed stylesheet cache keys in {changed} HTML pages.')
+          PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
