@@ -1046,3 +1046,12 @@ html[dir="rtl"] .framework-home-arrow{justify-self:start}
 html[dir="rtl"] .labs-home-kicker,html[dir="rtl"] .labs-home-layout,html[dir="rtl"] .labs-home-actions{direction:rtl}
 html[dir="rtl"] .labs-home-layout h2,html[dir="rtl"] .labs-home-copy>p{text-align:right}
 @media(max-width:760px){.labs-home-layout{grid-template-columns:1fr;gap:22px}.labs-home-layout h2{max-width:18ch;font-size:clamp(38px,9vw,56px)}.labs-home-actions{align-items:stretch;flex-direction:column;gap:7px}.labs-home-primary{width:100%}.labs-home-secondary{align-self:flex-start}}
+
+
+/* Assistant artwork is intentionally omitted from assistant detail cards. */
+.bot-detail .detail-head{grid-template-columns:minmax(0,1fr)!important}
+.bot-detail .detail-head>img,.bot-detail .related-card img{display:none!important}
+.bot-detail .related-card>a{grid-template-columns:minmax(0,1fr)!important;min-height:0}
+.bot-detail .related-card>a>div{grid-column:1/-1!important;padding:18px!important}
+.bot-detail .related-card p{-webkit-line-clamp:3!important}
+@media(max-width:760px){.bot-detail .related-card>a{grid-template-columns:minmax(0,1fr)!important}.bot-detail .related-card>a>div{padding:15px!important}}
